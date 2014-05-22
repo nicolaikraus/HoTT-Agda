@@ -1,0 +1,702 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >homotopy.PathSetIsInital</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --without-K </a
+      ><a name="25" class="Symbol"
+      >#-}</a
+      ><a name="28"
+      >
+
+</a
+      ><a name="30" class="Keyword"
+      >open</a
+      ><a name="34"
+      > </a
+      ><a name="35" class="Keyword"
+      >import</a
+      ><a name="41"
+      > </a
+      ><a name="42" href="HoTT.html#1" class="Module"
+      >HoTT</a
+      ><a name="46"
+      >
+
+</a
+      ><a name="48" class="Keyword"
+      >module</a
+      ><a name="54"
+      > </a
+      ><a name="55" href="homotopy.PathSetIsInital.html#1" class="Module"
+      >homotopy.PathSetIsInital</a
+      ><a name="79"
+      > </a
+      ><a name="80" class="Symbol"
+      >{</a
+      ><a name="81" href="homotopy.PathSetIsInital.html#81" class="Bound"
+      >i</a
+      ><a name="82" class="Symbol"
+      >}</a
+      ><a name="83"
+      > </a
+      ><a name="84" class="Symbol"
+      >(</a
+      ><a name="85" href="homotopy.PathSetIsInital.html#85" class="Bound"
+      >A</a
+      ><a name="86"
+      > </a
+      ><a name="87" class="Symbol"
+      >:</a
+      ><a name="88"
+      > </a
+      ><a name="89" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="93"
+      > </a
+      ><a name="94" href="homotopy.PathSetIsInital.html#81" class="Bound"
+      >i</a
+      ><a name="95" class="Symbol"
+      >)</a
+      ><a name="96"
+      >
+  </a
+      ><a name="99" class="Symbol"
+      >(</a
+      ><a name="100" href="homotopy.PathSetIsInital.html#100" class="Bound"
+      >A-conn</a
+      ><a name="106"
+      > </a
+      ><a name="107" class="Symbol"
+      >:</a
+      ><a name="108"
+      > </a
+      ><a name="109" href="lib.NConnected.html#365" class="Function"
+      >is-connected</a
+      ><a name="121"
+      > </a
+      ><a name="122" href="lib.Base.html#8903" class="Function"
+      >&#10216;0&#10217;</a
+      ><a name="125"
+      > </a
+      ><a name="126" href="homotopy.PathSetIsInital.html#85" class="Bound"
+      >A</a
+      ><a name="127" class="Symbol"
+      >)</a
+      ><a name="128"
+      > </a
+      ><a name="129" class="Keyword"
+      >where</a
+      ><a name="134"
+      >
+
+  </a
+      ><a name="138" class="Keyword"
+      >open</a
+      ><a name="142"
+      > </a
+      ><a name="143" href="lib.types.Cover.html#391" class="Module"
+      >Cover</a
+      ><a name="148"
+      >
+
+  </a
+      ><a name="152" class="Keyword"
+      >module</a
+      ><a name="158"
+      > </a
+      ><a name="159" href="homotopy.PathSetIsInital.html#159" class="Module"
+      >_</a
+      ><a name="160"
+      >
+    </a
+      ><a name="165" class="Symbol"
+      >(</a
+      ><a name="166" href="homotopy.PathSetIsInital.html#166" class="Bound"
+      >a&#8321;</a
+      ><a name="168"
+      > </a
+      ><a name="169" class="Symbol"
+      >:</a
+      ><a name="170"
+      > </a
+      ><a name="171" href="homotopy.PathSetIsInital.html#85" class="Bound"
+      >A</a
+      ><a name="172" class="Symbol"
+      >)</a
+      ><a name="173"
+      >
+    </a
+      ><a name="178" class="Comment"
+      >-- And an arbitrary covering.</a
+      ><a name="207"
+      >
+    </a
+      ><a name="212" class="Symbol"
+      >{</a
+      ><a name="213" href="homotopy.PathSetIsInital.html#213" class="Bound"
+      >k</a
+      ><a name="214" class="Symbol"
+      >}</a
+      ><a name="215"
+      > </a
+      ><a name="216" class="Symbol"
+      >(</a
+      ><a name="217" href="homotopy.PathSetIsInital.html#217" class="Bound"
+      >cov</a
+      ><a name="220"
+      > </a
+      ><a name="221" class="Symbol"
+      >:</a
+      ><a name="222"
+      > </a
+      ><a name="223" href="lib.types.Cover.html#391" class="Record"
+      >Cover</a
+      ><a name="228"
+      > </a
+      ><a name="229" href="homotopy.PathSetIsInital.html#85" class="Bound"
+      >A</a
+      ><a name="230"
+      > </a
+      ><a name="231" href="homotopy.PathSetIsInital.html#213" class="Bound"
+      >k</a
+      ><a name="232" class="Symbol"
+      >)</a
+      ><a name="233"
+      >
+    </a
+      ><a name="238" class="Symbol"
+      >(</a
+      ><a name="239" href="homotopy.PathSetIsInital.html#239" class="Bound"
+      >cov-conn</a
+      ><a name="247"
+      > </a
+      ><a name="248" class="Symbol"
+      >:</a
+      ><a name="249"
+      > </a
+      ><a name="250" href="lib.NConnected.html#365" class="Function"
+      >is-connected</a
+      ><a name="262"
+      > </a
+      ><a name="263" href="lib.Base.html#8903" class="Function"
+      >&#10216;0&#10217;</a
+      ><a name="266"
+      > </a
+      ><a name="267" class="Symbol"
+      >(</a
+      ><a name="268" href="lib.types.Cover.html#571" class="Function"
+      >Cover.TotalSpace</a
+      ><a name="284"
+      > </a
+      ><a name="285" href="homotopy.PathSetIsInital.html#217" class="Bound"
+      >cov</a
+      ><a name="288" class="Symbol"
+      >))</a
+      ><a name="290"
+      >
+    </a
+      ><a name="295" class="Symbol"
+      >(</a
+      ><a name="296" href="homotopy.PathSetIsInital.html#296" class="Bound"
+      >a&#8593;&#8321;</a
+      ><a name="299"
+      > </a
+      ><a name="300" class="Symbol"
+      >:</a
+      ><a name="301"
+      > </a
+      ><a name="302" href="lib.types.Cover.html#480" class="Field"
+      >Fiber</a
+      ><a name="307"
+      > </a
+      ><a name="308" href="homotopy.PathSetIsInital.html#217" class="Bound"
+      >cov</a
+      ><a name="311"
+      > </a
+      ><a name="312" href="homotopy.PathSetIsInital.html#166" class="Bound"
+      >a&#8321;</a
+      ><a name="314" class="Symbol"
+      >)</a
+      ><a name="315"
+      >
+    </a
+      ><a name="320" class="Keyword"
+      >where</a
+      ><a name="325"
+      >
+
+    </a
+      ><a name="331" class="Keyword"
+      >private</a
+      ><a name="338"
+      >
+      </a
+      ><a name="345" href="homotopy.PathSetIsInital.html#345" class="Function"
+      >univ-cover</a
+      ><a name="355"
+      > </a
+      ><a name="356" class="Symbol"
+      >=</a
+      ><a name="357"
+      > </a
+      ><a name="358" href="lib.types.Cover.html#4773" class="Function"
+      >path-set-cover</a
+      ><a name="372"
+      > </a
+      ><a name="373" href="lib.types.Pointed.html#307" class="Function Operator"
+      >&#8729;[</a
+      ><a name="375"
+      > </a
+      ><a name="376" href="homotopy.PathSetIsInital.html#85" class="Bound"
+      >A</a
+      ><a name="377"
+      > </a
+      ><a name="378" href="lib.types.Pointed.html#307" class="Function Operator"
+      >,</a
+      ><a name="379"
+      > </a
+      ><a name="380" href="homotopy.PathSetIsInital.html#166" class="Bound"
+      >a&#8321;</a
+      ><a name="382"
+      > </a
+      ><a name="383" href="lib.types.Pointed.html#307" class="Function Operator"
+      >]</a
+      ><a name="384"
+      >
+
+    </a
+      ><a name="390" class="Comment"
+      >-- Weak initiality by transport.</a
+      ><a name="422"
+      >
+    </a
+      ><a name="427" href="homotopy.PathSetIsInital.html#427" class="Function"
+      >quotient-cover</a
+      ><a name="441"
+      > </a
+      ><a name="442" class="Symbol"
+      >:</a
+      ><a name="443"
+      > </a
+      ><a name="444" href="lib.types.Cover.html#4929" class="Function"
+      >CoverHom</a
+      ><a name="452"
+      > </a
+      ><a name="453" href="homotopy.PathSetIsInital.html#345" class="Function"
+      >univ-cover</a
+      ><a name="463"
+      > </a
+      ><a name="464" href="homotopy.PathSetIsInital.html#217" class="Bound"
+      >cov</a
+      ><a name="467"
+      >
+    </a
+      ><a name="472" href="homotopy.PathSetIsInital.html#427" class="Function"
+      >quotient-cover</a
+      ><a name="486"
+      > </a
+      ><a name="487" class="Symbol"
+      >_</a
+      ><a name="488"
+      > </a
+      ><a name="489" href="homotopy.PathSetIsInital.html#489" class="Bound"
+      >p</a
+      ><a name="490"
+      > </a
+      ><a name="491" class="Symbol"
+      >=</a
+      ><a name="492"
+      > </a
+      ><a name="493" href="lib.types.Cover.html#4061" class="Function"
+      >cover-trace</a
+      ><a name="504"
+      > </a
+      ><a name="505" href="homotopy.PathSetIsInital.html#217" class="Bound"
+      >cov</a
+      ><a name="508"
+      > </a
+      ><a name="509" href="homotopy.PathSetIsInital.html#296" class="Bound"
+      >a&#8593;&#8321;</a
+      ><a name="512"
+      > </a
+      ><a name="513" href="homotopy.PathSetIsInital.html#489" class="Bound"
+      >p</a
+      ><a name="514"
+      >
+
+    </a
+      ><a name="520" class="Comment"
+      >-- Strong initiality by path induction.</a
+      ><a name="559"
+      >
+    </a
+      ><a name="564" class="Keyword"
+      >module</a
+      ><a name="570"
+      > </a
+      ><a name="571" href="homotopy.PathSetIsInital.html#571" class="Module"
+      >Uniqueness</a
+      ><a name="581"
+      >
+      </a
+      ><a name="588" class="Symbol"
+      >(</a
+      ><a name="589" href="homotopy.PathSetIsInital.html#589" class="Bound"
+      >cover-hom</a
+      ><a name="598"
+      > </a
+      ><a name="599" class="Symbol"
+      >:</a
+      ><a name="600"
+      > </a
+      ><a name="601" href="lib.types.Cover.html#4929" class="Function"
+      >CoverHom</a
+      ><a name="609"
+      > </a
+      ><a name="610" href="homotopy.PathSetIsInital.html#345" class="Function"
+      >univ-cover</a
+      ><a name="620"
+      > </a
+      ><a name="621" href="homotopy.PathSetIsInital.html#217" class="Bound"
+      >cov</a
+      ><a name="624" class="Symbol"
+      >)</a
+      ><a name="625"
+      >
+      </a
+      ><a name="632" class="Symbol"
+      >(</a
+      ><a name="633" href="homotopy.PathSetIsInital.html#633" class="Bound"
+      >pres-a&#8593;&#8321;</a
+      ><a name="641"
+      > </a
+      ><a name="642" class="Symbol"
+      >:</a
+      ><a name="643"
+      > </a
+      ><a name="644" href="homotopy.PathSetIsInital.html#589" class="Bound"
+      >cover-hom</a
+      ><a name="653"
+      > </a
+      ><a name="654" href="homotopy.PathSetIsInital.html#166" class="Bound"
+      >a&#8321;</a
+      ><a name="656"
+      > </a
+      ><a name="657" href="lib.types.PathSet.html#635" class="Function"
+      >idp&#8320;</a
+      ><a name="661"
+      > </a
+      ><a name="662" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="664"
+      > </a
+      ><a name="665" href="homotopy.PathSetIsInital.html#296" class="Bound"
+      >a&#8593;&#8321;</a
+      ><a name="668" class="Symbol"
+      >)</a
+      ><a name="669"
+      >
+      </a
+      ><a name="676" class="Keyword"
+      >where</a
+      ><a name="681"
+      >
+
+      </a
+      ><a name="689" class="Keyword"
+      >private</a
+      ><a name="696"
+      >
+        </a
+      ><a name="705" href="homotopy.PathSetIsInital.html#705" class="Function"
+      >lemma&#8321;</a
+      ><a name="711"
+      > </a
+      ><a name="712" class="Symbol"
+      >:</a
+      ><a name="713"
+      > </a
+      ><a name="714" class="Symbol"
+      >&#8704;</a
+      ><a name="715"
+      > </a
+      ><a name="716" href="homotopy.PathSetIsInital.html#716" class="Bound"
+      >a</a
+      ><a name="717"
+      > </a
+      ><a name="718" href="homotopy.PathSetIsInital.html#718" class="Bound"
+      >p</a
+      ><a name="719"
+      > </a
+      ><a name="720" class="Symbol"
+      >&#8594;</a
+      ><a name="721"
+      > </a
+      ><a name="722" href="homotopy.PathSetIsInital.html#589" class="Bound"
+      >cover-hom</a
+      ><a name="731"
+      > </a
+      ><a name="732" href="homotopy.PathSetIsInital.html#716" class="Bound"
+      >a</a
+      ><a name="733"
+      > </a
+      ><a name="734" href="lib.types.Truncation.html#491" class="Function Operator"
+      >[</a
+      ><a name="735"
+      > </a
+      ><a name="736" href="homotopy.PathSetIsInital.html#718" class="Bound"
+      >p</a
+      ><a name="737"
+      > </a
+      ><a name="738" href="lib.types.Truncation.html#491" class="Function Operator"
+      >]</a
+      ><a name="739"
+      > </a
+      ><a name="740" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="742"
+      > </a
+      ><a name="743" href="homotopy.PathSetIsInital.html#427" class="Function"
+      >quotient-cover</a
+      ><a name="757"
+      > </a
+      ><a name="758" href="homotopy.PathSetIsInital.html#716" class="Bound"
+      >a</a
+      ><a name="759"
+      > </a
+      ><a name="760" href="lib.types.Truncation.html#491" class="Function Operator"
+      >[</a
+      ><a name="761"
+      > </a
+      ><a name="762" href="homotopy.PathSetIsInital.html#718" class="Bound"
+      >p</a
+      ><a name="763"
+      > </a
+      ><a name="764" href="lib.types.Truncation.html#491" class="Function Operator"
+      >]</a
+      ><a name="765"
+      >
+        </a
+      ><a name="774" href="homotopy.PathSetIsInital.html#705" class="Function"
+      >lemma&#8321;</a
+      ><a name="780"
+      > </a
+      ><a name="781" class="DottedPattern Symbol"
+      >._</a
+      ><a name="783"
+      > </a
+      ><a name="784" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="787"
+      > </a
+      ><a name="788" class="Symbol"
+      >=</a
+      ><a name="789"
+      > </a
+      ><a name="790" href="homotopy.PathSetIsInital.html#633" class="Bound"
+      >pres-a&#8593;&#8321;</a
+      ><a name="798"
+      >
+
+        </a
+      ><a name="808" href="homotopy.PathSetIsInital.html#808" class="Function"
+      >lemma&#8322;</a
+      ><a name="814"
+      > </a
+      ><a name="815" class="Symbol"
+      >:</a
+      ><a name="816"
+      > </a
+      ><a name="817" class="Symbol"
+      >&#8704;</a
+      ><a name="818"
+      > </a
+      ><a name="819" href="homotopy.PathSetIsInital.html#819" class="Bound"
+      >a</a
+      ><a name="820"
+      > </a
+      ><a name="821" href="homotopy.PathSetIsInital.html#821" class="Bound"
+      >p</a
+      ><a name="822"
+      > </a
+      ><a name="823" class="Symbol"
+      >&#8594;</a
+      ><a name="824"
+      > </a
+      ><a name="825" href="homotopy.PathSetIsInital.html#589" class="Bound"
+      >cover-hom</a
+      ><a name="834"
+      > </a
+      ><a name="835" href="homotopy.PathSetIsInital.html#819" class="Bound"
+      >a</a
+      ><a name="836"
+      > </a
+      ><a name="837" href="homotopy.PathSetIsInital.html#821" class="Bound"
+      >p</a
+      ><a name="838"
+      > </a
+      ><a name="839" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="841"
+      > </a
+      ><a name="842" href="homotopy.PathSetIsInital.html#427" class="Function"
+      >quotient-cover</a
+      ><a name="856"
+      > </a
+      ><a name="857" href="homotopy.PathSetIsInital.html#819" class="Bound"
+      >a</a
+      ><a name="858"
+      > </a
+      ><a name="859" href="homotopy.PathSetIsInital.html#821" class="Bound"
+      >p</a
+      ><a name="860"
+      >
+        </a
+      ><a name="869" href="homotopy.PathSetIsInital.html#808" class="Function"
+      >lemma&#8322;</a
+      ><a name="875"
+      > </a
+      ><a name="876" href="homotopy.PathSetIsInital.html#876" class="Bound"
+      >a</a
+      ><a name="877"
+      > </a
+      ><a name="878" class="Symbol"
+      >=</a
+      ><a name="879"
+      > </a
+      ><a name="880" href="lib.types.Truncation.html#795" class="Function"
+      >Trunc-elim</a
+      ><a name="890"
+      >
+          </a
+      ><a name="901" class="Symbol"
+      >(&#955;</a
+      ><a name="903"
+      > </a
+      ><a name="904" href="homotopy.PathSetIsInital.html#904" class="Bound"
+      >p</a
+      ><a name="905"
+      > </a
+      ><a name="906" class="Symbol"
+      >&#8594;</a
+      ><a name="907"
+      > </a
+      ><a name="908" href="lib.NType.html#3492" class="Function"
+      >=-preserves-level</a
+      ><a name="925"
+      > </a
+      ><a name="926" href="lib.Base.html#8903" class="Function"
+      >&#10216;0&#10217;</a
+      ><a name="929"
+      > </a
+      ><a name="930" class="Symbol"
+      >(</a
+      ><a name="931" href="lib.types.Cover.html#503" class="Field"
+      >Cover.Fiber-level</a
+      ><a name="948"
+      > </a
+      ><a name="949" href="homotopy.PathSetIsInital.html#217" class="Bound"
+      >cov</a
+      ><a name="952"
+      > </a
+      ><a name="953" href="homotopy.PathSetIsInital.html#876" class="Bound"
+      >a</a
+      ><a name="954" class="Symbol"
+      >))</a
+      ><a name="956"
+      >
+          </a
+      ><a name="967" class="Symbol"
+      >(</a
+      ><a name="968" href="homotopy.PathSetIsInital.html#705" class="Function"
+      >lemma&#8321;</a
+      ><a name="974"
+      > </a
+      ><a name="975" href="homotopy.PathSetIsInital.html#876" class="Bound"
+      >a</a
+      ><a name="976" class="Symbol"
+      >)</a
+      ><a name="977"
+      >
+
+      </a
+      ><a name="985" href="homotopy.PathSetIsInital.html#985" class="Function"
+      >theorem</a
+      ><a name="992"
+      > </a
+      ><a name="993" class="Symbol"
+      >:</a
+      ><a name="994"
+      > </a
+      ><a name="995" href="homotopy.PathSetIsInital.html#589" class="Bound"
+      >cover-hom</a
+      ><a name="1004"
+      > </a
+      ><a name="1005" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1007"
+      > </a
+      ><a name="1008" href="homotopy.PathSetIsInital.html#427" class="Function"
+      >quotient-cover</a
+      ><a name="1022"
+      >
+      </a
+      ><a name="1029" href="homotopy.PathSetIsInital.html#985" class="Function"
+      >theorem</a
+      ><a name="1036"
+      > </a
+      ><a name="1037" class="Symbol"
+      >=</a
+      ><a name="1038"
+      > </a
+      ><a name="1039" href="lib.Funext.html#3978" class="Function"
+      >&#955;=</a
+      ><a name="1041"
+      > </a
+      ><a name="1042" class="Symbol"
+      >&#955;</a
+      ><a name="1043"
+      > </a
+      ><a name="1044" href="homotopy.PathSetIsInital.html#1044" class="Bound"
+      >a</a
+      ><a name="1045"
+      > </a
+      ><a name="1046" class="Symbol"
+      >&#8594;</a
+      ><a name="1047"
+      > </a
+      ><a name="1048" href="lib.Funext.html#3978" class="Function"
+      >&#955;=</a
+      ><a name="1050"
+      > </a
+      ><a name="1051" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="1052"
+      > </a
+      ><a name="1053" href="homotopy.PathSetIsInital.html#808" class="Function"
+      >lemma&#8322;</a
+      ><a name="1059"
+      > </a
+      ><a name="1060" href="homotopy.PathSetIsInital.html#1044" class="Bound"
+      >a</a
+      ><a name="1061"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

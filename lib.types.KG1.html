@@ -1,0 +1,6537 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >lib.types.KG1</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --without-K </a
+      ><a name="25" class="Symbol"
+      >#-}</a
+      ><a name="28"
+      > 
+
+</a
+      ><a name="31" class="Keyword"
+      >open</a
+      ><a name="35"
+      > </a
+      ><a name="36" class="Keyword"
+      >import</a
+      ><a name="42"
+      > </a
+      ><a name="43" href="lib.Basics.html#1" class="Module"
+      >lib.Basics</a
+      ><a name="53"
+      >
+</a
+      ><a name="54" class="Keyword"
+      >open</a
+      ><a name="58"
+      > </a
+      ><a name="59" class="Keyword"
+      >import</a
+      ><a name="65"
+      > </a
+      ><a name="66" href="lib.NType2.html#1" class="Module"
+      >lib.NType2</a
+      ><a name="76"
+      >
+</a
+      ><a name="77" class="Keyword"
+      >open</a
+      ><a name="81"
+      > </a
+      ><a name="82" class="Keyword"
+      >import</a
+      ><a name="88"
+      > </a
+      ><a name="89" href="lib.Equivalences2.html#1" class="Module"
+      >lib.Equivalences2</a
+      ><a name="106"
+      >
+</a
+      ><a name="107" class="Keyword"
+      >open</a
+      ><a name="111"
+      > </a
+      ><a name="112" class="Keyword"
+      >import</a
+      ><a name="118"
+      > </a
+      ><a name="119" href="lib.NConnected.html#1" class="Module"
+      >lib.NConnected</a
+      ><a name="133"
+      >
+</a
+      ><a name="134" class="Keyword"
+      >open</a
+      ><a name="138"
+      > </a
+      ><a name="139" class="Keyword"
+      >import</a
+      ><a name="145"
+      > </a
+      ><a name="146" href="lib.types.Nat.html#1" class="Module"
+      >lib.types.Nat</a
+      ><a name="159"
+      >
+</a
+      ><a name="160" class="Keyword"
+      >open</a
+      ><a name="164"
+      > </a
+      ><a name="165" class="Keyword"
+      >import</a
+      ><a name="171"
+      > </a
+      ><a name="172" href="lib.types.Pi.html#1" class="Module"
+      >lib.types.Pi</a
+      ><a name="184"
+      >
+</a
+      ><a name="185" class="Keyword"
+      >open</a
+      ><a name="189"
+      > </a
+      ><a name="190" class="Keyword"
+      >import</a
+      ><a name="196"
+      > </a
+      ><a name="197" href="lib.types.Sigma.html#1" class="Module"
+      >lib.types.Sigma</a
+      ><a name="212"
+      >
+</a
+      ><a name="213" class="Keyword"
+      >open</a
+      ><a name="217"
+      > </a
+      ><a name="218" class="Keyword"
+      >import</a
+      ><a name="224"
+      > </a
+      ><a name="225" href="lib.types.TLevel.html#1" class="Module"
+      >lib.types.TLevel</a
+      ><a name="241"
+      >
+</a
+      ><a name="242" class="Keyword"
+      >open</a
+      ><a name="246"
+      > </a
+      ><a name="247" class="Keyword"
+      >import</a
+      ><a name="253"
+      > </a
+      ><a name="254" href="lib.types.Truncation.html#1" class="Module"
+      >lib.types.Truncation</a
+      ><a name="274"
+      >
+</a
+      ><a name="275" class="Keyword"
+      >open</a
+      ><a name="279"
+      > </a
+      ><a name="280" class="Keyword"
+      >import</a
+      ><a name="286"
+      > </a
+      ><a name="287" href="lib.types.Group.html#1" class="Module"
+      >lib.types.Group</a
+      ><a name="302"
+      >
+</a
+      ><a name="303" class="Keyword"
+      >open</a
+      ><a name="307"
+      > </a
+      ><a name="308" class="Keyword"
+      >import</a
+      ><a name="314"
+      > </a
+      ><a name="315" href="lib.types.Pointed.html#1" class="Module"
+      >lib.types.Pointed</a
+      ><a name="332"
+      >
+</a
+      ><a name="333" class="Keyword"
+      >open</a
+      ><a name="337"
+      > </a
+      ><a name="338" class="Keyword"
+      >import</a
+      ><a name="344"
+      > </a
+      ><a name="345" href="lib.types.LoopSpace.html#1" class="Module"
+      >lib.types.LoopSpace</a
+      ><a name="364"
+      >
+</a
+      ><a name="365" class="Keyword"
+      >open</a
+      ><a name="369"
+      > </a
+      ><a name="370" class="Keyword"
+      >import</a
+      ><a name="376"
+      > </a
+      ><a name="377" href="lib.groups.HomotopyGroup.html#1" class="Module"
+      >lib.groups.HomotopyGroup</a
+      ><a name="401"
+      >
+
+</a
+      ><a name="403" class="Keyword"
+      >module</a
+      ><a name="409"
+      > </a
+      ><a name="410" href="lib.types.KG1.html#1" class="Module"
+      >lib.types.KG1</a
+      ><a name="423"
+      > </a
+      ><a name="424" class="Keyword"
+      >where</a
+      ><a name="429"
+      >
+
+</a
+      ><a name="431" class="Keyword"
+      >module</a
+      ><a name="437"
+      > </a
+      ><a name="438" href="lib.types.KG1.html#438" class="Module"
+      >KG1</a
+      ><a name="441"
+      > </a
+      ><a name="442" class="Symbol"
+      >{</a
+      ><a name="443" href="lib.types.KG1.html#443" class="Bound"
+      >i</a
+      ><a name="444" class="Symbol"
+      >}</a
+      ><a name="445"
+      > </a
+      ><a name="446" class="Symbol"
+      >(</a
+      ><a name="447" href="lib.types.KG1.html#447" class="Bound"
+      >G</a
+      ><a name="448"
+      > </a
+      ><a name="449" class="Symbol"
+      >:</a
+      ><a name="450"
+      > </a
+      ><a name="451" href="lib.types.Group.html#609" class="Record"
+      >Group</a
+      ><a name="456"
+      > </a
+      ><a name="457" href="lib.types.KG1.html#443" class="Bound"
+      >i</a
+      ><a name="458" class="Symbol"
+      >)</a
+      ><a name="459"
+      > </a
+      ><a name="460" class="Keyword"
+      >where</a
+      ><a name="465"
+      >
+
+  </a
+      ><a name="469" class="Keyword"
+      >open</a
+      ><a name="473"
+      > </a
+      ><a name="474" href="lib.types.Group.html#609" class="Module"
+      >Group</a
+      ><a name="479"
+      > </a
+      ><a name="480" href="lib.types.KG1.html#447" class="Bound"
+      >G</a
+      ><a name="481"
+      >
+
+  </a
+      ><a name="485" class="Keyword"
+      >private</a
+      ><a name="492"
+      >
+    </a
+      ><a name="497" class="Keyword"
+      >data</a
+      ><a name="501"
+      > </a
+      ><a name="502" href="lib.types.KG1.html#502" class="Datatype"
+      >#KG1-aux</a
+      ><a name="510"
+      > </a
+      ><a name="511" class="Symbol"
+      >:</a
+      ><a name="512"
+      > </a
+      ><a name="513" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="517"
+      > </a
+      ><a name="518" href="lib.types.KG1.html#443" class="Bound"
+      >i</a
+      ><a name="519"
+      > </a
+      ><a name="520" class="Keyword"
+      >where</a
+      ><a name="525"
+      >
+      </a
+      ><a name="532" href="lib.types.KG1.html#532" class="InductiveConstructor"
+      >#kbase</a
+      ><a name="538"
+      > </a
+      ><a name="539" class="Symbol"
+      >:</a
+      ><a name="540"
+      > </a
+      ><a name="541" href="lib.types.KG1.html#502" class="Datatype"
+      >#KG1-aux</a
+      ><a name="549"
+      >
+
+    </a
+      ><a name="555" class="Keyword"
+      >data</a
+      ><a name="559"
+      > </a
+      ><a name="560" href="lib.types.KG1.html#560" class="Datatype"
+      >#KG1</a
+      ><a name="564"
+      > </a
+      ><a name="565" class="Symbol"
+      >:</a
+      ><a name="566"
+      > </a
+      ><a name="567" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="571"
+      > </a
+      ><a name="572" href="lib.types.KG1.html#443" class="Bound"
+      >i</a
+      ><a name="573"
+      > </a
+      ><a name="574" class="Keyword"
+      >where</a
+      ><a name="579"
+      >
+      </a
+      ><a name="586" href="lib.types.KG1.html#586" class="InductiveConstructor"
+      >#kg1</a
+      ><a name="590"
+      > </a
+      ><a name="591" class="Symbol"
+      >:</a
+      ><a name="592"
+      > </a
+      ><a name="593" href="lib.types.KG1.html#502" class="Datatype"
+      >#KG1-aux</a
+      ><a name="601"
+      > </a
+      ><a name="602" class="Symbol"
+      >&#8594;</a
+      ><a name="603"
+      > </a
+      ><a name="604" class="Symbol"
+      >(</a
+      ><a name="605" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="609"
+      > </a
+      ><a name="610" class="Symbol"
+      >&#8594;</a
+      ><a name="611"
+      > </a
+      ><a name="612" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="616" class="Symbol"
+      >)</a
+      ><a name="617"
+      > </a
+      ><a name="618" class="Symbol"
+      >&#8594;</a
+      ><a name="619"
+      > </a
+      ><a name="620" href="lib.types.KG1.html#560" class="Datatype"
+      >#KG1</a
+      ><a name="624"
+      >
+
+  </a
+      ><a name="628" href="lib.types.KG1.html#628" class="Function"
+      >KG1</a
+      ><a name="631"
+      > </a
+      ><a name="632" class="Symbol"
+      >:</a
+      ><a name="633"
+      > </a
+      ><a name="634" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="638"
+      > </a
+      ><a name="639" href="lib.types.KG1.html#443" class="Bound"
+      >i</a
+      ><a name="640"
+      >
+  </a
+      ><a name="643" href="lib.types.KG1.html#628" class="Function"
+      >KG1</a
+      ><a name="646"
+      > </a
+      ><a name="647" class="Symbol"
+      >=</a
+      ><a name="648"
+      > </a
+      ><a name="649" href="lib.types.KG1.html#560" class="Datatype"
+      >#KG1</a
+      ><a name="653"
+      >
+
+  </a
+      ><a name="657" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="662"
+      > </a
+      ><a name="663" class="Symbol"
+      >:</a
+      ><a name="664"
+      > </a
+      ><a name="665" href="lib.types.KG1.html#628" class="Function"
+      >KG1</a
+      ><a name="668"
+      >
+  </a
+      ><a name="671" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="676"
+      > </a
+      ><a name="677" class="Symbol"
+      >=</a
+      ><a name="678"
+      > </a
+      ><a name="679" href="lib.types.KG1.html#586" class="InductiveConstructor"
+      >#kg1</a
+      ><a name="683"
+      > </a
+      ><a name="684" href="lib.types.KG1.html#532" class="InductiveConstructor"
+      >#kbase</a
+      ><a name="690"
+      > </a
+      ><a name="691" class="Symbol"
+      >_</a
+      ><a name="692"
+      >
+
+  </a
+      ><a name="696" href="lib.types.KG1.html#696" class="Function"
+      >Ptd-KG1</a
+      ><a name="703"
+      > </a
+      ><a name="704" class="Symbol"
+      >:</a
+      ><a name="705"
+      > </a
+      ><a name="706" href="lib.types.Pointed.html#232" class="Function"
+      >Ptd</a
+      ><a name="709"
+      > </a
+      ><a name="710" href="lib.types.KG1.html#443" class="Bound"
+      >i</a
+      ><a name="711"
+      >
+  </a
+      ><a name="714" href="lib.types.KG1.html#696" class="Function"
+      >Ptd-KG1</a
+      ><a name="721"
+      > </a
+      ><a name="722" class="Symbol"
+      >=</a
+      ><a name="723"
+      > </a
+      ><a name="724" href="lib.types.Pointed.html#307" class="Function Operator"
+      >&#8729;[</a
+      ><a name="726"
+      > </a
+      ><a name="727" href="lib.types.KG1.html#628" class="Function"
+      >KG1</a
+      ><a name="730"
+      > </a
+      ><a name="731" href="lib.types.Pointed.html#307" class="Function Operator"
+      >,</a
+      ><a name="732"
+      > </a
+      ><a name="733" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="738"
+      > </a
+      ><a name="739" href="lib.types.Pointed.html#307" class="Function Operator"
+      >]</a
+      ><a name="740"
+      >
+
+  </a
+      ><a name="744" class="Keyword"
+      >postulate</a
+      ><a name="753"
+      >  </a
+      ><a name="755" class="Comment"
+      >-- HIT</a
+      ><a name="761"
+      >
+    </a
+      ><a name="766" href="lib.types.KG1.html#766" class="Postulate"
+      >klevel</a
+      ><a name="772"
+      > </a
+      ><a name="773" class="Symbol"
+      >:</a
+      ><a name="774"
+      > </a
+      ><a name="775" href="lib.NType.html#243" class="Function"
+      >has-level</a
+      ><a name="784"
+      > </a
+      ><a name="785" href="lib.types.TLevel.html#269" class="Function Operator"
+      >&#10216;</a
+      ><a name="786"
+      > </a
+      ><a name="787" class="Number"
+      >1</a
+      ><a name="788"
+      > </a
+      ><a name="789" href="lib.types.TLevel.html#269" class="Function Operator"
+      >&#10217;</a
+      ><a name="790"
+      > </a
+      ><a name="791" href="lib.types.KG1.html#628" class="Function"
+      >KG1</a
+      ><a name="794"
+      >
+    </a
+      ><a name="799" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="804"
+      > </a
+      ><a name="805" class="Symbol"
+      >:</a
+      ><a name="806"
+      > </a
+      ><a name="807" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="809"
+      > </a
+      ><a name="810" class="Symbol"
+      >&#8594;</a
+      ><a name="811"
+      > </a
+      ><a name="812" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="817"
+      > </a
+      ><a name="818" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="820"
+      > </a
+      ><a name="821" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="826"
+      >
+    </a
+      ><a name="831" href="lib.types.KG1.html#831" class="Postulate"
+      >kloop-ident</a
+      ><a name="842"
+      > </a
+      ><a name="843" class="Symbol"
+      >:</a
+      ><a name="844"
+      > </a
+      ><a name="845" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="850"
+      > </a
+      ><a name="851" href="lib.types.Group.html#321" class="Function"
+      >ident</a
+      ><a name="856"
+      > </a
+      ><a name="857" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="859"
+      > </a
+      ><a name="860" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="863"
+      >
+    </a
+      ><a name="868" href="lib.types.KG1.html#868" class="Postulate"
+      >kloop-comp</a
+      ><a name="878"
+      > </a
+      ><a name="879" class="Symbol"
+      >:</a
+      ><a name="880"
+      > </a
+      ><a name="881" class="Symbol"
+      >&#8704;</a
+      ><a name="882"
+      > </a
+      ><a name="883" href="lib.types.KG1.html#883" class="Bound"
+      >g&#8321;</a
+      ><a name="885"
+      > </a
+      ><a name="886" href="lib.types.KG1.html#886" class="Bound"
+      >g&#8322;</a
+      ><a name="888"
+      > </a
+      ><a name="889" class="Symbol"
+      >&#8594;</a
+      ><a name="890"
+      > </a
+      ><a name="891" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="896"
+      > </a
+      ><a name="897" class="Symbol"
+      >(</a
+      ><a name="898" href="lib.types.Group.html#354" class="Function"
+      >comp</a
+      ><a name="902"
+      > </a
+      ><a name="903" href="lib.types.KG1.html#883" class="Bound"
+      >g&#8321;</a
+      ><a name="905"
+      > </a
+      ><a name="906" href="lib.types.KG1.html#886" class="Bound"
+      >g&#8322;</a
+      ><a name="908" class="Symbol"
+      >)</a
+      ><a name="909"
+      > </a
+      ><a name="910" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="912"
+      > </a
+      ><a name="913" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="918"
+      > </a
+      ><a name="919" href="lib.types.KG1.html#883" class="Bound"
+      >g&#8321;</a
+      ><a name="921"
+      > </a
+      ><a name="922" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="923"
+      > </a
+      ><a name="924" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="929"
+      > </a
+      ><a name="930" href="lib.types.KG1.html#886" class="Bound"
+      >g&#8322;</a
+      ><a name="932"
+      >
+
+  </a
+      ><a name="936" class="Keyword"
+      >module</a
+      ><a name="942"
+      > </a
+      ><a name="943" href="lib.types.KG1.html#943" class="Module"
+      >KG1Rec</a
+      ><a name="949"
+      > </a
+      ><a name="950" class="Symbol"
+      >{</a
+      ><a name="951" href="lib.types.KG1.html#951" class="Bound"
+      >j</a
+      ><a name="952" class="Symbol"
+      >}</a
+      ><a name="953"
+      > </a
+      ><a name="954" class="Symbol"
+      >{</a
+      ><a name="955" href="lib.types.KG1.html#955" class="Bound"
+      >C</a
+      ><a name="956"
+      > </a
+      ><a name="957" class="Symbol"
+      >:</a
+      ><a name="958"
+      > </a
+      ><a name="959" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="963"
+      > </a
+      ><a name="964" href="lib.types.KG1.html#951" class="Bound"
+      >j</a
+      ><a name="965" class="Symbol"
+      >}</a
+      ><a name="966"
+      >
+    </a
+      ><a name="971" class="Symbol"
+      >(</a
+      ><a name="972" href="lib.types.KG1.html#972" class="Bound"
+      >C-level</a
+      ><a name="979"
+      > </a
+      ><a name="980" class="Symbol"
+      >:</a
+      ><a name="981"
+      > </a
+      ><a name="982" href="lib.NType.html#243" class="Function"
+      >has-level</a
+      ><a name="991"
+      > </a
+      ><a name="992" href="lib.types.TLevel.html#269" class="Function Operator"
+      >&#10216;</a
+      ><a name="993"
+      > </a
+      ><a name="994" class="Number"
+      >1</a
+      ><a name="995"
+      > </a
+      ><a name="996" href="lib.types.TLevel.html#269" class="Function Operator"
+      >&#10217;</a
+      ><a name="997"
+      > </a
+      ><a name="998" href="lib.types.KG1.html#955" class="Bound"
+      >C</a
+      ><a name="999" class="Symbol"
+      >)</a
+      ><a name="1000"
+      >
+    </a
+      ><a name="1005" class="Symbol"
+      >(</a
+      ><a name="1006" href="lib.types.KG1.html#1006" class="Bound"
+      >kbase*</a
+      ><a name="1012"
+      > </a
+      ><a name="1013" class="Symbol"
+      >:</a
+      ><a name="1014"
+      > </a
+      ><a name="1015" href="lib.types.KG1.html#955" class="Bound"
+      >C</a
+      ><a name="1016" class="Symbol"
+      >)</a
+      ><a name="1017"
+      > 
+    </a
+      ><a name="1023" class="Symbol"
+      >(</a
+      ><a name="1024" href="lib.types.KG1.html#1024" class="Bound"
+      >hom*</a
+      ><a name="1028"
+      > </a
+      ><a name="1029" class="Symbol"
+      >:</a
+      ><a name="1030"
+      > </a
+      ><a name="1031" href="lib.types.Group.html#1020" class="Record"
+      >GroupHom</a
+      ><a name="1039"
+      > </a
+      ><a name="1040" href="lib.types.KG1.html#447" class="Bound"
+      >G</a
+      ><a name="1041"
+      > </a
+      ><a name="1042" class="Symbol"
+      >(</a
+      ><a name="1043" href="lib.types.LoopSpace.html#5306" class="Function"
+      >&#937;^-Group</a
+      ><a name="1051"
+      > </a
+      ><a name="1052" class="Number"
+      >1</a
+      ><a name="1053"
+      > </a
+      ><a name="1054" class="Symbol"
+      >(</a
+      ><a name="1055" href="lib.types.KG1.html#955" class="Bound"
+      >C</a
+      ><a name="1056"
+      > </a
+      ><a name="1057" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1058"
+      > </a
+      ><a name="1059" href="lib.types.KG1.html#1006" class="Bound"
+      >kbase*</a
+      ><a name="1065" class="Symbol"
+      >)</a
+      ><a name="1066"
+      > </a
+      ><a name="1067" href="lib.types.KG1.html#972" class="Bound"
+      >C-level</a
+      ><a name="1074" class="Symbol"
+      >))</a
+      ><a name="1076"
+      > </a
+      ><a name="1077" class="Keyword"
+      >where</a
+      ><a name="1082"
+      >
+
+    </a
+      ><a name="1088" href="lib.types.KG1.html#1088" class="Function"
+      >f</a
+      ><a name="1089"
+      > </a
+      ><a name="1090" class="Symbol"
+      >:</a
+      ><a name="1091"
+      > </a
+      ><a name="1092" href="lib.types.KG1.html#628" class="Function"
+      >KG1</a
+      ><a name="1095"
+      > </a
+      ><a name="1096" class="Symbol"
+      >&#8594;</a
+      ><a name="1097"
+      > </a
+      ><a name="1098" href="lib.types.KG1.html#955" class="Bound"
+      >C</a
+      ><a name="1099"
+      >
+    </a
+      ><a name="1104" href="lib.types.KG1.html#1088" class="Function"
+      >f</a
+      ><a name="1105"
+      > </a
+      ><a name="1106" class="Symbol"
+      >(</a
+      ><a name="1107" href="lib.types.KG1.html#586" class="InductiveConstructor"
+      >#kg1</a
+      ><a name="1111"
+      > </a
+      ><a name="1112" href="lib.types.KG1.html#532" class="InductiveConstructor"
+      >#kbase</a
+      ><a name="1118"
+      > </a
+      ><a name="1119" class="Symbol"
+      >_)</a
+      ><a name="1121"
+      > </a
+      ><a name="1122" class="Symbol"
+      >=</a
+      ><a name="1123"
+      > </a
+      ><a name="1124" href="lib.types.KG1.html#1006" class="Bound"
+      >kbase*</a
+      ><a name="1130"
+      >
+
+    </a
+      ><a name="1136" class="Keyword"
+      >postulate</a
+      ><a name="1145"
+      >  </a
+      ><a name="1147" class="Comment"
+      >-- HIT</a
+      ><a name="1153"
+      >
+      </a
+      ><a name="1160" href="lib.types.KG1.html#1160" class="Postulate"
+      >kloop-&#946;</a
+      ><a name="1167"
+      > </a
+      ><a name="1168" class="Symbol"
+      >:</a
+      ><a name="1169"
+      > </a
+      ><a name="1170" class="Symbol"
+      >(</a
+      ><a name="1171" href="lib.types.KG1.html#1171" class="Bound"
+      >g</a
+      ><a name="1172"
+      > </a
+      ><a name="1173" class="Symbol"
+      >:</a
+      ><a name="1174"
+      > </a
+      ><a name="1175" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="1177" class="Symbol"
+      >)</a
+      ><a name="1178"
+      > </a
+      ><a name="1179" class="Symbol"
+      >&#8594;</a
+      ><a name="1180"
+      > </a
+      ><a name="1181" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="1183"
+      > </a
+      ><a name="1184" href="lib.types.KG1.html#1088" class="Function"
+      >f</a
+      ><a name="1185"
+      > </a
+      ><a name="1186" class="Symbol"
+      >(</a
+      ><a name="1187" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="1192"
+      > </a
+      ><a name="1193" href="lib.types.KG1.html#1171" class="Bound"
+      >g</a
+      ><a name="1194" class="Symbol"
+      >)</a
+      ><a name="1195"
+      > </a
+      ><a name="1196" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1198"
+      > </a
+      ><a name="1199" href="lib.types.Group.html#1147" class="Field"
+      >GroupHom.f</a
+      ><a name="1209"
+      > </a
+      ><a name="1210" href="lib.types.KG1.html#1024" class="Bound"
+      >hom*</a
+      ><a name="1214"
+      > </a
+      ><a name="1215" href="lib.types.KG1.html#1171" class="Bound"
+      >g</a
+      ><a name="1216"
+      >
+
+  </a
+      ><a name="1220" class="Keyword"
+      >open</a
+      ><a name="1224"
+      > </a
+      ><a name="1225" href="lib.types.KG1.html#943" class="Module"
+      >KG1Rec</a
+      ><a name="1231"
+      > </a
+      ><a name="1232" class="Keyword"
+      >public</a
+      ><a name="1238"
+      > </a
+      ><a name="1239" class="Keyword"
+      >using</a
+      ><a name="1244"
+      > </a
+      ><a name="1245" class="Symbol"
+      >()</a
+      ><a name="1247"
+      > </a
+      ><a name="1248" class="Keyword"
+      >renaming</a
+      ><a name="1256"
+      > </a
+      ><a name="1257" class="Symbol"
+      >(</a
+      ><a name="1258"
+      >f </a
+      ><a name="1260" class="Symbol"
+      >to</a
+      ><a name="1262"
+      > KG1-rec</a
+      ><a name="1270" class="Symbol"
+      >)</a
+      ><a name="1271"
+      >
+
+  </a
+      ><a name="1275" class="Keyword"
+      >module</a
+      ><a name="1281"
+      > </a
+      ><a name="1282" href="lib.types.KG1.html#1282" class="Module"
+      >KG1Elim</a
+      ><a name="1289"
+      > </a
+      ><a name="1290" class="Symbol"
+      >{</a
+      ><a name="1291" href="lib.types.KG1.html#1291" class="Bound"
+      >j</a
+      ><a name="1292" class="Symbol"
+      >}</a
+      ><a name="1293"
+      > </a
+      ><a name="1294" class="Symbol"
+      >{</a
+      ><a name="1295" href="lib.types.KG1.html#1295" class="Bound"
+      >P</a
+      ><a name="1296"
+      > </a
+      ><a name="1297" class="Symbol"
+      >:</a
+      ><a name="1298"
+      > </a
+      ><a name="1299" href="lib.types.KG1.html#628" class="Function"
+      >KG1</a
+      ><a name="1302"
+      > </a
+      ><a name="1303" class="Symbol"
+      >&#8594;</a
+      ><a name="1304"
+      > </a
+      ><a name="1305" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="1309"
+      > </a
+      ><a name="1310" href="lib.types.KG1.html#1291" class="Bound"
+      >j</a
+      ><a name="1311" class="Symbol"
+      >}</a
+      ><a name="1312"
+      >
+    </a
+      ><a name="1317" class="Symbol"
+      >(</a
+      ><a name="1318" href="lib.types.KG1.html#1318" class="Bound"
+      >P-level</a
+      ><a name="1325"
+      > </a
+      ><a name="1326" class="Symbol"
+      >:</a
+      ><a name="1327"
+      > </a
+      ><a name="1328" class="Symbol"
+      >(</a
+      ><a name="1329" href="lib.types.KG1.html#1329" class="Bound"
+      >x</a
+      ><a name="1330"
+      > </a
+      ><a name="1331" class="Symbol"
+      >:</a
+      ><a name="1332"
+      > </a
+      ><a name="1333" href="lib.types.KG1.html#628" class="Function"
+      >KG1</a
+      ><a name="1336" class="Symbol"
+      >)</a
+      ><a name="1337"
+      > </a
+      ><a name="1338" class="Symbol"
+      >&#8594;</a
+      ><a name="1339"
+      > </a
+      ><a name="1340" href="lib.NType.html#243" class="Function"
+      >has-level</a
+      ><a name="1349"
+      > </a
+      ><a name="1350" href="lib.types.TLevel.html#269" class="Function Operator"
+      >&#10216;</a
+      ><a name="1351"
+      > </a
+      ><a name="1352" class="Number"
+      >1</a
+      ><a name="1353"
+      > </a
+      ><a name="1354" href="lib.types.TLevel.html#269" class="Function Operator"
+      >&#10217;</a
+      ><a name="1355"
+      > </a
+      ><a name="1356" class="Symbol"
+      >(</a
+      ><a name="1357" href="lib.types.KG1.html#1295" class="Bound"
+      >P</a
+      ><a name="1358"
+      > </a
+      ><a name="1359" href="lib.types.KG1.html#1329" class="Bound"
+      >x</a
+      ><a name="1360" class="Symbol"
+      >))</a
+      ><a name="1362"
+      >
+    </a
+      ><a name="1367" class="Symbol"
+      >(</a
+      ><a name="1368" href="lib.types.KG1.html#1368" class="Bound"
+      >kbase*</a
+      ><a name="1374"
+      > </a
+      ><a name="1375" class="Symbol"
+      >:</a
+      ><a name="1376"
+      > </a
+      ><a name="1377" href="lib.types.KG1.html#1295" class="Bound"
+      >P</a
+      ><a name="1378"
+      > </a
+      ><a name="1379" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="1384" class="Symbol"
+      >)</a
+      ><a name="1385"
+      >
+    </a
+      ><a name="1390" class="Symbol"
+      >(</a
+      ><a name="1391" href="lib.types.KG1.html#1391" class="Bound"
+      >kloop*</a
+      ><a name="1397"
+      > </a
+      ><a name="1398" class="Symbol"
+      >:</a
+      ><a name="1399"
+      > </a
+      ><a name="1400" class="Symbol"
+      >(</a
+      ><a name="1401" href="lib.types.KG1.html#1401" class="Bound"
+      >g</a
+      ><a name="1402"
+      > </a
+      ><a name="1403" class="Symbol"
+      >:</a
+      ><a name="1404"
+      > </a
+      ><a name="1405" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="1407" class="Symbol"
+      >)</a
+      ><a name="1408"
+      > </a
+      ><a name="1409" class="Symbol"
+      >&#8594;</a
+      ><a name="1410"
+      > </a
+      ><a name="1411" href="lib.types.KG1.html#1368" class="Bound"
+      >kbase*</a
+      ><a name="1417"
+      > </a
+      ><a name="1418" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="1420"
+      > </a
+      ><a name="1421" href="lib.types.KG1.html#1368" class="Bound"
+      >kbase*</a
+      ><a name="1427"
+      > </a
+      ><a name="1428" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="1429"
+      > </a
+      ><a name="1430" href="lib.types.KG1.html#1295" class="Bound"
+      >P</a
+      ><a name="1431"
+      > </a
+      ><a name="1432" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="1433"
+      > </a
+      ><a name="1434" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="1439"
+      > </a
+      ><a name="1440" href="lib.types.KG1.html#1401" class="Bound"
+      >g</a
+      ><a name="1441"
+      > </a
+      ><a name="1442" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="1443" class="Symbol"
+      >)</a
+      ><a name="1444"
+      >
+    </a
+      ><a name="1449" class="Symbol"
+      >(</a
+      ><a name="1450" href="lib.types.KG1.html#1450" class="Bound"
+      >preserves-ident</a
+      ><a name="1465"
+      > </a
+      ><a name="1466" class="Symbol"
+      >:</a
+      ><a name="1467"
+      > </a
+      ><a name="1468" href="lib.types.KG1.html#1391" class="Bound"
+      >kloop*</a
+      ><a name="1474"
+      > </a
+      ><a name="1475" href="lib.types.Group.html#321" class="Function"
+      >ident</a
+      ><a name="1480"
+      > </a
+      ><a name="1481" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="1483"
+      > </a
+      ><a name="1484" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="1487"
+      >
+       </a
+      ><a name="1495" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="1496"
+      > </a
+      ><a name="1497" class="Symbol"
+      >(&#955;</a
+      ><a name="1499"
+      > </a
+      ><a name="1500" href="lib.types.KG1.html#1500" class="Bound"
+      >p</a
+      ><a name="1501"
+      > </a
+      ><a name="1502" class="Symbol"
+      >&#8594;</a
+      ><a name="1503"
+      > </a
+      ><a name="1504" href="lib.types.KG1.html#1368" class="Bound"
+      >kbase*</a
+      ><a name="1510"
+      > </a
+      ><a name="1511" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="1513"
+      > </a
+      ><a name="1514" href="lib.types.KG1.html#1368" class="Bound"
+      >kbase*</a
+      ><a name="1520"
+      > </a
+      ><a name="1521" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="1522"
+      > </a
+      ><a name="1523" href="lib.types.KG1.html#1295" class="Bound"
+      >P</a
+      ><a name="1524"
+      > </a
+      ><a name="1525" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="1526"
+      > </a
+      ><a name="1527" href="lib.types.KG1.html#1500" class="Bound"
+      >p</a
+      ><a name="1528"
+      > </a
+      ><a name="1529" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="1530" class="Symbol"
+      >)</a
+      ><a name="1531"
+      > </a
+      ><a name="1532" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="1533"
+      > </a
+      ><a name="1534" href="lib.types.KG1.html#831" class="Postulate"
+      >kloop-ident</a
+      ><a name="1545"
+      > </a
+      ><a name="1546" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="1547" class="Symbol"
+      >)</a
+      ><a name="1548"
+      >
+    </a
+      ><a name="1553" class="Symbol"
+      >(</a
+      ><a name="1554" href="lib.types.KG1.html#1554" class="Bound"
+      >preserves-comp</a
+      ><a name="1568"
+      > </a
+      ><a name="1569" class="Symbol"
+      >:</a
+      ><a name="1570"
+      > </a
+      ><a name="1571" class="Symbol"
+      >(</a
+      ><a name="1572" href="lib.types.KG1.html#1572" class="Bound"
+      >g&#8321;</a
+      ><a name="1574"
+      > </a
+      ><a name="1575" href="lib.types.KG1.html#1575" class="Bound"
+      >g&#8322;</a
+      ><a name="1577"
+      > </a
+      ><a name="1578" class="Symbol"
+      >:</a
+      ><a name="1579"
+      > </a
+      ><a name="1580" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="1582" class="Symbol"
+      >)</a
+      ><a name="1583"
+      > </a
+      ><a name="1584" class="Symbol"
+      >&#8594;</a
+      ><a name="1585"
+      > 
+       </a
+      ><a name="1594" href="lib.types.KG1.html#1391" class="Bound"
+      >kloop*</a
+      ><a name="1600"
+      > </a
+      ><a name="1601" class="Symbol"
+      >(</a
+      ><a name="1602" href="lib.types.Group.html#354" class="Function"
+      >comp</a
+      ><a name="1606"
+      > </a
+      ><a name="1607" href="lib.types.KG1.html#1572" class="Bound"
+      >g&#8321;</a
+      ><a name="1609"
+      > </a
+      ><a name="1610" href="lib.types.KG1.html#1575" class="Bound"
+      >g&#8322;</a
+      ><a name="1612" class="Symbol"
+      >)</a
+      ><a name="1613"
+      > </a
+      ><a name="1614" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="1616"
+      > </a
+      ><a name="1617" href="lib.types.KG1.html#1391" class="Bound"
+      >kloop*</a
+      ><a name="1623"
+      > </a
+      ><a name="1624" href="lib.types.KG1.html#1572" class="Bound"
+      >g&#8321;</a
+      ><a name="1626"
+      > </a
+      ><a name="1627" href="lib.PathGroupoid.html#4051" class="Function Operator"
+      >&#8729;&#7496;</a
+      ><a name="1629"
+      > </a
+      ><a name="1630" href="lib.types.KG1.html#1391" class="Bound"
+      >kloop*</a
+      ><a name="1636"
+      > </a
+      ><a name="1637" href="lib.types.KG1.html#1575" class="Bound"
+      >g&#8322;</a
+      ><a name="1639"
+      >
+       </a
+      ><a name="1647" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="1648"
+      > </a
+      ><a name="1649" class="Symbol"
+      >(&#955;</a
+      ><a name="1651"
+      > </a
+      ><a name="1652" href="lib.types.KG1.html#1652" class="Bound"
+      >p</a
+      ><a name="1653"
+      > </a
+      ><a name="1654" class="Symbol"
+      >&#8594;</a
+      ><a name="1655"
+      > </a
+      ><a name="1656" href="lib.types.KG1.html#1368" class="Bound"
+      >kbase*</a
+      ><a name="1662"
+      > </a
+      ><a name="1663" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="1665"
+      > </a
+      ><a name="1666" href="lib.types.KG1.html#1368" class="Bound"
+      >kbase*</a
+      ><a name="1672"
+      > </a
+      ><a name="1673" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="1674"
+      > </a
+      ><a name="1675" href="lib.types.KG1.html#1295" class="Bound"
+      >P</a
+      ><a name="1676"
+      > </a
+      ><a name="1677" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="1678"
+      > </a
+      ><a name="1679" href="lib.types.KG1.html#1652" class="Bound"
+      >p</a
+      ><a name="1680"
+      > </a
+      ><a name="1681" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="1682" class="Symbol"
+      >)</a
+      ><a name="1683"
+      > </a
+      ><a name="1684" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="1685"
+      > </a
+      ><a name="1686" href="lib.types.KG1.html#868" class="Postulate"
+      >kloop-comp</a
+      ><a name="1696"
+      > </a
+      ><a name="1697" href="lib.types.KG1.html#1572" class="Bound"
+      >g&#8321;</a
+      ><a name="1699"
+      > </a
+      ><a name="1700" href="lib.types.KG1.html#1575" class="Bound"
+      >g&#8322;</a
+      ><a name="1702"
+      > </a
+      ><a name="1703" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="1704" class="Symbol"
+      >)</a
+      ><a name="1705"
+      >
+    </a
+      ><a name="1710" class="Keyword"
+      >where</a
+      ><a name="1715"
+      >
+
+    </a
+      ><a name="1721" href="lib.types.KG1.html#1721" class="Function"
+      >f</a
+      ><a name="1722"
+      > </a
+      ><a name="1723" class="Symbol"
+      >:</a
+      ><a name="1724"
+      > </a
+      ><a name="1725" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="1726"
+      > </a
+      ><a name="1727" href="lib.types.KG1.html#628" class="Function"
+      >KG1</a
+      ><a name="1730"
+      > </a
+      ><a name="1731" href="lib.types.KG1.html#1295" class="Bound"
+      >P</a
+      ><a name="1732"
+      >
+    </a
+      ><a name="1737" href="lib.types.KG1.html#1721" class="Function"
+      >f</a
+      ><a name="1738"
+      > </a
+      ><a name="1739" class="Symbol"
+      >(</a
+      ><a name="1740" href="lib.types.KG1.html#586" class="InductiveConstructor"
+      >#kg1</a
+      ><a name="1744"
+      > </a
+      ><a name="1745" href="lib.types.KG1.html#532" class="InductiveConstructor"
+      >#kbase</a
+      ><a name="1751"
+      > </a
+      ><a name="1752" class="Symbol"
+      >_)</a
+      ><a name="1754"
+      > </a
+      ><a name="1755" class="Symbol"
+      >=</a
+      ><a name="1756"
+      > </a
+      ><a name="1757" href="lib.types.KG1.html#1368" class="Bound"
+      >kbase*</a
+      ><a name="1763"
+      >
+
+    </a
+      ><a name="1769" class="Keyword"
+      >postulate</a
+      ><a name="1778"
+      >  </a
+      ><a name="1780" class="Comment"
+      >-- HIT</a
+      ><a name="1786"
+      >
+      </a
+      ><a name="1793" href="lib.types.KG1.html#1793" class="Postulate"
+      >kloop-&#946;</a
+      ><a name="1800"
+      > </a
+      ><a name="1801" class="Symbol"
+      >:</a
+      ><a name="1802"
+      > </a
+      ><a name="1803" class="Symbol"
+      >(</a
+      ><a name="1804" href="lib.types.KG1.html#1804" class="Bound"
+      >g</a
+      ><a name="1805"
+      > </a
+      ><a name="1806" class="Symbol"
+      >:</a
+      ><a name="1807"
+      > </a
+      ><a name="1808" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="1810" class="Symbol"
+      >)</a
+      ><a name="1811"
+      > </a
+      ><a name="1812" class="Symbol"
+      >&#8594;</a
+      ><a name="1813"
+      > </a
+      ><a name="1814" href="lib.Base.html#4053" class="Function"
+      >apd</a
+      ><a name="1817"
+      > </a
+      ><a name="1818" href="lib.types.KG1.html#1721" class="Function"
+      >f</a
+      ><a name="1819"
+      > </a
+      ><a name="1820" class="Symbol"
+      >(</a
+      ><a name="1821" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="1826"
+      > </a
+      ><a name="1827" href="lib.types.KG1.html#1804" class="Bound"
+      >g</a
+      ><a name="1828" class="Symbol"
+      >)</a
+      ><a name="1829"
+      > </a
+      ><a name="1830" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1832"
+      > </a
+      ><a name="1833" href="lib.types.KG1.html#1391" class="Bound"
+      >kloop*</a
+      ><a name="1839"
+      > </a
+      ><a name="1840" href="lib.types.KG1.html#1804" class="Bound"
+      >g</a
+      ><a name="1841"
+      >
+
+  </a
+      ><a name="1845" class="Keyword"
+      >open</a
+      ><a name="1849"
+      > </a
+      ><a name="1850" href="lib.types.KG1.html#1282" class="Module"
+      >KG1Elim</a
+      ><a name="1857"
+      > </a
+      ><a name="1858" class="Keyword"
+      >public</a
+      ><a name="1864"
+      > </a
+      ><a name="1865" class="Keyword"
+      >using</a
+      ><a name="1870"
+      > </a
+      ><a name="1871" class="Symbol"
+      >()</a
+      ><a name="1873"
+      > </a
+      ><a name="1874" class="Keyword"
+      >renaming</a
+      ><a name="1882"
+      > </a
+      ><a name="1883" class="Symbol"
+      >(</a
+      ><a name="1884"
+      >f </a
+      ><a name="1886" class="Symbol"
+      >to</a
+      ><a name="1888"
+      > KG1-elim</a
+      ><a name="1897" class="Symbol"
+      >)</a
+      ><a name="1898"
+      >
+
+  </a
+      ><a name="1902" href="lib.types.KG1.html#1902" class="Function"
+      >kloop-inv</a
+      ><a name="1911"
+      > </a
+      ><a name="1912" class="Symbol"
+      >:</a
+      ><a name="1913"
+      > </a
+      ><a name="1914" class="Symbol"
+      >&#8704;</a
+      ><a name="1915"
+      > </a
+      ><a name="1916" href="lib.types.KG1.html#1916" class="Bound"
+      >g</a
+      ><a name="1917"
+      > </a
+      ><a name="1918" class="Symbol"
+      >&#8594;</a
+      ><a name="1919"
+      > </a
+      ><a name="1920" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="1925"
+      > </a
+      ><a name="1926" class="Symbol"
+      >(</a
+      ><a name="1927" href="lib.types.Group.html#336" class="Function"
+      >inv</a
+      ><a name="1930"
+      > </a
+      ><a name="1931" href="lib.types.KG1.html#1916" class="Bound"
+      >g</a
+      ><a name="1932" class="Symbol"
+      >)</a
+      ><a name="1933"
+      > </a
+      ><a name="1934" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1936"
+      > </a
+      ><a name="1937" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="1938"
+      > </a
+      ><a name="1939" class="Symbol"
+      >(</a
+      ><a name="1940" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="1945"
+      > </a
+      ><a name="1946" href="lib.types.KG1.html#1916" class="Bound"
+      >g</a
+      ><a name="1947" class="Symbol"
+      >)</a
+      ><a name="1948"
+      >
+  </a
+      ><a name="1951" href="lib.types.KG1.html#1902" class="Function"
+      >kloop-inv</a
+      ><a name="1960"
+      > </a
+      ><a name="1961" href="lib.types.KG1.html#1961" class="Bound"
+      >g</a
+      ><a name="1962"
+      > </a
+      ><a name="1963" class="Symbol"
+      >=</a
+      ><a name="1964"
+      > </a
+      ><a name="1965" href="lib.types.KG1.html#2008" class="Function"
+      >cancels-inverse</a
+      ><a name="1980"
+      > </a
+      ><a name="1981" class="Symbol"
+      >_</a
+      ><a name="1982"
+      > </a
+      ><a name="1983" class="Symbol"
+      >_</a
+      ><a name="1984"
+      > </a
+      ><a name="1985" href="lib.types.KG1.html#2174" class="Function"
+      >lemma</a
+      ><a name="1990"
+      >
+    </a
+      ><a name="1995" class="Keyword"
+      >where</a
+      ><a name="2000"
+      > 
+      </a
+      ><a name="2008" href="lib.types.KG1.html#2008" class="Function"
+      >cancels-inverse</a
+      ><a name="2023"
+      > </a
+      ><a name="2024" class="Symbol"
+      >:</a
+      ><a name="2025"
+      > </a
+      ><a name="2026" class="Symbol"
+      >&#8704;</a
+      ><a name="2027"
+      > </a
+      ><a name="2028" class="Symbol"
+      >{</a
+      ><a name="2029" href="lib.types.KG1.html#2029" class="Bound"
+      >i</a
+      ><a name="2030" class="Symbol"
+      >}</a
+      ><a name="2031"
+      > </a
+      ><a name="2032" class="Symbol"
+      >{</a
+      ><a name="2033" href="lib.types.KG1.html#2033" class="Bound"
+      >A</a
+      ><a name="2034"
+      > </a
+      ><a name="2035" class="Symbol"
+      >:</a
+      ><a name="2036"
+      > </a
+      ><a name="2037" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="2041"
+      > </a
+      ><a name="2042" href="lib.types.KG1.html#2029" class="Bound"
+      >i</a
+      ><a name="2043" class="Symbol"
+      >}</a
+      ><a name="2044"
+      > </a
+      ><a name="2045" class="Symbol"
+      >{</a
+      ><a name="2046" href="lib.types.KG1.html#2046" class="Bound"
+      >x</a
+      ><a name="2047"
+      > </a
+      ><a name="2048" href="lib.types.KG1.html#2048" class="Bound"
+      >y</a
+      ><a name="2049"
+      > </a
+      ><a name="2050" class="Symbol"
+      >:</a
+      ><a name="2051"
+      > </a
+      ><a name="2052" href="lib.types.KG1.html#2033" class="Bound"
+      >A</a
+      ><a name="2053" class="Symbol"
+      >}</a
+      ><a name="2054"
+      > 
+        </a
+      ><a name="2064" class="Symbol"
+      >(</a
+      ><a name="2065" href="lib.types.KG1.html#2065" class="Bound"
+      >p</a
+      ><a name="2066"
+      > </a
+      ><a name="2067" class="Symbol"
+      >:</a
+      ><a name="2068"
+      > </a
+      ><a name="2069" href="lib.types.KG1.html#2046" class="Bound"
+      >x</a
+      ><a name="2070"
+      > </a
+      ><a name="2071" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2073"
+      > </a
+      ><a name="2074" href="lib.types.KG1.html#2048" class="Bound"
+      >y</a
+      ><a name="2075" class="Symbol"
+      >)</a
+      ><a name="2076"
+      > </a
+      ><a name="2077" class="Symbol"
+      >(</a
+      ><a name="2078" href="lib.types.KG1.html#2078" class="Bound"
+      >q</a
+      ><a name="2079"
+      > </a
+      ><a name="2080" class="Symbol"
+      >:</a
+      ><a name="2081"
+      > </a
+      ><a name="2082" href="lib.types.KG1.html#2048" class="Bound"
+      >y</a
+      ><a name="2083"
+      > </a
+      ><a name="2084" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2086"
+      > </a
+      ><a name="2087" href="lib.types.KG1.html#2046" class="Bound"
+      >x</a
+      ><a name="2088" class="Symbol"
+      >)</a
+      ><a name="2089"
+      > </a
+      ><a name="2090" class="Symbol"
+      >&#8594;</a
+      ><a name="2091"
+      > </a
+      ><a name="2092" href="lib.types.KG1.html#2065" class="Bound"
+      >p</a
+      ><a name="2093"
+      > </a
+      ><a name="2094" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="2095"
+      > </a
+      ><a name="2096" href="lib.types.KG1.html#2078" class="Bound"
+      >q</a
+      ><a name="2097"
+      > </a
+      ><a name="2098" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2100"
+      > </a
+      ><a name="2101" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2104"
+      > </a
+      ><a name="2105" class="Symbol"
+      >&#8594;</a
+      ><a name="2106"
+      > </a
+      ><a name="2107" href="lib.types.KG1.html#2065" class="Bound"
+      >p</a
+      ><a name="2108"
+      > </a
+      ><a name="2109" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2111"
+      > </a
+      ><a name="2112" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="2113"
+      > </a
+      ><a name="2114" href="lib.types.KG1.html#2078" class="Bound"
+      >q</a
+      ><a name="2115"
+      >
+      </a
+      ><a name="2122" href="lib.types.KG1.html#2008" class="Function"
+      >cancels-inverse</a
+      ><a name="2137"
+      > </a
+      ><a name="2138" href="lib.types.KG1.html#2138" class="Bound"
+      >p</a
+      ><a name="2139"
+      > </a
+      ><a name="2140" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2143"
+      > </a
+      ><a name="2144" href="lib.types.KG1.html#2144" class="Bound"
+      >r</a
+      ><a name="2145"
+      > </a
+      ><a name="2146" class="Symbol"
+      >=</a
+      ><a name="2147"
+      > </a
+      ><a name="2148" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="2149"
+      > </a
+      ><a name="2150" class="Symbol"
+      >(</a
+      ><a name="2151" href="lib.PathGroupoid.html#903" class="Function"
+      >&#8729;-unit-r</a
+      ><a name="2159"
+      > </a
+      ><a name="2160" href="lib.types.KG1.html#2138" class="Bound"
+      >p</a
+      ><a name="2161" class="Symbol"
+      >)</a
+      ><a name="2162"
+      > </a
+      ><a name="2163" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="2164"
+      > </a
+      ><a name="2165" href="lib.types.KG1.html#2144" class="Bound"
+      >r</a
+      ><a name="2166"
+      >
+
+      </a
+      ><a name="2174" href="lib.types.KG1.html#2174" class="Function"
+      >lemma</a
+      ><a name="2179"
+      > </a
+      ><a name="2180" class="Symbol"
+      >:</a
+      ><a name="2181"
+      > </a
+      ><a name="2182" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="2187"
+      > </a
+      ><a name="2188" class="Symbol"
+      >(</a
+      ><a name="2189" href="lib.types.Group.html#336" class="Function"
+      >inv</a
+      ><a name="2192"
+      > </a
+      ><a name="2193" href="lib.types.KG1.html#1961" class="Bound"
+      >g</a
+      ><a name="2194" class="Symbol"
+      >)</a
+      ><a name="2195"
+      > </a
+      ><a name="2196" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="2197"
+      > </a
+      ><a name="2198" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="2203"
+      > </a
+      ><a name="2204" href="lib.types.KG1.html#1961" class="Bound"
+      >g</a
+      ><a name="2205"
+      >  </a
+      ><a name="2207" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2209"
+      > </a
+      ><a name="2210" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2213"
+      >
+      </a
+      ><a name="2220" href="lib.types.KG1.html#2174" class="Function"
+      >lemma</a
+      ><a name="2225"
+      > </a
+      ><a name="2226" class="Symbol"
+      >=</a
+      ><a name="2227"
+      > </a
+      ><a name="2228" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="2229"
+      > </a
+      ><a name="2230" class="Symbol"
+      >(</a
+      ><a name="2231" href="lib.types.KG1.html#868" class="Postulate"
+      >kloop-comp</a
+      ><a name="2241"
+      > </a
+      ><a name="2242" class="Symbol"
+      >(</a
+      ><a name="2243" href="lib.types.Group.html#336" class="Function"
+      >inv</a
+      ><a name="2246"
+      > </a
+      ><a name="2247" href="lib.types.KG1.html#1961" class="Bound"
+      >g</a
+      ><a name="2248" class="Symbol"
+      >)</a
+      ><a name="2249"
+      > </a
+      ><a name="2250" href="lib.types.KG1.html#1961" class="Bound"
+      >g</a
+      ><a name="2251" class="Symbol"
+      >)</a
+      ><a name="2252"
+      > </a
+      ><a name="2253" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="2254"
+      > </a
+      ><a name="2255" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2257"
+      > </a
+      ><a name="2258" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="2263"
+      > </a
+      ><a name="2264" class="Symbol"
+      >(</a
+      ><a name="2265" href="lib.types.Group.html#513" class="Function"
+      >invl</a
+      ><a name="2269"
+      > </a
+      ><a name="2270" href="lib.types.KG1.html#1961" class="Bound"
+      >g</a
+      ><a name="2271" class="Symbol"
+      >)</a
+      ><a name="2272"
+      > </a
+      ><a name="2273" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="2274"
+      > </a
+      ><a name="2275" href="lib.types.KG1.html#831" class="Postulate"
+      >kloop-ident</a
+      ><a name="2286"
+      >
+
+  </a
+      ><a name="2290" class="Keyword"
+      >module</a
+      ><a name="2296"
+      > </a
+      ><a name="2297" href="lib.types.KG1.html#2297" class="Module"
+      >&#960;&#8321;</a
+      ><a name="2299"
+      > </a
+      ><a name="2300" class="Keyword"
+      >where</a
+      ><a name="2305"
+      >
+
+    </a
+      ><a name="2311" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="2321"
+      > </a
+      ><a name="2322" class="Symbol"
+      >:</a
+      ><a name="2323"
+      > </a
+      ><a name="2324" class="Symbol"
+      >&#8704;</a
+      ><a name="2325"
+      > </a
+      ><a name="2326" href="lib.types.KG1.html#2326" class="Bound"
+      >g</a
+      ><a name="2327"
+      > </a
+      ><a name="2328" class="Symbol"
+      >&#8594;</a
+      ><a name="2329"
+      > </a
+      ><a name="2330" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="2332"
+      > </a
+      ><a name="2333" href="lib.Equivalences.html#2994" class="Function Operator"
+      >&#8771;</a
+      ><a name="2334"
+      > </a
+      ><a name="2335" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="2337"
+      >
+    </a
+      ><a name="2342" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="2352"
+      > </a
+      ><a name="2353" href="lib.types.KG1.html#2353" class="Bound"
+      >g</a
+      ><a name="2354"
+      > </a
+      ><a name="2355" class="Symbol"
+      >=</a
+      ><a name="2356"
+      > </a
+      ><a name="2357" href="lib.Equivalences.html#3145" class="Function"
+      >equiv</a
+      ><a name="2362"
+      > </a
+      ><a name="2363" class="Symbol"
+      >(&#955;</a
+      ><a name="2365"
+      > </a
+      ><a name="2366" href="lib.types.KG1.html#2366" class="Bound"
+      >x</a
+      ><a name="2367"
+      > </a
+      ><a name="2368" class="Symbol"
+      >&#8594;</a
+      ><a name="2369"
+      > </a
+      ><a name="2370" href="lib.types.Group.html#354" class="Function"
+      >comp</a
+      ><a name="2374"
+      > </a
+      ><a name="2375" href="lib.types.KG1.html#2366" class="Bound"
+      >x</a
+      ><a name="2376"
+      > </a
+      ><a name="2377" href="lib.types.KG1.html#2353" class="Bound"
+      >g</a
+      ><a name="2378" class="Symbol"
+      >)</a
+      ><a name="2379"
+      >
+                     </a
+      ><a name="2401" class="Symbol"
+      >(&#955;</a
+      ><a name="2403"
+      > </a
+      ><a name="2404" href="lib.types.KG1.html#2404" class="Bound"
+      >x</a
+      ><a name="2405"
+      > </a
+      ><a name="2406" class="Symbol"
+      >&#8594;</a
+      ><a name="2407"
+      > </a
+      ><a name="2408" href="lib.types.Group.html#354" class="Function"
+      >comp</a
+      ><a name="2412"
+      > </a
+      ><a name="2413" href="lib.types.KG1.html#2404" class="Bound"
+      >x</a
+      ><a name="2414"
+      > </a
+      ><a name="2415" class="Symbol"
+      >(</a
+      ><a name="2416" href="lib.types.Group.html#336" class="Function"
+      >inv</a
+      ><a name="2419"
+      > </a
+      ><a name="2420" href="lib.types.KG1.html#2353" class="Bound"
+      >g</a
+      ><a name="2421" class="Symbol"
+      >))</a
+      ><a name="2423"
+      >
+                     </a
+      ><a name="2445" class="Symbol"
+      >(&#955;</a
+      ><a name="2447"
+      > </a
+      ><a name="2448" href="lib.types.KG1.html#2448" class="Bound"
+      >x</a
+      ><a name="2449"
+      > </a
+      ><a name="2450" class="Symbol"
+      >&#8594;</a
+      ><a name="2451"
+      > </a
+      ><a name="2452" href="lib.types.Group.html#450" class="Function"
+      >assoc</a
+      ><a name="2457"
+      > </a
+      ><a name="2458" href="lib.types.KG1.html#2448" class="Bound"
+      >x</a
+      ><a name="2459"
+      > </a
+      ><a name="2460" class="Symbol"
+      >(</a
+      ><a name="2461" href="lib.types.Group.html#336" class="Function"
+      >inv</a
+      ><a name="2464"
+      > </a
+      ><a name="2465" href="lib.types.KG1.html#2353" class="Bound"
+      >g</a
+      ><a name="2466" class="Symbol"
+      >)</a
+      ><a name="2467"
+      > </a
+      ><a name="2468" href="lib.types.KG1.html#2353" class="Bound"
+      >g</a
+      ><a name="2469"
+      > </a
+      ><a name="2470" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="2471"
+      > </a
+      ><a name="2472" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2474"
+      > </a
+      ><a name="2475" class="Symbol"
+      >(</a
+      ><a name="2476" href="lib.types.Group.html#354" class="Function"
+      >comp</a
+      ><a name="2480"
+      > </a
+      ><a name="2481" href="lib.types.KG1.html#2448" class="Bound"
+      >x</a
+      ><a name="2482" class="Symbol"
+      >)</a
+      ><a name="2483"
+      > </a
+      ><a name="2484" class="Symbol"
+      >(</a
+      ><a name="2485" href="lib.types.Group.html#513" class="Function"
+      >invl</a
+      ><a name="2489"
+      > </a
+      ><a name="2490" href="lib.types.KG1.html#2353" class="Bound"
+      >g</a
+      ><a name="2491" class="Symbol"
+      >)</a
+      ><a name="2492"
+      > </a
+      ><a name="2493" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="2494"
+      > </a
+      ><a name="2495" href="lib.types.Group.html#414" class="Function"
+      >unitr</a
+      ><a name="2500"
+      > </a
+      ><a name="2501" href="lib.types.KG1.html#2448" class="Bound"
+      >x</a
+      ><a name="2502" class="Symbol"
+      >)</a
+      ><a name="2503"
+      >
+                     </a
+      ><a name="2525" class="Symbol"
+      >(&#955;</a
+      ><a name="2527"
+      > </a
+      ><a name="2528" href="lib.types.KG1.html#2528" class="Bound"
+      >x</a
+      ><a name="2529"
+      > </a
+      ><a name="2530" class="Symbol"
+      >&#8594;</a
+      ><a name="2531"
+      > </a
+      ><a name="2532" href="lib.types.Group.html#450" class="Function"
+      >assoc</a
+      ><a name="2537"
+      > </a
+      ><a name="2538" href="lib.types.KG1.html#2528" class="Bound"
+      >x</a
+      ><a name="2539"
+      > </a
+      ><a name="2540" href="lib.types.KG1.html#2353" class="Bound"
+      >g</a
+      ><a name="2541"
+      > </a
+      ><a name="2542" class="Symbol"
+      >(</a
+      ><a name="2543" href="lib.types.Group.html#336" class="Function"
+      >inv</a
+      ><a name="2546"
+      > </a
+      ><a name="2547" href="lib.types.KG1.html#2353" class="Bound"
+      >g</a
+      ><a name="2548" class="Symbol"
+      >)</a
+      ><a name="2549"
+      > </a
+      ><a name="2550" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="2551"
+      > </a
+      ><a name="2552" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2554"
+      > </a
+      ><a name="2555" class="Symbol"
+      >(</a
+      ><a name="2556" href="lib.types.Group.html#354" class="Function"
+      >comp</a
+      ><a name="2560"
+      > </a
+      ><a name="2561" href="lib.types.KG1.html#2528" class="Bound"
+      >x</a
+      ><a name="2562" class="Symbol"
+      >)</a
+      ><a name="2563"
+      > </a
+      ><a name="2564" class="Symbol"
+      >(</a
+      ><a name="2565" href="lib.types.Group.html#559" class="Function"
+      >invr</a
+      ><a name="2569"
+      > </a
+      ><a name="2570" href="lib.types.KG1.html#2353" class="Bound"
+      >g</a
+      ><a name="2571" class="Symbol"
+      >)</a
+      ><a name="2572"
+      > </a
+      ><a name="2573" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="2574"
+      > </a
+      ><a name="2575" href="lib.types.Group.html#414" class="Function"
+      >unitr</a
+      ><a name="2580"
+      > </a
+      ><a name="2581" href="lib.types.KG1.html#2528" class="Bound"
+      >x</a
+      ><a name="2582" class="Symbol"
+      >)</a
+      ><a name="2583"
+      >
+
+    </a
+      ><a name="2589" href="lib.types.KG1.html#2589" class="Function"
+      >comp-equiv-id</a
+      ><a name="2602"
+      > </a
+      ><a name="2603" class="Symbol"
+      >:</a
+      ><a name="2604"
+      > </a
+      ><a name="2605" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="2615"
+      > </a
+      ><a name="2616" href="lib.types.Group.html#321" class="Function"
+      >ident</a
+      ><a name="2621"
+      > </a
+      ><a name="2622" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2624"
+      > </a
+      ><a name="2625" href="lib.Equivalences.html#3897" class="Function"
+      >ide</a
+      ><a name="2628"
+      > </a
+      ><a name="2629" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="2631"
+      >
+    </a
+      ><a name="2636" href="lib.types.KG1.html#2589" class="Function"
+      >comp-equiv-id</a
+      ><a name="2649"
+      > </a
+      ><a name="2650" class="Symbol"
+      >=</a
+      ><a name="2651"
+      > 
+      </a
+      ><a name="2659" href="lib.Base.html#5119" class="Function"
+      >pair=</a
+      ><a name="2664"
+      > </a
+      ><a name="2665" class="Symbol"
+      >(</a
+      ><a name="2666" href="lib.Funext.html#3978" class="Function"
+      >&#955;=</a
+      ><a name="2668"
+      > </a
+      ><a name="2669" href="lib.types.Group.html#414" class="Function"
+      >unitr</a
+      ><a name="2674" class="Symbol"
+      >)</a
+      ><a name="2675"
+      > 
+            </a
+      ><a name="2689" class="Symbol"
+      >(</a
+      ><a name="2690" href="lib.NType2.html#675" class="Function"
+      >prop-has-all-paths-&#8595;</a
+      ><a name="2710"
+      > </a
+      ><a name="2711" class="Symbol"
+      >{B</a
+      ><a name="2713"
+      > </a
+      ><a name="2714" class="Symbol"
+      >=</a
+      ><a name="2715"
+      > </a
+      ><a name="2716" href="lib.Equivalences.html#986" class="Record"
+      >is-equiv</a
+      ><a name="2724" class="Symbol"
+      >}</a
+      ><a name="2725"
+      > </a
+      ><a name="2726" class="Symbol"
+      >(</a
+      ><a name="2727" href="lib.Equivalences2.html#4409" class="Function"
+      >is-equiv-is-prop</a
+      ><a name="2743"
+      > </a
+      ><a name="2744" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="2745"
+      > </a
+      ><a name="2746" href="lib.Base.html#7594" class="Function"
+      >idf</a
+      ><a name="2749"
+      > </a
+      ><a name="2750" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="2752" class="Symbol"
+      >))</a
+      ><a name="2754"
+      >
+
+    </a
+      ><a name="2760" href="lib.types.KG1.html#2760" class="Function"
+      >comp-equiv-comp</a
+      ><a name="2775"
+      > </a
+      ><a name="2776" class="Symbol"
+      >:</a
+      ><a name="2777"
+      > </a
+      ><a name="2778" class="Symbol"
+      >(</a
+      ><a name="2779" href="lib.types.KG1.html#2779" class="Bound"
+      >g&#8321;</a
+      ><a name="2781"
+      > </a
+      ><a name="2782" href="lib.types.KG1.html#2782" class="Bound"
+      >g&#8322;</a
+      ><a name="2784"
+      > </a
+      ><a name="2785" class="Symbol"
+      >:</a
+      ><a name="2786"
+      > </a
+      ><a name="2787" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="2789" class="Symbol"
+      >)</a
+      ><a name="2790"
+      > </a
+      ><a name="2791" class="Symbol"
+      >&#8594;</a
+      ><a name="2792"
+      > </a
+      ><a name="2793" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="2803"
+      > </a
+      ><a name="2804" class="Symbol"
+      >(</a
+      ><a name="2805" href="lib.types.Group.html#354" class="Function"
+      >comp</a
+      ><a name="2809"
+      > </a
+      ><a name="2810" href="lib.types.KG1.html#2779" class="Bound"
+      >g&#8321;</a
+      ><a name="2812"
+      > </a
+      ><a name="2813" href="lib.types.KG1.html#2782" class="Bound"
+      >g&#8322;</a
+      ><a name="2815" class="Symbol"
+      >)</a
+      ><a name="2816"
+      >
+                      </a
+      ><a name="2839" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2841"
+      > </a
+      ><a name="2842" class="Symbol"
+      >(</a
+      ><a name="2843" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="2853"
+      > </a
+      ><a name="2854" href="lib.types.KG1.html#2782" class="Bound"
+      >g&#8322;</a
+      ><a name="2856"
+      > </a
+      ><a name="2857" href="lib.Equivalences.html#4016" class="Function Operator"
+      >&#8728;e</a
+      ><a name="2859"
+      > </a
+      ><a name="2860" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="2870"
+      > </a
+      ><a name="2871" href="lib.types.KG1.html#2779" class="Bound"
+      >g&#8321;</a
+      ><a name="2873" class="Symbol"
+      >)</a
+      ><a name="2874"
+      >
+    </a
+      ><a name="2879" href="lib.types.KG1.html#2760" class="Function"
+      >comp-equiv-comp</a
+      ><a name="2894"
+      > </a
+      ><a name="2895" href="lib.types.KG1.html#2895" class="Bound"
+      >g&#8321;</a
+      ><a name="2897"
+      > </a
+      ><a name="2898" href="lib.types.KG1.html#2898" class="Bound"
+      >g&#8322;</a
+      ><a name="2900"
+      > </a
+      ><a name="2901" class="Symbol"
+      >=</a
+      ><a name="2902"
+      > 
+      </a
+      ><a name="2910" href="lib.Base.html#5119" class="Function"
+      >pair=</a
+      ><a name="2915"
+      > </a
+      ><a name="2916" class="Symbol"
+      >(</a
+      ><a name="2917" href="lib.Funext.html#3978" class="Function"
+      >&#955;=</a
+      ><a name="2919"
+      > </a
+      ><a name="2920" class="Symbol"
+      >(&#955;</a
+      ><a name="2922"
+      > </a
+      ><a name="2923" href="lib.types.KG1.html#2923" class="Bound"
+      >x</a
+      ><a name="2924"
+      > </a
+      ><a name="2925" class="Symbol"
+      >&#8594;</a
+      ><a name="2926"
+      > </a
+      ><a name="2927" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="2928"
+      > </a
+      ><a name="2929" class="Symbol"
+      >(</a
+      ><a name="2930" href="lib.types.Group.html#450" class="Function"
+      >assoc</a
+      ><a name="2935"
+      > </a
+      ><a name="2936" href="lib.types.KG1.html#2923" class="Bound"
+      >x</a
+      ><a name="2937"
+      > </a
+      ><a name="2938" href="lib.types.KG1.html#2895" class="Bound"
+      >g&#8321;</a
+      ><a name="2940"
+      > </a
+      ><a name="2941" href="lib.types.KG1.html#2898" class="Bound"
+      >g&#8322;</a
+      ><a name="2943" class="Symbol"
+      >)))</a
+      ><a name="2946"
+      >
+            </a
+      ><a name="2959" class="Symbol"
+      >(</a
+      ><a name="2960" href="lib.NType2.html#675" class="Function"
+      >prop-has-all-paths-&#8595;</a
+      ><a name="2980"
+      > </a
+      ><a name="2981" class="Symbol"
+      >{B</a
+      ><a name="2983"
+      > </a
+      ><a name="2984" class="Symbol"
+      >=</a
+      ><a name="2985"
+      > </a
+      ><a name="2986" href="lib.Equivalences.html#986" class="Record"
+      >is-equiv</a
+      ><a name="2994" class="Symbol"
+      >}</a
+      ><a name="2995"
+      > </a
+      ><a name="2996" class="Symbol"
+      >(</a
+      ><a name="2997" href="lib.Equivalences2.html#4409" class="Function"
+      >is-equiv-is-prop</a
+      ><a name="3013"
+      > </a
+      ><a name="3014" class="Symbol"
+      >_))</a
+      ><a name="3017"
+      > 
+
+    </a
+      ><a name="3024" href="lib.types.KG1.html#3024" class="Function"
+      >&#937;-Group</a
+      ><a name="3031"
+      > </a
+      ><a name="3032" class="Symbol"
+      >:</a
+      ><a name="3033"
+      > </a
+      ><a name="3034" href="lib.types.Group.html#609" class="Record"
+      >Group</a
+      ><a name="3039"
+      > </a
+      ><a name="3040" class="Symbol"
+      >(</a
+      ><a name="3041" href="Agda.Primitive.html#596" class="Primitive"
+      >lsucc</a
+      ><a name="3046"
+      > </a
+      ><a name="3047" href="lib.types.KG1.html#443" class="Bound"
+      >i</a
+      ><a name="3048" class="Symbol"
+      >)</a
+      ><a name="3049"
+      >
+    </a
+      ><a name="3054" href="lib.types.KG1.html#3024" class="Function"
+      >&#937;-Group</a
+      ><a name="3061"
+      > </a
+      ><a name="3062" class="Symbol"
+      >=</a
+      ><a name="3063"
+      > </a
+      ><a name="3064" href="lib.types.Group.html#655" class="InductiveConstructor"
+      >group</a
+      ><a name="3069"
+      > </a
+      ><a name="3070" class="Symbol"
+      >(</a
+      ><a name="3071" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="3073"
+      > </a
+      ><a name="3074" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3076"
+      > </a
+      ><a name="3077" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="3079" class="Symbol"
+      >)</a
+      ><a name="3080"
+      > </a
+      ><a name="3081" class="Symbol"
+      >(</a
+      ><a name="3082" href="lib.NType2.html#3632" class="Function"
+      >universe-=-level</a
+      ><a name="3098"
+      > </a
+      ><a name="3099" href="lib.types.Group.html#689" class="Function"
+      >El-level</a
+      ><a name="3107"
+      > </a
+      ><a name="3108" href="lib.types.Group.html#689" class="Function"
+      >El-level</a
+      ><a name="3116" class="Symbol"
+      >)</a
+      ><a name="3117"
+      >
+                     </a
+      ><a name="3139" class="Symbol"
+      >(</a
+      ><a name="3140" href="lib.types.LoopSpace.html#5036" class="Function"
+      >&#937;^-group-structure</a
+      ><a name="3158"
+      > </a
+      ><a name="3159" class="Number"
+      >1</a
+      ><a name="3160"
+      > </a
+      ><a name="3161" class="Symbol"
+      >(</a
+      ><a name="3162" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="3166"
+      > </a
+      ><a name="3167" href="lib.types.KG1.html#443" class="Bound"
+      >i</a
+      ><a name="3168"
+      > </a
+      ><a name="3169" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3170"
+      > </a
+      ><a name="3171" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="3173" class="Symbol"
+      >))</a
+      ><a name="3175"
+      >
+
+    </a
+      ><a name="3181" href="lib.types.KG1.html#3181" class="Function"
+      >0-Group</a
+      ><a name="3188"
+      > </a
+      ><a name="3189" class="Symbol"
+      >:</a
+      ><a name="3190"
+      > </a
+      ><a name="3191" href="lib.types.Group.html#609" class="Record"
+      >Group</a
+      ><a name="3196"
+      > </a
+      ><a name="3197" class="Symbol"
+      >(</a
+      ><a name="3198" href="Agda.Primitive.html#596" class="Primitive"
+      >lsucc</a
+      ><a name="3203"
+      > </a
+      ><a name="3204" href="lib.types.KG1.html#443" class="Bound"
+      >i</a
+      ><a name="3205" class="Symbol"
+      >)</a
+      ><a name="3206"
+      >
+    </a
+      ><a name="3211" href="lib.types.KG1.html#3181" class="Function"
+      >0-Group</a
+      ><a name="3218"
+      > </a
+      ><a name="3219" class="Symbol"
+      >=</a
+      ><a name="3220"
+      > </a
+      ><a name="3221" href="lib.types.LoopSpace.html#5306" class="Function"
+      >&#937;^-Group</a
+      ><a name="3229"
+      > </a
+      ><a name="3230" class="Number"
+      >1</a
+      ><a name="3231"
+      > </a
+      ><a name="3232" class="Symbol"
+      >((</a
+      ><a name="3234" href="lib.Base.html#8903" class="Function"
+      >&#10216;0&#10217;</a
+      ><a name="3237"
+      > </a
+      ><a name="3238" href="lib.NType2.html#2749" class="Function Operator"
+      >-Type</a
+      ><a name="3243"
+      > </a
+      ><a name="3244" href="lib.types.KG1.html#443" class="Bound"
+      >i</a
+      ><a name="3245" class="Symbol"
+      >)</a
+      ><a name="3246"
+      > </a
+      ><a name="3247" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3248"
+      > </a
+      ><a name="3249" class="Symbol"
+      >(</a
+      ><a name="3250" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="3252"
+      > </a
+      ><a name="3253" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3254"
+      > </a
+      ><a name="3255" href="lib.types.Group.html#689" class="Function"
+      >El-level</a
+      ><a name="3263" class="Symbol"
+      >))</a
+      ><a name="3265"
+      > </a
+      ><a name="3266" class="Symbol"
+      >(</a
+      ><a name="3267" href="lib.Base.html#8903" class="Function"
+      >&#10216;0&#10217;</a
+      ><a name="3270"
+      > </a
+      ><a name="3271" href="lib.NType2.html#4758" class="Function Operator"
+      >-Type-level</a
+      ><a name="3282"
+      > </a
+      ><a name="3283" href="lib.types.KG1.html#443" class="Bound"
+      >i</a
+      ><a name="3284" class="Symbol"
+      >)</a
+      ><a name="3285"
+      >
+
+    </a
+      ><a name="3291" href="lib.types.KG1.html#3291" class="Function"
+      >Codes-hom&#8321;</a
+      ><a name="3301"
+      > </a
+      ><a name="3302" class="Symbol"
+      >:</a
+      ><a name="3303"
+      > </a
+      ><a name="3304" href="lib.types.Group.html#1020" class="Record"
+      >GroupHom</a
+      ><a name="3312"
+      > </a
+      ><a name="3313" href="lib.types.KG1.html#447" class="Bound"
+      >G</a
+      ><a name="3314"
+      > </a
+      ><a name="3315" href="lib.types.KG1.html#3024" class="Function"
+      >&#937;-Group</a
+      ><a name="3322"
+      >
+    </a
+      ><a name="3327" href="lib.types.KG1.html#3291" class="Function"
+      >Codes-hom&#8321;</a
+      ><a name="3337"
+      > </a
+      ><a name="3338" class="Symbol"
+      >=</a
+      ><a name="3339"
+      > </a
+      ><a name="3340" class="Keyword"
+      >record</a
+      ><a name="3346"
+      > </a
+      ><a name="3347" class="Symbol"
+      >{</a
+      ><a name="3348" class="Field"
+      >f</a
+      ><a name="3349"
+      > </a
+      ><a name="3350" class="Symbol"
+      >=</a
+      ><a name="3351"
+      > </a
+      ><a name="3352" href="lib.types.KG1.html#3408" class="Function"
+      >f</a
+      ><a name="3353" class="Symbol"
+      >;</a
+      ><a name="3354"
+      > </a
+      ><a name="3355" class="Field"
+      >pres-ident</a
+      ><a name="3365"
+      > </a
+      ><a name="3366" class="Symbol"
+      >=</a
+      ><a name="3367"
+      > </a
+      ><a name="3368" href="lib.types.KG1.html#3459" class="Function"
+      >pri</a
+      ><a name="3371" class="Symbol"
+      >;</a
+      ><a name="3372"
+      > </a
+      ><a name="3373" class="Field"
+      >pres-comp</a
+      ><a name="3382"
+      > </a
+      ><a name="3383" class="Symbol"
+      >=</a
+      ><a name="3384"
+      > </a
+      ><a name="3385" href="lib.types.KG1.html#3530" class="Function"
+      >prc</a
+      ><a name="3388" class="Symbol"
+      >}</a
+      ><a name="3389"
+      >
+      </a
+      ><a name="3396" class="Keyword"
+      >where</a
+      ><a name="3401"
+      >
+      </a
+      ><a name="3408" href="lib.types.KG1.html#3408" class="Function"
+      >f</a
+      ><a name="3409"
+      > </a
+      ><a name="3410" class="Symbol"
+      >:</a
+      ><a name="3411"
+      > </a
+      ><a name="3412" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="3414"
+      > </a
+      ><a name="3415" class="Symbol"
+      >&#8594;</a
+      ><a name="3416"
+      > </a
+      ><a name="3417" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="3419"
+      > </a
+      ><a name="3420" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3422"
+      > </a
+      ><a name="3423" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="3425"
+      >
+      </a
+      ><a name="3432" href="lib.types.KG1.html#3408" class="Function"
+      >f</a
+      ><a name="3433"
+      > </a
+      ><a name="3434" class="Symbol"
+      >=</a
+      ><a name="3435"
+      > </a
+      ><a name="3436" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="3438"
+      > </a
+      ><a name="3439" href="lib.Base.html#7735" class="Function Operator"
+      >&#8728;</a
+      ><a name="3440"
+      > </a
+      ><a name="3441" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="3451"
+      >
+
+      </a
+      ><a name="3459" href="lib.types.KG1.html#3459" class="Function"
+      >pri</a
+      ><a name="3462"
+      > </a
+      ><a name="3463" class="Symbol"
+      >:</a
+      ><a name="3464"
+      > </a
+      ><a name="3465" href="lib.types.KG1.html#3408" class="Function"
+      >f</a
+      ><a name="3466"
+      > </a
+      ><a name="3467" href="lib.types.Group.html#321" class="Function"
+      >ident</a
+      ><a name="3472"
+      > </a
+      ><a name="3473" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3475"
+      > </a
+      ><a name="3476" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3479"
+      >
+      </a
+      ><a name="3486" href="lib.types.KG1.html#3459" class="Function"
+      >pri</a
+      ><a name="3489"
+      > </a
+      ><a name="3490" class="Symbol"
+      >=</a
+      ><a name="3491"
+      > </a
+      ><a name="3492" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="3494"
+      > </a
+      ><a name="3495" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="3497"
+      > </a
+      ><a name="3498" href="lib.types.KG1.html#2589" class="Function"
+      >comp-equiv-id</a
+      ><a name="3511"
+      > </a
+      ><a name="3512" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="3513"
+      > </a
+      ><a name="3514" href="lib.Univalence.html#816" class="Postulate"
+      >ua-&#951;</a
+      ><a name="3518"
+      > </a
+      ><a name="3519" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3522"
+      >
+
+      </a
+      ><a name="3530" href="lib.types.KG1.html#3530" class="Function"
+      >prc</a
+      ><a name="3533"
+      > </a
+      ><a name="3534" class="Symbol"
+      >:</a
+      ><a name="3535"
+      > </a
+      ><a name="3536" class="Symbol"
+      >(</a
+      ><a name="3537" href="lib.types.KG1.html#3537" class="Bound"
+      >g&#8321;</a
+      ><a name="3539"
+      > </a
+      ><a name="3540" href="lib.types.KG1.html#3540" class="Bound"
+      >g&#8322;</a
+      ><a name="3542"
+      > </a
+      ><a name="3543" class="Symbol"
+      >:</a
+      ><a name="3544"
+      > </a
+      ><a name="3545" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="3547" class="Symbol"
+      >)</a
+      ><a name="3548"
+      > </a
+      ><a name="3549" class="Symbol"
+      >&#8594;</a
+      ><a name="3550"
+      > </a
+      ><a name="3551" href="lib.types.KG1.html#3408" class="Function"
+      >f</a
+      ><a name="3552"
+      > </a
+      ><a name="3553" class="Symbol"
+      >(</a
+      ><a name="3554" href="lib.types.Group.html#354" class="Function"
+      >comp</a
+      ><a name="3558"
+      > </a
+      ><a name="3559" href="lib.types.KG1.html#3537" class="Bound"
+      >g&#8321;</a
+      ><a name="3561"
+      > </a
+      ><a name="3562" href="lib.types.KG1.html#3540" class="Bound"
+      >g&#8322;</a
+      ><a name="3564" class="Symbol"
+      >)</a
+      ><a name="3565"
+      > </a
+      ><a name="3566" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3568"
+      > </a
+      ><a name="3569" href="lib.types.KG1.html#3408" class="Function"
+      >f</a
+      ><a name="3570"
+      > </a
+      ><a name="3571" href="lib.types.KG1.html#3537" class="Bound"
+      >g&#8321;</a
+      ><a name="3573"
+      > </a
+      ><a name="3574" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="3575"
+      > </a
+      ><a name="3576" href="lib.types.KG1.html#3408" class="Function"
+      >f</a
+      ><a name="3577"
+      > </a
+      ><a name="3578" href="lib.types.KG1.html#3540" class="Bound"
+      >g&#8322;</a
+      ><a name="3580"
+      >
+      </a
+      ><a name="3587" href="lib.types.KG1.html#3530" class="Function"
+      >prc</a
+      ><a name="3590"
+      > </a
+      ><a name="3591" href="lib.types.KG1.html#3591" class="Bound"
+      >g&#8321;</a
+      ><a name="3593"
+      > </a
+      ><a name="3594" href="lib.types.KG1.html#3594" class="Bound"
+      >g&#8322;</a
+      ><a name="3596"
+      > </a
+      ><a name="3597" class="Symbol"
+      >=</a
+      ><a name="3598"
+      >
+        </a
+      ><a name="3607" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="3609"
+      > </a
+      ><a name="3610" class="Symbol"
+      >(</a
+      ><a name="3611" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="3621"
+      > </a
+      ><a name="3622" class="Symbol"
+      >(</a
+      ><a name="3623" href="lib.types.Group.html#354" class="Function"
+      >comp</a
+      ><a name="3627"
+      > </a
+      ><a name="3628" href="lib.types.KG1.html#3591" class="Bound"
+      >g&#8321;</a
+      ><a name="3630"
+      > </a
+      ><a name="3631" href="lib.types.KG1.html#3594" class="Bound"
+      >g&#8322;</a
+      ><a name="3633" class="Symbol"
+      >))</a
+      ><a name="3635"
+      >
+          </a
+      ><a name="3646" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="3648"
+      > </a
+      ><a name="3649" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="3651"
+      > </a
+      ><a name="3652" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="3654"
+      > </a
+      ><a name="3655" class="Symbol"
+      >(</a
+      ><a name="3656" href="lib.types.KG1.html#2760" class="Function"
+      >comp-equiv-comp</a
+      ><a name="3671"
+      > </a
+      ><a name="3672" href="lib.types.KG1.html#3591" class="Bound"
+      >g&#8321;</a
+      ><a name="3674"
+      > </a
+      ><a name="3675" href="lib.types.KG1.html#3594" class="Bound"
+      >g&#8322;</a
+      ><a name="3677" class="Symbol"
+      >)</a
+      ><a name="3678"
+      > </a
+      ><a name="3679" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="3680"
+      >
+        </a
+      ><a name="3689" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="3691"
+      > </a
+      ><a name="3692" class="Symbol"
+      >(</a
+      ><a name="3693" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="3703"
+      > </a
+      ><a name="3704" href="lib.types.KG1.html#3594" class="Bound"
+      >g&#8322;</a
+      ><a name="3706"
+      > </a
+      ><a name="3707" href="lib.Equivalences.html#4016" class="Function Operator"
+      >&#8728;e</a
+      ><a name="3709"
+      > </a
+      ><a name="3710" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="3720"
+      > </a
+      ><a name="3721" href="lib.types.KG1.html#3591" class="Bound"
+      >g&#8321;</a
+      ><a name="3723" class="Symbol"
+      >)</a
+      ><a name="3724"
+      >
+          </a
+      ><a name="3735" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="3737"
+      > </a
+      ><a name="3738" href="lib.Equivalences2.html#4809" class="Function"
+      >ua-&#8728;e</a
+      ><a name="3743"
+      > </a
+      ><a name="3744" class="Symbol"
+      >(</a
+      ><a name="3745" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="3755"
+      > </a
+      ><a name="3756" href="lib.types.KG1.html#3591" class="Bound"
+      >g&#8321;</a
+      ><a name="3758" class="Symbol"
+      >)</a
+      ><a name="3759"
+      > </a
+      ><a name="3760" class="Symbol"
+      >(</a
+      ><a name="3761" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="3771"
+      > </a
+      ><a name="3772" href="lib.types.KG1.html#3594" class="Bound"
+      >g&#8322;</a
+      ><a name="3774" class="Symbol"
+      >)</a
+      ><a name="3775"
+      > </a
+      ><a name="3776" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="3777"
+      >
+        </a
+      ><a name="3786" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="3788"
+      > </a
+      ><a name="3789" class="Symbol"
+      >(</a
+      ><a name="3790" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="3800"
+      > </a
+      ><a name="3801" href="lib.types.KG1.html#3591" class="Bound"
+      >g&#8321;</a
+      ><a name="3803" class="Symbol"
+      >)</a
+      ><a name="3804"
+      > </a
+      ><a name="3805" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="3806"
+      > </a
+      ><a name="3807" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="3809"
+      > </a
+      ><a name="3810" class="Symbol"
+      >(</a
+      ><a name="3811" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="3821"
+      > </a
+      ><a name="3822" href="lib.types.KG1.html#3594" class="Bound"
+      >g&#8322;</a
+      ><a name="3824" class="Symbol"
+      >)</a
+      ><a name="3825"
+      > </a
+      ><a name="3826" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="3827"
+      >
+
+    </a
+      ><a name="3833" href="lib.types.KG1.html#3833" class="Function"
+      >Codes-hom&#8322;</a
+      ><a name="3843"
+      > </a
+      ><a name="3844" class="Symbol"
+      >:</a
+      ><a name="3845"
+      > </a
+      ><a name="3846" href="lib.types.Group.html#1020" class="Record"
+      >GroupHom</a
+      ><a name="3854"
+      > </a
+      ><a name="3855" href="lib.types.KG1.html#3024" class="Function"
+      >&#937;-Group</a
+      ><a name="3862"
+      > </a
+      ><a name="3863" href="lib.types.KG1.html#3181" class="Function"
+      >0-Group</a
+      ><a name="3870"
+      >
+    </a
+      ><a name="3875" href="lib.types.KG1.html#3833" class="Function"
+      >Codes-hom&#8322;</a
+      ><a name="3885"
+      > </a
+      ><a name="3886" class="Symbol"
+      >=</a
+      ><a name="3887"
+      > </a
+      ><a name="3888" class="Keyword"
+      >record</a
+      ><a name="3894"
+      > </a
+      ><a name="3895" class="Symbol"
+      >{</a
+      ><a name="3896" class="Field"
+      >f</a
+      ><a name="3897"
+      > </a
+      ><a name="3898" class="Symbol"
+      >=</a
+      ><a name="3899"
+      > </a
+      ><a name="3900" href="lib.types.KG1.html#4117" class="Function"
+      >f</a
+      ><a name="3901" class="Symbol"
+      >;</a
+      ><a name="3902"
+      > </a
+      ><a name="3903" class="Field"
+      >pres-ident</a
+      ><a name="3913"
+      > </a
+      ><a name="3914" class="Symbol"
+      >=</a
+      ><a name="3915"
+      > </a
+      ><a name="3916" href="lib.types.KG1.html#4205" class="Function"
+      >pri</a
+      ><a name="3919" class="Symbol"
+      >;</a
+      ><a name="3920"
+      > </a
+      ><a name="3921" class="Field"
+      >pres-comp</a
+      ><a name="3930"
+      > </a
+      ><a name="3931" class="Symbol"
+      >=</a
+      ><a name="3932"
+      > </a
+      ><a name="3933" href="lib.types.KG1.html#4308" class="Function"
+      >prc</a
+      ><a name="3936" class="Symbol"
+      >}</a
+      ><a name="3937"
+      >
+      </a
+      ><a name="3944" class="Keyword"
+      >where</a
+      ><a name="3949"
+      >
+      </a
+      ><a name="3956" class="Comment"
+      >-- saving some space</a
+      ><a name="3976"
+      >
+      </a
+      ><a name="3983" href="lib.types.KG1.html#3983" class="Function"
+      >phap</a
+      ><a name="3987"
+      > </a
+      ><a name="3988" class="Symbol"
+      >:</a
+      ><a name="3989"
+      > </a
+      ><a name="3990" class="Symbol"
+      >{</a
+      ><a name="3991" href="lib.types.KG1.html#3991" class="Bound"
+      >p</a
+      ><a name="3992"
+      > </a
+      ><a name="3993" class="Symbol"
+      >:</a
+      ><a name="3994"
+      > </a
+      ><a name="3995" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="3997"
+      > </a
+      ><a name="3998" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4000"
+      > </a
+      ><a name="4001" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="4003" class="Symbol"
+      >}</a
+      ><a name="4004"
+      >
+        </a
+      ><a name="4013" class="Symbol"
+      >&#8594;</a
+      ><a name="4014"
+      > </a
+      ><a name="4015" href="lib.types.Group.html#689" class="Function"
+      >El-level</a
+      ><a name="4023"
+      > </a
+      ><a name="4024" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="4026"
+      > </a
+      ><a name="4027" href="lib.types.Group.html#689" class="Function"
+      >El-level</a
+      ><a name="4035"
+      > </a
+      ><a name="4036" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="4037"
+      > </a
+      ><a name="4038" href="lib.NType.html#243" class="Function"
+      >has-level</a
+      ><a name="4047"
+      > </a
+      ><a name="4048" href="lib.Base.html#8903" class="Function"
+      >&#10216;0&#10217;</a
+      ><a name="4051"
+      > </a
+      ><a name="4052" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="4053"
+      > </a
+      ><a name="4054" href="lib.types.KG1.html#3991" class="Bound"
+      >p</a
+      ><a name="4055"
+      > </a
+      ><a name="4056" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="4057"
+      >
+      </a
+      ><a name="4064" href="lib.types.KG1.html#3983" class="Function"
+      >phap</a
+      ><a name="4068"
+      > </a
+      ><a name="4069" class="Symbol"
+      >=</a
+      ><a name="4070"
+      > </a
+      ><a name="4071" href="lib.NType2.html#675" class="Function"
+      >prop-has-all-paths-&#8595;</a
+      ><a name="4091"
+      > </a
+      ><a name="4092" href="lib.NType2.html#2004" class="Function"
+      >has-level-is-prop</a
+      ><a name="4109"
+      >
+
+      </a
+      ><a name="4117" href="lib.types.KG1.html#4117" class="Function"
+      >f</a
+      ><a name="4118"
+      > </a
+      ><a name="4119" class="Symbol"
+      >:</a
+      ><a name="4120"
+      > </a
+      ><a name="4121" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="4123"
+      > </a
+      ><a name="4124" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4126"
+      > </a
+      ><a name="4127" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="4129"
+      > </a
+      ><a name="4130" class="Symbol"
+      >&#8594;</a
+      ><a name="4131"
+      > </a
+      ><a name="4132" class="Symbol"
+      >(</a
+      ><a name="4133" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="4135"
+      > </a
+      ><a name="4136" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="4137"
+      > </a
+      ><a name="4138" href="lib.types.Group.html#689" class="Function"
+      >El-level</a
+      ><a name="4146" class="Symbol"
+      >)</a
+      ><a name="4147"
+      > </a
+      ><a name="4148" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4150"
+      > </a
+      ><a name="4151" class="Symbol"
+      >(</a
+      ><a name="4152" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="4154"
+      > </a
+      ><a name="4155" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="4156"
+      > </a
+      ><a name="4157" href="lib.types.Group.html#689" class="Function"
+      >El-level</a
+      ><a name="4165" class="Symbol"
+      >)</a
+      ><a name="4166"
+      >
+      </a
+      ><a name="4173" href="lib.types.KG1.html#4117" class="Function"
+      >f</a
+      ><a name="4174"
+      > </a
+      ><a name="4175" href="lib.types.KG1.html#4175" class="Bound"
+      >p</a
+      ><a name="4176"
+      > </a
+      ><a name="4177" class="Symbol"
+      >=</a
+      ><a name="4178"
+      > </a
+      ><a name="4179" href="lib.Base.html#5119" class="Function"
+      >pair=</a
+      ><a name="4184"
+      > </a
+      ><a name="4185" href="lib.types.KG1.html#4175" class="Bound"
+      >p</a
+      ><a name="4186"
+      > </a
+      ><a name="4187" href="lib.types.KG1.html#3983" class="Function"
+      >phap</a
+      ><a name="4191"
+      >
+      
+      </a
+      ><a name="4205" href="lib.types.KG1.html#4205" class="Function"
+      >pri</a
+      ><a name="4208"
+      > </a
+      ><a name="4209" class="Symbol"
+      >:</a
+      ><a name="4210"
+      > </a
+      ><a name="4211" href="lib.types.KG1.html#4117" class="Function"
+      >f</a
+      ><a name="4212"
+      > </a
+      ><a name="4213" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="4216"
+      > </a
+      ><a name="4217" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4219"
+      > </a
+      ><a name="4220" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="4223"
+      >
+      </a
+      ><a name="4230" href="lib.types.KG1.html#4205" class="Function"
+      >pri</a
+      ><a name="4233"
+      > </a
+      ><a name="4234" class="Symbol"
+      >=</a
+      ><a name="4235"
+      > </a
+      ><a name="4236" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="4238"
+      > </a
+      ><a name="4239" class="Symbol"
+      >(</a
+      ><a name="4240" href="lib.Base.html#5119" class="Function"
+      >pair=</a
+      ><a name="4245"
+      > </a
+      ><a name="4246" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="4249" class="Symbol"
+      >)</a
+      ><a name="4250"
+      > </a
+      ><a name="4251" class="Symbol"
+      >(</a
+      ><a name="4252" href="lib.NType.html#2184" class="Function"
+      >contr-has-all-paths</a
+      ><a name="4271"
+      > </a
+      ><a name="4272" class="Symbol"
+      >(</a
+      ><a name="4273" href="lib.NType2.html#2004" class="Function"
+      >has-level-is-prop</a
+      ><a name="4290"
+      > </a
+      ><a name="4291" class="Symbol"
+      >_</a
+      ><a name="4292"
+      > </a
+      ><a name="4293" class="Symbol"
+      >_)</a
+      ><a name="4295"
+      > </a
+      ><a name="4296" class="Symbol"
+      >_</a
+      ><a name="4297"
+      > </a
+      ><a name="4298" class="Symbol"
+      >_)</a
+      ><a name="4300"
+      >
+
+      </a
+      ><a name="4308" href="lib.types.KG1.html#4308" class="Function"
+      >prc</a
+      ><a name="4311"
+      > </a
+      ><a name="4312" class="Symbol"
+      >:</a
+      ><a name="4313"
+      > </a
+      ><a name="4314" class="Symbol"
+      >(</a
+      ><a name="4315" href="lib.types.KG1.html#4315" class="Bound"
+      >p&#8321;</a
+      ><a name="4317"
+      > </a
+      ><a name="4318" href="lib.types.KG1.html#4318" class="Bound"
+      >p&#8322;</a
+      ><a name="4320"
+      > </a
+      ><a name="4321" class="Symbol"
+      >:</a
+      ><a name="4322"
+      > </a
+      ><a name="4323" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="4325"
+      > </a
+      ><a name="4326" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4328"
+      > </a
+      ><a name="4329" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="4331" class="Symbol"
+      >)</a
+      ><a name="4332"
+      > </a
+      ><a name="4333" class="Symbol"
+      >&#8594;</a
+      ><a name="4334"
+      > </a
+      ><a name="4335" href="lib.types.KG1.html#4117" class="Function"
+      >f</a
+      ><a name="4336"
+      > </a
+      ><a name="4337" class="Symbol"
+      >(</a
+      ><a name="4338" href="lib.types.KG1.html#4315" class="Bound"
+      >p&#8321;</a
+      ><a name="4340"
+      > </a
+      ><a name="4341" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="4342"
+      > </a
+      ><a name="4343" href="lib.types.KG1.html#4318" class="Bound"
+      >p&#8322;</a
+      ><a name="4345" class="Symbol"
+      >)</a
+      ><a name="4346"
+      > </a
+      ><a name="4347" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4349"
+      > </a
+      ><a name="4350" href="lib.types.KG1.html#4117" class="Function"
+      >f</a
+      ><a name="4351"
+      > </a
+      ><a name="4352" href="lib.types.KG1.html#4315" class="Bound"
+      >p&#8321;</a
+      ><a name="4354"
+      > </a
+      ><a name="4355" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="4356"
+      > </a
+      ><a name="4357" href="lib.types.KG1.html#4117" class="Function"
+      >f</a
+      ><a name="4358"
+      > </a
+      ><a name="4359" href="lib.types.KG1.html#4318" class="Bound"
+      >p&#8322;</a
+      ><a name="4361"
+      >
+      </a
+      ><a name="4368" href="lib.types.KG1.html#4308" class="Function"
+      >prc</a
+      ><a name="4371"
+      > </a
+      ><a name="4372" href="lib.types.KG1.html#4372" class="Bound"
+      >p&#8321;</a
+      ><a name="4374"
+      > </a
+      ><a name="4375" href="lib.types.KG1.html#4375" class="Bound"
+      >p&#8322;</a
+      ><a name="4377"
+      > </a
+      ><a name="4378" class="Symbol"
+      >=</a
+      ><a name="4379"
+      > 
+        </a
+      ><a name="4389" href="lib.Base.html#5119" class="Function"
+      >pair=</a
+      ><a name="4394"
+      > </a
+      ><a name="4395" class="Symbol"
+      >(</a
+      ><a name="4396" href="lib.types.KG1.html#4372" class="Bound"
+      >p&#8321;</a
+      ><a name="4398"
+      > </a
+      ><a name="4399" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="4400"
+      > </a
+      ><a name="4401" href="lib.types.KG1.html#4375" class="Bound"
+      >p&#8322;</a
+      ><a name="4403" class="Symbol"
+      >)</a
+      ><a name="4404"
+      > </a
+      ><a name="4405" href="lib.types.KG1.html#3983" class="Function"
+      >phap</a
+      ><a name="4409"
+      >
+          </a
+      ><a name="4420" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="4422"
+      > </a
+      ><a name="4423" href="lib.NType.html#2294" class="Function"
+      >prop-has-all-paths</a
+      ><a name="4441"
+      > </a
+      ><a name="4442" class="Symbol"
+      >(</a
+      ><a name="4443" href="lib.NType2.html#285" class="Function"
+      >&#8595;-level</a
+      ><a name="4450"
+      > </a
+      ><a name="4451" class="Symbol"
+      >(&#955;</a
+      ><a name="4453"
+      > </a
+      ><a name="4454" href="lib.types.KG1.html#4454" class="Bound"
+      >_</a
+      ><a name="4455"
+      > </a
+      ><a name="4456" class="Symbol"
+      >&#8594;</a
+      ><a name="4457"
+      > 
+                                   </a
+      ><a name="4494" href="lib.NType.html#1025" class="Function"
+      >raise-level</a
+      ><a name="4505"
+      > </a
+      ><a name="4506" class="Symbol"
+      >_</a
+      ><a name="4507"
+      > </a
+      ><a name="4508" href="lib.NType2.html#2004" class="Function"
+      >has-level-is-prop</a
+      ><a name="4525" class="Symbol"
+      >))</a
+      ><a name="4527"
+      > </a
+      ><a name="4528" class="Symbol"
+      >_</a
+      ><a name="4529"
+      > </a
+      ><a name="4530" class="Symbol"
+      >_</a
+      ><a name="4531"
+      >
+              </a
+      ><a name="4546" href="lib.Base.html#3622" class="Function"
+      >|in-ctx</a
+      ><a name="4553"
+      > </a
+      ><a name="4554" class="Symbol"
+      >(&#955;</a
+      ><a name="4556"
+      > </a
+      ><a name="4557" href="lib.types.KG1.html#4557" class="Bound"
+      >w</a
+      ><a name="4558"
+      > </a
+      ><a name="4559" class="Symbol"
+      >&#8594;</a
+      ><a name="4560"
+      > </a
+      ><a name="4561" href="lib.Base.html#5119" class="Function"
+      >pair=</a
+      ><a name="4566"
+      > </a
+      ><a name="4567" class="Symbol"
+      >(</a
+      ><a name="4568" href="lib.types.KG1.html#4372" class="Bound"
+      >p&#8321;</a
+      ><a name="4570"
+      > </a
+      ><a name="4571" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="4572"
+      > </a
+      ><a name="4573" href="lib.types.KG1.html#4375" class="Bound"
+      >p&#8322;</a
+      ><a name="4575" class="Symbol"
+      >)</a
+      ><a name="4576"
+      >  </a
+      ><a name="4578" href="lib.types.KG1.html#4557" class="Bound"
+      >w</a
+      ><a name="4579" class="Symbol"
+      >)</a
+      ><a name="4580"
+      > </a
+      ><a name="4581" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="4582"
+      >
+        </a
+      ><a name="4591" href="lib.Base.html#5119" class="Function"
+      >pair=</a
+      ><a name="4596"
+      > </a
+      ><a name="4597" class="Symbol"
+      >(</a
+      ><a name="4598" href="lib.types.KG1.html#4372" class="Bound"
+      >p&#8321;</a
+      ><a name="4600"
+      > </a
+      ><a name="4601" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="4602"
+      > </a
+      ><a name="4603" href="lib.types.KG1.html#4375" class="Bound"
+      >p&#8322;</a
+      ><a name="4605" class="Symbol"
+      >)</a
+      ><a name="4606"
+      > </a
+      ><a name="4607" class="Symbol"
+      >(</a
+      ><a name="4608" href="lib.types.KG1.html#3983" class="Function"
+      >phap</a
+      ><a name="4612"
+      > </a
+      ><a name="4613" class="Symbol"
+      >{</a
+      ><a name="4614" href="lib.types.KG1.html#4372" class="Bound"
+      >p&#8321;</a
+      ><a name="4616" class="Symbol"
+      >}</a
+      ><a name="4617"
+      > </a
+      ><a name="4618" href="lib.PathGroupoid.html#4051" class="Function Operator"
+      >&#8729;&#7496;</a
+      ><a name="4620"
+      > </a
+      ><a name="4621" href="lib.types.KG1.html#3983" class="Function"
+      >phap</a
+      ><a name="4625"
+      > </a
+      ><a name="4626" class="Symbol"
+      >{</a
+      ><a name="4627" href="lib.types.KG1.html#4375" class="Bound"
+      >p&#8322;</a
+      ><a name="4629" class="Symbol"
+      >})</a
+      ><a name="4631"
+      >
+          </a
+      ><a name="4642" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="4644"
+      > </a
+      ><a name="4645" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="4646"
+      > </a
+      ><a name="4647" class="Symbol"
+      >(</a
+      ><a name="4648" href="lib.types.Sigma.html#5203" class="Function"
+      >&#931;-&#8729;</a
+      ><a name="4651"
+      > </a
+      ><a name="4652" class="Symbol"
+      >(</a
+      ><a name="4653" href="lib.types.KG1.html#3983" class="Function"
+      >phap</a
+      ><a name="4657"
+      > </a
+      ><a name="4658" class="Symbol"
+      >{</a
+      ><a name="4659" href="lib.types.KG1.html#4372" class="Bound"
+      >p&#8321;</a
+      ><a name="4661" class="Symbol"
+      >})</a
+      ><a name="4663"
+      > </a
+      ><a name="4664" class="Symbol"
+      >(</a
+      ><a name="4665" href="lib.types.KG1.html#3983" class="Function"
+      >phap</a
+      ><a name="4669"
+      > </a
+      ><a name="4670" class="Symbol"
+      >{</a
+      ><a name="4671" href="lib.types.KG1.html#4375" class="Bound"
+      >p&#8322;</a
+      ><a name="4673" class="Symbol"
+      >}))</a
+      ><a name="4676"
+      > </a
+      ><a name="4677" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="4678"
+      >
+        </a
+      ><a name="4687" href="lib.types.KG1.html#4117" class="Function"
+      >f</a
+      ><a name="4688"
+      > </a
+      ><a name="4689" href="lib.types.KG1.html#4372" class="Bound"
+      >p&#8321;</a
+      ><a name="4691"
+      > </a
+      ><a name="4692" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="4693"
+      > </a
+      ><a name="4694" href="lib.types.KG1.html#4117" class="Function"
+      >f</a
+      ><a name="4695"
+      > </a
+      ><a name="4696" href="lib.types.KG1.html#4375" class="Bound"
+      >p&#8322;</a
+      ><a name="4698"
+      > </a
+      ><a name="4699" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="4700"
+      >
+
+    </a
+      ><a name="4706" href="lib.types.KG1.html#4706" class="Function"
+      >Codes-hom</a
+      ><a name="4715"
+      > </a
+      ><a name="4716" class="Symbol"
+      >:</a
+      ><a name="4717"
+      > </a
+      ><a name="4718" href="lib.types.Group.html#1020" class="Record"
+      >GroupHom</a
+      ><a name="4726"
+      > </a
+      ><a name="4727" href="lib.types.KG1.html#447" class="Bound"
+      >G</a
+      ><a name="4728"
+      > </a
+      ><a name="4729" href="lib.types.KG1.html#3181" class="Function"
+      >0-Group</a
+      ><a name="4736"
+      >
+    </a
+      ><a name="4741" href="lib.types.KG1.html#4706" class="Function"
+      >Codes-hom</a
+      ><a name="4750"
+      > </a
+      ><a name="4751" class="Symbol"
+      >=</a
+      ><a name="4752"
+      > </a
+      ><a name="4753" href="lib.types.KG1.html#3833" class="Function"
+      >Codes-hom&#8322;</a
+      ><a name="4763"
+      > </a
+      ><a name="4764" href="lib.types.Group.html#1448" class="Function Operator"
+      >&#8728;hom</a
+      ><a name="4768"
+      > </a
+      ><a name="4769" href="lib.types.KG1.html#3291" class="Function"
+      >Codes-hom&#8321;</a
+      ><a name="4779"
+      >
+
+    </a
+      ><a name="4785" href="lib.types.KG1.html#4785" class="Function"
+      >Codes</a
+      ><a name="4790"
+      > </a
+      ><a name="4791" class="Symbol"
+      >:</a
+      ><a name="4792"
+      > </a
+      ><a name="4793" href="lib.types.KG1.html#628" class="Function"
+      >KG1</a
+      ><a name="4796"
+      > </a
+      ><a name="4797" class="Symbol"
+      >&#8594;</a
+      ><a name="4798"
+      > </a
+      ><a name="4799" href="lib.Base.html#8903" class="Function"
+      >&#10216;0&#10217;</a
+      ><a name="4802"
+      > </a
+      ><a name="4803" href="lib.NType2.html#2749" class="Function Operator"
+      >-Type</a
+      ><a name="4808"
+      > </a
+      ><a name="4809" href="lib.types.KG1.html#443" class="Bound"
+      >i</a
+      ><a name="4810"
+      > 
+    </a
+      ><a name="4816" href="lib.types.KG1.html#4785" class="Function"
+      >Codes</a
+      ><a name="4821"
+      > </a
+      ><a name="4822" class="Symbol"
+      >=</a
+      ><a name="4823"
+      > </a
+      ><a name="4824" href="lib.types.KG1.html#1088" class="Function"
+      >KG1-rec</a
+      ><a name="4831"
+      > </a
+      ><a name="4832" class="Symbol"
+      >{C</a
+      ><a name="4834"
+      > </a
+      ><a name="4835" class="Symbol"
+      >=</a
+      ><a name="4836"
+      > </a
+      ><a name="4837" href="lib.Base.html#8903" class="Function"
+      >&#10216;0&#10217;</a
+      ><a name="4840"
+      > </a
+      ><a name="4841" href="lib.NType2.html#2749" class="Function Operator"
+      >-Type</a
+      ><a name="4846"
+      > </a
+      ><a name="4847" href="lib.types.KG1.html#443" class="Bound"
+      >i</a
+      ><a name="4848" class="Symbol"
+      >}</a
+      ><a name="4849"
+      > </a
+      ><a name="4850" class="Symbol"
+      >(</a
+      ><a name="4851" href="lib.Base.html#8903" class="Function"
+      >&#10216;0&#10217;</a
+      ><a name="4854"
+      > </a
+      ><a name="4855" href="lib.NType2.html#4758" class="Function Operator"
+      >-Type-level</a
+      ><a name="4866"
+      > </a
+      ><a name="4867" href="lib.types.KG1.html#443" class="Bound"
+      >i</a
+      ><a name="4868" class="Symbol"
+      >)</a
+      ><a name="4869"
+      >
+                    </a
+      ><a name="4890" class="Symbol"
+      >(</a
+      ><a name="4891" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="4893"
+      > </a
+      ><a name="4894" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="4895"
+      > </a
+      ><a name="4896" href="lib.types.Group.html#689" class="Function"
+      >El-level</a
+      ><a name="4904" class="Symbol"
+      >)</a
+      ><a name="4905"
+      >
+                    </a
+      ><a name="4926" href="lib.types.KG1.html#4706" class="Function"
+      >Codes-hom</a
+      ><a name="4935"
+      >
+
+    </a
+      ><a name="4941" class="Keyword"
+      >abstract</a
+      ><a name="4949"
+      >
+      </a
+      ><a name="4956" href="lib.types.KG1.html#4956" class="Function"
+      >&#8595;-Codes-loop</a
+      ><a name="4968"
+      > </a
+      ><a name="4969" class="Symbol"
+      >:</a
+      ><a name="4970"
+      > </a
+      ><a name="4971" class="Symbol"
+      >&#8704;</a
+      ><a name="4972"
+      > </a
+      ><a name="4973" href="lib.types.KG1.html#4973" class="Bound"
+      >g</a
+      ><a name="4974"
+      > </a
+      ><a name="4975" href="lib.types.KG1.html#4975" class="Bound"
+      >g'</a
+      ><a name="4977"
+      > </a
+      ><a name="4978" class="Symbol"
+      >&#8594;</a
+      ><a name="4979"
+      > </a
+      ><a name="4980" href="lib.types.KG1.html#4975" class="Bound"
+      >g'</a
+      ><a name="4982"
+      > </a
+      ><a name="4983" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="4985"
+      > </a
+      ><a name="4986" href="lib.types.Group.html#354" class="Function"
+      >comp</a
+      ><a name="4990"
+      > </a
+      ><a name="4991" href="lib.types.KG1.html#4975" class="Bound"
+      >g'</a
+      ><a name="4993"
+      > </a
+      ><a name="4994" href="lib.types.KG1.html#4973" class="Bound"
+      >g</a
+      ><a name="4995"
+      > </a
+      ><a name="4996" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="4997"
+      > </a
+      ><a name="4998" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="5001"
+      > </a
+      ><a name="5002" href="lib.Base.html#7735" class="Function Operator"
+      >&#8728;</a
+      ><a name="5003"
+      > </a
+      ><a name="5004" href="lib.types.KG1.html#4785" class="Function"
+      >Codes</a
+      ><a name="5009"
+      > </a
+      ><a name="5010" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="5011"
+      > </a
+      ><a name="5012" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="5017"
+      > </a
+      ><a name="5018" href="lib.types.KG1.html#4973" class="Bound"
+      >g</a
+      ><a name="5019"
+      > </a
+      ><a name="5020" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="5021"
+      >
+      </a
+      ><a name="5028" href="lib.types.KG1.html#4956" class="Function"
+      >&#8595;-Codes-loop</a
+      ><a name="5040"
+      > </a
+      ><a name="5041" href="lib.types.KG1.html#5041" class="Bound"
+      >g</a
+      ><a name="5042"
+      > </a
+      ><a name="5043" href="lib.types.KG1.html#5043" class="Bound"
+      >g'</a
+      ><a name="5045"
+      > </a
+      ><a name="5046" class="Symbol"
+      >=</a
+      ><a name="5047"
+      > 
+        </a
+      ><a name="5057" href="lib.PathOver.html#3906" class="Function"
+      >&#8595;-ap-out</a
+      ><a name="5065"
+      > </a
+      ><a name="5066" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="5069"
+      > </a
+      ><a name="5070" href="lib.types.KG1.html#4785" class="Function"
+      >Codes</a
+      ><a name="5075"
+      > </a
+      ><a name="5076" class="Symbol"
+      >(</a
+      ><a name="5077" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="5082"
+      > </a
+      ><a name="5083" href="lib.types.KG1.html#5041" class="Bound"
+      >g</a
+      ><a name="5084" class="Symbol"
+      >)</a
+      ><a name="5085"
+      > </a
+      ><a name="5086" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="5087"
+      >
+        </a
+      ><a name="5096" href="lib.PathOver.html#3906" class="Function"
+      >&#8595;-ap-out</a
+      ><a name="5104"
+      > </a
+      ><a name="5105" class="Symbol"
+      >(</a
+      ><a name="5106" href="lib.Base.html#7594" class="Function"
+      >idf</a
+      ><a name="5109"
+      > </a
+      ><a name="5110" class="Symbol"
+      >_)</a
+      ><a name="5112"
+      > </a
+      ><a name="5113" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="5116"
+      > </a
+      ><a name="5117" class="Symbol"
+      >(</a
+      ><a name="5118" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="5120"
+      > </a
+      ><a name="5121" href="lib.types.KG1.html#4785" class="Function"
+      >Codes</a
+      ><a name="5126"
+      > </a
+      ><a name="5127" class="Symbol"
+      >(</a
+      ><a name="5128" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="5133"
+      > </a
+      ><a name="5134" href="lib.types.KG1.html#5041" class="Bound"
+      >g</a
+      ><a name="5135" class="Symbol"
+      >))</a
+      ><a name="5137"
+      > </a
+      ><a name="5138" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="5139"
+      > 
+        </a
+      ><a name="5149" href="lib.Base.html#4516" class="Function"
+      >transport</a
+      ><a name="5158"
+      > </a
+      ><a name="5159" class="Symbol"
+      >(&#955;</a
+      ><a name="5161"
+      > </a
+      ><a name="5162" href="lib.types.KG1.html#5162" class="Bound"
+      >w</a
+      ><a name="5163"
+      > </a
+      ><a name="5164" class="Symbol"
+      >&#8594;</a
+      ><a name="5165"
+      > </a
+      ><a name="5166" href="lib.types.KG1.html#5043" class="Bound"
+      >g'</a
+      ><a name="5168"
+      > </a
+      ><a name="5169" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="5171"
+      > </a
+      ><a name="5172" href="lib.types.Group.html#354" class="Function"
+      >comp</a
+      ><a name="5176"
+      > </a
+      ><a name="5177" href="lib.types.KG1.html#5043" class="Bound"
+      >g'</a
+      ><a name="5179"
+      > </a
+      ><a name="5180" href="lib.types.KG1.html#5041" class="Bound"
+      >g</a
+      ><a name="5181"
+      > </a
+      ><a name="5182" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="5183"
+      > </a
+      ><a name="5184" href="lib.Base.html#7594" class="Function"
+      >idf</a
+      ><a name="5187"
+      > </a
+      ><a name="5188" class="Symbol"
+      >_</a
+      ><a name="5189"
+      > </a
+      ><a name="5190" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="5191"
+      > </a
+      ><a name="5192" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="5194"
+      > </a
+      ><a name="5195" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="5198"
+      > </a
+      ><a name="5199" href="lib.types.KG1.html#5162" class="Bound"
+      >w</a
+      ><a name="5200"
+      > </a
+      ><a name="5201" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="5202" class="Symbol"
+      >)</a
+      ><a name="5203"
+      >
+                  </a
+      ><a name="5222" class="Symbol"
+      >(</a
+      ><a name="5223" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="5224"
+      > </a
+      ><a name="5225" class="Symbol"
+      >(</a
+      ><a name="5226" href="lib.types.KG1.html#1160" class="Postulate"
+      >KG1Rec.kloop-&#946;</a
+      ><a name="5240"
+      > </a
+      ><a name="5241" class="Symbol"
+      >(</a
+      ><a name="5242" href="lib.Base.html#8903" class="Function"
+      >&#10216;0&#10217;</a
+      ><a name="5245"
+      > </a
+      ><a name="5246" href="lib.NType2.html#4758" class="Function Operator"
+      >-Type-level</a
+      ><a name="5257"
+      > </a
+      ><a name="5258" href="lib.types.KG1.html#443" class="Bound"
+      >i</a
+      ><a name="5259" class="Symbol"
+      >)</a
+      ><a name="5260"
+      >
+                                     </a
+      ><a name="5298" class="Symbol"
+      >(</a
+      ><a name="5299" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="5301"
+      > </a
+      ><a name="5302" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="5303"
+      > </a
+      ><a name="5304" href="lib.types.Group.html#689" class="Function"
+      >El-level</a
+      ><a name="5312" class="Symbol"
+      >)</a
+      ><a name="5313"
+      > </a
+      ><a name="5314" href="lib.types.KG1.html#4706" class="Function"
+      >Codes-hom</a
+      ><a name="5323"
+      > </a
+      ><a name="5324" href="lib.types.KG1.html#5041" class="Bound"
+      >g</a
+      ><a name="5325" class="Symbol"
+      >))</a
+      ><a name="5327"
+      > </a
+      ><a name="5328" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="5329"
+      >
+        </a
+      ><a name="5338" href="lib.Base.html#4516" class="Function"
+      >transport</a
+      ><a name="5347"
+      > </a
+      ><a name="5348" class="Symbol"
+      >(&#955;</a
+      ><a name="5350"
+      > </a
+      ><a name="5351" href="lib.types.KG1.html#5351" class="Bound"
+      >w</a
+      ><a name="5352"
+      > </a
+      ><a name="5353" class="Symbol"
+      >&#8594;</a
+      ><a name="5354"
+      > </a
+      ><a name="5355" href="lib.types.KG1.html#5043" class="Bound"
+      >g'</a
+      ><a name="5357"
+      > </a
+      ><a name="5358" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="5360"
+      > </a
+      ><a name="5361" href="lib.types.Group.html#354" class="Function"
+      >comp</a
+      ><a name="5365"
+      > </a
+      ><a name="5366" href="lib.types.KG1.html#5043" class="Bound"
+      >g'</a
+      ><a name="5368"
+      > </a
+      ><a name="5369" href="lib.types.KG1.html#5041" class="Bound"
+      >g</a
+      ><a name="5370"
+      > </a
+      ><a name="5371" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="5372"
+      > </a
+      ><a name="5373" href="lib.Base.html#7594" class="Function"
+      >idf</a
+      ><a name="5376"
+      > </a
+      ><a name="5377" class="Symbol"
+      >_</a
+      ><a name="5378"
+      > </a
+      ><a name="5379" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="5380"
+      > </a
+      ><a name="5381" href="lib.types.KG1.html#5351" class="Bound"
+      >w</a
+      ><a name="5382"
+      > </a
+      ><a name="5383" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="5384" class="Symbol"
+      >)</a
+      ><a name="5385"
+      >
+                  </a
+      ><a name="5404" class="Symbol"
+      >(</a
+      ><a name="5405" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="5406"
+      > </a
+      ><a name="5407" class="Symbol"
+      >(</a
+      ><a name="5408" href="lib.types.Sigma.html#531" class="Function"
+      >fst=-&#946;</a
+      ><a name="5414"
+      > </a
+      ><a name="5415" class="Symbol"
+      >(</a
+      ><a name="5416" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="5418"
+      > </a
+      ><a name="5419" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="5420"
+      > </a
+      ><a name="5421" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="5431"
+      > </a
+      ><a name="5432" href="lib.types.KG1.html#5041" class="Bound"
+      >g</a
+      ><a name="5433" class="Symbol"
+      >)</a
+      ><a name="5434"
+      > </a
+      ><a name="5435" class="Symbol"
+      >_))</a
+      ><a name="5438"
+      > </a
+      ><a name="5439" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="5440"
+      >
+        </a
+      ><a name="5449" href="lib.Univalence.html#1685" class="Function"
+      >&#8595;-idf-ua-in</a
+      ><a name="5460"
+      > </a
+      ><a name="5461" class="Symbol"
+      >(</a
+      ><a name="5462" href="lib.types.KG1.html#2311" class="Function"
+      >comp-equiv</a
+      ><a name="5472"
+      > </a
+      ><a name="5473" href="lib.types.KG1.html#5041" class="Bound"
+      >g</a
+      ><a name="5474" class="Symbol"
+      >)</a
+      ><a name="5475"
+      > </a
+      ><a name="5476" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="5479"
+      >
+
+    
+    </a
+      ><a name="5490" href="lib.types.KG1.html#5490" class="Function"
+      >decode'</a
+      ><a name="5497"
+      > </a
+      ><a name="5498" class="Symbol"
+      >:</a
+      ><a name="5499"
+      > </a
+      ><a name="5500" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="5502"
+      > </a
+      ><a name="5503" class="Symbol"
+      >&#8594;</a
+      ><a name="5504"
+      > </a
+      ><a name="5505" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="5510"
+      > </a
+      ><a name="5511" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="5513"
+      > </a
+      ><a name="5514" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="5519"
+      >
+    </a
+      ><a name="5524" href="lib.types.KG1.html#5490" class="Function"
+      >decode'</a
+      ><a name="5531"
+      > </a
+      ><a name="5532" class="Symbol"
+      >=</a
+      ><a name="5533"
+      > </a
+      ><a name="5534" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="5539"
+      >
+
+    </a
+      ><a name="5545" href="lib.types.KG1.html#5545" class="Function"
+      >encode</a
+      ><a name="5551"
+      > </a
+      ><a name="5552" class="Symbol"
+      >:</a
+      ><a name="5553"
+      > </a
+      ><a name="5554" class="Symbol"
+      >{</a
+      ><a name="5555" href="lib.types.KG1.html#5555" class="Bound"
+      >x</a
+      ><a name="5556"
+      > </a
+      ><a name="5557" class="Symbol"
+      >:</a
+      ><a name="5558"
+      > </a
+      ><a name="5559" href="lib.types.KG1.html#628" class="Function"
+      >KG1</a
+      ><a name="5562" class="Symbol"
+      >}</a
+      ><a name="5563"
+      > </a
+      ><a name="5564" class="Symbol"
+      >&#8594;</a
+      ><a name="5565"
+      > </a
+      ><a name="5566" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="5571"
+      > </a
+      ><a name="5572" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="5574"
+      > </a
+      ><a name="5575" href="lib.types.KG1.html#5555" class="Bound"
+      >x</a
+      ><a name="5576"
+      > </a
+      ><a name="5577" class="Symbol"
+      >&#8594;</a
+      ><a name="5578"
+      > </a
+      ><a name="5579" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="5582"
+      > </a
+      ><a name="5583" class="Symbol"
+      >(</a
+      ><a name="5584" href="lib.types.KG1.html#4785" class="Function"
+      >Codes</a
+      ><a name="5589"
+      > </a
+      ><a name="5590" href="lib.types.KG1.html#5555" class="Bound"
+      >x</a
+      ><a name="5591" class="Symbol"
+      >)</a
+      ><a name="5592"
+      >
+    </a
+      ><a name="5597" href="lib.types.KG1.html#5545" class="Function"
+      >encode</a
+      ><a name="5603"
+      > </a
+      ><a name="5604" href="lib.types.KG1.html#5604" class="Bound"
+      >&#945;</a
+      ><a name="5605"
+      > </a
+      ><a name="5606" class="Symbol"
+      >=</a
+      ><a name="5607"
+      > </a
+      ><a name="5608" href="lib.Base.html#4516" class="Function"
+      >transport</a
+      ><a name="5617"
+      > </a
+      ><a name="5618" class="Symbol"
+      >(</a
+      ><a name="5619" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="5622"
+      > </a
+      ><a name="5623" href="lib.Base.html#7735" class="Function Operator"
+      >&#8728;</a
+      ><a name="5624"
+      > </a
+      ><a name="5625" href="lib.types.KG1.html#4785" class="Function"
+      >Codes</a
+      ><a name="5630" class="Symbol"
+      >)</a
+      ><a name="5631"
+      > </a
+      ><a name="5632" href="lib.types.KG1.html#5604" class="Bound"
+      >&#945;</a
+      ><a name="5633"
+      > </a
+      ><a name="5634" href="lib.types.Group.html#321" class="Function"
+      >ident</a
+      ><a name="5639"
+      >
+
+    </a
+      ><a name="5645" href="lib.types.KG1.html#5645" class="Function"
+      >encode-decode'</a
+      ><a name="5659"
+      > </a
+      ><a name="5660" class="Symbol"
+      >:</a
+      ><a name="5661"
+      > </a
+      ><a name="5662" class="Symbol"
+      >&#8704;</a
+      ><a name="5663"
+      > </a
+      ><a name="5664" href="lib.types.KG1.html#5664" class="Bound"
+      >g</a
+      ><a name="5665"
+      > </a
+      ><a name="5666" class="Symbol"
+      >&#8594;</a
+      ><a name="5667"
+      > </a
+      ><a name="5668" href="lib.types.KG1.html#5545" class="Function"
+      >encode</a
+      ><a name="5674"
+      > </a
+      ><a name="5675" class="Symbol"
+      >(</a
+      ><a name="5676" href="lib.types.KG1.html#5490" class="Function"
+      >decode'</a
+      ><a name="5683"
+      > </a
+      ><a name="5684" href="lib.types.KG1.html#5664" class="Bound"
+      >g</a
+      ><a name="5685" class="Symbol"
+      >)</a
+      ><a name="5686"
+      > </a
+      ><a name="5687" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="5689"
+      > </a
+      ><a name="5690" href="lib.types.KG1.html#5664" class="Bound"
+      >g</a
+      ><a name="5691"
+      >
+    </a
+      ><a name="5696" href="lib.types.KG1.html#5645" class="Function"
+      >encode-decode'</a
+      ><a name="5710"
+      > </a
+      ><a name="5711" href="lib.types.KG1.html#5711" class="Bound"
+      >g</a
+      ><a name="5712"
+      > </a
+      ><a name="5713" class="Symbol"
+      >=</a
+      ><a name="5714"
+      > </a
+      ><a name="5715" href="lib.PathOver.html#5197" class="Function"
+      >to-transp</a
+      ><a name="5724"
+      > </a
+      ><a name="5725" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="5726"
+      >
+      </a
+      ><a name="5733" href="lib.Base.html#4516" class="Function"
+      >transport</a
+      ><a name="5742"
+      > </a
+      ><a name="5743" class="Symbol"
+      >(&#955;</a
+      ><a name="5745"
+      > </a
+      ><a name="5746" href="lib.types.KG1.html#5746" class="Bound"
+      >x</a
+      ><a name="5747"
+      > </a
+      ><a name="5748" class="Symbol"
+      >&#8594;</a
+      ><a name="5749"
+      > </a
+      ><a name="5750" href="lib.types.Group.html#321" class="Function"
+      >ident</a
+      ><a name="5755"
+      > </a
+      ><a name="5756" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="5758"
+      > </a
+      ><a name="5759" href="lib.types.KG1.html#5746" class="Bound"
+      >x</a
+      ><a name="5760"
+      > </a
+      ><a name="5761" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="5762"
+      > </a
+      ><a name="5763" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="5766"
+      > </a
+      ><a name="5767" href="lib.Base.html#7735" class="Function Operator"
+      >&#8728;</a
+      ><a name="5768"
+      > </a
+      ><a name="5769" href="lib.types.KG1.html#4785" class="Function"
+      >Codes</a
+      ><a name="5774"
+      > </a
+      ><a name="5775" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="5776"
+      > </a
+      ><a name="5777" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="5782"
+      > </a
+      ><a name="5783" href="lib.types.KG1.html#5711" class="Bound"
+      >g</a
+      ><a name="5784"
+      > </a
+      ><a name="5785" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="5786" class="Symbol"
+      >)</a
+      ><a name="5787"
+      >
+                 </a
+      ><a name="5805" class="Symbol"
+      >(</a
+      ><a name="5806" href="lib.types.Group.html#378" class="Function"
+      >unitl</a
+      ><a name="5811"
+      > </a
+      ><a name="5812" href="lib.types.KG1.html#5711" class="Bound"
+      >g</a
+      ><a name="5813" class="Symbol"
+      >)</a
+      ><a name="5814"
+      > </a
+      ><a name="5815" class="Symbol"
+      >(</a
+      ><a name="5816" href="lib.types.KG1.html#4956" class="Function"
+      >&#8595;-Codes-loop</a
+      ><a name="5828"
+      > </a
+      ><a name="5829" href="lib.types.KG1.html#5711" class="Bound"
+      >g</a
+      ><a name="5830"
+      > </a
+      ><a name="5831" href="lib.types.Group.html#321" class="Function"
+      >ident</a
+      ><a name="5836" class="Symbol"
+      >)</a
+      ><a name="5837"
+      >
+
+    </a
+      ><a name="5843" href="lib.types.KG1.html#5843" class="Function"
+      >decode</a
+      ><a name="5849"
+      > </a
+      ><a name="5850" class="Symbol"
+      >:</a
+      ><a name="5851"
+      > </a
+      ><a name="5852" class="Symbol"
+      >{</a
+      ><a name="5853" href="lib.types.KG1.html#5853" class="Bound"
+      >x</a
+      ><a name="5854"
+      > </a
+      ><a name="5855" class="Symbol"
+      >:</a
+      ><a name="5856"
+      > </a
+      ><a name="5857" href="lib.types.KG1.html#628" class="Function"
+      >KG1</a
+      ><a name="5860" class="Symbol"
+      >}</a
+      ><a name="5861"
+      > </a
+      ><a name="5862" class="Symbol"
+      >&#8594;</a
+      ><a name="5863"
+      > </a
+      ><a name="5864" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="5867"
+      > </a
+      ><a name="5868" class="Symbol"
+      >(</a
+      ><a name="5869" href="lib.types.KG1.html#4785" class="Function"
+      >Codes</a
+      ><a name="5874"
+      > </a
+      ><a name="5875" href="lib.types.KG1.html#5853" class="Bound"
+      >x</a
+      ><a name="5876" class="Symbol"
+      >)</a
+      ><a name="5877"
+      > </a
+      ><a name="5878" class="Symbol"
+      >&#8594;</a
+      ><a name="5879"
+      > </a
+      ><a name="5880" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="5885"
+      > </a
+      ><a name="5886" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="5888"
+      > </a
+      ><a name="5889" href="lib.types.KG1.html#5853" class="Bound"
+      >x</a
+      ><a name="5890"
+      >
+    </a
+      ><a name="5895" href="lib.types.KG1.html#5843" class="Function"
+      >decode</a
+      ><a name="5901"
+      > </a
+      ><a name="5902" class="Symbol"
+      >{</a
+      ><a name="5903" href="lib.types.KG1.html#5903" class="Bound"
+      >x</a
+      ><a name="5904" class="Symbol"
+      >}</a
+      ><a name="5905"
+      > </a
+      ><a name="5906" class="Symbol"
+      >=</a
+      ><a name="5907"
+      > 
+      </a
+      ><a name="5915" href="lib.types.KG1.html#1721" class="Function"
+      >KG1-elim</a
+      ><a name="5923"
+      > </a
+      ><a name="5924" class="Symbol"
+      >{P</a
+      ><a name="5926"
+      > </a
+      ><a name="5927" class="Symbol"
+      >=</a
+      ><a name="5928"
+      > </a
+      ><a name="5929" class="Symbol"
+      >&#955;</a
+      ><a name="5930"
+      > </a
+      ><a name="5931" href="lib.types.KG1.html#5931" class="Bound"
+      >x'</a
+      ><a name="5933"
+      > </a
+      ><a name="5934" class="Symbol"
+      >&#8594;</a
+      ><a name="5935"
+      > </a
+      ><a name="5936" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="5939"
+      > </a
+      ><a name="5940" class="Symbol"
+      >(</a
+      ><a name="5941" href="lib.types.KG1.html#4785" class="Function"
+      >Codes</a
+      ><a name="5946"
+      > </a
+      ><a name="5947" href="lib.types.KG1.html#5931" class="Bound"
+      >x'</a
+      ><a name="5949" class="Symbol"
+      >)</a
+      ><a name="5950"
+      > </a
+      ><a name="5951" class="Symbol"
+      >&#8594;</a
+      ><a name="5952"
+      > </a
+      ><a name="5953" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="5958"
+      > </a
+      ><a name="5959" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="5961"
+      > </a
+      ><a name="5962" href="lib.types.KG1.html#5931" class="Bound"
+      >x'</a
+      ><a name="5964" class="Symbol"
+      >}</a
+      ><a name="5965"
+      >
+        </a
+      ><a name="5974" class="Symbol"
+      >(&#955;</a
+      ><a name="5976"
+      > </a
+      ><a name="5977" href="lib.types.KG1.html#5977" class="Bound"
+      >_</a
+      ><a name="5978"
+      > </a
+      ><a name="5979" class="Symbol"
+      >&#8594;</a
+      ><a name="5980"
+      > </a
+      ><a name="5981" href="lib.types.Pi.html#109" class="Function"
+      >&#928;-level</a
+      ><a name="5988"
+      > </a
+      ><a name="5989" class="Symbol"
+      >(&#955;</a
+      ><a name="5991"
+      > </a
+      ><a name="5992" href="lib.types.KG1.html#5992" class="Bound"
+      >_</a
+      ><a name="5993"
+      > </a
+      ><a name="5994" class="Symbol"
+      >&#8594;</a
+      ><a name="5995"
+      > </a
+      ><a name="5996" href="lib.NType.html#3492" class="Function"
+      >=-preserves-level</a
+      ><a name="6013"
+      > </a
+      ><a name="6014" class="Symbol"
+      >_</a
+      ><a name="6015"
+      > </a
+      ><a name="6016" href="lib.types.KG1.html#766" class="Postulate"
+      >klevel</a
+      ><a name="6022" class="Symbol"
+      >))</a
+      ><a name="6024"
+      >
+        </a
+      ><a name="6033" href="lib.types.KG1.html#5490" class="Function"
+      >decode'</a
+      ><a name="6040"
+      >
+        </a
+      ><a name="6049" href="lib.types.KG1.html#6232" class="Function"
+      >loop'</a
+      ><a name="6054"
+      >
+        </a
+      ><a name="6063" class="Symbol"
+      >(</a
+      ><a name="6064" href="lib.NType2.html#675" class="Function"
+      >prop-has-all-paths-&#8595;</a
+      ><a name="6084"
+      > </a
+      ><a name="6085" class="Symbol"
+      >(</a
+      ><a name="6086" href="lib.types.Pi.html#109" class="Function"
+      >&#928;-level</a
+      ><a name="6093"
+      > </a
+      ><a name="6094" class="Symbol"
+      >(&#955;</a
+      ><a name="6096"
+      > </a
+      ><a name="6097" href="lib.types.KG1.html#6097" class="Bound"
+      >_</a
+      ><a name="6098"
+      > </a
+      ><a name="6099" class="Symbol"
+      >&#8594;</a
+      ><a name="6100"
+      > </a
+      ><a name="6101" href="lib.types.KG1.html#766" class="Postulate"
+      >klevel</a
+      ><a name="6107"
+      > </a
+      ><a name="6108" class="Symbol"
+      >_</a
+      ><a name="6109"
+      > </a
+      ><a name="6110" class="Symbol"
+      >_)</a
+      ><a name="6112"
+      > </a
+      ><a name="6113" class="Symbol"
+      >_</a
+      ><a name="6114"
+      > </a
+      ><a name="6115" class="Symbol"
+      >_))</a
+      ><a name="6118"
+      >
+        </a
+      ><a name="6127" class="Symbol"
+      >(&#955;</a
+      ><a name="6129"
+      > </a
+      ><a name="6130" href="lib.types.KG1.html#6130" class="Bound"
+      >_</a
+      ><a name="6131"
+      > </a
+      ><a name="6132" href="lib.types.KG1.html#6132" class="Bound"
+      >_</a
+      ><a name="6133"
+      > </a
+      ><a name="6134" class="Symbol"
+      >&#8594;</a
+      ><a name="6135"
+      > </a
+      ><a name="6136" href="lib.NType2.html#675" class="Function"
+      >prop-has-all-paths-&#8595;</a
+      ><a name="6156"
+      > </a
+      ><a name="6157" class="Symbol"
+      >(</a
+      ><a name="6158" href="lib.NType2.html#285" class="Function"
+      >&#8595;-level</a
+      ><a name="6165"
+      > </a
+      ><a name="6166" class="Symbol"
+      >(&#955;</a
+      ><a name="6168"
+      > </a
+      ><a name="6169" href="lib.types.KG1.html#6169" class="Bound"
+      >_</a
+      ><a name="6170"
+      > </a
+      ><a name="6171" class="Symbol"
+      >&#8594;</a
+      ><a name="6172"
+      > </a
+      ><a name="6173" href="lib.types.Pi.html#109" class="Function"
+      >&#928;-level</a
+      ><a name="6180"
+      > </a
+      ><a name="6181" class="Symbol"
+      >(&#955;</a
+      ><a name="6183"
+      > </a
+      ><a name="6184" href="lib.types.KG1.html#6184" class="Bound"
+      >_</a
+      ><a name="6185"
+      > </a
+      ><a name="6186" class="Symbol"
+      >&#8594;</a
+      ><a name="6187"
+      > </a
+      ><a name="6188" href="lib.types.KG1.html#766" class="Postulate"
+      >klevel</a
+      ><a name="6194"
+      > </a
+      ><a name="6195" class="Symbol"
+      >_</a
+      ><a name="6196"
+      > </a
+      ><a name="6197" class="Symbol"
+      >_))))</a
+      ><a name="6202"
+      >
+        </a
+      ><a name="6211" href="lib.types.KG1.html#5903" class="Bound"
+      >x</a
+      ><a name="6212"
+      >
+      </a
+      ><a name="6219" class="Keyword"
+      >where</a
+      ><a name="6224"
+      > 
+      </a
+      ><a name="6232" href="lib.types.KG1.html#6232" class="Function"
+      >loop'</a
+      ><a name="6237"
+      > </a
+      ><a name="6238" class="Symbol"
+      >:</a
+      ><a name="6239"
+      > </a
+      ><a name="6240" class="Symbol"
+      >(</a
+      ><a name="6241" href="lib.types.KG1.html#6241" class="Bound"
+      >g</a
+      ><a name="6242"
+      > </a
+      ><a name="6243" class="Symbol"
+      >:</a
+      ><a name="6244"
+      > </a
+      ><a name="6245" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="6247" class="Symbol"
+      >)</a
+      ><a name="6248"
+      > 
+        </a
+      ><a name="6258" class="Symbol"
+      >&#8594;</a
+      ><a name="6259"
+      > </a
+      ><a name="6260" href="lib.types.KG1.html#5490" class="Function"
+      >decode'</a
+      ><a name="6267"
+      > </a
+      ><a name="6268" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="6270"
+      > </a
+      ><a name="6271" href="lib.types.KG1.html#5490" class="Function"
+      >decode'</a
+      ><a name="6278"
+      > </a
+      ><a name="6279" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="6280"
+      > </a
+      ><a name="6281" class="Symbol"
+      >(&#955;</a
+      ><a name="6283"
+      > </a
+      ><a name="6284" href="lib.types.KG1.html#6284" class="Bound"
+      >x'</a
+      ><a name="6286"
+      > </a
+      ><a name="6287" class="Symbol"
+      >&#8594;</a
+      ><a name="6288"
+      > </a
+      ><a name="6289" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="6292"
+      > </a
+      ><a name="6293" class="Symbol"
+      >(</a
+      ><a name="6294" href="lib.types.KG1.html#4785" class="Function"
+      >Codes</a
+      ><a name="6299"
+      > </a
+      ><a name="6300" href="lib.types.KG1.html#6284" class="Bound"
+      >x'</a
+      ><a name="6302" class="Symbol"
+      >)</a
+      ><a name="6303"
+      > </a
+      ><a name="6304" class="Symbol"
+      >&#8594;</a
+      ><a name="6305"
+      > </a
+      ><a name="6306" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="6311"
+      > </a
+      ><a name="6312" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="6314"
+      > </a
+      ><a name="6315" href="lib.types.KG1.html#6284" class="Bound"
+      >x'</a
+      ><a name="6317" class="Symbol"
+      >)</a
+      ><a name="6318"
+      > </a
+      ><a name="6319" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="6320"
+      > </a
+      ><a name="6321" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="6326"
+      > </a
+      ><a name="6327" href="lib.types.KG1.html#6241" class="Bound"
+      >g</a
+      ><a name="6328"
+      > </a
+      ><a name="6329" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="6330"
+      >
+      </a
+      ><a name="6337" href="lib.types.KG1.html#6232" class="Function"
+      >loop'</a
+      ><a name="6342"
+      > </a
+      ><a name="6343" href="lib.types.KG1.html#6343" class="Bound"
+      >g</a
+      ><a name="6344"
+      > </a
+      ><a name="6345" class="Symbol"
+      >=</a
+      ><a name="6346"
+      > </a
+      ><a name="6347" href="lib.types.Pi.html#5543" class="Function"
+      >&#8595;-&#8594;-from-transp</a
+      ><a name="6362"
+      > </a
+      ><a name="6363" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="6364"
+      > </a
+      ><a name="6365" href="lib.Funext.html#3978" class="Function"
+      >&#955;=</a
+      ><a name="6367"
+      > </a
+      ><a name="6368" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="6369"
+      > </a
+      ><a name="6370" class="Symbol"
+      >&#955;</a
+      ><a name="6371"
+      > </a
+      ><a name="6372" href="lib.types.KG1.html#6372" class="Bound"
+      >y</a
+      ><a name="6373"
+      > </a
+      ><a name="6374" class="Symbol"
+      >&#8594;</a
+      ><a name="6375"
+      >
+        </a
+      ><a name="6384" href="lib.Base.html#4516" class="Function"
+      >transport</a
+      ><a name="6393"
+      > </a
+      ><a name="6394" class="Symbol"
+      >(&#955;</a
+      ><a name="6396"
+      > </a
+      ><a name="6397" href="lib.types.KG1.html#6397" class="Bound"
+      >z</a
+      ><a name="6398"
+      > </a
+      ><a name="6399" class="Symbol"
+      >&#8594;</a
+      ><a name="6400"
+      > </a
+      ><a name="6401" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="6406"
+      > </a
+      ><a name="6407" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="6409"
+      > </a
+      ><a name="6410" href="lib.types.KG1.html#6397" class="Bound"
+      >z</a
+      ><a name="6411" class="Symbol"
+      >)</a
+      ><a name="6412"
+      > </a
+      ><a name="6413" class="Symbol"
+      >(</a
+      ><a name="6414" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="6419"
+      > </a
+      ><a name="6420" href="lib.types.KG1.html#6343" class="Bound"
+      >g</a
+      ><a name="6421" class="Symbol"
+      >)</a
+      ><a name="6422"
+      > </a
+      ><a name="6423" class="Symbol"
+      >(</a
+      ><a name="6424" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="6429"
+      > </a
+      ><a name="6430" href="lib.types.KG1.html#6372" class="Bound"
+      >y</a
+      ><a name="6431" class="Symbol"
+      >)</a
+      ><a name="6432"
+      >
+          </a
+      ><a name="6443" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="6445"
+      > </a
+      ><a name="6446" href="lib.PathFunctor.html#4025" class="Function"
+      >trans-pathfrom</a
+      ><a name="6460"
+      > </a
+      ><a name="6461" class="Symbol"
+      >(</a
+      ><a name="6462" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="6467"
+      > </a
+      ><a name="6468" href="lib.types.KG1.html#6343" class="Bound"
+      >g</a
+      ><a name="6469" class="Symbol"
+      >)</a
+      ><a name="6470"
+      > </a
+      ><a name="6471" class="Symbol"
+      >(</a
+      ><a name="6472" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="6477"
+      > </a
+      ><a name="6478" href="lib.types.KG1.html#6372" class="Bound"
+      >y</a
+      ><a name="6479" class="Symbol"
+      >)</a
+      ><a name="6480"
+      > </a
+      ><a name="6481" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="6482"
+      >
+        </a
+      ><a name="6491" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="6496"
+      > </a
+      ><a name="6497" href="lib.types.KG1.html#6372" class="Bound"
+      >y</a
+      ><a name="6498"
+      > </a
+      ><a name="6499" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="6500"
+      > </a
+      ><a name="6501" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="6506"
+      > </a
+      ><a name="6507" href="lib.types.KG1.html#6343" class="Bound"
+      >g</a
+      ><a name="6508"
+      >
+          </a
+      ><a name="6519" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="6521"
+      > </a
+      ><a name="6522" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="6523"
+      > </a
+      ><a name="6524" class="Symbol"
+      >(</a
+      ><a name="6525" href="lib.types.KG1.html#868" class="Postulate"
+      >kloop-comp</a
+      ><a name="6535"
+      > </a
+      ><a name="6536" href="lib.types.KG1.html#6372" class="Bound"
+      >y</a
+      ><a name="6537"
+      > </a
+      ><a name="6538" href="lib.types.KG1.html#6343" class="Bound"
+      >g</a
+      ><a name="6539" class="Symbol"
+      >)</a
+      ><a name="6540"
+      > </a
+      ><a name="6541" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="6542"
+      >
+        </a
+      ><a name="6551" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="6556"
+      > </a
+      ><a name="6557" class="Symbol"
+      >(</a
+      ><a name="6558" href="lib.types.Group.html#354" class="Function"
+      >comp</a
+      ><a name="6562"
+      > </a
+      ><a name="6563" href="lib.types.KG1.html#6372" class="Bound"
+      >y</a
+      ><a name="6564"
+      > </a
+      ><a name="6565" href="lib.types.KG1.html#6343" class="Bound"
+      >g</a
+      ><a name="6566" class="Symbol"
+      >)</a
+      ><a name="6567"
+      >
+          </a
+      ><a name="6578" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="6580"
+      > </a
+      ><a name="6581" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="6583"
+      > </a
+      ><a name="6584" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="6589"
+      > </a
+      ><a name="6590" class="Symbol"
+      >(</a
+      ><a name="6591" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="6592"
+      > </a
+      ><a name="6593" class="Symbol"
+      >(</a
+      ><a name="6594" href="lib.PathOver.html#5197" class="Function"
+      >to-transp</a
+      ><a name="6603"
+      > </a
+      ><a name="6604" class="Symbol"
+      >(</a
+      ><a name="6605" href="lib.types.KG1.html#4956" class="Function"
+      >&#8595;-Codes-loop</a
+      ><a name="6617"
+      > </a
+      ><a name="6618" href="lib.types.KG1.html#6343" class="Bound"
+      >g</a
+      ><a name="6619"
+      > </a
+      ><a name="6620" href="lib.types.KG1.html#6372" class="Bound"
+      >y</a
+      ><a name="6621" class="Symbol"
+      >)))</a
+      ><a name="6624"
+      > </a
+      ><a name="6625" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="6626"
+      >
+        </a
+      ><a name="6635" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="6640"
+      > </a
+      ><a name="6641" class="Symbol"
+      >(</a
+      ><a name="6642" href="lib.Base.html#4516" class="Function"
+      >transport</a
+      ><a name="6651"
+      > </a
+      ><a name="6652" class="Symbol"
+      >(&#955;</a
+      ><a name="6654"
+      > </a
+      ><a name="6655" href="lib.types.KG1.html#6655" class="Bound"
+      >z</a
+      ><a name="6656"
+      > </a
+      ><a name="6657" class="Symbol"
+      >&#8594;</a
+      ><a name="6658"
+      > </a
+      ><a name="6659" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="6662"
+      > </a
+      ><a name="6663" class="Symbol"
+      >(</a
+      ><a name="6664" href="lib.types.KG1.html#4785" class="Function"
+      >Codes</a
+      ><a name="6669"
+      > </a
+      ><a name="6670" href="lib.types.KG1.html#6655" class="Bound"
+      >z</a
+      ><a name="6671" class="Symbol"
+      >))</a
+      ><a name="6673"
+      > </a
+      ><a name="6674" class="Symbol"
+      >(</a
+      ><a name="6675" href="lib.types.KG1.html#799" class="Postulate"
+      >kloop</a
+      ><a name="6680"
+      > </a
+      ><a name="6681" href="lib.types.KG1.html#6343" class="Bound"
+      >g</a
+      ><a name="6682" class="Symbol"
+      >)</a
+      ><a name="6683"
+      > </a
+      ><a name="6684" href="lib.types.KG1.html#6372" class="Bound"
+      >y</a
+      ><a name="6685" class="Symbol"
+      >)</a
+      ><a name="6686"
+      > </a
+      ><a name="6687" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="6688"
+      >
+
+    </a
+      ><a name="6694" href="lib.types.KG1.html#6694" class="Function"
+      >decode-encode</a
+      ><a name="6707"
+      > </a
+      ><a name="6708" class="Symbol"
+      >:</a
+      ><a name="6709"
+      > </a
+      ><a name="6710" class="Symbol"
+      >&#8704;</a
+      ><a name="6711"
+      > </a
+      ><a name="6712" class="Symbol"
+      >{</a
+      ><a name="6713" href="lib.types.KG1.html#6713" class="Bound"
+      >x</a
+      ><a name="6714" class="Symbol"
+      >}</a
+      ><a name="6715"
+      > </a
+      ><a name="6716" class="Symbol"
+      >(</a
+      ><a name="6717" href="lib.types.KG1.html#6717" class="Bound"
+      >&#945;</a
+      ><a name="6718"
+      > </a
+      ><a name="6719" class="Symbol"
+      >:</a
+      ><a name="6720"
+      > </a
+      ><a name="6721" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="6726"
+      > </a
+      ><a name="6727" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="6729"
+      > </a
+      ><a name="6730" href="lib.types.KG1.html#6713" class="Bound"
+      >x</a
+      ><a name="6731" class="Symbol"
+      >)</a
+      ><a name="6732"
+      > </a
+      ><a name="6733" class="Symbol"
+      >&#8594;</a
+      ><a name="6734"
+      > </a
+      ><a name="6735" href="lib.types.KG1.html#5843" class="Function"
+      >decode</a
+      ><a name="6741"
+      > </a
+      ><a name="6742" class="Symbol"
+      >(</a
+      ><a name="6743" href="lib.types.KG1.html#5545" class="Function"
+      >encode</a
+      ><a name="6749"
+      > </a
+      ><a name="6750" href="lib.types.KG1.html#6717" class="Bound"
+      >&#945;</a
+      ><a name="6751" class="Symbol"
+      >)</a
+      ><a name="6752"
+      > </a
+      ><a name="6753" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="6755"
+      > </a
+      ><a name="6756" href="lib.types.KG1.html#6717" class="Bound"
+      >&#945;</a
+      ><a name="6757"
+      >
+    </a
+      ><a name="6762" href="lib.types.KG1.html#6694" class="Function"
+      >decode-encode</a
+      ><a name="6775"
+      > </a
+      ><a name="6776" href="lib.types.KG1.html#6776" class="Bound"
+      >&#945;</a
+      ><a name="6777"
+      > </a
+      ><a name="6778" class="Symbol"
+      >=</a
+      ><a name="6779"
+      > 
+      </a
+      ><a name="6787" href="lib.Base.html#2275" class="Function"
+      >J</a
+      ><a name="6788"
+      > </a
+      ><a name="6789" class="Symbol"
+      >(&#955;</a
+      ><a name="6791"
+      > </a
+      ><a name="6792" class="Symbol"
+      >(</a
+      ><a name="6793" href="lib.types.KG1.html#6793" class="Bound"
+      >x</a
+      ><a name="6794"
+      > </a
+      ><a name="6795" class="Symbol"
+      >:</a
+      ><a name="6796"
+      > </a
+      ><a name="6797" href="lib.types.KG1.html#628" class="Function"
+      >KG1</a
+      ><a name="6800" class="Symbol"
+      >)</a
+      ><a name="6801"
+      > </a
+      ><a name="6802" class="Symbol"
+      >(</a
+      ><a name="6803" href="lib.types.KG1.html#6803" class="Bound"
+      >&#945;</a
+      ><a name="6804"
+      > </a
+      ><a name="6805" class="Symbol"
+      >:</a
+      ><a name="6806"
+      > </a
+      ><a name="6807" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="6812"
+      > </a
+      ><a name="6813" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="6815"
+      > </a
+      ><a name="6816" href="lib.types.KG1.html#6793" class="Bound"
+      >x</a
+      ><a name="6817" class="Symbol"
+      >)</a
+      ><a name="6818"
+      > </a
+      ><a name="6819" class="Symbol"
+      >&#8594;</a
+      ><a name="6820"
+      > </a
+      ><a name="6821" href="lib.types.KG1.html#5843" class="Function"
+      >decode</a
+      ><a name="6827"
+      > </a
+      ><a name="6828" class="Symbol"
+      >(</a
+      ><a name="6829" href="lib.types.KG1.html#5545" class="Function"
+      >encode</a
+      ><a name="6835"
+      > </a
+      ><a name="6836" href="lib.types.KG1.html#6803" class="Bound"
+      >&#945;</a
+      ><a name="6837" class="Symbol"
+      >)</a
+      ><a name="6838"
+      > </a
+      ><a name="6839" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="6841"
+      > </a
+      ><a name="6842" href="lib.types.KG1.html#6803" class="Bound"
+      >&#945;</a
+      ><a name="6843" class="Symbol"
+      >)</a
+      ><a name="6844"
+      > </a
+      ><a name="6845" href="lib.types.KG1.html#831" class="Postulate"
+      >kloop-ident</a
+      ><a name="6856"
+      > </a
+      ><a name="6857" href="lib.types.KG1.html#6776" class="Bound"
+      >&#945;</a
+      ><a name="6858"
+      >
+
+    </a
+      ><a name="6864" class="Keyword"
+      >abstract</a
+      ><a name="6872"
+      >
+      </a
+      ><a name="6879" href="lib.types.KG1.html#6879" class="Function"
+      >&#937;&#185;-equiv</a
+      ><a name="6887"
+      > </a
+      ><a name="6888" class="Symbol"
+      >:</a
+      ><a name="6889"
+      > </a
+      ><a name="6890" class="Symbol"
+      >(</a
+      ><a name="6891" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="6896"
+      > </a
+      ><a name="6897" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="6899"
+      > </a
+      ><a name="6900" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="6905" class="Symbol"
+      >)</a
+      ><a name="6906"
+      > </a
+      ><a name="6907" href="lib.Equivalences.html#2994" class="Function Operator"
+      >&#8771;</a
+      ><a name="6908"
+      > </a
+      ><a name="6909" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="6911"
+      >
+      </a
+      ><a name="6918" href="lib.types.KG1.html#6879" class="Function"
+      >&#937;&#185;-equiv</a
+      ><a name="6926"
+      > </a
+      ><a name="6927" class="Symbol"
+      >=</a
+      ><a name="6928"
+      > </a
+      ><a name="6929" href="lib.Equivalences.html#3145" class="Function"
+      >equiv</a
+      ><a name="6934"
+      > </a
+      ><a name="6935" href="lib.types.KG1.html#5545" class="Function"
+      >encode</a
+      ><a name="6941"
+      > </a
+      ><a name="6942" href="lib.types.KG1.html#5490" class="Function"
+      >decode'</a
+      ><a name="6949"
+      > </a
+      ><a name="6950" href="lib.types.KG1.html#5645" class="Function"
+      >encode-decode'</a
+      ><a name="6964"
+      > </a
+      ><a name="6965" href="lib.types.KG1.html#6694" class="Function"
+      >decode-encode</a
+      ><a name="6978"
+      >
+
+    </a
+      ><a name="6984" class="Keyword"
+      >abstract</a
+      ><a name="6992"
+      >
+      </a
+      ><a name="6999" href="lib.types.KG1.html#6999" class="Function"
+      >&#937;&#185;-path</a
+      ><a name="7006"
+      > </a
+      ><a name="7007" class="Symbol"
+      >:</a
+      ><a name="7008"
+      > </a
+      ><a name="7009" class="Symbol"
+      >(</a
+      ><a name="7010" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="7015"
+      > </a
+      ><a name="7016" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="7018"
+      > </a
+      ><a name="7019" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="7024" class="Symbol"
+      >)</a
+      ><a name="7025"
+      > </a
+      ><a name="7026" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="7028"
+      > </a
+      ><a name="7029" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="7031"
+      >
+      </a
+      ><a name="7038" href="lib.types.KG1.html#6999" class="Function"
+      >&#937;&#185;-path</a
+      ><a name="7045"
+      > </a
+      ><a name="7046" class="Symbol"
+      >=</a
+      ><a name="7047"
+      > </a
+      ><a name="7048" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="7050"
+      > </a
+      ><a name="7051" href="lib.types.KG1.html#6879" class="Function"
+      >&#937;&#185;-equiv</a
+      ><a name="7059"
+      >
+
+    </a
+      ><a name="7065" class="Keyword"
+      >abstract</a
+      ><a name="7073"
+      >
+      </a
+      ><a name="7080" href="lib.types.KG1.html#7080" class="Function"
+      >&#960;&#8321;-path</a
+      ><a name="7087"
+      > </a
+      ><a name="7088" class="Symbol"
+      >:</a
+      ><a name="7089"
+      > </a
+      ><a name="7090" href="lib.types.Truncation.html#431" class="Function"
+      >Trunc</a
+      ><a name="7095"
+      > </a
+      ><a name="7096" href="lib.Base.html#8903" class="Function"
+      >&#10216;0&#10217;</a
+      ><a name="7099"
+      > </a
+      ><a name="7100" class="Symbol"
+      >(</a
+      ><a name="7101" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="7106"
+      > </a
+      ><a name="7107" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="7109"
+      > </a
+      ><a name="7110" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="7115" class="Symbol"
+      >)</a
+      ><a name="7116"
+      > </a
+      ><a name="7117" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="7119"
+      > </a
+      ><a name="7120" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="7122"
+      >
+      </a
+      ><a name="7129" href="lib.types.KG1.html#7080" class="Function"
+      >&#960;&#8321;-path</a
+      ><a name="7136"
+      > </a
+      ><a name="7137" class="Symbol"
+      >=</a
+      ><a name="7138"
+      > </a
+      ><a name="7139" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="7141"
+      > </a
+      ><a name="7142" class="Symbol"
+      >(</a
+      ><a name="7143" href="lib.types.Truncation.html#431" class="Function"
+      >Trunc</a
+      ><a name="7148"
+      > </a
+      ><a name="7149" href="lib.Base.html#8903" class="Function"
+      >&#10216;0&#10217;</a
+      ><a name="7152" class="Symbol"
+      >)</a
+      ><a name="7153"
+      > </a
+      ><a name="7154" href="lib.types.KG1.html#6999" class="Function"
+      >&#937;&#185;-path</a
+      ><a name="7161"
+      > </a
+      ><a name="7162" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="7163"
+      > </a
+      ><a name="7164" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="7166"
+      > </a
+      ><a name="7167" class="Symbol"
+      >(</a
+      ><a name="7168" href="lib.types.Truncation.html#5643" class="Function"
+      >unTrunc-equiv</a
+      ><a name="7181"
+      > </a
+      ><a name="7182" href="lib.types.Group.html#673" class="Function"
+      >El</a
+      ><a name="7184"
+      > </a
+      ><a name="7185" href="lib.types.Group.html#689" class="Function"
+      >El-level</a
+      ><a name="7193" class="Symbol"
+      >)</a
+      ><a name="7194"
+      >
+    
+    </a
+      ><a name="7204" class="Keyword"
+      >abstract</a
+      ><a name="7212"
+      >
+      </a
+      ><a name="7219" href="lib.types.KG1.html#7219" class="Function"
+      >&#960;&#8321;-iso</a
+      ><a name="7225"
+      > </a
+      ><a name="7226" class="Symbol"
+      >:</a
+      ><a name="7227"
+      > </a
+      ><a name="7228" class="Symbol"
+      >&#10627;</a
+      ><a name="7229"
+      > </a
+      ><a name="7230" href="lib.types.KG1.html#7230" class="Bound"
+      >p1</a
+      ><a name="7232"
+      > </a
+      ><a name="7233" class="Symbol"
+      >:</a
+      ><a name="7234"
+      > </a
+      ><a name="7235" class="Number"
+      >1</a
+      ><a name="7236"
+      > </a
+      ><a name="7237" href="lib.Base.html#5821" class="Function Operator"
+      >&#8800;</a
+      ><a name="7238"
+      > </a
+      ><a name="7239" class="Number"
+      >0</a
+      ><a name="7240"
+      > </a
+      ><a name="7241" class="Symbol"
+      >&#10628;</a
+      ><a name="7242"
+      > </a
+      ><a name="7243" class="Symbol"
+      >&#8594;</a
+      ><a name="7244"
+      > </a
+      ><a name="7245" href="lib.groups.HomotopyGroup.html#752" class="Function"
+      >&#960;</a
+      ><a name="7246"
+      > </a
+      ><a name="7247" class="Number"
+      >1</a
+      ><a name="7248"
+      > </a
+      ><a name="7249" class="Symbol"
+      >&#10627;</a
+      ><a name="7250"
+      > </a
+      ><a name="7251" href="lib.types.KG1.html#7230" class="Bound"
+      >p1</a
+      ><a name="7253"
+      > </a
+      ><a name="7254" class="Symbol"
+      >&#10628;</a
+      ><a name="7255"
+      > </a
+      ><a name="7256" class="Symbol"
+      >(</a
+      ><a name="7257" href="lib.types.KG1.html#628" class="Function"
+      >KG1</a
+      ><a name="7260"
+      > </a
+      ><a name="7261" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="7262"
+      > </a
+      ><a name="7263" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="7268" class="Symbol"
+      >)</a
+      ><a name="7269"
+      > </a
+      ><a name="7270" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="7272"
+      > </a
+      ><a name="7273" href="lib.types.KG1.html#447" class="Bound"
+      >G</a
+      ><a name="7274"
+      >
+      </a
+      ><a name="7281" href="lib.types.KG1.html#7219" class="Function"
+      >&#960;&#8321;-iso</a
+      ><a name="7287"
+      > </a
+      ><a name="7288" class="Symbol"
+      >&#10627;</a
+      ><a name="7289"
+      > </a
+      ><a name="7290" href="lib.types.KG1.html#7290" class="Bound"
+      >p1</a
+      ><a name="7292"
+      > </a
+      ><a name="7293" class="Symbol"
+      >&#10628;</a
+      ><a name="7294"
+      > </a
+      ><a name="7295" class="Symbol"
+      >=</a
+      ><a name="7296"
+      > </a
+      ><a name="7297" href="lib.Base.html#4516" class="Function"
+      >transport</a
+      ><a name="7306"
+      > </a
+      ><a name="7307" class="Symbol"
+      >(&#955;</a
+      ><a name="7309"
+      > </a
+      ><a name="7310" href="lib.types.KG1.html#7310" class="Bound"
+      >pi</a
+      ><a name="7312"
+      > </a
+      ><a name="7313" class="Symbol"
+      >&#8594;</a
+      ><a name="7314"
+      > </a
+      ><a name="7315" href="lib.types.KG1.html#7310" class="Bound"
+      >pi</a
+      ><a name="7317"
+      > </a
+      ><a name="7318" class="Number"
+      >1</a
+      ><a name="7319"
+      > </a
+      ><a name="7320" class="Symbol"
+      >&#10627;</a
+      ><a name="7321"
+      > </a
+      ><a name="7322" href="lib.types.KG1.html#7290" class="Bound"
+      >p1</a
+      ><a name="7324"
+      > </a
+      ><a name="7325" class="Symbol"
+      >&#10628;</a
+      ><a name="7326"
+      > </a
+      ><a name="7327" href="lib.types.KG1.html#696" class="Function"
+      >Ptd-KG1</a
+      ><a name="7334"
+      > </a
+      ><a name="7335" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="7337"
+      > </a
+      ><a name="7338" href="lib.types.KG1.html#447" class="Bound"
+      >G</a
+      ><a name="7339" class="Symbol"
+      >)</a
+      ><a name="7340"
+      > </a
+      ><a name="7341" href="lib.groups.HomotopyGroup.html#824" class="Function"
+      >&#960;-fold</a
+      ><a name="7347"
+      > </a
+      ><a name="7348" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="7349"
+      > </a
+      ><a name="7350" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="7351"
+      > </a
+      ><a name="7352" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="7353"
+      >
+        </a
+      ><a name="7362" href="lib.types.Group.html#4796" class="Function"
+      >group-iso</a
+      ><a name="7371"
+      > 
+        </a
+      ><a name="7381" class="Symbol"
+      >(</a
+      ><a name="7382" class="Keyword"
+      >record</a
+      ><a name="7388"
+      > </a
+      ><a name="7389" class="Symbol"
+      >{</a
+      ><a name="7390"
+      > </a
+      ><a name="7391" class="Field"
+      >f</a
+      ><a name="7392"
+      > </a
+      ><a name="7393" class="Symbol"
+      >=</a
+      ><a name="7394"
+      > </a
+      ><a name="7395" href="lib.types.Truncation.html#491" class="Function Operator"
+      >[_]</a
+      ><a name="7398"
+      > </a
+      ><a name="7399" href="lib.Base.html#7735" class="Function Operator"
+      >&#8728;</a
+      ><a name="7400"
+      > </a
+      ><a name="7401" href="lib.types.KG1.html#5490" class="Function"
+      >decode'</a
+      ><a name="7408" class="Symbol"
+      >;</a
+      ><a name="7409"
+      >
+                  </a
+      ><a name="7428" class="Field"
+      >pres-ident</a
+      ><a name="7438"
+      > </a
+      ><a name="7439" class="Symbol"
+      >=</a
+      ><a name="7440"
+      > </a
+      ><a name="7441" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="7443"
+      > </a
+      ><a name="7444" href="lib.types.Truncation.html#491" class="Function Operator"
+      >[_]</a
+      ><a name="7447"
+      > </a
+      ><a name="7448" href="lib.types.KG1.html#831" class="Postulate"
+      >kloop-ident</a
+      ><a name="7459" class="Symbol"
+      >;</a
+      ><a name="7460"
+      > 
+                  </a
+      ><a name="7480" class="Field"
+      >pres-comp</a
+      ><a name="7489"
+      > </a
+      ><a name="7490" class="Symbol"
+      >=</a
+      ><a name="7491"
+      > </a
+      ><a name="7492" class="Symbol"
+      >&#955;</a
+      ><a name="7493"
+      > </a
+      ><a name="7494" href="lib.types.KG1.html#7494" class="Bound"
+      >g&#8321;</a
+      ><a name="7496"
+      > </a
+      ><a name="7497" href="lib.types.KG1.html#7497" class="Bound"
+      >g&#8322;</a
+      ><a name="7499"
+      > </a
+      ><a name="7500" class="Symbol"
+      >&#8594;</a
+      ><a name="7501"
+      > </a
+      ><a name="7502" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="7504"
+      > </a
+      ><a name="7505" href="lib.types.Truncation.html#491" class="Function Operator"
+      >[_]</a
+      ><a name="7508"
+      > </a
+      ><a name="7509" class="Symbol"
+      >(</a
+      ><a name="7510" href="lib.types.KG1.html#868" class="Postulate"
+      >kloop-comp</a
+      ><a name="7520"
+      > </a
+      ><a name="7521" href="lib.types.KG1.html#7494" class="Bound"
+      >g&#8321;</a
+      ><a name="7523"
+      > </a
+      ><a name="7524" href="lib.types.KG1.html#7497" class="Bound"
+      >g&#8322;</a
+      ><a name="7526" class="Symbol"
+      >)</a
+      ><a name="7527"
+      > </a
+      ><a name="7528" class="Symbol"
+      >})</a
+      ><a name="7530"
+      > 
+        </a
+      ><a name="7540" class="Symbol"
+      >(</a
+      ><a name="7541" href="lib.Base.html#5092" class="Field"
+      >snd</a
+      ><a name="7544"
+      > </a
+      ><a name="7545" class="Symbol"
+      >((</a
+      ><a name="7547" href="lib.types.Truncation.html#5643" class="Function"
+      >unTrunc-equiv</a
+      ><a name="7560"
+      > </a
+      ><a name="7561" class="Symbol"
+      >(</a
+      ><a name="7562" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="7567"
+      > </a
+      ><a name="7568" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="7570"
+      > </a
+      ><a name="7571" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="7576" class="Symbol"
+      >)</a
+      ><a name="7577"
+      > </a
+      ><a name="7578" class="Symbol"
+      >(</a
+      ><a name="7579" href="lib.types.KG1.html#766" class="Postulate"
+      >klevel</a
+      ><a name="7585"
+      > </a
+      ><a name="7586" class="Symbol"
+      >_</a
+      ><a name="7587"
+      > </a
+      ><a name="7588" class="Symbol"
+      >_))</a
+      ><a name="7591" href="lib.Equivalences.html#4644" class="Function Operator"
+      >&#8315;&#185;</a
+      ><a name="7593"
+      > </a
+      ><a name="7594" href="lib.Equivalences.html#4016" class="Function Operator"
+      >&#8728;e</a
+      ><a name="7596"
+      > </a
+      ><a name="7597" class="Symbol"
+      >(</a
+      ><a name="7598" href="lib.types.KG1.html#6879" class="Function"
+      >&#937;&#185;-equiv</a
+      ><a name="7606"
+      > </a
+      ><a name="7607" href="lib.Equivalences.html#4644" class="Function Operator"
+      >&#8315;&#185;</a
+      ><a name="7609" class="Symbol"
+      >)))</a
+      ><a name="7612"
+      >
+
+  </a
+      ><a name="7616" class="Comment"
+      >{- KG1 is 0-connected -}</a
+      ><a name="7640"
+      >
+  </a
+      ><a name="7643" class="Keyword"
+      >abstract</a
+      ><a name="7651"
+      >
+    </a
+      ><a name="7656" href="lib.types.KG1.html#7656" class="Function"
+      >KG1-conn</a
+      ><a name="7664"
+      > </a
+      ><a name="7665" class="Symbol"
+      >:</a
+      ><a name="7666"
+      > </a
+      ><a name="7667" href="lib.NConnected.html#365" class="Function"
+      >is-connected</a
+      ><a name="7679"
+      > </a
+      ><a name="7680" href="lib.Base.html#8903" class="Function"
+      >&#10216;0&#10217;</a
+      ><a name="7683"
+      > </a
+      ><a name="7684" href="lib.types.KG1.html#628" class="Function"
+      >KG1</a
+      ><a name="7687"
+      >
+    </a
+      ><a name="7692" href="lib.types.KG1.html#7656" class="Function"
+      >KG1-conn</a
+      ><a name="7700"
+      > </a
+      ><a name="7701" class="Symbol"
+      >=</a
+      ><a name="7702"
+      > </a
+      ><a name="7703" class="Symbol"
+      >(</a
+      ><a name="7704" href="lib.types.Truncation.html#491" class="Function Operator"
+      >[</a
+      ><a name="7705"
+      > </a
+      ><a name="7706" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="7711"
+      > </a
+      ><a name="7712" href="lib.types.Truncation.html#491" class="Function Operator"
+      >]</a
+      ><a name="7713"
+      > </a
+      ><a name="7714" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="7715"
+      > </a
+      ><a name="7716" href="lib.types.Truncation.html#795" class="Function"
+      >Trunc-elim</a
+      ><a name="7726"
+      > </a
+      ><a name="7727" class="Symbol"
+      >(&#955;</a
+      ><a name="7729"
+      > </a
+      ><a name="7730" href="lib.types.KG1.html#7730" class="Bound"
+      >_</a
+      ><a name="7731"
+      > </a
+      ><a name="7732" class="Symbol"
+      >&#8594;</a
+      ><a name="7733"
+      > </a
+      ><a name="7734" href="lib.NType.html#3492" class="Function"
+      >=-preserves-level</a
+      ><a name="7751"
+      > </a
+      ><a name="7752" class="Symbol"
+      >_</a
+      ><a name="7753"
+      > </a
+      ><a name="7754" href="lib.types.Truncation.html#579" class="Postulate"
+      >Trunc-level</a
+      ><a name="7765" class="Symbol"
+      >)</a
+      ><a name="7766"
+      >
+      </a
+      ><a name="7773" class="Symbol"
+      >(</a
+      ><a name="7774" href="lib.types.KG1.html#1721" class="Function"
+      >KG1-elim</a
+      ><a name="7782"
+      >
+        </a
+      ><a name="7791" class="Symbol"
+      >{P</a
+      ><a name="7793"
+      > </a
+      ><a name="7794" class="Symbol"
+      >=</a
+      ><a name="7795"
+      > </a
+      ><a name="7796" class="Symbol"
+      >&#955;</a
+      ><a name="7797"
+      > </a
+      ><a name="7798" href="lib.types.KG1.html#7798" class="Bound"
+      >x</a
+      ><a name="7799"
+      > </a
+      ><a name="7800" class="Symbol"
+      >&#8594;</a
+      ><a name="7801"
+      > </a
+      ><a name="7802" href="lib.types.Truncation.html#491" class="Function Operator"
+      >[</a
+      ><a name="7803"
+      > </a
+      ><a name="7804" href="lib.types.KG1.html#657" class="Function"
+      >kbase</a
+      ><a name="7809"
+      > </a
+      ><a name="7810" href="lib.types.Truncation.html#491" class="Function Operator"
+      >]</a
+      ><a name="7811"
+      > </a
+      ><a name="7812" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="7814"
+      > </a
+      ><a name="7815" href="lib.types.Truncation.html#491" class="Function Operator"
+      >[</a
+      ><a name="7816"
+      > </a
+      ><a name="7817" href="lib.types.KG1.html#7798" class="Bound"
+      >x</a
+      ><a name="7818"
+      > </a
+      ><a name="7819" href="lib.types.Truncation.html#491" class="Function Operator"
+      >]</a
+      ><a name="7820" class="Symbol"
+      >}</a
+      ><a name="7821"
+      >
+        </a
+      ><a name="7830" class="Symbol"
+      >(&#955;</a
+      ><a name="7832"
+      > </a
+      ><a name="7833" href="lib.types.KG1.html#7833" class="Bound"
+      >_</a
+      ><a name="7834"
+      > </a
+      ><a name="7835" class="Symbol"
+      >&#8594;</a
+      ><a name="7836"
+      > </a
+      ><a name="7837" href="lib.NType.html#1025" class="Function"
+      >raise-level</a
+      ><a name="7848"
+      > </a
+      ><a name="7849" class="Symbol"
+      >_</a
+      ><a name="7850"
+      > </a
+      ><a name="7851" class="Symbol"
+      >(</a
+      ><a name="7852" href="lib.NType.html#3492" class="Function"
+      >=-preserves-level</a
+      ><a name="7869"
+      > </a
+      ><a name="7870" class="Symbol"
+      >_</a
+      ><a name="7871"
+      > </a
+      ><a name="7872" href="lib.types.Truncation.html#579" class="Postulate"
+      >Trunc-level</a
+      ><a name="7883" class="Symbol"
+      >))</a
+      ><a name="7885"
+      >
+        </a
+      ><a name="7894" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="7897"
+      >
+        </a
+      ><a name="7906" class="Symbol"
+      >(&#955;</a
+      ><a name="7908"
+      > </a
+      ><a name="7909" href="lib.types.KG1.html#7909" class="Bound"
+      >_</a
+      ><a name="7910"
+      > </a
+      ><a name="7911" class="Symbol"
+      >&#8594;</a
+      ><a name="7912"
+      > </a
+      ><a name="7913" href="lib.NType2.html#675" class="Function"
+      >prop-has-all-paths-&#8595;</a
+      ><a name="7933"
+      > </a
+      ><a name="7934" class="Symbol"
+      >(</a
+      ><a name="7935" href="lib.types.Truncation.html#579" class="Postulate"
+      >Trunc-level</a
+      ><a name="7946"
+      > </a
+      ><a name="7947" class="Symbol"
+      >{n</a
+      ><a name="7949"
+      > </a
+      ><a name="7950" class="Symbol"
+      >=</a
+      ><a name="7951"
+      > </a
+      ><a name="7952" href="lib.Base.html#8903" class="Function"
+      >&#10216;0&#10217;</a
+      ><a name="7955" class="Symbol"
+      >}</a
+      ><a name="7956"
+      > </a
+      ><a name="7957" class="Symbol"
+      >_</a
+      ><a name="7958"
+      > </a
+      ><a name="7959" class="Symbol"
+      >_))</a
+      ><a name="7962"
+      >
+        </a
+      ><a name="7971" class="Symbol"
+      >(</a
+      ><a name="7972" href="lib.NType2.html#853" class="Function"
+      >set-&#8595;-has-all-paths-&#8595;</a
+      ><a name="7993"
+      > </a
+      ><a name="7994" class="Symbol"
+      >(</a
+      ><a name="7995" href="lib.NType.html#3492" class="Function"
+      >=-preserves-level</a
+      ><a name="8012"
+      > </a
+      ><a name="8013" class="Symbol"
+      >_</a
+      ><a name="8014"
+      > </a
+      ><a name="8015" href="lib.types.Truncation.html#579" class="Postulate"
+      >Trunc-level</a
+      ><a name="8026" class="Symbol"
+      >))</a
+      ><a name="8028"
+      >
+        </a
+      ><a name="8037" class="Symbol"
+      >(&#955;</a
+      ><a name="8039"
+      > </a
+      ><a name="8040" href="lib.types.KG1.html#8040" class="Bound"
+      >_</a
+      ><a name="8041"
+      > </a
+      ><a name="8042" href="lib.types.KG1.html#8042" class="Bound"
+      >_</a
+      ><a name="8043"
+      > </a
+      ><a name="8044" class="Symbol"
+      >&#8594;</a
+      ><a name="8045"
+      > </a
+      ><a name="8046" href="lib.NType2.html#853" class="Function"
+      >set-&#8595;-has-all-paths-&#8595;</a
+      ><a name="8067"
+      > </a
+      ><a name="8068" class="Symbol"
+      >(</a
+      ><a name="8069" href="lib.NType.html#3492" class="Function"
+      >=-preserves-level</a
+      ><a name="8086"
+      > </a
+      ><a name="8087" class="Symbol"
+      >_</a
+      ><a name="8088"
+      > </a
+      ><a name="8089" href="lib.types.Truncation.html#579" class="Postulate"
+      >Trunc-level</a
+      ><a name="8100" class="Symbol"
+      >))))</a
+      ><a name="8104"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

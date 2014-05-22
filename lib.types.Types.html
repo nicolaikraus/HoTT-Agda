@@ -1,0 +1,650 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >lib.types.Types</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --without-K </a
+      ><a name="25" class="Symbol"
+      >#-}</a
+      ><a name="28"
+      >
+
+</a
+      ><a name="30" class="Keyword"
+      >module</a
+      ><a name="36"
+      > </a
+      ><a name="37" href="lib.types.Types.html#1" class="Module"
+      >lib.types.Types</a
+      ><a name="52"
+      > </a
+      ><a name="53" class="Keyword"
+      >where</a
+      ><a name="58"
+      >
+
+</a
+      ><a name="60" class="Keyword"
+      >open</a
+      ><a name="64"
+      > </a
+      ><a name="65" class="Keyword"
+      >import</a
+      ><a name="71"
+      > </a
+      ><a name="72" href="lib.Basics.html#1" class="Module"
+      >lib.Basics</a
+      ><a name="82"
+      >
+</a
+      ><a name="83" class="Keyword"
+      >open</a
+      ><a name="87"
+      > </a
+      ><a name="88" class="Keyword"
+      >import</a
+      ><a name="94"
+      > </a
+      ><a name="95" href="lib.types.Empty.html#1" class="Module"
+      >lib.types.Empty</a
+      ><a name="110"
+      > </a
+      ><a name="111" class="Keyword"
+      >public</a
+      ><a name="117"
+      >
+</a
+      ><a name="118" class="Keyword"
+      >open</a
+      ><a name="122"
+      > </a
+      ><a name="123" class="Keyword"
+      >import</a
+      ><a name="129"
+      > </a
+      ><a name="130" href="lib.types.Unit.html#1" class="Module"
+      >lib.types.Unit</a
+      ><a name="144"
+      > </a
+      ><a name="145" class="Keyword"
+      >public</a
+      ><a name="151"
+      >
+</a
+      ><a name="152" class="Keyword"
+      >open</a
+      ><a name="156"
+      > </a
+      ><a name="157" class="Keyword"
+      >import</a
+      ><a name="163"
+      > </a
+      ><a name="164" href="lib.types.Bool.html#1" class="Module"
+      >lib.types.Bool</a
+      ><a name="178"
+      > </a
+      ><a name="179" class="Keyword"
+      >public</a
+      ><a name="185"
+      >
+</a
+      ><a name="186" class="Keyword"
+      >open</a
+      ><a name="190"
+      > </a
+      ><a name="191" class="Keyword"
+      >import</a
+      ><a name="197"
+      > </a
+      ><a name="198" href="lib.types.Nat.html#1" class="Module"
+      >lib.types.Nat</a
+      ><a name="211"
+      > </a
+      ><a name="212" class="Keyword"
+      >public</a
+      ><a name="218"
+      >
+</a
+      ><a name="219" class="Keyword"
+      >open</a
+      ><a name="223"
+      > </a
+      ><a name="224" class="Keyword"
+      >import</a
+      ><a name="230"
+      > </a
+      ><a name="231" href="lib.types.Int.html#1" class="Module"
+      >lib.types.Int</a
+      ><a name="244"
+      > </a
+      ><a name="245" class="Keyword"
+      >public</a
+      ><a name="251"
+      >
+</a
+      ><a name="252" class="Keyword"
+      >open</a
+      ><a name="256"
+      > </a
+      ><a name="257" class="Keyword"
+      >import</a
+      ><a name="263"
+      > </a
+      ><a name="264" href="lib.types.TLevel.html#1" class="Module"
+      >lib.types.TLevel</a
+      ><a name="280"
+      > </a
+      ><a name="281" class="Keyword"
+      >public</a
+      ><a name="287"
+      >
+</a
+      ><a name="288" class="Keyword"
+      >open</a
+      ><a name="292"
+      > </a
+      ><a name="293" class="Keyword"
+      >import</a
+      ><a name="299"
+      > </a
+      ><a name="300" href="lib.types.Paths.html#1" class="Module"
+      >lib.types.Paths</a
+      ><a name="315"
+      > </a
+      ><a name="316" class="Keyword"
+      >public</a
+      ><a name="322"
+      >
+</a
+      ><a name="323" class="Keyword"
+      >open</a
+      ><a name="327"
+      > </a
+      ><a name="328" class="Keyword"
+      >import</a
+      ><a name="334"
+      > </a
+      ><a name="335" href="lib.types.Sigma.html#1" class="Module"
+      >lib.types.Sigma</a
+      ><a name="350"
+      > </a
+      ><a name="351" class="Keyword"
+      >public</a
+      ><a name="357"
+      >
+</a
+      ><a name="358" class="Keyword"
+      >open</a
+      ><a name="362"
+      > </a
+      ><a name="363" class="Keyword"
+      >import</a
+      ><a name="369"
+      > </a
+      ><a name="370" href="lib.types.Pi.html#1" class="Module"
+      >lib.types.Pi</a
+      ><a name="382"
+      > </a
+      ><a name="383" class="Keyword"
+      >public</a
+      ><a name="389"
+      >
+</a
+      ><a name="390" class="Keyword"
+      >open</a
+      ><a name="394"
+      > </a
+      ><a name="395" class="Keyword"
+      >import</a
+      ><a name="401"
+      > </a
+      ><a name="402" href="lib.types.Coproduct.html#1" class="Module"
+      >lib.types.Coproduct</a
+      ><a name="421"
+      > </a
+      ><a name="422" class="Keyword"
+      >public</a
+      ><a name="428"
+      >
+</a
+      ><a name="429" class="Keyword"
+      >open</a
+      ><a name="433"
+      > </a
+      ><a name="434" class="Keyword"
+      >import</a
+      ><a name="440"
+      > </a
+      ><a name="441" href="lib.types.Lift.html#1" class="Module"
+      >lib.types.Lift</a
+      ><a name="455"
+      > </a
+      ><a name="456" class="Keyword"
+      >public</a
+      ><a name="462"
+      >
+</a
+      ><a name="463" class="Keyword"
+      >open</a
+      ><a name="467"
+      > </a
+      ><a name="468" class="Keyword"
+      >import</a
+      ><a name="474"
+      > </a
+      ><a name="475" href="lib.types.Circle.html#1" class="Module"
+      >lib.types.Circle</a
+      ><a name="491"
+      > </a
+      ><a name="492" class="Keyword"
+      >public</a
+      ><a name="498"
+      >
+</a
+      ><a name="499" class="Keyword"
+      >open</a
+      ><a name="503"
+      > </a
+      ><a name="504" class="Keyword"
+      >import</a
+      ><a name="510"
+      > </a
+      ><a name="511" href="lib.types.Span.html#1" class="Module"
+      >lib.types.Span</a
+      ><a name="525"
+      > </a
+      ><a name="526" class="Keyword"
+      >public</a
+      ><a name="532"
+      >
+</a
+      ><a name="533" class="Keyword"
+      >open</a
+      ><a name="537"
+      > </a
+      ><a name="538" class="Keyword"
+      >import</a
+      ><a name="544"
+      > </a
+      ><a name="545" href="lib.types.Pushout.html#1" class="Module"
+      >lib.types.Pushout</a
+      ><a name="562"
+      > </a
+      ><a name="563" class="Keyword"
+      >public</a
+      ><a name="569"
+      >
+</a
+      ><a name="570" class="Keyword"
+      >open</a
+      ><a name="574"
+      > </a
+      ><a name="575" class="Keyword"
+      >import</a
+      ><a name="581"
+      > </a
+      ><a name="582" href="lib.types.PushoutFlattening.html#1" class="Module"
+      >lib.types.PushoutFlattening</a
+      ><a name="609"
+      > </a
+      ><a name="610" class="Keyword"
+      >public</a
+      ><a name="616"
+      >
+</a
+      ><a name="617" class="Keyword"
+      >open</a
+      ><a name="621"
+      > </a
+      ><a name="622" class="Keyword"
+      >import</a
+      ><a name="628"
+      > </a
+      ><a name="629" href="lib.types.Suspension.html#1" class="Module"
+      >lib.types.Suspension</a
+      ><a name="649"
+      > </a
+      ><a name="650" class="Keyword"
+      >public</a
+      ><a name="656"
+      >
+</a
+      ><a name="657" class="Keyword"
+      >open</a
+      ><a name="661"
+      > </a
+      ><a name="662" class="Keyword"
+      >import</a
+      ><a name="668"
+      > </a
+      ><a name="669" href="lib.types.Cofiber.html#1" class="Module"
+      >lib.types.Cofiber</a
+      ><a name="686"
+      > </a
+      ><a name="687" class="Keyword"
+      >public</a
+      ><a name="693"
+      >
+</a
+      ><a name="694" class="Keyword"
+      >open</a
+      ><a name="698"
+      > </a
+      ><a name="699" class="Keyword"
+      >import</a
+      ><a name="705"
+      > </a
+      ><a name="706" href="lib.types.Wedge.html#1" class="Module"
+      >lib.types.Wedge</a
+      ><a name="721"
+      > </a
+      ><a name="722" class="Keyword"
+      >public</a
+      ><a name="728"
+      >
+</a
+      ><a name="729" class="Keyword"
+      >open</a
+      ><a name="733"
+      > </a
+      ><a name="734" class="Keyword"
+      >import</a
+      ><a name="740"
+      > </a
+      ><a name="741" href="lib.types.BigWedge.html#1" class="Module"
+      >lib.types.BigWedge</a
+      ><a name="759"
+      > </a
+      ><a name="760" class="Keyword"
+      >public</a
+      ><a name="766"
+      >
+</a
+      ><a name="767" class="Keyword"
+      >open</a
+      ><a name="771"
+      > </a
+      ><a name="772" class="Keyword"
+      >import</a
+      ><a name="778"
+      > </a
+      ><a name="779" href="lib.types.Join.html#1" class="Module"
+      >lib.types.Join</a
+      ><a name="793"
+      > </a
+      ><a name="794" class="Keyword"
+      >public</a
+      ><a name="800"
+      >
+</a
+      ><a name="801" class="Keyword"
+      >open</a
+      ><a name="805"
+      > </a
+      ><a name="806" class="Keyword"
+      >import</a
+      ><a name="812"
+      > </a
+      ><a name="813" href="lib.types.Torus.html#1" class="Module"
+      >lib.types.Torus</a
+      ><a name="828"
+      > </a
+      ><a name="829" class="Keyword"
+      >public</a
+      ><a name="835"
+      >
+</a
+      ><a name="836" class="Keyword"
+      >open</a
+      ><a name="840"
+      > </a
+      ><a name="841" class="Keyword"
+      >import</a
+      ><a name="847"
+      > </a
+      ><a name="848" href="lib.types.Truncation.html#1" class="Module"
+      >lib.types.Truncation</a
+      ><a name="868"
+      > </a
+      ><a name="869" class="Keyword"
+      >public</a
+      ><a name="875"
+      >
+</a
+      ><a name="876" class="Keyword"
+      >open</a
+      ><a name="880"
+      > </a
+      ><a name="881" class="Keyword"
+      >import</a
+      ><a name="887"
+      > </a
+      ><a name="888" href="lib.types.Cospan.html#1" class="Module"
+      >lib.types.Cospan</a
+      ><a name="904"
+      > </a
+      ><a name="905" class="Keyword"
+      >public</a
+      ><a name="911"
+      >
+</a
+      ><a name="912" class="Keyword"
+      >open</a
+      ><a name="916"
+      > </a
+      ><a name="917" class="Keyword"
+      >import</a
+      ><a name="923"
+      > </a
+      ><a name="924" href="lib.types.Pullback.html#1" class="Module"
+      >lib.types.Pullback</a
+      ><a name="942"
+      > </a
+      ><a name="943" class="Keyword"
+      >public</a
+      ><a name="949"
+      >
+</a
+      ><a name="950" class="Keyword"
+      >open</a
+      ><a name="954"
+      > </a
+      ><a name="955" class="Keyword"
+      >import</a
+      ><a name="961"
+      > </a
+      ><a name="962" href="lib.types.Group.html#1" class="Module"
+      >lib.types.Group</a
+      ><a name="977"
+      > </a
+      ><a name="978" class="Keyword"
+      >public</a
+      ><a name="984"
+      >
+</a
+      ><a name="985" class="Keyword"
+      >open</a
+      ><a name="989"
+      > </a
+      ><a name="990" class="Keyword"
+      >import</a
+      ><a name="996"
+      > </a
+      ><a name="997" href="lib.types.Groupoid.html#1" class="Module"
+      >lib.types.Groupoid</a
+      ><a name="1015"
+      > </a
+      ><a name="1016" class="Keyword"
+      >public</a
+      ><a name="1022"
+      >
+</a
+      ><a name="1023" class="Keyword"
+      >open</a
+      ><a name="1027"
+      > </a
+      ><a name="1028" class="Keyword"
+      >import</a
+      ><a name="1034"
+      > </a
+      ><a name="1035" href="lib.types.GroupSet.html#1" class="Module"
+      >lib.types.GroupSet</a
+      ><a name="1053"
+      > </a
+      ><a name="1054" class="Keyword"
+      >public</a
+      ><a name="1060"
+      >
+</a
+      ><a name="1061" class="Keyword"
+      >open</a
+      ><a name="1065"
+      > </a
+      ><a name="1066" class="Keyword"
+      >import</a
+      ><a name="1072"
+      > </a
+      ><a name="1073" href="lib.types.KG1.html#1" class="Module"
+      >lib.types.KG1</a
+      ><a name="1086"
+      > </a
+      ><a name="1087" class="Keyword"
+      >public</a
+      ><a name="1093"
+      >
+</a
+      ><a name="1094" class="Keyword"
+      >open</a
+      ><a name="1098"
+      > </a
+      ><a name="1099" class="Keyword"
+      >import</a
+      ><a name="1105"
+      > </a
+      ><a name="1106" href="lib.types.Pointed.html#1" class="Module"
+      >lib.types.Pointed</a
+      ><a name="1123"
+      > </a
+      ><a name="1124" class="Keyword"
+      >public</a
+      ><a name="1130"
+      >
+</a
+      ><a name="1131" class="Keyword"
+      >open</a
+      ><a name="1135"
+      > </a
+      ><a name="1136" class="Keyword"
+      >import</a
+      ><a name="1142"
+      > </a
+      ><a name="1143" href="lib.types.LoopSpace.html#1" class="Module"
+      >lib.types.LoopSpace</a
+      ><a name="1162"
+      > </a
+      ><a name="1163" class="Keyword"
+      >public</a
+      ><a name="1169"
+      >
+</a
+      ><a name="1170" class="Keyword"
+      >open</a
+      ><a name="1174"
+      > </a
+      ><a name="1175" class="Keyword"
+      >import</a
+      ><a name="1181"
+      > </a
+      ><a name="1182" href="lib.types.PathSet.html#1" class="Module"
+      >lib.types.PathSet</a
+      ><a name="1199"
+      > </a
+      ><a name="1200" class="Keyword"
+      >public</a
+      ><a name="1206"
+      >
+</a
+      ><a name="1207" class="Keyword"
+      >open</a
+      ><a name="1211"
+      > </a
+      ><a name="1212" class="Keyword"
+      >import</a
+      ><a name="1218"
+      > </a
+      ><a name="1219" href="lib.types.FundamentalGroupoid.html#1" class="Module"
+      >lib.types.FundamentalGroupoid</a
+      ><a name="1248"
+      > </a
+      ><a name="1249" class="Keyword"
+      >public</a
+      ><a name="1255"
+      >
+</a
+      ><a name="1256" class="Keyword"
+      >open</a
+      ><a name="1260"
+      > </a
+      ><a name="1261" class="Keyword"
+      >import</a
+      ><a name="1267"
+      > </a
+      ><a name="1268" href="lib.types.Cover.html#1" class="Module"
+      >lib.types.Cover</a
+      ><a name="1283"
+      > </a
+      ><a name="1284" class="Keyword"
+      >public</a
+      ><a name="1290"
+      >
+</a
+      ><a name="1291" class="Keyword"
+      >open</a
+      ><a name="1295"
+      > </a
+      ><a name="1296" class="Keyword"
+      >import</a
+      ><a name="1302"
+      > </a
+      ><a name="1303" href="lib.types.PathSeq.html#1" class="Module"
+      >lib.types.PathSeq</a
+      ><a name="1320"
+      > </a
+      ><a name="1321" class="Keyword"
+      >public</a
+      ><a name="1327"
+      >
+
+</a
+      ><a name="1329" class="Comment"
+      >-- This should probably not be exported</a
+      ><a name="1368"
+      >
+</a
+      ><a name="1369" class="Comment"
+      >-- module Generic1HIT {i j} (A : Type i) (B : Type j) (f g : B &#8594; A) where</a
+      ><a name="1442"
+      >
+</a
+      ><a name="1443" class="Comment"
+      >--   open import lib.types.Generic1HIT A B f g public</a
+      ><a name="1496"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

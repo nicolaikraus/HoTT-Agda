@@ -1,0 +1,2411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >homotopy.RibbonCover</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --without-K </a
+      ><a name="25" class="Symbol"
+      >#-}</a
+      ><a name="28"
+      >
+
+</a
+      ><a name="30" class="Comment"
+      >{-
+  Ribbon is an explicit covering space construction.
+
+  This construction is given by Daniel Grayson, Favonia
+  and Guillaume Brunerie together.
+-}</a
+      ><a name="180"
+      >
+
+</a
+      ><a name="182" class="Keyword"
+      >open</a
+      ><a name="186"
+      > </a
+      ><a name="187" class="Keyword"
+      >import</a
+      ><a name="193"
+      > </a
+      ><a name="194" href="HoTT.html#1" class="Module"
+      >HoTT</a
+      ><a name="198"
+      >
+
+</a
+      ><a name="200" class="Comment"
+      >-- A is the pointed base space.</a
+      ><a name="231"
+      >
+</a
+      ><a name="232" class="Comment"
+      >-- El is intended to be a (group-)set,</a
+      ><a name="270"
+      >
+</a
+      ><a name="271" class="Keyword"
+      >module</a
+      ><a name="277"
+      > </a
+      ><a name="278" href="homotopy.RibbonCover.html#1" class="Module"
+      >homotopy.RibbonCover</a
+      ><a name="298"
+      > </a
+      ><a name="299" class="Symbol"
+      >{</a
+      ><a name="300" href="homotopy.RibbonCover.html#300" class="Bound"
+      >i</a
+      ><a name="301"
+      > </a
+      ><a name="302" class="Symbol"
+      >:</a
+      ><a name="303"
+      > </a
+      ><a name="304" href="Agda.Primitive.html#379" class="Postulate"
+      >ULevel</a
+      ><a name="310" class="Symbol"
+      >}</a
+      ><a name="311"
+      > </a
+      ><a name="312" class="Keyword"
+      >where</a
+      ><a name="317"
+      >
+
+  </a
+      ><a name="321" class="Comment"
+      >-- The HIT ribbon---reconstructed covering space</a
+      ><a name="369"
+      >
+
+  </a
+      ><a name="373" class="Keyword"
+      >private</a
+      ><a name="380"
+      >
+    </a
+      ><a name="385" href="homotopy.RibbonCover.html#385" class="Function"
+      >&#960;1</a
+      ><a name="387"
+      > </a
+      ><a name="388" class="Symbol"
+      >=</a
+      ><a name="389"
+      > </a
+      ><a name="390" href="lib.groups.HomotopyGroup.html#1130" class="Function"
+      >concrete-fundamental-group</a
+      ><a name="416"
+      >
+
+  </a
+      ><a name="420" class="Keyword"
+      >private</a
+      ><a name="427"
+      >
+    </a
+      ><a name="432" class="Keyword"
+      >module</a
+      ><a name="438"
+      > </a
+      ><a name="439" href="homotopy.RibbonCover.html#439" class="Module"
+      >_</a
+      ><a name="440"
+      > </a
+      ><a name="441" class="Symbol"
+      >(</a
+      ><a name="442" href="homotopy.RibbonCover.html#442" class="Bound"
+      >A&#8729;</a
+      ><a name="444"
+      > </a
+      ><a name="445" class="Symbol"
+      >:</a
+      ><a name="446"
+      > </a
+      ><a name="447" href="lib.types.Pointed.html#232" class="Function"
+      >Ptd</a
+      ><a name="450"
+      > </a
+      ><a name="451" href="homotopy.RibbonCover.html#300" class="Bound"
+      >i</a
+      ><a name="452" class="Symbol"
+      >)</a
+      ><a name="453"
+      > </a
+      ><a name="454" class="Symbol"
+      >{</a
+      ><a name="455" href="homotopy.RibbonCover.html#455" class="Bound"
+      >j</a
+      ><a name="456" class="Symbol"
+      >}</a
+      ><a name="457"
+      > </a
+      ><a name="458" class="Symbol"
+      >(</a
+      ><a name="459" href="homotopy.RibbonCover.html#459" class="Bound"
+      >gs</a
+      ><a name="461"
+      > </a
+      ><a name="462" class="Symbol"
+      >:</a
+      ><a name="463"
+      > </a
+      ><a name="464" href="lib.types.GroupSet.html#775" class="Record"
+      >Gset</a
+      ><a name="468"
+      > </a
+      ><a name="469" class="Symbol"
+      >(</a
+      ><a name="470" href="homotopy.RibbonCover.html#385" class="Function"
+      >&#960;1</a
+      ><a name="472"
+      > </a
+      ><a name="473" href="homotopy.RibbonCover.html#442" class="Bound"
+      >A&#8729;</a
+      ><a name="475" class="Symbol"
+      >)</a
+      ><a name="476"
+      > </a
+      ><a name="477" href="homotopy.RibbonCover.html#455" class="Bound"
+      >j</a
+      ><a name="478" class="Symbol"
+      >)</a
+      ><a name="479"
+      > </a
+      ><a name="480" class="Keyword"
+      >where</a
+      ><a name="485"
+      >
+      </a
+      ><a name="492" class="Keyword"
+      >private</a
+      ><a name="499"
+      >
+        </a
+      ><a name="508" href="homotopy.RibbonCover.html#508" class="Function"
+      >A</a
+      ><a name="509"
+      > </a
+      ><a name="510" class="Symbol"
+      >=</a
+      ><a name="511"
+      > </a
+      ><a name="512" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="515"
+      > </a
+      ><a name="516" href="homotopy.RibbonCover.html#442" class="Bound"
+      >A&#8729;</a
+      ><a name="518"
+      >
+        </a
+      ><a name="527" href="homotopy.RibbonCover.html#527" class="Function"
+      >a</a
+      ><a name="528"
+      > </a
+      ><a name="529" class="Symbol"
+      >=</a
+      ><a name="530"
+      > </a
+      ><a name="531" href="lib.Base.html#5092" class="Field"
+      >snd</a
+      ><a name="534"
+      > </a
+      ><a name="535" href="homotopy.RibbonCover.html#442" class="Bound"
+      >A&#8729;</a
+      ><a name="537"
+      >
+        </a
+      ><a name="546" href="homotopy.RibbonCover.html#546" class="Function"
+      >El</a
+      ><a name="548"
+      > </a
+      ><a name="549" class="Symbol"
+      >=</a
+      ><a name="550"
+      > </a
+      ><a name="551" href="lib.types.GroupSet.html#867" class="Field"
+      >Gset.El</a
+      ><a name="558"
+      > </a
+      ><a name="559" href="homotopy.RibbonCover.html#459" class="Bound"
+      >gs</a
+      ><a name="561"
+      >
+        </a
+      ><a name="570" href="homotopy.RibbonCover.html#570" class="Function"
+      >El-level</a
+      ><a name="578"
+      > </a
+      ><a name="579" class="Symbol"
+      >=</a
+      ><a name="580"
+      > </a
+      ><a name="581" href="lib.types.GroupSet.html#885" class="Field"
+      >Gset.El-level</a
+      ><a name="594"
+      > </a
+      ><a name="595" href="homotopy.RibbonCover.html#459" class="Bound"
+      >gs</a
+      ><a name="597"
+      >
+        </a
+      ><a name="606" href="homotopy.RibbonCover.html#606" class="Function Operator"
+      >_&#8857;_</a
+      ><a name="609"
+      > </a
+      ><a name="610" class="Symbol"
+      >=</a
+      ><a name="611"
+      > </a
+      ><a name="612" href="lib.types.GroupSet.html#527" class="Function"
+      >Gset.act</a
+      ><a name="620"
+      > </a
+      ><a name="621" href="homotopy.RibbonCover.html#459" class="Bound"
+      >gs</a
+      ><a name="623"
+      >
+
+      </a
+      ><a name="631" class="Comment"
+      >{-
+        What the following data type definition should be
+        when we have a proof assistant for HoTT:
+
+        data Ribbon (a&#8322; : A) : Set where
+          trace : El &#8594; a =&#8320; a&#8322; &#8594; Ribbon a&#8322;
+          paste : &#8704; el loop (p : a =&#8320; a&#8322;)
+                &#8594; trace (el &#8857; loop) p == trace el (loop &#8729;&#8320; p)
+      -}</a
+      ><a name="938"
+      >
+
+      </a
+      ><a name="946" class="Keyword"
+      >data</a
+      ><a name="950"
+      > </a
+      ><a name="951" href="homotopy.RibbonCover.html#951" class="Datatype"
+      >#Ribbon-aux</a
+      ><a name="962"
+      > </a
+      ><a name="963" class="Symbol"
+      >(</a
+      ><a name="964" href="homotopy.RibbonCover.html#964" class="Bound"
+      >a&#8322;</a
+      ><a name="966"
+      > </a
+      ><a name="967" class="Symbol"
+      >:</a
+      ><a name="968"
+      > </a
+      ><a name="969" href="homotopy.RibbonCover.html#508" class="Function"
+      >A</a
+      ><a name="970" class="Symbol"
+      >)</a
+      ><a name="971"
+      > </a
+      ><a name="972" class="Symbol"
+      >:</a
+      ><a name="973"
+      > </a
+      ><a name="974" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="978"
+      > </a
+      ><a name="979" class="Symbol"
+      >(</a
+      ><a name="980" href="Agda.Primitive.html#626" class="Primitive"
+      >lmax</a
+      ><a name="984"
+      > </a
+      ><a name="985" href="homotopy.RibbonCover.html#300" class="Bound"
+      >i</a
+      ><a name="986"
+      > </a
+      ><a name="987" href="homotopy.RibbonCover.html#455" class="Bound"
+      >j</a
+      ><a name="988" class="Symbol"
+      >)</a
+      ><a name="989"
+      > </a
+      ><a name="990" class="Keyword"
+      >where</a
+      ><a name="995"
+      >
+        </a
+      ><a name="1004" href="homotopy.RibbonCover.html#1004" class="InductiveConstructor"
+      >#trace</a
+      ><a name="1010"
+      > </a
+      ><a name="1011" class="Symbol"
+      >:</a
+      ><a name="1012"
+      > </a
+      ><a name="1013" href="homotopy.RibbonCover.html#546" class="Function"
+      >El</a
+      ><a name="1015"
+      > </a
+      ><a name="1016" class="Symbol"
+      >&#8594;</a
+      ><a name="1017"
+      > </a
+      ><a name="1018" href="homotopy.RibbonCover.html#527" class="Function"
+      >a</a
+      ><a name="1019"
+      > </a
+      ><a name="1020" href="lib.types.PathSet.html#226" class="Function Operator"
+      >=&#8320;</a
+      ><a name="1022"
+      > </a
+      ><a name="1023" href="homotopy.RibbonCover.html#964" class="Bound"
+      >a&#8322;</a
+      ><a name="1025"
+      > </a
+      ><a name="1026" class="Symbol"
+      >&#8594;</a
+      ><a name="1027"
+      > </a
+      ><a name="1028" href="homotopy.RibbonCover.html#951" class="Datatype"
+      >#Ribbon-aux</a
+      ><a name="1039"
+      > </a
+      ><a name="1040" href="homotopy.RibbonCover.html#964" class="Bound"
+      >a&#8322;</a
+      ><a name="1042"
+      >
+
+      </a
+      ><a name="1050" class="Keyword"
+      >data</a
+      ><a name="1054"
+      > </a
+      ><a name="1055" href="homotopy.RibbonCover.html#1055" class="Datatype"
+      >#Ribbon</a
+      ><a name="1062"
+      > </a
+      ><a name="1063" class="Symbol"
+      >(</a
+      ><a name="1064" href="homotopy.RibbonCover.html#1064" class="Bound"
+      >a&#8322;</a
+      ><a name="1066"
+      > </a
+      ><a name="1067" class="Symbol"
+      >:</a
+      ><a name="1068"
+      > </a
+      ><a name="1069" href="homotopy.RibbonCover.html#508" class="Function"
+      >A</a
+      ><a name="1070" class="Symbol"
+      >)</a
+      ><a name="1071"
+      > </a
+      ><a name="1072" class="Symbol"
+      >:</a
+      ><a name="1073"
+      > </a
+      ><a name="1074" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="1078"
+      > </a
+      ><a name="1079" class="Symbol"
+      >(</a
+      ><a name="1080" href="Agda.Primitive.html#626" class="Primitive"
+      >lmax</a
+      ><a name="1084"
+      > </a
+      ><a name="1085" href="homotopy.RibbonCover.html#300" class="Bound"
+      >i</a
+      ><a name="1086"
+      > </a
+      ><a name="1087" href="homotopy.RibbonCover.html#455" class="Bound"
+      >j</a
+      ><a name="1088" class="Symbol"
+      >)</a
+      ><a name="1089"
+      > </a
+      ><a name="1090" class="Keyword"
+      >where</a
+      ><a name="1095"
+      >
+        </a
+      ><a name="1104" href="homotopy.RibbonCover.html#1104" class="InductiveConstructor"
+      >#ribbon</a
+      ><a name="1111"
+      > </a
+      ><a name="1112" class="Symbol"
+      >:</a
+      ><a name="1113"
+      > </a
+      ><a name="1114" href="homotopy.RibbonCover.html#951" class="Datatype"
+      >#Ribbon-aux</a
+      ><a name="1125"
+      > </a
+      ><a name="1126" href="homotopy.RibbonCover.html#1064" class="Bound"
+      >a&#8322;</a
+      ><a name="1128"
+      > </a
+      ><a name="1129" class="Symbol"
+      >&#8594;</a
+      ><a name="1130"
+      > </a
+      ><a name="1131" class="Symbol"
+      >(</a
+      ><a name="1132" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="1136"
+      > </a
+      ><a name="1137" class="Symbol"
+      >&#8594;</a
+      ><a name="1138"
+      > </a
+      ><a name="1139" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="1143" class="Symbol"
+      >)</a
+      ><a name="1144"
+      > </a
+      ><a name="1145" class="Symbol"
+      >&#8594;</a
+      ><a name="1146"
+      > </a
+      ><a name="1147" href="homotopy.RibbonCover.html#1055" class="Datatype"
+      >#Ribbon</a
+      ><a name="1154"
+      > </a
+      ><a name="1155" href="homotopy.RibbonCover.html#1064" class="Bound"
+      >a&#8322;</a
+      ><a name="1157"
+      >
+
+  </a
+      ><a name="1161" href="homotopy.RibbonCover.html#1161" class="Function"
+      >Ribbon</a
+      ><a name="1167"
+      > </a
+      ><a name="1168" class="Symbol"
+      >:</a
+      ><a name="1169"
+      > </a
+      ><a name="1170" class="Symbol"
+      >&#8704;</a
+      ><a name="1171"
+      > </a
+      ><a name="1172" class="Symbol"
+      >(</a
+      ><a name="1173" href="homotopy.RibbonCover.html#1173" class="Bound"
+      >A&#8729;</a
+      ><a name="1175"
+      > </a
+      ><a name="1176" class="Symbol"
+      >:</a
+      ><a name="1177"
+      > </a
+      ><a name="1178" href="lib.types.Pointed.html#232" class="Function"
+      >Ptd</a
+      ><a name="1181"
+      > </a
+      ><a name="1182" href="homotopy.RibbonCover.html#300" class="Bound"
+      >i</a
+      ><a name="1183" class="Symbol"
+      >)</a
+      ><a name="1184"
+      > </a
+      ><a name="1185" class="Symbol"
+      >{</a
+      ><a name="1186" href="homotopy.RibbonCover.html#1186" class="Bound"
+      >j</a
+      ><a name="1187" class="Symbol"
+      >}</a
+      ><a name="1188"
+      > </a
+      ><a name="1189" class="Symbol"
+      >(</a
+      ><a name="1190" href="homotopy.RibbonCover.html#1190" class="Bound"
+      >gs</a
+      ><a name="1192"
+      > </a
+      ><a name="1193" class="Symbol"
+      >:</a
+      ><a name="1194"
+      > </a
+      ><a name="1195" href="lib.types.GroupSet.html#775" class="Record"
+      >Gset</a
+      ><a name="1199"
+      > </a
+      ><a name="1200" class="Symbol"
+      >(</a
+      ><a name="1201" href="homotopy.RibbonCover.html#385" class="Function"
+      >&#960;1</a
+      ><a name="1203"
+      > </a
+      ><a name="1204" href="homotopy.RibbonCover.html#1173" class="Bound"
+      >A&#8729;</a
+      ><a name="1206" class="Symbol"
+      >)</a
+      ><a name="1207"
+      > </a
+      ><a name="1208" href="homotopy.RibbonCover.html#1186" class="Bound"
+      >j</a
+      ><a name="1209" class="Symbol"
+      >)</a
+      ><a name="1210"
+      >
+    </a
+      ><a name="1215" class="Symbol"
+      >&#8594;</a
+      ><a name="1216"
+      > </a
+      ><a name="1217" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="1220"
+      > </a
+      ><a name="1221" href="homotopy.RibbonCover.html#1173" class="Bound"
+      >A&#8729;</a
+      ><a name="1223"
+      > </a
+      ><a name="1224" class="Symbol"
+      >&#8594;</a
+      ><a name="1225"
+      > </a
+      ><a name="1226" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="1230"
+      > </a
+      ><a name="1231" class="Symbol"
+      >(</a
+      ><a name="1232" href="Agda.Primitive.html#626" class="Primitive"
+      >lmax</a
+      ><a name="1236"
+      > </a
+      ><a name="1237" href="homotopy.RibbonCover.html#300" class="Bound"
+      >i</a
+      ><a name="1238"
+      > </a
+      ><a name="1239" href="homotopy.RibbonCover.html#1186" class="Bound"
+      >j</a
+      ><a name="1240" class="Symbol"
+      >)</a
+      ><a name="1241"
+      >
+  </a
+      ><a name="1244" href="homotopy.RibbonCover.html#1161" class="Function"
+      >Ribbon</a
+      ><a name="1250"
+      > </a
+      ><a name="1251" class="Symbol"
+      >=</a
+      ><a name="1252"
+      > </a
+      ><a name="1253" href="homotopy.RibbonCover.html#1055" class="Datatype"
+      >#Ribbon</a
+      ><a name="1260"
+      >
+
+  </a
+      ><a name="1264" class="Keyword"
+      >module</a
+      ><a name="1270"
+      > </a
+      ><a name="1271" href="homotopy.RibbonCover.html#1271" class="Module"
+      >_</a
+      ><a name="1272"
+      > </a
+      ><a name="1273" class="Symbol"
+      >{</a
+      ><a name="1274" href="homotopy.RibbonCover.html#1274" class="Bound"
+      >A&#8729;</a
+      ><a name="1276"
+      > </a
+      ><a name="1277" class="Symbol"
+      >:</a
+      ><a name="1278"
+      > </a
+      ><a name="1279" href="lib.types.Pointed.html#232" class="Function"
+      >Ptd</a
+      ><a name="1282"
+      > </a
+      ><a name="1283" href="homotopy.RibbonCover.html#300" class="Bound"
+      >i</a
+      ><a name="1284" class="Symbol"
+      >}</a
+      ><a name="1285"
+      > </a
+      ><a name="1286" class="Symbol"
+      >{</a
+      ><a name="1287" href="homotopy.RibbonCover.html#1287" class="Bound"
+      >j</a
+      ><a name="1288" class="Symbol"
+      >}</a
+      ><a name="1289"
+      > </a
+      ><a name="1290" class="Symbol"
+      >{</a
+      ><a name="1291" href="homotopy.RibbonCover.html#1291" class="Bound"
+      >gs</a
+      ><a name="1293"
+      > </a
+      ><a name="1294" class="Symbol"
+      >:</a
+      ><a name="1295"
+      > </a
+      ><a name="1296" href="lib.types.GroupSet.html#775" class="Record"
+      >Gset</a
+      ><a name="1300"
+      > </a
+      ><a name="1301" class="Symbol"
+      >(</a
+      ><a name="1302" href="lib.groups.HomotopyGroup.html#1130" class="Function"
+      >concrete-fundamental-group</a
+      ><a name="1328"
+      > </a
+      ><a name="1329" href="homotopy.RibbonCover.html#1274" class="Bound"
+      >A&#8729;</a
+      ><a name="1331" class="Symbol"
+      >)</a
+      ><a name="1332"
+      > </a
+      ><a name="1333" href="homotopy.RibbonCover.html#1287" class="Bound"
+      >j</a
+      ><a name="1334" class="Symbol"
+      >}</a
+      ><a name="1335"
+      > </a
+      ><a name="1336" class="Symbol"
+      >{</a
+      ><a name="1337" href="homotopy.RibbonCover.html#1337" class="Bound"
+      >a&#8322;</a
+      ><a name="1339"
+      > </a
+      ><a name="1340" class="Symbol"
+      >:</a
+      ><a name="1341"
+      > </a
+      ><a name="1342" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="1345"
+      > </a
+      ><a name="1346" href="homotopy.RibbonCover.html#1274" class="Bound"
+      >A&#8729;</a
+      ><a name="1348" class="Symbol"
+      >}</a
+      ><a name="1349"
+      > </a
+      ><a name="1350" class="Keyword"
+      >where</a
+      ><a name="1355"
+      >
+    </a
+      ><a name="1360" class="Keyword"
+      >private</a
+      ><a name="1367"
+      >
+      </a
+      ><a name="1374" href="homotopy.RibbonCover.html#1374" class="Function"
+      >A</a
+      ><a name="1375"
+      > </a
+      ><a name="1376" class="Symbol"
+      >=</a
+      ><a name="1377"
+      > </a
+      ><a name="1378" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="1381"
+      > </a
+      ><a name="1382" href="homotopy.RibbonCover.html#1274" class="Bound"
+      >A&#8729;</a
+      ><a name="1384"
+      >
+      </a
+      ><a name="1391" href="homotopy.RibbonCover.html#1391" class="Function"
+      >a</a
+      ><a name="1392"
+      > </a
+      ><a name="1393" class="Symbol"
+      >=</a
+      ><a name="1394"
+      > </a
+      ><a name="1395" href="lib.Base.html#5092" class="Field"
+      >snd</a
+      ><a name="1398"
+      > </a
+      ><a name="1399" href="homotopy.RibbonCover.html#1274" class="Bound"
+      >A&#8729;</a
+      ><a name="1401"
+      >
+      </a
+      ><a name="1408" href="homotopy.RibbonCover.html#1408" class="Function"
+      >El</a
+      ><a name="1410"
+      > </a
+      ><a name="1411" class="Symbol"
+      >=</a
+      ><a name="1412"
+      > </a
+      ><a name="1413" href="lib.types.GroupSet.html#867" class="Field"
+      >Gset.El</a
+      ><a name="1420"
+      > </a
+      ><a name="1421" href="homotopy.RibbonCover.html#1291" class="Bound"
+      >gs</a
+      ><a name="1423"
+      >
+      </a
+      ><a name="1430" href="homotopy.RibbonCover.html#1430" class="Function"
+      >El-level</a
+      ><a name="1438"
+      > </a
+      ><a name="1439" class="Symbol"
+      >=</a
+      ><a name="1440"
+      > </a
+      ><a name="1441" href="lib.types.GroupSet.html#885" class="Field"
+      >Gset.El-level</a
+      ><a name="1454"
+      > </a
+      ><a name="1455" href="homotopy.RibbonCover.html#1291" class="Bound"
+      >gs</a
+      ><a name="1457"
+      >
+      </a
+      ><a name="1464" href="homotopy.RibbonCover.html#1464" class="Function Operator"
+      >_&#8857;_</a
+      ><a name="1467"
+      > </a
+      ><a name="1468" class="Symbol"
+      >=</a
+      ><a name="1469"
+      > </a
+      ><a name="1470" href="lib.types.GroupSet.html#527" class="Function"
+      >Gset.act</a
+      ><a name="1478"
+      > </a
+      ><a name="1479" href="homotopy.RibbonCover.html#1291" class="Bound"
+      >gs</a
+      ><a name="1481"
+      >
+
+    </a
+      ><a name="1487" class="Comment"
+      >-- A point in the fiber [a&#8322;].</a
+      ><a name="1516"
+      >
+    </a
+      ><a name="1521" class="Comment"
+      >{-
+      [e] is a point in the [fiber a], and
+      [p] is a path to transport [y] to fiber [a&#8322;].
+    -}</a
+      ><a name="1625"
+      >
+    </a
+      ><a name="1630" href="homotopy.RibbonCover.html#1630" class="Function"
+      >trace</a
+      ><a name="1635"
+      > </a
+      ><a name="1636" class="Symbol"
+      >:</a
+      ><a name="1637"
+      > </a
+      ><a name="1638" href="homotopy.RibbonCover.html#1408" class="Function"
+      >El</a
+      ><a name="1640"
+      > </a
+      ><a name="1641" class="Symbol"
+      >&#8594;</a
+      ><a name="1642"
+      > </a
+      ><a name="1643" href="homotopy.RibbonCover.html#1391" class="Function"
+      >a</a
+      ><a name="1644"
+      > </a
+      ><a name="1645" href="lib.types.PathSet.html#226" class="Function Operator"
+      >=&#8320;</a
+      ><a name="1647"
+      > </a
+      ><a name="1648" href="homotopy.RibbonCover.html#1337" class="Bound"
+      >a&#8322;</a
+      ><a name="1650"
+      > </a
+      ><a name="1651" class="Symbol"
+      >&#8594;</a
+      ><a name="1652"
+      > </a
+      ><a name="1653" href="homotopy.RibbonCover.html#1161" class="Function"
+      >Ribbon</a
+      ><a name="1659"
+      > </a
+      ><a name="1660" href="homotopy.RibbonCover.html#1274" class="Bound"
+      >A&#8729;</a
+      ><a name="1662"
+      > </a
+      ><a name="1663" href="homotopy.RibbonCover.html#1291" class="Bound"
+      >gs</a
+      ><a name="1665"
+      > </a
+      ><a name="1666" href="homotopy.RibbonCover.html#1337" class="Bound"
+      >a&#8322;</a
+      ><a name="1668"
+      >
+    </a
+      ><a name="1673" href="homotopy.RibbonCover.html#1630" class="Function"
+      >trace</a
+      ><a name="1678"
+      > </a
+      ><a name="1679" href="homotopy.RibbonCover.html#1679" class="Bound"
+      >el</a
+      ><a name="1681"
+      > </a
+      ><a name="1682" href="homotopy.RibbonCover.html#1682" class="Bound"
+      >p</a
+      ><a name="1683"
+      > </a
+      ><a name="1684" class="Symbol"
+      >=</a
+      ><a name="1685"
+      > </a
+      ><a name="1686" href="homotopy.RibbonCover.html#1104" class="InductiveConstructor"
+      >#ribbon</a
+      ><a name="1693"
+      > </a
+      ><a name="1694" class="Symbol"
+      >(</a
+      ><a name="1695" href="homotopy.RibbonCover.html#1004" class="InductiveConstructor"
+      >#trace</a
+      ><a name="1701"
+      > </a
+      ><a name="1702" href="homotopy.RibbonCover.html#1679" class="Bound"
+      >el</a
+      ><a name="1704"
+      > </a
+      ><a name="1705" href="homotopy.RibbonCover.html#1682" class="Bound"
+      >p</a
+      ><a name="1706" class="Symbol"
+      >)</a
+      ><a name="1707"
+      > </a
+      ><a name="1708" class="Symbol"
+      >_</a
+      ><a name="1709"
+      >
+
+    </a
+      ><a name="1715" class="Comment"
+      >{-
+      A loop based at [a] can used as a group action
+      or for concatination.  Both should be equivalent.
+    -}</a
+      ><a name="1833"
+      >
+    </a
+      ><a name="1838" class="Keyword"
+      >postulate</a
+      ><a name="1847"
+      > </a
+      ><a name="1848" class="Comment"
+      >-- HIT</a
+      ><a name="1854"
+      >
+      </a
+      ><a name="1861" href="homotopy.RibbonCover.html#1861" class="Postulate"
+      >paste</a
+      ><a name="1866"
+      > </a
+      ><a name="1867" class="Symbol"
+      >:</a
+      ><a name="1868"
+      > </a
+      ><a name="1869" class="Symbol"
+      >&#8704;</a
+      ><a name="1870"
+      > </a
+      ><a name="1871" href="homotopy.RibbonCover.html#1871" class="Bound"
+      >el</a
+      ><a name="1873"
+      > </a
+      ><a name="1874" href="homotopy.RibbonCover.html#1874" class="Bound"
+      >loop</a
+      ><a name="1878"
+      > </a
+      ><a name="1879" class="Symbol"
+      >(</a
+      ><a name="1880" href="homotopy.RibbonCover.html#1880" class="Bound"
+      >p</a
+      ><a name="1881"
+      > </a
+      ><a name="1882" class="Symbol"
+      >:</a
+      ><a name="1883"
+      > </a
+      ><a name="1884" href="homotopy.RibbonCover.html#1391" class="Function"
+      >a</a
+      ><a name="1885"
+      > </a
+      ><a name="1886" href="lib.types.PathSet.html#226" class="Function Operator"
+      >=&#8320;</a
+      ><a name="1888"
+      > </a
+      ><a name="1889" href="homotopy.RibbonCover.html#1337" class="Bound"
+      >a&#8322;</a
+      ><a name="1891" class="Symbol"
+      >)</a
+      ><a name="1892"
+      >
+        </a
+      ><a name="1901" class="Symbol"
+      >&#8594;</a
+      ><a name="1902"
+      > </a
+      ><a name="1903" href="homotopy.RibbonCover.html#1630" class="Function"
+      >trace</a
+      ><a name="1908"
+      > </a
+      ><a name="1909" class="Symbol"
+      >(</a
+      ><a name="1910" href="homotopy.RibbonCover.html#1871" class="Bound"
+      >el</a
+      ><a name="1912"
+      > </a
+      ><a name="1913" href="homotopy.RibbonCover.html#1464" class="Function Operator"
+      >&#8857;</a
+      ><a name="1914"
+      > </a
+      ><a name="1915" href="homotopy.RibbonCover.html#1874" class="Bound"
+      >loop</a
+      ><a name="1919" class="Symbol"
+      >)</a
+      ><a name="1920"
+      > </a
+      ><a name="1921" href="homotopy.RibbonCover.html#1880" class="Bound"
+      >p</a
+      ><a name="1922"
+      > </a
+      ><a name="1923" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1925"
+      > </a
+      ><a name="1926" href="homotopy.RibbonCover.html#1630" class="Function"
+      >trace</a
+      ><a name="1931"
+      > </a
+      ><a name="1932" href="homotopy.RibbonCover.html#1871" class="Bound"
+      >el</a
+      ><a name="1934"
+      > </a
+      ><a name="1935" class="Symbol"
+      >(</a
+      ><a name="1936" href="homotopy.RibbonCover.html#1874" class="Bound"
+      >loop</a
+      ><a name="1940"
+      > </a
+      ><a name="1941" href="lib.types.PathSet.html#383" class="Function Operator"
+      >&#8729;&#8320;</a
+      ><a name="1943"
+      > </a
+      ><a name="1944" href="homotopy.RibbonCover.html#1880" class="Bound"
+      >p</a
+      ><a name="1945" class="Symbol"
+      >)</a
+      ><a name="1946"
+      >
+
+    </a
+      ><a name="1952" class="Comment"
+      >{-
+      Make each fiber a set and cancel all higher structures
+      due to [paste].
+    -}</a
+      ><a name="2044"
+      >
+    </a
+      ><a name="2049" class="Keyword"
+      >postulate</a
+      ><a name="2058"
+      > </a
+      ><a name="2059" class="Comment"
+      >-- HIT</a
+      ><a name="2065"
+      >
+      </a
+      ><a name="2072" href="homotopy.RibbonCover.html#2072" class="Postulate"
+      >Ribbon-is-set</a
+      ><a name="2085"
+      > </a
+      ><a name="2086" class="Symbol"
+      >:</a
+      ><a name="2087"
+      > </a
+      ><a name="2088" href="lib.NType.html#388" class="Function"
+      >is-set</a
+      ><a name="2094"
+      > </a
+      ><a name="2095" class="Symbol"
+      >(</a
+      ><a name="2096" href="homotopy.RibbonCover.html#1161" class="Function"
+      >Ribbon</a
+      ><a name="2102"
+      > </a
+      ><a name="2103" href="homotopy.RibbonCover.html#1274" class="Bound"
+      >A&#8729;</a
+      ><a name="2105"
+      > </a
+      ><a name="2106" href="homotopy.RibbonCover.html#1291" class="Bound"
+      >gs</a
+      ><a name="2108"
+      > </a
+      ><a name="2109" href="homotopy.RibbonCover.html#1337" class="Bound"
+      >a&#8322;</a
+      ><a name="2111" class="Symbol"
+      >)</a
+      ><a name="2112"
+      >
+
+    </a
+      ><a name="2118" href="homotopy.RibbonCover.html#2118" class="Function"
+      >Ribbon-level</a
+      ><a name="2130"
+      > </a
+      ><a name="2131" class="Symbol"
+      >=</a
+      ><a name="2132"
+      > </a
+      ><a name="2133" href="homotopy.RibbonCover.html#2072" class="Postulate"
+      >Ribbon-is-set</a
+      ><a name="2146"
+      >
+
+    </a
+      ><a name="2152" class="Comment"
+      >-- Elimination rules.</a
+      ><a name="2173"
+      >
+    </a
+      ><a name="2178" class="Keyword"
+      >module</a
+      ><a name="2184"
+      > </a
+      ><a name="2185" href="homotopy.RibbonCover.html#2185" class="Module"
+      >RibbonElim</a
+      ><a name="2195"
+      > </a
+      ><a name="2196" class="Symbol"
+      >{</a
+      ><a name="2197" href="homotopy.RibbonCover.html#2197" class="Bound"
+      >j</a
+      ><a name="2198" class="Symbol"
+      >}</a
+      ><a name="2199"
+      > </a
+      ><a name="2200" class="Symbol"
+      >{</a
+      ><a name="2201" href="homotopy.RibbonCover.html#2201" class="Bound"
+      >P</a
+      ><a name="2202"
+      > </a
+      ><a name="2203" class="Symbol"
+      >:</a
+      ><a name="2204"
+      > </a
+      ><a name="2205" href="homotopy.RibbonCover.html#1161" class="Function"
+      >Ribbon</a
+      ><a name="2211"
+      > </a
+      ><a name="2212" href="homotopy.RibbonCover.html#1274" class="Bound"
+      >A&#8729;</a
+      ><a name="2214"
+      > </a
+      ><a name="2215" href="homotopy.RibbonCover.html#1291" class="Bound"
+      >gs</a
+      ><a name="2217"
+      > </a
+      ><a name="2218" href="homotopy.RibbonCover.html#1337" class="Bound"
+      >a&#8322;</a
+      ><a name="2220"
+      > </a
+      ><a name="2221" class="Symbol"
+      >&#8594;</a
+      ><a name="2222"
+      > </a
+      ><a name="2223" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="2227"
+      > </a
+      ><a name="2228" href="homotopy.RibbonCover.html#2197" class="Bound"
+      >j</a
+      ><a name="2229" class="Symbol"
+      >}</a
+      ><a name="2230"
+      >
+      </a
+      ><a name="2237" class="Symbol"
+      >(</a
+      ><a name="2238" href="homotopy.RibbonCover.html#2238" class="Bound"
+      >P-level</a
+      ><a name="2245"
+      > </a
+      ><a name="2246" class="Symbol"
+      >:</a
+      ><a name="2247"
+      > </a
+      ><a name="2248" class="Symbol"
+      >&#8704;</a
+      ><a name="2249"
+      > </a
+      ><a name="2250" class="Symbol"
+      >{</a
+      ><a name="2251" href="homotopy.RibbonCover.html#2251" class="Bound"
+      >r</a
+      ><a name="2252" class="Symbol"
+      >}</a
+      ><a name="2253"
+      > </a
+      ><a name="2254" class="Symbol"
+      >&#8594;</a
+      ><a name="2255"
+      > </a
+      ><a name="2256" href="lib.NType.html#388" class="Function"
+      >is-set</a
+      ><a name="2262"
+      > </a
+      ><a name="2263" class="Symbol"
+      >(</a
+      ><a name="2264" href="homotopy.RibbonCover.html#2201" class="Bound"
+      >P</a
+      ><a name="2265"
+      > </a
+      ><a name="2266" href="homotopy.RibbonCover.html#2251" class="Bound"
+      >r</a
+      ><a name="2267" class="Symbol"
+      >))</a
+      ><a name="2269"
+      >
+      </a
+      ><a name="2276" class="Symbol"
+      >(</a
+      ><a name="2277" href="homotopy.RibbonCover.html#2277" class="Bound"
+      >trace*</a
+      ><a name="2283"
+      > </a
+      ><a name="2284" class="Symbol"
+      >:</a
+      ><a name="2285"
+      > </a
+      ><a name="2286" class="Symbol"
+      >&#8704;</a
+      ><a name="2287"
+      > </a
+      ><a name="2288" href="homotopy.RibbonCover.html#2288" class="Bound"
+      >el</a
+      ><a name="2290"
+      > </a
+      ><a name="2291" href="homotopy.RibbonCover.html#2291" class="Bound"
+      >p</a
+      ><a name="2292"
+      > </a
+      ><a name="2293" class="Symbol"
+      >&#8594;</a
+      ><a name="2294"
+      > </a
+      ><a name="2295" href="homotopy.RibbonCover.html#2201" class="Bound"
+      >P</a
+      ><a name="2296"
+      > </a
+      ><a name="2297" class="Symbol"
+      >(</a
+      ><a name="2298" href="homotopy.RibbonCover.html#1630" class="Function"
+      >trace</a
+      ><a name="2303"
+      > </a
+      ><a name="2304" href="homotopy.RibbonCover.html#2288" class="Bound"
+      >el</a
+      ><a name="2306"
+      > </a
+      ><a name="2307" href="homotopy.RibbonCover.html#2291" class="Bound"
+      >p</a
+      ><a name="2308" class="Symbol"
+      >))</a
+      ><a name="2310"
+      >
+      </a
+      ><a name="2317" class="Symbol"
+      >(</a
+      ><a name="2318" href="homotopy.RibbonCover.html#2318" class="Bound"
+      >paste*</a
+      ><a name="2324"
+      > </a
+      ><a name="2325" class="Symbol"
+      >:</a
+      ><a name="2326"
+      > </a
+      ><a name="2327" class="Symbol"
+      >&#8704;</a
+      ><a name="2328"
+      > </a
+      ><a name="2329" href="homotopy.RibbonCover.html#2329" class="Bound"
+      >el</a
+      ><a name="2331"
+      > </a
+      ><a name="2332" href="homotopy.RibbonCover.html#2332" class="Bound"
+      >loop</a
+      ><a name="2336"
+      > </a
+      ><a name="2337" href="homotopy.RibbonCover.html#2337" class="Bound"
+      >p</a
+      ><a name="2338"
+      >
+                </a
+      ><a name="2355" class="Symbol"
+      >&#8594;</a
+      ><a name="2356"
+      > </a
+      ><a name="2357" href="homotopy.RibbonCover.html#2277" class="Bound"
+      >trace*</a
+      ><a name="2363"
+      > </a
+      ><a name="2364" class="Symbol"
+      >(</a
+      ><a name="2365" href="homotopy.RibbonCover.html#2329" class="Bound"
+      >el</a
+      ><a name="2367"
+      > </a
+      ><a name="2368" href="homotopy.RibbonCover.html#1464" class="Function Operator"
+      >&#8857;</a
+      ><a name="2369"
+      > </a
+      ><a name="2370" href="homotopy.RibbonCover.html#2332" class="Bound"
+      >loop</a
+      ><a name="2374" class="Symbol"
+      >)</a
+      ><a name="2375"
+      > </a
+      ><a name="2376" href="homotopy.RibbonCover.html#2337" class="Bound"
+      >p</a
+      ><a name="2377"
+      > </a
+      ><a name="2378" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="2380"
+      > </a
+      ><a name="2381" href="homotopy.RibbonCover.html#2277" class="Bound"
+      >trace*</a
+      ><a name="2387"
+      > </a
+      ><a name="2388" href="homotopy.RibbonCover.html#2329" class="Bound"
+      >el</a
+      ><a name="2390"
+      > </a
+      ><a name="2391" class="Symbol"
+      >(</a
+      ><a name="2392" href="homotopy.RibbonCover.html#2332" class="Bound"
+      >loop</a
+      ><a name="2396"
+      > </a
+      ><a name="2397" href="lib.types.PathSet.html#383" class="Function Operator"
+      >&#8729;&#8320;</a
+      ><a name="2399"
+      > </a
+      ><a name="2400" href="homotopy.RibbonCover.html#2337" class="Bound"
+      >p</a
+      ><a name="2401" class="Symbol"
+      >)</a
+      ><a name="2402"
+      >
+                  </a
+      ><a name="2421" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="2422"
+      > </a
+      ><a name="2423" href="homotopy.RibbonCover.html#2201" class="Bound"
+      >P</a
+      ><a name="2424"
+      > </a
+      ><a name="2425" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="2426"
+      > </a
+      ><a name="2427" href="homotopy.RibbonCover.html#1861" class="Postulate"
+      >paste</a
+      ><a name="2432"
+      > </a
+      ><a name="2433" href="homotopy.RibbonCover.html#2329" class="Bound"
+      >el</a
+      ><a name="2435"
+      > </a
+      ><a name="2436" href="homotopy.RibbonCover.html#2332" class="Bound"
+      >loop</a
+      ><a name="2440"
+      > </a
+      ><a name="2441" href="homotopy.RibbonCover.html#2337" class="Bound"
+      >p</a
+      ><a name="2442"
+      > </a
+      ><a name="2443" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="2444" class="Symbol"
+      >)</a
+      ><a name="2445"
+      > </a
+      ><a name="2446" class="Keyword"
+      >where</a
+      ><a name="2451"
+      >
+
+      </a
+      ><a name="2459" href="homotopy.RibbonCover.html#2459" class="Function"
+      >f</a
+      ><a name="2460"
+      > </a
+      ><a name="2461" class="Symbol"
+      >:</a
+      ><a name="2462"
+      > </a
+      ><a name="2463" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="2464"
+      > </a
+      ><a name="2465" class="Symbol"
+      >(</a
+      ><a name="2466" href="homotopy.RibbonCover.html#1161" class="Function"
+      >Ribbon</a
+      ><a name="2472"
+      > </a
+      ><a name="2473" href="homotopy.RibbonCover.html#1274" class="Bound"
+      >A&#8729;</a
+      ><a name="2475"
+      > </a
+      ><a name="2476" href="homotopy.RibbonCover.html#1291" class="Bound"
+      >gs</a
+      ><a name="2478"
+      > </a
+      ><a name="2479" href="homotopy.RibbonCover.html#1337" class="Bound"
+      >a&#8322;</a
+      ><a name="2481" class="Symbol"
+      >)</a
+      ><a name="2482"
+      > </a
+      ><a name="2483" href="homotopy.RibbonCover.html#2201" class="Bound"
+      >P</a
+      ><a name="2484"
+      >
+      </a
+      ><a name="2491" href="homotopy.RibbonCover.html#2459" class="Function"
+      >f</a
+      ><a name="2492"
+      > </a
+      ><a name="2493" class="Symbol"
+      >=</a
+      ><a name="2494"
+      > </a
+      ><a name="2495" href="homotopy.RibbonCover.html#2532" class="Function"
+      >f-aux</a
+      ><a name="2500"
+      > </a
+      ><a name="2501" href="lib.Base.html#9474" class="InductiveConstructor"
+      >phantom</a
+      ><a name="2508"
+      > </a
+      ><a name="2509" href="lib.Base.html#9474" class="InductiveConstructor"
+      >phantom</a
+      ><a name="2516"
+      > </a
+      ><a name="2517" class="Keyword"
+      >where</a
+      ><a name="2522"
+      >
+
+        </a
+      ><a name="2532" href="homotopy.RibbonCover.html#2532" class="Function"
+      >f-aux</a
+      ><a name="2537"
+      > </a
+      ><a name="2538" class="Symbol"
+      >:</a
+      ><a name="2539"
+      > </a
+      ><a name="2540" href="lib.Base.html#9425" class="Datatype"
+      >Phantom</a
+      ><a name="2547"
+      > </a
+      ><a name="2548" href="homotopy.RibbonCover.html#2277" class="Bound"
+      >trace*</a
+      ><a name="2554"
+      > </a
+      ><a name="2555" class="Symbol"
+      >&#8594;</a
+      ><a name="2556"
+      > </a
+      ><a name="2557" href="lib.Base.html#9425" class="Datatype"
+      >Phantom</a
+      ><a name="2564"
+      > </a
+      ><a name="2565" href="homotopy.RibbonCover.html#2318" class="Bound"
+      >paste*</a
+      ><a name="2571"
+      > </a
+      ><a name="2572" class="Symbol"
+      >&#8594;</a
+      ><a name="2573"
+      > </a
+      ><a name="2574" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="2575"
+      > </a
+      ><a name="2576" class="Symbol"
+      >(</a
+      ><a name="2577" href="homotopy.RibbonCover.html#1161" class="Function"
+      >Ribbon</a
+      ><a name="2583"
+      > </a
+      ><a name="2584" href="homotopy.RibbonCover.html#1274" class="Bound"
+      >A&#8729;</a
+      ><a name="2586"
+      > </a
+      ><a name="2587" href="homotopy.RibbonCover.html#1291" class="Bound"
+      >gs</a
+      ><a name="2589"
+      > </a
+      ><a name="2590" href="homotopy.RibbonCover.html#1337" class="Bound"
+      >a&#8322;</a
+      ><a name="2592" class="Symbol"
+      >)</a
+      ><a name="2593"
+      > </a
+      ><a name="2594" href="homotopy.RibbonCover.html#2201" class="Bound"
+      >P</a
+      ><a name="2595"
+      >
+        </a
+      ><a name="2604" href="homotopy.RibbonCover.html#2532" class="Function"
+      >f-aux</a
+      ><a name="2609"
+      > </a
+      ><a name="2610" href="lib.Base.html#9474" class="InductiveConstructor"
+      >phantom</a
+      ><a name="2617"
+      > </a
+      ><a name="2618" href="lib.Base.html#9474" class="InductiveConstructor"
+      >phantom</a
+      ><a name="2625"
+      > </a
+      ><a name="2626" class="Symbol"
+      >(</a
+      ><a name="2627" href="homotopy.RibbonCover.html#1104" class="InductiveConstructor"
+      >#ribbon</a
+      ><a name="2634"
+      > </a
+      ><a name="2635" class="Symbol"
+      >(</a
+      ><a name="2636" href="homotopy.RibbonCover.html#1004" class="InductiveConstructor"
+      >#trace</a
+      ><a name="2642"
+      > </a
+      ><a name="2643" href="homotopy.RibbonCover.html#2643" class="Bound"
+      >el</a
+      ><a name="2645"
+      > </a
+      ><a name="2646" href="homotopy.RibbonCover.html#2646" class="Bound"
+      >p</a
+      ><a name="2647" class="Symbol"
+      >)</a
+      ><a name="2648"
+      > </a
+      ><a name="2649" class="Symbol"
+      >_)</a
+      ><a name="2651"
+      > </a
+      ><a name="2652" class="Symbol"
+      >=</a
+      ><a name="2653"
+      > </a
+      ><a name="2654" href="homotopy.RibbonCover.html#2277" class="Bound"
+      >trace*</a
+      ><a name="2660"
+      > </a
+      ><a name="2661" href="homotopy.RibbonCover.html#2643" class="Bound"
+      >el</a
+      ><a name="2663"
+      > </a
+      ><a name="2664" href="homotopy.RibbonCover.html#2646" class="Bound"
+      >p</a
+      ><a name="2665"
+      >
+
+    </a
+      ><a name="2671" class="Keyword"
+      >open</a
+      ><a name="2675"
+      > </a
+      ><a name="2676" href="homotopy.RibbonCover.html#2185" class="Module"
+      >RibbonElim</a
+      ><a name="2686"
+      > </a
+      ><a name="2687" class="Keyword"
+      >public</a
+      ><a name="2693"
+      > </a
+      ><a name="2694" class="Keyword"
+      >using</a
+      ><a name="2699"
+      > </a
+      ><a name="2700" class="Symbol"
+      >()</a
+      ><a name="2702"
+      > </a
+      ><a name="2703" class="Keyword"
+      >renaming</a
+      ><a name="2711"
+      > </a
+      ><a name="2712" class="Symbol"
+      >(</a
+      ><a name="2713"
+      >f </a
+      ><a name="2715" class="Symbol"
+      >to</a
+      ><a name="2717"
+      > Ribbon-elim</a
+      ><a name="2729" class="Symbol"
+      >)</a
+      ><a name="2730"
+      >
+
+    </a
+      ><a name="2736" class="Keyword"
+      >module</a
+      ><a name="2742"
+      > </a
+      ><a name="2743" href="homotopy.RibbonCover.html#2743" class="Module"
+      >RibbonRec</a
+      ><a name="2752"
+      > </a
+      ><a name="2753" class="Symbol"
+      >{</a
+      ><a name="2754" href="homotopy.RibbonCover.html#2754" class="Bound"
+      >j</a
+      ><a name="2755" class="Symbol"
+      >}</a
+      ><a name="2756"
+      > </a
+      ><a name="2757" class="Symbol"
+      >{</a
+      ><a name="2758" href="homotopy.RibbonCover.html#2758" class="Bound"
+      >P</a
+      ><a name="2759"
+      > </a
+      ><a name="2760" class="Symbol"
+      >:</a
+      ><a name="2761"
+      > </a
+      ><a name="2762" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="2766"
+      > </a
+      ><a name="2767" href="homotopy.RibbonCover.html#2754" class="Bound"
+      >j</a
+      ><a name="2768" class="Symbol"
+      >}</a
+      ><a name="2769"
+      >
+      </a
+      ><a name="2776" class="Symbol"
+      >(</a
+      ><a name="2777" href="homotopy.RibbonCover.html#2777" class="Bound"
+      >P-level</a
+      ><a name="2784"
+      > </a
+      ><a name="2785" class="Symbol"
+      >:</a
+      ><a name="2786"
+      > </a
+      ><a name="2787" href="lib.NType.html#388" class="Function"
+      >is-set</a
+      ><a name="2793"
+      > </a
+      ><a name="2794" href="homotopy.RibbonCover.html#2758" class="Bound"
+      >P</a
+      ><a name="2795" class="Symbol"
+      >)</a
+      ><a name="2796"
+      >
+      </a
+      ><a name="2803" class="Symbol"
+      >(</a
+      ><a name="2804" href="homotopy.RibbonCover.html#2804" class="Bound"
+      >trace*</a
+      ><a name="2810"
+      > </a
+      ><a name="2811" class="Symbol"
+      >:</a
+      ><a name="2812"
+      > </a
+      ><a name="2813" class="Symbol"
+      >&#8704;</a
+      ><a name="2814"
+      > </a
+      ><a name="2815" href="homotopy.RibbonCover.html#2815" class="Bound"
+      >el</a
+      ><a name="2817"
+      > </a
+      ><a name="2818" href="homotopy.RibbonCover.html#2818" class="Bound"
+      >p</a
+      ><a name="2819"
+      > </a
+      ><a name="2820" class="Symbol"
+      >&#8594;</a
+      ><a name="2821"
+      > </a
+      ><a name="2822" href="homotopy.RibbonCover.html#2758" class="Bound"
+      >P</a
+      ><a name="2823" class="Symbol"
+      >)</a
+      ><a name="2824"
+      >
+      </a
+      ><a name="2831" class="Symbol"
+      >(</a
+      ><a name="2832" href="homotopy.RibbonCover.html#2832" class="Bound"
+      >paste*</a
+      ><a name="2838"
+      > </a
+      ><a name="2839" class="Symbol"
+      >:</a
+      ><a name="2840"
+      > </a
+      ><a name="2841" class="Symbol"
+      >&#8704;</a
+      ><a name="2842"
+      > </a
+      ><a name="2843" href="homotopy.RibbonCover.html#2843" class="Bound"
+      >el</a
+      ><a name="2845"
+      > </a
+      ><a name="2846" href="homotopy.RibbonCover.html#2846" class="Bound"
+      >loop</a
+      ><a name="2850"
+      > </a
+      ><a name="2851" href="homotopy.RibbonCover.html#2851" class="Bound"
+      >p</a
+      ><a name="2852"
+      >
+                </a
+      ><a name="2869" class="Symbol"
+      >&#8594;</a
+      ><a name="2870"
+      > </a
+      ><a name="2871" href="homotopy.RibbonCover.html#2804" class="Bound"
+      >trace*</a
+      ><a name="2877"
+      > </a
+      ><a name="2878" class="Symbol"
+      >(</a
+      ><a name="2879" href="homotopy.RibbonCover.html#2843" class="Bound"
+      >el</a
+      ><a name="2881"
+      > </a
+      ><a name="2882" href="homotopy.RibbonCover.html#1464" class="Function Operator"
+      >&#8857;</a
+      ><a name="2883"
+      > </a
+      ><a name="2884" href="homotopy.RibbonCover.html#2846" class="Bound"
+      >loop</a
+      ><a name="2888" class="Symbol"
+      >)</a
+      ><a name="2889"
+      > </a
+      ><a name="2890" href="homotopy.RibbonCover.html#2851" class="Bound"
+      >p</a
+      ><a name="2891"
+      > </a
+      ><a name="2892" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2894"
+      > </a
+      ><a name="2895" href="homotopy.RibbonCover.html#2804" class="Bound"
+      >trace*</a
+      ><a name="2901"
+      > </a
+      ><a name="2902" href="homotopy.RibbonCover.html#2843" class="Bound"
+      >el</a
+      ><a name="2904"
+      > </a
+      ><a name="2905" class="Symbol"
+      >(</a
+      ><a name="2906" href="homotopy.RibbonCover.html#2846" class="Bound"
+      >loop</a
+      ><a name="2910"
+      > </a
+      ><a name="2911" href="lib.types.PathSet.html#383" class="Function Operator"
+      >&#8729;&#8320;</a
+      ><a name="2913"
+      > </a
+      ><a name="2914" href="homotopy.RibbonCover.html#2851" class="Bound"
+      >p</a
+      ><a name="2915" class="Symbol"
+      >))</a
+      ><a name="2917"
+      > </a
+      ><a name="2918" class="Keyword"
+      >where</a
+      ><a name="2923"
+      >
+
+      </a
+      ><a name="2931" class="Keyword"
+      >private</a
+      ><a name="2938"
+      >
+        </a
+      ><a name="2947" class="Keyword"
+      >module</a
+      ><a name="2953"
+      > </a
+      ><a name="2954" href="homotopy.RibbonCover.html#2954" class="Module"
+      >M</a
+      ><a name="2955"
+      > </a
+      ><a name="2956" class="Symbol"
+      >=</a
+      ><a name="2957"
+      > </a
+      ><a name="2958" href="homotopy.RibbonCover.html#2185" class="Module"
+      >RibbonElim</a
+      ><a name="2968"
+      > </a
+      ><a name="2969" href="homotopy.RibbonCover.html#2777" class="Bound"
+      >P-level</a
+      ><a name="2976"
+      > </a
+      ><a name="2977" href="homotopy.RibbonCover.html#2804" class="Bound"
+      >trace*</a
+      ><a name="2983"
+      >
+          </a
+      ><a name="2994" class="Symbol"
+      >(&#955;</a
+      ><a name="2996"
+      > </a
+      ><a name="2997" href="homotopy.RibbonCover.html#2997" class="Bound"
+      >el</a
+      ><a name="2999"
+      > </a
+      ><a name="3000" href="homotopy.RibbonCover.html#3000" class="Bound"
+      >loop</a
+      ><a name="3004"
+      > </a
+      ><a name="3005" href="homotopy.RibbonCover.html#3005" class="Bound"
+      >p</a
+      ><a name="3006"
+      > </a
+      ><a name="3007" class="Symbol"
+      >&#8594;</a
+      ><a name="3008"
+      > </a
+      ><a name="3009" href="lib.PathOver.html#1262" class="Function"
+      >&#8595;-cst-in</a
+      ><a name="3017"
+      > </a
+      ><a name="3018" class="Symbol"
+      >(</a
+      ><a name="3019" href="homotopy.RibbonCover.html#2832" class="Bound"
+      >paste*</a
+      ><a name="3025"
+      > </a
+      ><a name="3026" href="homotopy.RibbonCover.html#2997" class="Bound"
+      >el</a
+      ><a name="3028"
+      > </a
+      ><a name="3029" href="homotopy.RibbonCover.html#3000" class="Bound"
+      >loop</a
+      ><a name="3033"
+      > </a
+      ><a name="3034" href="homotopy.RibbonCover.html#3005" class="Bound"
+      >p</a
+      ><a name="3035" class="Symbol"
+      >))</a
+      ><a name="3037"
+      >
+
+      </a
+      ><a name="3045" href="homotopy.RibbonCover.html#3045" class="Function"
+      >f</a
+      ><a name="3046"
+      > </a
+      ><a name="3047" class="Symbol"
+      >:</a
+      ><a name="3048"
+      > </a
+      ><a name="3049" href="homotopy.RibbonCover.html#1161" class="Function"
+      >Ribbon</a
+      ><a name="3055"
+      > </a
+      ><a name="3056" href="homotopy.RibbonCover.html#1274" class="Bound"
+      >A&#8729;</a
+      ><a name="3058"
+      > </a
+      ><a name="3059" href="homotopy.RibbonCover.html#1291" class="Bound"
+      >gs</a
+      ><a name="3061"
+      > </a
+      ><a name="3062" href="homotopy.RibbonCover.html#1337" class="Bound"
+      >a&#8322;</a
+      ><a name="3064"
+      > </a
+      ><a name="3065" class="Symbol"
+      >&#8594;</a
+      ><a name="3066"
+      > </a
+      ><a name="3067" href="homotopy.RibbonCover.html#2758" class="Bound"
+      >P</a
+      ><a name="3068"
+      >
+      </a
+      ><a name="3075" href="homotopy.RibbonCover.html#3045" class="Function"
+      >f</a
+      ><a name="3076"
+      > </a
+      ><a name="3077" class="Symbol"
+      >=</a
+      ><a name="3078"
+      > </a
+      ><a name="3079" href="homotopy.RibbonCover.html#2459" class="Function"
+      >M.f</a
+      ><a name="3082"
+      >
+
+    </a
+      ><a name="3088" class="Keyword"
+      >open</a
+      ><a name="3092"
+      > </a
+      ><a name="3093" href="homotopy.RibbonCover.html#2743" class="Module"
+      >RibbonRec</a
+      ><a name="3102"
+      > </a
+      ><a name="3103" class="Keyword"
+      >public</a
+      ><a name="3109"
+      > </a
+      ><a name="3110" class="Keyword"
+      >using</a
+      ><a name="3115"
+      > </a
+      ><a name="3116" class="Symbol"
+      >()</a
+      ><a name="3118"
+      > </a
+      ><a name="3119" class="Keyword"
+      >renaming</a
+      ><a name="3127"
+      > </a
+      ><a name="3128" class="Symbol"
+      >(</a
+      ><a name="3129"
+      >f </a
+      ><a name="3131" class="Symbol"
+      >to</a
+      ><a name="3133"
+      > Ribbon-rec</a
+      ><a name="3144" class="Symbol"
+      >)</a
+      ><a name="3145"
+      >
+
+  </a
+      ><a name="3149" class="Comment"
+      >-- This data structure gives a cover.</a
+      ><a name="3186"
+      >
+  </a
+      ><a name="3189" href="homotopy.RibbonCover.html#3189" class="Function"
+      >Ribbon-cover</a
+      ><a name="3201"
+      > </a
+      ><a name="3202" class="Symbol"
+      >:</a
+      ><a name="3203"
+      > </a
+      ><a name="3204" class="Symbol"
+      >&#8704;</a
+      ><a name="3205"
+      > </a
+      ><a name="3206" class="Symbol"
+      >(</a
+      ><a name="3207" href="homotopy.RibbonCover.html#3207" class="Bound"
+      >A&#8729;</a
+      ><a name="3209"
+      > </a
+      ><a name="3210" class="Symbol"
+      >:</a
+      ><a name="3211"
+      > </a
+      ><a name="3212" href="lib.types.Pointed.html#232" class="Function"
+      >Ptd</a
+      ><a name="3215"
+      > </a
+      ><a name="3216" href="homotopy.RibbonCover.html#300" class="Bound"
+      >i</a
+      ><a name="3217" class="Symbol"
+      >)</a
+      ><a name="3218"
+      > </a
+      ><a name="3219" class="Symbol"
+      >{</a
+      ><a name="3220" href="homotopy.RibbonCover.html#3220" class="Bound"
+      >j</a
+      ><a name="3221" class="Symbol"
+      >}</a
+      ><a name="3222"
+      > </a
+      ><a name="3223" class="Symbol"
+      >(</a
+      ><a name="3224" href="homotopy.RibbonCover.html#3224" class="Bound"
+      >gs</a
+      ><a name="3226"
+      > </a
+      ><a name="3227" class="Symbol"
+      >:</a
+      ><a name="3228"
+      > </a
+      ><a name="3229" href="lib.types.GroupSet.html#775" class="Record"
+      >Gset</a
+      ><a name="3233"
+      > </a
+      ><a name="3234" class="Symbol"
+      >(</a
+      ><a name="3235" href="homotopy.RibbonCover.html#385" class="Function"
+      >&#960;1</a
+      ><a name="3237"
+      > </a
+      ><a name="3238" href="homotopy.RibbonCover.html#3207" class="Bound"
+      >A&#8729;</a
+      ><a name="3240" class="Symbol"
+      >)</a
+      ><a name="3241"
+      > </a
+      ><a name="3242" href="homotopy.RibbonCover.html#3220" class="Bound"
+      >j</a
+      ><a name="3243" class="Symbol"
+      >)</a
+      ><a name="3244"
+      >
+    </a
+      ><a name="3249" class="Symbol"
+      >&#8594;</a
+      ><a name="3250"
+      > </a
+      ><a name="3251" href="lib.types.Cover.html#391" class="Record"
+      >Cover</a
+      ><a name="3256"
+      > </a
+      ><a name="3257" class="Symbol"
+      >(</a
+      ><a name="3258" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="3261"
+      > </a
+      ><a name="3262" href="homotopy.RibbonCover.html#3207" class="Bound"
+      >A&#8729;</a
+      ><a name="3264" class="Symbol"
+      >)</a
+      ><a name="3265"
+      > </a
+      ><a name="3266" class="Symbol"
+      >(</a
+      ><a name="3267" href="Agda.Primitive.html#626" class="Primitive"
+      >lmax</a
+      ><a name="3271"
+      > </a
+      ><a name="3272" href="homotopy.RibbonCover.html#300" class="Bound"
+      >i</a
+      ><a name="3273"
+      > </a
+      ><a name="3274" href="homotopy.RibbonCover.html#3220" class="Bound"
+      >j</a
+      ><a name="3275" class="Symbol"
+      >)</a
+      ><a name="3276"
+      >
+  </a
+      ><a name="3279" href="homotopy.RibbonCover.html#3189" class="Function"
+      >Ribbon-cover</a
+      ><a name="3291"
+      > </a
+      ><a name="3292" href="homotopy.RibbonCover.html#3292" class="Bound"
+      >A&#8729;</a
+      ><a name="3294"
+      > </a
+      ><a name="3295" href="homotopy.RibbonCover.html#3295" class="Bound"
+      >gs</a
+      ><a name="3297"
+      > </a
+      ><a name="3298" class="Symbol"
+      >=</a
+      ><a name="3299"
+      > </a
+      ><a name="3300" class="Keyword"
+      >record</a
+      ><a name="3306"
+      >
+    </a
+      ><a name="3311" class="Symbol"
+      >{</a
+      ><a name="3312"
+      > </a
+      ><a name="3313" class="Field"
+      >Fiber</a
+      ><a name="3318"
+      > </a
+      ><a name="3319" class="Symbol"
+      >=</a
+      ><a name="3320"
+      > </a
+      ><a name="3321" href="homotopy.RibbonCover.html#1161" class="Function"
+      >Ribbon</a
+      ><a name="3327"
+      > </a
+      ><a name="3328" href="homotopy.RibbonCover.html#3292" class="Bound"
+      >A&#8729;</a
+      ><a name="3330"
+      > </a
+      ><a name="3331" href="homotopy.RibbonCover.html#3295" class="Bound"
+      >gs</a
+      ><a name="3333"
+      >
+    </a
+      ><a name="3338" class="Symbol"
+      >;</a
+      ><a name="3339"
+      > </a
+      ><a name="3340" class="Field"
+      >Fiber-level</a
+      ><a name="3351"
+      > </a
+      ><a name="3352" class="Symbol"
+      >=</a
+      ><a name="3353"
+      > </a
+      ><a name="3354" class="Symbol"
+      >&#955;</a
+      ><a name="3355"
+      > </a
+      ><a name="3356" href="homotopy.RibbonCover.html#3356" class="Bound"
+      >a</a
+      ><a name="3357"
+      > </a
+      ><a name="3358" class="Symbol"
+      >&#8594;</a
+      ><a name="3359"
+      > </a
+      ><a name="3360" href="homotopy.RibbonCover.html#2118" class="Function"
+      >Ribbon-level</a
+      ><a name="3372"
+      >
+    </a
+      ><a name="3377" class="Symbol"
+      >}</a
+      ><a name="3378"
+      >
+
+  </a
+      ><a name="3382" href="homotopy.RibbonCover.html#3382" class="Function"
+      >trans-trace</a
+      ><a name="3393"
+      > </a
+      ><a name="3394" class="Symbol"
+      >:</a
+      ><a name="3395"
+      > </a
+      ><a name="3396" class="Symbol"
+      >&#8704;</a
+      ><a name="3397"
+      > </a
+      ><a name="3398" class="Symbol"
+      >{</a
+      ><a name="3399" href="homotopy.RibbonCover.html#3399" class="Bound"
+      >A</a
+      ><a name="3400"
+      > </a
+      ><a name="3401" class="Symbol"
+      >:</a
+      ><a name="3402"
+      > </a
+      ><a name="3403" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="3407"
+      > </a
+      ><a name="3408" href="homotopy.RibbonCover.html#300" class="Bound"
+      >i</a
+      ><a name="3409" class="Symbol"
+      >}</a
+      ><a name="3410"
+      > </a
+      ><a name="3411" class="Symbol"
+      >{</a
+      ><a name="3412" href="homotopy.RibbonCover.html#3412" class="Bound"
+      >a&#8321;</a
+      ><a name="3414" class="Symbol"
+      >}</a
+      ><a name="3415"
+      > </a
+      ><a name="3416" class="Symbol"
+      >{</a
+      ><a name="3417" href="homotopy.RibbonCover.html#3417" class="Bound"
+      >j</a
+      ><a name="3418" class="Symbol"
+      >}</a
+      ><a name="3419"
+      >
+    </a
+      ><a name="3424" class="Symbol"
+      >{</a
+      ><a name="3425" href="homotopy.RibbonCover.html#3425" class="Bound"
+      >gs</a
+      ><a name="3427"
+      > </a
+      ><a name="3428" class="Symbol"
+      >:</a
+      ><a name="3429"
+      > </a
+      ><a name="3430" href="lib.types.GroupSet.html#775" class="Record"
+      >Gset</a
+      ><a name="3434"
+      > </a
+      ><a name="3435" class="Symbol"
+      >(</a
+      ><a name="3436" href="homotopy.RibbonCover.html#385" class="Function"
+      >&#960;1</a
+      ><a name="3438"
+      > </a
+      ><a name="3439" class="Symbol"
+      >(</a
+      ><a name="3440" href="homotopy.RibbonCover.html#3399" class="Bound"
+      >A</a
+      ><a name="3441"
+      > </a
+      ><a name="3442" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3443"
+      > </a
+      ><a name="3444" href="homotopy.RibbonCover.html#3412" class="Bound"
+      >a&#8321;</a
+      ><a name="3446" class="Symbol"
+      >))</a
+      ><a name="3448"
+      > </a
+      ><a name="3449" href="homotopy.RibbonCover.html#3417" class="Bound"
+      >j</a
+      ><a name="3450" class="Symbol"
+      >}</a
+      ><a name="3451"
+      >
+    </a
+      ><a name="3456" class="Symbol"
+      >{</a
+      ><a name="3457" href="homotopy.RibbonCover.html#3457" class="Bound"
+      >a&#8322;</a
+      ><a name="3459" class="Symbol"
+      >}</a
+      ><a name="3460"
+      > </a
+      ><a name="3461" class="Symbol"
+      >(</a
+      ><a name="3462" href="homotopy.RibbonCover.html#3462" class="Bound"
+      >q</a
+      ><a name="3463"
+      > </a
+      ><a name="3464" class="Symbol"
+      >:</a
+      ><a name="3465"
+      > </a
+      ><a name="3466" href="homotopy.RibbonCover.html#3412" class="Bound"
+      >a&#8321;</a
+      ><a name="3468"
+      > </a
+      ><a name="3469" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3471"
+      > </a
+      ><a name="3472" href="homotopy.RibbonCover.html#3457" class="Bound"
+      >a&#8322;</a
+      ><a name="3474" class="Symbol"
+      >)</a
+      ><a name="3475"
+      > </a
+      ><a name="3476" href="homotopy.RibbonCover.html#3476" class="Bound"
+      >y</a
+      ><a name="3477"
+      > </a
+      ><a name="3478" href="homotopy.RibbonCover.html#3478" class="Bound"
+      >p</a
+      ><a name="3479"
+      >
+    </a
+      ><a name="3484" class="Symbol"
+      >&#8594;</a
+      ><a name="3485"
+      > </a
+      ><a name="3486" href="lib.Base.html#4516" class="Function"
+      >transport</a
+      ><a name="3495"
+      > </a
+      ><a name="3496" class="Symbol"
+      >(</a
+      ><a name="3497" href="homotopy.RibbonCover.html#1161" class="Function"
+      >Ribbon</a
+      ><a name="3503"
+      > </a
+      ><a name="3504" class="Symbol"
+      >(</a
+      ><a name="3505" href="homotopy.RibbonCover.html#3399" class="Bound"
+      >A</a
+      ><a name="3506"
+      > </a
+      ><a name="3507" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3508"
+      > </a
+      ><a name="3509" href="homotopy.RibbonCover.html#3412" class="Bound"
+      >a&#8321;</a
+      ><a name="3511" class="Symbol"
+      >)</a
+      ><a name="3512"
+      > </a
+      ><a name="3513" href="homotopy.RibbonCover.html#3425" class="Bound"
+      >gs</a
+      ><a name="3515" class="Symbol"
+      >)</a
+      ><a name="3516"
+      > </a
+      ><a name="3517" href="homotopy.RibbonCover.html#3462" class="Bound"
+      >q</a
+      ><a name="3518"
+      > </a
+      ><a name="3519" class="Symbol"
+      >(</a
+      ><a name="3520" href="homotopy.RibbonCover.html#1630" class="Function"
+      >trace</a
+      ><a name="3525"
+      > </a
+      ><a name="3526" href="homotopy.RibbonCover.html#3476" class="Bound"
+      >y</a
+      ><a name="3527"
+      > </a
+      ><a name="3528" href="homotopy.RibbonCover.html#3478" class="Bound"
+      >p</a
+      ><a name="3529" class="Symbol"
+      >)</a
+      ><a name="3530"
+      > </a
+      ><a name="3531" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3533"
+      > </a
+      ><a name="3534" href="homotopy.RibbonCover.html#1630" class="Function"
+      >trace</a
+      ><a name="3539"
+      > </a
+      ><a name="3540" href="homotopy.RibbonCover.html#3476" class="Bound"
+      >y</a
+      ><a name="3541"
+      > </a
+      ><a name="3542" class="Symbol"
+      >(</a
+      ><a name="3543" href="homotopy.RibbonCover.html#3478" class="Bound"
+      >p</a
+      ><a name="3544"
+      > </a
+      ><a name="3545" href="lib.types.PathSet.html#383" class="Function Operator"
+      >&#8729;&#8320;</a
+      ><a name="3547"
+      > </a
+      ><a name="3548" href="lib.types.Truncation.html#491" class="Function Operator"
+      >[</a
+      ><a name="3549"
+      > </a
+      ><a name="3550" href="homotopy.RibbonCover.html#3462" class="Bound"
+      >q</a
+      ><a name="3551"
+      > </a
+      ><a name="3552" href="lib.types.Truncation.html#491" class="Function Operator"
+      >]</a
+      ><a name="3553" class="Symbol"
+      >)</a
+      ><a name="3554"
+      >
+  </a
+      ><a name="3557" href="homotopy.RibbonCover.html#3382" class="Function"
+      >trans-trace</a
+      ><a name="3568"
+      > </a
+      ><a name="3569" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3572"
+      > </a
+      ><a name="3573" href="homotopy.RibbonCover.html#3573" class="Bound"
+      >y</a
+      ><a name="3574"
+      > </a
+      ><a name="3575" href="homotopy.RibbonCover.html#3575" class="Bound"
+      >p</a
+      ><a name="3576"
+      > </a
+      ><a name="3577" class="Symbol"
+      >=</a
+      ><a name="3578"
+      > </a
+      ><a name="3579" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="3581"
+      > </a
+      ><a name="3582" class="Symbol"
+      >(</a
+      ><a name="3583" href="homotopy.RibbonCover.html#1630" class="Function"
+      >trace</a
+      ><a name="3588"
+      > </a
+      ><a name="3589" href="homotopy.RibbonCover.html#3573" class="Bound"
+      >y</a
+      ><a name="3590" class="Symbol"
+      >)</a
+      ><a name="3591"
+      > </a
+      ><a name="3592" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="3593"
+      > </a
+      ><a name="3594" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="3595"
+      > </a
+      ><a name="3596" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="3597"
+      > </a
+      ><a name="3598" href="lib.types.PathSet.html#1149" class="Function"
+      >&#8729;&#8320;-unit-r</a
+      ><a name="3607"
+      > </a
+      ><a name="3608" href="homotopy.RibbonCover.html#3575" class="Bound"
+      >p</a
+      ><a name="3609"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

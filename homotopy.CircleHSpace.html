@@ -1,0 +1,799 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >homotopy.CircleHSpace</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --without-K </a
+      ><a name="25" class="Symbol"
+      >#-}</a
+      ><a name="28"
+      >
+
+</a
+      ><a name="30" class="Keyword"
+      >open</a
+      ><a name="34"
+      > </a
+      ><a name="35" class="Keyword"
+      >import</a
+      ><a name="41"
+      > </a
+      ><a name="42" href="HoTT.html#1" class="Module"
+      >HoTT</a
+      ><a name="46"
+      >
+</a
+      ><a name="47" class="Keyword"
+      >open</a
+      ><a name="51"
+      > </a
+      ><a name="52" class="Keyword"
+      >import</a
+      ><a name="58"
+      > </a
+      ><a name="59" href="homotopy.HSpace.html#1" class="Module"
+      >homotopy.HSpace</a
+      ><a name="74"
+      >
+
+</a
+      ><a name="76" class="Keyword"
+      >module</a
+      ><a name="82"
+      > </a
+      ><a name="83" href="homotopy.CircleHSpace.html#1" class="Module"
+      >homotopy.CircleHSpace</a
+      ><a name="104"
+      > </a
+      ><a name="105" class="Keyword"
+      >where</a
+      ><a name="110"
+      >
+
+</a
+      ><a name="112" href="homotopy.CircleHSpace.html#112" class="Function"
+      >S&#185;-hSpace</a
+      ><a name="121"
+      > </a
+      ><a name="122" class="Symbol"
+      >:</a
+      ><a name="123"
+      > </a
+      ><a name="124" href="homotopy.HSpace.html#85" class="Record"
+      >HSpaceStructure</a
+      ><a name="139"
+      > </a
+      ><a name="140" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="142"
+      >
+</a
+      ><a name="143" href="homotopy.CircleHSpace.html#112" class="Function"
+      >S&#185;-hSpace</a
+      ><a name="152"
+      > </a
+      ><a name="153" class="Symbol"
+      >=</a
+      ><a name="154"
+      > </a
+      ><a name="155" href="homotopy.HSpace.html#147" class="InductiveConstructor"
+      >hSpaceStructure</a
+      ><a name="170"
+      > </a
+      ><a name="171" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="175"
+      > </a
+      ><a name="176" href="homotopy.CircleHSpace.html#338" class="Function"
+      >&#956;</a
+      ><a name="177"
+      > </a
+      ><a name="178" href="homotopy.CircleHSpace.html#369" class="Function"
+      >&#956;e-</a
+      ><a name="181"
+      > </a
+      ><a name="182" href="homotopy.CircleHSpace.html#417" class="Function"
+      >&#956;-e</a
+      ><a name="185"
+      > </a
+      ><a name="186" class="Keyword"
+      >where</a
+      ><a name="191"
+      >
+
+  </a
+      ><a name="195" href="homotopy.CircleHSpace.html#195" class="Function"
+      >turn-around</a
+      ><a name="206"
+      > </a
+      ><a name="207" class="Symbol"
+      >:</a
+      ><a name="208"
+      > </a
+      ><a name="209" class="Symbol"
+      >(</a
+      ><a name="210" href="homotopy.CircleHSpace.html#210" class="Bound"
+      >x</a
+      ><a name="211"
+      > </a
+      ><a name="212" class="Symbol"
+      >:</a
+      ><a name="213"
+      > </a
+      ><a name="214" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="216" class="Symbol"
+      >)</a
+      ><a name="217"
+      > </a
+      ><a name="218" class="Symbol"
+      >&#8594;</a
+      ><a name="219"
+      > </a
+      ><a name="220" href="homotopy.CircleHSpace.html#210" class="Bound"
+      >x</a
+      ><a name="221"
+      > </a
+      ><a name="222" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="224"
+      > </a
+      ><a name="225" href="homotopy.CircleHSpace.html#210" class="Bound"
+      >x</a
+      ><a name="226"
+      >
+  </a
+      ><a name="229" href="homotopy.CircleHSpace.html#195" class="Function"
+      >turn-around</a
+      ><a name="240"
+      > </a
+      ><a name="241" class="Symbol"
+      >=</a
+      ><a name="242"
+      > </a
+      ><a name="243" href="lib.types.Circle.html#703" class="Function"
+      >S&#185;-elim</a
+      ><a name="250"
+      > </a
+      ><a name="251" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="255"
+      > </a
+      ><a name="256" class="Symbol"
+      >(</a
+      ><a name="257" href="lib.types.Paths.html#2044" class="Function"
+      >&#8595;-idf=idf-in</a
+      ><a name="269"
+      > </a
+      ><a name="270" class="Symbol"
+      >(</a
+      ><a name="271" href="lib.PathGroupoid.html#544" class="Function"
+      >&#8729;=&#8729;'</a
+      ><a name="275"
+      > </a
+      ><a name="276" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="280"
+      > </a
+      ><a name="281" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="285" class="Symbol"
+      >))</a
+      ><a name="287"
+      >
+
+  </a
+      ><a name="291" class="Keyword"
+      >module</a
+      ><a name="297"
+      > </a
+      ><a name="298" href="homotopy.CircleHSpace.html#298" class="Module"
+      >Mu</a
+      ><a name="300"
+      > </a
+      ><a name="301" class="Symbol"
+      >=</a
+      ><a name="302"
+      > </a
+      ><a name="303" href="lib.types.Circle.html#939" class="Module"
+      >S&#185;Rec</a
+      ><a name="308"
+      > </a
+      ><a name="309" class="Symbol"
+      >(</a
+      ><a name="310" href="lib.Base.html#7594" class="Function"
+      >idf</a
+      ><a name="313"
+      > </a
+      ><a name="314" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="316" class="Symbol"
+      >)</a
+      ><a name="317"
+      > </a
+      ><a name="318" class="Symbol"
+      >(</a
+      ><a name="319" href="lib.Funext.html#3978" class="Function"
+      >&#955;=</a
+      ><a name="321"
+      > </a
+      ><a name="322" href="homotopy.CircleHSpace.html#195" class="Function"
+      >turn-around</a
+      ><a name="333" class="Symbol"
+      >)</a
+      ><a name="334"
+      >
+
+  </a
+      ><a name="338" href="homotopy.CircleHSpace.html#338" class="Function"
+      >&#956;</a
+      ><a name="339"
+      > </a
+      ><a name="340" class="Symbol"
+      >:</a
+      ><a name="341"
+      > </a
+      ><a name="342" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="344"
+      > </a
+      ><a name="345" class="Symbol"
+      >&#8594;</a
+      ><a name="346"
+      > </a
+      ><a name="347" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="349"
+      > </a
+      ><a name="350" class="Symbol"
+      >&#8594;</a
+      ><a name="351"
+      > </a
+      ><a name="352" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="354"
+      >
+  </a
+      ><a name="357" href="homotopy.CircleHSpace.html#338" class="Function"
+      >&#956;</a
+      ><a name="358"
+      > </a
+      ><a name="359" class="Symbol"
+      >=</a
+      ><a name="360"
+      > </a
+      ><a name="361" href="lib.types.Circle.html#1064" class="Function"
+      >Mu.f</a
+      ><a name="365"
+      >
+
+  </a
+      ><a name="369" href="homotopy.CircleHSpace.html#369" class="Function"
+      >&#956;e-</a
+      ><a name="372"
+      > </a
+      ><a name="373" class="Symbol"
+      >:</a
+      ><a name="374"
+      > </a
+      ><a name="375" class="Symbol"
+      >(</a
+      ><a name="376" href="homotopy.CircleHSpace.html#376" class="Bound"
+      >x</a
+      ><a name="377"
+      > </a
+      ><a name="378" class="Symbol"
+      >:</a
+      ><a name="379"
+      > </a
+      ><a name="380" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="382" class="Symbol"
+      >)</a
+      ><a name="383"
+      > </a
+      ><a name="384" class="Symbol"
+      >&#8594;</a
+      ><a name="385"
+      > </a
+      ><a name="386" href="homotopy.CircleHSpace.html#338" class="Function"
+      >&#956;</a
+      ><a name="387"
+      > </a
+      ><a name="388" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="392"
+      > </a
+      ><a name="393" href="homotopy.CircleHSpace.html#376" class="Bound"
+      >x</a
+      ><a name="394"
+      > </a
+      ><a name="395" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="397"
+      > </a
+      ><a name="398" href="homotopy.CircleHSpace.html#376" class="Bound"
+      >x</a
+      ><a name="399"
+      >
+  </a
+      ><a name="402" href="homotopy.CircleHSpace.html#369" class="Function"
+      >&#956;e-</a
+      ><a name="405"
+      > </a
+      ><a name="406" href="homotopy.CircleHSpace.html#406" class="Bound"
+      >x</a
+      ><a name="407"
+      > </a
+      ><a name="408" class="Symbol"
+      >=</a
+      ><a name="409"
+      > </a
+      ><a name="410" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="413"
+      >
+
+  </a
+      ><a name="417" href="homotopy.CircleHSpace.html#417" class="Function"
+      >&#956;-e</a
+      ><a name="420"
+      > </a
+      ><a name="421" class="Symbol"
+      >:</a
+      ><a name="422"
+      > </a
+      ><a name="423" class="Symbol"
+      >(</a
+      ><a name="424" href="homotopy.CircleHSpace.html#424" class="Bound"
+      >x</a
+      ><a name="425"
+      > </a
+      ><a name="426" class="Symbol"
+      >:</a
+      ><a name="427"
+      > </a
+      ><a name="428" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="430" class="Symbol"
+      >)</a
+      ><a name="431"
+      > </a
+      ><a name="432" class="Symbol"
+      >&#8594;</a
+      ><a name="433"
+      > </a
+      ><a name="434" href="homotopy.CircleHSpace.html#338" class="Function"
+      >&#956;</a
+      ><a name="435"
+      > </a
+      ><a name="436" href="homotopy.CircleHSpace.html#424" class="Bound"
+      >x</a
+      ><a name="437"
+      > </a
+      ><a name="438" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="442"
+      > </a
+      ><a name="443" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="445"
+      > </a
+      ><a name="446" href="homotopy.CircleHSpace.html#424" class="Bound"
+      >x</a
+      ><a name="447"
+      >
+  </a
+      ><a name="450" href="homotopy.CircleHSpace.html#417" class="Function"
+      >&#956;-e</a
+      ><a name="453"
+      > </a
+      ><a name="454" class="Symbol"
+      >=</a
+      ><a name="455"
+      > </a
+      ><a name="456" href="lib.types.Circle.html#703" class="Function"
+      >S&#185;-elim</a
+      ><a name="463"
+      > </a
+      ><a name="464" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="467"
+      > </a
+      ><a name="468" class="Symbol"
+      >(</a
+      ><a name="469" href="lib.types.Paths.html#1226" class="Function"
+      >&#8595;-app=idf-in</a
+      ><a name="481"
+      >
+    </a
+      ><a name="486" class="Symbol"
+      >(</a
+      ><a name="487" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="490"
+      > </a
+      ><a name="491" href="lib.PathGroupoid.html#474" class="Function Operator"
+      >&#8729;'</a
+      ><a name="493"
+      > </a
+      ><a name="494" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="498"
+      >                          </a
+      ><a name="524" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="526"
+      > </a
+      ><a name="527" href="lib.PathGroupoid.html#976" class="Function"
+      >&#8729;'-unit-l</a
+      ><a name="536"
+      > </a
+      ><a name="537" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="541"
+      > </a
+      ><a name="542" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="543"
+      >
+     </a
+      ><a name="549" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="553"
+      >                                 </a
+      ><a name="586" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="588"
+      > </a
+      ><a name="589" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="592"
+      > </a
+      ><a name="593" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="594"
+      >
+     </a
+      ><a name="600" href="homotopy.CircleHSpace.html#195" class="Function"
+      >turn-around</a
+      ><a name="611"
+      > </a
+      ><a name="612" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="616"
+      >                     </a
+      ><a name="637" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="639"
+      > </a
+      ><a name="640" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="641"
+      > </a
+      ><a name="642" class="Symbol"
+      >(</a
+      ><a name="643" href="lib.Funext.html#4046" class="Function"
+      >app=-&#946;</a
+      ><a name="649"
+      > </a
+      ><a name="650" href="homotopy.CircleHSpace.html#195" class="Function"
+      >turn-around</a
+      ><a name="661"
+      > </a
+      ><a name="662" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="666" class="Symbol"
+      >)</a
+      ><a name="667"
+      > </a
+      ><a name="668" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="669"
+      >
+     </a
+      ><a name="675" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="677"
+      > </a
+      ><a name="678" class="Symbol"
+      >(&#955;</a
+      ><a name="680"
+      > </a
+      ><a name="681" href="homotopy.CircleHSpace.html#681" class="Bound"
+      >z</a
+      ><a name="682"
+      > </a
+      ><a name="683" class="Symbol"
+      >&#8594;</a
+      ><a name="684"
+      > </a
+      ><a name="685" href="homotopy.CircleHSpace.html#681" class="Bound"
+      >z</a
+      ><a name="686"
+      > </a
+      ><a name="687" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="691" class="Symbol"
+      >)</a
+      ><a name="692"
+      > </a
+      ><a name="693" class="Symbol"
+      >(</a
+      ><a name="694" href="lib.Funext.html#3978" class="Function"
+      >&#955;=</a
+      ><a name="696"
+      > </a
+      ><a name="697" href="homotopy.CircleHSpace.html#195" class="Function"
+      >turn-around</a
+      ><a name="708" class="Symbol"
+      >)</a
+      ><a name="709"
+      >   </a
+      ><a name="712" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="714"
+      > </a
+      ><a name="715" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="716"
+      > </a
+      ><a name="717" class="Symbol"
+      >(</a
+      ><a name="718" href="lib.types.Circle.html#1088" class="Function"
+      >Mu.loop-&#946;</a
+      ><a name="727"
+      > </a
+      ><a name="728" href="lib.Base.html#3622" class="Function"
+      >|in-ctx</a
+      ><a name="735"
+      > </a
+      ><a name="736" class="Symbol"
+      >(</a
+      ><a name="737" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="739"
+      > </a
+      ><a name="740" class="Symbol"
+      >(&#955;</a
+      ><a name="742"
+      > </a
+      ><a name="743" href="homotopy.CircleHSpace.html#743" class="Bound"
+      >z</a
+      ><a name="744"
+      > </a
+      ><a name="745" class="Symbol"
+      >&#8594;</a
+      ><a name="746"
+      > </a
+      ><a name="747" href="homotopy.CircleHSpace.html#743" class="Bound"
+      >z</a
+      ><a name="748"
+      > </a
+      ><a name="749" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="753" class="Symbol"
+      >)))</a
+      ><a name="756"
+      > </a
+      ><a name="757" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="758"
+      >
+     </a
+      ><a name="764" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="766"
+      > </a
+      ><a name="767" class="Symbol"
+      >(&#955;</a
+      ><a name="769"
+      > </a
+      ><a name="770" href="homotopy.CircleHSpace.html#770" class="Bound"
+      >z</a
+      ><a name="771"
+      > </a
+      ><a name="772" class="Symbol"
+      >&#8594;</a
+      ><a name="773"
+      > </a
+      ><a name="774" href="homotopy.CircleHSpace.html#770" class="Bound"
+      >z</a
+      ><a name="775"
+      > </a
+      ><a name="776" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="780" class="Symbol"
+      >)</a
+      ><a name="781"
+      > </a
+      ><a name="782" class="Symbol"
+      >(</a
+      ><a name="783" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="785"
+      > </a
+      ><a name="786" href="homotopy.CircleHSpace.html#338" class="Function"
+      >&#956;</a
+      ><a name="787"
+      > </a
+      ><a name="788" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="792" class="Symbol"
+      >)</a
+      ><a name="793"
+      >        </a
+      ><a name="801" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="803"
+      > </a
+      ><a name="804" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="805"
+      > </a
+      ><a name="806" class="Symbol"
+      >(</a
+      ><a name="807" href="lib.PathFunctor.html#1787" class="Function"
+      >ap-&#8728;</a
+      ><a name="811"
+      > </a
+      ><a name="812" class="Symbol"
+      >(&#955;</a
+      ><a name="814"
+      > </a
+      ><a name="815" href="homotopy.CircleHSpace.html#815" class="Bound"
+      >z</a
+      ><a name="816"
+      > </a
+      ><a name="817" class="Symbol"
+      >&#8594;</a
+      ><a name="818"
+      > </a
+      ><a name="819" href="homotopy.CircleHSpace.html#815" class="Bound"
+      >z</a
+      ><a name="820"
+      > </a
+      ><a name="821" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="825" class="Symbol"
+      >)</a
+      ><a name="826"
+      > </a
+      ><a name="827" href="homotopy.CircleHSpace.html#338" class="Function"
+      >&#956;</a
+      ><a name="828"
+      > </a
+      ><a name="829" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="833" class="Symbol"
+      >)</a
+      ><a name="834"
+      > </a
+      ><a name="835" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="836"
+      >
+     </a
+      ><a name="842" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="844"
+      > </a
+      ><a name="845" class="Symbol"
+      >(&#955;</a
+      ><a name="847"
+      > </a
+      ><a name="848" href="homotopy.CircleHSpace.html#848" class="Bound"
+      >z</a
+      ><a name="849"
+      > </a
+      ><a name="850" class="Symbol"
+      >&#8594;</a
+      ><a name="851"
+      > </a
+      ><a name="852" href="homotopy.CircleHSpace.html#338" class="Function"
+      >&#956;</a
+      ><a name="853"
+      > </a
+      ><a name="854" href="homotopy.CircleHSpace.html#848" class="Bound"
+      >z</a
+      ><a name="855"
+      > </a
+      ><a name="856" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="860" class="Symbol"
+      >)</a
+      ><a name="861"
+      > </a
+      ><a name="862" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="866"
+      >             </a
+      ><a name="879" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="881"
+      > </a
+      ><a name="882" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="883"
+      > </a
+      ><a name="884" class="Symbol"
+      >(</a
+      ><a name="885" href="lib.PathGroupoid.html#903" class="Function"
+      >&#8729;-unit-r</a
+      ><a name="893"
+      > </a
+      ><a name="894" class="Symbol"
+      >_)</a
+      ><a name="896"
+      > </a
+      ><a name="897" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="898"
+      >
+     </a
+      ><a name="904" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="906"
+      > </a
+      ><a name="907" class="Symbol"
+      >(&#955;</a
+      ><a name="909"
+      > </a
+      ><a name="910" href="homotopy.CircleHSpace.html#910" class="Bound"
+      >z</a
+      ><a name="911"
+      > </a
+      ><a name="912" class="Symbol"
+      >&#8594;</a
+      ><a name="913"
+      > </a
+      ><a name="914" href="homotopy.CircleHSpace.html#338" class="Function"
+      >&#956;</a
+      ><a name="915"
+      > </a
+      ><a name="916" href="homotopy.CircleHSpace.html#910" class="Bound"
+      >z</a
+      ><a name="917"
+      > </a
+      ><a name="918" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="922" class="Symbol"
+      >)</a
+      ><a name="923"
+      > </a
+      ><a name="924" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="928"
+      > </a
+      ><a name="929" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="930"
+      > </a
+      ><a name="931" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="934"
+      > </a
+      ><a name="935" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="936" class="Symbol"
+      >))</a
+      ><a name="938"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

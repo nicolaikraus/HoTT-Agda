@@ -1,0 +1,2959 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >lib.types.Circle</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --without-K </a
+      ><a name="25" class="Symbol"
+      >#-}</a
+      ><a name="28"
+      >
+
+</a
+      ><a name="30" class="Keyword"
+      >open</a
+      ><a name="34"
+      > </a
+      ><a name="35" class="Keyword"
+      >import</a
+      ><a name="41"
+      > </a
+      ><a name="42" href="lib.Basics.html#1" class="Module"
+      >lib.Basics</a
+      ><a name="52"
+      >
+</a
+      ><a name="53" class="Keyword"
+      >open</a
+      ><a name="57"
+      > </a
+      ><a name="58" class="Keyword"
+      >import</a
+      ><a name="64"
+      > </a
+      ><a name="65" href="lib.types.Paths.html#1" class="Module"
+      >lib.types.Paths</a
+      ><a name="80"
+      >
+</a
+      ><a name="81" class="Keyword"
+      >open</a
+      ><a name="85"
+      > </a
+      ><a name="86" class="Keyword"
+      >import</a
+      ><a name="92"
+      > </a
+      ><a name="93" href="lib.types.Pi.html#1" class="Module"
+      >lib.types.Pi</a
+      ><a name="105"
+      >
+</a
+      ><a name="106" class="Keyword"
+      >open</a
+      ><a name="110"
+      > </a
+      ><a name="111" class="Keyword"
+      >import</a
+      ><a name="117"
+      > </a
+      ><a name="118" href="lib.types.Unit.html#1" class="Module"
+      >lib.types.Unit</a
+      ><a name="132"
+      >
+
+</a
+      ><a name="134" class="Keyword"
+      >module</a
+      ><a name="140"
+      > </a
+      ><a name="141" href="lib.types.Circle.html#1" class="Module"
+      >lib.types.Circle</a
+      ><a name="157"
+      > </a
+      ><a name="158" class="Keyword"
+      >where</a
+      ><a name="163"
+      >
+
+</a
+      ><a name="165" class="Comment"
+      >{-
+Idea :
+
+data S&#185; : Type&#8320; where
+  base : S&#185;
+  loop : base == base
+
+I&#8217;m using Dan Licata&#8217;s trick to have a higher inductive type with definitional
+reduction rule for [base]
+-}</a
+      ><a name="340"
+      >
+
+</a
+      ><a name="342" class="Keyword"
+      >module</a
+      ><a name="348"
+      > </a
+      ><a name="349" href="lib.types.Circle.html#349" class="Module"
+      >_</a
+      ><a name="350"
+      > </a
+      ><a name="351" class="Keyword"
+      >where</a
+      ><a name="356"
+      >
+  </a
+      ><a name="359" class="Keyword"
+      >private</a
+      ><a name="366"
+      >
+    </a
+      ><a name="371" class="Keyword"
+      >data</a
+      ><a name="375"
+      > </a
+      ><a name="376" href="lib.types.Circle.html#376" class="Datatype"
+      >#S&#185;-aux</a
+      ><a name="383"
+      > </a
+      ><a name="384" class="Symbol"
+      >:</a
+      ><a name="385"
+      > </a
+      ><a name="386" href="lib.Base.html#1184" class="Function"
+      >Type&#8320;</a
+      ><a name="391"
+      > </a
+      ><a name="392" class="Keyword"
+      >where</a
+      ><a name="397"
+      >
+      </a
+      ><a name="404" href="lib.types.Circle.html#404" class="InductiveConstructor"
+      >#base</a
+      ><a name="409"
+      > </a
+      ><a name="410" class="Symbol"
+      >:</a
+      ><a name="411"
+      > </a
+      ><a name="412" href="lib.types.Circle.html#376" class="Datatype"
+      >#S&#185;-aux</a
+      ><a name="419"
+      >
+
+    </a
+      ><a name="425" class="Keyword"
+      >data</a
+      ><a name="429"
+      > </a
+      ><a name="430" href="lib.types.Circle.html#430" class="Datatype"
+      >#S&#185;</a
+      ><a name="433"
+      > </a
+      ><a name="434" class="Symbol"
+      >:</a
+      ><a name="435"
+      > </a
+      ><a name="436" href="lib.Base.html#1184" class="Function"
+      >Type&#8320;</a
+      ><a name="441"
+      > </a
+      ><a name="442" class="Keyword"
+      >where</a
+      ><a name="447"
+      >
+      </a
+      ><a name="454" href="lib.types.Circle.html#454" class="InductiveConstructor"
+      >#s&#185;</a
+      ><a name="457"
+      > </a
+      ><a name="458" class="Symbol"
+      >:</a
+      ><a name="459"
+      > </a
+      ><a name="460" href="lib.types.Circle.html#376" class="Datatype"
+      >#S&#185;-aux</a
+      ><a name="467"
+      > </a
+      ><a name="468" class="Symbol"
+      >&#8594;</a
+      ><a name="469"
+      > </a
+      ><a name="470" class="Symbol"
+      >(</a
+      ><a name="471" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="475"
+      > </a
+      ><a name="476" class="Symbol"
+      >&#8594;</a
+      ><a name="477"
+      > </a
+      ><a name="478" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="482" class="Symbol"
+      >)</a
+      ><a name="483"
+      > </a
+      ><a name="484" class="Symbol"
+      >&#8594;</a
+      ><a name="485"
+      > </a
+      ><a name="486" href="lib.types.Circle.html#430" class="Datatype"
+      >#S&#185;</a
+      ><a name="489"
+      >
+
+  </a
+      ><a name="493" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="495"
+      > </a
+      ><a name="496" class="Symbol"
+      >:</a
+      ><a name="497"
+      > </a
+      ><a name="498" href="lib.Base.html#1184" class="Function"
+      >Type&#8320;</a
+      ><a name="503"
+      >
+  </a
+      ><a name="506" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="508"
+      > </a
+      ><a name="509" class="Symbol"
+      >=</a
+      ><a name="510"
+      > </a
+      ><a name="511" href="lib.types.Circle.html#430" class="Datatype"
+      >#S&#185;</a
+      ><a name="514"
+      >
+
+  </a
+      ><a name="518" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="522"
+      > </a
+      ><a name="523" class="Symbol"
+      >:</a
+      ><a name="524"
+      > </a
+      ><a name="525" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="527"
+      >
+  </a
+      ><a name="530" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="534"
+      > </a
+      ><a name="535" class="Symbol"
+      >=</a
+      ><a name="536"
+      > </a
+      ><a name="537" href="lib.types.Circle.html#454" class="InductiveConstructor"
+      >#s&#185;</a
+      ><a name="540"
+      > </a
+      ><a name="541" href="lib.types.Circle.html#404" class="InductiveConstructor"
+      >#base</a
+      ><a name="546"
+      > </a
+      ><a name="547" class="Symbol"
+      >_</a
+      ><a name="548"
+      >
+
+  </a
+      ><a name="552" class="Keyword"
+      >postulate</a
+      ><a name="561"
+      >  </a
+      ><a name="563" class="Comment"
+      >-- HIT</a
+      ><a name="569"
+      >
+    </a
+      ><a name="574" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="578"
+      > </a
+      ><a name="579" class="Symbol"
+      >:</a
+      ><a name="580"
+      > </a
+      ><a name="581" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="585"
+      > </a
+      ><a name="586" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="588"
+      > </a
+      ><a name="589" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="593"
+      >
+
+  </a
+      ><a name="597" class="Keyword"
+      >module</a
+      ><a name="603"
+      > </a
+      ><a name="604" href="lib.types.Circle.html#604" class="Module"
+      >S&#185;Elim</a
+      ><a name="610"
+      > </a
+      ><a name="611" class="Symbol"
+      >{</a
+      ><a name="612" href="lib.types.Circle.html#612" class="Bound"
+      >i</a
+      ><a name="613" class="Symbol"
+      >}</a
+      ><a name="614"
+      > </a
+      ><a name="615" class="Symbol"
+      >{</a
+      ><a name="616" href="lib.types.Circle.html#616" class="Bound"
+      >P</a
+      ><a name="617"
+      > </a
+      ><a name="618" class="Symbol"
+      >:</a
+      ><a name="619"
+      > </a
+      ><a name="620" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="622"
+      > </a
+      ><a name="623" class="Symbol"
+      >&#8594;</a
+      ><a name="624"
+      > </a
+      ><a name="625" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="629"
+      > </a
+      ><a name="630" href="lib.types.Circle.html#612" class="Bound"
+      >i</a
+      ><a name="631" class="Symbol"
+      >}</a
+      ><a name="632"
+      > </a
+      ><a name="633" class="Symbol"
+      >(</a
+      ><a name="634" href="lib.types.Circle.html#634" class="Bound"
+      >base*</a
+      ><a name="639"
+      > </a
+      ><a name="640" class="Symbol"
+      >:</a
+      ><a name="641"
+      > </a
+      ><a name="642" href="lib.types.Circle.html#616" class="Bound"
+      >P</a
+      ><a name="643"
+      > </a
+      ><a name="644" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="648" class="Symbol"
+      >)</a
+      ><a name="649"
+      >
+    </a
+      ><a name="654" class="Symbol"
+      >(</a
+      ><a name="655" href="lib.types.Circle.html#655" class="Bound"
+      >loop*</a
+      ><a name="660"
+      > </a
+      ><a name="661" class="Symbol"
+      >:</a
+      ><a name="662"
+      > </a
+      ><a name="663" href="lib.types.Circle.html#634" class="Bound"
+      >base*</a
+      ><a name="668"
+      > </a
+      ><a name="669" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="671"
+      > </a
+      ><a name="672" href="lib.types.Circle.html#634" class="Bound"
+      >base*</a
+      ><a name="677"
+      > </a
+      ><a name="678" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="679"
+      > </a
+      ><a name="680" href="lib.types.Circle.html#616" class="Bound"
+      >P</a
+      ><a name="681"
+      > </a
+      ><a name="682" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="683"
+      > </a
+      ><a name="684" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="688"
+      > </a
+      ><a name="689" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="690" class="Symbol"
+      >)</a
+      ><a name="691"
+      > </a
+      ><a name="692" class="Keyword"
+      >where</a
+      ><a name="697"
+      >
+
+    </a
+      ><a name="703" href="lib.types.Circle.html#703" class="Function"
+      >f</a
+      ><a name="704"
+      > </a
+      ><a name="705" class="Symbol"
+      >:</a
+      ><a name="706"
+      > </a
+      ><a name="707" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="708"
+      > </a
+      ><a name="709" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="711"
+      > </a
+      ><a name="712" href="lib.types.Circle.html#616" class="Bound"
+      >P</a
+      ><a name="713"
+      >
+    </a
+      ><a name="718" href="lib.types.Circle.html#703" class="Function"
+      >f</a
+      ><a name="719"
+      > </a
+      ><a name="720" class="Symbol"
+      >=</a
+      ><a name="721"
+      > </a
+      ><a name="722" href="lib.types.Circle.html#748" class="Function"
+      >f-aux</a
+      ><a name="727"
+      > </a
+      ><a name="728" href="lib.Base.html#9474" class="InductiveConstructor"
+      >phantom</a
+      ><a name="735"
+      > </a
+      ><a name="736" class="Keyword"
+      >where</a
+      ><a name="741"
+      >
+
+     </a
+      ><a name="748" href="lib.types.Circle.html#748" class="Function"
+      >f-aux</a
+      ><a name="753"
+      > </a
+      ><a name="754" class="Symbol"
+      >:</a
+      ><a name="755"
+      > </a
+      ><a name="756" href="lib.Base.html#9425" class="Datatype"
+      >Phantom</a
+      ><a name="763"
+      > </a
+      ><a name="764" href="lib.types.Circle.html#655" class="Bound"
+      >loop*</a
+      ><a name="769"
+      > </a
+      ><a name="770" class="Symbol"
+      >&#8594;</a
+      ><a name="771"
+      > </a
+      ><a name="772" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="773"
+      > </a
+      ><a name="774" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="776"
+      > </a
+      ><a name="777" href="lib.types.Circle.html#616" class="Bound"
+      >P</a
+      ><a name="778"
+      >
+     </a
+      ><a name="784" href="lib.types.Circle.html#748" class="Function"
+      >f-aux</a
+      ><a name="789"
+      > </a
+      ><a name="790" href="lib.Base.html#9474" class="InductiveConstructor"
+      >phantom</a
+      ><a name="797"
+      > </a
+      ><a name="798" class="Symbol"
+      >(</a
+      ><a name="799" href="lib.types.Circle.html#454" class="InductiveConstructor"
+      >#s&#185;</a
+      ><a name="802"
+      > </a
+      ><a name="803" href="lib.types.Circle.html#404" class="InductiveConstructor"
+      >#base</a
+      ><a name="808"
+      > </a
+      ><a name="809" class="Symbol"
+      >_)</a
+      ><a name="811"
+      > </a
+      ><a name="812" class="Symbol"
+      >=</a
+      ><a name="813"
+      > </a
+      ><a name="814" href="lib.types.Circle.html#634" class="Bound"
+      >base*</a
+      ><a name="819"
+      >
+
+    </a
+      ><a name="825" class="Keyword"
+      >postulate</a
+      ><a name="834"
+      >  </a
+      ><a name="836" class="Comment"
+      >-- HIT</a
+      ><a name="842"
+      >
+      </a
+      ><a name="849" href="lib.types.Circle.html#849" class="Postulate"
+      >loop-&#946;</a
+      ><a name="855"
+      > </a
+      ><a name="856" class="Symbol"
+      >:</a
+      ><a name="857"
+      > </a
+      ><a name="858" href="lib.Base.html#4053" class="Function"
+      >apd</a
+      ><a name="861"
+      > </a
+      ><a name="862" href="lib.types.Circle.html#703" class="Function"
+      >f</a
+      ><a name="863"
+      > </a
+      ><a name="864" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="868"
+      > </a
+      ><a name="869" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="871"
+      > </a
+      ><a name="872" href="lib.types.Circle.html#655" class="Bound"
+      >loop*</a
+      ><a name="877"
+      >
+
+</a
+      ><a name="879" class="Keyword"
+      >open</a
+      ><a name="883"
+      > </a
+      ><a name="884" href="lib.types.Circle.html#604" class="Module"
+      >S&#185;Elim</a
+      ><a name="890"
+      > </a
+      ><a name="891" class="Keyword"
+      >public</a
+      ><a name="897"
+      > </a
+      ><a name="898" class="Keyword"
+      >using</a
+      ><a name="903"
+      > </a
+      ><a name="904" class="Symbol"
+      >()</a
+      ><a name="906"
+      > </a
+      ><a name="907" class="Keyword"
+      >renaming</a
+      ><a name="915"
+      > </a
+      ><a name="916" class="Symbol"
+      >(</a
+      ><a name="917"
+      >f </a
+      ><a name="919" class="Symbol"
+      >to</a
+      ><a name="921"
+      > S&#185;-elim</a
+      ><a name="929" class="Symbol"
+      >)</a
+      ><a name="930"
+      >
+
+</a
+      ><a name="932" class="Keyword"
+      >module</a
+      ><a name="938"
+      > </a
+      ><a name="939" href="lib.types.Circle.html#939" class="Module"
+      >S&#185;Rec</a
+      ><a name="944"
+      > </a
+      ><a name="945" class="Symbol"
+      >{</a
+      ><a name="946" href="lib.types.Circle.html#946" class="Bound"
+      >i</a
+      ><a name="947" class="Symbol"
+      >}</a
+      ><a name="948"
+      > </a
+      ><a name="949" class="Symbol"
+      >{</a
+      ><a name="950" href="lib.types.Circle.html#950" class="Bound"
+      >A</a
+      ><a name="951"
+      > </a
+      ><a name="952" class="Symbol"
+      >:</a
+      ><a name="953"
+      > </a
+      ><a name="954" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="958"
+      > </a
+      ><a name="959" href="lib.types.Circle.html#946" class="Bound"
+      >i</a
+      ><a name="960" class="Symbol"
+      >}</a
+      ><a name="961"
+      > </a
+      ><a name="962" class="Symbol"
+      >(</a
+      ><a name="963" href="lib.types.Circle.html#963" class="Bound"
+      >base*</a
+      ><a name="968"
+      > </a
+      ><a name="969" class="Symbol"
+      >:</a
+      ><a name="970"
+      > </a
+      ><a name="971" href="lib.types.Circle.html#950" class="Bound"
+      >A</a
+      ><a name="972" class="Symbol"
+      >)</a
+      ><a name="973"
+      > </a
+      ><a name="974" class="Symbol"
+      >(</a
+      ><a name="975" href="lib.types.Circle.html#975" class="Bound"
+      >loop*</a
+      ><a name="980"
+      > </a
+      ><a name="981" class="Symbol"
+      >:</a
+      ><a name="982"
+      > </a
+      ><a name="983" href="lib.types.Circle.html#963" class="Bound"
+      >base*</a
+      ><a name="988"
+      > </a
+      ><a name="989" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="991"
+      > </a
+      ><a name="992" href="lib.types.Circle.html#963" class="Bound"
+      >base*</a
+      ><a name="997" class="Symbol"
+      >)</a
+      ><a name="998"
+      > </a
+      ><a name="999" class="Keyword"
+      >where</a
+      ><a name="1004"
+      >
+
+  </a
+      ><a name="1008" class="Keyword"
+      >private</a
+      ><a name="1015"
+      >
+    </a
+      ><a name="1020" class="Keyword"
+      >module</a
+      ><a name="1026"
+      > </a
+      ><a name="1027" href="lib.types.Circle.html#1027" class="Module"
+      >M</a
+      ><a name="1028"
+      > </a
+      ><a name="1029" class="Symbol"
+      >=</a
+      ><a name="1030"
+      > </a
+      ><a name="1031" href="lib.types.Circle.html#604" class="Module"
+      >S&#185;Elim</a
+      ><a name="1037"
+      > </a
+      ><a name="1038" href="lib.types.Circle.html#963" class="Bound"
+      >base*</a
+      ><a name="1043"
+      > </a
+      ><a name="1044" class="Symbol"
+      >(</a
+      ><a name="1045" href="lib.PathOver.html#1262" class="Function"
+      >&#8595;-cst-in</a
+      ><a name="1053"
+      > </a
+      ><a name="1054" href="lib.types.Circle.html#975" class="Bound"
+      >loop*</a
+      ><a name="1059" class="Symbol"
+      >)</a
+      ><a name="1060"
+      >
+
+  </a
+      ><a name="1064" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="1065"
+      > </a
+      ><a name="1066" class="Symbol"
+      >:</a
+      ><a name="1067"
+      > </a
+      ><a name="1068" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="1070"
+      > </a
+      ><a name="1071" class="Symbol"
+      >&#8594;</a
+      ><a name="1072"
+      > </a
+      ><a name="1073" href="lib.types.Circle.html#950" class="Bound"
+      >A</a
+      ><a name="1074"
+      >
+  </a
+      ><a name="1077" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="1078"
+      > </a
+      ><a name="1079" class="Symbol"
+      >=</a
+      ><a name="1080"
+      > </a
+      ><a name="1081" href="lib.types.Circle.html#703" class="Function"
+      >M.f</a
+      ><a name="1084"
+      >
+
+  </a
+      ><a name="1088" href="lib.types.Circle.html#1088" class="Function"
+      >loop-&#946;</a
+      ><a name="1094"
+      > </a
+      ><a name="1095" class="Symbol"
+      >:</a
+      ><a name="1096"
+      > </a
+      ><a name="1097" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="1099"
+      > </a
+      ><a name="1100" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="1101"
+      > </a
+      ><a name="1102" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="1106"
+      > </a
+      ><a name="1107" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1109"
+      > </a
+      ><a name="1110" href="lib.types.Circle.html#975" class="Bound"
+      >loop*</a
+      ><a name="1115"
+      >
+  </a
+      ><a name="1118" href="lib.types.Circle.html#1088" class="Function"
+      >loop-&#946;</a
+      ><a name="1124"
+      > </a
+      ><a name="1125" class="Symbol"
+      >=</a
+      ><a name="1126"
+      > </a
+      ><a name="1127" href="lib.PathOver.html#7029" class="Function"
+      >apd=cst-in</a
+      ><a name="1137"
+      > </a
+      ><a name="1138" class="Symbol"
+      >{f</a
+      ><a name="1140"
+      > </a
+      ><a name="1141" class="Symbol"
+      >=</a
+      ><a name="1142"
+      > </a
+      ><a name="1143" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="1144" class="Symbol"
+      >}</a
+      ><a name="1145"
+      > </a
+      ><a name="1146" href="lib.types.Circle.html#849" class="Function"
+      >M.loop-&#946;</a
+      ><a name="1154"
+      >
+
+</a
+      ><a name="1156" class="Keyword"
+      >module</a
+      ><a name="1162"
+      > </a
+      ><a name="1163" href="lib.types.Circle.html#1163" class="Module"
+      >S&#185;RecType</a
+      ><a name="1172"
+      > </a
+      ><a name="1173" class="Symbol"
+      >{</a
+      ><a name="1174" href="lib.types.Circle.html#1174" class="Bound"
+      >i</a
+      ><a name="1175" class="Symbol"
+      >}</a
+      ><a name="1176"
+      > </a
+      ><a name="1177" class="Symbol"
+      >(</a
+      ><a name="1178" href="lib.types.Circle.html#1178" class="Bound"
+      >A</a
+      ><a name="1179"
+      > </a
+      ><a name="1180" class="Symbol"
+      >:</a
+      ><a name="1181"
+      > </a
+      ><a name="1182" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="1186"
+      > </a
+      ><a name="1187" href="lib.types.Circle.html#1174" class="Bound"
+      >i</a
+      ><a name="1188" class="Symbol"
+      >)</a
+      ><a name="1189"
+      > </a
+      ><a name="1190" class="Symbol"
+      >(</a
+      ><a name="1191" href="lib.types.Circle.html#1191" class="Bound"
+      >e</a
+      ><a name="1192"
+      > </a
+      ><a name="1193" class="Symbol"
+      >:</a
+      ><a name="1194"
+      > </a
+      ><a name="1195" href="lib.types.Circle.html#1178" class="Bound"
+      >A</a
+      ><a name="1196"
+      > </a
+      ><a name="1197" href="lib.Equivalences.html#2994" class="Function Operator"
+      >&#8771;</a
+      ><a name="1198"
+      > </a
+      ><a name="1199" href="lib.types.Circle.html#1178" class="Bound"
+      >A</a
+      ><a name="1200" class="Symbol"
+      >)</a
+      ><a name="1201"
+      > </a
+      ><a name="1202" class="Keyword"
+      >where</a
+      ><a name="1207"
+      >
+
+  </a
+      ><a name="1211" class="Keyword"
+      >open</a
+      ><a name="1215"
+      > </a
+      ><a name="1216" href="lib.types.Circle.html#939" class="Module"
+      >S&#185;Rec</a
+      ><a name="1221"
+      > </a
+      ><a name="1222" href="lib.types.Circle.html#1178" class="Bound"
+      >A</a
+      ><a name="1223"
+      > </a
+      ><a name="1224" class="Symbol"
+      >(</a
+      ><a name="1225" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="1227"
+      > </a
+      ><a name="1228" href="lib.types.Circle.html#1191" class="Bound"
+      >e</a
+      ><a name="1229" class="Symbol"
+      >)</a
+      ><a name="1230"
+      > </a
+      ><a name="1231" class="Keyword"
+      >public</a
+      ><a name="1237"
+      >
+
+  </a
+      ><a name="1241" href="lib.types.Circle.html#1241" class="Function"
+      >coe-loop-&#946;</a
+      ><a name="1251"
+      > </a
+      ><a name="1252" class="Symbol"
+      >:</a
+      ><a name="1253"
+      > </a
+      ><a name="1254" class="Symbol"
+      >(</a
+      ><a name="1255" href="lib.types.Circle.html#1255" class="Bound"
+      >a</a
+      ><a name="1256"
+      > </a
+      ><a name="1257" class="Symbol"
+      >:</a
+      ><a name="1258"
+      > </a
+      ><a name="1259" href="lib.types.Circle.html#1178" class="Bound"
+      >A</a
+      ><a name="1260" class="Symbol"
+      >)</a
+      ><a name="1261"
+      > </a
+      ><a name="1262" class="Symbol"
+      >&#8594;</a
+      ><a name="1263"
+      > </a
+      ><a name="1264" href="lib.Base.html#4247" class="Function"
+      >coe</a
+      ><a name="1267"
+      > </a
+      ><a name="1268" class="Symbol"
+      >(</a
+      ><a name="1269" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="1271"
+      > </a
+      ><a name="1272" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="1273"
+      > </a
+      ><a name="1274" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="1278" class="Symbol"
+      >)</a
+      ><a name="1279"
+      > </a
+      ><a name="1280" href="lib.types.Circle.html#1255" class="Bound"
+      >a</a
+      ><a name="1281"
+      > </a
+      ><a name="1282" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1284"
+      > </a
+      ><a name="1285" href="lib.Equivalences.html#3306" class="Function"
+      >&#8211;&gt;</a
+      ><a name="1287"
+      > </a
+      ><a name="1288" href="lib.types.Circle.html#1191" class="Bound"
+      >e</a
+      ><a name="1289"
+      > </a
+      ><a name="1290" href="lib.types.Circle.html#1255" class="Bound"
+      >a</a
+      ><a name="1291"
+      >
+  </a
+      ><a name="1294" href="lib.types.Circle.html#1241" class="Function"
+      >coe-loop-&#946;</a
+      ><a name="1304"
+      > </a
+      ><a name="1305" href="lib.types.Circle.html#1305" class="Bound"
+      >a</a
+      ><a name="1306"
+      > </a
+      ><a name="1307" class="Symbol"
+      >=</a
+      ><a name="1308"
+      >
+    </a
+      ><a name="1313" href="lib.Base.html#4247" class="Function"
+      >coe</a
+      ><a name="1316"
+      > </a
+      ><a name="1317" class="Symbol"
+      >(</a
+      ><a name="1318" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="1320"
+      > </a
+      ><a name="1321" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="1322"
+      > </a
+      ><a name="1323" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="1327" class="Symbol"
+      >)</a
+      ><a name="1328"
+      > </a
+      ><a name="1329" href="lib.types.Circle.html#1305" class="Bound"
+      >a</a
+      ><a name="1330"
+      >   </a
+      ><a name="1333" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="1335"
+      > </a
+      ><a name="1336" href="lib.types.Circle.html#1088" class="Function"
+      >loop-&#946;</a
+      ><a name="1342"
+      > </a
+      ><a name="1343" href="lib.Base.html#3622" class="Function"
+      >|in-ctx</a
+      ><a name="1350"
+      > </a
+      ><a name="1351" class="Symbol"
+      >(&#955;</a
+      ><a name="1353"
+      > </a
+      ><a name="1354" href="lib.types.Circle.html#1354" class="Bound"
+      >u</a
+      ><a name="1355"
+      > </a
+      ><a name="1356" class="Symbol"
+      >&#8594;</a
+      ><a name="1357"
+      > </a
+      ><a name="1358" href="lib.Base.html#4247" class="Function"
+      >coe</a
+      ><a name="1361"
+      > </a
+      ><a name="1362" href="lib.types.Circle.html#1354" class="Bound"
+      >u</a
+      ><a name="1363"
+      > </a
+      ><a name="1364" href="lib.types.Circle.html#1305" class="Bound"
+      >a</a
+      ><a name="1365" class="Symbol"
+      >)</a
+      ><a name="1366"
+      > </a
+      ><a name="1367" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="1368"
+      >
+    </a
+      ><a name="1373" href="lib.Base.html#4247" class="Function"
+      >coe</a
+      ><a name="1376"
+      > </a
+      ><a name="1377" class="Symbol"
+      >(</a
+      ><a name="1378" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="1380"
+      > </a
+      ><a name="1381" href="lib.types.Circle.html#1191" class="Bound"
+      >e</a
+      ><a name="1382" class="Symbol"
+      >)</a
+      ><a name="1383"
+      > </a
+      ><a name="1384" href="lib.types.Circle.html#1305" class="Bound"
+      >a</a
+      ><a name="1385"
+      >        </a
+      ><a name="1393" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="1395"
+      > </a
+      ><a name="1396" href="lib.Univalence.html#1066" class="Function"
+      >coe-&#946;</a
+      ><a name="1401"
+      > </a
+      ><a name="1402" href="lib.types.Circle.html#1191" class="Bound"
+      >e</a
+      ><a name="1403"
+      > </a
+      ><a name="1404" href="lib.types.Circle.html#1305" class="Bound"
+      >a</a
+      ><a name="1405"
+      > </a
+      ><a name="1406" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="1407"
+      >
+    </a
+      ><a name="1412" href="lib.Equivalences.html#3306" class="Function"
+      >&#8211;&gt;</a
+      ><a name="1414"
+      > </a
+      ><a name="1415" href="lib.types.Circle.html#1191" class="Bound"
+      >e</a
+      ><a name="1416"
+      > </a
+      ><a name="1417" href="lib.types.Circle.html#1305" class="Bound"
+      >a</a
+      ><a name="1418"
+      > </a
+      ><a name="1419" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="1420"
+      >
+
+  </a
+      ><a name="1424" href="lib.types.Circle.html#1424" class="Function"
+      >coe!-loop-&#946;</a
+      ><a name="1435"
+      > </a
+      ><a name="1436" class="Symbol"
+      >:</a
+      ><a name="1437"
+      > </a
+      ><a name="1438" class="Symbol"
+      >(</a
+      ><a name="1439" href="lib.types.Circle.html#1439" class="Bound"
+      >a</a
+      ><a name="1440"
+      > </a
+      ><a name="1441" class="Symbol"
+      >:</a
+      ><a name="1442"
+      > </a
+      ><a name="1443" href="lib.types.Circle.html#1178" class="Bound"
+      >A</a
+      ><a name="1444" class="Symbol"
+      >)</a
+      ><a name="1445"
+      > </a
+      ><a name="1446" class="Symbol"
+      >&#8594;</a
+      ><a name="1447"
+      > </a
+      ><a name="1448" href="lib.Base.html#4310" class="Function"
+      >coe!</a
+      ><a name="1452"
+      > </a
+      ><a name="1453" class="Symbol"
+      >(</a
+      ><a name="1454" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="1456"
+      > </a
+      ><a name="1457" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="1458"
+      > </a
+      ><a name="1459" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="1463" class="Symbol"
+      >)</a
+      ><a name="1464"
+      > </a
+      ><a name="1465" href="lib.types.Circle.html#1439" class="Bound"
+      >a</a
+      ><a name="1466"
+      > </a
+      ><a name="1467" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1469"
+      > </a
+      ><a name="1470" href="lib.Equivalences.html#3351" class="Function"
+      >&lt;&#8211;</a
+      ><a name="1472"
+      > </a
+      ><a name="1473" href="lib.types.Circle.html#1191" class="Bound"
+      >e</a
+      ><a name="1474"
+      > </a
+      ><a name="1475" href="lib.types.Circle.html#1439" class="Bound"
+      >a</a
+      ><a name="1476"
+      >
+  </a
+      ><a name="1479" href="lib.types.Circle.html#1424" class="Function"
+      >coe!-loop-&#946;</a
+      ><a name="1490"
+      > </a
+      ><a name="1491" href="lib.types.Circle.html#1491" class="Bound"
+      >a</a
+      ><a name="1492"
+      > </a
+      ><a name="1493" class="Symbol"
+      >=</a
+      ><a name="1494"
+      >
+    </a
+      ><a name="1499" href="lib.Base.html#4310" class="Function"
+      >coe!</a
+      ><a name="1503"
+      > </a
+      ><a name="1504" class="Symbol"
+      >(</a
+      ><a name="1505" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="1507"
+      > </a
+      ><a name="1508" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="1509"
+      > </a
+      ><a name="1510" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="1514" class="Symbol"
+      >)</a
+      ><a name="1515"
+      > </a
+      ><a name="1516" href="lib.types.Circle.html#1491" class="Bound"
+      >a</a
+      ><a name="1517"
+      >   </a
+      ><a name="1520" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="1522"
+      > </a
+      ><a name="1523" href="lib.types.Circle.html#1088" class="Function"
+      >loop-&#946;</a
+      ><a name="1529"
+      > </a
+      ><a name="1530" href="lib.Base.html#3622" class="Function"
+      >|in-ctx</a
+      ><a name="1537"
+      > </a
+      ><a name="1538" class="Symbol"
+      >(&#955;</a
+      ><a name="1540"
+      > </a
+      ><a name="1541" href="lib.types.Circle.html#1541" class="Bound"
+      >u</a
+      ><a name="1542"
+      > </a
+      ><a name="1543" class="Symbol"
+      >&#8594;</a
+      ><a name="1544"
+      > </a
+      ><a name="1545" href="lib.Base.html#4310" class="Function"
+      >coe!</a
+      ><a name="1549"
+      > </a
+      ><a name="1550" href="lib.types.Circle.html#1541" class="Bound"
+      >u</a
+      ><a name="1551"
+      > </a
+      ><a name="1552" href="lib.types.Circle.html#1491" class="Bound"
+      >a</a
+      ><a name="1553" class="Symbol"
+      >)</a
+      ><a name="1554"
+      > </a
+      ><a name="1555" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="1556"
+      >
+    </a
+      ><a name="1561" href="lib.Base.html#4310" class="Function"
+      >coe!</a
+      ><a name="1565"
+      > </a
+      ><a name="1566" class="Symbol"
+      >(</a
+      ><a name="1567" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="1569"
+      > </a
+      ><a name="1570" href="lib.types.Circle.html#1191" class="Bound"
+      >e</a
+      ><a name="1571" class="Symbol"
+      >)</a
+      ><a name="1572"
+      > </a
+      ><a name="1573" href="lib.types.Circle.html#1491" class="Bound"
+      >a</a
+      ><a name="1574"
+      >        </a
+      ><a name="1582" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="1584"
+      > </a
+      ><a name="1585" href="lib.Univalence.html#1189" class="Function"
+      >coe!-&#946;</a
+      ><a name="1591"
+      > </a
+      ><a name="1592" href="lib.types.Circle.html#1191" class="Bound"
+      >e</a
+      ><a name="1593"
+      > </a
+      ><a name="1594" href="lib.types.Circle.html#1491" class="Bound"
+      >a</a
+      ><a name="1595"
+      > </a
+      ><a name="1596" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="1597"
+      >
+    </a
+      ><a name="1602" href="lib.Equivalences.html#3351" class="Function"
+      >&lt;&#8211;</a
+      ><a name="1604"
+      > </a
+      ><a name="1605" href="lib.types.Circle.html#1191" class="Bound"
+      >e</a
+      ><a name="1606"
+      > </a
+      ><a name="1607" href="lib.types.Circle.html#1491" class="Bound"
+      >a</a
+      ><a name="1608"
+      > </a
+      ><a name="1609" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="1610"
+      >
+
+  </a
+      ><a name="1614" href="lib.types.Circle.html#1614" class="Function"
+      >&#8595;-loop-out</a
+      ><a name="1624"
+      > </a
+      ><a name="1625" class="Symbol"
+      >:</a
+      ><a name="1626"
+      > </a
+      ><a name="1627" class="Symbol"
+      >{</a
+      ><a name="1628" href="lib.types.Circle.html#1628" class="Bound"
+      >a</a
+      ><a name="1629"
+      > </a
+      ><a name="1630" href="lib.types.Circle.html#1630" class="Bound"
+      >a'</a
+      ><a name="1632"
+      > </a
+      ><a name="1633" class="Symbol"
+      >:</a
+      ><a name="1634"
+      > </a
+      ><a name="1635" href="lib.types.Circle.html#1178" class="Bound"
+      >A</a
+      ><a name="1636" class="Symbol"
+      >}</a
+      ><a name="1637"
+      > </a
+      ><a name="1638" class="Symbol"
+      >&#8594;</a
+      ><a name="1639"
+      > </a
+      ><a name="1640" href="lib.types.Circle.html#1628" class="Bound"
+      >a</a
+      ><a name="1641"
+      > </a
+      ><a name="1642" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="1644"
+      > </a
+      ><a name="1645" href="lib.types.Circle.html#1630" class="Bound"
+      >a'</a
+      ><a name="1647"
+      > </a
+      ><a name="1648" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="1649"
+      > </a
+      ><a name="1650" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="1651"
+      > </a
+      ><a name="1652" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="1653"
+      > </a
+      ><a name="1654" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="1658"
+      > </a
+      ><a name="1659" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="1660"
+      > </a
+      ><a name="1661" class="Symbol"
+      >&#8594;</a
+      ><a name="1662"
+      > </a
+      ><a name="1663" href="lib.Equivalences.html#3306" class="Function"
+      >&#8211;&gt;</a
+      ><a name="1665"
+      > </a
+      ><a name="1666" href="lib.types.Circle.html#1191" class="Bound"
+      >e</a
+      ><a name="1667"
+      > </a
+      ><a name="1668" href="lib.types.Circle.html#1628" class="Bound"
+      >a</a
+      ><a name="1669"
+      > </a
+      ><a name="1670" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1672"
+      > </a
+      ><a name="1673" href="lib.types.Circle.html#1630" class="Bound"
+      >a'</a
+      ><a name="1675"
+      >
+  </a
+      ><a name="1678" href="lib.types.Circle.html#1614" class="Function"
+      >&#8595;-loop-out</a
+      ><a name="1688"
+      > </a
+      ><a name="1689" class="Symbol"
+      >{</a
+      ><a name="1690" href="lib.types.Circle.html#1690" class="Bound"
+      >a</a
+      ><a name="1691" class="Symbol"
+      >}</a
+      ><a name="1692"
+      > </a
+      ><a name="1693" class="Symbol"
+      >{</a
+      ><a name="1694" href="lib.types.Circle.html#1694" class="Bound"
+      >a'</a
+      ><a name="1696" class="Symbol"
+      >}</a
+      ><a name="1697"
+      > </a
+      ><a name="1698" href="lib.types.Circle.html#1698" class="Bound"
+      >p</a
+      ><a name="1699"
+      > </a
+      ><a name="1700" class="Symbol"
+      >=</a
+      ><a name="1701"
+      >
+    </a
+      ><a name="1706" href="lib.Equivalences.html#3306" class="Function"
+      >&#8211;&gt;</a
+      ><a name="1708"
+      > </a
+      ><a name="1709" href="lib.types.Circle.html#1191" class="Bound"
+      >e</a
+      ><a name="1710"
+      > </a
+      ><a name="1711" href="lib.types.Circle.html#1690" class="Bound"
+      >a</a
+      ><a name="1712"
+      >              </a
+      ><a name="1726" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="1728"
+      > </a
+      ><a name="1729" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="1730"
+      > </a
+      ><a name="1731" class="Symbol"
+      >(</a
+      ><a name="1732" href="lib.types.Circle.html#1241" class="Function"
+      >coe-loop-&#946;</a
+      ><a name="1742"
+      > </a
+      ><a name="1743" href="lib.types.Circle.html#1690" class="Bound"
+      >a</a
+      ><a name="1744" class="Symbol"
+      >)</a
+      ><a name="1745"
+      > </a
+      ><a name="1746" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="1747"
+      >
+    </a
+      ><a name="1752" href="lib.Base.html#4247" class="Function"
+      >coe</a
+      ><a name="1755"
+      > </a
+      ><a name="1756" class="Symbol"
+      >(</a
+      ><a name="1757" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="1759"
+      > </a
+      ><a name="1760" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="1761"
+      > </a
+      ><a name="1762" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="1766" class="Symbol"
+      >)</a
+      ><a name="1767"
+      > </a
+      ><a name="1768" href="lib.types.Circle.html#1690" class="Bound"
+      >a</a
+      ><a name="1769"
+      >   </a
+      ><a name="1772" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="1774"
+      > </a
+      ><a name="1775" href="lib.PathOver.html#5197" class="Function"
+      >to-transp</a
+      ><a name="1784"
+      > </a
+      ><a name="1785" href="lib.types.Circle.html#1698" class="Bound"
+      >p</a
+      ><a name="1786"
+      > </a
+      ><a name="1787" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="1788"
+      >
+    </a
+      ><a name="1793" href="lib.types.Circle.html#1694" class="Bound"
+      >a'</a
+      ><a name="1795"
+      > </a
+      ><a name="1796" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="1797"
+      >
+
+  </a
+      ><a name="1801" class="Keyword"
+      >import</a
+      ><a name="1807"
+      > </a
+      ><a name="1808" href="lib.types.Generic1HIT.html#1" class="Module"
+      >lib.types.Generic1HIT</a
+      ><a name="1829"
+      > </a
+      ><a name="1830" class="Symbol"
+      >as</a
+      ><a name="1832"
+      > </a
+      ><a name="1833" class="Module"
+      >Generic1HIT</a
+      ><a name="1844"
+      >
+  </a
+      ><a name="1847" class="Keyword"
+      >module</a
+      ><a name="1853"
+      > </a
+      ><a name="1854" href="lib.types.Circle.html#1854" class="Module"
+      >S&#185;G</a
+      ><a name="1857"
+      > </a
+      ><a name="1858" class="Symbol"
+      >=</a
+      ><a name="1859"
+      > </a
+      ><a name="1860" href="lib.types.Generic1HIT.html#1" class="Module"
+      >Generic1HIT</a
+      ><a name="1871"
+      > </a
+      ><a name="1872" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="1876"
+      > </a
+      ><a name="1877" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="1881"
+      > </a
+      ><a name="1882" class="Symbol"
+      >(</a
+      ><a name="1883" href="lib.Base.html#7594" class="Function"
+      >idf</a
+      ><a name="1886"
+      > </a
+      ><a name="1887" class="Symbol"
+      >_)</a
+      ><a name="1889"
+      > </a
+      ><a name="1890" class="Symbol"
+      >(</a
+      ><a name="1891" href="lib.Base.html#7594" class="Function"
+      >idf</a
+      ><a name="1894"
+      > </a
+      ><a name="1895" class="Symbol"
+      >_)</a
+      ><a name="1897"
+      >
+  </a
+      ><a name="1900" class="Keyword"
+      >module</a
+      ><a name="1906"
+      > </a
+      ><a name="1907" href="lib.types.Circle.html#1907" class="Module"
+      >P</a
+      ><a name="1908"
+      > </a
+      ><a name="1909" class="Symbol"
+      >=</a
+      ><a name="1910"
+      > </a
+      ><a name="1911" class="Module"
+      >S&#185;G.</a
+      ><a name="1915" href="lib.types.Generic1HIT.html#1234" class="Module"
+      >RecType</a
+      ><a name="1922"
+      > </a
+      ><a name="1923" class="Symbol"
+      >(</a
+      ><a name="1924" href="lib.Base.html#7646" class="Function"
+      >cst</a
+      ><a name="1927"
+      > </a
+      ><a name="1928" href="lib.types.Circle.html#1178" class="Bound"
+      >A</a
+      ><a name="1929" class="Symbol"
+      >)</a
+      ><a name="1930"
+      > </a
+      ><a name="1931" class="Symbol"
+      >(</a
+      ><a name="1932" href="lib.Base.html#7646" class="Function"
+      >cst</a
+      ><a name="1935"
+      > </a
+      ><a name="1936" href="lib.types.Circle.html#1191" class="Bound"
+      >e</a
+      ><a name="1937" class="Symbol"
+      >)</a
+      ><a name="1938"
+      >
+
+  </a
+      ><a name="1942" class="Keyword"
+      >private</a
+      ><a name="1949"
+      >
+    </a
+      ><a name="1954" href="lib.types.Circle.html#1954" class="Function"
+      >generic-S&#185;</a
+      ><a name="1964"
+      > </a
+      ><a name="1965" class="Symbol"
+      >:</a
+      ><a name="1966"
+      > </a
+      ><a name="1967" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="1968"
+      > </a
+      ><a name="1969" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="1971"
+      > </a
+      ><a name="1972" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="1973"
+      > </a
+      ><a name="1974" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1976"
+      > </a
+      ><a name="1977" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="1978"
+      > </a
+      ><a name="1979" href="lib.types.Generic1HIT.html#491" class="Function"
+      >S&#185;G.T</a
+      ><a name="1984"
+      > </a
+      ><a name="1985" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >P.f</a
+      ><a name="1988"
+      >
+    </a
+      ><a name="1993" href="lib.types.Circle.html#1954" class="Function"
+      >generic-S&#185;</a
+      ><a name="2003"
+      > </a
+      ><a name="2004" class="Symbol"
+      >=</a
+      ><a name="2005"
+      > </a
+      ><a name="2006" href="lib.types.Circle.html#3249" class="Function"
+      >eqv-tot</a
+      ><a name="2013"
+      > </a
+      ><a name="2014" class="Keyword"
+      >where</a
+      ><a name="2019"
+      >
+
+      </a
+      ><a name="2027" class="Keyword"
+      >module</a
+      ><a name="2033"
+      > </a
+      ><a name="2034" href="lib.types.Circle.html#2034" class="Module"
+      >To</a
+      ><a name="2036"
+      > </a
+      ><a name="2037" class="Symbol"
+      >=</a
+      ><a name="2038"
+      > </a
+      ><a name="2039" href="lib.types.Circle.html#939" class="Module"
+      >S&#185;Rec</a
+      ><a name="2044"
+      > </a
+      ><a name="2045" class="Symbol"
+      >(</a
+      ><a name="2046" href="lib.types.Generic1HIT.html#514" class="Function"
+      >S&#185;G.cc</a
+      ><a name="2052"
+      > </a
+      ><a name="2053" href="lib.types.Unit.html#147" class="Function"
+      >tt</a
+      ><a name="2055" class="Symbol"
+      >)</a
+      ><a name="2056"
+      > </a
+      ><a name="2057" class="Symbol"
+      >(</a
+      ><a name="2058" href="lib.types.Generic1HIT.html#572" class="Function"
+      >S&#185;G.pp</a
+      ><a name="2064"
+      > </a
+      ><a name="2065" href="lib.types.Unit.html#147" class="Function"
+      >tt</a
+      ><a name="2067" class="Symbol"
+      >)</a
+      ><a name="2068"
+      >
+      </a
+      ><a name="2075" href="lib.types.Circle.html#2075" class="Function"
+      >to</a
+      ><a name="2077"
+      > </a
+      ><a name="2078" class="Symbol"
+      >=</a
+      ><a name="2079"
+      > </a
+      ><a name="2080" href="lib.types.Circle.html#1064" class="Function"
+      >To.f</a
+      ><a name="2084"
+      >
+
+      </a
+      ><a name="2092" class="Keyword"
+      >module</a
+      ><a name="2098"
+      > </a
+      ><a name="2099" href="lib.types.Circle.html#2099" class="Module"
+      >From</a
+      ><a name="2103"
+      > </a
+      ><a name="2104" class="Symbol"
+      >=</a
+      ><a name="2105"
+      > </a
+      ><a name="2106" class="Module"
+      >S&#185;G.</a
+      ><a name="2110" href="lib.types.Generic1HIT.html#981" class="Module"
+      >Rec</a
+      ><a name="2113"
+      > </a
+      ><a name="2114" class="Symbol"
+      >(</a
+      ><a name="2115" href="lib.Base.html#7646" class="Function"
+      >cst</a
+      ><a name="2118"
+      > </a
+      ><a name="2119" href="lib.types.Circle.html#518" class="Function"
+      >base</a
+      ><a name="2123" class="Symbol"
+      >)</a
+      ><a name="2124"
+      > </a
+      ><a name="2125" class="Symbol"
+      >(</a
+      ><a name="2126" href="lib.Base.html#7646" class="Function"
+      >cst</a
+      ><a name="2129"
+      > </a
+      ><a name="2130" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="2134" class="Symbol"
+      >)</a
+      ><a name="2135"
+      >
+      </a
+      ><a name="2142" href="lib.types.Circle.html#2142" class="Function"
+      >from</a
+      ><a name="2146"
+      > </a
+      ><a name="2147" class="Symbol"
+      >:</a
+      ><a name="2148"
+      > </a
+      ><a name="2149" href="lib.types.Generic1HIT.html#491" class="Function"
+      >S&#185;G.T</a
+      ><a name="2154"
+      > </a
+      ><a name="2155" class="Symbol"
+      >&#8594;</a
+      ><a name="2156"
+      > </a
+      ><a name="2157" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="2159"
+      >
+      </a
+      ><a name="2166" href="lib.types.Circle.html#2142" class="Function"
+      >from</a
+      ><a name="2170"
+      > </a
+      ><a name="2171" class="Symbol"
+      >=</a
+      ><a name="2172"
+      > </a
+      ><a name="2173" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >From.f</a
+      ><a name="2179"
+      >
+
+      </a
+      ><a name="2187" class="Keyword"
+      >abstract</a
+      ><a name="2195"
+      >
+        </a
+      ><a name="2204" href="lib.types.Circle.html#2204" class="Function"
+      >to-from</a
+      ><a name="2211"
+      > </a
+      ><a name="2212" class="Symbol"
+      >:</a
+      ><a name="2213"
+      > </a
+      ><a name="2214" class="Symbol"
+      >(</a
+      ><a name="2215" href="lib.types.Circle.html#2215" class="Bound"
+      >x</a
+      ><a name="2216"
+      > </a
+      ><a name="2217" class="Symbol"
+      >:</a
+      ><a name="2218"
+      > </a
+      ><a name="2219" href="lib.types.Generic1HIT.html#491" class="Function"
+      >S&#185;G.T</a
+      ><a name="2224" class="Symbol"
+      >)</a
+      ><a name="2225"
+      > </a
+      ><a name="2226" class="Symbol"
+      >&#8594;</a
+      ><a name="2227"
+      > </a
+      ><a name="2228" href="lib.types.Circle.html#2075" class="Function"
+      >to</a
+      ><a name="2230"
+      > </a
+      ><a name="2231" class="Symbol"
+      >(</a
+      ><a name="2232" href="lib.types.Circle.html#2142" class="Function"
+      >from</a
+      ><a name="2236"
+      > </a
+      ><a name="2237" href="lib.types.Circle.html#2215" class="Bound"
+      >x</a
+      ><a name="2238" class="Symbol"
+      >)</a
+      ><a name="2239"
+      > </a
+      ><a name="2240" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2242"
+      > </a
+      ><a name="2243" href="lib.types.Circle.html#2215" class="Bound"
+      >x</a
+      ><a name="2244"
+      >
+        </a
+      ><a name="2253" href="lib.types.Circle.html#2204" class="Function"
+      >to-from</a
+      ><a name="2260"
+      > </a
+      ><a name="2261" class="Symbol"
+      >=</a
+      ><a name="2262"
+      > </a
+      ><a name="2263" href="lib.types.Generic1HIT.html#740" class="Function"
+      >S&#185;G.elim</a
+      ><a name="2271"
+      > </a
+      ><a name="2272" class="Symbol"
+      >(&#955;</a
+      ><a name="2274"
+      > </a
+      ><a name="2275" href="lib.types.Circle.html#2275" class="Bound"
+      >_</a
+      ><a name="2276"
+      > </a
+      ><a name="2277" class="Symbol"
+      >&#8594;</a
+      ><a name="2278"
+      > </a
+      ><a name="2279" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2282" class="Symbol"
+      >)</a
+      ><a name="2283"
+      > </a
+      ><a name="2284" class="Symbol"
+      >(&#955;</a
+      ><a name="2286"
+      > </a
+      ><a name="2287" href="lib.types.Circle.html#2287" class="Bound"
+      >_</a
+      ><a name="2288"
+      > </a
+      ><a name="2289" class="Symbol"
+      >&#8594;</a
+      ><a name="2290"
+      > </a
+      ><a name="2291" href="lib.types.Paths.html#3497" class="Function"
+      >&#8595;-&#8728;=idf-in</a
+      ><a name="2301"
+      > </a
+      ><a name="2302" href="lib.types.Circle.html#2075" class="Function"
+      >to</a
+      ><a name="2304"
+      > </a
+      ><a name="2305" href="lib.types.Circle.html#2142" class="Function"
+      >from</a
+      ><a name="2309"
+      >
+          </a
+      ><a name="2320" class="Symbol"
+      >(</a
+      ><a name="2321" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2323"
+      > </a
+      ><a name="2324" href="lib.types.Circle.html#2075" class="Function"
+      >to</a
+      ><a name="2326"
+      > </a
+      ><a name="2327" class="Symbol"
+      >(</a
+      ><a name="2328" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2330"
+      > </a
+      ><a name="2331" href="lib.types.Circle.html#2142" class="Function"
+      >from</a
+      ><a name="2335"
+      > </a
+      ><a name="2336" class="Symbol"
+      >(</a
+      ><a name="2337" href="lib.types.Generic1HIT.html#572" class="Function"
+      >S&#185;G.pp</a
+      ><a name="2343"
+      > </a
+      ><a name="2344" href="lib.types.Unit.html#147" class="Function"
+      >tt</a
+      ><a name="2346" class="Symbol"
+      >))</a
+      ><a name="2348"
+      > </a
+      ><a name="2349" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="2351"
+      > </a
+      ><a name="2352" href="lib.types.Generic1HIT.html#1147" class="Function"
+      >From.pp-&#946;</a
+      ><a name="2361"
+      > </a
+      ><a name="2362" href="lib.types.Unit.html#147" class="Function"
+      >tt</a
+      ><a name="2364"
+      > </a
+      ><a name="2365" href="lib.Base.html#3622" class="Function"
+      >|in-ctx</a
+      ><a name="2372"
+      > </a
+      ><a name="2373" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2375"
+      > </a
+      ><a name="2376" href="lib.types.Circle.html#2075" class="Function"
+      >to</a
+      ><a name="2378"
+      > </a
+      ><a name="2379" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="2380"
+      >
+           </a
+      ><a name="2392" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2394"
+      > </a
+      ><a name="2395" href="lib.types.Circle.html#2075" class="Function"
+      >to</a
+      ><a name="2397"
+      > </a
+      ><a name="2398" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="2402"
+      >                  </a
+      ><a name="2420" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="2422"
+      > </a
+      ><a name="2423" href="lib.types.Circle.html#1088" class="Function"
+      >To.loop-&#946;</a
+      ><a name="2432"
+      > </a
+      ><a name="2433" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="2434"
+      >
+           </a
+      ><a name="2446" href="lib.types.Generic1HIT.html#572" class="Function"
+      >S&#185;G.pp</a
+      ><a name="2452"
+      > </a
+      ><a name="2453" href="lib.types.Unit.html#147" class="Function"
+      >tt</a
+      ><a name="2455"
+      > </a
+      ><a name="2456" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="2457" class="Symbol"
+      >))</a
+      ><a name="2459"
+      >
+
+        </a
+      ><a name="2469" href="lib.types.Circle.html#2469" class="Function"
+      >from-to</a
+      ><a name="2476"
+      > </a
+      ><a name="2477" class="Symbol"
+      >:</a
+      ><a name="2478"
+      > </a
+      ><a name="2479" class="Symbol"
+      >(</a
+      ><a name="2480" href="lib.types.Circle.html#2480" class="Bound"
+      >x</a
+      ><a name="2481"
+      > </a
+      ><a name="2482" class="Symbol"
+      >:</a
+      ><a name="2483"
+      > </a
+      ><a name="2484" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="2486" class="Symbol"
+      >)</a
+      ><a name="2487"
+      > </a
+      ><a name="2488" class="Symbol"
+      >&#8594;</a
+      ><a name="2489"
+      > </a
+      ><a name="2490" href="lib.types.Circle.html#2142" class="Function"
+      >from</a
+      ><a name="2494"
+      > </a
+      ><a name="2495" class="Symbol"
+      >(</a
+      ><a name="2496" href="lib.types.Circle.html#2075" class="Function"
+      >to</a
+      ><a name="2498"
+      > </a
+      ><a name="2499" href="lib.types.Circle.html#2480" class="Bound"
+      >x</a
+      ><a name="2500" class="Symbol"
+      >)</a
+      ><a name="2501"
+      > </a
+      ><a name="2502" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2504"
+      > </a
+      ><a name="2505" href="lib.types.Circle.html#2480" class="Bound"
+      >x</a
+      ><a name="2506"
+      >
+        </a
+      ><a name="2515" href="lib.types.Circle.html#2469" class="Function"
+      >from-to</a
+      ><a name="2522"
+      > </a
+      ><a name="2523" class="Symbol"
+      >=</a
+      ><a name="2524"
+      > </a
+      ><a name="2525" href="lib.types.Circle.html#703" class="Function"
+      >S&#185;-elim</a
+      ><a name="2532"
+      > </a
+      ><a name="2533" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2536"
+      > </a
+      ><a name="2537" class="Symbol"
+      >(</a
+      ><a name="2538" href="lib.types.Paths.html#3497" class="Function"
+      >&#8595;-&#8728;=idf-in</a
+      ><a name="2548"
+      > </a
+      ><a name="2549" href="lib.types.Circle.html#2142" class="Function"
+      >from</a
+      ><a name="2553"
+      > </a
+      ><a name="2554" href="lib.types.Circle.html#2075" class="Function"
+      >to</a
+      ><a name="2556"
+      >
+          </a
+      ><a name="2567" class="Symbol"
+      >(</a
+      ><a name="2568" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2570"
+      > </a
+      ><a name="2571" href="lib.types.Circle.html#2142" class="Function"
+      >from</a
+      ><a name="2575"
+      > </a
+      ><a name="2576" class="Symbol"
+      >(</a
+      ><a name="2577" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2579"
+      > </a
+      ><a name="2580" href="lib.types.Circle.html#2075" class="Function"
+      >to</a
+      ><a name="2582"
+      > </a
+      ><a name="2583" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="2587" class="Symbol"
+      >)</a
+      ><a name="2588"
+      >   </a
+      ><a name="2591" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="2593"
+      > </a
+      ><a name="2594" href="lib.types.Circle.html#1088" class="Function"
+      >To.loop-&#946;</a
+      ><a name="2603"
+      > </a
+      ><a name="2604" href="lib.Base.html#3622" class="Function"
+      >|in-ctx</a
+      ><a name="2611"
+      > </a
+      ><a name="2612" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2614"
+      > </a
+      ><a name="2615" href="lib.types.Circle.html#2142" class="Function"
+      >from</a
+      ><a name="2619"
+      > </a
+      ><a name="2620" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="2621"
+      >
+           </a
+      ><a name="2633" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2635"
+      > </a
+      ><a name="2636" href="lib.types.Circle.html#2142" class="Function"
+      >from</a
+      ><a name="2640"
+      > </a
+      ><a name="2641" class="Symbol"
+      >(</a
+      ><a name="2642" href="lib.types.Generic1HIT.html#572" class="Function"
+      >S&#185;G.pp</a
+      ><a name="2648"
+      > </a
+      ><a name="2649" href="lib.types.Unit.html#147" class="Function"
+      >tt</a
+      ><a name="2651" class="Symbol"
+      >)</a
+      ><a name="2652"
+      >    </a
+      ><a name="2656" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="2658"
+      > </a
+      ><a name="2659" href="lib.types.Generic1HIT.html#1147" class="Function"
+      >From.pp-&#946;</a
+      ><a name="2668"
+      > </a
+      ><a name="2669" href="lib.types.Unit.html#147" class="Function"
+      >tt</a
+      ><a name="2671"
+      > </a
+      ><a name="2672" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="2673"
+      >
+           </a
+      ><a name="2685" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="2689"
+      > </a
+      ><a name="2690" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="2691" class="Symbol"
+      >))</a
+      ><a name="2693"
+      >
+
+      </a
+      ><a name="2701" href="lib.types.Circle.html#2701" class="Function"
+      >eqv</a
+      ><a name="2704"
+      > </a
+      ><a name="2705" class="Symbol"
+      >:</a
+      ><a name="2706"
+      > </a
+      ><a name="2707" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="2709"
+      > </a
+      ><a name="2710" href="lib.Equivalences.html#2994" class="Function Operator"
+      >&#8771;</a
+      ><a name="2711"
+      > </a
+      ><a name="2712" href="lib.types.Generic1HIT.html#491" class="Function"
+      >S&#185;G.T</a
+      ><a name="2717"
+      >
+      </a
+      ><a name="2724" href="lib.types.Circle.html#2701" class="Function"
+      >eqv</a
+      ><a name="2727"
+      > </a
+      ><a name="2728" class="Symbol"
+      >=</a
+      ><a name="2729"
+      > </a
+      ><a name="2730" href="lib.Equivalences.html#3145" class="Function"
+      >equiv</a
+      ><a name="2735"
+      > </a
+      ><a name="2736" href="lib.types.Circle.html#2075" class="Function"
+      >to</a
+      ><a name="2738"
+      > </a
+      ><a name="2739" href="lib.types.Circle.html#2142" class="Function"
+      >from</a
+      ><a name="2743"
+      > </a
+      ><a name="2744" href="lib.types.Circle.html#2204" class="Function"
+      >to-from</a
+      ><a name="2751"
+      > </a
+      ><a name="2752" href="lib.types.Circle.html#2469" class="Function"
+      >from-to</a
+      ><a name="2759"
+      >
+
+      </a
+      ><a name="2767" href="lib.types.Circle.html#2767" class="Function"
+      >eqv-fib</a
+      ><a name="2774"
+      > </a
+      ><a name="2775" class="Symbol"
+      >:</a
+      ><a name="2776"
+      > </a
+      ><a name="2777" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="2778"
+      > </a
+      ><a name="2779" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="2781"
+      > </a
+      ><a name="2782" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >P.f</a
+      ><a name="2785"
+      > </a
+      ><a name="2786" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="2787"
+      > </a
+      ><a name="2788" class="Symbol"
+      >(&#955;</a
+      ><a name="2790"
+      > </a
+      ><a name="2791" href="lib.types.Circle.html#2791" class="Bound"
+      >X</a
+      ><a name="2792"
+      > </a
+      ><a name="2793" class="Symbol"
+      >&#8594;</a
+      ><a name="2794"
+      > </a
+      ><a name="2795" class="Symbol"
+      >(</a
+      ><a name="2796" href="lib.types.Circle.html#2791" class="Bound"
+      >X</a
+      ><a name="2797"
+      > </a
+      ><a name="2798" class="Symbol"
+      >&#8594;</a
+      ><a name="2799"
+      > </a
+      ><a name="2800" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="2804"
+      > </a
+      ><a name="2805" class="Symbol"
+      >_))</a
+      ><a name="2808"
+      > </a
+      ><a name="2809" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="2810"
+      > </a
+      ><a name="2811" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="2813"
+      > </a
+      ><a name="2814" href="lib.types.Circle.html#2701" class="Function"
+      >eqv</a
+      ><a name="2817"
+      > </a
+      ><a name="2818" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="2819"
+      >
+      </a
+      ><a name="2826" href="lib.types.Circle.html#2767" class="Function"
+      >eqv-fib</a
+      ><a name="2833"
+      > </a
+      ><a name="2834" class="Symbol"
+      >=</a
+      ><a name="2835"
+      >
+        </a
+      ><a name="2844" href="lib.types.Pi.html#3986" class="Function"
+      >&#8595;-app&#8594;cst-in</a
+      ><a name="2856"
+      > </a
+      ><a name="2857" class="Symbol"
+      >(&#955;</a
+      ><a name="2859"
+      > </a
+      ><a name="2860" class="Symbol"
+      >{</a
+      ><a name="2861" href="lib.types.Circle.html#2861" class="Bound"
+      >t</a
+      ><a name="2862" class="Symbol"
+      >}</a
+      ><a name="2863"
+      > </a
+      ><a name="2864" href="lib.types.Circle.html#2864" class="Bound"
+      >p</a
+      ><a name="2865"
+      > </a
+      ><a name="2866" class="Symbol"
+      >&#8594;</a
+      ><a name="2867"
+      > </a
+      ><a name="2868" href="lib.types.Circle.html#703" class="Function"
+      >S&#185;-elim</a
+      ><a name="2875"
+      > </a
+      ><a name="2876" class="Symbol"
+      >{P</a
+      ><a name="2878"
+      > </a
+      ><a name="2879" class="Symbol"
+      >=</a
+      ><a name="2880"
+      > </a
+      ><a name="2881" class="Symbol"
+      >&#955;</a
+      ><a name="2882"
+      > </a
+      ><a name="2883" href="lib.types.Circle.html#2883" class="Bound"
+      >t</a
+      ><a name="2884"
+      > </a
+      ><a name="2885" class="Symbol"
+      >&#8594;</a
+      ><a name="2886"
+      > </a
+      ><a name="2887" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="2888"
+      > </a
+      ><a name="2889" href="lib.types.Circle.html#2883" class="Bound"
+      >t</a
+      ><a name="2890"
+      > </a
+      ><a name="2891" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2893"
+      > </a
+      ><a name="2894" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >P.f</a
+      ><a name="2897"
+      > </a
+      ><a name="2898" class="Symbol"
+      >(</a
+      ><a name="2899" href="lib.Equivalences.html#3306" class="Function"
+      >&#8211;&gt;</a
+      ><a name="2901"
+      > </a
+      ><a name="2902" href="lib.types.Circle.html#2701" class="Function"
+      >eqv</a
+      ><a name="2905"
+      > </a
+      ><a name="2906" href="lib.types.Circle.html#2883" class="Bound"
+      >t</a
+      ><a name="2907" class="Symbol"
+      >)}</a
+      ><a name="2909"
+      > </a
+      ><a name="2910" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2913"
+      >
+          </a
+      ><a name="2924" class="Symbol"
+      >(</a
+      ><a name="2925" href="lib.types.Paths.html#2265" class="Function"
+      >&#8595;-='-in</a
+      ><a name="2932"
+      >
+            </a
+      ><a name="2945" class="Symbol"
+      >(</a
+      ><a name="2946" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2948"
+      > </a
+      ><a name="2949" class="Symbol"
+      >(</a
+      ><a name="2950" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >P.f</a
+      ><a name="2953"
+      > </a
+      ><a name="2954" href="lib.Base.html#7735" class="Function Operator"
+      >&#8728;</a
+      ><a name="2955"
+      > </a
+      ><a name="2956" class="Symbol"
+      >(</a
+      ><a name="2957" href="lib.Equivalences.html#3306" class="Function"
+      >&#8211;&gt;</a
+      ><a name="2959"
+      > </a
+      ><a name="2960" href="lib.types.Circle.html#2701" class="Function"
+      >eqv</a
+      ><a name="2963" class="Symbol"
+      >))</a
+      ><a name="2965"
+      > </a
+      ><a name="2966" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="2970"
+      >   </a
+      ><a name="2973" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="2975"
+      > </a
+      ><a name="2976" href="lib.PathFunctor.html#1787" class="Function"
+      >ap-&#8728;</a
+      ><a name="2980"
+      > </a
+      ><a name="2981" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >P.f</a
+      ><a name="2984"
+      > </a
+      ><a name="2985" href="lib.types.Circle.html#2075" class="Function"
+      >to</a
+      ><a name="2987"
+      > </a
+      ><a name="2988" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="2992"
+      > </a
+      ><a name="2993" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="2994"
+      >
+             </a
+      ><a name="3008" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="3010"
+      > </a
+      ><a name="3011" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >P.f</a
+      ><a name="3014"
+      > </a
+      ><a name="3015" class="Symbol"
+      >(</a
+      ><a name="3016" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="3018"
+      > </a
+      ><a name="3019" href="lib.types.Circle.html#2075" class="Function"
+      >to</a
+      ><a name="3021"
+      > </a
+      ><a name="3022" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="3026" class="Symbol"
+      >)</a
+      ><a name="3027"
+      >        </a
+      ><a name="3035" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="3037"
+      > </a
+      ><a name="3038" href="lib.types.Circle.html#1088" class="Function"
+      >To.loop-&#946;</a
+      ><a name="3047"
+      > </a
+      ><a name="3048" href="lib.Base.html#3622" class="Function"
+      >|in-ctx</a
+      ><a name="3055"
+      > </a
+      ><a name="3056" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="3058"
+      > </a
+      ><a name="3059" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >P.f</a
+      ><a name="3062"
+      > </a
+      ><a name="3063" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="3064"
+      >
+             </a
+      ><a name="3078" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="3080"
+      > </a
+      ><a name="3081" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >P.f</a
+      ><a name="3084"
+      > </a
+      ><a name="3085" class="Symbol"
+      >(</a
+      ><a name="3086" href="lib.types.Generic1HIT.html#572" class="Function"
+      >S&#185;G.pp</a
+      ><a name="3092"
+      > </a
+      ><a name="3093" href="lib.types.Unit.html#147" class="Function"
+      >tt</a
+      ><a name="3095" class="Symbol"
+      >)</a
+      ><a name="3096"
+      >         </a
+      ><a name="3105" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="3107"
+      > </a
+      ><a name="3108" href="lib.types.Generic1HIT.html#1147" class="Function"
+      >P.pp-&#946;</a
+      ><a name="3114"
+      > </a
+      ><a name="3115" href="lib.types.Unit.html#147" class="Function"
+      >tt</a
+      ><a name="3117"
+      > </a
+      ><a name="3118" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="3119"
+      >
+             </a
+      ><a name="3133" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="3135"
+      > </a
+      ><a name="3136" href="lib.types.Circle.html#1191" class="Bound"
+      >e</a
+      ><a name="3137"
+      >                       </a
+      ><a name="3160" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="3162"
+      > </a
+      ><a name="3163" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="3164"
+      > </a
+      ><a name="3165" href="lib.types.Circle.html#1088" class="Function"
+      >loop-&#946;</a
+      ><a name="3171"
+      > </a
+      ><a name="3172" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="3173"
+      >
+             </a
+      ><a name="3187" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="3189"
+      > </a
+      ><a name="3190" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="3191"
+      > </a
+      ><a name="3192" href="lib.types.Circle.html#574" class="Postulate"
+      >loop</a
+      ><a name="3196"
+      > </a
+      ><a name="3197" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="3198" class="Symbol"
+      >))</a
+      ><a name="3200"
+      >
+        </a
+      ><a name="3209" href="lib.types.Circle.html#2861" class="Bound"
+      >t</a
+      ><a name="3210"
+      > </a
+      ><a name="3211" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="3212"
+      > </a
+      ><a name="3213" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="3215"
+      > </a
+      ><a name="3216" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >P.f</a
+      ><a name="3219"
+      > </a
+      ><a name="3220" class="Symbol"
+      >(</a
+      ><a name="3221" href="lib.Univalence.html#1388" class="Function"
+      >&#8595;-idf-ua-out</a
+      ><a name="3233"
+      > </a
+      ><a name="3234" href="lib.types.Circle.html#2701" class="Function"
+      >eqv</a
+      ><a name="3237"
+      > </a
+      ><a name="3238" href="lib.types.Circle.html#2864" class="Bound"
+      >p</a
+      ><a name="3239" class="Symbol"
+      >))</a
+      ><a name="3241"
+      >
+
+      </a
+      ><a name="3249" href="lib.types.Circle.html#3249" class="Function"
+      >eqv-tot</a
+      ><a name="3256"
+      > </a
+      ><a name="3257" class="Symbol"
+      >:</a
+      ><a name="3258"
+      > </a
+      ><a name="3259" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="3260"
+      > </a
+      ><a name="3261" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="3263"
+      > </a
+      ><a name="3264" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="3265"
+      > </a
+      ><a name="3266" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3268"
+      > </a
+      ><a name="3269" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="3270"
+      > </a
+      ><a name="3271" href="lib.types.Generic1HIT.html#491" class="Function"
+      >S&#185;G.T</a
+      ><a name="3276"
+      > </a
+      ><a name="3277" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >P.f</a
+      ><a name="3280"
+      >
+      </a
+      ><a name="3287" href="lib.types.Circle.html#3249" class="Function"
+      >eqv-tot</a
+      ><a name="3294"
+      > </a
+      ><a name="3295" class="Symbol"
+      >=</a
+      ><a name="3296"
+      > </a
+      ><a name="3297" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="3299"
+      > </a
+      ><a name="3300" class="Symbol"
+      >(</a
+      ><a name="3301" href="lib.Base.html#8173" class="Function"
+      >uncurry</a
+      ><a name="3308"
+      > </a
+      ><a name="3309" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="3310" class="Symbol"
+      >)</a
+      ><a name="3311"
+      > </a
+      ><a name="3312" class="Symbol"
+      >(</a
+      ><a name="3313" href="lib.Base.html#5119" class="Function"
+      >pair=</a
+      ><a name="3318"
+      > </a
+      ><a name="3319" class="Symbol"
+      >(</a
+      ><a name="3320" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="3322"
+      > </a
+      ><a name="3323" href="lib.types.Circle.html#2701" class="Function"
+      >eqv</a
+      ><a name="3326" class="Symbol"
+      >)</a
+      ><a name="3327"
+      > </a
+      ><a name="3328" href="lib.types.Circle.html#2767" class="Function"
+      >eqv-fib</a
+      ><a name="3335" class="Symbol"
+      >)</a
+      ><a name="3336"
+      >
+
+  </a
+      ><a name="3340" class="Keyword"
+      >import</a
+      ><a name="3346"
+      > </a
+      ><a name="3347" href="lib.types.Flattening.html#1" class="Module"
+      >lib.types.Flattening</a
+      ><a name="3367"
+      > </a
+      ><a name="3368" class="Symbol"
+      >as</a
+      ><a name="3370"
+      > </a
+      ><a name="3371" class="Module"
+      >Flattening</a
+      ><a name="3381"
+      >
+  </a
+      ><a name="3384" class="Keyword"
+      >module</a
+      ><a name="3390"
+      > </a
+      ><a name="3391" href="lib.types.Circle.html#3391" class="Module"
+      >FlatteningS&#185;</a
+      ><a name="3403"
+      > </a
+      ><a name="3404" class="Symbol"
+      >=</a
+      ><a name="3405"
+      > </a
+      ><a name="3406" href="lib.types.Flattening.html#1" class="Module"
+      >Flattening</a
+      ><a name="3416"
+      >
+    </a
+      ><a name="3421" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="3425"
+      > </a
+      ><a name="3426" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="3430"
+      > </a
+      ><a name="3431" class="Symbol"
+      >(</a
+      ><a name="3432" href="lib.Base.html#7594" class="Function"
+      >idf</a
+      ><a name="3435"
+      > </a
+      ><a name="3436" class="Symbol"
+      >_)</a
+      ><a name="3438"
+      > </a
+      ><a name="3439" class="Symbol"
+      >(</a
+      ><a name="3440" href="lib.Base.html#7594" class="Function"
+      >idf</a
+      ><a name="3443"
+      > </a
+      ><a name="3444" class="Symbol"
+      >_)</a
+      ><a name="3446"
+      > </a
+      ><a name="3447" class="Symbol"
+      >(</a
+      ><a name="3448" href="lib.Base.html#7646" class="Function"
+      >cst</a
+      ><a name="3451"
+      > </a
+      ><a name="3452" href="lib.types.Circle.html#1178" class="Bound"
+      >A</a
+      ><a name="3453" class="Symbol"
+      >)</a
+      ><a name="3454"
+      > </a
+      ><a name="3455" class="Symbol"
+      >(</a
+      ><a name="3456" href="lib.Base.html#7646" class="Function"
+      >cst</a
+      ><a name="3459"
+      > </a
+      ><a name="3460" href="lib.types.Circle.html#1191" class="Bound"
+      >e</a
+      ><a name="3461" class="Symbol"
+      >)</a
+      ><a name="3462"
+      >
+  </a
+      ><a name="3465" class="Keyword"
+      >open</a
+      ><a name="3469"
+      > </a
+      ><a name="3470" href="lib.types.Circle.html#3391" class="Module"
+      >FlatteningS&#185;</a
+      ><a name="3482"
+      > </a
+      ><a name="3483" class="Keyword"
+      >public</a
+      ><a name="3489"
+      > </a
+      ><a name="3490" class="Keyword"
+      >hiding</a
+      ><a name="3496"
+      > </a
+      ><a name="3497" class="Symbol"
+      >(</a
+      ><a name="3498"
+      >flattening-equiv</a
+      ><a name="3514" class="Symbol"
+      >;</a
+      ><a name="3515"
+      > </a
+      ><a name="3516" class="Keyword"
+      >module</a
+      ><a name="3522"
+      > P</a
+      ><a name="3524" class="Symbol"
+      >)</a
+      ><a name="3525"
+      >
+
+  </a
+      ><a name="3529" href="lib.types.Circle.html#3529" class="Function"
+      >flattening-S&#185;</a
+      ><a name="3542"
+      > </a
+      ><a name="3543" class="Symbol"
+      >:</a
+      ><a name="3544"
+      > </a
+      ><a name="3545" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="3546"
+      > </a
+      ><a name="3547" href="lib.types.Circle.html#493" class="Function"
+      >S&#185;</a
+      ><a name="3549"
+      > </a
+      ><a name="3550" href="lib.types.Circle.html#1064" class="Function"
+      >f</a
+      ><a name="3551"
+      > </a
+      ><a name="3552" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3554"
+      > </a
+      ><a name="3555" href="lib.types.Generic1HIT.html#491" class="Function"
+      >Wt</a
+      ><a name="3557"
+      >
+  </a
+      ><a name="3560" href="lib.types.Circle.html#3529" class="Function"
+      >flattening-S&#185;</a
+      ><a name="3573"
+      > </a
+      ><a name="3574" class="Symbol"
+      >=</a
+      ><a name="3575"
+      > </a
+      ><a name="3576" href="lib.types.Circle.html#1954" class="Function"
+      >generic-S&#185;</a
+      ><a name="3586"
+      > </a
+      ><a name="3587" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="3588"
+      > </a
+      ><a name="3589" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="3591"
+      > </a
+      ><a name="3592" href="lib.types.Flattening.html#4683" class="Function"
+      >FlatteningS&#185;.flattening-equiv</a
+      ><a name="3621"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

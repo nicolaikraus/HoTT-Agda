@@ -1,0 +1,4361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >lib.Funext</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --without-K </a
+      ><a name="25" class="Symbol"
+      >#-}</a
+      ><a name="28"
+      >
+
+</a
+      ><a name="30" class="Keyword"
+      >open</a
+      ><a name="34"
+      > </a
+      ><a name="35" class="Keyword"
+      >import</a
+      ><a name="41"
+      > </a
+      ><a name="42" href="lib.Base.html#1" class="Module"
+      >lib.Base</a
+      ><a name="50"
+      >
+</a
+      ><a name="51" class="Keyword"
+      >open</a
+      ><a name="55"
+      > </a
+      ><a name="56" class="Keyword"
+      >import</a
+      ><a name="62"
+      > </a
+      ><a name="63" href="lib.Equivalences.html#1" class="Module"
+      >lib.Equivalences</a
+      ><a name="79"
+      >
+</a
+      ><a name="80" class="Keyword"
+      >open</a
+      ><a name="84"
+      > </a
+      ><a name="85" class="Keyword"
+      >import</a
+      ><a name="91"
+      > </a
+      ><a name="92" href="lib.Univalence.html#1" class="Module"
+      >lib.Univalence</a
+      ><a name="106"
+      >
+</a
+      ><a name="107" class="Keyword"
+      >open</a
+      ><a name="111"
+      > </a
+      ><a name="112" class="Keyword"
+      >import</a
+      ><a name="118"
+      > </a
+      ><a name="119" href="lib.NType.html#1" class="Module"
+      >lib.NType</a
+      ><a name="128"
+      >
+</a
+      ><a name="129" class="Keyword"
+      >open</a
+      ><a name="133"
+      > </a
+      ><a name="134" class="Keyword"
+      >import</a
+      ><a name="140"
+      > </a
+      ><a name="141" href="lib.PathGroupoid.html#1" class="Module"
+      >lib.PathGroupoid</a
+      ><a name="157"
+      >
+
+</a
+      ><a name="159" class="Comment"
+      >{-
+A proof of function extensionality from the univalence axiom.
+-}</a
+      ><a name="226"
+      >
+
+</a
+      ><a name="228" class="Keyword"
+      >module</a
+      ><a name="234"
+      > </a
+      ><a name="235" href="lib.Funext.html#1" class="Module"
+      >lib.Funext</a
+      ><a name="245"
+      > </a
+      ><a name="246" class="Symbol"
+      >{</a
+      ><a name="247" href="lib.Funext.html#247" class="Bound"
+      >i</a
+      ><a name="248" class="Symbol"
+      >}</a
+      ><a name="249"
+      > </a
+      ><a name="250" class="Symbol"
+      >{</a
+      ><a name="251" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="252"
+      > </a
+      ><a name="253" class="Symbol"
+      >:</a
+      ><a name="254"
+      > </a
+      ><a name="255" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="259"
+      > </a
+      ><a name="260" href="lib.Funext.html#247" class="Bound"
+      >i</a
+      ><a name="261" class="Symbol"
+      >}</a
+      ><a name="262"
+      > </a
+      ><a name="263" class="Keyword"
+      >where</a
+      ><a name="268"
+      >
+
+</a
+      ><a name="270" class="Comment"
+      >-- Naive non dependent function extensionality</a
+      ><a name="316"
+      >
+
+</a
+      ><a name="318" class="Keyword"
+      >module</a
+      ><a name="324"
+      > </a
+      ><a name="325" href="lib.Funext.html#325" class="Module"
+      >FunextNonDep</a
+      ><a name="337"
+      > </a
+      ><a name="338" class="Symbol"
+      >{</a
+      ><a name="339" href="lib.Funext.html#339" class="Bound"
+      >j</a
+      ><a name="340" class="Symbol"
+      >}</a
+      ><a name="341"
+      > </a
+      ><a name="342" class="Symbol"
+      >{</a
+      ><a name="343" href="lib.Funext.html#343" class="Bound"
+      >B</a
+      ><a name="344"
+      > </a
+      ><a name="345" class="Symbol"
+      >:</a
+      ><a name="346"
+      > </a
+      ><a name="347" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="351"
+      > </a
+      ><a name="352" href="lib.Funext.html#339" class="Bound"
+      >j</a
+      ><a name="353" class="Symbol"
+      >}</a
+      ><a name="354"
+      > </a
+      ><a name="355" class="Symbol"
+      >{</a
+      ><a name="356" href="lib.Funext.html#356" class="Bound"
+      >f</a
+      ><a name="357"
+      > </a
+      ><a name="358" href="lib.Funext.html#358" class="Bound"
+      >g</a
+      ><a name="359"
+      > </a
+      ><a name="360" class="Symbol"
+      >:</a
+      ><a name="361"
+      > </a
+      ><a name="362" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="363"
+      > </a
+      ><a name="364" class="Symbol"
+      >&#8594;</a
+      ><a name="365"
+      > </a
+      ><a name="366" href="lib.Funext.html#343" class="Bound"
+      >B</a
+      ><a name="367" class="Symbol"
+      >}</a
+      ><a name="368"
+      > </a
+      ><a name="369" class="Symbol"
+      >(</a
+      ><a name="370" href="lib.Funext.html#370" class="Bound"
+      >h</a
+      ><a name="371"
+      > </a
+      ><a name="372" class="Symbol"
+      >:</a
+      ><a name="373"
+      > </a
+      ><a name="374" class="Symbol"
+      >(</a
+      ><a name="375" href="lib.Funext.html#375" class="Bound"
+      >x</a
+      ><a name="376"
+      > </a
+      ><a name="377" class="Symbol"
+      >:</a
+      ><a name="378"
+      > </a
+      ><a name="379" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="380" class="Symbol"
+      >)</a
+      ><a name="381"
+      > </a
+      ><a name="382" class="Symbol"
+      >&#8594;</a
+      ><a name="383"
+      > </a
+      ><a name="384" href="lib.Funext.html#356" class="Bound"
+      >f</a
+      ><a name="385"
+      > </a
+      ><a name="386" href="lib.Funext.html#375" class="Bound"
+      >x</a
+      ><a name="387"
+      > </a
+      ><a name="388" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="390"
+      > </a
+      ><a name="391" href="lib.Funext.html#358" class="Bound"
+      >g</a
+      ><a name="392"
+      > </a
+      ><a name="393" href="lib.Funext.html#375" class="Bound"
+      >x</a
+      ><a name="394" class="Symbol"
+      >)</a
+      ><a name="395"
+      >
+  </a
+      ><a name="398" class="Keyword"
+      >where</a
+      ><a name="403"
+      >
+
+  </a
+      ><a name="407" class="Keyword"
+      >private</a
+      ><a name="414"
+      >
+    </a
+      ><a name="419" href="lib.Funext.html#419" class="Function"
+      >equiv-comp</a
+      ><a name="429"
+      > </a
+      ><a name="430" class="Symbol"
+      >:</a
+      ><a name="431"
+      > </a
+      ><a name="432" class="Symbol"
+      >{</a
+      ><a name="433" href="lib.Funext.html#433" class="Bound"
+      >B</a
+      ><a name="434"
+      > </a
+      ><a name="435" href="lib.Funext.html#435" class="Bound"
+      >C</a
+      ><a name="436"
+      > </a
+      ><a name="437" class="Symbol"
+      >:</a
+      ><a name="438"
+      > </a
+      ><a name="439" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="443"
+      > </a
+      ><a name="444" href="lib.Funext.html#339" class="Bound"
+      >j</a
+      ><a name="445" class="Symbol"
+      >}</a
+      ><a name="446"
+      > </a
+      ><a name="447" class="Symbol"
+      >(</a
+      ><a name="448" href="lib.Funext.html#448" class="Bound"
+      >e</a
+      ><a name="449"
+      > </a
+      ><a name="450" class="Symbol"
+      >:</a
+      ><a name="451"
+      > </a
+      ><a name="452" href="lib.Funext.html#433" class="Bound"
+      >B</a
+      ><a name="453"
+      > </a
+      ><a name="454" href="lib.Equivalences.html#2994" class="Function Operator"
+      >&#8771;</a
+      ><a name="455"
+      > </a
+      ><a name="456" href="lib.Funext.html#435" class="Bound"
+      >C</a
+      ><a name="457" class="Symbol"
+      >)</a
+      ><a name="458"
+      >
+      </a
+      ><a name="465" class="Symbol"
+      >&#8594;</a
+      ><a name="466"
+      > </a
+      ><a name="467" href="lib.Equivalences.html#986" class="Record"
+      >is-equiv</a
+      ><a name="475"
+      > </a
+      ><a name="476" class="Symbol"
+      >(&#955;</a
+      ><a name="478"
+      > </a
+      ><a name="479" class="Symbol"
+      >(</a
+      ><a name="480" href="lib.Funext.html#480" class="Bound"
+      >g</a
+      ><a name="481"
+      > </a
+      ><a name="482" class="Symbol"
+      >:</a
+      ><a name="483"
+      > </a
+      ><a name="484" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="485"
+      > </a
+      ><a name="486" class="Symbol"
+      >&#8594;</a
+      ><a name="487"
+      > </a
+      ><a name="488" href="lib.Funext.html#433" class="Bound"
+      >B</a
+      ><a name="489" class="Symbol"
+      >)</a
+      ><a name="490"
+      > </a
+      ><a name="491" class="Symbol"
+      >&#8594;</a
+      ><a name="492"
+      > </a
+      ><a name="493" class="Symbol"
+      >(&#955;</a
+      ><a name="495"
+      > </a
+      ><a name="496" href="lib.Funext.html#496" class="Bound"
+      >x</a
+      ><a name="497"
+      > </a
+      ><a name="498" class="Symbol"
+      >&#8594;</a
+      ><a name="499"
+      > </a
+      ><a name="500" href="lib.Equivalences.html#3306" class="Function"
+      >&#8211;&gt;</a
+      ><a name="502"
+      > </a
+      ><a name="503" href="lib.Funext.html#448" class="Bound"
+      >e</a
+      ><a name="504"
+      > </a
+      ><a name="505" class="Symbol"
+      >(</a
+      ><a name="506" href="lib.Funext.html#480" class="Bound"
+      >g</a
+      ><a name="507"
+      > </a
+      ><a name="508" href="lib.Funext.html#496" class="Bound"
+      >x</a
+      ><a name="509" class="Symbol"
+      >)))</a
+      ><a name="512"
+      >
+    </a
+      ><a name="517" href="lib.Funext.html#419" class="Function"
+      >equiv-comp</a
+      ><a name="527"
+      > </a
+      ><a name="528" class="Symbol"
+      >{</a
+      ><a name="529" href="lib.Funext.html#529" class="Bound"
+      >B</a
+      ><a name="530" class="Symbol"
+      >}</a
+      ><a name="531"
+      > </a
+      ><a name="532" href="lib.Funext.html#532" class="Bound"
+      >e</a
+      ><a name="533"
+      > </a
+      ><a name="534" class="Symbol"
+      >=</a
+      ><a name="535"
+      >
+      </a
+      ><a name="542" href="lib.Univalence.html#2155" class="Function"
+      >equiv-induction</a
+      ><a name="557"
+      > </a
+      ><a name="558" class="Symbol"
+      >(&#955;</a
+      ><a name="560"
+      > </a
+      ><a name="561" class="Symbol"
+      >{</a
+      ><a name="562" href="lib.Funext.html#562" class="Bound"
+      >B</a
+      ><a name="563" class="Symbol"
+      >}</a
+      ><a name="564"
+      > </a
+      ><a name="565" href="lib.Funext.html#565" class="Bound"
+      >e</a
+      ><a name="566"
+      > </a
+      ><a name="567" class="Symbol"
+      >&#8594;</a
+      ><a name="568"
+      > </a
+      ><a name="569" href="lib.Equivalences.html#986" class="Record"
+      >is-equiv</a
+      ><a name="577"
+      > </a
+      ><a name="578" class="Symbol"
+      >(&#955;</a
+      ><a name="580"
+      > </a
+      ><a name="581" class="Symbol"
+      >(</a
+      ><a name="582" href="lib.Funext.html#582" class="Bound"
+      >g</a
+      ><a name="583"
+      > </a
+      ><a name="584" class="Symbol"
+      >:</a
+      ><a name="585"
+      > </a
+      ><a name="586" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="587"
+      > </a
+      ><a name="588" class="Symbol"
+      >&#8594;</a
+      ><a name="589"
+      > </a
+      ><a name="590" href="lib.Funext.html#562" class="Bound"
+      >B</a
+      ><a name="591" class="Symbol"
+      >)</a
+      ><a name="592"
+      > </a
+      ><a name="593" class="Symbol"
+      >&#8594;</a
+      ><a name="594"
+      > </a
+      ><a name="595" class="Symbol"
+      >(&#955;</a
+      ><a name="597"
+      > </a
+      ><a name="598" href="lib.Funext.html#598" class="Bound"
+      >x</a
+      ><a name="599"
+      > </a
+      ><a name="600" class="Symbol"
+      >&#8594;</a
+      ><a name="601"
+      > </a
+      ><a name="602" href="lib.Equivalences.html#3306" class="Function"
+      >&#8211;&gt;</a
+      ><a name="604"
+      > </a
+      ><a name="605" href="lib.Funext.html#565" class="Bound"
+      >e</a
+      ><a name="606"
+      > </a
+      ><a name="607" class="Symbol"
+      >(</a
+      ><a name="608" href="lib.Funext.html#582" class="Bound"
+      >g</a
+      ><a name="609"
+      > </a
+      ><a name="610" href="lib.Funext.html#598" class="Bound"
+      >x</a
+      ><a name="611" class="Symbol"
+      >))))</a
+      ><a name="615"
+      >
+                      </a
+      ><a name="638" class="Symbol"
+      >(&#955;</a
+      ><a name="640"
+      > </a
+      ><a name="641" href="lib.Funext.html#641" class="Bound"
+      >A'</a
+      ><a name="643"
+      > </a
+      ><a name="644" class="Symbol"
+      >&#8594;</a
+      ><a name="645"
+      > </a
+      ><a name="646" href="lib.Base.html#5092" class="Field"
+      >snd</a
+      ><a name="649"
+      > </a
+      ><a name="650" class="Symbol"
+      >(</a
+      ><a name="651" href="lib.Equivalences.html#3897" class="Function"
+      >ide</a
+      ><a name="654"
+      > </a
+      ><a name="655" class="Symbol"
+      >(</a
+      ><a name="656" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="657"
+      > </a
+      ><a name="658" class="Symbol"
+      >&#8594;</a
+      ><a name="659"
+      > </a
+      ><a name="660" href="lib.Funext.html#641" class="Bound"
+      >A'</a
+      ><a name="662" class="Symbol"
+      >)))</a
+      ><a name="665"
+      > </a
+      ><a name="666" href="lib.Funext.html#532" class="Bound"
+      >e</a
+      ><a name="667"
+      >
+
+    </a
+      ><a name="673" href="lib.Funext.html#673" class="Function"
+      >free-path-space-B</a
+      ><a name="690"
+      > </a
+      ><a name="691" class="Symbol"
+      >:</a
+      ><a name="692"
+      > </a
+      ><a name="693" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="697"
+      > </a
+      ><a name="698" href="lib.Funext.html#339" class="Bound"
+      >j</a
+      ><a name="699"
+      >
+    </a
+      ><a name="704" href="lib.Funext.html#673" class="Function"
+      >free-path-space-B</a
+      ><a name="721"
+      > </a
+      ><a name="722" class="Symbol"
+      >=</a
+      ><a name="723"
+      > </a
+      ><a name="724" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="725"
+      > </a
+      ><a name="726" href="lib.Funext.html#343" class="Bound"
+      >B</a
+      ><a name="727"
+      > </a
+      ><a name="728" class="Symbol"
+      >(&#955;</a
+      ><a name="730"
+      > </a
+      ><a name="731" href="lib.Funext.html#731" class="Bound"
+      >x</a
+      ><a name="732"
+      > </a
+      ><a name="733" class="Symbol"
+      >&#8594;</a
+      ><a name="734"
+      > </a
+      ><a name="735" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="736"
+      > </a
+      ><a name="737" href="lib.Funext.html#343" class="Bound"
+      >B</a
+      ><a name="738"
+      > </a
+      ><a name="739" class="Symbol"
+      >(&#955;</a
+      ><a name="741"
+      > </a
+      ><a name="742" href="lib.Funext.html#742" class="Bound"
+      >y</a
+      ><a name="743"
+      > </a
+      ><a name="744" class="Symbol"
+      >&#8594;</a
+      ><a name="745"
+      > </a
+      ><a name="746" href="lib.Funext.html#731" class="Bound"
+      >x</a
+      ><a name="747"
+      > </a
+      ><a name="748" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="750"
+      > </a
+      ><a name="751" href="lib.Funext.html#742" class="Bound"
+      >y</a
+      ><a name="752" class="Symbol"
+      >))</a
+      ><a name="754"
+      >
+
+    </a
+      ><a name="760" href="lib.Funext.html#760" class="Function"
+      >d</a
+      ><a name="761"
+      > </a
+      ><a name="762" class="Symbol"
+      >:</a
+      ><a name="763"
+      > </a
+      ><a name="764" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="765"
+      > </a
+      ><a name="766" class="Symbol"
+      >&#8594;</a
+      ><a name="767"
+      > </a
+      ><a name="768" href="lib.Funext.html#673" class="Function"
+      >free-path-space-B</a
+      ><a name="785"
+      >
+    </a
+      ><a name="790" href="lib.Funext.html#760" class="Function"
+      >d</a
+      ><a name="791"
+      > </a
+      ><a name="792" href="lib.Funext.html#792" class="Bound"
+      >x</a
+      ><a name="793"
+      > </a
+      ><a name="794" class="Symbol"
+      >=</a
+      ><a name="795"
+      > </a
+      ><a name="796" class="Symbol"
+      >(</a
+      ><a name="797" href="lib.Funext.html#356" class="Bound"
+      >f</a
+      ><a name="798"
+      > </a
+      ><a name="799" href="lib.Funext.html#792" class="Bound"
+      >x</a
+      ><a name="800"
+      > </a
+      ><a name="801" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="802"
+      > </a
+      ><a name="803" class="Symbol"
+      >(</a
+      ><a name="804" href="lib.Funext.html#356" class="Bound"
+      >f</a
+      ><a name="805"
+      > </a
+      ><a name="806" href="lib.Funext.html#792" class="Bound"
+      >x</a
+      ><a name="807"
+      > </a
+      ><a name="808" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="809"
+      > </a
+      ><a name="810" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="813" class="Symbol"
+      >))</a
+      ><a name="815"
+      >
+
+    </a
+      ><a name="821" href="lib.Funext.html#821" class="Function"
+      >e</a
+      ><a name="822"
+      > </a
+      ><a name="823" class="Symbol"
+      >:</a
+      ><a name="824"
+      > </a
+      ><a name="825" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="826"
+      > </a
+      ><a name="827" class="Symbol"
+      >&#8594;</a
+      ><a name="828"
+      > </a
+      ><a name="829" href="lib.Funext.html#673" class="Function"
+      >free-path-space-B</a
+      ><a name="846"
+      >
+    </a
+      ><a name="851" href="lib.Funext.html#821" class="Function"
+      >e</a
+      ><a name="852"
+      > </a
+      ><a name="853" href="lib.Funext.html#853" class="Bound"
+      >x</a
+      ><a name="854"
+      > </a
+      ><a name="855" class="Symbol"
+      >=</a
+      ><a name="856"
+      > </a
+      ><a name="857" class="Symbol"
+      >(</a
+      ><a name="858" href="lib.Funext.html#356" class="Bound"
+      >f</a
+      ><a name="859"
+      > </a
+      ><a name="860" href="lib.Funext.html#853" class="Bound"
+      >x</a
+      ><a name="861"
+      > </a
+      ><a name="862" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="863"
+      > </a
+      ><a name="864" class="Symbol"
+      >(</a
+      ><a name="865" href="lib.Funext.html#358" class="Bound"
+      >g</a
+      ><a name="866"
+      > </a
+      ><a name="867" href="lib.Funext.html#853" class="Bound"
+      >x</a
+      ><a name="868"
+      > </a
+      ><a name="869" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="870"
+      > </a
+      ><a name="871" href="lib.Funext.html#370" class="Bound"
+      >h</a
+      ><a name="872"
+      > </a
+      ><a name="873" href="lib.Funext.html#853" class="Bound"
+      >x</a
+      ><a name="874" class="Symbol"
+      >))</a
+      ><a name="876"
+      >
+
+    </a
+      ><a name="882" class="Keyword"
+      >abstract</a
+      ><a name="890"
+      >
+      </a
+      ><a name="897" href="lib.Funext.html#897" class="Function"
+      >fst-is-equiv</a
+      ><a name="909"
+      > </a
+      ><a name="910" class="Symbol"
+      >:</a
+      ><a name="911"
+      > </a
+      ><a name="912" href="lib.Equivalences.html#986" class="Record"
+      >is-equiv</a
+      ><a name="920"
+      > </a
+      ><a name="921" class="Symbol"
+      >(&#955;</a
+      ><a name="923"
+      > </a
+      ><a name="924" class="Symbol"
+      >(</a
+      ><a name="925" href="lib.Funext.html#925" class="Bound"
+      >y</a
+      ><a name="926"
+      > </a
+      ><a name="927" class="Symbol"
+      >:</a
+      ><a name="928"
+      > </a
+      ><a name="929" href="lib.Funext.html#673" class="Function"
+      >free-path-space-B</a
+      ><a name="946" class="Symbol"
+      >)</a
+      ><a name="947"
+      > </a
+      ><a name="948" class="Symbol"
+      >&#8594;</a
+      ><a name="949"
+      > </a
+      ><a name="950" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="953"
+      > </a
+      ><a name="954" href="lib.Funext.html#925" class="Bound"
+      >y</a
+      ><a name="955" class="Symbol"
+      >)</a
+      ><a name="956"
+      >
+      </a
+      ><a name="963" href="lib.Funext.html#897" class="Function"
+      >fst-is-equiv</a
+      ><a name="975"
+      > </a
+      ><a name="976" class="Symbol"
+      >=</a
+      ><a name="977"
+      >
+        </a
+      ><a name="986" href="lib.Equivalences.html#1376" class="Function"
+      >is-eq</a
+      ><a name="991"
+      > </a
+      ><a name="992" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="995"
+      > </a
+      ><a name="996" class="Symbol"
+      >(&#955;</a
+      ><a name="998"
+      > </a
+      ><a name="999" href="lib.Funext.html#999" class="Bound"
+      >z</a
+      ><a name="1000"
+      > </a
+      ><a name="1001" class="Symbol"
+      >&#8594;</a
+      ><a name="1002"
+      > </a
+      ><a name="1003" class="Symbol"
+      >(</a
+      ><a name="1004" href="lib.Funext.html#999" class="Bound"
+      >z</a
+      ><a name="1005"
+      > </a
+      ><a name="1006" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1007"
+      > </a
+      ><a name="1008" class="Symbol"
+      >(</a
+      ><a name="1009" href="lib.Funext.html#999" class="Bound"
+      >z</a
+      ><a name="1010"
+      > </a
+      ><a name="1011" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1012"
+      > </a
+      ><a name="1013" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="1016" class="Symbol"
+      >)))</a
+      ><a name="1019"
+      > </a
+      ><a name="1020" class="Symbol"
+      >(&#955;</a
+      ><a name="1022"
+      > </a
+      ><a name="1023" href="lib.Funext.html#1023" class="Bound"
+      >_</a
+      ><a name="1024"
+      > </a
+      ><a name="1025" class="Symbol"
+      >&#8594;</a
+      ><a name="1026"
+      > </a
+      ><a name="1027" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="1030" class="Symbol"
+      >)</a
+      ><a name="1031"
+      >
+          </a
+      ><a name="1042" class="Symbol"
+      >(&#955;</a
+      ><a name="1044"
+      > </a
+      ><a name="1045" href="lib.Funext.html#1045" class="Bound"
+      >x'</a
+      ><a name="1047"
+      > </a
+      ><a name="1048" class="Symbol"
+      >&#8594;</a
+      ><a name="1049"
+      > </a
+      ><a name="1050" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="1052"
+      > </a
+      ><a name="1053" class="Symbol"
+      >(&#955;</a
+      ><a name="1055"
+      > </a
+      ><a name="1056" href="lib.Funext.html#1056" class="Bound"
+      >x</a
+      ><a name="1057"
+      > </a
+      ><a name="1058" class="Symbol"
+      >&#8594;</a
+      ><a name="1059"
+      > </a
+      ><a name="1060" class="Symbol"
+      >(_</a
+      ><a name="1062"
+      > </a
+      ><a name="1063" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1064"
+      > </a
+      ><a name="1065" href="lib.Funext.html#1056" class="Bound"
+      >x</a
+      ><a name="1066" class="Symbol"
+      >))</a
+      ><a name="1068"
+      >
+                        </a
+      ><a name="1093" class="Symbol"
+      >(</a
+      ><a name="1094" href="lib.NType.html#2184" class="Function"
+      >contr-has-all-paths</a
+      ><a name="1113"
+      > </a
+      ><a name="1114" class="Symbol"
+      >(</a
+      ><a name="1115" href="lib.NType.html#4131" class="Function"
+      >pathfrom-is-contr</a
+      ><a name="1132"
+      > </a
+      ><a name="1133" class="Symbol"
+      >(</a
+      ><a name="1134" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="1137"
+      > </a
+      ><a name="1138" href="lib.Funext.html#1045" class="Bound"
+      >x'</a
+      ><a name="1140" class="Symbol"
+      >))</a
+      ><a name="1142"
+      > </a
+      ><a name="1143" class="Symbol"
+      >_</a
+      ><a name="1144"
+      > </a
+      ><a name="1145" class="Symbol"
+      >_))</a
+      ><a name="1148"
+      >
+
+      </a
+      ><a name="1156" href="lib.Funext.html#1156" class="Function"
+      >comp-fst-is-equiv</a
+      ><a name="1173"
+      > </a
+      ><a name="1174" class="Symbol"
+      >:</a
+      ><a name="1175"
+      > </a
+      ><a name="1176" href="lib.Equivalences.html#986" class="Record"
+      >is-equiv</a
+      ><a name="1184"
+      > </a
+      ><a name="1185" class="Symbol"
+      >(&#955;</a
+      ><a name="1187"
+      > </a
+      ><a name="1188" class="Symbol"
+      >(</a
+      ><a name="1189" href="lib.Funext.html#1189" class="Bound"
+      >f</a
+      ><a name="1190"
+      > </a
+      ><a name="1191" class="Symbol"
+      >:</a
+      ><a name="1192"
+      > </a
+      ><a name="1193" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="1194"
+      > </a
+      ><a name="1195" class="Symbol"
+      >&#8594;</a
+      ><a name="1196"
+      > </a
+      ><a name="1197" href="lib.Funext.html#673" class="Function"
+      >free-path-space-B</a
+      ><a name="1214" class="Symbol"
+      >)</a
+      ><a name="1215"
+      >
+                                     </a
+      ><a name="1253" class="Symbol"
+      >&#8594;</a
+      ><a name="1254"
+      > </a
+      ><a name="1255" class="Symbol"
+      >(&#955;</a
+      ><a name="1257"
+      > </a
+      ><a name="1258" href="lib.Funext.html#1258" class="Bound"
+      >x</a
+      ><a name="1259"
+      > </a
+      ><a name="1260" class="Symbol"
+      >&#8594;</a
+      ><a name="1261"
+      > </a
+      ><a name="1262" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="1265"
+      > </a
+      ><a name="1266" class="Symbol"
+      >(</a
+      ><a name="1267" href="lib.Funext.html#1189" class="Bound"
+      >f</a
+      ><a name="1268"
+      > </a
+      ><a name="1269" href="lib.Funext.html#1258" class="Bound"
+      >x</a
+      ><a name="1270" class="Symbol"
+      >)))</a
+      ><a name="1273"
+      >
+      </a
+      ><a name="1280" href="lib.Funext.html#1156" class="Function"
+      >comp-fst-is-equiv</a
+      ><a name="1297"
+      > </a
+      ><a name="1298" class="Symbol"
+      >=</a
+      ><a name="1299"
+      > </a
+      ><a name="1300" href="lib.Funext.html#419" class="Function"
+      >equiv-comp</a
+      ><a name="1310"
+      > </a
+      ><a name="1311" class="Symbol"
+      >((&#955;</a
+      ><a name="1314"
+      > </a
+      ><a name="1315" class="Symbol"
+      >(</a
+      ><a name="1316" href="lib.Funext.html#1316" class="Bound"
+      >y</a
+      ><a name="1317"
+      > </a
+      ><a name="1318" class="Symbol"
+      >:</a
+      ><a name="1319"
+      > </a
+      ><a name="1320" href="lib.Funext.html#673" class="Function"
+      >free-path-space-B</a
+      ><a name="1337" class="Symbol"
+      >)</a
+      ><a name="1338"
+      > </a
+      ><a name="1339" class="Symbol"
+      >&#8594;</a
+      ><a name="1340"
+      > </a
+      ><a name="1341" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="1344"
+      > </a
+      ><a name="1345" href="lib.Funext.html#1316" class="Bound"
+      >y</a
+      ><a name="1346" class="Symbol"
+      >)</a
+      ><a name="1347" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1348"
+      >
+                                     </a
+      ><a name="1386" href="lib.Funext.html#897" class="Function"
+      >fst-is-equiv</a
+      ><a name="1398" class="Symbol"
+      >)</a
+      ><a name="1399"
+      >
+
+      </a
+      ><a name="1407" href="lib.Funext.html#1407" class="Function"
+      >d==e</a
+      ><a name="1411"
+      > </a
+      ><a name="1412" class="Symbol"
+      >:</a
+      ><a name="1413"
+      > </a
+      ><a name="1414" href="lib.Funext.html#760" class="Function"
+      >d</a
+      ><a name="1415"
+      > </a
+      ><a name="1416" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1418"
+      > </a
+      ><a name="1419" href="lib.Funext.html#821" class="Function"
+      >e</a
+      ><a name="1420"
+      >
+      </a
+      ><a name="1427" href="lib.Funext.html#1407" class="Function"
+      >d==e</a
+      ><a name="1431"
+      > </a
+      ><a name="1432" class="Symbol"
+      >=</a
+      ><a name="1433"
+      > </a
+      ><a name="1434" href="lib.Equivalences.html#3645" class="Function"
+      >equiv-inj</a
+      ><a name="1443"
+      > </a
+      ><a name="1444" class="Symbol"
+      >(_</a
+      ><a name="1446"
+      > </a
+      ><a name="1447" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1448"
+      > </a
+      ><a name="1449" href="lib.Funext.html#1156" class="Function"
+      >comp-fst-is-equiv</a
+      ><a name="1466" class="Symbol"
+      >)</a
+      ><a name="1467"
+      > </a
+      ><a name="1468" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="1471"
+      >
+
+  </a
+      ><a name="1475" href="lib.Funext.html#1475" class="Function"
+      >&#955;=-nondep</a
+      ><a name="1484"
+      > </a
+      ><a name="1485" class="Symbol"
+      >:</a
+      ><a name="1486"
+      > </a
+      ><a name="1487" href="lib.Funext.html#356" class="Bound"
+      >f</a
+      ><a name="1488"
+      > </a
+      ><a name="1489" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1491"
+      > </a
+      ><a name="1492" href="lib.Funext.html#358" class="Bound"
+      >g</a
+      ><a name="1493"
+      >
+  </a
+      ><a name="1496" href="lib.Funext.html#1475" class="Function"
+      >&#955;=-nondep</a
+      ><a name="1505"
+      > </a
+      ><a name="1506" class="Symbol"
+      >=</a
+      ><a name="1507"
+      > </a
+      ><a name="1508" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="1510"
+      > </a
+      ><a name="1511" class="Symbol"
+      >(&#955;</a
+      ><a name="1513"
+      > </a
+      ><a name="1514" href="lib.Funext.html#1514" class="Bound"
+      >f'</a
+      ><a name="1516"
+      > </a
+      ><a name="1517" href="lib.Funext.html#1517" class="Bound"
+      >x</a
+      ><a name="1518"
+      > </a
+      ><a name="1519" class="Symbol"
+      >&#8594;</a
+      ><a name="1520"
+      > </a
+      ><a name="1521" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="1524"
+      > </a
+      ><a name="1525" class="Symbol"
+      >(</a
+      ><a name="1526" href="lib.Base.html#5092" class="Field"
+      >snd</a
+      ><a name="1529"
+      > </a
+      ><a name="1530" class="Symbol"
+      >(</a
+      ><a name="1531" href="lib.Funext.html#1514" class="Bound"
+      >f'</a
+      ><a name="1533"
+      > </a
+      ><a name="1534" href="lib.Funext.html#1517" class="Bound"
+      >x</a
+      ><a name="1535" class="Symbol"
+      >)))</a
+      ><a name="1538"
+      > </a
+      ><a name="1539" href="lib.Funext.html#1407" class="Function"
+      >d==e</a
+      ><a name="1543"
+      >
+
+</a
+      ><a name="1545" class="Keyword"
+      >open</a
+      ><a name="1549"
+      > </a
+      ><a name="1550" href="lib.Funext.html#325" class="Module"
+      >FunextNonDep</a
+      ><a name="1562"
+      > </a
+      ><a name="1563" class="Keyword"
+      >using</a
+      ><a name="1568"
+      > </a
+      ><a name="1569" class="Symbol"
+      >(</a
+      ><a name="1570"
+      >&#955;=-nondep</a
+      ><a name="1579" class="Symbol"
+      >)</a
+      ><a name="1580"
+      >
+
+</a
+      ><a name="1582" class="Comment"
+      >-- Weak function extensionality (a product of contractible types is</a
+      ><a name="1649"
+      >
+</a
+      ><a name="1650" class="Comment"
+      >-- contractible)</a
+      ><a name="1666"
+      >
+</a
+      ><a name="1667" class="Keyword"
+      >module</a
+      ><a name="1673"
+      > </a
+      ><a name="1674" href="lib.Funext.html#1674" class="Module"
+      >WeakFunext</a
+      ><a name="1684"
+      > </a
+      ><a name="1685" class="Symbol"
+      >{</a
+      ><a name="1686" href="lib.Funext.html#1686" class="Bound"
+      >j</a
+      ><a name="1687" class="Symbol"
+      >}</a
+      ><a name="1688"
+      > </a
+      ><a name="1689" class="Symbol"
+      >{</a
+      ><a name="1690" href="lib.Funext.html#1690" class="Bound"
+      >P</a
+      ><a name="1691"
+      > </a
+      ><a name="1692" class="Symbol"
+      >:</a
+      ><a name="1693"
+      > </a
+      ><a name="1694" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="1695"
+      > </a
+      ><a name="1696" class="Symbol"
+      >&#8594;</a
+      ><a name="1697"
+      > </a
+      ><a name="1698" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="1702"
+      > </a
+      ><a name="1703" href="lib.Funext.html#1686" class="Bound"
+      >j</a
+      ><a name="1704" class="Symbol"
+      >}</a
+      ><a name="1705"
+      > </a
+      ><a name="1706" class="Symbol"
+      >(</a
+      ><a name="1707" href="lib.Funext.html#1707" class="Bound"
+      >e</a
+      ><a name="1708"
+      > </a
+      ><a name="1709" class="Symbol"
+      >:</a
+      ><a name="1710"
+      > </a
+      ><a name="1711" class="Symbol"
+      >(</a
+      ><a name="1712" href="lib.Funext.html#1712" class="Bound"
+      >x</a
+      ><a name="1713"
+      > </a
+      ><a name="1714" class="Symbol"
+      >:</a
+      ><a name="1715"
+      > </a
+      ><a name="1716" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="1717" class="Symbol"
+      >)</a
+      ><a name="1718"
+      > </a
+      ><a name="1719" class="Symbol"
+      >&#8594;</a
+      ><a name="1720"
+      > </a
+      ><a name="1721" href="lib.NType.html#171" class="Function"
+      >is-contr</a
+      ><a name="1729"
+      > </a
+      ><a name="1730" class="Symbol"
+      >(</a
+      ><a name="1731" href="lib.Funext.html#1690" class="Bound"
+      >P</a
+      ><a name="1732"
+      > </a
+      ><a name="1733" href="lib.Funext.html#1712" class="Bound"
+      >x</a
+      ><a name="1734" class="Symbol"
+      >))</a
+      ><a name="1736"
+      > </a
+      ><a name="1737" class="Keyword"
+      >where</a
+      ><a name="1742"
+      >
+
+  </a
+      ><a name="1746" href="lib.Funext.html#1746" class="Function"
+      >P-is-Unit</a
+      ><a name="1755"
+      > </a
+      ><a name="1756" class="Symbol"
+      >:</a
+      ><a name="1757"
+      > </a
+      ><a name="1758" href="lib.Funext.html#1690" class="Bound"
+      >P</a
+      ><a name="1759"
+      > </a
+      ><a name="1760" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1762"
+      > </a
+      ><a name="1763" class="Symbol"
+      >(&#955;</a
+      ><a name="1765"
+      > </a
+      ><a name="1766" href="lib.Funext.html#1766" class="Bound"
+      >x</a
+      ><a name="1767"
+      > </a
+      ><a name="1768" class="Symbol"
+      >&#8594;</a
+      ><a name="1769"
+      > </a
+      ><a name="1770" href="lib.Base.html#6059" class="Record"
+      >Lift</a
+      ><a name="1774"
+      > </a
+      ><a name="1775" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="1779" class="Symbol"
+      >)</a
+      ><a name="1780"
+      >
+  </a
+      ><a name="1783" href="lib.Funext.html#1746" class="Function"
+      >P-is-Unit</a
+      ><a name="1792"
+      > </a
+      ><a name="1793" class="Symbol"
+      >=</a
+      ><a name="1794"
+      > </a
+      ><a name="1795" href="lib.Funext.html#1475" class="Function"
+      >&#955;=-nondep</a
+      ><a name="1804"
+      > </a
+      ><a name="1805" class="Symbol"
+      >(&#955;</a
+      ><a name="1807"
+      > </a
+      ><a name="1808" href="lib.Funext.html#1808" class="Bound"
+      >x</a
+      ><a name="1809"
+      > </a
+      ><a name="1810" class="Symbol"
+      >&#8594;</a
+      ><a name="1811"
+      > </a
+      ><a name="1812" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="1814"
+      > </a
+      ><a name="1815" class="Symbol"
+      >(</a
+      ><a name="1816" href="lib.Equivalences.html#5355" class="Function"
+      >contr-equiv-LiftUnit</a
+      ><a name="1836"
+      > </a
+      ><a name="1837" class="Symbol"
+      >(</a
+      ><a name="1838" href="lib.Funext.html#1707" class="Bound"
+      >e</a
+      ><a name="1839"
+      > </a
+      ><a name="1840" href="lib.Funext.html#1808" class="Bound"
+      >x</a
+      ><a name="1841" class="Symbol"
+      >)))</a
+      ><a name="1844"
+      >
+
+  </a
+      ><a name="1848" class="Keyword"
+      >abstract</a
+      ><a name="1856"
+      >
+    </a
+      ><a name="1861" href="lib.Funext.html#1861" class="Function"
+      >weak-&#955;=</a
+      ><a name="1868"
+      > </a
+      ><a name="1869" class="Symbol"
+      >:</a
+      ><a name="1870"
+      > </a
+      ><a name="1871" href="lib.NType.html#171" class="Function"
+      >is-contr</a
+      ><a name="1879"
+      > </a
+      ><a name="1880" class="Symbol"
+      >(</a
+      ><a name="1881" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="1882"
+      > </a
+      ><a name="1883" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="1884"
+      > </a
+      ><a name="1885" href="lib.Funext.html#1690" class="Bound"
+      >P</a
+      ><a name="1886" class="Symbol"
+      >)</a
+      ><a name="1887"
+      >
+    </a
+      ><a name="1892" href="lib.Funext.html#1861" class="Function"
+      >weak-&#955;=</a
+      ><a name="1899"
+      > </a
+      ><a name="1900" class="Symbol"
+      >=</a
+      ><a name="1901"
+      > </a
+      ><a name="1902" href="lib.Base.html#4516" class="Function"
+      >transport</a
+      ><a name="1911"
+      > </a
+      ><a name="1912" class="Symbol"
+      >(&#955;</a
+      ><a name="1914"
+      > </a
+      ><a name="1915" href="lib.Funext.html#1915" class="Bound"
+      >Q</a
+      ><a name="1916"
+      > </a
+      ><a name="1917" class="Symbol"
+      >&#8594;</a
+      ><a name="1918"
+      > </a
+      ><a name="1919" href="lib.NType.html#171" class="Function"
+      >is-contr</a
+      ><a name="1927"
+      > </a
+      ><a name="1928" class="Symbol"
+      >(</a
+      ><a name="1929" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="1930"
+      > </a
+      ><a name="1931" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="1932"
+      > </a
+      ><a name="1933" href="lib.Funext.html#1915" class="Bound"
+      >Q</a
+      ><a name="1934" class="Symbol"
+      >))</a
+      ><a name="1936"
+      > </a
+      ><a name="1937" class="Symbol"
+      >(</a
+      ><a name="1938" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="1939"
+      > </a
+      ><a name="1940" href="lib.Funext.html#1746" class="Function"
+      >P-is-Unit</a
+      ><a name="1949" class="Symbol"
+      >)</a
+      ><a name="1950"
+      >
+                            </a
+      ><a name="1979" class="Symbol"
+      >((&#955;</a
+      ><a name="1982"
+      > </a
+      ><a name="1983" href="lib.Funext.html#1983" class="Bound"
+      >x</a
+      ><a name="1984"
+      > </a
+      ><a name="1985" class="Symbol"
+      >&#8594;</a
+      ><a name="1986"
+      > </a
+      ><a name="1987" href="lib.Base.html#6121" class="InductiveConstructor"
+      >lift</a
+      ><a name="1991"
+      > </a
+      ><a name="1992" href="lib.Base.html#2685" class="InductiveConstructor"
+      >unit</a
+      ><a name="1996" class="Symbol"
+      >)</a
+      ><a name="1997"
+      > </a
+      ><a name="1998" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1999"
+      > </a
+      ><a name="2000" class="Symbol"
+      >(&#955;</a
+      ><a name="2002"
+      > </a
+      ><a name="2003" href="lib.Funext.html#2003" class="Bound"
+      >y</a
+      ><a name="2004"
+      > </a
+      ><a name="2005" class="Symbol"
+      >&#8594;</a
+      ><a name="2006"
+      > </a
+      ><a name="2007" href="lib.Funext.html#1475" class="Function"
+      >&#955;=-nondep</a
+      ><a name="2016"
+      > </a
+      ><a name="2017" class="Symbol"
+      >(&#955;</a
+      ><a name="2019"
+      > </a
+      ><a name="2020" href="lib.Funext.html#2020" class="Bound"
+      >x</a
+      ><a name="2021"
+      > </a
+      ><a name="2022" class="Symbol"
+      >&#8594;</a
+      ><a name="2023"
+      > </a
+      ><a name="2024" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2027" class="Symbol"
+      >)))</a
+      ><a name="2030"
+      >
+
+</a
+      ><a name="2032" class="Comment"
+      >-- Naive dependent function extensionality</a
+      ><a name="2074"
+      >
+
+</a
+      ><a name="2076" class="Keyword"
+      >module</a
+      ><a name="2082"
+      > </a
+      ><a name="2083" href="lib.Funext.html#2083" class="Module"
+      >FunextDep</a
+      ><a name="2092"
+      > </a
+      ><a name="2093" class="Symbol"
+      >{</a
+      ><a name="2094" href="lib.Funext.html#2094" class="Bound"
+      >j</a
+      ><a name="2095" class="Symbol"
+      >}</a
+      ><a name="2096"
+      > </a
+      ><a name="2097" class="Symbol"
+      >{</a
+      ><a name="2098" href="lib.Funext.html#2098" class="Bound"
+      >P</a
+      ><a name="2099"
+      > </a
+      ><a name="2100" class="Symbol"
+      >:</a
+      ><a name="2101"
+      > </a
+      ><a name="2102" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="2103"
+      > </a
+      ><a name="2104" class="Symbol"
+      >&#8594;</a
+      ><a name="2105"
+      > </a
+      ><a name="2106" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="2110"
+      > </a
+      ><a name="2111" href="lib.Funext.html#2094" class="Bound"
+      >j</a
+      ><a name="2112" class="Symbol"
+      >}</a
+      ><a name="2113"
+      > </a
+      ><a name="2114" class="Symbol"
+      >{</a
+      ><a name="2115" href="lib.Funext.html#2115" class="Bound"
+      >f</a
+      ><a name="2116"
+      > </a
+      ><a name="2117" href="lib.Funext.html#2117" class="Bound"
+      >g</a
+      ><a name="2118"
+      > </a
+      ><a name="2119" class="Symbol"
+      >:</a
+      ><a name="2120"
+      > </a
+      ><a name="2121" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="2122"
+      > </a
+      ><a name="2123" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="2124"
+      > </a
+      ><a name="2125" href="lib.Funext.html#2098" class="Bound"
+      >P</a
+      ><a name="2126" class="Symbol"
+      >}</a
+      ><a name="2127"
+      > </a
+      ><a name="2128" class="Symbol"
+      >(</a
+      ><a name="2129" href="lib.Funext.html#2129" class="Bound"
+      >h</a
+      ><a name="2130"
+      > </a
+      ><a name="2131" class="Symbol"
+      >:</a
+      ><a name="2132"
+      > </a
+      ><a name="2133" class="Symbol"
+      >(</a
+      ><a name="2134" href="lib.Funext.html#2134" class="Bound"
+      >x</a
+      ><a name="2135"
+      > </a
+      ><a name="2136" class="Symbol"
+      >:</a
+      ><a name="2137"
+      > </a
+      ><a name="2138" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="2139" class="Symbol"
+      >)</a
+      ><a name="2140"
+      > </a
+      ><a name="2141" class="Symbol"
+      >&#8594;</a
+      ><a name="2142"
+      > </a
+      ><a name="2143" href="lib.Funext.html#2115" class="Bound"
+      >f</a
+      ><a name="2144"
+      > </a
+      ><a name="2145" href="lib.Funext.html#2134" class="Bound"
+      >x</a
+      ><a name="2146"
+      > </a
+      ><a name="2147" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2149"
+      > </a
+      ><a name="2150" href="lib.Funext.html#2117" class="Bound"
+      >g</a
+      ><a name="2151"
+      > </a
+      ><a name="2152" href="lib.Funext.html#2134" class="Bound"
+      >x</a
+      ><a name="2153" class="Symbol"
+      >)</a
+      ><a name="2154"
+      >
+  </a
+      ><a name="2157" class="Keyword"
+      >where</a
+      ><a name="2162"
+      >
+
+  </a
+      ><a name="2166" class="Keyword"
+      >open</a
+      ><a name="2170"
+      > </a
+      ><a name="2171" href="lib.Funext.html#1674" class="Module"
+      >WeakFunext</a
+      ><a name="2181"
+      >
+
+  </a
+      ><a name="2185" href="lib.Funext.html#2185" class="Function"
+      >Q</a
+      ><a name="2186"
+      > </a
+      ><a name="2187" class="Symbol"
+      >:</a
+      ><a name="2188"
+      > </a
+      ><a name="2189" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="2190"
+      > </a
+      ><a name="2191" class="Symbol"
+      >&#8594;</a
+      ><a name="2192"
+      > </a
+      ><a name="2193" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="2197"
+      > </a
+      ><a name="2198" href="lib.Funext.html#2094" class="Bound"
+      >j</a
+      ><a name="2199"
+      >
+  </a
+      ><a name="2202" href="lib.Funext.html#2185" class="Function"
+      >Q</a
+      ><a name="2203"
+      > </a
+      ><a name="2204" href="lib.Funext.html#2204" class="Bound"
+      >x</a
+      ><a name="2205"
+      > </a
+      ><a name="2206" class="Symbol"
+      >=</a
+      ><a name="2207"
+      > </a
+      ><a name="2208" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="2209"
+      > </a
+      ><a name="2210" class="Symbol"
+      >(</a
+      ><a name="2211" href="lib.Funext.html#2098" class="Bound"
+      >P</a
+      ><a name="2212"
+      > </a
+      ><a name="2213" href="lib.Funext.html#2204" class="Bound"
+      >x</a
+      ><a name="2214" class="Symbol"
+      >)</a
+      ><a name="2215"
+      > </a
+      ><a name="2216" class="Symbol"
+      >(&#955;</a
+      ><a name="2218"
+      > </a
+      ><a name="2219" href="lib.Funext.html#2219" class="Bound"
+      >y</a
+      ><a name="2220"
+      > </a
+      ><a name="2221" class="Symbol"
+      >&#8594;</a
+      ><a name="2222"
+      > </a
+      ><a name="2223" href="lib.Funext.html#2115" class="Bound"
+      >f</a
+      ><a name="2224"
+      > </a
+      ><a name="2225" href="lib.Funext.html#2204" class="Bound"
+      >x</a
+      ><a name="2226"
+      > </a
+      ><a name="2227" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2229"
+      > </a
+      ><a name="2230" href="lib.Funext.html#2219" class="Bound"
+      >y</a
+      ><a name="2231" class="Symbol"
+      >)</a
+      ><a name="2232"
+      >
+
+  </a
+      ><a name="2236" class="Keyword"
+      >abstract</a
+      ><a name="2244"
+      >
+    </a
+      ><a name="2249" href="lib.Funext.html#2249" class="Function"
+      >Q-is-contr</a
+      ><a name="2259"
+      > </a
+      ><a name="2260" class="Symbol"
+      >:</a
+      ><a name="2261"
+      > </a
+      ><a name="2262" class="Symbol"
+      >(</a
+      ><a name="2263" href="lib.Funext.html#2263" class="Bound"
+      >x</a
+      ><a name="2264"
+      > </a
+      ><a name="2265" class="Symbol"
+      >:</a
+      ><a name="2266"
+      > </a
+      ><a name="2267" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="2268" class="Symbol"
+      >)</a
+      ><a name="2269"
+      > </a
+      ><a name="2270" class="Symbol"
+      >&#8594;</a
+      ><a name="2271"
+      > </a
+      ><a name="2272" href="lib.NType.html#171" class="Function"
+      >is-contr</a
+      ><a name="2280"
+      > </a
+      ><a name="2281" class="Symbol"
+      >(</a
+      ><a name="2282" href="lib.Funext.html#2185" class="Function"
+      >Q</a
+      ><a name="2283"
+      > </a
+      ><a name="2284" href="lib.Funext.html#2263" class="Bound"
+      >x</a
+      ><a name="2285" class="Symbol"
+      >)</a
+      ><a name="2286"
+      >
+    </a
+      ><a name="2291" href="lib.Funext.html#2249" class="Function"
+      >Q-is-contr</a
+      ><a name="2301"
+      > </a
+      ><a name="2302" href="lib.Funext.html#2302" class="Bound"
+      >x</a
+      ><a name="2303"
+      > </a
+      ><a name="2304" class="Symbol"
+      >=</a
+      ><a name="2305"
+      > </a
+      ><a name="2306" href="lib.NType.html#4131" class="Function"
+      >pathfrom-is-contr</a
+      ><a name="2323"
+      > </a
+      ><a name="2324" class="Symbol"
+      >(</a
+      ><a name="2325" href="lib.Funext.html#2115" class="Bound"
+      >f</a
+      ><a name="2326"
+      > </a
+      ><a name="2327" href="lib.Funext.html#2302" class="Bound"
+      >x</a
+      ><a name="2328" class="Symbol"
+      >)</a
+      ><a name="2329"
+      >
+
+    </a
+      ><a name="2335" href="lib.Funext.html#2335" class="Function"
+      >&#928;AQ-is-contr</a
+      ><a name="2347"
+      > </a
+      ><a name="2348" class="Symbol"
+      >:</a
+      ><a name="2349"
+      > </a
+      ><a name="2350" href="lib.NType.html#171" class="Function"
+      >is-contr</a
+      ><a name="2358"
+      > </a
+      ><a name="2359" class="Symbol"
+      >(</a
+      ><a name="2360" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="2361"
+      > </a
+      ><a name="2362" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="2363"
+      > </a
+      ><a name="2364" href="lib.Funext.html#2185" class="Function"
+      >Q</a
+      ><a name="2365" class="Symbol"
+      >)</a
+      ><a name="2366"
+      >
+    </a
+      ><a name="2371" href="lib.Funext.html#2335" class="Function"
+      >&#928;AQ-is-contr</a
+      ><a name="2383"
+      > </a
+      ><a name="2384" class="Symbol"
+      >=</a
+      ><a name="2385"
+      > </a
+      ><a name="2386" href="lib.Funext.html#1861" class="Function"
+      >weak-&#955;=</a
+      ><a name="2393"
+      > </a
+      ><a name="2394" href="lib.Funext.html#2249" class="Function"
+      >Q-is-contr</a
+      ><a name="2404"
+      >
+
+  </a
+      ><a name="2408" href="lib.Funext.html#2408" class="Function"
+      >Q-f</a
+      ><a name="2411"
+      > </a
+      ><a name="2412" class="Symbol"
+      >:</a
+      ><a name="2413"
+      > </a
+      ><a name="2414" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="2415"
+      > </a
+      ><a name="2416" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="2417"
+      > </a
+      ><a name="2418" href="lib.Funext.html#2185" class="Function"
+      >Q</a
+      ><a name="2419"
+      >
+  </a
+      ><a name="2422" href="lib.Funext.html#2408" class="Function"
+      >Q-f</a
+      ><a name="2425"
+      > </a
+      ><a name="2426" href="lib.Funext.html#2426" class="Bound"
+      >x</a
+      ><a name="2427"
+      > </a
+      ><a name="2428" class="Symbol"
+      >=</a
+      ><a name="2429"
+      > </a
+      ><a name="2430" class="Symbol"
+      >(</a
+      ><a name="2431" href="lib.Funext.html#2115" class="Bound"
+      >f</a
+      ><a name="2432"
+      > </a
+      ><a name="2433" href="lib.Funext.html#2426" class="Bound"
+      >x</a
+      ><a name="2434"
+      > </a
+      ><a name="2435" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2436"
+      > </a
+      ><a name="2437" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2440" class="Symbol"
+      >)</a
+      ><a name="2441"
+      >
+
+  </a
+      ><a name="2445" href="lib.Funext.html#2445" class="Function"
+      >Q-g</a
+      ><a name="2448"
+      > </a
+      ><a name="2449" class="Symbol"
+      >:</a
+      ><a name="2450"
+      > </a
+      ><a name="2451" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="2452"
+      > </a
+      ><a name="2453" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="2454"
+      > </a
+      ><a name="2455" href="lib.Funext.html#2185" class="Function"
+      >Q</a
+      ><a name="2456"
+      >
+  </a
+      ><a name="2459" href="lib.Funext.html#2445" class="Function"
+      >Q-g</a
+      ><a name="2462"
+      > </a
+      ><a name="2463" href="lib.Funext.html#2463" class="Bound"
+      >x</a
+      ><a name="2464"
+      > </a
+      ><a name="2465" class="Symbol"
+      >=</a
+      ><a name="2466"
+      > </a
+      ><a name="2467" class="Symbol"
+      >(</a
+      ><a name="2468" href="lib.Funext.html#2117" class="Bound"
+      >g</a
+      ><a name="2469"
+      > </a
+      ><a name="2470" href="lib.Funext.html#2463" class="Bound"
+      >x</a
+      ><a name="2471"
+      > </a
+      ><a name="2472" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2473"
+      > </a
+      ><a name="2474" href="lib.Funext.html#2129" class="Bound"
+      >h</a
+      ><a name="2475"
+      > </a
+      ><a name="2476" href="lib.Funext.html#2463" class="Bound"
+      >x</a
+      ><a name="2477" class="Symbol"
+      >)</a
+      ><a name="2478"
+      >
+
+  </a
+      ><a name="2482" class="Keyword"
+      >abstract</a
+      ><a name="2490"
+      >
+    </a
+      ><a name="2495" href="lib.Funext.html#2495" class="Function"
+      >Q-f==Q-g</a
+      ><a name="2503"
+      > </a
+      ><a name="2504" class="Symbol"
+      >:</a
+      ><a name="2505"
+      > </a
+      ><a name="2506" href="lib.Funext.html#2408" class="Function"
+      >Q-f</a
+      ><a name="2509"
+      > </a
+      ><a name="2510" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2512"
+      > </a
+      ><a name="2513" href="lib.Funext.html#2445" class="Function"
+      >Q-g</a
+      ><a name="2516"
+      >
+    </a
+      ><a name="2521" href="lib.Funext.html#2495" class="Function"
+      >Q-f==Q-g</a
+      ><a name="2529"
+      > </a
+      ><a name="2530" class="Symbol"
+      >=</a
+      ><a name="2531"
+      > </a
+      ><a name="2532" href="lib.NType.html#2184" class="Function"
+      >contr-has-all-paths</a
+      ><a name="2551"
+      > </a
+      ><a name="2552" href="lib.Funext.html#2335" class="Function"
+      >&#928;AQ-is-contr</a
+      ><a name="2564"
+      > </a
+      ><a name="2565" href="lib.Funext.html#2408" class="Function"
+      >Q-f</a
+      ><a name="2568"
+      > </a
+      ><a name="2569" href="lib.Funext.html#2445" class="Function"
+      >Q-g</a
+      ><a name="2572"
+      >
+
+  </a
+      ><a name="2576" href="lib.Funext.html#2576" class="Function"
+      >&#955;=</a
+      ><a name="2578"
+      > </a
+      ><a name="2579" class="Symbol"
+      >:</a
+      ><a name="2580"
+      > </a
+      ><a name="2581" href="lib.Funext.html#2115" class="Bound"
+      >f</a
+      ><a name="2582"
+      > </a
+      ><a name="2583" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2585"
+      > </a
+      ><a name="2586" href="lib.Funext.html#2117" class="Bound"
+      >g</a
+      ><a name="2587"
+      >
+  </a
+      ><a name="2590" href="lib.Funext.html#2576" class="Function"
+      >&#955;=</a
+      ><a name="2592"
+      > </a
+      ><a name="2593" class="Symbol"
+      >=</a
+      ><a name="2594"
+      > </a
+      ><a name="2595" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2597"
+      > </a
+      ><a name="2598" class="Symbol"
+      >(&#955;</a
+      ><a name="2600"
+      > </a
+      ><a name="2601" href="lib.Funext.html#2601" class="Bound"
+      >u</a
+      ><a name="2602"
+      > </a
+      ><a name="2603" href="lib.Funext.html#2603" class="Bound"
+      >x</a
+      ><a name="2604"
+      > </a
+      ><a name="2605" class="Symbol"
+      >&#8594;</a
+      ><a name="2606"
+      > </a
+      ><a name="2607" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="2610"
+      > </a
+      ><a name="2611" class="Symbol"
+      >(</a
+      ><a name="2612" href="lib.Funext.html#2601" class="Bound"
+      >u</a
+      ><a name="2613"
+      > </a
+      ><a name="2614" href="lib.Funext.html#2603" class="Bound"
+      >x</a
+      ><a name="2615" class="Symbol"
+      >))</a
+      ><a name="2617"
+      > </a
+      ><a name="2618" href="lib.Funext.html#2495" class="Function"
+      >Q-f==Q-g</a
+      ><a name="2626"
+      >
+
+</a
+      ><a name="2628" class="Comment"
+      >-- Strong function extensionality</a
+      ><a name="2661"
+      >
+
+</a
+      ><a name="2663" class="Keyword"
+      >module</a
+      ><a name="2669"
+      > </a
+      ><a name="2670" href="lib.Funext.html#2670" class="Module"
+      >StrongFunextDep</a
+      ><a name="2685"
+      > </a
+      ><a name="2686" class="Symbol"
+      >{</a
+      ><a name="2687" href="lib.Funext.html#2687" class="Bound"
+      >j</a
+      ><a name="2688" class="Symbol"
+      >}</a
+      ><a name="2689"
+      > </a
+      ><a name="2690" class="Symbol"
+      >{</a
+      ><a name="2691" href="lib.Funext.html#2691" class="Bound"
+      >P</a
+      ><a name="2692"
+      > </a
+      ><a name="2693" class="Symbol"
+      >:</a
+      ><a name="2694"
+      > </a
+      ><a name="2695" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="2696"
+      > </a
+      ><a name="2697" class="Symbol"
+      >&#8594;</a
+      ><a name="2698"
+      > </a
+      ><a name="2699" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="2703"
+      > </a
+      ><a name="2704" href="lib.Funext.html#2687" class="Bound"
+      >j</a
+      ><a name="2705" class="Symbol"
+      >}</a
+      ><a name="2706"
+      > </a
+      ><a name="2707" class="Keyword"
+      >where</a
+      ><a name="2712"
+      >
+
+  </a
+      ><a name="2716" class="Keyword"
+      >open</a
+      ><a name="2720"
+      > </a
+      ><a name="2721" href="lib.Funext.html#2083" class="Module"
+      >FunextDep</a
+      ><a name="2730"
+      >
+
+  </a
+      ><a name="2734" href="lib.Funext.html#2734" class="Function"
+      >app=</a
+      ><a name="2738"
+      > </a
+      ><a name="2739" class="Symbol"
+      >:</a
+      ><a name="2740"
+      > </a
+      ><a name="2741" class="Symbol"
+      >&#8704;</a
+      ><a name="2742"
+      > </a
+      ><a name="2743" class="Symbol"
+      >{</a
+      ><a name="2744" href="lib.Funext.html#2744" class="Bound"
+      >j</a
+      ><a name="2745" class="Symbol"
+      >}</a
+      ><a name="2746"
+      > </a
+      ><a name="2747" class="Symbol"
+      >{</a
+      ><a name="2748" href="lib.Funext.html#2748" class="Bound"
+      >P</a
+      ><a name="2749"
+      > </a
+      ><a name="2750" class="Symbol"
+      >:</a
+      ><a name="2751"
+      > </a
+      ><a name="2752" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="2753"
+      > </a
+      ><a name="2754" class="Symbol"
+      >&#8594;</a
+      ><a name="2755"
+      > </a
+      ><a name="2756" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="2760"
+      > </a
+      ><a name="2761" href="lib.Funext.html#2744" class="Bound"
+      >j</a
+      ><a name="2762" class="Symbol"
+      >}</a
+      ><a name="2763"
+      > </a
+      ><a name="2764" class="Symbol"
+      >{</a
+      ><a name="2765" href="lib.Funext.html#2765" class="Bound"
+      >f</a
+      ><a name="2766"
+      > </a
+      ><a name="2767" href="lib.Funext.html#2767" class="Bound"
+      >g</a
+      ><a name="2768"
+      > </a
+      ><a name="2769" class="Symbol"
+      >:</a
+      ><a name="2770"
+      > </a
+      ><a name="2771" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="2772"
+      > </a
+      ><a name="2773" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="2774"
+      > </a
+      ><a name="2775" href="lib.Funext.html#2748" class="Bound"
+      >P</a
+      ><a name="2776" class="Symbol"
+      >}</a
+      ><a name="2777"
+      > </a
+      ><a name="2778" class="Symbol"
+      >(</a
+      ><a name="2779" href="lib.Funext.html#2779" class="Bound"
+      >p</a
+      ><a name="2780"
+      > </a
+      ><a name="2781" class="Symbol"
+      >:</a
+      ><a name="2782"
+      > </a
+      ><a name="2783" href="lib.Funext.html#2765" class="Bound"
+      >f</a
+      ><a name="2784"
+      > </a
+      ><a name="2785" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2787"
+      > </a
+      ><a name="2788" href="lib.Funext.html#2767" class="Bound"
+      >g</a
+      ><a name="2789" class="Symbol"
+      >)</a
+      ><a name="2790"
+      >
+    </a
+      ><a name="2795" class="Symbol"
+      >&#8594;</a
+      ><a name="2796"
+      > </a
+      ><a name="2797" class="Symbol"
+      >((</a
+      ><a name="2799" href="lib.Funext.html#2799" class="Bound"
+      >x</a
+      ><a name="2800"
+      > </a
+      ><a name="2801" class="Symbol"
+      >:</a
+      ><a name="2802"
+      > </a
+      ><a name="2803" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="2804" class="Symbol"
+      >)</a
+      ><a name="2805"
+      > </a
+      ><a name="2806" class="Symbol"
+      >&#8594;</a
+      ><a name="2807"
+      > </a
+      ><a name="2808" href="lib.Funext.html#2765" class="Bound"
+      >f</a
+      ><a name="2809"
+      > </a
+      ><a name="2810" href="lib.Funext.html#2799" class="Bound"
+      >x</a
+      ><a name="2811"
+      > </a
+      ><a name="2812" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2814"
+      > </a
+      ><a name="2815" href="lib.Funext.html#2767" class="Bound"
+      >g</a
+      ><a name="2816"
+      > </a
+      ><a name="2817" href="lib.Funext.html#2799" class="Bound"
+      >x</a
+      ><a name="2818" class="Symbol"
+      >)</a
+      ><a name="2819"
+      >
+  </a
+      ><a name="2822" href="lib.Funext.html#2734" class="Function"
+      >app=</a
+      ><a name="2826"
+      > </a
+      ><a name="2827" href="lib.Funext.html#2827" class="Bound"
+      >p</a
+      ><a name="2828"
+      > </a
+      ><a name="2829" href="lib.Funext.html#2829" class="Bound"
+      >x</a
+      ><a name="2830"
+      > </a
+      ><a name="2831" class="Symbol"
+      >=</a
+      ><a name="2832"
+      > </a
+      ><a name="2833" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2835"
+      > </a
+      ><a name="2836" class="Symbol"
+      >(&#955;</a
+      ><a name="2838"
+      > </a
+      ><a name="2839" href="lib.Funext.html#2839" class="Bound"
+      >u</a
+      ><a name="2840"
+      > </a
+      ><a name="2841" class="Symbol"
+      >&#8594;</a
+      ><a name="2842"
+      > </a
+      ><a name="2843" href="lib.Funext.html#2839" class="Bound"
+      >u</a
+      ><a name="2844"
+      > </a
+      ><a name="2845" href="lib.Funext.html#2829" class="Bound"
+      >x</a
+      ><a name="2846" class="Symbol"
+      >)</a
+      ><a name="2847"
+      > </a
+      ><a name="2848" href="lib.Funext.html#2827" class="Bound"
+      >p</a
+      ><a name="2849"
+      >
+
+  </a
+      ><a name="2853" href="lib.Funext.html#2853" class="Function"
+      >&#955;=-idp</a
+      ><a name="2859"
+      > </a
+      ><a name="2860" class="Symbol"
+      >:</a
+      ><a name="2861"
+      > </a
+      ><a name="2862" class="Symbol"
+      >(</a
+      ><a name="2863" href="lib.Funext.html#2863" class="Bound"
+      >f</a
+      ><a name="2864"
+      > </a
+      ><a name="2865" class="Symbol"
+      >:</a
+      ><a name="2866"
+      > </a
+      ><a name="2867" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="2868"
+      > </a
+      ><a name="2869" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="2870"
+      > </a
+      ><a name="2871" href="lib.Funext.html#2691" class="Bound"
+      >P</a
+      ><a name="2872" class="Symbol"
+      >)</a
+      ><a name="2873"
+      >
+    </a
+      ><a name="2878" class="Symbol"
+      >&#8594;</a
+      ><a name="2879"
+      > </a
+      ><a name="2880" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2883"
+      > </a
+      ><a name="2884" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2886"
+      > </a
+      ><a name="2887" href="lib.Funext.html#2576" class="Function"
+      >&#955;=</a
+      ><a name="2889"
+      > </a
+      ><a name="2890" class="Symbol"
+      >(&#955;</a
+      ><a name="2892"
+      > </a
+      ><a name="2893" href="lib.Funext.html#2893" class="Bound"
+      >x</a
+      ><a name="2894"
+      > </a
+      ><a name="2895" class="Symbol"
+      >&#8594;</a
+      ><a name="2896"
+      > </a
+      ><a name="2897" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2900"
+      > </a
+      ><a name="2901" class="Symbol"
+      >{a</a
+      ><a name="2903"
+      > </a
+      ><a name="2904" class="Symbol"
+      >=</a
+      ><a name="2905"
+      > </a
+      ><a name="2906" href="lib.Funext.html#2863" class="Bound"
+      >f</a
+      ><a name="2907"
+      > </a
+      ><a name="2908" href="lib.Funext.html#2893" class="Bound"
+      >x</a
+      ><a name="2909" class="Symbol"
+      >})</a
+      ><a name="2911"
+      >
+  </a
+      ><a name="2914" href="lib.Funext.html#2853" class="Function"
+      >&#955;=-idp</a
+      ><a name="2920"
+      > </a
+      ><a name="2921" href="lib.Funext.html#2921" class="Bound"
+      >f</a
+      ><a name="2922"
+      > </a
+      ><a name="2923" class="Symbol"
+      >=</a
+      ><a name="2924"
+      > </a
+      ><a name="2925" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2927"
+      > </a
+      ><a name="2928" class="Symbol"
+      >(</a
+      ><a name="2929" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2931"
+      > </a
+      ><a name="2932" class="Symbol"
+      >(&#955;</a
+      ><a name="2934"
+      > </a
+      ><a name="2935" href="lib.Funext.html#2935" class="Bound"
+      >u</a
+      ><a name="2936"
+      > </a
+      ><a name="2937" href="lib.Funext.html#2937" class="Bound"
+      >x</a
+      ><a name="2938"
+      > </a
+      ><a name="2939" class="Symbol"
+      >&#8594;</a
+      ><a name="2940"
+      > </a
+      ><a name="2941" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="2944"
+      > </a
+      ><a name="2945" class="Symbol"
+      >(</a
+      ><a name="2946" href="lib.Funext.html#2935" class="Bound"
+      >u</a
+      ><a name="2947"
+      > </a
+      ><a name="2948" href="lib.Funext.html#2937" class="Bound"
+      >x</a
+      ><a name="2949" class="Symbol"
+      >)))</a
+      ><a name="2952"
+      >
+    </a
+      ><a name="2957" class="Symbol"
+      >(</a
+      ><a name="2958" href="lib.NType.html#2184" class="Function"
+      >contr-has-all-paths</a
+      ><a name="2977"
+      > </a
+      ><a name="2978" class="Symbol"
+      >(</a
+      ><a name="2979" href="lib.NType.html#3492" class="Function"
+      >=-preserves-level</a
+      ><a name="2996"
+      > </a
+      ><a name="2997" class="Symbol"
+      >_</a
+      ><a name="2998"
+      >
+                         </a
+      ><a name="3024" class="Symbol"
+      >(</a
+      ><a name="3025" href="lib.Funext.html#2335" class="Function"
+      >&#928;AQ-is-contr</a
+      ><a name="3037"
+      > </a
+      ><a name="3038" class="Symbol"
+      >(&#955;</a
+      ><a name="3040"
+      > </a
+      ><a name="3041" href="lib.Funext.html#3041" class="Bound"
+      >x</a
+      ><a name="3042"
+      > </a
+      ><a name="3043" class="Symbol"
+      >&#8594;</a
+      ><a name="3044"
+      > </a
+      ><a name="3045" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3048" class="Symbol"
+      >)))</a
+      ><a name="3051"
+      >
+                         </a
+      ><a name="3077" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3080"
+      > </a
+      ><a name="3081" class="Symbol"
+      >(</a
+      ><a name="3082" href="lib.Funext.html#2495" class="Function"
+      >Q-f==Q-g</a
+      ><a name="3090"
+      > </a
+      ><a name="3091" class="Symbol"
+      >(&#955;</a
+      ><a name="3093"
+      > </a
+      ><a name="3094" href="lib.Funext.html#3094" class="Bound"
+      >x</a
+      ><a name="3095"
+      > </a
+      ><a name="3096" class="Symbol"
+      >&#8594;</a
+      ><a name="3097"
+      > </a
+      ><a name="3098" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3101" class="Symbol"
+      >)))</a
+      ><a name="3104"
+      >
+
+  </a
+      ><a name="3108" href="lib.Funext.html#3108" class="Function"
+      >&#955;=-&#951;</a
+      ><a name="3112"
+      > </a
+      ><a name="3113" class="Symbol"
+      >:</a
+      ><a name="3114"
+      > </a
+      ><a name="3115" class="Symbol"
+      >{</a
+      ><a name="3116" href="lib.Funext.html#3116" class="Bound"
+      >f</a
+      ><a name="3117"
+      > </a
+      ><a name="3118" href="lib.Funext.html#3118" class="Bound"
+      >g</a
+      ><a name="3119"
+      > </a
+      ><a name="3120" class="Symbol"
+      >:</a
+      ><a name="3121"
+      > </a
+      ><a name="3122" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="3123"
+      > </a
+      ><a name="3124" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="3125"
+      > </a
+      ><a name="3126" href="lib.Funext.html#2691" class="Bound"
+      >P</a
+      ><a name="3127" class="Symbol"
+      >}</a
+      ><a name="3128"
+      > </a
+      ><a name="3129" class="Symbol"
+      >(</a
+      ><a name="3130" href="lib.Funext.html#3130" class="Bound"
+      >p</a
+      ><a name="3131"
+      > </a
+      ><a name="3132" class="Symbol"
+      >:</a
+      ><a name="3133"
+      > </a
+      ><a name="3134" href="lib.Funext.html#3116" class="Bound"
+      >f</a
+      ><a name="3135"
+      > </a
+      ><a name="3136" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3138"
+      > </a
+      ><a name="3139" href="lib.Funext.html#3118" class="Bound"
+      >g</a
+      ><a name="3140" class="Symbol"
+      >)</a
+      ><a name="3141"
+      >
+    </a
+      ><a name="3146" class="Symbol"
+      >&#8594;</a
+      ><a name="3147"
+      > </a
+      ><a name="3148" href="lib.Funext.html#3130" class="Bound"
+      >p</a
+      ><a name="3149"
+      > </a
+      ><a name="3150" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3152"
+      > </a
+      ><a name="3153" href="lib.Funext.html#2576" class="Function"
+      >&#955;=</a
+      ><a name="3155"
+      > </a
+      ><a name="3156" class="Symbol"
+      >(</a
+      ><a name="3157" href="lib.Funext.html#2734" class="Function"
+      >app=</a
+      ><a name="3161"
+      > </a
+      ><a name="3162" href="lib.Funext.html#3130" class="Bound"
+      >p</a
+      ><a name="3163" class="Symbol"
+      >)</a
+      ><a name="3164"
+      >
+  </a
+      ><a name="3167" href="lib.Funext.html#3108" class="Function"
+      >&#955;=-&#951;</a
+      ><a name="3171"
+      > </a
+      ><a name="3172" class="Symbol"
+      >{</a
+      ><a name="3173" href="lib.Funext.html#3173" class="Bound"
+      >f</a
+      ><a name="3174" class="Symbol"
+      >}</a
+      ><a name="3175"
+      > </a
+      ><a name="3176" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3179"
+      > </a
+      ><a name="3180" class="Symbol"
+      >=</a
+      ><a name="3181"
+      > </a
+      ><a name="3182" href="lib.Funext.html#2853" class="Function"
+      >&#955;=-idp</a
+      ><a name="3188"
+      > </a
+      ><a name="3189" href="lib.Funext.html#3173" class="Bound"
+      >f</a
+      ><a name="3190"
+      >
+
+  </a
+      ><a name="3194" href="lib.Funext.html#3194" class="Function"
+      >app=-&#946;</a
+      ><a name="3200"
+      > </a
+      ><a name="3201" class="Symbol"
+      >:</a
+      ><a name="3202"
+      > </a
+      ><a name="3203" class="Symbol"
+      >{</a
+      ><a name="3204" href="lib.Funext.html#3204" class="Bound"
+      >f</a
+      ><a name="3205"
+      > </a
+      ><a name="3206" href="lib.Funext.html#3206" class="Bound"
+      >g</a
+      ><a name="3207"
+      > </a
+      ><a name="3208" class="Symbol"
+      >:</a
+      ><a name="3209"
+      > </a
+      ><a name="3210" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="3211"
+      > </a
+      ><a name="3212" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="3213"
+      > </a
+      ><a name="3214" href="lib.Funext.html#2691" class="Bound"
+      >P</a
+      ><a name="3215" class="Symbol"
+      >}</a
+      ><a name="3216"
+      > </a
+      ><a name="3217" class="Symbol"
+      >(</a
+      ><a name="3218" href="lib.Funext.html#3218" class="Bound"
+      >h</a
+      ><a name="3219"
+      > </a
+      ><a name="3220" class="Symbol"
+      >:</a
+      ><a name="3221"
+      > </a
+      ><a name="3222" class="Symbol"
+      >(</a
+      ><a name="3223" href="lib.Funext.html#3223" class="Bound"
+      >x</a
+      ><a name="3224"
+      > </a
+      ><a name="3225" class="Symbol"
+      >:</a
+      ><a name="3226"
+      > </a
+      ><a name="3227" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="3228" class="Symbol"
+      >)</a
+      ><a name="3229"
+      > </a
+      ><a name="3230" class="Symbol"
+      >&#8594;</a
+      ><a name="3231"
+      > </a
+      ><a name="3232" href="lib.Funext.html#3204" class="Bound"
+      >f</a
+      ><a name="3233"
+      > </a
+      ><a name="3234" href="lib.Funext.html#3223" class="Bound"
+      >x</a
+      ><a name="3235"
+      > </a
+      ><a name="3236" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3238"
+      > </a
+      ><a name="3239" href="lib.Funext.html#3206" class="Bound"
+      >g</a
+      ><a name="3240"
+      > </a
+      ><a name="3241" href="lib.Funext.html#3223" class="Bound"
+      >x</a
+      ><a name="3242" class="Symbol"
+      >)</a
+      ><a name="3243"
+      > </a
+      ><a name="3244" class="Symbol"
+      >(</a
+      ><a name="3245" href="lib.Funext.html#3245" class="Bound"
+      >x</a
+      ><a name="3246"
+      > </a
+      ><a name="3247" class="Symbol"
+      >:</a
+      ><a name="3248"
+      > </a
+      ><a name="3249" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="3250" class="Symbol"
+      >)</a
+      ><a name="3251"
+      >
+    </a
+      ><a name="3256" class="Symbol"
+      >&#8594;</a
+      ><a name="3257"
+      > </a
+      ><a name="3258" href="lib.Funext.html#2734" class="Function"
+      >app=</a
+      ><a name="3262"
+      > </a
+      ><a name="3263" class="Symbol"
+      >(</a
+      ><a name="3264" href="lib.Funext.html#2576" class="Function"
+      >&#955;=</a
+      ><a name="3266"
+      > </a
+      ><a name="3267" href="lib.Funext.html#3218" class="Bound"
+      >h</a
+      ><a name="3268" class="Symbol"
+      >)</a
+      ><a name="3269"
+      > </a
+      ><a name="3270" href="lib.Funext.html#3245" class="Bound"
+      >x</a
+      ><a name="3271"
+      > </a
+      ><a name="3272" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3274"
+      > </a
+      ><a name="3275" href="lib.Funext.html#3218" class="Bound"
+      >h</a
+      ><a name="3276"
+      > </a
+      ><a name="3277" href="lib.Funext.html#3245" class="Bound"
+      >x</a
+      ><a name="3278"
+      >
+  </a
+      ><a name="3281" href="lib.Funext.html#3194" class="Function"
+      >app=-&#946;</a
+      ><a name="3287"
+      > </a
+      ><a name="3288" href="lib.Funext.html#3288" class="Bound"
+      >h</a
+      ><a name="3289"
+      > </a
+      ><a name="3290" class="Symbol"
+      >=</a
+      ><a name="3291"
+      > </a
+      ><a name="3292" href="lib.Funext.html#3328" class="Function"
+      >app=-path</a
+      ><a name="3301"
+      > </a
+      ><a name="3302" class="Symbol"
+      >(</a
+      ><a name="3303" href="lib.Funext.html#2495" class="Function"
+      >Q-f==Q-g</a
+      ><a name="3311"
+      > </a
+      ><a name="3312" href="lib.Funext.html#3288" class="Bound"
+      >h</a
+      ><a name="3313" class="Symbol"
+      >)</a
+      ><a name="3314"
+      >  </a
+      ><a name="3316" class="Keyword"
+      >where</a
+      ><a name="3321"
+      > 
+
+    </a
+      ><a name="3328" href="lib.Funext.html#3328" class="Function"
+      >app=-path</a
+      ><a name="3337"
+      > </a
+      ><a name="3338" class="Symbol"
+      >:</a
+      ><a name="3339"
+      > </a
+      ><a name="3340" class="Symbol"
+      >{</a
+      ><a name="3341" href="lib.Funext.html#3341" class="Bound"
+      >f</a
+      ><a name="3342"
+      > </a
+      ><a name="3343" class="Symbol"
+      >:</a
+      ><a name="3344"
+      > </a
+      ><a name="3345" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="3346"
+      > </a
+      ><a name="3347" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="3348"
+      > </a
+      ><a name="3349" href="lib.Funext.html#2691" class="Bound"
+      >P</a
+      ><a name="3350" class="Symbol"
+      >}</a
+      ><a name="3351"
+      > </a
+      ><a name="3352" class="Symbol"
+      >{</a
+      ><a name="3353" href="lib.Funext.html#3353" class="Bound"
+      >u</a
+      ><a name="3354"
+      > </a
+      ><a name="3355" href="lib.Funext.html#3355" class="Bound"
+      >v</a
+      ><a name="3356"
+      > </a
+      ><a name="3357" class="Symbol"
+      >:</a
+      ><a name="3358"
+      > </a
+      ><a name="3359" class="Symbol"
+      >(</a
+      ><a name="3360" href="lib.Funext.html#3360" class="Bound"
+      >x</a
+      ><a name="3361"
+      > </a
+      ><a name="3362" class="Symbol"
+      >:</a
+      ><a name="3363"
+      > </a
+      ><a name="3364" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="3365" class="Symbol"
+      >)</a
+      ><a name="3366"
+      > </a
+      ><a name="3367" class="Symbol"
+      >&#8594;</a
+      ><a name="3368"
+      > </a
+      ><a name="3369" href="lib.Funext.html#2185" class="Function"
+      >Q</a
+      ><a name="3370"
+      > </a
+      ><a name="3371" class="Symbol"
+      >(&#955;</a
+      ><a name="3373"
+      > </a
+      ><a name="3374" href="lib.Funext.html#3374" class="Bound"
+      >x</a
+      ><a name="3375"
+      > </a
+      ><a name="3376" class="Symbol"
+      >&#8594;</a
+      ><a name="3377"
+      > </a
+      ><a name="3378" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3381"
+      > </a
+      ><a name="3382" class="Symbol"
+      >{a</a
+      ><a name="3384"
+      > </a
+      ><a name="3385" class="Symbol"
+      >=</a
+      ><a name="3386"
+      > </a
+      ><a name="3387" href="lib.Funext.html#3341" class="Bound"
+      >f</a
+      ><a name="3388"
+      > </a
+      ><a name="3389" href="lib.Funext.html#3374" class="Bound"
+      >x</a
+      ><a name="3390" class="Symbol"
+      >})</a
+      ><a name="3392"
+      > </a
+      ><a name="3393" href="lib.Funext.html#3360" class="Bound"
+      >x</a
+      ><a name="3394" class="Symbol"
+      >}</a
+      ><a name="3395"
+      >
+      </a
+      ><a name="3402" class="Symbol"
+      >(</a
+      ><a name="3403" href="lib.Funext.html#3403" class="Bound"
+      >p</a
+      ><a name="3404"
+      > </a
+      ><a name="3405" class="Symbol"
+      >:</a
+      ><a name="3406"
+      > </a
+      ><a name="3407" href="lib.Funext.html#3353" class="Bound"
+      >u</a
+      ><a name="3408"
+      > </a
+      ><a name="3409" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3411"
+      > </a
+      ><a name="3412" href="lib.Funext.html#3355" class="Bound"
+      >v</a
+      ><a name="3413" class="Symbol"
+      >)</a
+      ><a name="3414"
+      > </a
+      ><a name="3415" class="Symbol"
+      >(</a
+      ><a name="3416" href="lib.Funext.html#3416" class="Bound"
+      >x</a
+      ><a name="3417"
+      > </a
+      ><a name="3418" class="Symbol"
+      >:</a
+      ><a name="3419"
+      > </a
+      ><a name="3420" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="3421" class="Symbol"
+      >)</a
+      ><a name="3422"
+      >
+      </a
+      ><a name="3429" class="Symbol"
+      >&#8594;</a
+      ><a name="3430"
+      > </a
+      ><a name="3431" href="lib.Funext.html#2734" class="Function"
+      >app=</a
+      ><a name="3435"
+      > </a
+      ><a name="3436" class="Symbol"
+      >(</a
+      ><a name="3437" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="3439"
+      > </a
+      ><a name="3440" class="Symbol"
+      >(&#955;</a
+      ><a name="3442"
+      > </a
+      ><a name="3443" href="lib.Funext.html#3443" class="Bound"
+      >u</a
+      ><a name="3444"
+      > </a
+      ><a name="3445" href="lib.Funext.html#3445" class="Bound"
+      >x</a
+      ><a name="3446"
+      > </a
+      ><a name="3447" class="Symbol"
+      >&#8594;</a
+      ><a name="3448"
+      > </a
+      ><a name="3449" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="3452"
+      > </a
+      ><a name="3453" class="Symbol"
+      >(</a
+      ><a name="3454" href="lib.Funext.html#3443" class="Bound"
+      >u</a
+      ><a name="3455"
+      > </a
+      ><a name="3456" href="lib.Funext.html#3445" class="Bound"
+      >x</a
+      ><a name="3457" class="Symbol"
+      >))</a
+      ><a name="3459"
+      > </a
+      ><a name="3460" href="lib.Funext.html#3403" class="Bound"
+      >p</a
+      ><a name="3461" class="Symbol"
+      >)</a
+      ><a name="3462"
+      > </a
+      ><a name="3463" href="lib.Funext.html#3416" class="Bound"
+      >x</a
+      ><a name="3464"
+      > </a
+      ><a name="3465" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3467"
+      > </a
+      ><a name="3468" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="3469"
+      > </a
+      ><a name="3470" class="Symbol"
+      >(</a
+      ><a name="3471" href="lib.Base.html#5092" class="Field"
+      >snd</a
+      ><a name="3474"
+      > </a
+      ><a name="3475" class="Symbol"
+      >(</a
+      ><a name="3476" href="lib.Funext.html#3353" class="Bound"
+      >u</a
+      ><a name="3477"
+      > </a
+      ><a name="3478" href="lib.Funext.html#3416" class="Bound"
+      >x</a
+      ><a name="3479" class="Symbol"
+      >))</a
+      ><a name="3481"
+      > </a
+      ><a name="3482" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="3483"
+      > </a
+      ><a name="3484" href="lib.Base.html#5092" class="Field"
+      >snd</a
+      ><a name="3487"
+      > </a
+      ><a name="3488" class="Symbol"
+      >(</a
+      ><a name="3489" href="lib.Funext.html#3355" class="Bound"
+      >v</a
+      ><a name="3490"
+      > </a
+      ><a name="3491" href="lib.Funext.html#3416" class="Bound"
+      >x</a
+      ><a name="3492" class="Symbol"
+      >)</a
+      ><a name="3493"
+      >
+    </a
+      ><a name="3498" href="lib.Funext.html#3328" class="Function"
+      >app=-path</a
+      ><a name="3507"
+      > </a
+      ><a name="3508" class="Symbol"
+      >{u</a
+      ><a name="3510"
+      > </a
+      ><a name="3511" class="Symbol"
+      >=</a
+      ><a name="3512"
+      > </a
+      ><a name="3513" href="lib.Funext.html#3513" class="Bound"
+      >u</a
+      ><a name="3514" class="Symbol"
+      >}</a
+      ><a name="3515"
+      > </a
+      ><a name="3516" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3519"
+      > </a
+      ><a name="3520" href="lib.Funext.html#3520" class="Bound"
+      >x</a
+      ><a name="3521"
+      > </a
+      ><a name="3522" class="Symbol"
+      >=</a
+      ><a name="3523"
+      > </a
+      ><a name="3524" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="3525"
+      > </a
+      ><a name="3526" class="Symbol"
+      >(</a
+      ><a name="3527" href="lib.PathGroupoid.html#1130" class="Function"
+      >!-inv-l</a
+      ><a name="3534"
+      > </a
+      ><a name="3535" class="Symbol"
+      >(</a
+      ><a name="3536" href="lib.Base.html#5092" class="Field"
+      >snd</a
+      ><a name="3539"
+      > </a
+      ><a name="3540" class="Symbol"
+      >(</a
+      ><a name="3541" href="lib.Funext.html#3513" class="Bound"
+      >u</a
+      ><a name="3542"
+      > </a
+      ><a name="3543" href="lib.Funext.html#3520" class="Bound"
+      >x</a
+      ><a name="3544" class="Symbol"
+      >)))</a
+      ><a name="3547"
+      >
+
+  </a
+      ><a name="3551" href="lib.Funext.html#3551" class="Function"
+      >app=-is-equiv</a
+      ><a name="3564"
+      > </a
+      ><a name="3565" class="Symbol"
+      >:</a
+      ><a name="3566"
+      > </a
+      ><a name="3567" class="Symbol"
+      >{</a
+      ><a name="3568" href="lib.Funext.html#3568" class="Bound"
+      >f</a
+      ><a name="3569"
+      > </a
+      ><a name="3570" href="lib.Funext.html#3570" class="Bound"
+      >g</a
+      ><a name="3571"
+      > </a
+      ><a name="3572" class="Symbol"
+      >:</a
+      ><a name="3573"
+      > </a
+      ><a name="3574" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="3575"
+      > </a
+      ><a name="3576" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="3577"
+      > </a
+      ><a name="3578" href="lib.Funext.html#2691" class="Bound"
+      >P</a
+      ><a name="3579" class="Symbol"
+      >}</a
+      ><a name="3580"
+      > </a
+      ><a name="3581" class="Symbol"
+      >&#8594;</a
+      ><a name="3582"
+      > </a
+      ><a name="3583" href="lib.Equivalences.html#986" class="Record"
+      >is-equiv</a
+      ><a name="3591"
+      > </a
+      ><a name="3592" class="Symbol"
+      >(</a
+      ><a name="3593" href="lib.Funext.html#2734" class="Function"
+      >app=</a
+      ><a name="3597"
+      > </a
+      ><a name="3598" class="Symbol"
+      >{f</a
+      ><a name="3600"
+      > </a
+      ><a name="3601" class="Symbol"
+      >=</a
+      ><a name="3602"
+      > </a
+      ><a name="3603" href="lib.Funext.html#3568" class="Bound"
+      >f</a
+      ><a name="3604" class="Symbol"
+      >}</a
+      ><a name="3605"
+      > </a
+      ><a name="3606" class="Symbol"
+      >{g</a
+      ><a name="3608"
+      > </a
+      ><a name="3609" class="Symbol"
+      >=</a
+      ><a name="3610"
+      > </a
+      ><a name="3611" href="lib.Funext.html#3570" class="Bound"
+      >g</a
+      ><a name="3612" class="Symbol"
+      >})</a
+      ><a name="3614"
+      >
+  </a
+      ><a name="3617" href="lib.Funext.html#3551" class="Function"
+      >app=-is-equiv</a
+      ><a name="3630"
+      > </a
+      ><a name="3631" class="Symbol"
+      >=</a
+      ><a name="3632"
+      > </a
+      ><a name="3633" href="lib.Equivalences.html#1376" class="Function"
+      >is-eq</a
+      ><a name="3638"
+      > </a
+      ><a name="3639" class="Symbol"
+      >_</a
+      ><a name="3640"
+      > </a
+      ><a name="3641" href="lib.Funext.html#2576" class="Function"
+      >&#955;=</a
+      ><a name="3643"
+      > </a
+      ><a name="3644" class="Symbol"
+      >(&#955;</a
+      ><a name="3646"
+      > </a
+      ><a name="3647" href="lib.Funext.html#3647" class="Bound"
+      >h</a
+      ><a name="3648"
+      > </a
+      ><a name="3649" class="Symbol"
+      >&#8594;</a
+      ><a name="3650"
+      > </a
+      ><a name="3651" href="lib.Funext.html#2576" class="Function"
+      >&#955;=</a
+      ><a name="3653"
+      > </a
+      ><a name="3654" class="Symbol"
+      >(</a
+      ><a name="3655" href="lib.Funext.html#3194" class="Function"
+      >app=-&#946;</a
+      ><a name="3661"
+      > </a
+      ><a name="3662" href="lib.Funext.html#3647" class="Bound"
+      >h</a
+      ><a name="3663" class="Symbol"
+      >))</a
+      ><a name="3665"
+      > </a
+      ><a name="3666" class="Symbol"
+      >(</a
+      ><a name="3667" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="3668"
+      > </a
+      ><a name="3669" href="lib.Base.html#7735" class="Function Operator"
+      >&#8728;</a
+      ><a name="3670"
+      > </a
+      ><a name="3671" href="lib.Funext.html#3108" class="Function"
+      >&#955;=-&#951;</a
+      ><a name="3675" class="Symbol"
+      >)</a
+      ><a name="3676"
+      >
+
+  </a
+      ><a name="3680" href="lib.Funext.html#3680" class="Function"
+      >&#955;=-is-equiv</a
+      ><a name="3691"
+      > </a
+      ><a name="3692" class="Symbol"
+      >:</a
+      ><a name="3693"
+      > </a
+      ><a name="3694" class="Symbol"
+      >{</a
+      ><a name="3695" href="lib.Funext.html#3695" class="Bound"
+      >f</a
+      ><a name="3696"
+      > </a
+      ><a name="3697" href="lib.Funext.html#3697" class="Bound"
+      >g</a
+      ><a name="3698"
+      > </a
+      ><a name="3699" class="Symbol"
+      >:</a
+      ><a name="3700"
+      > </a
+      ><a name="3701" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="3702"
+      > </a
+      ><a name="3703" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="3704"
+      > </a
+      ><a name="3705" href="lib.Funext.html#2691" class="Bound"
+      >P</a
+      ><a name="3706" class="Symbol"
+      >}</a
+      ><a name="3707"
+      >
+    </a
+      ><a name="3712" class="Symbol"
+      >&#8594;</a
+      ><a name="3713"
+      > </a
+      ><a name="3714" href="lib.Equivalences.html#986" class="Record"
+      >is-equiv</a
+      ><a name="3722"
+      > </a
+      ><a name="3723" class="Symbol"
+      >(</a
+      ><a name="3724" href="lib.Funext.html#2576" class="Function"
+      >&#955;=</a
+      ><a name="3726"
+      > </a
+      ><a name="3727" class="Symbol"
+      >{f</a
+      ><a name="3729"
+      > </a
+      ><a name="3730" class="Symbol"
+      >=</a
+      ><a name="3731"
+      > </a
+      ><a name="3732" href="lib.Funext.html#3695" class="Bound"
+      >f</a
+      ><a name="3733" class="Symbol"
+      >}</a
+      ><a name="3734"
+      > </a
+      ><a name="3735" class="Symbol"
+      >{g</a
+      ><a name="3737"
+      > </a
+      ><a name="3738" class="Symbol"
+      >=</a
+      ><a name="3739"
+      > </a
+      ><a name="3740" href="lib.Funext.html#3697" class="Bound"
+      >g</a
+      ><a name="3741" class="Symbol"
+      >})</a
+      ><a name="3743"
+      >
+  </a
+      ><a name="3746" href="lib.Funext.html#3680" class="Function"
+      >&#955;=-is-equiv</a
+      ><a name="3757"
+      > </a
+      ><a name="3758" class="Symbol"
+      >=</a
+      ><a name="3759"
+      > </a
+      ><a name="3760" href="lib.Equivalences.html#1376" class="Function"
+      >is-eq</a
+      ><a name="3765"
+      > </a
+      ><a name="3766" class="Symbol"
+      >_</a
+      ><a name="3767"
+      > </a
+      ><a name="3768" href="lib.Funext.html#2734" class="Function"
+      >app=</a
+      ><a name="3772"
+      > </a
+      ><a name="3773" class="Symbol"
+      >(</a
+      ><a name="3774" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="3775"
+      > </a
+      ><a name="3776" href="lib.Base.html#7735" class="Function Operator"
+      >&#8728;</a
+      ><a name="3777"
+      > </a
+      ><a name="3778" href="lib.Funext.html#3108" class="Function"
+      >&#955;=-&#951;</a
+      ><a name="3782" class="Symbol"
+      >)</a
+      ><a name="3783"
+      > </a
+      ><a name="3784" class="Symbol"
+      >(&#955;</a
+      ><a name="3786"
+      > </a
+      ><a name="3787" href="lib.Funext.html#3787" class="Bound"
+      >h</a
+      ><a name="3788"
+      > </a
+      ><a name="3789" class="Symbol"
+      >&#8594;</a
+      ><a name="3790"
+      > </a
+      ><a name="3791" href="lib.Funext.html#2576" class="Function"
+      >&#955;=</a
+      ><a name="3793"
+      > </a
+      ><a name="3794" class="Symbol"
+      >(</a
+      ><a name="3795" href="lib.Funext.html#3194" class="Function"
+      >app=-&#946;</a
+      ><a name="3801"
+      > </a
+      ><a name="3802" href="lib.Funext.html#3787" class="Bound"
+      >h</a
+      ><a name="3803" class="Symbol"
+      >))</a
+      ><a name="3805"
+      >
+
+</a
+      ><a name="3807" class="Comment"
+      >-- We only export the following</a
+      ><a name="3838"
+      >
+
+</a
+      ><a name="3840" class="Keyword"
+      >module</a
+      ><a name="3846"
+      > </a
+      ><a name="3847" href="lib.Funext.html#3847" class="Module"
+      >_</a
+      ><a name="3848"
+      > </a
+      ><a name="3849" class="Symbol"
+      >{</a
+      ><a name="3850" href="lib.Funext.html#3850" class="Bound"
+      >j</a
+      ><a name="3851" class="Symbol"
+      >}</a
+      ><a name="3852"
+      > </a
+      ><a name="3853" class="Symbol"
+      >{</a
+      ><a name="3854" href="lib.Funext.html#3854" class="Bound"
+      >P</a
+      ><a name="3855"
+      > </a
+      ><a name="3856" class="Symbol"
+      >:</a
+      ><a name="3857"
+      > </a
+      ><a name="3858" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="3859"
+      > </a
+      ><a name="3860" class="Symbol"
+      >&#8594;</a
+      ><a name="3861"
+      > </a
+      ><a name="3862" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="3866"
+      > </a
+      ><a name="3867" href="lib.Funext.html#3850" class="Bound"
+      >j</a
+      ><a name="3868" class="Symbol"
+      >}</a
+      ><a name="3869"
+      > </a
+      ><a name="3870" class="Symbol"
+      >{</a
+      ><a name="3871" href="lib.Funext.html#3871" class="Bound"
+      >f</a
+      ><a name="3872"
+      > </a
+      ><a name="3873" href="lib.Funext.html#3873" class="Bound"
+      >g</a
+      ><a name="3874"
+      > </a
+      ><a name="3875" class="Symbol"
+      >:</a
+      ><a name="3876"
+      > </a
+      ><a name="3877" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="3878"
+      > </a
+      ><a name="3879" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="3880"
+      > </a
+      ><a name="3881" href="lib.Funext.html#3854" class="Bound"
+      >P</a
+      ><a name="3882" class="Symbol"
+      >}</a
+      ><a name="3883"
+      > </a
+      ><a name="3884" class="Keyword"
+      >where</a
+      ><a name="3889"
+      >
+
+  </a
+      ><a name="3893" href="lib.Funext.html#3893" class="Function"
+      >app=</a
+      ><a name="3897"
+      > </a
+      ><a name="3898" class="Symbol"
+      >:</a
+      ><a name="3899"
+      > </a
+      ><a name="3900" href="lib.Funext.html#3871" class="Bound"
+      >f</a
+      ><a name="3901"
+      > </a
+      ><a name="3902" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3904"
+      > </a
+      ><a name="3905" href="lib.Funext.html#3873" class="Bound"
+      >g</a
+      ><a name="3906"
+      > </a
+      ><a name="3907" class="Symbol"
+      >&#8594;</a
+      ><a name="3908"
+      > </a
+      ><a name="3909" class="Symbol"
+      >((</a
+      ><a name="3911" href="lib.Funext.html#3911" class="Bound"
+      >x</a
+      ><a name="3912"
+      > </a
+      ><a name="3913" class="Symbol"
+      >:</a
+      ><a name="3914"
+      > </a
+      ><a name="3915" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="3916" class="Symbol"
+      >)</a
+      ><a name="3917"
+      > </a
+      ><a name="3918" class="Symbol"
+      >&#8594;</a
+      ><a name="3919"
+      > </a
+      ><a name="3920" href="lib.Funext.html#3871" class="Bound"
+      >f</a
+      ><a name="3921"
+      > </a
+      ><a name="3922" href="lib.Funext.html#3911" class="Bound"
+      >x</a
+      ><a name="3923"
+      > </a
+      ><a name="3924" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3926"
+      > </a
+      ><a name="3927" href="lib.Funext.html#3873" class="Bound"
+      >g</a
+      ><a name="3928"
+      > </a
+      ><a name="3929" href="lib.Funext.html#3911" class="Bound"
+      >x</a
+      ><a name="3930" class="Symbol"
+      >)</a
+      ><a name="3931"
+      >
+  </a
+      ><a name="3934" href="lib.Funext.html#3893" class="Function"
+      >app=</a
+      ><a name="3938"
+      > </a
+      ><a name="3939" href="lib.Funext.html#3939" class="Bound"
+      >p</a
+      ><a name="3940"
+      > </a
+      ><a name="3941" href="lib.Funext.html#3941" class="Bound"
+      >x</a
+      ><a name="3942"
+      > </a
+      ><a name="3943" class="Symbol"
+      >=</a
+      ><a name="3944"
+      > </a
+      ><a name="3945" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="3947"
+      > </a
+      ><a name="3948" class="Symbol"
+      >(&#955;</a
+      ><a name="3950"
+      > </a
+      ><a name="3951" href="lib.Funext.html#3951" class="Bound"
+      >u</a
+      ><a name="3952"
+      > </a
+      ><a name="3953" class="Symbol"
+      >&#8594;</a
+      ><a name="3954"
+      > </a
+      ><a name="3955" href="lib.Funext.html#3951" class="Bound"
+      >u</a
+      ><a name="3956"
+      > </a
+      ><a name="3957" href="lib.Funext.html#3941" class="Bound"
+      >x</a
+      ><a name="3958" class="Symbol"
+      >)</a
+      ><a name="3959"
+      > </a
+      ><a name="3960" href="lib.Funext.html#3939" class="Bound"
+      >p</a
+      ><a name="3961"
+      >
+
+  </a
+      ><a name="3965" class="Keyword"
+      >abstract</a
+      ><a name="3973"
+      >
+    </a
+      ><a name="3978" href="lib.Funext.html#3978" class="Function"
+      >&#955;=</a
+      ><a name="3980"
+      > </a
+      ><a name="3981" class="Symbol"
+      >:</a
+      ><a name="3982"
+      > </a
+      ><a name="3983" class="Symbol"
+      >(</a
+      ><a name="3984" href="lib.Funext.html#3984" class="Bound"
+      >h</a
+      ><a name="3985"
+      > </a
+      ><a name="3986" class="Symbol"
+      >:</a
+      ><a name="3987"
+      > </a
+      ><a name="3988" class="Symbol"
+      >(</a
+      ><a name="3989" href="lib.Funext.html#3989" class="Bound"
+      >x</a
+      ><a name="3990"
+      > </a
+      ><a name="3991" class="Symbol"
+      >:</a
+      ><a name="3992"
+      > </a
+      ><a name="3993" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="3994" class="Symbol"
+      >)</a
+      ><a name="3995"
+      > </a
+      ><a name="3996" class="Symbol"
+      >&#8594;</a
+      ><a name="3997"
+      > </a
+      ><a name="3998" href="lib.Funext.html#3871" class="Bound"
+      >f</a
+      ><a name="3999"
+      > </a
+      ><a name="4000" href="lib.Funext.html#3989" class="Bound"
+      >x</a
+      ><a name="4001"
+      > </a
+      ><a name="4002" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4004"
+      > </a
+      ><a name="4005" href="lib.Funext.html#3873" class="Bound"
+      >g</a
+      ><a name="4006"
+      > </a
+      ><a name="4007" href="lib.Funext.html#3989" class="Bound"
+      >x</a
+      ><a name="4008" class="Symbol"
+      >)</a
+      ><a name="4009"
+      > </a
+      ><a name="4010" class="Symbol"
+      >&#8594;</a
+      ><a name="4011"
+      > </a
+      ><a name="4012" href="lib.Funext.html#3871" class="Bound"
+      >f</a
+      ><a name="4013"
+      > </a
+      ><a name="4014" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4016"
+      > </a
+      ><a name="4017" href="lib.Funext.html#3873" class="Bound"
+      >g</a
+      ><a name="4018"
+      >
+    </a
+      ><a name="4023" href="lib.Funext.html#3978" class="Function"
+      >&#955;=</a
+      ><a name="4025"
+      > </a
+      ><a name="4026" class="Symbol"
+      >=</a
+      ><a name="4027"
+      > </a
+      ><a name="4028" href="lib.Funext.html#2576" class="Function"
+      >FunextDep.&#955;=</a
+      ><a name="4040"
+      >
+
+    </a
+      ><a name="4046" href="lib.Funext.html#4046" class="Function"
+      >app=-&#946;</a
+      ><a name="4052"
+      > </a
+      ><a name="4053" class="Symbol"
+      >:</a
+      ><a name="4054"
+      > </a
+      ><a name="4055" class="Symbol"
+      >(</a
+      ><a name="4056" href="lib.Funext.html#4056" class="Bound"
+      >p</a
+      ><a name="4057"
+      > </a
+      ><a name="4058" class="Symbol"
+      >:</a
+      ><a name="4059"
+      > </a
+      ><a name="4060" class="Symbol"
+      >(</a
+      ><a name="4061" href="lib.Funext.html#4061" class="Bound"
+      >x</a
+      ><a name="4062"
+      > </a
+      ><a name="4063" class="Symbol"
+      >:</a
+      ><a name="4064"
+      > </a
+      ><a name="4065" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="4066" class="Symbol"
+      >)</a
+      ><a name="4067"
+      > </a
+      ><a name="4068" class="Symbol"
+      >&#8594;</a
+      ><a name="4069"
+      > </a
+      ><a name="4070" href="lib.Funext.html#3871" class="Bound"
+      >f</a
+      ><a name="4071"
+      > </a
+      ><a name="4072" href="lib.Funext.html#4061" class="Bound"
+      >x</a
+      ><a name="4073"
+      > </a
+      ><a name="4074" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4076"
+      > </a
+      ><a name="4077" href="lib.Funext.html#3873" class="Bound"
+      >g</a
+      ><a name="4078"
+      > </a
+      ><a name="4079" href="lib.Funext.html#4061" class="Bound"
+      >x</a
+      ><a name="4080" class="Symbol"
+      >)</a
+      ><a name="4081"
+      > </a
+      ><a name="4082" class="Symbol"
+      >(</a
+      ><a name="4083" href="lib.Funext.html#4083" class="Bound"
+      >x</a
+      ><a name="4084"
+      > </a
+      ><a name="4085" class="Symbol"
+      >:</a
+      ><a name="4086"
+      > </a
+      ><a name="4087" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="4088" class="Symbol"
+      >)</a
+      ><a name="4089"
+      > </a
+      ><a name="4090" class="Symbol"
+      >&#8594;</a
+      ><a name="4091"
+      > </a
+      ><a name="4092" href="lib.Funext.html#3893" class="Function"
+      >app=</a
+      ><a name="4096"
+      > </a
+      ><a name="4097" class="Symbol"
+      >(</a
+      ><a name="4098" href="lib.Funext.html#3978" class="Function"
+      >&#955;=</a
+      ><a name="4100"
+      > </a
+      ><a name="4101" href="lib.Funext.html#4056" class="Bound"
+      >p</a
+      ><a name="4102" class="Symbol"
+      >)</a
+      ><a name="4103"
+      > </a
+      ><a name="4104" href="lib.Funext.html#4083" class="Bound"
+      >x</a
+      ><a name="4105"
+      > </a
+      ><a name="4106" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4108"
+      > </a
+      ><a name="4109" href="lib.Funext.html#4056" class="Bound"
+      >p</a
+      ><a name="4110"
+      > </a
+      ><a name="4111" href="lib.Funext.html#4083" class="Bound"
+      >x</a
+      ><a name="4112"
+      >
+    </a
+      ><a name="4117" href="lib.Funext.html#4046" class="Function"
+      >app=-&#946;</a
+      ><a name="4123"
+      > </a
+      ><a name="4124" class="Symbol"
+      >=</a
+      ><a name="4125"
+      > </a
+      ><a name="4126" href="lib.Funext.html#3194" class="Function"
+      >StrongFunextDep.app=-&#946;</a
+      ><a name="4148"
+      >
+
+    </a
+      ><a name="4154" href="lib.Funext.html#4154" class="Function"
+      >&#955;=-&#951;</a
+      ><a name="4158"
+      > </a
+      ><a name="4159" class="Symbol"
+      >:</a
+      ><a name="4160"
+      > </a
+      ><a name="4161" class="Symbol"
+      >(</a
+      ><a name="4162" href="lib.Funext.html#4162" class="Bound"
+      >p</a
+      ><a name="4163"
+      > </a
+      ><a name="4164" class="Symbol"
+      >:</a
+      ><a name="4165"
+      > </a
+      ><a name="4166" href="lib.Funext.html#3871" class="Bound"
+      >f</a
+      ><a name="4167"
+      > </a
+      ><a name="4168" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4170"
+      > </a
+      ><a name="4171" href="lib.Funext.html#3873" class="Bound"
+      >g</a
+      ><a name="4172" class="Symbol"
+      >)</a
+      ><a name="4173"
+      > </a
+      ><a name="4174" class="Symbol"
+      >&#8594;</a
+      ><a name="4175"
+      > </a
+      ><a name="4176" href="lib.Funext.html#4162" class="Bound"
+      >p</a
+      ><a name="4177"
+      > </a
+      ><a name="4178" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4180"
+      > </a
+      ><a name="4181" href="lib.Funext.html#3978" class="Function"
+      >&#955;=</a
+      ><a name="4183"
+      > </a
+      ><a name="4184" class="Symbol"
+      >(</a
+      ><a name="4185" href="lib.Funext.html#3893" class="Function"
+      >app=</a
+      ><a name="4189"
+      > </a
+      ><a name="4190" href="lib.Funext.html#4162" class="Bound"
+      >p</a
+      ><a name="4191" class="Symbol"
+      >)</a
+      ><a name="4192"
+      >
+    </a
+      ><a name="4197" href="lib.Funext.html#4154" class="Function"
+      >&#955;=-&#951;</a
+      ><a name="4201"
+      > </a
+      ><a name="4202" class="Symbol"
+      >=</a
+      ><a name="4203"
+      > </a
+      ><a name="4204" href="lib.Funext.html#3108" class="Function"
+      >StrongFunextDep.&#955;=-&#951;</a
+      ><a name="4224"
+      >
+
+  </a
+      ><a name="4228" href="lib.Funext.html#4228" class="Function"
+      >&#955;=-equiv</a
+      ><a name="4236"
+      > </a
+      ><a name="4237" class="Symbol"
+      >:</a
+      ><a name="4238"
+      > </a
+      ><a name="4239" class="Symbol"
+      >((</a
+      ><a name="4241" href="lib.Funext.html#4241" class="Bound"
+      >x</a
+      ><a name="4242"
+      > </a
+      ><a name="4243" class="Symbol"
+      >:</a
+      ><a name="4244"
+      > </a
+      ><a name="4245" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="4246" class="Symbol"
+      >)</a
+      ><a name="4247"
+      > </a
+      ><a name="4248" class="Symbol"
+      >&#8594;</a
+      ><a name="4249"
+      > </a
+      ><a name="4250" href="lib.Funext.html#3871" class="Bound"
+      >f</a
+      ><a name="4251"
+      > </a
+      ><a name="4252" href="lib.Funext.html#4241" class="Bound"
+      >x</a
+      ><a name="4253"
+      > </a
+      ><a name="4254" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4256"
+      > </a
+      ><a name="4257" href="lib.Funext.html#3873" class="Bound"
+      >g</a
+      ><a name="4258"
+      > </a
+      ><a name="4259" href="lib.Funext.html#4241" class="Bound"
+      >x</a
+      ><a name="4260" class="Symbol"
+      >)</a
+      ><a name="4261"
+      > </a
+      ><a name="4262" href="lib.Equivalences.html#2994" class="Function Operator"
+      >&#8771;</a
+      ><a name="4263"
+      > </a
+      ><a name="4264" class="Symbol"
+      >(</a
+      ><a name="4265" href="lib.Funext.html#3871" class="Bound"
+      >f</a
+      ><a name="4266"
+      > </a
+      ><a name="4267" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4269"
+      > </a
+      ><a name="4270" href="lib.Funext.html#3873" class="Bound"
+      >g</a
+      ><a name="4271" class="Symbol"
+      >)</a
+      ><a name="4272"
+      >
+  </a
+      ><a name="4275" href="lib.Funext.html#4228" class="Function"
+      >&#955;=-equiv</a
+      ><a name="4283"
+      > </a
+      ><a name="4284" class="Symbol"
+      >=</a
+      ><a name="4285"
+      > </a
+      ><a name="4286" class="Symbol"
+      >(</a
+      ><a name="4287" href="lib.Funext.html#3978" class="Function"
+      >&#955;=</a
+      ><a name="4289"
+      > </a
+      ><a name="4290" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="4291"
+      > </a
+      ><a name="4292" href="lib.Funext.html#4330" class="Function"
+      >&#955;=-is-equiv</a
+      ><a name="4303" class="Symbol"
+      >)</a
+      ><a name="4304"
+      > </a
+      ><a name="4305" class="Keyword"
+      >where</a
+      ><a name="4310"
+      >
+    </a
+      ><a name="4315" class="Keyword"
+      >abstract</a
+      ><a name="4323"
+      >
+      </a
+      ><a name="4330" href="lib.Funext.html#4330" class="Function"
+      >&#955;=-is-equiv</a
+      ><a name="4341"
+      > </a
+      ><a name="4342" class="Symbol"
+      >:</a
+      ><a name="4343"
+      > </a
+      ><a name="4344" href="lib.Equivalences.html#986" class="Record"
+      >is-equiv</a
+      ><a name="4352"
+      > </a
+      ><a name="4353" href="lib.Funext.html#3978" class="Function"
+      >&#955;=</a
+      ><a name="4355"
+      >
+      </a
+      ><a name="4362" href="lib.Funext.html#4330" class="Function"
+      >&#955;=-is-equiv</a
+      ><a name="4373"
+      > </a
+      ><a name="4374" class="Symbol"
+      >=</a
+      ><a name="4375"
+      > </a
+      ><a name="4376" href="lib.Funext.html#3680" class="Function"
+      >StrongFunextDep.&#955;=-is-equiv</a
+      ><a name="4403"
+      >
+
+  </a
+      ><a name="4407" href="lib.Funext.html#4407" class="Function"
+      >app=-equiv</a
+      ><a name="4417"
+      > </a
+      ><a name="4418" class="Symbol"
+      >:</a
+      ><a name="4419"
+      > </a
+      ><a name="4420" class="Symbol"
+      >(</a
+      ><a name="4421" href="lib.Funext.html#3871" class="Bound"
+      >f</a
+      ><a name="4422"
+      > </a
+      ><a name="4423" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4425"
+      > </a
+      ><a name="4426" href="lib.Funext.html#3873" class="Bound"
+      >g</a
+      ><a name="4427" class="Symbol"
+      >)</a
+      ><a name="4428"
+      > </a
+      ><a name="4429" href="lib.Equivalences.html#2994" class="Function Operator"
+      >&#8771;</a
+      ><a name="4430"
+      > </a
+      ><a name="4431" class="Symbol"
+      >((</a
+      ><a name="4433" href="lib.Funext.html#4433" class="Bound"
+      >x</a
+      ><a name="4434"
+      > </a
+      ><a name="4435" class="Symbol"
+      >:</a
+      ><a name="4436"
+      > </a
+      ><a name="4437" href="lib.Funext.html#251" class="Bound"
+      >A</a
+      ><a name="4438" class="Symbol"
+      >)</a
+      ><a name="4439"
+      > </a
+      ><a name="4440" class="Symbol"
+      >&#8594;</a
+      ><a name="4441"
+      > </a
+      ><a name="4442" href="lib.Funext.html#3871" class="Bound"
+      >f</a
+      ><a name="4443"
+      > </a
+      ><a name="4444" href="lib.Funext.html#4433" class="Bound"
+      >x</a
+      ><a name="4445"
+      > </a
+      ><a name="4446" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4448"
+      > </a
+      ><a name="4449" href="lib.Funext.html#3873" class="Bound"
+      >g</a
+      ><a name="4450"
+      > </a
+      ><a name="4451" href="lib.Funext.html#4433" class="Bound"
+      >x</a
+      ><a name="4452" class="Symbol"
+      >)</a
+      ><a name="4453"
+      >
+  </a
+      ><a name="4456" href="lib.Funext.html#4407" class="Function"
+      >app=-equiv</a
+      ><a name="4466"
+      > </a
+      ><a name="4467" class="Symbol"
+      >=</a
+      ><a name="4468"
+      > </a
+      ><a name="4469" class="Symbol"
+      >(</a
+      ><a name="4470" href="lib.Funext.html#3893" class="Function"
+      >app=</a
+      ><a name="4474"
+      > </a
+      ><a name="4475" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="4476"
+      > </a
+      ><a name="4477" href="lib.Funext.html#4517" class="Function"
+      >app=-is-equiv</a
+      ><a name="4490" class="Symbol"
+      >)</a
+      ><a name="4491"
+      > </a
+      ><a name="4492" class="Keyword"
+      >where</a
+      ><a name="4497"
+      >
+    </a
+      ><a name="4502" class="Keyword"
+      >abstract</a
+      ><a name="4510"
+      >
+      </a
+      ><a name="4517" href="lib.Funext.html#4517" class="Function"
+      >app=-is-equiv</a
+      ><a name="4530"
+      > </a
+      ><a name="4531" class="Symbol"
+      >:</a
+      ><a name="4532"
+      > </a
+      ><a name="4533" href="lib.Equivalences.html#986" class="Record"
+      >is-equiv</a
+      ><a name="4541"
+      > </a
+      ><a name="4542" href="lib.Funext.html#3893" class="Function"
+      >app=</a
+      ><a name="4546"
+      >
+      </a
+      ><a name="4553" href="lib.Funext.html#4517" class="Function"
+      >app=-is-equiv</a
+      ><a name="4566"
+      > </a
+      ><a name="4567" class="Symbol"
+      >=</a
+      ><a name="4568"
+      > </a
+      ><a name="4569" href="lib.Funext.html#3551" class="Function"
+      >StrongFunextDep.app=-is-equiv</a
+      ><a name="4598"
+      > 
+</a
+      ></pre
+    ></body
+  ></html
+>

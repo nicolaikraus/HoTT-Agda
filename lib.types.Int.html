@@ -1,0 +1,5868 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >lib.types.Int</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --without-K </a
+      ><a name="25" class="Symbol"
+      >#-}</a
+      ><a name="28"
+      >
+
+</a
+      ><a name="30" class="Keyword"
+      >open</a
+      ><a name="34"
+      > </a
+      ><a name="35" class="Keyword"
+      >import</a
+      ><a name="41"
+      > </a
+      ><a name="42" href="lib.Basics.html#1" class="Module"
+      >lib.Basics</a
+      ><a name="52"
+      >
+</a
+      ><a name="53" class="Keyword"
+      >open</a
+      ><a name="57"
+      > </a
+      ><a name="58" class="Keyword"
+      >import</a
+      ><a name="64"
+      > </a
+      ><a name="65" href="lib.types.Nat.html#1" class="Module"
+      >lib.types.Nat</a
+      ><a name="78"
+      >
+</a
+      ><a name="79" class="Keyword"
+      >open</a
+      ><a name="83"
+      > </a
+      ><a name="84" class="Keyword"
+      >import</a
+      ><a name="90"
+      > </a
+      ><a name="91" href="lib.types.Group.html#1" class="Module"
+      >lib.types.Group</a
+      ><a name="106"
+      >
+
+</a
+      ><a name="108" class="Keyword"
+      >module</a
+      ><a name="114"
+      > </a
+      ><a name="115" href="lib.types.Int.html#1" class="Module"
+      >lib.types.Int</a
+      ><a name="128"
+      > </a
+      ><a name="129" class="Keyword"
+      >where</a
+      ><a name="134"
+      >
+
+</a
+      ><a name="136" class="Keyword"
+      >data</a
+      ><a name="140"
+      > </a
+      ><a name="141" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="142"
+      > </a
+      ><a name="143" class="Symbol"
+      >:</a
+      ><a name="144"
+      > </a
+      ><a name="145" href="lib.Base.html#1184" class="Function"
+      >Type&#8320;</a
+      ><a name="150"
+      > </a
+      ><a name="151" class="Keyword"
+      >where</a
+      ><a name="156"
+      >
+  </a
+      ><a name="159" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="160"
+      > </a
+      ><a name="161" class="Symbol"
+      >:</a
+      ><a name="162"
+      > </a
+      ><a name="163" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="164"
+      >
+  </a
+      ><a name="167" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="170"
+      > </a
+      ><a name="171" class="Symbol"
+      >:</a
+      ><a name="172"
+      > </a
+      ><a name="173" class="Symbol"
+      >(</a
+      ><a name="174" href="lib.types.Int.html#174" class="Bound"
+      >n</a
+      ><a name="175"
+      > </a
+      ><a name="176" class="Symbol"
+      >:</a
+      ><a name="177"
+      > </a
+      ><a name="178" href="lib.types.Nat.html#164" class="Datatype"
+      >&#8469;</a
+      ><a name="179" class="Symbol"
+      >)</a
+      ><a name="180"
+      > </a
+      ><a name="181" class="Symbol"
+      >&#8594;</a
+      ><a name="182"
+      > </a
+      ><a name="183" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="184"
+      >
+  </a
+      ><a name="187" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="190"
+      > </a
+      ><a name="191" class="Symbol"
+      >:</a
+      ><a name="192"
+      > </a
+      ><a name="193" class="Symbol"
+      >(</a
+      ><a name="194" href="lib.types.Int.html#194" class="Bound"
+      >n</a
+      ><a name="195"
+      > </a
+      ><a name="196" class="Symbol"
+      >:</a
+      ><a name="197"
+      > </a
+      ><a name="198" href="lib.types.Nat.html#164" class="Datatype"
+      >&#8469;</a
+      ><a name="199" class="Symbol"
+      >)</a
+      ><a name="200"
+      > </a
+      ><a name="201" class="Symbol"
+      >&#8594;</a
+      ><a name="202"
+      > </a
+      ><a name="203" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="204"
+      >
+
+</a
+      ><a name="206" href="lib.types.Int.html#206" class="Function"
+      >Int</a
+      ><a name="209"
+      > </a
+      ><a name="210" class="Symbol"
+      >=</a
+      ><a name="211"
+      > </a
+      ><a name="212" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="213"
+      >
+
+</a
+      ><a name="215" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="219"
+      > </a
+      ><a name="220" class="Symbol"
+      >:</a
+      ><a name="221"
+      > </a
+      ><a name="222" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="223"
+      > </a
+      ><a name="224" class="Symbol"
+      >&#8594;</a
+      ><a name="225"
+      > </a
+      ><a name="226" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="227"
+      >
+</a
+      ><a name="228" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="232"
+      > </a
+      ><a name="233" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="234"
+      > </a
+      ><a name="235" class="Symbol"
+      >=</a
+      ><a name="236"
+      > </a
+      ><a name="237" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="240"
+      > </a
+      ><a name="241" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="242"
+      >
+</a
+      ><a name="243" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="247"
+      > </a
+      ><a name="248" class="Symbol"
+      >(</a
+      ><a name="249" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="252"
+      > </a
+      ><a name="253" href="lib.types.Int.html#253" class="Bound"
+      >n</a
+      ><a name="254" class="Symbol"
+      >)</a
+      ><a name="255"
+      > </a
+      ><a name="256" class="Symbol"
+      >=</a
+      ><a name="257"
+      > </a
+      ><a name="258" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="261"
+      > </a
+      ><a name="262" class="Symbol"
+      >(</a
+      ><a name="263" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="264"
+      > </a
+      ><a name="265" href="lib.types.Int.html#253" class="Bound"
+      >n</a
+      ><a name="266" class="Symbol"
+      >)</a
+      ><a name="267"
+      >
+</a
+      ><a name="268" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="272"
+      > </a
+      ><a name="273" class="Symbol"
+      >(</a
+      ><a name="274" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="277"
+      > </a
+      ><a name="278" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="279" class="Symbol"
+      >)</a
+      ><a name="280"
+      > </a
+      ><a name="281" class="Symbol"
+      >=</a
+      ><a name="282"
+      > </a
+      ><a name="283" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="284"
+      >
+</a
+      ><a name="285" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="289"
+      > </a
+      ><a name="290" class="Symbol"
+      >(</a
+      ><a name="291" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="294"
+      > </a
+      ><a name="295" class="Symbol"
+      >(</a
+      ><a name="296" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="297"
+      > </a
+      ><a name="298" href="lib.types.Int.html#298" class="Bound"
+      >n</a
+      ><a name="299" class="Symbol"
+      >))</a
+      ><a name="301"
+      > </a
+      ><a name="302" class="Symbol"
+      >=</a
+      ><a name="303"
+      > </a
+      ><a name="304" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="307"
+      > </a
+      ><a name="308" href="lib.types.Int.html#298" class="Bound"
+      >n</a
+      ><a name="309"
+      >
+
+</a
+      ><a name="311" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="315"
+      > </a
+      ><a name="316" class="Symbol"
+      >:</a
+      ><a name="317"
+      > </a
+      ><a name="318" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="319"
+      > </a
+      ><a name="320" class="Symbol"
+      >&#8594;</a
+      ><a name="321"
+      > </a
+      ><a name="322" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="323"
+      >
+</a
+      ><a name="324" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="328"
+      > </a
+      ><a name="329" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="330"
+      > </a
+      ><a name="331" class="Symbol"
+      >=</a
+      ><a name="332"
+      > </a
+      ><a name="333" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="336"
+      > </a
+      ><a name="337" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="338"
+      >
+</a
+      ><a name="339" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="343"
+      > </a
+      ><a name="344" class="Symbol"
+      >(</a
+      ><a name="345" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="348"
+      > </a
+      ><a name="349" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="350" class="Symbol"
+      >)</a
+      ><a name="351"
+      > </a
+      ><a name="352" class="Symbol"
+      >=</a
+      ><a name="353"
+      > </a
+      ><a name="354" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="355"
+      >
+</a
+      ><a name="356" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="360"
+      > </a
+      ><a name="361" class="Symbol"
+      >(</a
+      ><a name="362" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="365"
+      > </a
+      ><a name="366" class="Symbol"
+      >(</a
+      ><a name="367" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="368"
+      > </a
+      ><a name="369" href="lib.types.Int.html#369" class="Bound"
+      >n</a
+      ><a name="370" class="Symbol"
+      >))</a
+      ><a name="372"
+      > </a
+      ><a name="373" class="Symbol"
+      >=</a
+      ><a name="374"
+      > </a
+      ><a name="375" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="378"
+      > </a
+      ><a name="379" href="lib.types.Int.html#369" class="Bound"
+      >n</a
+      ><a name="380"
+      >
+</a
+      ><a name="381" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="385"
+      > </a
+      ><a name="386" class="Symbol"
+      >(</a
+      ><a name="387" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="390"
+      > </a
+      ><a name="391" href="lib.types.Int.html#391" class="Bound"
+      >n</a
+      ><a name="392" class="Symbol"
+      >)</a
+      ><a name="393"
+      > </a
+      ><a name="394" class="Symbol"
+      >=</a
+      ><a name="395"
+      > </a
+      ><a name="396" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="399"
+      > </a
+      ><a name="400" class="Symbol"
+      >(</a
+      ><a name="401" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="402"
+      > </a
+      ><a name="403" href="lib.types.Int.html#391" class="Bound"
+      >n</a
+      ><a name="404" class="Symbol"
+      >)</a
+      ><a name="405"
+      >
+
+</a
+      ><a name="407" class="Keyword"
+      >abstract</a
+      ><a name="415"
+      >
+  </a
+      ><a name="418" href="lib.types.Int.html#418" class="Function"
+      >succ-pred</a
+      ><a name="427"
+      > </a
+      ><a name="428" class="Symbol"
+      >:</a
+      ><a name="429"
+      > </a
+      ><a name="430" class="Symbol"
+      >(</a
+      ><a name="431" href="lib.types.Int.html#431" class="Bound"
+      >n</a
+      ><a name="432"
+      > </a
+      ><a name="433" class="Symbol"
+      >:</a
+      ><a name="434"
+      > </a
+      ><a name="435" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="436" class="Symbol"
+      >)</a
+      ><a name="437"
+      > </a
+      ><a name="438" class="Symbol"
+      >&#8594;</a
+      ><a name="439"
+      > </a
+      ><a name="440" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="444"
+      > </a
+      ><a name="445" class="Symbol"
+      >(</a
+      ><a name="446" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="450"
+      > </a
+      ><a name="451" href="lib.types.Int.html#431" class="Bound"
+      >n</a
+      ><a name="452" class="Symbol"
+      >)</a
+      ><a name="453"
+      > </a
+      ><a name="454" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="456"
+      > </a
+      ><a name="457" href="lib.types.Int.html#431" class="Bound"
+      >n</a
+      ><a name="458"
+      >
+  </a
+      ><a name="461" href="lib.types.Int.html#418" class="Function"
+      >succ-pred</a
+      ><a name="470"
+      > </a
+      ><a name="471" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="472"
+      > </a
+      ><a name="473" class="Symbol"
+      >=</a
+      ><a name="474"
+      > </a
+      ><a name="475" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="478"
+      >
+  </a
+      ><a name="481" href="lib.types.Int.html#418" class="Function"
+      >succ-pred</a
+      ><a name="490"
+      > </a
+      ><a name="491" class="Symbol"
+      >(</a
+      ><a name="492" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="495"
+      > </a
+      ><a name="496" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="497" class="Symbol"
+      >)</a
+      ><a name="498"
+      > </a
+      ><a name="499" class="Symbol"
+      >=</a
+      ><a name="500"
+      > </a
+      ><a name="501" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="504"
+      >
+  </a
+      ><a name="507" href="lib.types.Int.html#418" class="Function"
+      >succ-pred</a
+      ><a name="516"
+      > </a
+      ><a name="517" class="Symbol"
+      >(</a
+      ><a name="518" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="521"
+      > </a
+      ><a name="522" class="Symbol"
+      >(</a
+      ><a name="523" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="524"
+      > </a
+      ><a name="525" href="lib.types.Int.html#525" class="Bound"
+      >n</a
+      ><a name="526" class="Symbol"
+      >))</a
+      ><a name="528"
+      > </a
+      ><a name="529" class="Symbol"
+      >=</a
+      ><a name="530"
+      > </a
+      ><a name="531" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="534"
+      >
+  </a
+      ><a name="537" href="lib.types.Int.html#418" class="Function"
+      >succ-pred</a
+      ><a name="546"
+      > </a
+      ><a name="547" class="Symbol"
+      >(</a
+      ><a name="548" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="551"
+      > </a
+      ><a name="552" href="lib.types.Int.html#552" class="Bound"
+      >n</a
+      ><a name="553" class="Symbol"
+      >)</a
+      ><a name="554"
+      > </a
+      ><a name="555" class="Symbol"
+      >=</a
+      ><a name="556"
+      > </a
+      ><a name="557" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="560"
+      >
+
+  </a
+      ><a name="564" href="lib.types.Int.html#564" class="Function"
+      >pred-succ</a
+      ><a name="573"
+      > </a
+      ><a name="574" class="Symbol"
+      >:</a
+      ><a name="575"
+      > </a
+      ><a name="576" class="Symbol"
+      >(</a
+      ><a name="577" href="lib.types.Int.html#577" class="Bound"
+      >n</a
+      ><a name="578"
+      > </a
+      ><a name="579" class="Symbol"
+      >:</a
+      ><a name="580"
+      > </a
+      ><a name="581" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="582" class="Symbol"
+      >)</a
+      ><a name="583"
+      > </a
+      ><a name="584" class="Symbol"
+      >&#8594;</a
+      ><a name="585"
+      > </a
+      ><a name="586" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="590"
+      > </a
+      ><a name="591" class="Symbol"
+      >(</a
+      ><a name="592" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="596"
+      > </a
+      ><a name="597" href="lib.types.Int.html#577" class="Bound"
+      >n</a
+      ><a name="598" class="Symbol"
+      >)</a
+      ><a name="599"
+      > </a
+      ><a name="600" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="602"
+      > </a
+      ><a name="603" href="lib.types.Int.html#577" class="Bound"
+      >n</a
+      ><a name="604"
+      >
+  </a
+      ><a name="607" href="lib.types.Int.html#564" class="Function"
+      >pred-succ</a
+      ><a name="616"
+      > </a
+      ><a name="617" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="618"
+      > </a
+      ><a name="619" class="Symbol"
+      >=</a
+      ><a name="620"
+      > </a
+      ><a name="621" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="624"
+      >
+  </a
+      ><a name="627" href="lib.types.Int.html#564" class="Function"
+      >pred-succ</a
+      ><a name="636"
+      > </a
+      ><a name="637" class="Symbol"
+      >(</a
+      ><a name="638" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="641"
+      > </a
+      ><a name="642" href="lib.types.Int.html#642" class="Bound"
+      >n</a
+      ><a name="643" class="Symbol"
+      >)</a
+      ><a name="644"
+      > </a
+      ><a name="645" class="Symbol"
+      >=</a
+      ><a name="646"
+      > </a
+      ><a name="647" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="650"
+      >
+  </a
+      ><a name="653" href="lib.types.Int.html#564" class="Function"
+      >pred-succ</a
+      ><a name="662"
+      > </a
+      ><a name="663" class="Symbol"
+      >(</a
+      ><a name="664" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="667"
+      > </a
+      ><a name="668" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="669" class="Symbol"
+      >)</a
+      ><a name="670"
+      > </a
+      ><a name="671" class="Symbol"
+      >=</a
+      ><a name="672"
+      > </a
+      ><a name="673" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="676"
+      >
+  </a
+      ><a name="679" href="lib.types.Int.html#564" class="Function"
+      >pred-succ</a
+      ><a name="688"
+      > </a
+      ><a name="689" class="Symbol"
+      >(</a
+      ><a name="690" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="693"
+      > </a
+      ><a name="694" class="Symbol"
+      >(</a
+      ><a name="695" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="696"
+      > </a
+      ><a name="697" href="lib.types.Int.html#697" class="Bound"
+      >n</a
+      ><a name="698" class="Symbol"
+      >))</a
+      ><a name="700"
+      > </a
+      ><a name="701" class="Symbol"
+      >=</a
+      ><a name="702"
+      > </a
+      ><a name="703" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="706"
+      >
+
+</a
+      ><a name="708" href="lib.types.Int.html#708" class="Function"
+      >succ-equiv</a
+      ><a name="718"
+      > </a
+      ><a name="719" class="Symbol"
+      >:</a
+      ><a name="720"
+      > </a
+      ><a name="721" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="722"
+      > </a
+      ><a name="723" href="lib.Equivalences.html#2994" class="Function Operator"
+      >&#8771;</a
+      ><a name="724"
+      > </a
+      ><a name="725" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="726"
+      >
+</a
+      ><a name="727" href="lib.types.Int.html#708" class="Function"
+      >succ-equiv</a
+      ><a name="737"
+      > </a
+      ><a name="738" class="Symbol"
+      >=</a
+      ><a name="739"
+      > </a
+      ><a name="740" href="lib.Equivalences.html#3145" class="Function"
+      >equiv</a
+      ><a name="745"
+      > </a
+      ><a name="746" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="750"
+      > </a
+      ><a name="751" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="755"
+      > </a
+      ><a name="756" href="lib.types.Int.html#418" class="Function"
+      >succ-pred</a
+      ><a name="765"
+      > </a
+      ><a name="766" href="lib.types.Int.html#564" class="Function"
+      >pred-succ</a
+      ><a name="775"
+      >
+
+</a
+      ><a name="777" class="Comment"
+      >{- Proof that [&#8484;] has decidable equality and hence is a set -}</a
+      ><a name="839"
+      >
+
+</a
+      ><a name="841" class="Keyword"
+      >private</a
+      ><a name="848"
+      >
+  </a
+      ><a name="851" href="lib.types.Int.html#851" class="Function"
+      >&#8484;-get-pos</a
+      ><a name="860"
+      > </a
+      ><a name="861" class="Symbol"
+      >:</a
+      ><a name="862"
+      > </a
+      ><a name="863" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="864"
+      > </a
+      ><a name="865" class="Symbol"
+      >&#8594;</a
+      ><a name="866"
+      > </a
+      ><a name="867" href="lib.types.Nat.html#164" class="Datatype"
+      >&#8469;</a
+      ><a name="868"
+      >
+  </a
+      ><a name="871" href="lib.types.Int.html#851" class="Function"
+      >&#8484;-get-pos</a
+      ><a name="880"
+      > </a
+      ><a name="881" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="882"
+      > </a
+      ><a name="883" class="Symbol"
+      >=</a
+      ><a name="884"
+      > </a
+      ><a name="885" class="Number"
+      >0</a
+      ><a name="886"
+      >
+  </a
+      ><a name="889" href="lib.types.Int.html#851" class="Function"
+      >&#8484;-get-pos</a
+      ><a name="898"
+      > </a
+      ><a name="899" class="Symbol"
+      >(</a
+      ><a name="900" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="903"
+      > </a
+      ><a name="904" href="lib.types.Int.html#904" class="Bound"
+      >n</a
+      ><a name="905" class="Symbol"
+      >)</a
+      ><a name="906"
+      > </a
+      ><a name="907" class="Symbol"
+      >=</a
+      ><a name="908"
+      > </a
+      ><a name="909" href="lib.types.Int.html#904" class="Bound"
+      >n</a
+      ><a name="910"
+      >
+  </a
+      ><a name="913" href="lib.types.Int.html#851" class="Function"
+      >&#8484;-get-pos</a
+      ><a name="922"
+      > </a
+      ><a name="923" class="Symbol"
+      >(</a
+      ><a name="924" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="927"
+      > </a
+      ><a name="928" href="lib.types.Int.html#928" class="Bound"
+      >n</a
+      ><a name="929" class="Symbol"
+      >)</a
+      ><a name="930"
+      > </a
+      ><a name="931" class="Symbol"
+      >=</a
+      ><a name="932"
+      > </a
+      ><a name="933" class="Number"
+      >0</a
+      ><a name="934"
+      >
+
+  </a
+      ><a name="938" href="lib.types.Int.html#938" class="Function"
+      >pos-injective</a
+      ><a name="951"
+      > </a
+      ><a name="952" class="Symbol"
+      >:</a
+      ><a name="953"
+      > </a
+      ><a name="954" class="Symbol"
+      >(</a
+      ><a name="955" href="lib.types.Int.html#955" class="Bound"
+      >n</a
+      ><a name="956"
+      > </a
+      ><a name="957" href="lib.types.Int.html#957" class="Bound"
+      >m</a
+      ><a name="958"
+      > </a
+      ><a name="959" class="Symbol"
+      >:</a
+      ><a name="960"
+      > </a
+      ><a name="961" href="lib.types.Nat.html#164" class="Datatype"
+      >&#8469;</a
+      ><a name="962" class="Symbol"
+      >)</a
+      ><a name="963"
+      > </a
+      ><a name="964" class="Symbol"
+      >(</a
+      ><a name="965" href="lib.types.Int.html#965" class="Bound"
+      >p</a
+      ><a name="966"
+      > </a
+      ><a name="967" class="Symbol"
+      >:</a
+      ><a name="968"
+      > </a
+      ><a name="969" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="972"
+      > </a
+      ><a name="973" href="lib.types.Int.html#955" class="Bound"
+      >n</a
+      ><a name="974"
+      > </a
+      ><a name="975" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="977"
+      > </a
+      ><a name="978" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="981"
+      > </a
+      ><a name="982" href="lib.types.Int.html#957" class="Bound"
+      >m</a
+      ><a name="983" class="Symbol"
+      >)</a
+      ><a name="984"
+      > </a
+      ><a name="985" class="Symbol"
+      >&#8594;</a
+      ><a name="986"
+      > </a
+      ><a name="987" href="lib.types.Int.html#955" class="Bound"
+      >n</a
+      ><a name="988"
+      > </a
+      ><a name="989" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="991"
+      > </a
+      ><a name="992" href="lib.types.Int.html#957" class="Bound"
+      >m</a
+      ><a name="993"
+      >
+  </a
+      ><a name="996" href="lib.types.Int.html#938" class="Function"
+      >pos-injective</a
+      ><a name="1009"
+      > </a
+      ><a name="1010" href="lib.types.Int.html#1010" class="Bound"
+      >n</a
+      ><a name="1011"
+      > </a
+      ><a name="1012" href="lib.types.Int.html#1012" class="Bound"
+      >m</a
+      ><a name="1013"
+      > </a
+      ><a name="1014" href="lib.types.Int.html#1014" class="Bound"
+      >p</a
+      ><a name="1015"
+      > </a
+      ><a name="1016" class="Symbol"
+      >=</a
+      ><a name="1017"
+      > </a
+      ><a name="1018" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="1020"
+      > </a
+      ><a name="1021" href="lib.types.Int.html#851" class="Function"
+      >&#8484;-get-pos</a
+      ><a name="1030"
+      > </a
+      ><a name="1031" href="lib.types.Int.html#1014" class="Bound"
+      >p</a
+      ><a name="1032"
+      >
+
+  </a
+      ><a name="1036" href="lib.types.Int.html#1036" class="Function"
+      >&#8484;-get-neg</a
+      ><a name="1045"
+      > </a
+      ><a name="1046" class="Symbol"
+      >:</a
+      ><a name="1047"
+      > </a
+      ><a name="1048" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="1049"
+      > </a
+      ><a name="1050" class="Symbol"
+      >&#8594;</a
+      ><a name="1051"
+      > </a
+      ><a name="1052" href="lib.types.Nat.html#164" class="Datatype"
+      >&#8469;</a
+      ><a name="1053"
+      >
+  </a
+      ><a name="1056" href="lib.types.Int.html#1036" class="Function"
+      >&#8484;-get-neg</a
+      ><a name="1065"
+      > </a
+      ><a name="1066" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="1067"
+      > </a
+      ><a name="1068" class="Symbol"
+      >=</a
+      ><a name="1069"
+      > </a
+      ><a name="1070" class="Number"
+      >0</a
+      ><a name="1071"
+      >
+  </a
+      ><a name="1074" href="lib.types.Int.html#1036" class="Function"
+      >&#8484;-get-neg</a
+      ><a name="1083"
+      > </a
+      ><a name="1084" class="Symbol"
+      >(</a
+      ><a name="1085" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="1088"
+      > </a
+      ><a name="1089" href="lib.types.Int.html#1089" class="Bound"
+      >n</a
+      ><a name="1090" class="Symbol"
+      >)</a
+      ><a name="1091"
+      > </a
+      ><a name="1092" class="Symbol"
+      >=</a
+      ><a name="1093"
+      > </a
+      ><a name="1094" class="Number"
+      >0</a
+      ><a name="1095"
+      >
+  </a
+      ><a name="1098" href="lib.types.Int.html#1036" class="Function"
+      >&#8484;-get-neg</a
+      ><a name="1107"
+      > </a
+      ><a name="1108" class="Symbol"
+      >(</a
+      ><a name="1109" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="1112"
+      > </a
+      ><a name="1113" href="lib.types.Int.html#1113" class="Bound"
+      >n</a
+      ><a name="1114" class="Symbol"
+      >)</a
+      ><a name="1115"
+      > </a
+      ><a name="1116" class="Symbol"
+      >=</a
+      ><a name="1117"
+      > </a
+      ><a name="1118" href="lib.types.Int.html#1113" class="Bound"
+      >n</a
+      ><a name="1119"
+      >
+
+  </a
+      ><a name="1123" href="lib.types.Int.html#1123" class="Function"
+      >neg-injective</a
+      ><a name="1136"
+      > </a
+      ><a name="1137" class="Symbol"
+      >:</a
+      ><a name="1138"
+      > </a
+      ><a name="1139" class="Symbol"
+      >(</a
+      ><a name="1140" href="lib.types.Int.html#1140" class="Bound"
+      >n</a
+      ><a name="1141"
+      > </a
+      ><a name="1142" href="lib.types.Int.html#1142" class="Bound"
+      >m</a
+      ><a name="1143"
+      > </a
+      ><a name="1144" class="Symbol"
+      >:</a
+      ><a name="1145"
+      > </a
+      ><a name="1146" href="lib.types.Nat.html#164" class="Datatype"
+      >&#8469;</a
+      ><a name="1147" class="Symbol"
+      >)</a
+      ><a name="1148"
+      > </a
+      ><a name="1149" class="Symbol"
+      >(</a
+      ><a name="1150" href="lib.types.Int.html#1150" class="Bound"
+      >p</a
+      ><a name="1151"
+      > </a
+      ><a name="1152" class="Symbol"
+      >:</a
+      ><a name="1153"
+      > </a
+      ><a name="1154" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="1157"
+      > </a
+      ><a name="1158" href="lib.types.Int.html#1140" class="Bound"
+      >n</a
+      ><a name="1159"
+      > </a
+      ><a name="1160" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1162"
+      > </a
+      ><a name="1163" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="1166"
+      > </a
+      ><a name="1167" href="lib.types.Int.html#1142" class="Bound"
+      >m</a
+      ><a name="1168" class="Symbol"
+      >)</a
+      ><a name="1169"
+      > </a
+      ><a name="1170" class="Symbol"
+      >&#8594;</a
+      ><a name="1171"
+      > </a
+      ><a name="1172" href="lib.types.Int.html#1140" class="Bound"
+      >n</a
+      ><a name="1173"
+      > </a
+      ><a name="1174" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1176"
+      > </a
+      ><a name="1177" href="lib.types.Int.html#1142" class="Bound"
+      >m</a
+      ><a name="1178"
+      >
+  </a
+      ><a name="1181" href="lib.types.Int.html#1123" class="Function"
+      >neg-injective</a
+      ><a name="1194"
+      > </a
+      ><a name="1195" href="lib.types.Int.html#1195" class="Bound"
+      >n</a
+      ><a name="1196"
+      > </a
+      ><a name="1197" href="lib.types.Int.html#1197" class="Bound"
+      >m</a
+      ><a name="1198"
+      > </a
+      ><a name="1199" href="lib.types.Int.html#1199" class="Bound"
+      >p</a
+      ><a name="1200"
+      > </a
+      ><a name="1201" class="Symbol"
+      >=</a
+      ><a name="1202"
+      > </a
+      ><a name="1203" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="1205"
+      > </a
+      ><a name="1206" href="lib.types.Int.html#1036" class="Function"
+      >&#8484;-get-neg</a
+      ><a name="1215"
+      > </a
+      ><a name="1216" href="lib.types.Int.html#1199" class="Bound"
+      >p</a
+      ><a name="1217"
+      >
+
+  </a
+      ><a name="1221" href="lib.types.Int.html#1221" class="Function"
+      >&#8484;-neg&#8800;O&#8800;pos-type</a
+      ><a name="1237"
+      > </a
+      ><a name="1238" class="Symbol"
+      >:</a
+      ><a name="1239"
+      > </a
+      ><a name="1240" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="1241"
+      > </a
+      ><a name="1242" class="Symbol"
+      >&#8594;</a
+      ><a name="1243"
+      > </a
+      ><a name="1244" href="lib.Base.html#1184" class="Function"
+      >Type&#8320;</a
+      ><a name="1249"
+      >
+  </a
+      ><a name="1252" href="lib.types.Int.html#1221" class="Function"
+      >&#8484;-neg&#8800;O&#8800;pos-type</a
+      ><a name="1268"
+      > </a
+      ><a name="1269" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="1270"
+      > </a
+      ><a name="1271" class="Symbol"
+      >=</a
+      ><a name="1272"
+      > </a
+      ><a name="1273" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="1277"
+      >
+  </a
+      ><a name="1280" href="lib.types.Int.html#1221" class="Function"
+      >&#8484;-neg&#8800;O&#8800;pos-type</a
+      ><a name="1296"
+      > </a
+      ><a name="1297" class="Symbol"
+      >(</a
+      ><a name="1298" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="1301"
+      > </a
+      ><a name="1302" href="lib.types.Int.html#1302" class="Bound"
+      >n</a
+      ><a name="1303" class="Symbol"
+      >)</a
+      ><a name="1304"
+      > </a
+      ><a name="1305" class="Symbol"
+      >=</a
+      ><a name="1306"
+      > </a
+      ><a name="1307" href="lib.Base.html#5641" class="Datatype"
+      >Empty</a
+      ><a name="1312"
+      >
+  </a
+      ><a name="1315" href="lib.types.Int.html#1221" class="Function"
+      >&#8484;-neg&#8800;O&#8800;pos-type</a
+      ><a name="1331"
+      > </a
+      ><a name="1332" class="Symbol"
+      >(</a
+      ><a name="1333" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="1336"
+      > </a
+      ><a name="1337" href="lib.types.Int.html#1337" class="Bound"
+      >n</a
+      ><a name="1338" class="Symbol"
+      >)</a
+      ><a name="1339"
+      > </a
+      ><a name="1340" class="Symbol"
+      >=</a
+      ><a name="1341"
+      > </a
+      ><a name="1342" href="lib.Base.html#5641" class="Datatype"
+      >Empty</a
+      ><a name="1347"
+      >
+
+  </a
+      ><a name="1351" href="lib.types.Int.html#1351" class="Function"
+      >&#8484;-neg&#8800;pos-type</a
+      ><a name="1365"
+      > </a
+      ><a name="1366" class="Symbol"
+      >:</a
+      ><a name="1367"
+      > </a
+      ><a name="1368" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="1369"
+      > </a
+      ><a name="1370" class="Symbol"
+      >&#8594;</a
+      ><a name="1371"
+      > </a
+      ><a name="1372" href="lib.Base.html#1184" class="Function"
+      >Type&#8320;</a
+      ><a name="1377"
+      >
+  </a
+      ><a name="1380" href="lib.types.Int.html#1351" class="Function"
+      >&#8484;-neg&#8800;pos-type</a
+      ><a name="1394"
+      > </a
+      ><a name="1395" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="1396"
+      > </a
+      ><a name="1397" class="Symbol"
+      >=</a
+      ><a name="1398"
+      > </a
+      ><a name="1399" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="1403"
+      >
+  </a
+      ><a name="1406" href="lib.types.Int.html#1351" class="Function"
+      >&#8484;-neg&#8800;pos-type</a
+      ><a name="1420"
+      > </a
+      ><a name="1421" class="Symbol"
+      >(</a
+      ><a name="1422" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="1425"
+      > </a
+      ><a name="1426" href="lib.types.Int.html#1426" class="Bound"
+      >n</a
+      ><a name="1427" class="Symbol"
+      >)</a
+      ><a name="1428"
+      > </a
+      ><a name="1429" class="Symbol"
+      >=</a
+      ><a name="1430"
+      > </a
+      ><a name="1431" href="lib.Base.html#5641" class="Datatype"
+      >Empty</a
+      ><a name="1436"
+      >
+  </a
+      ><a name="1439" href="lib.types.Int.html#1351" class="Function"
+      >&#8484;-neg&#8800;pos-type</a
+      ><a name="1453"
+      > </a
+      ><a name="1454" class="Symbol"
+      >(</a
+      ><a name="1455" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="1458"
+      > </a
+      ><a name="1459" href="lib.types.Int.html#1459" class="Bound"
+      >n</a
+      ><a name="1460" class="Symbol"
+      >)</a
+      ><a name="1461"
+      > </a
+      ><a name="1462" class="Symbol"
+      >=</a
+      ><a name="1463"
+      > </a
+      ><a name="1464" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="1468"
+      >
+
+</a
+      ><a name="1470" class="Keyword"
+      >abstract</a
+      ><a name="1478"
+      >
+  </a
+      ><a name="1481" href="lib.types.Int.html#1481" class="Function"
+      >&#8484;-O&#8800;pos</a
+      ><a name="1488"
+      > </a
+      ><a name="1489" class="Symbol"
+      >:</a
+      ><a name="1490"
+      > </a
+      ><a name="1491" class="Symbol"
+      >(</a
+      ><a name="1492" href="lib.types.Int.html#1492" class="Bound"
+      >n</a
+      ><a name="1493"
+      > </a
+      ><a name="1494" class="Symbol"
+      >:</a
+      ><a name="1495"
+      > </a
+      ><a name="1496" href="lib.types.Nat.html#164" class="Datatype"
+      >&#8469;</a
+      ><a name="1497" class="Symbol"
+      >)</a
+      ><a name="1498"
+      > </a
+      ><a name="1499" class="Symbol"
+      >&#8594;</a
+      ><a name="1500"
+      > </a
+      ><a name="1501" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="1502"
+      > </a
+      ><a name="1503" href="lib.Base.html#5821" class="Function Operator"
+      >&#8800;</a
+      ><a name="1504"
+      > </a
+      ><a name="1505" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="1508"
+      > </a
+      ><a name="1509" href="lib.types.Int.html#1492" class="Bound"
+      >n</a
+      ><a name="1510"
+      >
+  </a
+      ><a name="1513" href="lib.types.Int.html#1481" class="Function"
+      >&#8484;-O&#8800;pos</a
+      ><a name="1520"
+      > </a
+      ><a name="1521" href="lib.types.Int.html#1521" class="Bound"
+      >n</a
+      ><a name="1522"
+      > </a
+      ><a name="1523" href="lib.types.Int.html#1523" class="Bound"
+      >p</a
+      ><a name="1524"
+      > </a
+      ><a name="1525" class="Symbol"
+      >=</a
+      ><a name="1526"
+      > </a
+      ><a name="1527" href="lib.Base.html#4516" class="Function"
+      >transport</a
+      ><a name="1536"
+      > </a
+      ><a name="1537" href="lib.types.Int.html#1221" class="Function"
+      >&#8484;-neg&#8800;O&#8800;pos-type</a
+      ><a name="1553"
+      > </a
+      ><a name="1554" href="lib.types.Int.html#1523" class="Bound"
+      >p</a
+      ><a name="1555"
+      > </a
+      ><a name="1556" href="lib.Base.html#2685" class="InductiveConstructor"
+      >unit</a
+      ><a name="1560"
+      >
+
+  </a
+      ><a name="1564" href="lib.types.Int.html#1564" class="Function"
+      >&#8484;-pos&#8800;O</a
+      ><a name="1571"
+      > </a
+      ><a name="1572" class="Symbol"
+      >:</a
+      ><a name="1573"
+      > </a
+      ><a name="1574" class="Symbol"
+      >(</a
+      ><a name="1575" href="lib.types.Int.html#1575" class="Bound"
+      >n</a
+      ><a name="1576"
+      > </a
+      ><a name="1577" class="Symbol"
+      >:</a
+      ><a name="1578"
+      > </a
+      ><a name="1579" href="lib.types.Nat.html#164" class="Datatype"
+      >&#8469;</a
+      ><a name="1580" class="Symbol"
+      >)</a
+      ><a name="1581"
+      > </a
+      ><a name="1582" class="Symbol"
+      >&#8594;</a
+      ><a name="1583"
+      > </a
+      ><a name="1584" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="1587"
+      > </a
+      ><a name="1588" href="lib.types.Int.html#1575" class="Bound"
+      >n</a
+      ><a name="1589"
+      > </a
+      ><a name="1590" href="lib.Base.html#5821" class="Function Operator"
+      >&#8800;</a
+      ><a name="1591"
+      > </a
+      ><a name="1592" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="1593"
+      >
+  </a
+      ><a name="1596" href="lib.types.Int.html#1564" class="Function"
+      >&#8484;-pos&#8800;O</a
+      ><a name="1603"
+      > </a
+      ><a name="1604" href="lib.types.Int.html#1604" class="Bound"
+      >n</a
+      ><a name="1605"
+      > </a
+      ><a name="1606" href="lib.types.Int.html#1606" class="Bound"
+      >p</a
+      ><a name="1607"
+      > </a
+      ><a name="1608" class="Symbol"
+      >=</a
+      ><a name="1609"
+      > </a
+      ><a name="1610" href="lib.Base.html#4516" class="Function"
+      >transport</a
+      ><a name="1619"
+      > </a
+      ><a name="1620" href="lib.types.Int.html#1221" class="Function"
+      >&#8484;-neg&#8800;O&#8800;pos-type</a
+      ><a name="1636"
+      > </a
+      ><a name="1637" class="Symbol"
+      >(</a
+      ><a name="1638" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="1639"
+      > </a
+      ><a name="1640" href="lib.types.Int.html#1606" class="Bound"
+      >p</a
+      ><a name="1641" class="Symbol"
+      >)</a
+      ><a name="1642"
+      > </a
+      ><a name="1643" href="lib.Base.html#2685" class="InductiveConstructor"
+      >unit</a
+      ><a name="1647"
+      >
+
+  </a
+      ><a name="1651" href="lib.types.Int.html#1651" class="Function"
+      >&#8484;-O&#8800;neg</a
+      ><a name="1658"
+      > </a
+      ><a name="1659" class="Symbol"
+      >:</a
+      ><a name="1660"
+      > </a
+      ><a name="1661" class="Symbol"
+      >(</a
+      ><a name="1662" href="lib.types.Int.html#1662" class="Bound"
+      >n</a
+      ><a name="1663"
+      > </a
+      ><a name="1664" class="Symbol"
+      >:</a
+      ><a name="1665"
+      > </a
+      ><a name="1666" href="lib.types.Nat.html#164" class="Datatype"
+      >&#8469;</a
+      ><a name="1667" class="Symbol"
+      >)</a
+      ><a name="1668"
+      > </a
+      ><a name="1669" class="Symbol"
+      >&#8594;</a
+      ><a name="1670"
+      > </a
+      ><a name="1671" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="1672"
+      > </a
+      ><a name="1673" href="lib.Base.html#5821" class="Function Operator"
+      >&#8800;</a
+      ><a name="1674"
+      > </a
+      ><a name="1675" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="1678"
+      > </a
+      ><a name="1679" href="lib.types.Int.html#1662" class="Bound"
+      >n</a
+      ><a name="1680"
+      >
+  </a
+      ><a name="1683" href="lib.types.Int.html#1651" class="Function"
+      >&#8484;-O&#8800;neg</a
+      ><a name="1690"
+      > </a
+      ><a name="1691" href="lib.types.Int.html#1691" class="Bound"
+      >n</a
+      ><a name="1692"
+      > </a
+      ><a name="1693" href="lib.types.Int.html#1693" class="Bound"
+      >p</a
+      ><a name="1694"
+      > </a
+      ><a name="1695" class="Symbol"
+      >=</a
+      ><a name="1696"
+      > </a
+      ><a name="1697" href="lib.Base.html#4516" class="Function"
+      >transport</a
+      ><a name="1706"
+      > </a
+      ><a name="1707" href="lib.types.Int.html#1221" class="Function"
+      >&#8484;-neg&#8800;O&#8800;pos-type</a
+      ><a name="1723"
+      > </a
+      ><a name="1724" href="lib.types.Int.html#1693" class="Bound"
+      >p</a
+      ><a name="1725"
+      > </a
+      ><a name="1726" href="lib.Base.html#2685" class="InductiveConstructor"
+      >unit</a
+      ><a name="1730"
+      >
+
+  </a
+      ><a name="1734" href="lib.types.Int.html#1734" class="Function"
+      >&#8484;-neg&#8800;O</a
+      ><a name="1741"
+      > </a
+      ><a name="1742" class="Symbol"
+      >:</a
+      ><a name="1743"
+      > </a
+      ><a name="1744" class="Symbol"
+      >(</a
+      ><a name="1745" href="lib.types.Int.html#1745" class="Bound"
+      >n</a
+      ><a name="1746"
+      > </a
+      ><a name="1747" class="Symbol"
+      >:</a
+      ><a name="1748"
+      > </a
+      ><a name="1749" href="lib.types.Nat.html#164" class="Datatype"
+      >&#8469;</a
+      ><a name="1750" class="Symbol"
+      >)</a
+      ><a name="1751"
+      > </a
+      ><a name="1752" class="Symbol"
+      >&#8594;</a
+      ><a name="1753"
+      > </a
+      ><a name="1754" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="1757"
+      > </a
+      ><a name="1758" href="lib.types.Int.html#1745" class="Bound"
+      >n</a
+      ><a name="1759"
+      > </a
+      ><a name="1760" href="lib.Base.html#5821" class="Function Operator"
+      >&#8800;</a
+      ><a name="1761"
+      > </a
+      ><a name="1762" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="1763"
+      >
+  </a
+      ><a name="1766" href="lib.types.Int.html#1734" class="Function"
+      >&#8484;-neg&#8800;O</a
+      ><a name="1773"
+      > </a
+      ><a name="1774" href="lib.types.Int.html#1774" class="Bound"
+      >n</a
+      ><a name="1775"
+      > </a
+      ><a name="1776" href="lib.types.Int.html#1776" class="Bound"
+      >p</a
+      ><a name="1777"
+      > </a
+      ><a name="1778" class="Symbol"
+      >=</a
+      ><a name="1779"
+      > </a
+      ><a name="1780" href="lib.Base.html#4516" class="Function"
+      >transport</a
+      ><a name="1789"
+      > </a
+      ><a name="1790" href="lib.types.Int.html#1221" class="Function"
+      >&#8484;-neg&#8800;O&#8800;pos-type</a
+      ><a name="1806"
+      > </a
+      ><a name="1807" class="Symbol"
+      >(</a
+      ><a name="1808" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="1809"
+      > </a
+      ><a name="1810" href="lib.types.Int.html#1776" class="Bound"
+      >p</a
+      ><a name="1811" class="Symbol"
+      >)</a
+      ><a name="1812"
+      > </a
+      ><a name="1813" href="lib.Base.html#2685" class="InductiveConstructor"
+      >unit</a
+      ><a name="1817"
+      >
+
+  </a
+      ><a name="1821" href="lib.types.Int.html#1821" class="Function"
+      >&#8484;-neg&#8800;pos</a
+      ><a name="1830"
+      > </a
+      ><a name="1831" class="Symbol"
+      >:</a
+      ><a name="1832"
+      > </a
+      ><a name="1833" class="Symbol"
+      >(</a
+      ><a name="1834" href="lib.types.Int.html#1834" class="Bound"
+      >n</a
+      ><a name="1835"
+      > </a
+      ><a name="1836" href="lib.types.Int.html#1836" class="Bound"
+      >m</a
+      ><a name="1837"
+      > </a
+      ><a name="1838" class="Symbol"
+      >:</a
+      ><a name="1839"
+      > </a
+      ><a name="1840" href="lib.types.Nat.html#164" class="Datatype"
+      >&#8469;</a
+      ><a name="1841" class="Symbol"
+      >)</a
+      ><a name="1842"
+      > </a
+      ><a name="1843" class="Symbol"
+      >&#8594;</a
+      ><a name="1844"
+      > </a
+      ><a name="1845" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="1848"
+      > </a
+      ><a name="1849" href="lib.types.Int.html#1834" class="Bound"
+      >n</a
+      ><a name="1850"
+      > </a
+      ><a name="1851" href="lib.Base.html#5821" class="Function Operator"
+      >&#8800;</a
+      ><a name="1852"
+      > </a
+      ><a name="1853" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="1856"
+      > </a
+      ><a name="1857" href="lib.types.Int.html#1836" class="Bound"
+      >m</a
+      ><a name="1858"
+      >
+  </a
+      ><a name="1861" href="lib.types.Int.html#1821" class="Function"
+      >&#8484;-neg&#8800;pos</a
+      ><a name="1870"
+      > </a
+      ><a name="1871" href="lib.types.Int.html#1871" class="Bound"
+      >n</a
+      ><a name="1872"
+      > </a
+      ><a name="1873" href="lib.types.Int.html#1873" class="Bound"
+      >m</a
+      ><a name="1874"
+      > </a
+      ><a name="1875" href="lib.types.Int.html#1875" class="Bound"
+      >p</a
+      ><a name="1876"
+      > </a
+      ><a name="1877" class="Symbol"
+      >=</a
+      ><a name="1878"
+      > </a
+      ><a name="1879" href="lib.Base.html#4516" class="Function"
+      >transport</a
+      ><a name="1888"
+      > </a
+      ><a name="1889" href="lib.types.Int.html#1351" class="Function"
+      >&#8484;-neg&#8800;pos-type</a
+      ><a name="1903"
+      > </a
+      ><a name="1904" href="lib.types.Int.html#1875" class="Bound"
+      >p</a
+      ><a name="1905"
+      > </a
+      ><a name="1906" href="lib.Base.html#2685" class="InductiveConstructor"
+      >unit</a
+      ><a name="1910"
+      >
+
+  </a
+      ><a name="1914" href="lib.types.Int.html#1914" class="Function"
+      >&#8484;-pos&#8800;neg</a
+      ><a name="1923"
+      > </a
+      ><a name="1924" class="Symbol"
+      >:</a
+      ><a name="1925"
+      > </a
+      ><a name="1926" class="Symbol"
+      >(</a
+      ><a name="1927" href="lib.types.Int.html#1927" class="Bound"
+      >n</a
+      ><a name="1928"
+      > </a
+      ><a name="1929" href="lib.types.Int.html#1929" class="Bound"
+      >m</a
+      ><a name="1930"
+      > </a
+      ><a name="1931" class="Symbol"
+      >:</a
+      ><a name="1932"
+      > </a
+      ><a name="1933" href="lib.types.Nat.html#164" class="Datatype"
+      >&#8469;</a
+      ><a name="1934" class="Symbol"
+      >)</a
+      ><a name="1935"
+      > </a
+      ><a name="1936" class="Symbol"
+      >&#8594;</a
+      ><a name="1937"
+      > </a
+      ><a name="1938" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="1941"
+      > </a
+      ><a name="1942" href="lib.types.Int.html#1927" class="Bound"
+      >n</a
+      ><a name="1943"
+      > </a
+      ><a name="1944" href="lib.Base.html#5821" class="Function Operator"
+      >&#8800;</a
+      ><a name="1945"
+      > </a
+      ><a name="1946" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="1949"
+      > </a
+      ><a name="1950" href="lib.types.Int.html#1929" class="Bound"
+      >m</a
+      ><a name="1951"
+      >
+  </a
+      ><a name="1954" href="lib.types.Int.html#1914" class="Function"
+      >&#8484;-pos&#8800;neg</a
+      ><a name="1963"
+      > </a
+      ><a name="1964" href="lib.types.Int.html#1964" class="Bound"
+      >n</a
+      ><a name="1965"
+      > </a
+      ><a name="1966" href="lib.types.Int.html#1966" class="Bound"
+      >m</a
+      ><a name="1967"
+      > </a
+      ><a name="1968" href="lib.types.Int.html#1968" class="Bound"
+      >p</a
+      ><a name="1969"
+      > </a
+      ><a name="1970" class="Symbol"
+      >=</a
+      ><a name="1971"
+      > </a
+      ><a name="1972" href="lib.Base.html#4516" class="Function"
+      >transport</a
+      ><a name="1981"
+      > </a
+      ><a name="1982" href="lib.types.Int.html#1351" class="Function"
+      >&#8484;-neg&#8800;pos-type</a
+      ><a name="1996"
+      > </a
+      ><a name="1997" class="Symbol"
+      >(</a
+      ><a name="1998" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="1999"
+      > </a
+      ><a name="2000" href="lib.types.Int.html#1968" class="Bound"
+      >p</a
+      ><a name="2001" class="Symbol"
+      >)</a
+      ><a name="2002"
+      > </a
+      ><a name="2003" href="lib.Base.html#2685" class="InductiveConstructor"
+      >unit</a
+      ><a name="2007"
+      >
+
+  </a
+      ><a name="2011" href="lib.types.Int.html#2011" class="Function"
+      >&#8484;-has-dec-eq</a
+      ><a name="2023"
+      > </a
+      ><a name="2024" class="Symbol"
+      >:</a
+      ><a name="2025"
+      > </a
+      ><a name="2026" href="lib.NType.html#1302" class="Function"
+      >has-dec-eq</a
+      ><a name="2036"
+      > </a
+      ><a name="2037" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="2038"
+      >
+  </a
+      ><a name="2041" href="lib.types.Int.html#2011" class="Function"
+      >&#8484;-has-dec-eq</a
+      ><a name="2053"
+      > </a
+      ><a name="2054" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="2055"
+      > </a
+      ><a name="2056" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="2057"
+      > </a
+      ><a name="2058" class="Symbol"
+      >=</a
+      ><a name="2059"
+      > </a
+      ><a name="2060" href="lib.Base.html#9036" class="InductiveConstructor"
+      >inl</a
+      ><a name="2063"
+      > </a
+      ><a name="2064" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2067"
+      >
+  </a
+      ><a name="2070" href="lib.types.Int.html#2011" class="Function"
+      >&#8484;-has-dec-eq</a
+      ><a name="2082"
+      > </a
+      ><a name="2083" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="2084"
+      > </a
+      ><a name="2085" class="Symbol"
+      >(</a
+      ><a name="2086" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2089"
+      > </a
+      ><a name="2090" href="lib.types.Int.html#2090" class="Bound"
+      >n</a
+      ><a name="2091" class="Symbol"
+      >)</a
+      ><a name="2092"
+      > </a
+      ><a name="2093" class="Symbol"
+      >=</a
+      ><a name="2094"
+      > </a
+      ><a name="2095" href="lib.Base.html#9059" class="InductiveConstructor"
+      >inr</a
+      ><a name="2098"
+      > </a
+      ><a name="2099" class="Symbol"
+      >(</a
+      ><a name="2100" href="lib.types.Int.html#1481" class="Function"
+      >&#8484;-O&#8800;pos</a
+      ><a name="2107"
+      > </a
+      ><a name="2108" href="lib.types.Int.html#2090" class="Bound"
+      >n</a
+      ><a name="2109" class="Symbol"
+      >)</a
+      ><a name="2110"
+      >
+  </a
+      ><a name="2113" href="lib.types.Int.html#2011" class="Function"
+      >&#8484;-has-dec-eq</a
+      ><a name="2125"
+      > </a
+      ><a name="2126" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="2127"
+      > </a
+      ><a name="2128" class="Symbol"
+      >(</a
+      ><a name="2129" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="2132"
+      > </a
+      ><a name="2133" href="lib.types.Int.html#2133" class="Bound"
+      >n</a
+      ><a name="2134" class="Symbol"
+      >)</a
+      ><a name="2135"
+      > </a
+      ><a name="2136" class="Symbol"
+      >=</a
+      ><a name="2137"
+      > </a
+      ><a name="2138" href="lib.Base.html#9059" class="InductiveConstructor"
+      >inr</a
+      ><a name="2141"
+      > </a
+      ><a name="2142" class="Symbol"
+      >(</a
+      ><a name="2143" href="lib.types.Int.html#1651" class="Function"
+      >&#8484;-O&#8800;neg</a
+      ><a name="2150"
+      > </a
+      ><a name="2151" href="lib.types.Int.html#2133" class="Bound"
+      >n</a
+      ><a name="2152" class="Symbol"
+      >)</a
+      ><a name="2153"
+      >
+  </a
+      ><a name="2156" href="lib.types.Int.html#2011" class="Function"
+      >&#8484;-has-dec-eq</a
+      ><a name="2168"
+      > </a
+      ><a name="2169" class="Symbol"
+      >(</a
+      ><a name="2170" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2173"
+      > </a
+      ><a name="2174" href="lib.types.Int.html#2174" class="Bound"
+      >n</a
+      ><a name="2175" class="Symbol"
+      >)</a
+      ><a name="2176"
+      > </a
+      ><a name="2177" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="2178"
+      > </a
+      ><a name="2179" class="Symbol"
+      >=</a
+      ><a name="2180"
+      > </a
+      ><a name="2181" href="lib.Base.html#9059" class="InductiveConstructor"
+      >inr</a
+      ><a name="2184"
+      > </a
+      ><a name="2185" class="Symbol"
+      >(</a
+      ><a name="2186" href="lib.types.Int.html#1564" class="Function"
+      >&#8484;-pos&#8800;O</a
+      ><a name="2193"
+      > </a
+      ><a name="2194" href="lib.types.Int.html#2174" class="Bound"
+      >n</a
+      ><a name="2195" class="Symbol"
+      >)</a
+      ><a name="2196"
+      >
+  </a
+      ><a name="2199" href="lib.types.Int.html#2011" class="Function"
+      >&#8484;-has-dec-eq</a
+      ><a name="2211"
+      > </a
+      ><a name="2212" class="Symbol"
+      >(</a
+      ><a name="2213" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2216"
+      > </a
+      ><a name="2217" href="lib.types.Int.html#2217" class="Bound"
+      >n</a
+      ><a name="2218" class="Symbol"
+      >)</a
+      ><a name="2219"
+      > </a
+      ><a name="2220" class="Symbol"
+      >(</a
+      ><a name="2221" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2224"
+      > </a
+      ><a name="2225" href="lib.types.Int.html#2225" class="Bound"
+      >m</a
+      ><a name="2226" class="Symbol"
+      >)</a
+      ><a name="2227"
+      > </a
+      ><a name="2228" class="Keyword"
+      >with</a
+      ><a name="2232"
+      > </a
+      ><a name="2233" href="lib.types.Nat.html#1187" class="Function"
+      >&#8469;-has-dec-eq</a
+      ><a name="2245"
+      > </a
+      ><a name="2246" href="lib.types.Int.html#2217" class="Bound"
+      >n</a
+      ><a name="2247"
+      > </a
+      ><a name="2248" href="lib.types.Int.html#2225" class="Bound"
+      >m</a
+      ><a name="2249"
+      >
+  </a
+      ><a name="2252" href="lib.types.Int.html#2011" class="Function"
+      >&#8484;-has-dec-eq</a
+      ><a name="2264"
+      > </a
+      ><a name="2265" class="Symbol"
+      >(</a
+      ><a name="2266" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2269"
+      > </a
+      ><a name="2270" href="lib.types.Int.html#2270" class="Bound"
+      >n</a
+      ><a name="2271" class="Symbol"
+      >)</a
+      ><a name="2272"
+      > </a
+      ><a name="2273" class="Symbol"
+      >(</a
+      ><a name="2274" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2277"
+      > </a
+      ><a name="2278" href="lib.types.Int.html#2278" class="Bound"
+      >m</a
+      ><a name="2279" class="Symbol"
+      >)</a
+      ><a name="2280"
+      > </a
+      ><a name="2281" class="Symbol"
+      >|</a
+      ><a name="2282"
+      > </a
+      ><a name="2283" href="lib.Base.html#9036" class="InductiveConstructor"
+      >inl</a
+      ><a name="2286"
+      > </a
+      ><a name="2287" href="lib.types.Int.html#2287" class="Bound"
+      >p</a
+      ><a name="2288"
+      > </a
+      ><a name="2289" class="Symbol"
+      >=</a
+      ><a name="2290"
+      > </a
+      ><a name="2291" href="lib.Base.html#9036" class="InductiveConstructor"
+      >inl</a
+      ><a name="2294"
+      > </a
+      ><a name="2295" class="Symbol"
+      >(</a
+      ><a name="2296" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2298"
+      > </a
+      ><a name="2299" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2302"
+      > </a
+      ><a name="2303" href="lib.types.Int.html#2287" class="Bound"
+      >p</a
+      ><a name="2304" class="Symbol"
+      >)</a
+      ><a name="2305"
+      >
+  </a
+      ><a name="2308" href="lib.types.Int.html#2011" class="Function"
+      >&#8484;-has-dec-eq</a
+      ><a name="2320"
+      > </a
+      ><a name="2321" class="Symbol"
+      >(</a
+      ><a name="2322" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2325"
+      > </a
+      ><a name="2326" href="lib.types.Int.html#2326" class="Bound"
+      >n</a
+      ><a name="2327" class="Symbol"
+      >)</a
+      ><a name="2328"
+      > </a
+      ><a name="2329" class="Symbol"
+      >(</a
+      ><a name="2330" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2333"
+      > </a
+      ><a name="2334" href="lib.types.Int.html#2334" class="Bound"
+      >m</a
+      ><a name="2335" class="Symbol"
+      >)</a
+      ><a name="2336"
+      > </a
+      ><a name="2337" class="Symbol"
+      >|</a
+      ><a name="2338"
+      > </a
+      ><a name="2339" href="lib.Base.html#9059" class="InductiveConstructor"
+      >inr</a
+      ><a name="2342"
+      > </a
+      ><a name="2343" href="lib.types.Int.html#2343" class="Bound"
+      >p&#8869;</a
+      ><a name="2345"
+      > </a
+      ><a name="2346" class="Symbol"
+      >=</a
+      ><a name="2347"
+      > </a
+      ><a name="2348" href="lib.Base.html#9059" class="InductiveConstructor"
+      >inr</a
+      ><a name="2351"
+      > </a
+      ><a name="2352" class="Symbol"
+      >(&#955;</a
+      ><a name="2354"
+      > </a
+      ><a name="2355" href="lib.types.Int.html#2355" class="Bound"
+      >p</a
+      ><a name="2356"
+      > </a
+      ><a name="2357" class="Symbol"
+      >&#8594;</a
+      ><a name="2358"
+      > </a
+      ><a name="2359" href="lib.types.Int.html#2343" class="Bound"
+      >p&#8869;</a
+      ><a name="2361"
+      > </a
+      ><a name="2362" class="Symbol"
+      >(</a
+      ><a name="2363" href="lib.types.Int.html#938" class="Function"
+      >pos-injective</a
+      ><a name="2376"
+      > </a
+      ><a name="2377" href="lib.types.Int.html#2326" class="Bound"
+      >n</a
+      ><a name="2378"
+      > </a
+      ><a name="2379" href="lib.types.Int.html#2334" class="Bound"
+      >m</a
+      ><a name="2380"
+      > </a
+      ><a name="2381" href="lib.types.Int.html#2355" class="Bound"
+      >p</a
+      ><a name="2382" class="Symbol"
+      >))</a
+      ><a name="2384"
+      >
+  </a
+      ><a name="2387" href="lib.types.Int.html#2011" class="Function"
+      >&#8484;-has-dec-eq</a
+      ><a name="2399"
+      > </a
+      ><a name="2400" class="Symbol"
+      >(</a
+      ><a name="2401" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2404"
+      > </a
+      ><a name="2405" href="lib.types.Int.html#2405" class="Bound"
+      >n</a
+      ><a name="2406" class="Symbol"
+      >)</a
+      ><a name="2407"
+      > </a
+      ><a name="2408" class="Symbol"
+      >(</a
+      ><a name="2409" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="2412"
+      > </a
+      ><a name="2413" href="lib.types.Int.html#2413" class="Bound"
+      >m</a
+      ><a name="2414" class="Symbol"
+      >)</a
+      ><a name="2415"
+      > </a
+      ><a name="2416" class="Symbol"
+      >=</a
+      ><a name="2417"
+      > </a
+      ><a name="2418" href="lib.Base.html#9059" class="InductiveConstructor"
+      >inr</a
+      ><a name="2421"
+      > </a
+      ><a name="2422" class="Symbol"
+      >(</a
+      ><a name="2423" href="lib.types.Int.html#1914" class="Function"
+      >&#8484;-pos&#8800;neg</a
+      ><a name="2432"
+      > </a
+      ><a name="2433" href="lib.types.Int.html#2405" class="Bound"
+      >n</a
+      ><a name="2434"
+      > </a
+      ><a name="2435" href="lib.types.Int.html#2413" class="Bound"
+      >m</a
+      ><a name="2436" class="Symbol"
+      >)</a
+      ><a name="2437"
+      >
+  </a
+      ><a name="2440" href="lib.types.Int.html#2011" class="Function"
+      >&#8484;-has-dec-eq</a
+      ><a name="2452"
+      > </a
+      ><a name="2453" class="Symbol"
+      >(</a
+      ><a name="2454" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="2457"
+      > </a
+      ><a name="2458" href="lib.types.Int.html#2458" class="Bound"
+      >n</a
+      ><a name="2459" class="Symbol"
+      >)</a
+      ><a name="2460"
+      > </a
+      ><a name="2461" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="2462"
+      > </a
+      ><a name="2463" class="Symbol"
+      >=</a
+      ><a name="2464"
+      > </a
+      ><a name="2465" href="lib.Base.html#9059" class="InductiveConstructor"
+      >inr</a
+      ><a name="2468"
+      > </a
+      ><a name="2469" class="Symbol"
+      >(</a
+      ><a name="2470" href="lib.types.Int.html#1734" class="Function"
+      >&#8484;-neg&#8800;O</a
+      ><a name="2477"
+      > </a
+      ><a name="2478" href="lib.types.Int.html#2458" class="Bound"
+      >n</a
+      ><a name="2479" class="Symbol"
+      >)</a
+      ><a name="2480"
+      >
+  </a
+      ><a name="2483" href="lib.types.Int.html#2011" class="Function"
+      >&#8484;-has-dec-eq</a
+      ><a name="2495"
+      > </a
+      ><a name="2496" class="Symbol"
+      >(</a
+      ><a name="2497" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="2500"
+      > </a
+      ><a name="2501" href="lib.types.Int.html#2501" class="Bound"
+      >n</a
+      ><a name="2502" class="Symbol"
+      >)</a
+      ><a name="2503"
+      > </a
+      ><a name="2504" class="Symbol"
+      >(</a
+      ><a name="2505" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2508"
+      > </a
+      ><a name="2509" href="lib.types.Int.html#2509" class="Bound"
+      >m</a
+      ><a name="2510" class="Symbol"
+      >)</a
+      ><a name="2511"
+      > </a
+      ><a name="2512" class="Symbol"
+      >=</a
+      ><a name="2513"
+      > </a
+      ><a name="2514" href="lib.Base.html#9059" class="InductiveConstructor"
+      >inr</a
+      ><a name="2517"
+      > </a
+      ><a name="2518" class="Symbol"
+      >(</a
+      ><a name="2519" href="lib.types.Int.html#1821" class="Function"
+      >&#8484;-neg&#8800;pos</a
+      ><a name="2528"
+      > </a
+      ><a name="2529" href="lib.types.Int.html#2501" class="Bound"
+      >n</a
+      ><a name="2530"
+      > </a
+      ><a name="2531" href="lib.types.Int.html#2509" class="Bound"
+      >m</a
+      ><a name="2532" class="Symbol"
+      >)</a
+      ><a name="2533"
+      >
+  </a
+      ><a name="2536" href="lib.types.Int.html#2011" class="Function"
+      >&#8484;-has-dec-eq</a
+      ><a name="2548"
+      > </a
+      ><a name="2549" class="Symbol"
+      >(</a
+      ><a name="2550" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="2553"
+      > </a
+      ><a name="2554" href="lib.types.Int.html#2554" class="Bound"
+      >n</a
+      ><a name="2555" class="Symbol"
+      >)</a
+      ><a name="2556"
+      > </a
+      ><a name="2557" class="Symbol"
+      >(</a
+      ><a name="2558" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="2561"
+      > </a
+      ><a name="2562" href="lib.types.Int.html#2562" class="Bound"
+      >m</a
+      ><a name="2563" class="Symbol"
+      >)</a
+      ><a name="2564"
+      > </a
+      ><a name="2565" class="Keyword"
+      >with</a
+      ><a name="2569"
+      > </a
+      ><a name="2570" href="lib.types.Nat.html#1187" class="Function"
+      >&#8469;-has-dec-eq</a
+      ><a name="2582"
+      > </a
+      ><a name="2583" href="lib.types.Int.html#2554" class="Bound"
+      >n</a
+      ><a name="2584"
+      > </a
+      ><a name="2585" href="lib.types.Int.html#2562" class="Bound"
+      >m</a
+      ><a name="2586"
+      >
+  </a
+      ><a name="2589" href="lib.types.Int.html#2011" class="Function"
+      >&#8484;-has-dec-eq</a
+      ><a name="2601"
+      > </a
+      ><a name="2602" class="Symbol"
+      >(</a
+      ><a name="2603" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="2606"
+      > </a
+      ><a name="2607" href="lib.types.Int.html#2607" class="Bound"
+      >n</a
+      ><a name="2608" class="Symbol"
+      >)</a
+      ><a name="2609"
+      > </a
+      ><a name="2610" class="Symbol"
+      >(</a
+      ><a name="2611" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="2614"
+      > </a
+      ><a name="2615" href="lib.types.Int.html#2615" class="Bound"
+      >m</a
+      ><a name="2616" class="Symbol"
+      >)</a
+      ><a name="2617"
+      > </a
+      ><a name="2618" class="Symbol"
+      >|</a
+      ><a name="2619"
+      > </a
+      ><a name="2620" href="lib.Base.html#9036" class="InductiveConstructor"
+      >inl</a
+      ><a name="2623"
+      > </a
+      ><a name="2624" href="lib.types.Int.html#2624" class="Bound"
+      >p</a
+      ><a name="2625"
+      > </a
+      ><a name="2626" class="Symbol"
+      >=</a
+      ><a name="2627"
+      > </a
+      ><a name="2628" href="lib.Base.html#9036" class="InductiveConstructor"
+      >inl</a
+      ><a name="2631"
+      > </a
+      ><a name="2632" class="Symbol"
+      >(</a
+      ><a name="2633" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="2635"
+      > </a
+      ><a name="2636" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="2639"
+      > </a
+      ><a name="2640" href="lib.types.Int.html#2624" class="Bound"
+      >p</a
+      ><a name="2641" class="Symbol"
+      >)</a
+      ><a name="2642"
+      >
+  </a
+      ><a name="2645" href="lib.types.Int.html#2011" class="Function"
+      >&#8484;-has-dec-eq</a
+      ><a name="2657"
+      > </a
+      ><a name="2658" class="Symbol"
+      >(</a
+      ><a name="2659" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="2662"
+      > </a
+      ><a name="2663" href="lib.types.Int.html#2663" class="Bound"
+      >n</a
+      ><a name="2664" class="Symbol"
+      >)</a
+      ><a name="2665"
+      > </a
+      ><a name="2666" class="Symbol"
+      >(</a
+      ><a name="2667" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="2670"
+      > </a
+      ><a name="2671" href="lib.types.Int.html#2671" class="Bound"
+      >m</a
+      ><a name="2672" class="Symbol"
+      >)</a
+      ><a name="2673"
+      > </a
+      ><a name="2674" class="Symbol"
+      >|</a
+      ><a name="2675"
+      > </a
+      ><a name="2676" href="lib.Base.html#9059" class="InductiveConstructor"
+      >inr</a
+      ><a name="2679"
+      > </a
+      ><a name="2680" href="lib.types.Int.html#2680" class="Bound"
+      >p&#8869;</a
+      ><a name="2682"
+      > </a
+      ><a name="2683" class="Symbol"
+      >=</a
+      ><a name="2684"
+      > </a
+      ><a name="2685" href="lib.Base.html#9059" class="InductiveConstructor"
+      >inr</a
+      ><a name="2688"
+      > </a
+      ><a name="2689" class="Symbol"
+      >(&#955;</a
+      ><a name="2691"
+      > </a
+      ><a name="2692" href="lib.types.Int.html#2692" class="Bound"
+      >p</a
+      ><a name="2693"
+      > </a
+      ><a name="2694" class="Symbol"
+      >&#8594;</a
+      ><a name="2695"
+      > </a
+      ><a name="2696" href="lib.types.Int.html#2680" class="Bound"
+      >p&#8869;</a
+      ><a name="2698"
+      > </a
+      ><a name="2699" class="Symbol"
+      >(</a
+      ><a name="2700" href="lib.types.Int.html#1123" class="Function"
+      >neg-injective</a
+      ><a name="2713"
+      > </a
+      ><a name="2714" href="lib.types.Int.html#2663" class="Bound"
+      >n</a
+      ><a name="2715"
+      > </a
+      ><a name="2716" href="lib.types.Int.html#2671" class="Bound"
+      >m</a
+      ><a name="2717"
+      > </a
+      ><a name="2718" href="lib.types.Int.html#2692" class="Bound"
+      >p</a
+      ><a name="2719" class="Symbol"
+      >))</a
+      ><a name="2721"
+      >
+
+  </a
+      ><a name="2725" href="lib.types.Int.html#2725" class="Function"
+      >&#8484;-is-set</a
+      ><a name="2733"
+      > </a
+      ><a name="2734" class="Symbol"
+      >:</a
+      ><a name="2735"
+      > </a
+      ><a name="2736" href="lib.NType.html#388" class="Function"
+      >is-set</a
+      ><a name="2742"
+      > </a
+      ><a name="2743" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="2744"
+      >
+  </a
+      ><a name="2747" href="lib.types.Int.html#2725" class="Function"
+      >&#8484;-is-set</a
+      ><a name="2755"
+      > </a
+      ><a name="2756" class="Symbol"
+      >=</a
+      ><a name="2757"
+      > </a
+      ><a name="2758" href="lib.NType.html#1394" class="Function"
+      >dec-eq-is-set</a
+      ><a name="2771"
+      > </a
+      ><a name="2772" href="lib.types.Int.html#2011" class="Function"
+      >&#8484;-has-dec-eq</a
+      ><a name="2784"
+      >
+
+</a
+      ><a name="2786" href="lib.types.Int.html#2786" class="Function"
+      >&#8484;-level</a
+      ><a name="2793"
+      > </a
+      ><a name="2794" class="Symbol"
+      >=</a
+      ><a name="2795"
+      > </a
+      ><a name="2796" href="lib.types.Int.html#2725" class="Function"
+      >&#8484;-is-set</a
+      ><a name="2804"
+      >
+
+</a
+      ><a name="2806" class="Comment"
+      >{-
+  &#8484; is also a group!
+-}</a
+      ><a name="2832"
+      >
+
+</a
+      ><a name="2834" class="Comment"
+      >-- inv</a
+      ><a name="2840"
+      >
+</a
+      ><a name="2841" href="lib.types.Int.html#2841" class="Function"
+      >&#8484;~</a
+      ><a name="2843"
+      > </a
+      ><a name="2844" class="Symbol"
+      >:</a
+      ><a name="2845"
+      > </a
+      ><a name="2846" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="2847"
+      > </a
+      ><a name="2848" class="Symbol"
+      >&#8594;</a
+      ><a name="2849"
+      > </a
+      ><a name="2850" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="2851"
+      >
+</a
+      ><a name="2852" href="lib.types.Int.html#2841" class="Function"
+      >&#8484;~</a
+      ><a name="2854"
+      > </a
+      ><a name="2855" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="2856"
+      > </a
+      ><a name="2857" class="Symbol"
+      >=</a
+      ><a name="2858"
+      > </a
+      ><a name="2859" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="2860"
+      >
+</a
+      ><a name="2861" href="lib.types.Int.html#2841" class="Function"
+      >&#8484;~</a
+      ><a name="2863"
+      > </a
+      ><a name="2864" class="Symbol"
+      >(</a
+      ><a name="2865" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2868"
+      > </a
+      ><a name="2869" href="lib.types.Int.html#2869" class="Bound"
+      >n</a
+      ><a name="2870" class="Symbol"
+      >)</a
+      ><a name="2871"
+      > </a
+      ><a name="2872" class="Symbol"
+      >=</a
+      ><a name="2873"
+      > </a
+      ><a name="2874" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="2877"
+      > </a
+      ><a name="2878" href="lib.types.Int.html#2869" class="Bound"
+      >n</a
+      ><a name="2879"
+      >
+</a
+      ><a name="2880" href="lib.types.Int.html#2841" class="Function"
+      >&#8484;~</a
+      ><a name="2882"
+      > </a
+      ><a name="2883" class="Symbol"
+      >(</a
+      ><a name="2884" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="2887"
+      > </a
+      ><a name="2888" href="lib.types.Int.html#2888" class="Bound"
+      >n</a
+      ><a name="2889" class="Symbol"
+      >)</a
+      ><a name="2890"
+      > </a
+      ><a name="2891" class="Symbol"
+      >=</a
+      ><a name="2892"
+      > </a
+      ><a name="2893" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2896"
+      > </a
+      ><a name="2897" href="lib.types.Int.html#2888" class="Bound"
+      >n</a
+      ><a name="2898"
+      >
+
+</a
+      ><a name="2900" class="Comment"
+      >-- comp</a
+      ><a name="2907"
+      >
+</a
+      ><a name="2908" href="lib.types.Int.html#2908" class="Function Operator"
+      >_&#8484;+_</a
+      ><a name="2912"
+      > </a
+      ><a name="2913" class="Symbol"
+      >:</a
+      ><a name="2914"
+      > </a
+      ><a name="2915" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="2916"
+      > </a
+      ><a name="2917" class="Symbol"
+      >&#8594;</a
+      ><a name="2918"
+      > </a
+      ><a name="2919" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="2920"
+      > </a
+      ><a name="2921" class="Symbol"
+      >&#8594;</a
+      ><a name="2922"
+      > </a
+      ><a name="2923" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="2924"
+      >
+</a
+      ><a name="2925" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="2926"
+      >         </a
+      ><a name="2935" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="2937"
+      > </a
+      ><a name="2938" href="lib.types.Int.html#2938" class="Bound"
+      >z</a
+      ><a name="2939"
+      > </a
+      ><a name="2940" class="Symbol"
+      >=</a
+      ><a name="2941"
+      > </a
+      ><a name="2942" href="lib.types.Int.html#2938" class="Bound"
+      >z</a
+      ><a name="2943"
+      >
+</a
+      ><a name="2944" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2947"
+      > </a
+      ><a name="2948" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="2949"
+      >     </a
+      ><a name="2954" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="2956"
+      > </a
+      ><a name="2957" href="lib.types.Int.html#2957" class="Bound"
+      >z</a
+      ><a name="2958"
+      > </a
+      ><a name="2959" class="Symbol"
+      >=</a
+      ><a name="2960"
+      > </a
+      ><a name="2961" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="2965"
+      > </a
+      ><a name="2966" href="lib.types.Int.html#2957" class="Bound"
+      >z</a
+      ><a name="2967"
+      >
+</a
+      ><a name="2968" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2971"
+      > </a
+      ><a name="2972" class="Symbol"
+      >(</a
+      ><a name="2973" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="2974"
+      > </a
+      ><a name="2975" href="lib.types.Int.html#2975" class="Bound"
+      >n</a
+      ><a name="2976" class="Symbol"
+      >)</a
+      ><a name="2977"
+      > </a
+      ><a name="2978" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="2980"
+      > </a
+      ><a name="2981" href="lib.types.Int.html#2981" class="Bound"
+      >z</a
+      ><a name="2982"
+      > </a
+      ><a name="2983" class="Symbol"
+      >=</a
+      ><a name="2984"
+      > </a
+      ><a name="2985" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="2989"
+      > </a
+      ><a name="2990" class="Symbol"
+      >(</a
+      ><a name="2991" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="2994"
+      > </a
+      ><a name="2995" href="lib.types.Int.html#2975" class="Bound"
+      >n</a
+      ><a name="2996"
+      > </a
+      ><a name="2997" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="2999"
+      > </a
+      ><a name="3000" href="lib.types.Int.html#2981" class="Bound"
+      >z</a
+      ><a name="3001" class="Symbol"
+      >)</a
+      ><a name="3002"
+      >
+</a
+      ><a name="3003" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="3006"
+      > </a
+      ><a name="3007" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="3008"
+      >     </a
+      ><a name="3013" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="3015"
+      > </a
+      ><a name="3016" href="lib.types.Int.html#3016" class="Bound"
+      >z</a
+      ><a name="3017"
+      > </a
+      ><a name="3018" class="Symbol"
+      >=</a
+      ><a name="3019"
+      > </a
+      ><a name="3020" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="3024"
+      > </a
+      ><a name="3025" href="lib.types.Int.html#3016" class="Bound"
+      >z</a
+      ><a name="3026"
+      >
+</a
+      ><a name="3027" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="3030"
+      > </a
+      ><a name="3031" class="Symbol"
+      >(</a
+      ><a name="3032" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="3033"
+      > </a
+      ><a name="3034" href="lib.types.Int.html#3034" class="Bound"
+      >n</a
+      ><a name="3035" class="Symbol"
+      >)</a
+      ><a name="3036"
+      > </a
+      ><a name="3037" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="3039"
+      > </a
+      ><a name="3040" href="lib.types.Int.html#3040" class="Bound"
+      >z</a
+      ><a name="3041"
+      > </a
+      ><a name="3042" class="Symbol"
+      >=</a
+      ><a name="3043"
+      > </a
+      ><a name="3044" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="3048"
+      > </a
+      ><a name="3049" class="Symbol"
+      >(</a
+      ><a name="3050" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="3053"
+      > </a
+      ><a name="3054" href="lib.types.Int.html#3034" class="Bound"
+      >n</a
+      ><a name="3055"
+      > </a
+      ><a name="3056" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="3058"
+      > </a
+      ><a name="3059" href="lib.types.Int.html#3040" class="Bound"
+      >z</a
+      ><a name="3060" class="Symbol"
+      >)</a
+      ><a name="3061"
+      >
+
+</a
+      ><a name="3063" class="Comment"
+      >-- unit-l</a
+      ><a name="3072"
+      >
+</a
+      ><a name="3073" href="lib.types.Int.html#3073" class="Function"
+      >&#8484;+-unit-l</a
+      ><a name="3082"
+      > </a
+      ><a name="3083" class="Symbol"
+      >:</a
+      ><a name="3084"
+      > </a
+      ><a name="3085" class="Symbol"
+      >&#8704;</a
+      ><a name="3086"
+      > </a
+      ><a name="3087" href="lib.types.Int.html#3087" class="Bound"
+      >z</a
+      ><a name="3088"
+      > </a
+      ><a name="3089" class="Symbol"
+      >&#8594;</a
+      ><a name="3090"
+      > </a
+      ><a name="3091" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="3092"
+      > </a
+      ><a name="3093" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="3095"
+      > </a
+      ><a name="3096" href="lib.types.Int.html#3087" class="Bound"
+      >z</a
+      ><a name="3097"
+      > </a
+      ><a name="3098" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3100"
+      > </a
+      ><a name="3101" href="lib.types.Int.html#3087" class="Bound"
+      >z</a
+      ><a name="3102"
+      >
+</a
+      ><a name="3103" href="lib.types.Int.html#3073" class="Function"
+      >&#8484;+-unit-l</a
+      ><a name="3112"
+      > </a
+      ><a name="3113" class="Symbol"
+      >_</a
+      ><a name="3114"
+      > </a
+      ><a name="3115" class="Symbol"
+      >=</a
+      ><a name="3116"
+      > </a
+      ><a name="3117" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3120"
+      >
+
+</a
+      ><a name="3122" class="Comment"
+      >-- unit-r</a
+      ><a name="3131"
+      >
+</a
+      ><a name="3132" class="Keyword"
+      >private</a
+      ><a name="3139"
+      >
+  </a
+      ><a name="3142" href="lib.types.Int.html#3142" class="Function"
+      >&#8484;+-unit-r-pos</a
+      ><a name="3155"
+      > </a
+      ><a name="3156" class="Symbol"
+      >:</a
+      ><a name="3157"
+      > </a
+      ><a name="3158" class="Symbol"
+      >&#8704;</a
+      ><a name="3159"
+      > </a
+      ><a name="3160" href="lib.types.Int.html#3160" class="Bound"
+      >n</a
+      ><a name="3161"
+      > </a
+      ><a name="3162" class="Symbol"
+      >&#8594;</a
+      ><a name="3163"
+      > </a
+      ><a name="3164" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="3167"
+      > </a
+      ><a name="3168" href="lib.types.Int.html#3160" class="Bound"
+      >n</a
+      ><a name="3169"
+      > </a
+      ><a name="3170" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="3172"
+      > </a
+      ><a name="3173" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="3174"
+      > </a
+      ><a name="3175" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3177"
+      > </a
+      ><a name="3178" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="3181"
+      > </a
+      ><a name="3182" href="lib.types.Int.html#3160" class="Bound"
+      >n</a
+      ><a name="3183"
+      >
+  </a
+      ><a name="3186" href="lib.types.Int.html#3142" class="Function"
+      >&#8484;+-unit-r-pos</a
+      ><a name="3199"
+      > </a
+      ><a name="3200" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="3201"
+      >     </a
+      ><a name="3206" class="Symbol"
+      >=</a
+      ><a name="3207"
+      > </a
+      ><a name="3208" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3211"
+      >
+  </a
+      ><a name="3214" href="lib.types.Int.html#3142" class="Function"
+      >&#8484;+-unit-r-pos</a
+      ><a name="3227"
+      > </a
+      ><a name="3228" class="Symbol"
+      >(</a
+      ><a name="3229" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="3230"
+      > </a
+      ><a name="3231" href="lib.types.Int.html#3231" class="Bound"
+      >n</a
+      ><a name="3232" class="Symbol"
+      >)</a
+      ><a name="3233"
+      > </a
+      ><a name="3234" class="Symbol"
+      >=</a
+      ><a name="3235"
+      > </a
+      ><a name="3236" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="3238"
+      > </a
+      ><a name="3239" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="3243"
+      > </a
+      ><a name="3244" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="3245"
+      > </a
+      ><a name="3246" href="lib.types.Int.html#3142" class="Function"
+      >&#8484;+-unit-r-pos</a
+      ><a name="3259"
+      > </a
+      ><a name="3260" href="lib.types.Int.html#3231" class="Bound"
+      >n</a
+      ><a name="3261"
+      >
+
+  </a
+      ><a name="3265" href="lib.types.Int.html#3265" class="Function"
+      >&#8484;+-unit-r-neg</a
+      ><a name="3278"
+      > </a
+      ><a name="3279" class="Symbol"
+      >:</a
+      ><a name="3280"
+      > </a
+      ><a name="3281" class="Symbol"
+      >&#8704;</a
+      ><a name="3282"
+      > </a
+      ><a name="3283" href="lib.types.Int.html#3283" class="Bound"
+      >n</a
+      ><a name="3284"
+      > </a
+      ><a name="3285" class="Symbol"
+      >&#8594;</a
+      ><a name="3286"
+      > </a
+      ><a name="3287" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="3290"
+      > </a
+      ><a name="3291" href="lib.types.Int.html#3283" class="Bound"
+      >n</a
+      ><a name="3292"
+      > </a
+      ><a name="3293" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="3295"
+      > </a
+      ><a name="3296" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="3297"
+      > </a
+      ><a name="3298" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3300"
+      > </a
+      ><a name="3301" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="3304"
+      > </a
+      ><a name="3305" href="lib.types.Int.html#3283" class="Bound"
+      >n</a
+      ><a name="3306"
+      >
+  </a
+      ><a name="3309" href="lib.types.Int.html#3265" class="Function"
+      >&#8484;+-unit-r-neg</a
+      ><a name="3322"
+      > </a
+      ><a name="3323" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="3324"
+      >     </a
+      ><a name="3329" class="Symbol"
+      >=</a
+      ><a name="3330"
+      > </a
+      ><a name="3331" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3334"
+      >
+  </a
+      ><a name="3337" href="lib.types.Int.html#3265" class="Function"
+      >&#8484;+-unit-r-neg</a
+      ><a name="3350"
+      > </a
+      ><a name="3351" class="Symbol"
+      >(</a
+      ><a name="3352" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="3353"
+      > </a
+      ><a name="3354" href="lib.types.Int.html#3354" class="Bound"
+      >n</a
+      ><a name="3355" class="Symbol"
+      >)</a
+      ><a name="3356"
+      > </a
+      ><a name="3357" class="Symbol"
+      >=</a
+      ><a name="3358"
+      > </a
+      ><a name="3359" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="3361"
+      > </a
+      ><a name="3362" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="3366"
+      > </a
+      ><a name="3367" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="3368"
+      > </a
+      ><a name="3369" href="lib.types.Int.html#3265" class="Function"
+      >&#8484;+-unit-r-neg</a
+      ><a name="3382"
+      > </a
+      ><a name="3383" href="lib.types.Int.html#3354" class="Bound"
+      >n</a
+      ><a name="3384"
+      >
+
+</a
+      ><a name="3386" href="lib.types.Int.html#3386" class="Function"
+      >&#8484;+-unit-r</a
+      ><a name="3395"
+      > </a
+      ><a name="3396" class="Symbol"
+      >:</a
+      ><a name="3397"
+      > </a
+      ><a name="3398" class="Symbol"
+      >&#8704;</a
+      ><a name="3399"
+      > </a
+      ><a name="3400" href="lib.types.Int.html#3400" class="Bound"
+      >z</a
+      ><a name="3401"
+      > </a
+      ><a name="3402" class="Symbol"
+      >&#8594;</a
+      ><a name="3403"
+      > </a
+      ><a name="3404" href="lib.types.Int.html#3400" class="Bound"
+      >z</a
+      ><a name="3405"
+      > </a
+      ><a name="3406" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="3408"
+      > </a
+      ><a name="3409" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="3410"
+      > </a
+      ><a name="3411" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3413"
+      > </a
+      ><a name="3414" href="lib.types.Int.html#3400" class="Bound"
+      >z</a
+      ><a name="3415"
+      >
+</a
+      ><a name="3416" href="lib.types.Int.html#3386" class="Function"
+      >&#8484;+-unit-r</a
+      ><a name="3425"
+      > </a
+      ><a name="3426" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="3427"
+      > </a
+      ><a name="3428" class="Symbol"
+      >=</a
+      ><a name="3429"
+      > </a
+      ><a name="3430" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3433"
+      >
+</a
+      ><a name="3434" href="lib.types.Int.html#3386" class="Function"
+      >&#8484;+-unit-r</a
+      ><a name="3443"
+      > </a
+      ><a name="3444" class="Symbol"
+      >(</a
+      ><a name="3445" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="3448"
+      > </a
+      ><a name="3449" href="lib.types.Int.html#3449" class="Bound"
+      >n</a
+      ><a name="3450" class="Symbol"
+      >)</a
+      ><a name="3451"
+      > </a
+      ><a name="3452" class="Symbol"
+      >=</a
+      ><a name="3453"
+      > </a
+      ><a name="3454" href="lib.types.Int.html#3142" class="Function"
+      >&#8484;+-unit-r-pos</a
+      ><a name="3467"
+      > </a
+      ><a name="3468" href="lib.types.Int.html#3449" class="Bound"
+      >n</a
+      ><a name="3469"
+      >
+</a
+      ><a name="3470" href="lib.types.Int.html#3386" class="Function"
+      >&#8484;+-unit-r</a
+      ><a name="3479"
+      > </a
+      ><a name="3480" class="Symbol"
+      >(</a
+      ><a name="3481" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="3484"
+      > </a
+      ><a name="3485" href="lib.types.Int.html#3485" class="Bound"
+      >n</a
+      ><a name="3486" class="Symbol"
+      >)</a
+      ><a name="3487"
+      > </a
+      ><a name="3488" class="Symbol"
+      >=</a
+      ><a name="3489"
+      > </a
+      ><a name="3490" href="lib.types.Int.html#3265" class="Function"
+      >&#8484;+-unit-r-neg</a
+      ><a name="3503"
+      > </a
+      ><a name="3504" href="lib.types.Int.html#3485" class="Bound"
+      >n</a
+      ><a name="3505"
+      >
+
+</a
+      ><a name="3507" class="Comment"
+      >-- assoc</a
+      ><a name="3515"
+      >
+</a
+      ><a name="3516" href="lib.types.Int.html#3516" class="Function"
+      >succ-&#8484;+</a
+      ><a name="3523"
+      > </a
+      ><a name="3524" class="Symbol"
+      >:</a
+      ><a name="3525"
+      > </a
+      ><a name="3526" class="Symbol"
+      >&#8704;</a
+      ><a name="3527"
+      > </a
+      ><a name="3528" href="lib.types.Int.html#3528" class="Bound"
+      >z&#8321;</a
+      ><a name="3530"
+      > </a
+      ><a name="3531" href="lib.types.Int.html#3531" class="Bound"
+      >z&#8322;</a
+      ><a name="3533"
+      > </a
+      ><a name="3534" class="Symbol"
+      >&#8594;</a
+      ><a name="3535"
+      > </a
+      ><a name="3536" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="3540"
+      > </a
+      ><a name="3541" href="lib.types.Int.html#3528" class="Bound"
+      >z&#8321;</a
+      ><a name="3543"
+      > </a
+      ><a name="3544" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="3546"
+      > </a
+      ><a name="3547" href="lib.types.Int.html#3531" class="Bound"
+      >z&#8322;</a
+      ><a name="3549"
+      > </a
+      ><a name="3550" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3552"
+      > </a
+      ><a name="3553" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="3557"
+      > </a
+      ><a name="3558" class="Symbol"
+      >(</a
+      ><a name="3559" href="lib.types.Int.html#3528" class="Bound"
+      >z&#8321;</a
+      ><a name="3561"
+      > </a
+      ><a name="3562" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="3564"
+      > </a
+      ><a name="3565" href="lib.types.Int.html#3531" class="Bound"
+      >z&#8322;</a
+      ><a name="3567" class="Symbol"
+      >)</a
+      ><a name="3568"
+      >
+</a
+      ><a name="3569" href="lib.types.Int.html#3516" class="Function"
+      >succ-&#8484;+</a
+      ><a name="3576"
+      > </a
+      ><a name="3577" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="3578"
+      > </a
+      ><a name="3579" class="Symbol"
+      >_</a
+      ><a name="3580"
+      > </a
+      ><a name="3581" class="Symbol"
+      >=</a
+      ><a name="3582"
+      > </a
+      ><a name="3583" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3586"
+      >
+</a
+      ><a name="3587" href="lib.types.Int.html#3516" class="Function"
+      >succ-&#8484;+</a
+      ><a name="3594"
+      > </a
+      ><a name="3595" class="Symbol"
+      >(</a
+      ><a name="3596" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="3599"
+      > </a
+      ><a name="3600" href="lib.types.Int.html#3600" class="Bound"
+      >n</a
+      ><a name="3601" class="Symbol"
+      >)</a
+      ><a name="3602"
+      > </a
+      ><a name="3603" class="Symbol"
+      >_</a
+      ><a name="3604"
+      > </a
+      ><a name="3605" class="Symbol"
+      >=</a
+      ><a name="3606"
+      > </a
+      ><a name="3607" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3610"
+      >
+</a
+      ><a name="3611" href="lib.types.Int.html#3516" class="Function"
+      >succ-&#8484;+</a
+      ><a name="3618"
+      > </a
+      ><a name="3619" class="Symbol"
+      >(</a
+      ><a name="3620" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="3623"
+      > </a
+      ><a name="3624" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="3625" class="Symbol"
+      >)</a
+      ><a name="3626"
+      > </a
+      ><a name="3627" class="Symbol"
+      >_</a
+      ><a name="3628"
+      > </a
+      ><a name="3629" class="Symbol"
+      >=</a
+      ><a name="3630"
+      > </a
+      ><a name="3631" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="3632"
+      > </a
+      ><a name="3633" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="3634"
+      > </a
+      ><a name="3635" href="lib.types.Int.html#418" class="Function"
+      >succ-pred</a
+      ><a name="3644"
+      > </a
+      ><a name="3645" class="Symbol"
+      >_</a
+      ><a name="3646"
+      >
+</a
+      ><a name="3647" href="lib.types.Int.html#3516" class="Function"
+      >succ-&#8484;+</a
+      ><a name="3654"
+      > </a
+      ><a name="3655" class="Symbol"
+      >(</a
+      ><a name="3656" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="3659"
+      > </a
+      ><a name="3660" class="Symbol"
+      >(</a
+      ><a name="3661" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="3662"
+      > </a
+      ><a name="3663" href="lib.types.Int.html#3663" class="Bound"
+      >n</a
+      ><a name="3664" class="Symbol"
+      >))</a
+      ><a name="3666"
+      > </a
+      ><a name="3667" class="Symbol"
+      >_</a
+      ><a name="3668"
+      > </a
+      ><a name="3669" class="Symbol"
+      >=</a
+      ><a name="3670"
+      > </a
+      ><a name="3671" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="3672"
+      > </a
+      ><a name="3673" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="3674"
+      > </a
+      ><a name="3675" href="lib.types.Int.html#418" class="Function"
+      >succ-pred</a
+      ><a name="3684"
+      > </a
+      ><a name="3685" class="Symbol"
+      >_</a
+      ><a name="3686"
+      >
+
+</a
+      ><a name="3688" href="lib.types.Int.html#3688" class="Function"
+      >pred-&#8484;+</a
+      ><a name="3695"
+      > </a
+      ><a name="3696" class="Symbol"
+      >:</a
+      ><a name="3697"
+      > </a
+      ><a name="3698" class="Symbol"
+      >&#8704;</a
+      ><a name="3699"
+      > </a
+      ><a name="3700" href="lib.types.Int.html#3700" class="Bound"
+      >z&#8321;</a
+      ><a name="3702"
+      > </a
+      ><a name="3703" href="lib.types.Int.html#3703" class="Bound"
+      >z&#8322;</a
+      ><a name="3705"
+      > </a
+      ><a name="3706" class="Symbol"
+      >&#8594;</a
+      ><a name="3707"
+      > </a
+      ><a name="3708" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="3712"
+      > </a
+      ><a name="3713" href="lib.types.Int.html#3700" class="Bound"
+      >z&#8321;</a
+      ><a name="3715"
+      > </a
+      ><a name="3716" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="3718"
+      > </a
+      ><a name="3719" href="lib.types.Int.html#3703" class="Bound"
+      >z&#8322;</a
+      ><a name="3721"
+      > </a
+      ><a name="3722" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3724"
+      > </a
+      ><a name="3725" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="3729"
+      > </a
+      ><a name="3730" class="Symbol"
+      >(</a
+      ><a name="3731" href="lib.types.Int.html#3700" class="Bound"
+      >z&#8321;</a
+      ><a name="3733"
+      > </a
+      ><a name="3734" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="3736"
+      > </a
+      ><a name="3737" href="lib.types.Int.html#3703" class="Bound"
+      >z&#8322;</a
+      ><a name="3739" class="Symbol"
+      >)</a
+      ><a name="3740"
+      >
+</a
+      ><a name="3741" href="lib.types.Int.html#3688" class="Function"
+      >pred-&#8484;+</a
+      ><a name="3748"
+      > </a
+      ><a name="3749" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="3750"
+      > </a
+      ><a name="3751" class="Symbol"
+      >_</a
+      ><a name="3752"
+      > </a
+      ><a name="3753" class="Symbol"
+      >=</a
+      ><a name="3754"
+      > </a
+      ><a name="3755" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3758"
+      >
+</a
+      ><a name="3759" href="lib.types.Int.html#3688" class="Function"
+      >pred-&#8484;+</a
+      ><a name="3766"
+      > </a
+      ><a name="3767" class="Symbol"
+      >(</a
+      ><a name="3768" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="3771"
+      > </a
+      ><a name="3772" href="lib.types.Int.html#3772" class="Bound"
+      >n</a
+      ><a name="3773" class="Symbol"
+      >)</a
+      ><a name="3774"
+      > </a
+      ><a name="3775" class="Symbol"
+      >_</a
+      ><a name="3776"
+      > </a
+      ><a name="3777" class="Symbol"
+      >=</a
+      ><a name="3778"
+      > </a
+      ><a name="3779" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3782"
+      >
+</a
+      ><a name="3783" href="lib.types.Int.html#3688" class="Function"
+      >pred-&#8484;+</a
+      ><a name="3790"
+      > </a
+      ><a name="3791" class="Symbol"
+      >(</a
+      ><a name="3792" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="3795"
+      > </a
+      ><a name="3796" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="3797" class="Symbol"
+      >)</a
+      ><a name="3798"
+      > </a
+      ><a name="3799" class="Symbol"
+      >_</a
+      ><a name="3800"
+      > </a
+      ><a name="3801" class="Symbol"
+      >=</a
+      ><a name="3802"
+      > </a
+      ><a name="3803" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="3804"
+      > </a
+      ><a name="3805" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="3806"
+      > </a
+      ><a name="3807" href="lib.types.Int.html#564" class="Function"
+      >pred-succ</a
+      ><a name="3816"
+      > </a
+      ><a name="3817" class="Symbol"
+      >_</a
+      ><a name="3818"
+      >
+</a
+      ><a name="3819" href="lib.types.Int.html#3688" class="Function"
+      >pred-&#8484;+</a
+      ><a name="3826"
+      > </a
+      ><a name="3827" class="Symbol"
+      >(</a
+      ><a name="3828" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="3831"
+      > </a
+      ><a name="3832" class="Symbol"
+      >(</a
+      ><a name="3833" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="3834"
+      > </a
+      ><a name="3835" href="lib.types.Int.html#3835" class="Bound"
+      >n</a
+      ><a name="3836" class="Symbol"
+      >))</a
+      ><a name="3838"
+      > </a
+      ><a name="3839" class="Symbol"
+      >_</a
+      ><a name="3840"
+      > </a
+      ><a name="3841" class="Symbol"
+      >=</a
+      ><a name="3842"
+      > </a
+      ><a name="3843" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="3844"
+      > </a
+      ><a name="3845" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="3846"
+      > </a
+      ><a name="3847" href="lib.types.Int.html#564" class="Function"
+      >pred-succ</a
+      ><a name="3856"
+      > </a
+      ><a name="3857" class="Symbol"
+      >_</a
+      ><a name="3858"
+      >
+
+</a
+      ><a name="3860" class="Keyword"
+      >private</a
+      ><a name="3867"
+      >
+  </a
+      ><a name="3870" href="lib.types.Int.html#3870" class="Function"
+      >&#8484;+-assoc-pos</a
+      ><a name="3882"
+      > </a
+      ><a name="3883" class="Symbol"
+      >:</a
+      ><a name="3884"
+      > </a
+      ><a name="3885" class="Symbol"
+      >&#8704;</a
+      ><a name="3886"
+      > </a
+      ><a name="3887" href="lib.types.Int.html#3887" class="Bound"
+      >n&#8321;</a
+      ><a name="3889"
+      > </a
+      ><a name="3890" href="lib.types.Int.html#3890" class="Bound"
+      >z&#8322;</a
+      ><a name="3892"
+      > </a
+      ><a name="3893" href="lib.types.Int.html#3893" class="Bound"
+      >z&#8323;</a
+      ><a name="3895"
+      > </a
+      ><a name="3896" class="Symbol"
+      >&#8594;</a
+      ><a name="3897"
+      > </a
+      ><a name="3898" class="Symbol"
+      >(</a
+      ><a name="3899" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="3902"
+      > </a
+      ><a name="3903" href="lib.types.Int.html#3887" class="Bound"
+      >n&#8321;</a
+      ><a name="3905"
+      > </a
+      ><a name="3906" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="3908"
+      > </a
+      ><a name="3909" href="lib.types.Int.html#3890" class="Bound"
+      >z&#8322;</a
+      ><a name="3911" class="Symbol"
+      >)</a
+      ><a name="3912"
+      > </a
+      ><a name="3913" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="3915"
+      > </a
+      ><a name="3916" href="lib.types.Int.html#3893" class="Bound"
+      >z&#8323;</a
+      ><a name="3918"
+      > </a
+      ><a name="3919" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3921"
+      > </a
+      ><a name="3922" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="3925"
+      > </a
+      ><a name="3926" href="lib.types.Int.html#3887" class="Bound"
+      >n&#8321;</a
+      ><a name="3928"
+      > </a
+      ><a name="3929" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="3931"
+      > </a
+      ><a name="3932" class="Symbol"
+      >(</a
+      ><a name="3933" href="lib.types.Int.html#3890" class="Bound"
+      >z&#8322;</a
+      ><a name="3935"
+      > </a
+      ><a name="3936" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="3938"
+      > </a
+      ><a name="3939" href="lib.types.Int.html#3893" class="Bound"
+      >z&#8323;</a
+      ><a name="3941" class="Symbol"
+      >)</a
+      ><a name="3942"
+      >
+  </a
+      ><a name="3945" href="lib.types.Int.html#3870" class="Function"
+      >&#8484;+-assoc-pos</a
+      ><a name="3957"
+      > </a
+      ><a name="3958" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="3959"
+      >      </a
+      ><a name="3965" href="lib.types.Int.html#3965" class="Bound"
+      >z&#8322;</a
+      ><a name="3967"
+      > </a
+      ><a name="3968" href="lib.types.Int.html#3968" class="Bound"
+      >z&#8323;</a
+      ><a name="3970"
+      > </a
+      ><a name="3971" class="Symbol"
+      >=</a
+      ><a name="3972"
+      > </a
+      ><a name="3973" href="lib.types.Int.html#3516" class="Function"
+      >succ-&#8484;+</a
+      ><a name="3980"
+      > </a
+      ><a name="3981" href="lib.types.Int.html#3965" class="Bound"
+      >z&#8322;</a
+      ><a name="3983"
+      > </a
+      ><a name="3984" href="lib.types.Int.html#3968" class="Bound"
+      >z&#8323;</a
+      ><a name="3986"
+      >
+  </a
+      ><a name="3989" href="lib.types.Int.html#3870" class="Function"
+      >&#8484;+-assoc-pos</a
+      ><a name="4001"
+      > </a
+      ><a name="4002" class="Symbol"
+      >(</a
+      ><a name="4003" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="4004"
+      > </a
+      ><a name="4005" href="lib.types.Int.html#4005" class="Bound"
+      >n&#8321;</a
+      ><a name="4007" class="Symbol"
+      >)</a
+      ><a name="4008"
+      > </a
+      ><a name="4009" href="lib.types.Int.html#4009" class="Bound"
+      >z&#8322;</a
+      ><a name="4011"
+      > </a
+      ><a name="4012" href="lib.types.Int.html#4012" class="Bound"
+      >z&#8323;</a
+      ><a name="4014"
+      > </a
+      ><a name="4015" class="Symbol"
+      >=</a
+      ><a name="4016"
+      >
+    </a
+      ><a name="4021" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="4025"
+      > </a
+      ><a name="4026" class="Symbol"
+      >(</a
+      ><a name="4027" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="4030"
+      > </a
+      ><a name="4031" href="lib.types.Int.html#4005" class="Bound"
+      >n&#8321;</a
+      ><a name="4033"
+      > </a
+      ><a name="4034" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4036"
+      > </a
+      ><a name="4037" href="lib.types.Int.html#4009" class="Bound"
+      >z&#8322;</a
+      ><a name="4039" class="Symbol"
+      >)</a
+      ><a name="4040"
+      > </a
+      ><a name="4041" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4043"
+      > </a
+      ><a name="4044" href="lib.types.Int.html#4012" class="Bound"
+      >z&#8323;</a
+      ><a name="4046"
+      >     </a
+      ><a name="4051" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="4053"
+      > </a
+      ><a name="4054" href="lib.types.Int.html#3516" class="Function"
+      >succ-&#8484;+</a
+      ><a name="4061"
+      > </a
+      ><a name="4062" class="Symbol"
+      >(</a
+      ><a name="4063" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="4066"
+      > </a
+      ><a name="4067" href="lib.types.Int.html#4005" class="Bound"
+      >n&#8321;</a
+      ><a name="4069"
+      > </a
+      ><a name="4070" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4072"
+      > </a
+      ><a name="4073" href="lib.types.Int.html#4009" class="Bound"
+      >z&#8322;</a
+      ><a name="4075" class="Symbol"
+      >)</a
+      ><a name="4076"
+      > </a
+      ><a name="4077" href="lib.types.Int.html#4012" class="Bound"
+      >z&#8323;</a
+      ><a name="4079"
+      > </a
+      ><a name="4080" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="4081"
+      >
+    </a
+      ><a name="4086" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="4090"
+      > </a
+      ><a name="4091" class="Symbol"
+      >((</a
+      ><a name="4093" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="4096"
+      > </a
+      ><a name="4097" href="lib.types.Int.html#4005" class="Bound"
+      >n&#8321;</a
+      ><a name="4099"
+      > </a
+      ><a name="4100" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4102"
+      > </a
+      ><a name="4103" href="lib.types.Int.html#4009" class="Bound"
+      >z&#8322;</a
+      ><a name="4105" class="Symbol"
+      >)</a
+      ><a name="4106"
+      > </a
+      ><a name="4107" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4109"
+      > </a
+      ><a name="4110" href="lib.types.Int.html#4012" class="Bound"
+      >z&#8323;</a
+      ><a name="4112" class="Symbol"
+      >)</a
+      ><a name="4113"
+      >   </a
+      ><a name="4116" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="4118"
+      > </a
+      ><a name="4119" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="4121"
+      > </a
+      ><a name="4122" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="4126"
+      > </a
+      ><a name="4127" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="4128"
+      > </a
+      ><a name="4129" href="lib.types.Int.html#3870" class="Function"
+      >&#8484;+-assoc-pos</a
+      ><a name="4141"
+      > </a
+      ><a name="4142" href="lib.types.Int.html#4005" class="Bound"
+      >n&#8321;</a
+      ><a name="4144"
+      > </a
+      ><a name="4145" href="lib.types.Int.html#4009" class="Bound"
+      >z&#8322;</a
+      ><a name="4147"
+      > </a
+      ><a name="4148" href="lib.types.Int.html#4012" class="Bound"
+      >z&#8323;</a
+      ><a name="4150"
+      > </a
+      ><a name="4151" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="4152"
+      >
+    </a
+      ><a name="4157" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="4161"
+      > </a
+      ><a name="4162" class="Symbol"
+      >(</a
+      ><a name="4163" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="4166"
+      > </a
+      ><a name="4167" href="lib.types.Int.html#4005" class="Bound"
+      >n&#8321;</a
+      ><a name="4169"
+      > </a
+      ><a name="4170" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4172"
+      > </a
+      ><a name="4173" class="Symbol"
+      >(</a
+      ><a name="4174" href="lib.types.Int.html#4009" class="Bound"
+      >z&#8322;</a
+      ><a name="4176"
+      > </a
+      ><a name="4177" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4179"
+      > </a
+      ><a name="4180" href="lib.types.Int.html#4012" class="Bound"
+      >z&#8323;</a
+      ><a name="4182" class="Symbol"
+      >))</a
+      ><a name="4184"
+      >   </a
+      ><a name="4187" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="4188"
+      >
+
+  </a
+      ><a name="4192" href="lib.types.Int.html#4192" class="Function"
+      >&#8484;+-assoc-neg</a
+      ><a name="4204"
+      > </a
+      ><a name="4205" class="Symbol"
+      >:</a
+      ><a name="4206"
+      > </a
+      ><a name="4207" class="Symbol"
+      >&#8704;</a
+      ><a name="4208"
+      > </a
+      ><a name="4209" href="lib.types.Int.html#4209" class="Bound"
+      >n&#8321;</a
+      ><a name="4211"
+      > </a
+      ><a name="4212" href="lib.types.Int.html#4212" class="Bound"
+      >z&#8322;</a
+      ><a name="4214"
+      > </a
+      ><a name="4215" href="lib.types.Int.html#4215" class="Bound"
+      >z&#8323;</a
+      ><a name="4217"
+      > </a
+      ><a name="4218" class="Symbol"
+      >&#8594;</a
+      ><a name="4219"
+      > </a
+      ><a name="4220" class="Symbol"
+      >(</a
+      ><a name="4221" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="4224"
+      > </a
+      ><a name="4225" href="lib.types.Int.html#4209" class="Bound"
+      >n&#8321;</a
+      ><a name="4227"
+      > </a
+      ><a name="4228" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4230"
+      > </a
+      ><a name="4231" href="lib.types.Int.html#4212" class="Bound"
+      >z&#8322;</a
+      ><a name="4233" class="Symbol"
+      >)</a
+      ><a name="4234"
+      > </a
+      ><a name="4235" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4237"
+      > </a
+      ><a name="4238" href="lib.types.Int.html#4215" class="Bound"
+      >z&#8323;</a
+      ><a name="4240"
+      > </a
+      ><a name="4241" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4243"
+      > </a
+      ><a name="4244" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="4247"
+      > </a
+      ><a name="4248" href="lib.types.Int.html#4209" class="Bound"
+      >n&#8321;</a
+      ><a name="4250"
+      > </a
+      ><a name="4251" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4253"
+      > </a
+      ><a name="4254" class="Symbol"
+      >(</a
+      ><a name="4255" href="lib.types.Int.html#4212" class="Bound"
+      >z&#8322;</a
+      ><a name="4257"
+      > </a
+      ><a name="4258" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4260"
+      > </a
+      ><a name="4261" href="lib.types.Int.html#4215" class="Bound"
+      >z&#8323;</a
+      ><a name="4263" class="Symbol"
+      >)</a
+      ><a name="4264"
+      >
+  </a
+      ><a name="4267" href="lib.types.Int.html#4192" class="Function"
+      >&#8484;+-assoc-neg</a
+      ><a name="4279"
+      > </a
+      ><a name="4280" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="4281"
+      >      </a
+      ><a name="4287" href="lib.types.Int.html#4287" class="Bound"
+      >z&#8322;</a
+      ><a name="4289"
+      > </a
+      ><a name="4290" href="lib.types.Int.html#4290" class="Bound"
+      >z&#8323;</a
+      ><a name="4292"
+      > </a
+      ><a name="4293" class="Symbol"
+      >=</a
+      ><a name="4294"
+      > </a
+      ><a name="4295" href="lib.types.Int.html#3688" class="Function"
+      >pred-&#8484;+</a
+      ><a name="4302"
+      > </a
+      ><a name="4303" href="lib.types.Int.html#4287" class="Bound"
+      >z&#8322;</a
+      ><a name="4305"
+      > </a
+      ><a name="4306" href="lib.types.Int.html#4290" class="Bound"
+      >z&#8323;</a
+      ><a name="4308"
+      >
+  </a
+      ><a name="4311" href="lib.types.Int.html#4192" class="Function"
+      >&#8484;+-assoc-neg</a
+      ><a name="4323"
+      > </a
+      ><a name="4324" class="Symbol"
+      >(</a
+      ><a name="4325" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="4326"
+      > </a
+      ><a name="4327" href="lib.types.Int.html#4327" class="Bound"
+      >n&#8321;</a
+      ><a name="4329" class="Symbol"
+      >)</a
+      ><a name="4330"
+      > </a
+      ><a name="4331" href="lib.types.Int.html#4331" class="Bound"
+      >z&#8322;</a
+      ><a name="4333"
+      > </a
+      ><a name="4334" href="lib.types.Int.html#4334" class="Bound"
+      >z&#8323;</a
+      ><a name="4336"
+      > </a
+      ><a name="4337" class="Symbol"
+      >=</a
+      ><a name="4338"
+      >
+    </a
+      ><a name="4343" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="4347"
+      > </a
+      ><a name="4348" class="Symbol"
+      >(</a
+      ><a name="4349" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="4352"
+      > </a
+      ><a name="4353" href="lib.types.Int.html#4327" class="Bound"
+      >n&#8321;</a
+      ><a name="4355"
+      > </a
+      ><a name="4356" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4358"
+      > </a
+      ><a name="4359" href="lib.types.Int.html#4331" class="Bound"
+      >z&#8322;</a
+      ><a name="4361" class="Symbol"
+      >)</a
+      ><a name="4362"
+      > </a
+      ><a name="4363" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4365"
+      > </a
+      ><a name="4366" href="lib.types.Int.html#4334" class="Bound"
+      >z&#8323;</a
+      ><a name="4368"
+      >     </a
+      ><a name="4373" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="4375"
+      > </a
+      ><a name="4376" href="lib.types.Int.html#3688" class="Function"
+      >pred-&#8484;+</a
+      ><a name="4383"
+      > </a
+      ><a name="4384" class="Symbol"
+      >(</a
+      ><a name="4385" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="4388"
+      > </a
+      ><a name="4389" href="lib.types.Int.html#4327" class="Bound"
+      >n&#8321;</a
+      ><a name="4391"
+      > </a
+      ><a name="4392" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4394"
+      > </a
+      ><a name="4395" href="lib.types.Int.html#4331" class="Bound"
+      >z&#8322;</a
+      ><a name="4397" class="Symbol"
+      >)</a
+      ><a name="4398"
+      > </a
+      ><a name="4399" href="lib.types.Int.html#4334" class="Bound"
+      >z&#8323;</a
+      ><a name="4401"
+      > </a
+      ><a name="4402" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="4403"
+      >
+    </a
+      ><a name="4408" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="4412"
+      > </a
+      ><a name="4413" class="Symbol"
+      >((</a
+      ><a name="4415" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="4418"
+      > </a
+      ><a name="4419" href="lib.types.Int.html#4327" class="Bound"
+      >n&#8321;</a
+      ><a name="4421"
+      > </a
+      ><a name="4422" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4424"
+      > </a
+      ><a name="4425" href="lib.types.Int.html#4331" class="Bound"
+      >z&#8322;</a
+      ><a name="4427" class="Symbol"
+      >)</a
+      ><a name="4428"
+      > </a
+      ><a name="4429" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4431"
+      > </a
+      ><a name="4432" href="lib.types.Int.html#4334" class="Bound"
+      >z&#8323;</a
+      ><a name="4434" class="Symbol"
+      >)</a
+      ><a name="4435"
+      >   </a
+      ><a name="4438" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="4440"
+      > </a
+      ><a name="4441" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="4443"
+      > </a
+      ><a name="4444" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="4448"
+      > </a
+      ><a name="4449" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="4450"
+      > </a
+      ><a name="4451" href="lib.types.Int.html#4192" class="Function"
+      >&#8484;+-assoc-neg</a
+      ><a name="4463"
+      > </a
+      ><a name="4464" href="lib.types.Int.html#4327" class="Bound"
+      >n&#8321;</a
+      ><a name="4466"
+      > </a
+      ><a name="4467" href="lib.types.Int.html#4331" class="Bound"
+      >z&#8322;</a
+      ><a name="4469"
+      > </a
+      ><a name="4470" href="lib.types.Int.html#4334" class="Bound"
+      >z&#8323;</a
+      ><a name="4472"
+      > </a
+      ><a name="4473" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="4474"
+      >
+    </a
+      ><a name="4479" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="4483"
+      > </a
+      ><a name="4484" class="Symbol"
+      >(</a
+      ><a name="4485" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="4488"
+      > </a
+      ><a name="4489" href="lib.types.Int.html#4327" class="Bound"
+      >n&#8321;</a
+      ><a name="4491"
+      > </a
+      ><a name="4492" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4494"
+      > </a
+      ><a name="4495" class="Symbol"
+      >(</a
+      ><a name="4496" href="lib.types.Int.html#4331" class="Bound"
+      >z&#8322;</a
+      ><a name="4498"
+      > </a
+      ><a name="4499" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4501"
+      > </a
+      ><a name="4502" href="lib.types.Int.html#4334" class="Bound"
+      >z&#8323;</a
+      ><a name="4504" class="Symbol"
+      >))</a
+      ><a name="4506"
+      >   </a
+      ><a name="4509" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="4510"
+      >
+
+</a
+      ><a name="4512" href="lib.types.Int.html#4512" class="Function"
+      >&#8484;+-assoc</a
+      ><a name="4520"
+      > </a
+      ><a name="4521" class="Symbol"
+      >:</a
+      ><a name="4522"
+      > </a
+      ><a name="4523" class="Symbol"
+      >&#8704;</a
+      ><a name="4524"
+      > </a
+      ><a name="4525" href="lib.types.Int.html#4525" class="Bound"
+      >z&#8321;</a
+      ><a name="4527"
+      > </a
+      ><a name="4528" href="lib.types.Int.html#4528" class="Bound"
+      >z&#8322;</a
+      ><a name="4530"
+      > </a
+      ><a name="4531" href="lib.types.Int.html#4531" class="Bound"
+      >z&#8323;</a
+      ><a name="4533"
+      > </a
+      ><a name="4534" class="Symbol"
+      >&#8594;</a
+      ><a name="4535"
+      > </a
+      ><a name="4536" class="Symbol"
+      >(</a
+      ><a name="4537" href="lib.types.Int.html#4525" class="Bound"
+      >z&#8321;</a
+      ><a name="4539"
+      > </a
+      ><a name="4540" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4542"
+      > </a
+      ><a name="4543" href="lib.types.Int.html#4528" class="Bound"
+      >z&#8322;</a
+      ><a name="4545" class="Symbol"
+      >)</a
+      ><a name="4546"
+      > </a
+      ><a name="4547" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4549"
+      > </a
+      ><a name="4550" href="lib.types.Int.html#4531" class="Bound"
+      >z&#8323;</a
+      ><a name="4552"
+      > </a
+      ><a name="4553" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4555"
+      > </a
+      ><a name="4556" href="lib.types.Int.html#4525" class="Bound"
+      >z&#8321;</a
+      ><a name="4558"
+      > </a
+      ><a name="4559" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4561"
+      > </a
+      ><a name="4562" class="Symbol"
+      >(</a
+      ><a name="4563" href="lib.types.Int.html#4528" class="Bound"
+      >z&#8322;</a
+      ><a name="4565"
+      > </a
+      ><a name="4566" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4568"
+      > </a
+      ><a name="4569" href="lib.types.Int.html#4531" class="Bound"
+      >z&#8323;</a
+      ><a name="4571" class="Symbol"
+      >)</a
+      ><a name="4572"
+      >
+</a
+      ><a name="4573" href="lib.types.Int.html#4512" class="Function"
+      >&#8484;+-assoc</a
+      ><a name="4581"
+      > </a
+      ><a name="4582" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="4583"
+      >        </a
+      ><a name="4591" class="Symbol"
+      >_</a
+      ><a name="4592"
+      > </a
+      ><a name="4593" class="Symbol"
+      >_</a
+      ><a name="4594"
+      > </a
+      ><a name="4595" class="Symbol"
+      >=</a
+      ><a name="4596"
+      > </a
+      ><a name="4597" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="4600"
+      >
+</a
+      ><a name="4601" href="lib.types.Int.html#4512" class="Function"
+      >&#8484;+-assoc</a
+      ><a name="4609"
+      > </a
+      ><a name="4610" class="Symbol"
+      >(</a
+      ><a name="4611" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="4614"
+      > </a
+      ><a name="4615" href="lib.types.Int.html#4615" class="Bound"
+      >n&#8321;</a
+      ><a name="4617" class="Symbol"
+      >)</a
+      ><a name="4618"
+      > </a
+      ><a name="4619" class="Symbol"
+      >_</a
+      ><a name="4620"
+      > </a
+      ><a name="4621" class="Symbol"
+      >_</a
+      ><a name="4622"
+      > </a
+      ><a name="4623" class="Symbol"
+      >=</a
+      ><a name="4624"
+      > </a
+      ><a name="4625" href="lib.types.Int.html#3870" class="Function"
+      >&#8484;+-assoc-pos</a
+      ><a name="4637"
+      > </a
+      ><a name="4638" href="lib.types.Int.html#4615" class="Bound"
+      >n&#8321;</a
+      ><a name="4640"
+      > </a
+      ><a name="4641" class="Symbol"
+      >_</a
+      ><a name="4642"
+      > </a
+      ><a name="4643" class="Symbol"
+      >_</a
+      ><a name="4644"
+      >
+</a
+      ><a name="4645" href="lib.types.Int.html#4512" class="Function"
+      >&#8484;+-assoc</a
+      ><a name="4653"
+      > </a
+      ><a name="4654" class="Symbol"
+      >(</a
+      ><a name="4655" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="4658"
+      > </a
+      ><a name="4659" href="lib.types.Int.html#4659" class="Bound"
+      >n&#8321;</a
+      ><a name="4661" class="Symbol"
+      >)</a
+      ><a name="4662"
+      > </a
+      ><a name="4663" class="Symbol"
+      >_</a
+      ><a name="4664"
+      > </a
+      ><a name="4665" class="Symbol"
+      >_</a
+      ><a name="4666"
+      > </a
+      ><a name="4667" class="Symbol"
+      >=</a
+      ><a name="4668"
+      > </a
+      ><a name="4669" href="lib.types.Int.html#4192" class="Function"
+      >&#8484;+-assoc-neg</a
+      ><a name="4681"
+      > </a
+      ><a name="4682" href="lib.types.Int.html#4659" class="Bound"
+      >n&#8321;</a
+      ><a name="4684"
+      > </a
+      ><a name="4685" class="Symbol"
+      >_</a
+      ><a name="4686"
+      > </a
+      ><a name="4687" class="Symbol"
+      >_</a
+      ><a name="4688"
+      >
+
+</a
+      ><a name="4690" class="Keyword"
+      >private</a
+      ><a name="4697"
+      >
+  </a
+      ><a name="4700" href="lib.types.Int.html#4700" class="Function"
+      >pos-S-&#8484;+-neg-S</a
+      ><a name="4714"
+      > </a
+      ><a name="4715" class="Symbol"
+      >:</a
+      ><a name="4716"
+      > </a
+      ><a name="4717" class="Symbol"
+      >&#8704;</a
+      ><a name="4718"
+      > </a
+      ><a name="4719" href="lib.types.Int.html#4719" class="Bound"
+      >n&#8321;</a
+      ><a name="4721"
+      > </a
+      ><a name="4722" href="lib.types.Int.html#4722" class="Bound"
+      >n&#8322;</a
+      ><a name="4724"
+      > </a
+      ><a name="4725" class="Symbol"
+      >&#8594;</a
+      ><a name="4726"
+      > </a
+      ><a name="4727" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="4730"
+      > </a
+      ><a name="4731" class="Symbol"
+      >(</a
+      ><a name="4732" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="4733"
+      > </a
+      ><a name="4734" href="lib.types.Int.html#4719" class="Bound"
+      >n&#8321;</a
+      ><a name="4736" class="Symbol"
+      >)</a
+      ><a name="4737"
+      > </a
+      ><a name="4738" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4740"
+      > </a
+      ><a name="4741" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="4744"
+      > </a
+      ><a name="4745" class="Symbol"
+      >(</a
+      ><a name="4746" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="4747"
+      > </a
+      ><a name="4748" href="lib.types.Int.html#4722" class="Bound"
+      >n&#8322;</a
+      ><a name="4750" class="Symbol"
+      >)</a
+      ><a name="4751"
+      > </a
+      ><a name="4752" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4754"
+      > </a
+      ><a name="4755" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="4758"
+      > </a
+      ><a name="4759" href="lib.types.Int.html#4719" class="Bound"
+      >n&#8321;</a
+      ><a name="4761"
+      > </a
+      ><a name="4762" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4764"
+      > </a
+      ><a name="4765" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="4768"
+      > </a
+      ><a name="4769" href="lib.types.Int.html#4722" class="Bound"
+      >n&#8322;</a
+      ><a name="4771"
+      >
+  </a
+      ><a name="4774" href="lib.types.Int.html#4700" class="Function"
+      >pos-S-&#8484;+-neg-S</a
+      ><a name="4788"
+      > </a
+      ><a name="4789" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="4790"
+      >      </a
+      ><a name="4796" href="lib.types.Int.html#4796" class="Bound"
+      >n&#8322;</a
+      ><a name="4798"
+      > </a
+      ><a name="4799" class="Symbol"
+      >=</a
+      ><a name="4800"
+      > </a
+      ><a name="4801" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="4804"
+      >
+  </a
+      ><a name="4807" href="lib.types.Int.html#4700" class="Function"
+      >pos-S-&#8484;+-neg-S</a
+      ><a name="4821"
+      > </a
+      ><a name="4822" class="Symbol"
+      >(</a
+      ><a name="4823" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="4824"
+      > </a
+      ><a name="4825" href="lib.types.Int.html#4825" class="Bound"
+      >n&#8321;</a
+      ><a name="4827" class="Symbol"
+      >)</a
+      ><a name="4828"
+      > </a
+      ><a name="4829" href="lib.types.Int.html#4829" class="Bound"
+      >n&#8322;</a
+      ><a name="4831"
+      > </a
+      ><a name="4832" class="Symbol"
+      >=</a
+      ><a name="4833"
+      > </a
+      ><a name="4834" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="4836"
+      > </a
+      ><a name="4837" href="lib.types.Int.html#215" class="Function"
+      >succ</a
+      ><a name="4841"
+      > </a
+      ><a name="4842" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="4843"
+      > </a
+      ><a name="4844" href="lib.types.Int.html#4700" class="Function"
+      >pos-S-&#8484;+-neg-S</a
+      ><a name="4858"
+      > </a
+      ><a name="4859" href="lib.types.Int.html#4825" class="Bound"
+      >n&#8321;</a
+      ><a name="4861"
+      > </a
+      ><a name="4862" href="lib.types.Int.html#4829" class="Bound"
+      >n&#8322;</a
+      ><a name="4864"
+      >
+
+  </a
+      ><a name="4868" href="lib.types.Int.html#4868" class="Function"
+      >neg-S-&#8484;+-pos-S</a
+      ><a name="4882"
+      > </a
+      ><a name="4883" class="Symbol"
+      >:</a
+      ><a name="4884"
+      > </a
+      ><a name="4885" class="Symbol"
+      >&#8704;</a
+      ><a name="4886"
+      > </a
+      ><a name="4887" href="lib.types.Int.html#4887" class="Bound"
+      >n&#8321;</a
+      ><a name="4889"
+      > </a
+      ><a name="4890" href="lib.types.Int.html#4890" class="Bound"
+      >n&#8322;</a
+      ><a name="4892"
+      > </a
+      ><a name="4893" class="Symbol"
+      >&#8594;</a
+      ><a name="4894"
+      > </a
+      ><a name="4895" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="4898"
+      > </a
+      ><a name="4899" class="Symbol"
+      >(</a
+      ><a name="4900" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="4901"
+      > </a
+      ><a name="4902" href="lib.types.Int.html#4887" class="Bound"
+      >n&#8321;</a
+      ><a name="4904" class="Symbol"
+      >)</a
+      ><a name="4905"
+      > </a
+      ><a name="4906" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4908"
+      > </a
+      ><a name="4909" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="4912"
+      > </a
+      ><a name="4913" class="Symbol"
+      >(</a
+      ><a name="4914" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="4915"
+      > </a
+      ><a name="4916" href="lib.types.Int.html#4890" class="Bound"
+      >n&#8322;</a
+      ><a name="4918" class="Symbol"
+      >)</a
+      ><a name="4919"
+      > </a
+      ><a name="4920" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4922"
+      > </a
+      ><a name="4923" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="4926"
+      > </a
+      ><a name="4927" href="lib.types.Int.html#4887" class="Bound"
+      >n&#8321;</a
+      ><a name="4929"
+      > </a
+      ><a name="4930" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="4932"
+      > </a
+      ><a name="4933" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="4936"
+      > </a
+      ><a name="4937" href="lib.types.Int.html#4890" class="Bound"
+      >n&#8322;</a
+      ><a name="4939"
+      >
+  </a
+      ><a name="4942" href="lib.types.Int.html#4868" class="Function"
+      >neg-S-&#8484;+-pos-S</a
+      ><a name="4956"
+      > </a
+      ><a name="4957" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="4958"
+      >      </a
+      ><a name="4964" href="lib.types.Int.html#4964" class="Bound"
+      >n&#8322;</a
+      ><a name="4966"
+      > </a
+      ><a name="4967" class="Symbol"
+      >=</a
+      ><a name="4968"
+      > </a
+      ><a name="4969" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="4972"
+      >
+  </a
+      ><a name="4975" href="lib.types.Int.html#4868" class="Function"
+      >neg-S-&#8484;+-pos-S</a
+      ><a name="4989"
+      > </a
+      ><a name="4990" class="Symbol"
+      >(</a
+      ><a name="4991" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="4992"
+      > </a
+      ><a name="4993" href="lib.types.Int.html#4993" class="Bound"
+      >n&#8321;</a
+      ><a name="4995" class="Symbol"
+      >)</a
+      ><a name="4996"
+      > </a
+      ><a name="4997" href="lib.types.Int.html#4997" class="Bound"
+      >n&#8322;</a
+      ><a name="4999"
+      > </a
+      ><a name="5000" class="Symbol"
+      >=</a
+      ><a name="5001"
+      > </a
+      ><a name="5002" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="5004"
+      > </a
+      ><a name="5005" href="lib.types.Int.html#311" class="Function"
+      >pred</a
+      ><a name="5009"
+      > </a
+      ><a name="5010" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="5011"
+      > </a
+      ><a name="5012" href="lib.types.Int.html#4868" class="Function"
+      >neg-S-&#8484;+-pos-S</a
+      ><a name="5026"
+      > </a
+      ><a name="5027" href="lib.types.Int.html#4993" class="Bound"
+      >n&#8321;</a
+      ><a name="5029"
+      > </a
+      ><a name="5030" href="lib.types.Int.html#4997" class="Bound"
+      >n&#8322;</a
+      ><a name="5032"
+      >
+
+  </a
+      ><a name="5036" href="lib.types.Int.html#5036" class="Function"
+      >&#8484;~-inv-r-pos</a
+      ><a name="5048"
+      > </a
+      ><a name="5049" class="Symbol"
+      >:</a
+      ><a name="5050"
+      > </a
+      ><a name="5051" class="Symbol"
+      >&#8704;</a
+      ><a name="5052"
+      > </a
+      ><a name="5053" href="lib.types.Int.html#5053" class="Bound"
+      >n</a
+      ><a name="5054"
+      > </a
+      ><a name="5055" class="Symbol"
+      >&#8594;</a
+      ><a name="5056"
+      > </a
+      ><a name="5057" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="5060"
+      > </a
+      ><a name="5061" href="lib.types.Int.html#5053" class="Bound"
+      >n</a
+      ><a name="5062"
+      > </a
+      ><a name="5063" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="5065"
+      > </a
+      ><a name="5066" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="5069"
+      > </a
+      ><a name="5070" href="lib.types.Int.html#5053" class="Bound"
+      >n</a
+      ><a name="5071"
+      > </a
+      ><a name="5072" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="5074"
+      > </a
+      ><a name="5075" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="5076"
+      >
+  </a
+      ><a name="5079" href="lib.types.Int.html#5036" class="Function"
+      >&#8484;~-inv-r-pos</a
+      ><a name="5091"
+      > </a
+      ><a name="5092" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="5093"
+      >     </a
+      ><a name="5098" class="Symbol"
+      >=</a
+      ><a name="5099"
+      > </a
+      ><a name="5100" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="5103"
+      >
+  </a
+      ><a name="5106" href="lib.types.Int.html#5036" class="Function"
+      >&#8484;~-inv-r-pos</a
+      ><a name="5118"
+      > </a
+      ><a name="5119" class="Symbol"
+      >(</a
+      ><a name="5120" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="5121"
+      > </a
+      ><a name="5122" href="lib.types.Int.html#5122" class="Bound"
+      >n</a
+      ><a name="5123" class="Symbol"
+      >)</a
+      ><a name="5124"
+      > </a
+      ><a name="5125" class="Symbol"
+      >=</a
+      ><a name="5126"
+      >
+    </a
+      ><a name="5131" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="5134"
+      > </a
+      ><a name="5135" class="Symbol"
+      >(</a
+      ><a name="5136" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="5137"
+      > </a
+      ><a name="5138" href="lib.types.Int.html#5122" class="Bound"
+      >n</a
+      ><a name="5139" class="Symbol"
+      >)</a
+      ><a name="5140"
+      > </a
+      ><a name="5141" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="5143"
+      > </a
+      ><a name="5144" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="5147"
+      > </a
+      ><a name="5148" class="Symbol"
+      >(</a
+      ><a name="5149" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="5150"
+      > </a
+      ><a name="5151" href="lib.types.Int.html#5122" class="Bound"
+      >n</a
+      ><a name="5152" class="Symbol"
+      >)</a
+      ><a name="5153"
+      >  </a
+      ><a name="5155" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="5157"
+      > </a
+      ><a name="5158" href="lib.types.Int.html#4700" class="Function"
+      >pos-S-&#8484;+-neg-S</a
+      ><a name="5172"
+      > </a
+      ><a name="5173" href="lib.types.Int.html#5122" class="Bound"
+      >n</a
+      ><a name="5174"
+      > </a
+      ><a name="5175" href="lib.types.Int.html#5122" class="Bound"
+      >n</a
+      ><a name="5176"
+      > </a
+      ><a name="5177" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="5178"
+      >
+    </a
+      ><a name="5183" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="5186"
+      > </a
+      ><a name="5187" href="lib.types.Int.html#5122" class="Bound"
+      >n</a
+      ><a name="5188"
+      > </a
+      ><a name="5189" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="5191"
+      > </a
+      ><a name="5192" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="5195"
+      > </a
+      ><a name="5196" href="lib.types.Int.html#5122" class="Bound"
+      >n</a
+      ><a name="5197"
+      >          </a
+      ><a name="5207" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="5209"
+      > </a
+      ><a name="5210" href="lib.types.Int.html#5036" class="Function"
+      >&#8484;~-inv-r-pos</a
+      ><a name="5222"
+      > </a
+      ><a name="5223" href="lib.types.Int.html#5122" class="Bound"
+      >n</a
+      ><a name="5224"
+      > </a
+      ><a name="5225" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="5226"
+      >
+    </a
+      ><a name="5231" class="InductiveConstructor"
+      >O</a
+      ><a name="5232"
+      >                       </a
+      ><a name="5255" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="5256"
+      >
+
+  </a
+      ><a name="5260" href="lib.types.Int.html#5260" class="Function"
+      >&#8484;~-inv-r-neg</a
+      ><a name="5272"
+      > </a
+      ><a name="5273" class="Symbol"
+      >:</a
+      ><a name="5274"
+      > </a
+      ><a name="5275" class="Symbol"
+      >&#8704;</a
+      ><a name="5276"
+      > </a
+      ><a name="5277" href="lib.types.Int.html#5277" class="Bound"
+      >n</a
+      ><a name="5278"
+      > </a
+      ><a name="5279" class="Symbol"
+      >&#8594;</a
+      ><a name="5280"
+      > </a
+      ><a name="5281" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="5284"
+      > </a
+      ><a name="5285" href="lib.types.Int.html#5277" class="Bound"
+      >n</a
+      ><a name="5286"
+      > </a
+      ><a name="5287" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="5289"
+      > </a
+      ><a name="5290" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="5293"
+      > </a
+      ><a name="5294" href="lib.types.Int.html#5277" class="Bound"
+      >n</a
+      ><a name="5295"
+      > </a
+      ><a name="5296" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="5298"
+      > </a
+      ><a name="5299" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="5300"
+      >
+  </a
+      ><a name="5303" href="lib.types.Int.html#5260" class="Function"
+      >&#8484;~-inv-r-neg</a
+      ><a name="5315"
+      > </a
+      ><a name="5316" href="lib.types.Nat.html#182" class="InductiveConstructor"
+      >O</a
+      ><a name="5317"
+      >     </a
+      ><a name="5322" class="Symbol"
+      >=</a
+      ><a name="5323"
+      > </a
+      ><a name="5324" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="5327"
+      >
+  </a
+      ><a name="5330" href="lib.types.Int.html#5260" class="Function"
+      >&#8484;~-inv-r-neg</a
+      ><a name="5342"
+      > </a
+      ><a name="5343" class="Symbol"
+      >(</a
+      ><a name="5344" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="5345"
+      > </a
+      ><a name="5346" href="lib.types.Int.html#5346" class="Bound"
+      >n</a
+      ><a name="5347" class="Symbol"
+      >)</a
+      ><a name="5348"
+      > </a
+      ><a name="5349" class="Symbol"
+      >=</a
+      ><a name="5350"
+      >
+    </a
+      ><a name="5355" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="5358"
+      > </a
+      ><a name="5359" class="Symbol"
+      >(</a
+      ><a name="5360" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="5361"
+      > </a
+      ><a name="5362" href="lib.types.Int.html#5346" class="Bound"
+      >n</a
+      ><a name="5363" class="Symbol"
+      >)</a
+      ><a name="5364"
+      > </a
+      ><a name="5365" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="5367"
+      > </a
+      ><a name="5368" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="5371"
+      > </a
+      ><a name="5372" class="Symbol"
+      >(</a
+      ><a name="5373" href="lib.types.Nat.html#190" class="InductiveConstructor"
+      >S</a
+      ><a name="5374"
+      > </a
+      ><a name="5375" href="lib.types.Int.html#5346" class="Bound"
+      >n</a
+      ><a name="5376" class="Symbol"
+      >)</a
+      ><a name="5377"
+      >  </a
+      ><a name="5379" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="5381"
+      > </a
+      ><a name="5382" href="lib.types.Int.html#4868" class="Function"
+      >neg-S-&#8484;+-pos-S</a
+      ><a name="5396"
+      > </a
+      ><a name="5397" href="lib.types.Int.html#5346" class="Bound"
+      >n</a
+      ><a name="5398"
+      > </a
+      ><a name="5399" href="lib.types.Int.html#5346" class="Bound"
+      >n</a
+      ><a name="5400"
+      > </a
+      ><a name="5401" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="5402"
+      >
+    </a
+      ><a name="5407" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="5410"
+      > </a
+      ><a name="5411" href="lib.types.Int.html#5346" class="Bound"
+      >n</a
+      ><a name="5412"
+      > </a
+      ><a name="5413" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="5415"
+      > </a
+      ><a name="5416" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="5419"
+      > </a
+      ><a name="5420" href="lib.types.Int.html#5346" class="Bound"
+      >n</a
+      ><a name="5421"
+      >          </a
+      ><a name="5431" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="5433"
+      > </a
+      ><a name="5434" href="lib.types.Int.html#5260" class="Function"
+      >&#8484;~-inv-r-neg</a
+      ><a name="5446"
+      > </a
+      ><a name="5447" href="lib.types.Int.html#5346" class="Bound"
+      >n</a
+      ><a name="5448"
+      > </a
+      ><a name="5449" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="5450"
+      >
+    </a
+      ><a name="5455" class="InductiveConstructor"
+      >O</a
+      ><a name="5456"
+      >                       </a
+      ><a name="5479" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="5480"
+      >
+
+</a
+      ><a name="5482" href="lib.types.Int.html#5482" class="Function"
+      >&#8484;~-inv-r</a
+      ><a name="5490"
+      > </a
+      ><a name="5491" class="Symbol"
+      >:</a
+      ><a name="5492"
+      > </a
+      ><a name="5493" class="Symbol"
+      >&#8704;</a
+      ><a name="5494"
+      > </a
+      ><a name="5495" href="lib.types.Int.html#5495" class="Bound"
+      >z</a
+      ><a name="5496"
+      > </a
+      ><a name="5497" class="Symbol"
+      >&#8594;</a
+      ><a name="5498"
+      > </a
+      ><a name="5499" href="lib.types.Int.html#5495" class="Bound"
+      >z</a
+      ><a name="5500"
+      > </a
+      ><a name="5501" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="5503"
+      > </a
+      ><a name="5504" href="lib.types.Int.html#2841" class="Function"
+      >&#8484;~</a
+      ><a name="5506"
+      > </a
+      ><a name="5507" href="lib.types.Int.html#5495" class="Bound"
+      >z</a
+      ><a name="5508"
+      > </a
+      ><a name="5509" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="5511"
+      > </a
+      ><a name="5512" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="5513"
+      >
+</a
+      ><a name="5514" href="lib.types.Int.html#5482" class="Function"
+      >&#8484;~-inv-r</a
+      ><a name="5522"
+      > </a
+      ><a name="5523" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="5524"
+      >       </a
+      ><a name="5531" class="Symbol"
+      >=</a
+      ><a name="5532"
+      > </a
+      ><a name="5533" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="5536"
+      >
+</a
+      ><a name="5537" href="lib.types.Int.html#5482" class="Function"
+      >&#8484;~-inv-r</a
+      ><a name="5545"
+      > </a
+      ><a name="5546" class="Symbol"
+      >(</a
+      ><a name="5547" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="5550"
+      > </a
+      ><a name="5551" href="lib.types.Int.html#5551" class="Bound"
+      >n</a
+      ><a name="5552" class="Symbol"
+      >)</a
+      ><a name="5553"
+      > </a
+      ><a name="5554" class="Symbol"
+      >=</a
+      ><a name="5555"
+      > </a
+      ><a name="5556" href="lib.types.Int.html#5036" class="Function"
+      >&#8484;~-inv-r-pos</a
+      ><a name="5568"
+      > </a
+      ><a name="5569" href="lib.types.Int.html#5551" class="Bound"
+      >n</a
+      ><a name="5570"
+      >
+</a
+      ><a name="5571" href="lib.types.Int.html#5482" class="Function"
+      >&#8484;~-inv-r</a
+      ><a name="5579"
+      > </a
+      ><a name="5580" class="Symbol"
+      >(</a
+      ><a name="5581" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="5584"
+      > </a
+      ><a name="5585" href="lib.types.Int.html#5585" class="Bound"
+      >n</a
+      ><a name="5586" class="Symbol"
+      >)</a
+      ><a name="5587"
+      > </a
+      ><a name="5588" class="Symbol"
+      >=</a
+      ><a name="5589"
+      > </a
+      ><a name="5590" href="lib.types.Int.html#5260" class="Function"
+      >&#8484;~-inv-r-neg</a
+      ><a name="5602"
+      > </a
+      ><a name="5603" href="lib.types.Int.html#5585" class="Bound"
+      >n</a
+      ><a name="5604"
+      >
+
+</a
+      ><a name="5606" href="lib.types.Int.html#5606" class="Function"
+      >&#8484;~-inv-l</a
+      ><a name="5614"
+      > </a
+      ><a name="5615" class="Symbol"
+      >:</a
+      ><a name="5616"
+      > </a
+      ><a name="5617" class="Symbol"
+      >&#8704;</a
+      ><a name="5618"
+      > </a
+      ><a name="5619" href="lib.types.Int.html#5619" class="Bound"
+      >z</a
+      ><a name="5620"
+      > </a
+      ><a name="5621" class="Symbol"
+      >&#8594;</a
+      ><a name="5622"
+      > </a
+      ><a name="5623" href="lib.types.Int.html#2841" class="Function"
+      >&#8484;~</a
+      ><a name="5625"
+      > </a
+      ><a name="5626" href="lib.types.Int.html#5619" class="Bound"
+      >z</a
+      ><a name="5627"
+      > </a
+      ><a name="5628" href="lib.types.Int.html#2908" class="Function Operator"
+      >&#8484;+</a
+      ><a name="5630"
+      > </a
+      ><a name="5631" href="lib.types.Int.html#5619" class="Bound"
+      >z</a
+      ><a name="5632"
+      > </a
+      ><a name="5633" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="5635"
+      > </a
+      ><a name="5636" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="5637"
+      >
+</a
+      ><a name="5638" href="lib.types.Int.html#5606" class="Function"
+      >&#8484;~-inv-l</a
+      ><a name="5646"
+      > </a
+      ><a name="5647" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="5648"
+      >       </a
+      ><a name="5655" class="Symbol"
+      >=</a
+      ><a name="5656"
+      > </a
+      ><a name="5657" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="5660"
+      >
+</a
+      ><a name="5661" href="lib.types.Int.html#5606" class="Function"
+      >&#8484;~-inv-l</a
+      ><a name="5669"
+      > </a
+      ><a name="5670" class="Symbol"
+      >(</a
+      ><a name="5671" href="lib.types.Int.html#167" class="InductiveConstructor"
+      >pos</a
+      ><a name="5674"
+      > </a
+      ><a name="5675" href="lib.types.Int.html#5675" class="Bound"
+      >n</a
+      ><a name="5676" class="Symbol"
+      >)</a
+      ><a name="5677"
+      > </a
+      ><a name="5678" class="Symbol"
+      >=</a
+      ><a name="5679"
+      > </a
+      ><a name="5680" href="lib.types.Int.html#5260" class="Function"
+      >&#8484;~-inv-r-neg</a
+      ><a name="5692"
+      > </a
+      ><a name="5693" href="lib.types.Int.html#5675" class="Bound"
+      >n</a
+      ><a name="5694"
+      >
+</a
+      ><a name="5695" href="lib.types.Int.html#5606" class="Function"
+      >&#8484;~-inv-l</a
+      ><a name="5703"
+      > </a
+      ><a name="5704" class="Symbol"
+      >(</a
+      ><a name="5705" href="lib.types.Int.html#187" class="InductiveConstructor"
+      >neg</a
+      ><a name="5708"
+      > </a
+      ><a name="5709" href="lib.types.Int.html#5709" class="Bound"
+      >n</a
+      ><a name="5710" class="Symbol"
+      >)</a
+      ><a name="5711"
+      > </a
+      ><a name="5712" class="Symbol"
+      >=</a
+      ><a name="5713"
+      > </a
+      ><a name="5714" href="lib.types.Int.html#5036" class="Function"
+      >&#8484;~-inv-r-pos</a
+      ><a name="5726"
+      > </a
+      ><a name="5727" href="lib.types.Int.html#5709" class="Bound"
+      >n</a
+      ><a name="5728"
+      >
+
+</a
+      ><a name="5730" href="lib.types.Int.html#5730" class="Function"
+      >&#8484;-group-structure</a
+      ><a name="5747"
+      > </a
+      ><a name="5748" class="Symbol"
+      >:</a
+      ><a name="5749"
+      > </a
+      ><a name="5750" href="lib.types.Group.html#197" class="Record"
+      >GroupStructure</a
+      ><a name="5764"
+      > </a
+      ><a name="5765" href="lib.types.Int.html#141" class="Datatype"
+      >&#8484;</a
+      ><a name="5766"
+      > 
+</a
+      ><a name="5768" href="lib.types.Int.html#5730" class="Function"
+      >&#8484;-group-structure</a
+      ><a name="5785"
+      > </a
+      ><a name="5786" class="Symbol"
+      >=</a
+      ><a name="5787"
+      > </a
+      ><a name="5788" class="Keyword"
+      >record</a
+      ><a name="5794"
+      >
+  </a
+      ><a name="5797" class="Symbol"
+      >{</a
+      ><a name="5798"
+      > </a
+      ><a name="5799" class="Field"
+      >ident</a
+      ><a name="5804"
+      > </a
+      ><a name="5805" class="Symbol"
+      >=</a
+      ><a name="5806"
+      > </a
+      ><a name="5807" href="lib.types.Int.html#159" class="InductiveConstructor"
+      >O</a
+      ><a name="5808"
+      >
+  </a
+      ><a name="5811" class="Symbol"
+      >;</a
+      ><a name="5812"
+      > </a
+      ><a name="5813" class="Field"
+      >inv</a
+      ><a name="5816"
+      > </a
+      ><a name="5817" class="Symbol"
+      >=</a
+      ><a name="5818"
+      > </a
+      ><a name="5819" href="lib.types.Int.html#2841" class="Function"
+      >&#8484;~</a
+      ><a name="5821"
+      >
+  </a
+      ><a name="5824" class="Symbol"
+      >;</a
+      ><a name="5825"
+      > </a
+      ><a name="5826" class="Field"
+      >comp</a
+      ><a name="5830"
+      > </a
+      ><a name="5831" class="Symbol"
+      >=</a
+      ><a name="5832"
+      > </a
+      ><a name="5833" href="lib.types.Int.html#2908" class="Function Operator"
+      >_&#8484;+_</a
+      ><a name="5837"
+      >
+  </a
+      ><a name="5840" class="Symbol"
+      >;</a
+      ><a name="5841"
+      > </a
+      ><a name="5842" class="Field"
+      >unitl</a
+      ><a name="5847"
+      > </a
+      ><a name="5848" class="Symbol"
+      >=</a
+      ><a name="5849"
+      > </a
+      ><a name="5850" href="lib.types.Int.html#3073" class="Function"
+      >&#8484;+-unit-l</a
+      ><a name="5859"
+      >
+  </a
+      ><a name="5862" class="Symbol"
+      >;</a
+      ><a name="5863"
+      > </a
+      ><a name="5864" class="Field"
+      >unitr</a
+      ><a name="5869"
+      > </a
+      ><a name="5870" class="Symbol"
+      >=</a
+      ><a name="5871"
+      > </a
+      ><a name="5872" href="lib.types.Int.html#3386" class="Function"
+      >&#8484;+-unit-r</a
+      ><a name="5881"
+      >
+  </a
+      ><a name="5884" class="Symbol"
+      >;</a
+      ><a name="5885"
+      > </a
+      ><a name="5886" class="Field"
+      >assoc</a
+      ><a name="5891"
+      > </a
+      ><a name="5892" class="Symbol"
+      >=</a
+      ><a name="5893"
+      > </a
+      ><a name="5894" href="lib.types.Int.html#4512" class="Function"
+      >&#8484;+-assoc</a
+      ><a name="5902"
+      >
+  </a
+      ><a name="5905" class="Symbol"
+      >;</a
+      ><a name="5906"
+      > </a
+      ><a name="5907" class="Field"
+      >invr</a
+      ><a name="5911"
+      > </a
+      ><a name="5912" class="Symbol"
+      >=</a
+      ><a name="5913"
+      > </a
+      ><a name="5914" href="lib.types.Int.html#5482" class="Function"
+      >&#8484;~-inv-r</a
+      ><a name="5922"
+      >
+  </a
+      ><a name="5925" class="Symbol"
+      >;</a
+      ><a name="5926"
+      > </a
+      ><a name="5927" class="Field"
+      >invl</a
+      ><a name="5931"
+      > </a
+      ><a name="5932" class="Symbol"
+      >=</a
+      ><a name="5933"
+      > </a
+      ><a name="5934" href="lib.types.Int.html#5606" class="Function"
+      >&#8484;~-inv-l</a
+      ><a name="5942"
+      >
+  </a
+      ><a name="5945" class="Symbol"
+      >}</a
+      ><a name="5946"
+      >
+
+</a
+      ><a name="5948" href="lib.types.Int.html#5948" class="Function"
+      >&#8484;-group</a
+      ><a name="5955"
+      > </a
+      ><a name="5956" class="Symbol"
+      >:</a
+      ><a name="5957"
+      > </a
+      ><a name="5958" href="lib.types.Group.html#854" class="Function"
+      >Group&#8320;</a
+      ><a name="5964"
+      >
+</a
+      ><a name="5965" href="lib.types.Int.html#5948" class="Function"
+      >&#8484;-group</a
+      ><a name="5972"
+      > </a
+      ><a name="5973" class="Symbol"
+      >=</a
+      ><a name="5974"
+      > </a
+      ><a name="5975" href="lib.types.Group.html#655" class="InductiveConstructor"
+      >group</a
+      ><a name="5980"
+      > </a
+      ><a name="5981" class="Symbol"
+      >_</a
+      ><a name="5982"
+      > </a
+      ><a name="5983" href="lib.types.Int.html#2725" class="Function"
+      >&#8484;-is-set</a
+      ><a name="5991"
+      > </a
+      ><a name="5992" href="lib.types.Int.html#5730" class="Function"
+      >&#8484;-group-structure</a
+      ></pre
+    ></body
+  ></html
+>

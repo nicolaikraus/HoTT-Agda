@@ -1,0 +1,4078 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >lib.types.Cover</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --without-K </a
+      ><a name="25" class="Symbol"
+      >#-}</a
+      ><a name="28"
+      >
+
+</a
+      ><a name="30" class="Keyword"
+      >open</a
+      ><a name="34"
+      > </a
+      ><a name="35" class="Keyword"
+      >import</a
+      ><a name="41"
+      > </a
+      ><a name="42" href="lib.Basics.html#1" class="Module"
+      >lib.Basics</a
+      ><a name="52"
+      >
+</a
+      ><a name="53" class="Keyword"
+      >open</a
+      ><a name="57"
+      > </a
+      ><a name="58" class="Keyword"
+      >import</a
+      ><a name="64"
+      > </a
+      ><a name="65" href="lib.NConnected.html#1" class="Module"
+      >lib.NConnected</a
+      ><a name="79"
+      >
+</a
+      ><a name="80" class="Keyword"
+      >open</a
+      ><a name="84"
+      > </a
+      ><a name="85" class="Keyword"
+      >import</a
+      ><a name="91"
+      > </a
+      ><a name="92" href="lib.types.TLevel.html#1" class="Module"
+      >lib.types.TLevel</a
+      ><a name="108"
+      >
+</a
+      ><a name="109" class="Keyword"
+      >open</a
+      ><a name="113"
+      > </a
+      ><a name="114" class="Keyword"
+      >import</a
+      ><a name="120"
+      > </a
+      ><a name="121" href="lib.NType2.html#1" class="Module"
+      >lib.NType2</a
+      ><a name="131"
+      >
+</a
+      ><a name="132" class="Keyword"
+      >open</a
+      ><a name="136"
+      > </a
+      ><a name="137" class="Keyword"
+      >import</a
+      ><a name="143"
+      > </a
+      ><a name="144" href="lib.types.Pi.html#1" class="Module"
+      >lib.types.Pi</a
+      ><a name="156"
+      >
+</a
+      ><a name="157" class="Keyword"
+      >open</a
+      ><a name="161"
+      > </a
+      ><a name="162" class="Keyword"
+      >import</a
+      ><a name="168"
+      > </a
+      ><a name="169" href="lib.types.Sigma.html#1" class="Module"
+      >lib.types.Sigma</a
+      ><a name="184"
+      >
+</a
+      ><a name="185" class="Keyword"
+      >open</a
+      ><a name="189"
+      > </a
+      ><a name="190" class="Keyword"
+      >import</a
+      ><a name="196"
+      > </a
+      ><a name="197" href="lib.types.Pointed.html#1" class="Module"
+      >lib.types.Pointed</a
+      ><a name="214"
+      >
+</a
+      ><a name="215" class="Keyword"
+      >open</a
+      ><a name="219"
+      > </a
+      ><a name="220" class="Keyword"
+      >import</a
+      ><a name="226"
+      > </a
+      ><a name="227" href="lib.types.LoopSpace.html#1" class="Module"
+      >lib.types.LoopSpace</a
+      ><a name="246"
+      >
+</a
+      ><a name="247" class="Keyword"
+      >open</a
+      ><a name="251"
+      > </a
+      ><a name="252" class="Keyword"
+      >import</a
+      ><a name="258"
+      > </a
+      ><a name="259" href="lib.types.Truncation.html#1" class="Module"
+      >lib.types.Truncation</a
+      ><a name="279"
+      >
+</a
+      ><a name="280" class="Keyword"
+      >open</a
+      ><a name="284"
+      > </a
+      ><a name="285" class="Keyword"
+      >import</a
+      ><a name="291"
+      > </a
+      ><a name="292" href="lib.types.PathSet.html#1" class="Module"
+      >lib.types.PathSet</a
+      ><a name="309"
+      >
+
+</a
+      ><a name="311" class="Keyword"
+      >module</a
+      ><a name="317"
+      > </a
+      ><a name="318" href="lib.types.Cover.html#1" class="Module"
+      >lib.types.Cover</a
+      ><a name="333"
+      > </a
+      ><a name="334" class="Keyword"
+      >where</a
+      ><a name="339"
+      >
+
+</a
+      ><a name="341" class="Comment"
+      >{-
+  The definition of covering spaces.
+-}</a
+      ><a name="383"
+      >
+</a
+      ><a name="384" class="Keyword"
+      >record</a
+      ><a name="390"
+      > </a
+      ><a name="391" href="lib.types.Cover.html#391" class="Record"
+      >Cover</a
+      ><a name="396"
+      > </a
+      ><a name="397" class="Symbol"
+      >{</a
+      ><a name="398" href="lib.types.Cover.html#398" class="Bound"
+      >i</a
+      ><a name="399" class="Symbol"
+      >}</a
+      ><a name="400"
+      > </a
+      ><a name="401" class="Symbol"
+      >(</a
+      ><a name="402" href="lib.types.Cover.html#402" class="Bound"
+      >A</a
+      ><a name="403"
+      > </a
+      ><a name="404" class="Symbol"
+      >:</a
+      ><a name="405"
+      > </a
+      ><a name="406" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="410"
+      > </a
+      ><a name="411" href="lib.types.Cover.html#398" class="Bound"
+      >i</a
+      ><a name="412" class="Symbol"
+      >)</a
+      ><a name="413"
+      > </a
+      ><a name="414" href="lib.types.Cover.html#414" class="Bound"
+      >j</a
+      ><a name="415"
+      > </a
+      ><a name="416" class="Symbol"
+      >:</a
+      ><a name="417"
+      > </a
+      ><a name="418" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="422"
+      > </a
+      ><a name="423" class="Symbol"
+      >(</a
+      ><a name="424" href="Agda.Primitive.html#626" class="Primitive"
+      >lmax</a
+      ><a name="428"
+      > </a
+      ><a name="429" href="lib.types.Cover.html#398" class="Bound"
+      >i</a
+      ><a name="430"
+      > </a
+      ><a name="431" class="Symbol"
+      >(</a
+      ><a name="432" href="Agda.Primitive.html#596" class="Primitive"
+      >lsucc</a
+      ><a name="437"
+      > </a
+      ><a name="438" href="lib.types.Cover.html#414" class="Bound"
+      >j</a
+      ><a name="439" class="Symbol"
+      >))</a
+      ><a name="441"
+      > </a
+      ><a name="442" class="Keyword"
+      >where</a
+      ><a name="447"
+      >
+  </a
+      ><a name="450" class="Keyword"
+      >constructor</a
+      ><a name="461"
+      > </a
+      ><a name="462" href="lib.types.Cover.html#462" class="InductiveConstructor"
+      >cover</a
+      ><a name="467"
+      >
+  </a
+      ><a name="470" class="Keyword"
+      >field</a
+      ><a name="475"
+      >
+    </a
+      ><a name="480" href="lib.types.Cover.html#480" class="Field"
+      >Fiber</a
+      ><a name="485"
+      > </a
+      ><a name="486" class="Symbol"
+      >:</a
+      ><a name="487"
+      > </a
+      ><a name="488" href="lib.types.Cover.html#402" class="Bound"
+      >A</a
+      ><a name="489"
+      > </a
+      ><a name="490" class="Symbol"
+      >&#8594;</a
+      ><a name="491"
+      > </a
+      ><a name="492" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="496"
+      > </a
+      ><a name="497" href="lib.types.Cover.html#414" class="Bound"
+      >j</a
+      ><a name="498"
+      >
+    </a
+      ><a name="503" href="lib.types.Cover.html#503" class="Field"
+      >Fiber-level</a
+      ><a name="514"
+      > </a
+      ><a name="515" class="Symbol"
+      >:</a
+      ><a name="516"
+      > </a
+      ><a name="517" class="Symbol"
+      >&#8704;</a
+      ><a name="518"
+      > </a
+      ><a name="519" href="lib.types.Cover.html#519" class="Bound"
+      >a</a
+      ><a name="520"
+      > </a
+      ><a name="521" class="Symbol"
+      >&#8594;</a
+      ><a name="522"
+      > </a
+      ><a name="523" href="lib.NType.html#388" class="Function"
+      >is-set</a
+      ><a name="529"
+      > </a
+      ><a name="530" class="Symbol"
+      >(</a
+      ><a name="531" href="lib.types.Cover.html#480" class="Bound"
+      >Fiber</a
+      ><a name="536"
+      > </a
+      ><a name="537" href="lib.types.Cover.html#519" class="Bound"
+      >a</a
+      ><a name="538" class="Symbol"
+      >)</a
+      ><a name="539"
+      >
+  </a
+      ><a name="542" href="lib.types.Cover.html#542" class="Function"
+      >Fiber-is-set</a
+      ><a name="554"
+      > </a
+      ><a name="555" class="Symbol"
+      >=</a
+      ><a name="556"
+      > </a
+      ><a name="557" href="lib.types.Cover.html#503" class="Field"
+      >Fiber-level</a
+      ><a name="568"
+      >
+  </a
+      ><a name="571" href="lib.types.Cover.html#571" class="Function"
+      >TotalSpace</a
+      ><a name="581"
+      > </a
+      ><a name="582" class="Symbol"
+      >=</a
+      ><a name="583"
+      > </a
+      ><a name="584" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="585"
+      > </a
+      ><a name="586" href="lib.types.Cover.html#402" class="Bound"
+      >A</a
+      ><a name="587"
+      > </a
+      ><a name="588" href="lib.types.Cover.html#480" class="Field"
+      >Fiber</a
+      ><a name="593"
+      >
+
+</a
+      ><a name="595" class="Comment"
+      >-- Basic lemmas</a
+      ><a name="610"
+      >
+</a
+      ><a name="611" class="Keyword"
+      >module</a
+      ><a name="617"
+      > </a
+      ><a name="618" href="lib.types.Cover.html#618" class="Module"
+      >_</a
+      ><a name="619"
+      > </a
+      ><a name="620" class="Symbol"
+      >{</a
+      ><a name="621" href="lib.types.Cover.html#621" class="Bound"
+      >i</a
+      ><a name="622" class="Symbol"
+      >}</a
+      ><a name="623"
+      > </a
+      ><a name="624" class="Symbol"
+      >{</a
+      ><a name="625" href="lib.types.Cover.html#625" class="Bound"
+      >A</a
+      ><a name="626"
+      > </a
+      ><a name="627" class="Symbol"
+      >:</a
+      ><a name="628"
+      > </a
+      ><a name="629" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="633"
+      > </a
+      ><a name="634" href="lib.types.Cover.html#621" class="Bound"
+      >i</a
+      ><a name="635" class="Symbol"
+      >}</a
+      ><a name="636"
+      > </a
+      ><a name="637" class="Symbol"
+      >{</a
+      ><a name="638" href="lib.types.Cover.html#638" class="Bound"
+      >j</a
+      ><a name="639" class="Symbol"
+      >}</a
+      ><a name="640"
+      > </a
+      ><a name="641" class="Keyword"
+      >where</a
+      ><a name="646"
+      >
+
+  </a
+      ><a name="650" class="Keyword"
+      >open</a
+      ><a name="654"
+      > </a
+      ><a name="655" href="lib.types.Cover.html#391" class="Module"
+      >Cover</a
+      ><a name="660"
+      >
+
+  </a
+      ><a name="664" class="Comment"
+      >-- Equality between covers.</a
+      ><a name="691"
+      >
+  </a
+      ><a name="694" class="Keyword"
+      >private</a
+      ><a name="701"
+      >
+    </a
+      ><a name="706" href="lib.types.Cover.html#706" class="Function"
+      >cover=&#8242;</a
+      ><a name="713"
+      > </a
+      ><a name="714" class="Symbol"
+      >:</a
+      ><a name="715"
+      > </a
+      ><a name="716" class="Symbol"
+      >{</a
+      ><a name="717" href="lib.types.Cover.html#717" class="Bound"
+      >c&#8321;</a
+      ><a name="719"
+      > </a
+      ><a name="720" href="lib.types.Cover.html#720" class="Bound"
+      >c&#8322;</a
+      ><a name="722"
+      > </a
+      ><a name="723" class="Symbol"
+      >:</a
+      ><a name="724"
+      > </a
+      ><a name="725" href="lib.types.Cover.html#391" class="Record"
+      >Cover</a
+      ><a name="730"
+      > </a
+      ><a name="731" href="lib.types.Cover.html#625" class="Bound"
+      >A</a
+      ><a name="732"
+      > </a
+      ><a name="733" href="lib.types.Cover.html#638" class="Bound"
+      >j</a
+      ><a name="734" class="Symbol"
+      >}</a
+      ><a name="735"
+      > </a
+      ><a name="736" class="Symbol"
+      >&#8594;</a
+      ><a name="737"
+      > </a
+      ><a name="738" href="lib.types.Cover.html#480" class="Field"
+      >Fiber</a
+      ><a name="743"
+      > </a
+      ><a name="744" href="lib.types.Cover.html#717" class="Bound"
+      >c&#8321;</a
+      ><a name="746"
+      > </a
+      ><a name="747" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="749"
+      > </a
+      ><a name="750" href="lib.types.Cover.html#480" class="Field"
+      >Fiber</a
+      ><a name="755"
+      > </a
+      ><a name="756" href="lib.types.Cover.html#720" class="Bound"
+      >c&#8322;</a
+      ><a name="758"
+      > </a
+      ><a name="759" class="Symbol"
+      >&#8594;</a
+      ><a name="760"
+      > </a
+      ><a name="761" href="lib.types.Cover.html#717" class="Bound"
+      >c&#8321;</a
+      ><a name="763"
+      > </a
+      ><a name="764" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="766"
+      > </a
+      ><a name="767" href="lib.types.Cover.html#720" class="Bound"
+      >c&#8322;</a
+      ><a name="769"
+      >
+    </a
+      ><a name="774" href="lib.types.Cover.html#706" class="Function"
+      >cover=&#8242;</a
+      ><a name="781"
+      > </a
+      ><a name="782" class="Symbol"
+      >{</a
+      ><a name="783" href="lib.types.Cover.html#462" class="InductiveConstructor"
+      >cover</a
+      ><a name="788"
+      > </a
+      ><a name="789" href="lib.types.Cover.html#789" class="Bound"
+      >f</a
+      ><a name="790"
+      > </a
+      ><a name="791" class="Symbol"
+      >_}</a
+      ><a name="793"
+      > </a
+      ><a name="794" class="Symbol"
+      >{</a
+      ><a name="795" href="lib.types.Cover.html#462" class="InductiveConstructor"
+      >cover</a
+      ><a name="800"
+      > </a
+      ><a name="801" class="DottedPattern Symbol"
+      >.</a
+      ><a name="802" href="lib.types.Cover.html#789" class="DottedPattern Bound"
+      >f</a
+      ><a name="803"
+      > </a
+      ><a name="804" class="Symbol"
+      >_}</a
+      ><a name="806"
+      > </a
+      ><a name="807" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="810"
+      > </a
+      ><a name="811" class="Symbol"
+      >=</a
+      ><a name="812"
+      > </a
+      ><a name="813" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="815"
+      > </a
+      ><a name="816" class="Symbol"
+      >(</a
+      ><a name="817" href="lib.types.Cover.html#462" class="InductiveConstructor"
+      >cover</a
+      ><a name="822"
+      > </a
+      ><a name="823" href="lib.types.Cover.html#789" class="Bound"
+      >f</a
+      ><a name="824" class="Symbol"
+      >)</a
+      ><a name="825"
+      > </a
+      ><a name="826" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="827"
+      >
+      </a
+      ><a name="834" href="lib.NType.html#2294" class="Function"
+      >prop-has-all-paths</a
+      ><a name="852"
+      > </a
+      ><a name="853" class="Symbol"
+      >(</a
+      ><a name="854" href="lib.types.Pi.html#475" class="Function"
+      >&#928;-is-prop</a
+      ><a name="863"
+      > </a
+      ><a name="864" class="Symbol"
+      >&#955;</a
+      ><a name="865"
+      > </a
+      ><a name="866" href="lib.types.Cover.html#866" class="Bound"
+      >_</a
+      ><a name="867"
+      > </a
+      ><a name="868" class="Symbol"
+      >&#8594;</a
+      ><a name="869"
+      > </a
+      ><a name="870" href="lib.NType2.html#2322" class="Function"
+      >is-set-is-prop</a
+      ><a name="884" class="Symbol"
+      >)</a
+      ><a name="885"
+      > </a
+      ><a name="886" class="Symbol"
+      >_</a
+      ><a name="887"
+      > </a
+      ><a name="888" class="Symbol"
+      >_</a
+      ><a name="889"
+      >
+
+  </a
+      ><a name="893" href="lib.types.Cover.html#893" class="Function"
+      >cover=</a
+      ><a name="899"
+      > </a
+      ><a name="900" class="Symbol"
+      >:</a
+      ><a name="901"
+      > </a
+      ><a name="902" class="Symbol"
+      >{</a
+      ><a name="903" href="lib.types.Cover.html#903" class="Bound"
+      >c&#8321;</a
+      ><a name="905"
+      > </a
+      ><a name="906" href="lib.types.Cover.html#906" class="Bound"
+      >c&#8322;</a
+      ><a name="908"
+      > </a
+      ><a name="909" class="Symbol"
+      >:</a
+      ><a name="910"
+      > </a
+      ><a name="911" href="lib.types.Cover.html#391" class="Record"
+      >Cover</a
+      ><a name="916"
+      > </a
+      ><a name="917" href="lib.types.Cover.html#625" class="Bound"
+      >A</a
+      ><a name="918"
+      > </a
+      ><a name="919" href="lib.types.Cover.html#638" class="Bound"
+      >j</a
+      ><a name="920" class="Symbol"
+      >}</a
+      ><a name="921"
+      > </a
+      ><a name="922" class="Symbol"
+      >&#8594;</a
+      ><a name="923"
+      > </a
+      ><a name="924" class="Symbol"
+      >(&#8704;</a
+      ><a name="926"
+      > </a
+      ><a name="927" href="lib.types.Cover.html#927" class="Bound"
+      >a</a
+      ><a name="928"
+      > </a
+      ><a name="929" class="Symbol"
+      >&#8594;</a
+      ><a name="930"
+      > </a
+      ><a name="931" href="lib.types.Cover.html#480" class="Field"
+      >Fiber</a
+      ><a name="936"
+      > </a
+      ><a name="937" href="lib.types.Cover.html#903" class="Bound"
+      >c&#8321;</a
+      ><a name="939"
+      > </a
+      ><a name="940" href="lib.types.Cover.html#927" class="Bound"
+      >a</a
+      ><a name="941"
+      > </a
+      ><a name="942" href="lib.Equivalences.html#2994" class="Function Operator"
+      >&#8771;</a
+      ><a name="943"
+      > </a
+      ><a name="944" href="lib.types.Cover.html#480" class="Field"
+      >Fiber</a
+      ><a name="949"
+      > </a
+      ><a name="950" href="lib.types.Cover.html#906" class="Bound"
+      >c&#8322;</a
+      ><a name="952"
+      > </a
+      ><a name="953" href="lib.types.Cover.html#927" class="Bound"
+      >a</a
+      ><a name="954" class="Symbol"
+      >)</a
+      ><a name="955"
+      >
+    </a
+      ><a name="960" class="Symbol"
+      >&#8594;</a
+      ><a name="961"
+      > </a
+      ><a name="962" href="lib.types.Cover.html#903" class="Bound"
+      >c&#8321;</a
+      ><a name="964"
+      > </a
+      ><a name="965" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="967"
+      > </a
+      ><a name="968" href="lib.types.Cover.html#906" class="Bound"
+      >c&#8322;</a
+      ><a name="970"
+      >
+  </a
+      ><a name="973" href="lib.types.Cover.html#893" class="Function"
+      >cover=</a
+      ><a name="979"
+      > </a
+      ><a name="980" href="lib.types.Cover.html#980" class="Bound"
+      >F&#8771;</a
+      ><a name="982"
+      > </a
+      ><a name="983" class="Symbol"
+      >=</a
+      ><a name="984"
+      > </a
+      ><a name="985" href="lib.types.Cover.html#706" class="Function"
+      >cover=&#8242;</a
+      ><a name="992"
+      > </a
+      ><a name="993" class="Symbol"
+      >(</a
+      ><a name="994" href="lib.Funext.html#3978" class="Function"
+      >&#955;=</a
+      ><a name="996"
+      > </a
+      ><a name="997" class="Symbol"
+      >&#955;</a
+      ><a name="998"
+      > </a
+      ><a name="999" href="lib.types.Cover.html#999" class="Bound"
+      >a</a
+      ><a name="1000"
+      > </a
+      ><a name="1001" class="Symbol"
+      >&#8594;</a
+      ><a name="1002"
+      > </a
+      ><a name="1003" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="1005"
+      > </a
+      ><a name="1006" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="1007"
+      > </a
+      ><a name="1008" href="lib.types.Cover.html#980" class="Bound"
+      >F&#8771;</a
+      ><a name="1010"
+      > </a
+      ><a name="1011" href="lib.types.Cover.html#999" class="Bound"
+      >a</a
+      ><a name="1012" class="Symbol"
+      >)</a
+      ><a name="1013"
+      >
+
+  </a
+      ><a name="1017" class="Comment"
+      >-- The definition of universality in terms of connectedness.</a
+      ><a name="1077"
+      >
+  </a
+      ><a name="1080" href="lib.types.Cover.html#1080" class="Function"
+      >is-universal</a
+      ><a name="1092"
+      > </a
+      ><a name="1093" class="Symbol"
+      >:</a
+      ><a name="1094"
+      > </a
+      ><a name="1095" href="lib.types.Cover.html#391" class="Record"
+      >Cover</a
+      ><a name="1100"
+      > </a
+      ><a name="1101" href="lib.types.Cover.html#625" class="Bound"
+      >A</a
+      ><a name="1102"
+      > </a
+      ><a name="1103" href="lib.types.Cover.html#638" class="Bound"
+      >j</a
+      ><a name="1104"
+      > </a
+      ><a name="1105" class="Symbol"
+      >&#8594;</a
+      ><a name="1106"
+      > </a
+      ><a name="1107" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="1111"
+      > </a
+      ><a name="1112" class="Symbol"
+      >(</a
+      ><a name="1113" href="Agda.Primitive.html#626" class="Primitive"
+      >lmax</a
+      ><a name="1117"
+      > </a
+      ><a name="1118" href="lib.types.Cover.html#621" class="Bound"
+      >i</a
+      ><a name="1119"
+      > </a
+      ><a name="1120" href="lib.types.Cover.html#638" class="Bound"
+      >j</a
+      ><a name="1121" class="Symbol"
+      >)</a
+      ><a name="1122"
+      >
+  </a
+      ><a name="1125" href="lib.types.Cover.html#1080" class="Function"
+      >is-universal</a
+      ><a name="1137"
+      > </a
+      ><a name="1138" href="lib.types.Cover.html#1138" class="Bound"
+      >cov</a
+      ><a name="1141"
+      > </a
+      ><a name="1142" class="Symbol"
+      >=</a
+      ><a name="1143"
+      > </a
+      ><a name="1144" href="lib.NConnected.html#365" class="Function"
+      >is-connected</a
+      ><a name="1156"
+      > </a
+      ><a name="1157" href="lib.types.TLevel.html#301" class="Function"
+      >&#10216;1&#10217;</a
+      ><a name="1160"
+      > </a
+      ><a name="1161" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="1162"
+      > </a
+      ><a name="1163" href="lib.types.Cover.html#571" class="Function"
+      >TotalSpace</a
+      ><a name="1173"
+      > </a
+      ><a name="1174" href="lib.types.Cover.html#1138" class="Bound"
+      >cov</a
+      ><a name="1177"
+      >
+
+  </a
+      ><a name="1181" class="Comment"
+      >-- In terms of connectedness</a
+      ><a name="1209"
+      >
+  </a
+      ><a name="1212" href="lib.types.Cover.html#1212" class="Function"
+      >UniversalCover</a
+      ><a name="1226"
+      > </a
+      ><a name="1227" class="Symbol"
+      >:</a
+      ><a name="1228"
+      > </a
+      ><a name="1229" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="1233"
+      > </a
+      ><a name="1234" class="Symbol"
+      >(</a
+      ><a name="1235" href="Agda.Primitive.html#626" class="Primitive"
+      >lmax</a
+      ><a name="1239"
+      > </a
+      ><a name="1240" href="lib.types.Cover.html#621" class="Bound"
+      >i</a
+      ><a name="1241"
+      > </a
+      ><a name="1242" class="Symbol"
+      >(</a
+      ><a name="1243" href="Agda.Primitive.html#596" class="Primitive"
+      >lsucc</a
+      ><a name="1248"
+      > </a
+      ><a name="1249" href="lib.types.Cover.html#638" class="Bound"
+      >j</a
+      ><a name="1250" class="Symbol"
+      >))</a
+      ><a name="1252"
+      >
+  </a
+      ><a name="1255" href="lib.types.Cover.html#1212" class="Function"
+      >UniversalCover</a
+      ><a name="1269"
+      > </a
+      ><a name="1270" class="Symbol"
+      >=</a
+      ><a name="1271"
+      > </a
+      ><a name="1272" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="1273"
+      > </a
+      ><a name="1274" class="Symbol"
+      >(</a
+      ><a name="1275" href="lib.types.Cover.html#391" class="Record"
+      >Cover</a
+      ><a name="1280"
+      > </a
+      ><a name="1281" href="lib.types.Cover.html#625" class="Bound"
+      >A</a
+      ><a name="1282"
+      > </a
+      ><a name="1283" href="lib.types.Cover.html#638" class="Bound"
+      >j</a
+      ><a name="1284" class="Symbol"
+      >)</a
+      ><a name="1285"
+      > </a
+      ><a name="1286" href="lib.types.Cover.html#1080" class="Function"
+      >is-universal</a
+      ><a name="1298"
+      >
+
+</a
+      ><a name="1300" class="Comment"
+      >-- Theorem: A covering space keeps higher homotopy groups.</a
+      ><a name="1358"
+      >
+</a
+      ><a name="1359" class="Keyword"
+      >module</a
+      ><a name="1365"
+      > </a
+      ><a name="1366" href="lib.types.Cover.html#1366" class="Module"
+      >_</a
+      ><a name="1367"
+      > </a
+      ><a name="1368" class="Symbol"
+      >{</a
+      ><a name="1369" href="lib.types.Cover.html#1369" class="Bound"
+      >i</a
+      ><a name="1370" class="Symbol"
+      >}</a
+      ><a name="1371"
+      > </a
+      ><a name="1372" class="Symbol"
+      >(</a
+      ><a name="1373" href="lib.types.Cover.html#1373" class="Bound"
+      >A&#8729;</a
+      ><a name="1375"
+      > </a
+      ><a name="1376" class="Symbol"
+      >:</a
+      ><a name="1377"
+      > </a
+      ><a name="1378" href="lib.types.Pointed.html#232" class="Function"
+      >Ptd</a
+      ><a name="1381"
+      > </a
+      ><a name="1382" href="lib.types.Cover.html#1369" class="Bound"
+      >i</a
+      ><a name="1383" class="Symbol"
+      >)</a
+      ><a name="1384"
+      >
+  </a
+      ><a name="1387" class="Symbol"
+      >{</a
+      ><a name="1388" href="lib.types.Cover.html#1388" class="Bound"
+      >j</a
+      ><a name="1389" class="Symbol"
+      >}</a
+      ><a name="1390"
+      > </a
+      ><a name="1391" class="Symbol"
+      >(</a
+      ><a name="1392" href="lib.types.Cover.html#1392" class="Bound"
+      >c</a
+      ><a name="1393"
+      > </a
+      ><a name="1394" class="Symbol"
+      >:</a
+      ><a name="1395"
+      > </a
+      ><a name="1396" href="lib.types.Cover.html#391" class="Record"
+      >Cover</a
+      ><a name="1401"
+      > </a
+      ><a name="1402" class="Symbol"
+      >(</a
+      ><a name="1403" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="1406"
+      > </a
+      ><a name="1407" href="lib.types.Cover.html#1373" class="Bound"
+      >A&#8729;</a
+      ><a name="1409" class="Symbol"
+      >)</a
+      ><a name="1410"
+      > </a
+      ><a name="1411" href="lib.types.Cover.html#1388" class="Bound"
+      >j</a
+      ><a name="1412" class="Symbol"
+      >)</a
+      ><a name="1413"
+      >
+  </a
+      ><a name="1416" class="Symbol"
+      >(</a
+      ><a name="1417" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="1419"
+      > </a
+      ><a name="1420" class="Symbol"
+      >:</a
+      ><a name="1421"
+      > </a
+      ><a name="1422" href="lib.types.Cover.html#480" class="Field"
+      >Cover.Fiber</a
+      ><a name="1433"
+      > </a
+      ><a name="1434" href="lib.types.Cover.html#1392" class="Bound"
+      >c</a
+      ><a name="1435"
+      > </a
+      ><a name="1436" class="Symbol"
+      >(</a
+      ><a name="1437" href="lib.Base.html#5092" class="Field"
+      >snd</a
+      ><a name="1440"
+      > </a
+      ><a name="1441" href="lib.types.Cover.html#1373" class="Bound"
+      >A&#8729;</a
+      ><a name="1443" class="Symbol"
+      >))</a
+      ><a name="1445"
+      > </a
+      ><a name="1446" class="Keyword"
+      >where</a
+      ><a name="1451"
+      >
+
+  </a
+      ><a name="1455" class="Keyword"
+      >open</a
+      ><a name="1459"
+      > </a
+      ><a name="1460" href="lib.types.Cover.html#391" class="Module"
+      >Cover</a
+      ><a name="1465"
+      > </a
+      ><a name="1466" href="lib.types.Cover.html#1392" class="Bound"
+      >c</a
+      ><a name="1467"
+      >
+  </a
+      ><a name="1470" class="Keyword"
+      >private</a
+      ><a name="1477"
+      >
+    </a
+      ><a name="1482" href="lib.types.Cover.html#1482" class="Function"
+      >F</a
+      ><a name="1483"
+      > </a
+      ><a name="1484" class="Symbol"
+      >=</a
+      ><a name="1485"
+      > </a
+      ><a name="1486" href="lib.types.Cover.html#480" class="Field"
+      >Cover.Fiber</a
+      ><a name="1497"
+      > </a
+      ><a name="1498" href="lib.types.Cover.html#1392" class="Bound"
+      >c</a
+      ><a name="1499"
+      >
+    </a
+      ><a name="1504" href="lib.types.Cover.html#1504" class="Function"
+      >F-level</a
+      ><a name="1511"
+      > </a
+      ><a name="1512" class="Symbol"
+      >=</a
+      ><a name="1513"
+      > </a
+      ><a name="1514" href="lib.types.Cover.html#503" class="Field"
+      >Cover.Fiber-level</a
+      ><a name="1531"
+      > </a
+      ><a name="1532" href="lib.types.Cover.html#1392" class="Bound"
+      >c</a
+      ><a name="1533"
+      >
+    </a
+      ><a name="1538" href="lib.types.Cover.html#1538" class="Function"
+      >A</a
+      ><a name="1539"
+      > </a
+      ><a name="1540" class="Symbol"
+      >=</a
+      ><a name="1541"
+      > </a
+      ><a name="1542" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="1545"
+      > </a
+      ><a name="1546" href="lib.types.Cover.html#1373" class="Bound"
+      >A&#8729;</a
+      ><a name="1548"
+      >
+    </a
+      ><a name="1553" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="1554"
+      > </a
+      ><a name="1555" class="Symbol"
+      >=</a
+      ><a name="1556"
+      > </a
+      ><a name="1557" href="lib.Base.html#5092" class="Field"
+      >snd</a
+      ><a name="1560"
+      > </a
+      ><a name="1561" href="lib.types.Cover.html#1373" class="Bound"
+      >A&#8729;</a
+      ><a name="1563"
+      >
+
+  </a
+      ><a name="1567" class="Keyword"
+      >private</a
+      ><a name="1574"
+      >
+    </a
+      ><a name="1579" class="Comment"
+      >-- The projection map with one end free (in order to apply J).</a
+      ><a name="1641"
+      >
+    </a
+      ><a name="1646" href="lib.types.Cover.html#1646" class="Function"
+      >to&#8242;</a
+      ><a name="1649"
+      > </a
+      ><a name="1650" class="Symbol"
+      >:</a
+      ><a name="1651"
+      > </a
+      ><a name="1652" class="Symbol"
+      >&#8704;</a
+      ><a name="1653"
+      > </a
+      ><a name="1654" class="Symbol"
+      >{</a
+      ><a name="1655" href="lib.types.Cover.html#1655" class="Bound"
+      >p&#8657;</a
+      ><a name="1657"
+      > </a
+      ><a name="1658" class="Symbol"
+      >:</a
+      ><a name="1659"
+      > </a
+      ><a name="1660" href="lib.Base.html#1867" class="Datatype Operator"
+      >_==_</a
+      ><a name="1664"
+      > </a
+      ><a name="1665" class="Symbol"
+      >{A</a
+      ><a name="1667"
+      > </a
+      ><a name="1668" class="Symbol"
+      >=</a
+      ><a name="1669"
+      > </a
+      ><a name="1670" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="1671"
+      > </a
+      ><a name="1672" href="lib.types.Cover.html#1538" class="Function"
+      >A</a
+      ><a name="1673"
+      > </a
+      ><a name="1674" href="lib.types.Cover.html#1482" class="Function"
+      >F</a
+      ><a name="1675" class="Symbol"
+      >}</a
+      ><a name="1676"
+      > </a
+      ><a name="1677" class="Symbol"
+      >(</a
+      ><a name="1678" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="1679"
+      > </a
+      ><a name="1680" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1681"
+      > </a
+      ><a name="1682" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="1684" class="Symbol"
+      >)</a
+      ><a name="1685"
+      > </a
+      ><a name="1686" class="Symbol"
+      >(</a
+      ><a name="1687" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="1688"
+      > </a
+      ><a name="1689" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1690"
+      > </a
+      ><a name="1691" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="1693" class="Symbol"
+      >)}</a
+      ><a name="1695"
+      >
+        </a
+      ><a name="1704" class="Symbol"
+      >&#8594;</a
+      ><a name="1705"
+      > </a
+      ><a name="1706" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="1709"
+      > </a
+      ><a name="1710" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1712"
+      > </a
+      ><a name="1713" href="lib.types.Cover.html#1655" class="Bound"
+      >p&#8657;</a
+      ><a name="1715"
+      > </a
+      ><a name="1716" class="Symbol"
+      >&#8594;</a
+      ><a name="1717"
+      > </a
+      ><a name="1718" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="1721"
+      > </a
+      ><a name="1722" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1724"
+      > </a
+      ><a name="1725" href="lib.types.Sigma.html#334" class="Function"
+      >fst=</a
+      ><a name="1729"
+      > </a
+      ><a name="1730" href="lib.types.Cover.html#1655" class="Bound"
+      >p&#8657;</a
+      ><a name="1732"
+      >
+    </a
+      ><a name="1737" href="lib.types.Cover.html#1646" class="Function"
+      >to&#8242;</a
+      ><a name="1740"
+      > </a
+      ><a name="1741" href="lib.types.Cover.html#1741" class="Bound"
+      >idp=p&#8657;</a
+      ><a name="1747"
+      > </a
+      ><a name="1748" class="Symbol"
+      >=</a
+      ><a name="1749"
+      > </a
+      ><a name="1750" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="1752"
+      > </a
+      ><a name="1753" href="lib.types.Sigma.html#334" class="Function"
+      >fst=</a
+      ><a name="1757"
+      > </a
+      ><a name="1758" href="lib.types.Cover.html#1741" class="Bound"
+      >idp=p&#8657;</a
+      ><a name="1764"
+      >
+
+    </a
+      ><a name="1770" class="Comment"
+      >-- The projection map from &#937;&#178;(&#931; A F) to &#937;&#178;(A).</a
+      ><a name="1816"
+      >
+    </a
+      ><a name="1821" href="lib.types.Cover.html#1821" class="Function"
+      >to</a
+      ><a name="1823"
+      > </a
+      ><a name="1824" class="Symbol"
+      >:</a
+      ><a name="1825"
+      > </a
+      ><a name="1826" href="lib.types.LoopSpace.html#503" class="Function"
+      >&#937;^</a
+      ><a name="1828"
+      > </a
+      ><a name="1829" class="Number"
+      >2</a
+      ><a name="1830"
+      > </a
+      ><a name="1831" href="lib.types.Pointed.html#307" class="Function Operator"
+      >&#8729;[</a
+      ><a name="1833"
+      > </a
+      ><a name="1834" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="1835"
+      > </a
+      ><a name="1836" href="lib.types.Cover.html#1538" class="Function"
+      >A</a
+      ><a name="1837"
+      > </a
+      ><a name="1838" href="lib.types.Cover.html#1482" class="Function"
+      >F</a
+      ><a name="1839"
+      > </a
+      ><a name="1840" href="lib.types.Pointed.html#307" class="Function Operator"
+      >,</a
+      ><a name="1841"
+      > </a
+      ><a name="1842" class="Symbol"
+      >(</a
+      ><a name="1843" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="1844"
+      > </a
+      ><a name="1845" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1846"
+      > </a
+      ><a name="1847" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="1849" class="Symbol"
+      >)</a
+      ><a name="1850"
+      > </a
+      ><a name="1851" href="lib.types.Pointed.html#307" class="Function Operator"
+      >]</a
+      ><a name="1852"
+      > </a
+      ><a name="1853" class="Symbol"
+      >&#8594;</a
+      ><a name="1854"
+      > </a
+      ><a name="1855" href="lib.types.LoopSpace.html#503" class="Function"
+      >&#937;^</a
+      ><a name="1857"
+      > </a
+      ><a name="1858" class="Number"
+      >2</a
+      ><a name="1859"
+      > </a
+      ><a name="1860" href="lib.types.Cover.html#1373" class="Bound"
+      >A&#8729;</a
+      ><a name="1862"
+      >
+    </a
+      ><a name="1867" href="lib.types.Cover.html#1821" class="Function"
+      >to</a
+      ><a name="1869"
+      > </a
+      ><a name="1870" href="lib.types.Cover.html#1870" class="Bound"
+      >p&#178;&#8657;</a
+      ><a name="1873"
+      > </a
+      ><a name="1874" class="Symbol"
+      >=</a
+      ><a name="1875"
+      > </a
+      ><a name="1876" href="lib.types.Cover.html#1646" class="Function"
+      >to&#8242;</a
+      ><a name="1879"
+      > </a
+      ><a name="1880" class="Symbol"
+      >{p&#8657;</a
+      ><a name="1883"
+      > </a
+      ><a name="1884" class="Symbol"
+      >=</a
+      ><a name="1885"
+      > </a
+      ><a name="1886" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="1889" class="Symbol"
+      >}</a
+      ><a name="1890"
+      > </a
+      ><a name="1891" href="lib.types.Cover.html#1870" class="Bound"
+      >p&#178;&#8657;</a
+      ><a name="1894"
+      >
+
+    </a
+      ><a name="1900" class="Comment"
+      >-- Auxiliary synthesized path for injection.</a
+      ><a name="1944"
+      >
+    </a
+      ><a name="1949" href="lib.types.Cover.html#1949" class="Function"
+      >idp=p&#8593;</a
+      ><a name="1955"
+      > </a
+      ><a name="1956" class="Symbol"
+      >:</a
+      ><a name="1957"
+      > </a
+      ><a name="1958" class="Symbol"
+      >&#8704;</a
+      ><a name="1959"
+      > </a
+      ><a name="1960" class="Symbol"
+      >{</a
+      ><a name="1961" href="lib.types.Cover.html#1961" class="Bound"
+      >p</a
+      ><a name="1962"
+      > </a
+      ><a name="1963" class="Symbol"
+      >:</a
+      ><a name="1964"
+      > </a
+      ><a name="1965" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="1966"
+      > </a
+      ><a name="1967" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1969"
+      > </a
+      ><a name="1970" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="1971" class="Symbol"
+      >}</a
+      ><a name="1972"
+      > </a
+      ><a name="1973" class="Symbol"
+      >{</a
+      ><a name="1974" href="lib.types.Cover.html#1974" class="Bound"
+      >p&#8593;</a
+      ><a name="1976"
+      > </a
+      ><a name="1977" class="Symbol"
+      >:</a
+      ><a name="1978"
+      > </a
+      ><a name="1979" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="1981"
+      > </a
+      ><a name="1982" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="1984"
+      > </a
+      ><a name="1985" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="1987"
+      > </a
+      ><a name="1988" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="1989"
+      > </a
+      ><a name="1990" href="lib.types.Cover.html#1482" class="Function"
+      >F</a
+      ><a name="1991"
+      > </a
+      ><a name="1992" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="1993"
+      > </a
+      ><a name="1994" href="lib.types.Cover.html#1961" class="Bound"
+      >p</a
+      ><a name="1995"
+      > </a
+      ><a name="1996" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="1997" class="Symbol"
+      >}</a
+      ><a name="1998"
+      >
+             </a
+      ><a name="2012" class="Symbol"
+      >&#8594;</a
+      ><a name="2013"
+      > </a
+      ><a name="2014" class="Symbol"
+      >(</a
+      ><a name="2015" href="lib.types.Cover.html#2015" class="Bound"
+      >idp=p</a
+      ><a name="2020"
+      > </a
+      ><a name="2021" class="Symbol"
+      >:</a
+      ><a name="2022"
+      > </a
+      ><a name="2023" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2026"
+      > </a
+      ><a name="2027" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2029"
+      > </a
+      ><a name="2030" href="lib.types.Cover.html#1961" class="Bound"
+      >p</a
+      ><a name="2031" class="Symbol"
+      >)</a
+      ><a name="2032"
+      >
+             </a
+      ><a name="2046" class="Symbol"
+      >&#8594;</a
+      ><a name="2047"
+      > </a
+      ><a name="2048" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2051"
+      > </a
+      ><a name="2052" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="2054"
+      > </a
+      ><a name="2055" href="lib.types.Cover.html#1974" class="Bound"
+      >p&#8593;</a
+      ><a name="2057"
+      >
+               </a
+      ><a name="2073" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="2074"
+      > </a
+      ><a name="2075" class="Symbol"
+      >(&#955;</a
+      ><a name="2077"
+      > </a
+      ><a name="2078" href="lib.types.Cover.html#2078" class="Bound"
+      >p</a
+      ><a name="2079"
+      > </a
+      ><a name="2080" class="Symbol"
+      >&#8594;</a
+      ><a name="2081"
+      > </a
+      ><a name="2082" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="2084"
+      > </a
+      ><a name="2085" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="2087"
+      > </a
+      ><a name="2088" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="2090"
+      > </a
+      ><a name="2091" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="2092"
+      > </a
+      ><a name="2093" href="lib.types.Cover.html#1482" class="Function"
+      >F</a
+      ><a name="2094"
+      > </a
+      ><a name="2095" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="2096"
+      > </a
+      ><a name="2097" href="lib.types.Cover.html#2078" class="Bound"
+      >p</a
+      ><a name="2098"
+      > </a
+      ><a name="2099" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="2100" class="Symbol"
+      >)</a
+      ><a name="2101"
+      > </a
+      ><a name="2102" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="2103"
+      > </a
+      ><a name="2104" href="lib.types.Cover.html#2015" class="Bound"
+      >idp=p</a
+      ><a name="2109"
+      > </a
+      ><a name="2110" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="2111"
+      >
+    </a
+      ><a name="2116" href="lib.types.Cover.html#1949" class="Function"
+      >idp=p&#8593;</a
+      ><a name="2122"
+      > </a
+      ><a name="2123" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2126"
+      > </a
+      ><a name="2127" class="Symbol"
+      >=</a
+      ><a name="2128"
+      > </a
+      ><a name="2129" href="lib.NType.html#2294" class="Function"
+      >prop-has-all-paths</a
+      ><a name="2147"
+      > </a
+      ><a name="2148" class="Symbol"
+      >(</a
+      ><a name="2149" href="lib.types.Cover.html#1504" class="Function"
+      >F-level</a
+      ><a name="2156"
+      > </a
+      ><a name="2157" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="2158"
+      > </a
+      ><a name="2159" class="Symbol"
+      >_</a
+      ><a name="2160"
+      > </a
+      ><a name="2161" class="Symbol"
+      >_)</a
+      ><a name="2163"
+      > </a
+      ><a name="2164" class="Symbol"
+      >_</a
+      ><a name="2165"
+      > </a
+      ><a name="2166" class="Symbol"
+      >_</a
+      ><a name="2167"
+      >
+
+    </a
+      ><a name="2173" class="Comment"
+      >-- The injection map with some ends free (in order to apply J).</a
+      ><a name="2236"
+      >
+    </a
+      ><a name="2241" href="lib.types.Cover.html#2241" class="Function"
+      >from&#8242;</a
+      ><a name="2246"
+      > </a
+      ><a name="2247" class="Symbol"
+      >:</a
+      ><a name="2248"
+      > </a
+      ><a name="2249" class="Symbol"
+      >&#8704;</a
+      ><a name="2250"
+      > </a
+      ><a name="2251" class="Symbol"
+      >{</a
+      ><a name="2252" href="lib.types.Cover.html#2252" class="Bound"
+      >p</a
+      ><a name="2253"
+      > </a
+      ><a name="2254" class="Symbol"
+      >:</a
+      ><a name="2255"
+      > </a
+      ><a name="2256" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="2257"
+      > </a
+      ><a name="2258" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2260"
+      > </a
+      ><a name="2261" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="2262" class="Symbol"
+      >}</a
+      ><a name="2263"
+      > </a
+      ><a name="2264" class="Symbol"
+      >{</a
+      ><a name="2265" href="lib.types.Cover.html#2265" class="Bound"
+      >p&#8593;</a
+      ><a name="2267"
+      > </a
+      ><a name="2268" class="Symbol"
+      >:</a
+      ><a name="2269"
+      > </a
+      ><a name="2270" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="2272"
+      > </a
+      ><a name="2273" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="2275"
+      > </a
+      ><a name="2276" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="2278"
+      > </a
+      ><a name="2279" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="2280"
+      > </a
+      ><a name="2281" href="lib.types.Cover.html#1482" class="Function"
+      >F</a
+      ><a name="2282"
+      > </a
+      ><a name="2283" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="2284"
+      > </a
+      ><a name="2285" href="lib.types.Cover.html#2252" class="Bound"
+      >p</a
+      ><a name="2286"
+      > </a
+      ><a name="2287" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="2288" class="Symbol"
+      >}</a
+      ><a name="2289"
+      >
+            </a
+      ><a name="2302" class="Symbol"
+      >&#8594;</a
+      ><a name="2303"
+      > </a
+      ><a name="2304" class="Symbol"
+      >(</a
+      ><a name="2305" href="lib.types.Cover.html#2305" class="Bound"
+      >idp=p</a
+      ><a name="2310"
+      > </a
+      ><a name="2311" class="Symbol"
+      >:</a
+      ><a name="2312"
+      > </a
+      ><a name="2313" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2316"
+      > </a
+      ><a name="2317" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2319"
+      > </a
+      ><a name="2320" href="lib.types.Cover.html#2252" class="Bound"
+      >p</a
+      ><a name="2321" class="Symbol"
+      >)</a
+      ><a name="2322"
+      >
+            </a
+      ><a name="2335" class="Symbol"
+      >&#8594;</a
+      ><a name="2336"
+      > </a
+      ><a name="2337" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2340"
+      > </a
+      ><a name="2341" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="2343"
+      > </a
+      ><a name="2344" href="lib.types.Cover.html#2265" class="Bound"
+      >p&#8593;</a
+      ><a name="2346"
+      > </a
+      ><a name="2347" class="Comment"
+      >-- aux</a
+      ><a name="2353"
+      >
+              </a
+      ><a name="2368" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="2369"
+      > </a
+      ><a name="2370" class="Symbol"
+      >(&#955;</a
+      ><a name="2372"
+      > </a
+      ><a name="2373" href="lib.types.Cover.html#2373" class="Bound"
+      >p</a
+      ><a name="2374"
+      > </a
+      ><a name="2375" class="Symbol"
+      >&#8594;</a
+      ><a name="2376"
+      > </a
+      ><a name="2377" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="2379"
+      > </a
+      ><a name="2380" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="2382"
+      > </a
+      ><a name="2383" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="2385"
+      > </a
+      ><a name="2386" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="2387"
+      > </a
+      ><a name="2388" href="lib.types.Cover.html#1482" class="Function"
+      >F</a
+      ><a name="2389"
+      > </a
+      ><a name="2390" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="2391"
+      > </a
+      ><a name="2392" href="lib.types.Cover.html#2373" class="Bound"
+      >p</a
+      ><a name="2393"
+      > </a
+      ><a name="2394" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="2395" class="Symbol"
+      >)</a
+      ><a name="2396"
+      > </a
+      ><a name="2397" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="2398"
+      > </a
+      ><a name="2399" href="lib.types.Cover.html#2305" class="Bound"
+      >idp=p</a
+      ><a name="2404"
+      > </a
+      ><a name="2405" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="2406"
+      >
+            </a
+      ><a name="2419" class="Symbol"
+      >&#8594;</a
+      ><a name="2420"
+      > </a
+      ><a name="2421" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2424"
+      > </a
+      ><a name="2425" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2427"
+      > </a
+      ><a name="2428" href="lib.Base.html#5119" class="Function"
+      >pair=</a
+      ><a name="2433"
+      > </a
+      ><a name="2434" href="lib.types.Cover.html#2252" class="Bound"
+      >p</a
+      ><a name="2435"
+      > </a
+      ><a name="2436" href="lib.types.Cover.html#2265" class="Bound"
+      >p&#8593;</a
+      ><a name="2438"
+      >
+    </a
+      ><a name="2443" href="lib.types.Cover.html#2241" class="Function"
+      >from&#8242;</a
+      ><a name="2448"
+      > </a
+      ><a name="2449" href="lib.types.Cover.html#2449" class="Bound"
+      >idp=p</a
+      ><a name="2454"
+      > </a
+      ><a name="2455" href="lib.types.Cover.html#2455" class="Bound"
+      >idp=p&#8593;</a
+      ><a name="2461"
+      > </a
+      ><a name="2462" class="Symbol"
+      >=</a
+      ><a name="2463"
+      > </a
+      ><a name="2464" href="lib.types.Sigma.html#962" class="Function"
+      >pair==</a
+      ><a name="2470"
+      > </a
+      ><a name="2471" href="lib.types.Cover.html#2449" class="Bound"
+      >idp=p</a
+      ><a name="2476"
+      > </a
+      ><a name="2477" href="lib.types.Cover.html#2455" class="Bound"
+      >idp=p&#8593;</a
+      ><a name="2483"
+      >
+
+    </a
+      ><a name="2489" class="Comment"
+      >-- The injection map from &#937;&#178;(A) to &#937;&#178;(&#931; A F).</a
+      ><a name="2534"
+      >
+    </a
+      ><a name="2539" href="lib.types.Cover.html#2539" class="Function"
+      >from</a
+      ><a name="2543"
+      > </a
+      ><a name="2544" class="Symbol"
+      >:</a
+      ><a name="2545"
+      > </a
+      ><a name="2546" href="lib.types.LoopSpace.html#503" class="Function"
+      >&#937;^</a
+      ><a name="2548"
+      > </a
+      ><a name="2549" class="Number"
+      >2</a
+      ><a name="2550"
+      > </a
+      ><a name="2551" href="lib.types.Cover.html#1373" class="Bound"
+      >A&#8729;</a
+      ><a name="2553"
+      > </a
+      ><a name="2554" class="Symbol"
+      >&#8594;</a
+      ><a name="2555"
+      > </a
+      ><a name="2556" href="lib.types.LoopSpace.html#503" class="Function"
+      >&#937;^</a
+      ><a name="2558"
+      > </a
+      ><a name="2559" class="Number"
+      >2</a
+      ><a name="2560"
+      > </a
+      ><a name="2561" href="lib.types.Pointed.html#307" class="Function Operator"
+      >&#8729;[</a
+      ><a name="2563"
+      > </a
+      ><a name="2564" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="2565"
+      > </a
+      ><a name="2566" href="lib.types.Cover.html#1538" class="Function"
+      >A</a
+      ><a name="2567"
+      > </a
+      ><a name="2568" href="lib.types.Cover.html#1482" class="Function"
+      >F</a
+      ><a name="2569"
+      > </a
+      ><a name="2570" href="lib.types.Pointed.html#307" class="Function Operator"
+      >,</a
+      ><a name="2571"
+      > </a
+      ><a name="2572" class="Symbol"
+      >(</a
+      ><a name="2573" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="2574"
+      > </a
+      ><a name="2575" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2576"
+      > </a
+      ><a name="2577" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="2579" class="Symbol"
+      >)</a
+      ><a name="2580"
+      > </a
+      ><a name="2581" href="lib.types.Pointed.html#307" class="Function Operator"
+      >]</a
+      ><a name="2582"
+      >
+    </a
+      ><a name="2587" href="lib.types.Cover.html#2539" class="Function"
+      >from</a
+      ><a name="2591"
+      > </a
+      ><a name="2592" href="lib.types.Cover.html#2592" class="Bound"
+      >p&#178;</a
+      ><a name="2594"
+      > </a
+      ><a name="2595" class="Symbol"
+      >=</a
+      ><a name="2596"
+      > </a
+      ><a name="2597" href="lib.types.Cover.html#2241" class="Function"
+      >from&#8242;</a
+      ><a name="2602"
+      > </a
+      ><a name="2603" class="Symbol"
+      >{p</a
+      ><a name="2605"
+      > </a
+      ><a name="2606" class="Symbol"
+      >=</a
+      ><a name="2607"
+      > </a
+      ><a name="2608" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2611" class="Symbol"
+      >}</a
+      ><a name="2612"
+      > </a
+      ><a name="2613" class="Symbol"
+      >{p&#8593;</a
+      ><a name="2616"
+      > </a
+      ><a name="2617" class="Symbol"
+      >=</a
+      ><a name="2618"
+      > </a
+      ><a name="2619" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2622" class="Symbol"
+      >}</a
+      ><a name="2623"
+      > </a
+      ><a name="2624" href="lib.types.Cover.html#2592" class="Bound"
+      >p&#178;</a
+      ><a name="2626"
+      > </a
+      ><a name="2627" class="Symbol"
+      >(</a
+      ><a name="2628" href="lib.types.Cover.html#1949" class="Function"
+      >idp=p&#8593;</a
+      ><a name="2634"
+      > </a
+      ><a name="2635" href="lib.types.Cover.html#2592" class="Bound"
+      >p&#178;</a
+      ><a name="2637" class="Symbol"
+      >)</a
+      ><a name="2638"
+      >
+
+    </a
+      ><a name="2644" class="Comment"
+      >-- Injection is left-inverse to projection (with some ends free).</a
+      ><a name="2709"
+      >
+    </a
+      ><a name="2714" href="lib.types.Cover.html#2714" class="Function"
+      >from&#8242;-to&#8242;</a
+      ><a name="2723"
+      > </a
+      ><a name="2724" class="Symbol"
+      >:</a
+      ><a name="2725"
+      > </a
+      ><a name="2726" class="Symbol"
+      >&#8704;</a
+      ><a name="2727"
+      > </a
+      ><a name="2728" class="Symbol"
+      >{</a
+      ><a name="2729" href="lib.types.Cover.html#2729" class="Bound"
+      >p&#8657;</a
+      ><a name="2731"
+      > </a
+      ><a name="2732" class="Symbol"
+      >:</a
+      ><a name="2733"
+      > </a
+      ><a name="2734" href="lib.Base.html#1867" class="Datatype Operator"
+      >_==_</a
+      ><a name="2738"
+      > </a
+      ><a name="2739" class="Symbol"
+      >{A</a
+      ><a name="2741"
+      > </a
+      ><a name="2742" class="Symbol"
+      >=</a
+      ><a name="2743"
+      > </a
+      ><a name="2744" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="2745"
+      > </a
+      ><a name="2746" href="lib.types.Cover.html#1538" class="Function"
+      >A</a
+      ><a name="2747"
+      > </a
+      ><a name="2748" href="lib.types.Cover.html#1482" class="Function"
+      >F</a
+      ><a name="2749" class="Symbol"
+      >}</a
+      ><a name="2750"
+      > </a
+      ><a name="2751" class="Symbol"
+      >(</a
+      ><a name="2752" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="2753"
+      > </a
+      ><a name="2754" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2755"
+      > </a
+      ><a name="2756" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="2758" class="Symbol"
+      >)</a
+      ><a name="2759"
+      > </a
+      ><a name="2760" class="Symbol"
+      >(</a
+      ><a name="2761" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="2762"
+      > </a
+      ><a name="2763" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2764"
+      > </a
+      ><a name="2765" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="2767" class="Symbol"
+      >)}</a
+      ><a name="2769"
+      >
+                </a
+      ><a name="2786" class="Symbol"
+      >&#8594;</a
+      ><a name="2787"
+      > </a
+      ><a name="2788" class="Symbol"
+      >(</a
+      ><a name="2789" href="lib.types.Cover.html#2789" class="Bound"
+      >idp=p&#8657;</a
+      ><a name="2795"
+      > </a
+      ><a name="2796" class="Symbol"
+      >:</a
+      ><a name="2797"
+      > </a
+      ><a name="2798" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2801"
+      > </a
+      ><a name="2802" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2804"
+      > </a
+      ><a name="2805" href="lib.types.Cover.html#2729" class="Bound"
+      >p&#8657;</a
+      ><a name="2807" class="Symbol"
+      >)</a
+      ><a name="2808"
+      >
+                </a
+      ><a name="2825" class="Symbol"
+      >&#8594;</a
+      ><a name="2826"
+      > </a
+      ><a name="2827" class="Symbol"
+      >(</a
+      ><a name="2828" href="lib.types.Cover.html#2828" class="Bound"
+      >idp=snd=p&#8657;</a
+      ><a name="2838"
+      > </a
+      ><a name="2839" class="Symbol"
+      >:</a
+      ><a name="2840"
+      > </a
+      ><a name="2841" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2844"
+      > </a
+      ><a name="2845" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="2847"
+      > </a
+      ><a name="2848" href="lib.types.Sigma.html#418" class="Function"
+      >snd=</a
+      ><a name="2852"
+      > </a
+      ><a name="2853" href="lib.types.Cover.html#2729" class="Bound"
+      >p&#8657;</a
+      ><a name="2855"
+      > </a
+      ><a name="2856" class="Comment"
+      >-- aux</a
+      ><a name="2862"
+      >
+                  </a
+      ><a name="2881" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="2882"
+      > </a
+      ><a name="2883" class="Symbol"
+      >(&#955;</a
+      ><a name="2885"
+      > </a
+      ><a name="2886" href="lib.types.Cover.html#2886" class="Bound"
+      >p</a
+      ><a name="2887"
+      > </a
+      ><a name="2888" class="Symbol"
+      >&#8594;</a
+      ><a name="2889"
+      > </a
+      ><a name="2890" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="2892"
+      > </a
+      ><a name="2893" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="2895"
+      > </a
+      ><a name="2896" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="2898"
+      > </a
+      ><a name="2899" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="2900"
+      > </a
+      ><a name="2901" href="lib.types.Cover.html#1482" class="Function"
+      >F</a
+      ><a name="2902"
+      > </a
+      ><a name="2903" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="2904"
+      > </a
+      ><a name="2905" href="lib.types.Cover.html#2886" class="Bound"
+      >p</a
+      ><a name="2906"
+      > </a
+      ><a name="2907" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="2908" class="Symbol"
+      >)</a
+      ><a name="2909"
+      > </a
+      ><a name="2910" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="2911"
+      > </a
+      ><a name="2912" href="lib.types.Cover.html#1646" class="Function"
+      >to&#8242;</a
+      ><a name="2915"
+      > </a
+      ><a name="2916" href="lib.types.Cover.html#2789" class="Bound"
+      >idp=p&#8657;</a
+      ><a name="2922"
+      > </a
+      ><a name="2923" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="2924" class="Symbol"
+      >)</a
+      ><a name="2925"
+      >
+                </a
+      ><a name="2942" class="Symbol"
+      >&#8594;</a
+      ><a name="2943"
+      > </a
+      ><a name="2944" href="lib.types.Cover.html#2241" class="Function"
+      >from&#8242;</a
+      ><a name="2949"
+      > </a
+      ><a name="2950" class="Symbol"
+      >(</a
+      ><a name="2951" href="lib.types.Cover.html#1646" class="Function"
+      >to&#8242;</a
+      ><a name="2954"
+      > </a
+      ><a name="2955" href="lib.types.Cover.html#2789" class="Bound"
+      >idp=p&#8657;</a
+      ><a name="2961" class="Symbol"
+      >)</a
+      ><a name="2962"
+      > </a
+      ><a name="2963" href="lib.types.Cover.html#2828" class="Bound"
+      >idp=snd=p&#8657;</a
+      ><a name="2973"
+      > </a
+      ><a name="2974" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="2976"
+      > </a
+      ><a name="2977" href="lib.types.Cover.html#2789" class="Bound"
+      >idp=p&#8657;</a
+      ><a name="2983"
+      >
+                  </a
+      ><a name="3002" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="3003"
+      > </a
+      ><a name="3004" class="Symbol"
+      >(&#955;</a
+      ><a name="3006"
+      > </a
+      ><a name="3007" href="lib.types.Cover.html#3007" class="Bound"
+      >p&#8657;</a
+      ><a name="3009"
+      > </a
+      ><a name="3010" class="Symbol"
+      >&#8594;</a
+      ><a name="3011"
+      > </a
+      ><a name="3012" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3015"
+      > </a
+      ><a name="3016" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3018"
+      > </a
+      ><a name="3019" href="lib.types.Cover.html#3007" class="Bound"
+      >p&#8657;</a
+      ><a name="3021" class="Symbol"
+      >)</a
+      ><a name="3022"
+      > </a
+      ><a name="3023" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="3024"
+      > </a
+      ><a name="3025" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="3026"
+      > </a
+      ><a name="3027" class="Symbol"
+      >(</a
+      ><a name="3028" href="lib.types.Sigma.html#850" class="Function"
+      >pair=-&#951;</a
+      ><a name="3035"
+      > </a
+      ><a name="3036" href="lib.types.Cover.html#2729" class="Bound"
+      >p&#8657;</a
+      ><a name="3038" class="Symbol"
+      >)</a
+      ><a name="3039"
+      > </a
+      ><a name="3040" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="3041"
+      >
+    </a
+      ><a name="3046" href="lib.types.Cover.html#2714" class="Function"
+      >from&#8242;-to&#8242;</a
+      ><a name="3055"
+      > </a
+      ><a name="3056" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3059"
+      > </a
+      ><a name="3060" href="lib.types.Cover.html#3060" class="Bound"
+      >idp=snd=p&#8657;</a
+      ><a name="3070"
+      > </a
+      ><a name="3071" class="Symbol"
+      >=</a
+      ><a name="3072"
+      > </a
+      ><a name="3073" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="3075"
+      > </a
+      ><a name="3076" class="Symbol"
+      >(</a
+      ><a name="3077" href="lib.types.Cover.html#2241" class="Function"
+      >from&#8242;</a
+      ><a name="3082"
+      > </a
+      ><a name="3083" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3086" class="Symbol"
+      >)</a
+      ><a name="3087"
+      >
+      </a
+      ><a name="3094" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="3095"
+      > </a
+      ><a name="3096" href="lib.NType.html#2184" class="Function"
+      >contr-has-all-paths</a
+      ><a name="3115"
+      > </a
+      ><a name="3116" class="Symbol"
+      >(</a
+      ><a name="3117" href="lib.types.Cover.html#1504" class="Function"
+      >F-level</a
+      ><a name="3124"
+      > </a
+      ><a name="3125" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="3126"
+      > </a
+      ><a name="3127" class="Symbol"
+      >_</a
+      ><a name="3128"
+      > </a
+      ><a name="3129" class="Symbol"
+      >_</a
+      ><a name="3130"
+      > </a
+      ><a name="3131" class="Symbol"
+      >_</a
+      ><a name="3132"
+      > </a
+      ><a name="3133" class="Symbol"
+      >_)</a
+      ><a name="3135"
+      > </a
+      ><a name="3136" class="Symbol"
+      >_</a
+      ><a name="3137"
+      > </a
+      ><a name="3138" class="Symbol"
+      >_</a
+      ><a name="3139"
+      >
+
+    </a
+      ><a name="3145" class="Comment"
+      >-- Injection is left-inverse to projection.</a
+      ><a name="3188"
+      >
+    </a
+      ><a name="3193" href="lib.types.Cover.html#3193" class="Function"
+      >from-to</a
+      ><a name="3200"
+      > </a
+      ><a name="3201" class="Symbol"
+      >:</a
+      ><a name="3202"
+      > </a
+      ><a name="3203" class="Symbol"
+      >&#8704;</a
+      ><a name="3204"
+      > </a
+      ><a name="3205" href="lib.types.Cover.html#3205" class="Bound"
+      >p&#178;&#8657;</a
+      ><a name="3208"
+      > </a
+      ><a name="3209" class="Symbol"
+      >&#8594;</a
+      ><a name="3210"
+      > </a
+      ><a name="3211" href="lib.types.Cover.html#2539" class="Function"
+      >from</a
+      ><a name="3215"
+      > </a
+      ><a name="3216" class="Symbol"
+      >(</a
+      ><a name="3217" href="lib.types.Cover.html#1821" class="Function"
+      >to</a
+      ><a name="3219"
+      > </a
+      ><a name="3220" href="lib.types.Cover.html#3205" class="Bound"
+      >p&#178;&#8657;</a
+      ><a name="3223" class="Symbol"
+      >)</a
+      ><a name="3224"
+      > </a
+      ><a name="3225" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3227"
+      > </a
+      ><a name="3228" href="lib.types.Cover.html#3205" class="Bound"
+      >p&#178;&#8657;</a
+      ><a name="3231"
+      >
+    </a
+      ><a name="3236" href="lib.types.Cover.html#3193" class="Function"
+      >from-to</a
+      ><a name="3243"
+      > </a
+      ><a name="3244" href="lib.types.Cover.html#3244" class="Bound"
+      >p&#178;&#8657;</a
+      ><a name="3247"
+      > </a
+      ><a name="3248" class="Symbol"
+      >=</a
+      ><a name="3249"
+      > </a
+      ><a name="3250" href="lib.types.Cover.html#2714" class="Function"
+      >from&#8242;-to&#8242;</a
+      ><a name="3259"
+      > </a
+      ><a name="3260" class="Symbol"
+      >{p&#8657;</a
+      ><a name="3263"
+      > </a
+      ><a name="3264" class="Symbol"
+      >=</a
+      ><a name="3265"
+      > </a
+      ><a name="3266" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3269" class="Symbol"
+      >}</a
+      ><a name="3270"
+      > </a
+      ><a name="3271" href="lib.types.Cover.html#3244" class="Bound"
+      >p&#178;&#8657;</a
+      ><a name="3274"
+      > </a
+      ><a name="3275" class="Symbol"
+      >(</a
+      ><a name="3276" href="lib.types.Cover.html#1949" class="Function"
+      >idp=p&#8593;</a
+      ><a name="3282"
+      > </a
+      ><a name="3283" class="Symbol"
+      >(</a
+      ><a name="3284" href="lib.types.Cover.html#1646" class="Function"
+      >to&#8242;</a
+      ><a name="3287"
+      > </a
+      ><a name="3288" href="lib.types.Cover.html#3244" class="Bound"
+      >p&#178;&#8657;</a
+      ><a name="3291" class="Symbol"
+      >))</a
+      ><a name="3293"
+      >
+
+    </a
+      ><a name="3299" class="Comment"
+      >-- Injection is right-inverse to projection (with some ends free).</a
+      ><a name="3365"
+      >
+    </a
+      ><a name="3370" href="lib.types.Cover.html#3370" class="Function"
+      >to&#8242;-from&#8242;</a
+      ><a name="3379"
+      > </a
+      ><a name="3380" class="Symbol"
+      >:</a
+      ><a name="3381"
+      > </a
+      ><a name="3382" class="Symbol"
+      >&#8704;</a
+      ><a name="3383"
+      > </a
+      ><a name="3384" class="Symbol"
+      >{</a
+      ><a name="3385" href="lib.types.Cover.html#3385" class="Bound"
+      >p</a
+      ><a name="3386"
+      > </a
+      ><a name="3387" class="Symbol"
+      >:</a
+      ><a name="3388"
+      > </a
+      ><a name="3389" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="3390"
+      > </a
+      ><a name="3391" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3393"
+      > </a
+      ><a name="3394" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="3395" class="Symbol"
+      >}</a
+      ><a name="3396"
+      > </a
+      ><a name="3397" class="Symbol"
+      >{</a
+      ><a name="3398" href="lib.types.Cover.html#3398" class="Bound"
+      >p&#8593;</a
+      ><a name="3400"
+      > </a
+      ><a name="3401" class="Symbol"
+      >:</a
+      ><a name="3402"
+      > </a
+      ><a name="3403" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="3405"
+      > </a
+      ><a name="3406" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="3408"
+      > </a
+      ><a name="3409" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="3411"
+      > </a
+      ><a name="3412" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="3413"
+      > </a
+      ><a name="3414" href="lib.types.Cover.html#1482" class="Function"
+      >F</a
+      ><a name="3415"
+      > </a
+      ><a name="3416" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="3417"
+      > </a
+      ><a name="3418" href="lib.types.Cover.html#3385" class="Bound"
+      >p</a
+      ><a name="3419"
+      > </a
+      ><a name="3420" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="3421" class="Symbol"
+      >}</a
+      ><a name="3422"
+      >
+                </a
+      ><a name="3439" class="Symbol"
+      >&#8594;</a
+      ><a name="3440"
+      > </a
+      ><a name="3441" class="Symbol"
+      >(</a
+      ><a name="3442" href="lib.types.Cover.html#3442" class="Bound"
+      >idp=p</a
+      ><a name="3447"
+      > </a
+      ><a name="3448" class="Symbol"
+      >:</a
+      ><a name="3449"
+      > </a
+      ><a name="3450" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3453"
+      > </a
+      ><a name="3454" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3456"
+      > </a
+      ><a name="3457" href="lib.types.Cover.html#3385" class="Bound"
+      >p</a
+      ><a name="3458" class="Symbol"
+      >)</a
+      ><a name="3459"
+      >
+                </a
+      ><a name="3476" class="Symbol"
+      >&#8594;</a
+      ><a name="3477"
+      > </a
+      ><a name="3478" class="Symbol"
+      >(</a
+      ><a name="3479" href="lib.types.Cover.html#3479" class="Bound"
+      >idp=p&#8593;</a
+      ><a name="3485"
+      > </a
+      ><a name="3486" class="Symbol"
+      >:</a
+      ><a name="3487"
+      > </a
+      ><a name="3488" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3491"
+      > </a
+      ><a name="3492" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="3494"
+      > </a
+      ><a name="3495" href="lib.types.Cover.html#3398" class="Bound"
+      >p&#8593;</a
+      ><a name="3497"
+      > </a
+      ><a name="3498" class="Comment"
+      >-- aux</a
+      ><a name="3504"
+      >
+                  </a
+      ><a name="3523" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="3524"
+      > </a
+      ><a name="3525" class="Symbol"
+      >(&#955;</a
+      ><a name="3527"
+      > </a
+      ><a name="3528" href="lib.types.Cover.html#3528" class="Bound"
+      >p</a
+      ><a name="3529"
+      > </a
+      ><a name="3530" class="Symbol"
+      >&#8594;</a
+      ><a name="3531"
+      > </a
+      ><a name="3532" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="3534"
+      > </a
+      ><a name="3535" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="3537"
+      > </a
+      ><a name="3538" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="3540"
+      > </a
+      ><a name="3541" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="3542"
+      > </a
+      ><a name="3543" href="lib.types.Cover.html#1482" class="Function"
+      >F</a
+      ><a name="3544"
+      > </a
+      ><a name="3545" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="3546"
+      > </a
+      ><a name="3547" href="lib.types.Cover.html#3528" class="Bound"
+      >p</a
+      ><a name="3548"
+      > </a
+      ><a name="3549" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="3550" class="Symbol"
+      >)</a
+      ><a name="3551"
+      > </a
+      ><a name="3552" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="3553"
+      > </a
+      ><a name="3554" href="lib.types.Cover.html#3442" class="Bound"
+      >idp=p</a
+      ><a name="3559"
+      > </a
+      ><a name="3560" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="3561" class="Symbol"
+      >)</a
+      ><a name="3562"
+      >
+                </a
+      ><a name="3579" class="Symbol"
+      >&#8594;</a
+      ><a name="3580"
+      > </a
+      ><a name="3581" href="lib.types.Cover.html#1646" class="Function"
+      >to&#8242;</a
+      ><a name="3584"
+      > </a
+      ><a name="3585" class="Symbol"
+      >(</a
+      ><a name="3586" href="lib.types.Cover.html#2241" class="Function"
+      >from&#8242;</a
+      ><a name="3591"
+      > </a
+      ><a name="3592" href="lib.types.Cover.html#3442" class="Bound"
+      >idp=p</a
+      ><a name="3597"
+      > </a
+      ><a name="3598" href="lib.types.Cover.html#3479" class="Bound"
+      >idp=p&#8593;</a
+      ><a name="3604" class="Symbol"
+      >)</a
+      ><a name="3605"
+      > </a
+      ><a name="3606" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="3608"
+      > </a
+      ><a name="3609" href="lib.types.Cover.html#3442" class="Bound"
+      >idp=p</a
+      ><a name="3614"
+      >
+                  </a
+      ><a name="3633" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="3634"
+      > </a
+      ><a name="3635" class="Symbol"
+      >(&#955;</a
+      ><a name="3637"
+      > </a
+      ><a name="3638" href="lib.types.Cover.html#3638" class="Bound"
+      >p</a
+      ><a name="3639"
+      > </a
+      ><a name="3640" class="Symbol"
+      >&#8594;</a
+      ><a name="3641"
+      > </a
+      ><a name="3642" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3645"
+      > </a
+      ><a name="3646" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3648"
+      > </a
+      ><a name="3649" href="lib.types.Cover.html#3638" class="Bound"
+      >p</a
+      ><a name="3650" class="Symbol"
+      >)</a
+      ><a name="3651"
+      > </a
+      ><a name="3652" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="3653"
+      > </a
+      ><a name="3654" href="lib.types.Sigma.html#531" class="Function"
+      >fst=-&#946;</a
+      ><a name="3660"
+      > </a
+      ><a name="3661" href="lib.types.Cover.html#3385" class="Bound"
+      >p</a
+      ><a name="3662"
+      > </a
+      ><a name="3663" href="lib.types.Cover.html#3398" class="Bound"
+      >p&#8593;</a
+      ><a name="3665"
+      > </a
+      ><a name="3666" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="3667"
+      >
+    </a
+      ><a name="3672" href="lib.types.Cover.html#3370" class="Function"
+      >to&#8242;-from&#8242;</a
+      ><a name="3681"
+      > </a
+      ><a name="3682" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3685"
+      > </a
+      ><a name="3686" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3689"
+      > </a
+      ><a name="3690" class="Symbol"
+      >=</a
+      ><a name="3691"
+      > </a
+      ><a name="3692" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="3695"
+      >
+
+    </a
+      ><a name="3701" class="Comment"
+      >-- Injection is right-inverse to projection.</a
+      ><a name="3745"
+      >
+    </a
+      ><a name="3750" href="lib.types.Cover.html#3750" class="Function"
+      >to-from</a
+      ><a name="3757"
+      > </a
+      ><a name="3758" class="Symbol"
+      >:</a
+      ><a name="3759"
+      > </a
+      ><a name="3760" class="Symbol"
+      >&#8704;</a
+      ><a name="3761"
+      > </a
+      ><a name="3762" href="lib.types.Cover.html#3762" class="Bound"
+      >p&#178;</a
+      ><a name="3764"
+      > </a
+      ><a name="3765" class="Symbol"
+      >&#8594;</a
+      ><a name="3766"
+      > </a
+      ><a name="3767" href="lib.types.Cover.html#1821" class="Function"
+      >to</a
+      ><a name="3769"
+      > </a
+      ><a name="3770" class="Symbol"
+      >(</a
+      ><a name="3771" href="lib.types.Cover.html#2539" class="Function"
+      >from</a
+      ><a name="3775"
+      > </a
+      ><a name="3776" href="lib.types.Cover.html#3762" class="Bound"
+      >p&#178;</a
+      ><a name="3778" class="Symbol"
+      >)</a
+      ><a name="3779"
+      > </a
+      ><a name="3780" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="3782"
+      > </a
+      ><a name="3783" href="lib.types.Cover.html#3762" class="Bound"
+      >p&#178;</a
+      ><a name="3785"
+      >
+    </a
+      ><a name="3790" href="lib.types.Cover.html#3750" class="Function"
+      >to-from</a
+      ><a name="3797"
+      > </a
+      ><a name="3798" href="lib.types.Cover.html#3798" class="Bound"
+      >p&#178;</a
+      ><a name="3800"
+      > </a
+      ><a name="3801" class="Symbol"
+      >=</a
+      ><a name="3802"
+      > </a
+      ><a name="3803" href="lib.types.Cover.html#3370" class="Function"
+      >to&#8242;-from&#8242;</a
+      ><a name="3812"
+      > </a
+      ><a name="3813" href="lib.types.Cover.html#3798" class="Bound"
+      >p&#178;</a
+      ><a name="3815"
+      > </a
+      ><a name="3816" class="Symbol"
+      >(</a
+      ><a name="3817" href="lib.types.Cover.html#1949" class="Function"
+      >idp=p&#8593;</a
+      ><a name="3823"
+      > </a
+      ><a name="3824" href="lib.types.Cover.html#3798" class="Bound"
+      >p&#178;</a
+      ><a name="3826" class="Symbol"
+      >)</a
+      ><a name="3827"
+      >
+
+  </a
+      ><a name="3831" class="Comment"
+      >-- The theorem.</a
+      ><a name="3846"
+      >
+  </a
+      ><a name="3849" href="lib.types.Cover.html#3849" class="Function"
+      >&#937;&#178;&#931;AFiber&#8771;&#937;&#178;A</a
+      ><a name="3862"
+      > </a
+      ><a name="3863" class="Symbol"
+      >:</a
+      ><a name="3864"
+      > </a
+      ><a name="3865" href="lib.types.LoopSpace.html#503" class="Function"
+      >&#937;^</a
+      ><a name="3867"
+      > </a
+      ><a name="3868" class="Number"
+      >2</a
+      ><a name="3869"
+      > </a
+      ><a name="3870" class="Symbol"
+      >(</a
+      ><a name="3871" href="lib.Base.html#4988" class="Record"
+      >&#931;</a
+      ><a name="3872"
+      > </a
+      ><a name="3873" href="lib.types.Cover.html#1538" class="Function"
+      >A</a
+      ><a name="3874"
+      > </a
+      ><a name="3875" href="lib.types.Cover.html#1482" class="Function"
+      >F</a
+      ><a name="3876"
+      > </a
+      ><a name="3877" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3878"
+      > </a
+      ><a name="3879" class="Symbol"
+      >(</a
+      ><a name="3880" href="lib.types.Cover.html#1553" class="Function"
+      >a</a
+      ><a name="3881"
+      > </a
+      ><a name="3882" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3883"
+      > </a
+      ><a name="3884" href="lib.types.Cover.html#1417" class="Bound"
+      >a&#8593;</a
+      ><a name="3886" class="Symbol"
+      >))</a
+      ><a name="3888"
+      > </a
+      ><a name="3889" href="lib.Equivalences.html#2994" class="Function Operator"
+      >&#8771;</a
+      ><a name="3890"
+      > </a
+      ><a name="3891" href="lib.types.LoopSpace.html#503" class="Function"
+      >&#937;^</a
+      ><a name="3893"
+      > </a
+      ><a name="3894" class="Number"
+      >2</a
+      ><a name="3895"
+      > </a
+      ><a name="3896" href="lib.types.Cover.html#1373" class="Bound"
+      >A&#8729;</a
+      ><a name="3898"
+      >
+  </a
+      ><a name="3901" href="lib.types.Cover.html#3849" class="Function"
+      >&#937;&#178;&#931;AFiber&#8771;&#937;&#178;A</a
+      ><a name="3914"
+      > </a
+      ><a name="3915" class="Symbol"
+      >=</a
+      ><a name="3916"
+      > </a
+      ><a name="3917" href="lib.types.Cover.html#1821" class="Function"
+      >to</a
+      ><a name="3919"
+      > </a
+      ><a name="3920" href="lib.Base.html#5064" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3921"
+      > </a
+      ><a name="3922" href="lib.Equivalences.html#1376" class="Function"
+      >is-eq</a
+      ><a name="3927"
+      > </a
+      ><a name="3928" href="lib.types.Cover.html#1821" class="Function"
+      >to</a
+      ><a name="3930"
+      > </a
+      ><a name="3931" href="lib.types.Cover.html#2539" class="Function"
+      >from</a
+      ><a name="3935"
+      > </a
+      ><a name="3936" href="lib.types.Cover.html#3750" class="Function"
+      >to-from</a
+      ><a name="3943"
+      > </a
+      ><a name="3944" href="lib.types.Cover.html#3193" class="Function"
+      >from-to</a
+      ><a name="3951"
+      >
+
+</a
+      ><a name="3953" class="Comment"
+      >-- A natural way to construct a G-set from covering spaces.</a
+      ><a name="4012"
+      >
+</a
+      ><a name="4013" class="Keyword"
+      >module</a
+      ><a name="4019"
+      > </a
+      ><a name="4020" href="lib.types.Cover.html#4020" class="Module"
+      >_</a
+      ><a name="4021"
+      > </a
+      ><a name="4022" class="Symbol"
+      >{</a
+      ><a name="4023" href="lib.types.Cover.html#4023" class="Bound"
+      >i</a
+      ><a name="4024" class="Symbol"
+      >}</a
+      ><a name="4025"
+      > </a
+      ><a name="4026" class="Symbol"
+      >{</a
+      ><a name="4027" href="lib.types.Cover.html#4027" class="Bound"
+      >A</a
+      ><a name="4028"
+      > </a
+      ><a name="4029" class="Symbol"
+      >:</a
+      ><a name="4030"
+      > </a
+      ><a name="4031" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="4035"
+      > </a
+      ><a name="4036" href="lib.types.Cover.html#4023" class="Bound"
+      >i</a
+      ><a name="4037" class="Symbol"
+      >}</a
+      ><a name="4038"
+      > </a
+      ><a name="4039" class="Keyword"
+      >where</a
+      ><a name="4044"
+      >
+  </a
+      ><a name="4047" class="Keyword"
+      >open</a
+      ><a name="4051"
+      > </a
+      ><a name="4052" href="lib.types.Cover.html#391" class="Module"
+      >Cover</a
+      ><a name="4057"
+      >
+
+  </a
+      ><a name="4061" href="lib.types.Cover.html#4061" class="Function"
+      >cover-trace</a
+      ><a name="4072"
+      > </a
+      ><a name="4073" class="Symbol"
+      >:</a
+      ><a name="4074"
+      > </a
+      ><a name="4075" class="Symbol"
+      >&#8704;</a
+      ><a name="4076"
+      > </a
+      ><a name="4077" class="Symbol"
+      >{</a
+      ><a name="4078" href="lib.types.Cover.html#4078" class="Bound"
+      >j</a
+      ><a name="4079" class="Symbol"
+      >}</a
+      ><a name="4080"
+      > </a
+      ><a name="4081" class="Symbol"
+      >(</a
+      ><a name="4082" href="lib.types.Cover.html#4082" class="Bound"
+      >cov</a
+      ><a name="4085"
+      > </a
+      ><a name="4086" class="Symbol"
+      >:</a
+      ><a name="4087"
+      > </a
+      ><a name="4088" href="lib.types.Cover.html#391" class="Record"
+      >Cover</a
+      ><a name="4093"
+      > </a
+      ><a name="4094" href="lib.types.Cover.html#4027" class="Bound"
+      >A</a
+      ><a name="4095"
+      > </a
+      ><a name="4096" href="lib.types.Cover.html#4078" class="Bound"
+      >j</a
+      ><a name="4097" class="Symbol"
+      >)</a
+      ><a name="4098"
+      > </a
+      ><a name="4099" class="Symbol"
+      >{</a
+      ><a name="4100" href="lib.types.Cover.html#4100" class="Bound"
+      >a&#8321;</a
+      ><a name="4102"
+      > </a
+      ><a name="4103" href="lib.types.Cover.html#4103" class="Bound"
+      >a&#8322;</a
+      ><a name="4105" class="Symbol"
+      >}</a
+      ><a name="4106"
+      >
+    </a
+      ><a name="4111" class="Symbol"
+      >&#8594;</a
+      ><a name="4112"
+      > </a
+      ><a name="4113" href="lib.types.Cover.html#480" class="Field"
+      >Fiber</a
+      ><a name="4118"
+      > </a
+      ><a name="4119" href="lib.types.Cover.html#4082" class="Bound"
+      >cov</a
+      ><a name="4122"
+      > </a
+      ><a name="4123" href="lib.types.Cover.html#4100" class="Bound"
+      >a&#8321;</a
+      ><a name="4125"
+      > </a
+      ><a name="4126" class="Symbol"
+      >&#8594;</a
+      ><a name="4127"
+      > </a
+      ><a name="4128" href="lib.types.Cover.html#4100" class="Bound"
+      >a&#8321;</a
+      ><a name="4130"
+      > </a
+      ><a name="4131" href="lib.types.PathSet.html#226" class="Function Operator"
+      >=&#8320;</a
+      ><a name="4133"
+      > </a
+      ><a name="4134" href="lib.types.Cover.html#4103" class="Bound"
+      >a&#8322;</a
+      ><a name="4136"
+      >
+    </a
+      ><a name="4141" class="Symbol"
+      >&#8594;</a
+      ><a name="4142"
+      > </a
+      ><a name="4143" href="lib.types.Cover.html#480" class="Field"
+      >Fiber</a
+      ><a name="4148"
+      > </a
+      ><a name="4149" href="lib.types.Cover.html#4082" class="Bound"
+      >cov</a
+      ><a name="4152"
+      > </a
+      ><a name="4153" href="lib.types.Cover.html#4103" class="Bound"
+      >a&#8322;</a
+      ><a name="4155"
+      >
+  </a
+      ><a name="4158" href="lib.types.Cover.html#4061" class="Function"
+      >cover-trace</a
+      ><a name="4169"
+      > </a
+      ><a name="4170" href="lib.types.Cover.html#4170" class="Bound"
+      >cov</a
+      ><a name="4173"
+      > </a
+      ><a name="4174" href="lib.types.Cover.html#4174" class="Bound"
+      >a&#8593;</a
+      ><a name="4176"
+      > </a
+      ><a name="4177" href="lib.types.Cover.html#4177" class="Bound"
+      >p</a
+      ><a name="4178"
+      > </a
+      ><a name="4179" class="Symbol"
+      >=</a
+      ><a name="4180"
+      >
+    </a
+      ><a name="4185" href="lib.types.PathSet.html#937" class="Function"
+      >transport&#8320;</a
+      ><a name="4195"
+      > </a
+      ><a name="4196" class="Symbol"
+      >(</a
+      ><a name="4197" href="lib.types.Cover.html#480" class="Field"
+      >Fiber</a
+      ><a name="4202"
+      > </a
+      ><a name="4203" href="lib.types.Cover.html#4170" class="Bound"
+      >cov</a
+      ><a name="4206" class="Symbol"
+      >)</a
+      ><a name="4207"
+      > </a
+      ><a name="4208" class="Symbol"
+      >(</a
+      ><a name="4209" href="lib.types.Cover.html#542" class="Function"
+      >Fiber-is-set</a
+      ><a name="4221"
+      > </a
+      ><a name="4222" href="lib.types.Cover.html#4170" class="Bound"
+      >cov</a
+      ><a name="4225"
+      > </a
+      ><a name="4226" class="Symbol"
+      >_)</a
+      ><a name="4228"
+      > </a
+      ><a name="4229" href="lib.types.Cover.html#4177" class="Bound"
+      >p</a
+      ><a name="4230"
+      > </a
+      ><a name="4231" href="lib.types.Cover.html#4174" class="Bound"
+      >a&#8593;</a
+      ><a name="4233"
+      >
+
+  </a
+      ><a name="4237" class="Keyword"
+      >abstract</a
+      ><a name="4245"
+      >
+    </a
+      ><a name="4250" href="lib.types.Cover.html#4250" class="Function"
+      >cover-trace-idp&#8320;</a
+      ><a name="4266"
+      > </a
+      ><a name="4267" class="Symbol"
+      >:</a
+      ><a name="4268"
+      > </a
+      ><a name="4269" class="Symbol"
+      >&#8704;</a
+      ><a name="4270"
+      > </a
+      ><a name="4271" class="Symbol"
+      >{</a
+      ><a name="4272" href="lib.types.Cover.html#4272" class="Bound"
+      >j</a
+      ><a name="4273" class="Symbol"
+      >}</a
+      ><a name="4274"
+      > </a
+      ><a name="4275" class="Symbol"
+      >(</a
+      ><a name="4276" href="lib.types.Cover.html#4276" class="Bound"
+      >cov</a
+      ><a name="4279"
+      > </a
+      ><a name="4280" class="Symbol"
+      >:</a
+      ><a name="4281"
+      > </a
+      ><a name="4282" href="lib.types.Cover.html#391" class="Record"
+      >Cover</a
+      ><a name="4287"
+      > </a
+      ><a name="4288" href="lib.types.Cover.html#4027" class="Bound"
+      >A</a
+      ><a name="4289"
+      > </a
+      ><a name="4290" href="lib.types.Cover.html#4272" class="Bound"
+      >j</a
+      ><a name="4291" class="Symbol"
+      >)</a
+      ><a name="4292"
+      > </a
+      ><a name="4293" class="Symbol"
+      >{</a
+      ><a name="4294" href="lib.types.Cover.html#4294" class="Bound"
+      >a&#8321;</a
+      ><a name="4296" class="Symbol"
+      >}</a
+      ><a name="4297"
+      >
+      </a
+      ><a name="4304" class="Symbol"
+      >&#8594;</a
+      ><a name="4305"
+      > </a
+      ><a name="4306" class="Symbol"
+      >(</a
+      ><a name="4307" href="lib.types.Cover.html#4307" class="Bound"
+      >a&#8593;</a
+      ><a name="4309"
+      > </a
+      ><a name="4310" class="Symbol"
+      >:</a
+      ><a name="4311"
+      > </a
+      ><a name="4312" href="lib.types.Cover.html#480" class="Field"
+      >Fiber</a
+      ><a name="4317"
+      > </a
+      ><a name="4318" href="lib.types.Cover.html#4276" class="Bound"
+      >cov</a
+      ><a name="4321"
+      > </a
+      ><a name="4322" href="lib.types.Cover.html#4294" class="Bound"
+      >a&#8321;</a
+      ><a name="4324" class="Symbol"
+      >)</a
+      ><a name="4325"
+      >
+      </a
+      ><a name="4332" class="Symbol"
+      >&#8594;</a
+      ><a name="4333"
+      > </a
+      ><a name="4334" href="lib.types.Cover.html#4061" class="Function"
+      >cover-trace</a
+      ><a name="4345"
+      > </a
+      ><a name="4346" href="lib.types.Cover.html#4276" class="Bound"
+      >cov</a
+      ><a name="4349"
+      > </a
+      ><a name="4350" href="lib.types.Cover.html#4307" class="Bound"
+      >a&#8593;</a
+      ><a name="4352"
+      > </a
+      ><a name="4353" href="lib.types.PathSet.html#635" class="Function"
+      >idp&#8320;</a
+      ><a name="4357"
+      > </a
+      ><a name="4358" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4360"
+      > </a
+      ><a name="4361" href="lib.types.Cover.html#4307" class="Bound"
+      >a&#8593;</a
+      ><a name="4363"
+      >
+    </a
+      ><a name="4368" href="lib.types.Cover.html#4250" class="Function"
+      >cover-trace-idp&#8320;</a
+      ><a name="4384"
+      > </a
+      ><a name="4385" href="lib.types.Cover.html#4385" class="Bound"
+      >cov</a
+      ><a name="4388"
+      > </a
+      ><a name="4389" href="lib.types.Cover.html#4389" class="Bound"
+      >a&#8593;</a
+      ><a name="4391"
+      > </a
+      ><a name="4392" class="Symbol"
+      >=</a
+      ><a name="4393"
+      > </a
+      ><a name="4394" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="4397"
+      >
+
+    </a
+      ><a name="4403" href="lib.types.Cover.html#4403" class="Function"
+      >cover-paste</a
+      ><a name="4414"
+      > </a
+      ><a name="4415" class="Symbol"
+      >:</a
+      ><a name="4416"
+      > </a
+      ><a name="4417" class="Symbol"
+      >&#8704;</a
+      ><a name="4418"
+      > </a
+      ><a name="4419" class="Symbol"
+      >{</a
+      ><a name="4420" href="lib.types.Cover.html#4420" class="Bound"
+      >j</a
+      ><a name="4421" class="Symbol"
+      >}</a
+      ><a name="4422"
+      > </a
+      ><a name="4423" class="Symbol"
+      >(</a
+      ><a name="4424" href="lib.types.Cover.html#4424" class="Bound"
+      >cov</a
+      ><a name="4427"
+      > </a
+      ><a name="4428" class="Symbol"
+      >:</a
+      ><a name="4429"
+      > </a
+      ><a name="4430" href="lib.types.Cover.html#391" class="Record"
+      >Cover</a
+      ><a name="4435"
+      > </a
+      ><a name="4436" href="lib.types.Cover.html#4027" class="Bound"
+      >A</a
+      ><a name="4437"
+      > </a
+      ><a name="4438" href="lib.types.Cover.html#4420" class="Bound"
+      >j</a
+      ><a name="4439" class="Symbol"
+      >)</a
+      ><a name="4440"
+      > </a
+      ><a name="4441" class="Symbol"
+      >{</a
+      ><a name="4442" href="lib.types.Cover.html#4442" class="Bound"
+      >a&#8321;</a
+      ><a name="4444"
+      > </a
+      ><a name="4445" href="lib.types.Cover.html#4445" class="Bound"
+      >a&#8322;</a
+      ><a name="4447" class="Symbol"
+      >}</a
+      ><a name="4448"
+      >
+      </a
+      ><a name="4455" class="Symbol"
+      >&#8594;</a
+      ><a name="4456"
+      > </a
+      ><a name="4457" class="Symbol"
+      >(</a
+      ><a name="4458" href="lib.types.Cover.html#4458" class="Bound"
+      >a&#8593;</a
+      ><a name="4460"
+      > </a
+      ><a name="4461" class="Symbol"
+      >:</a
+      ><a name="4462"
+      > </a
+      ><a name="4463" href="lib.types.Cover.html#480" class="Field"
+      >Fiber</a
+      ><a name="4468"
+      > </a
+      ><a name="4469" href="lib.types.Cover.html#4424" class="Bound"
+      >cov</a
+      ><a name="4472"
+      > </a
+      ><a name="4473" href="lib.types.Cover.html#4442" class="Bound"
+      >a&#8321;</a
+      ><a name="4475" class="Symbol"
+      >)</a
+      ><a name="4476"
+      >
+      </a
+      ><a name="4483" class="Symbol"
+      >&#8594;</a
+      ><a name="4484"
+      > </a
+      ><a name="4485" class="Symbol"
+      >(</a
+      ><a name="4486" href="lib.types.Cover.html#4486" class="Bound"
+      >loop</a
+      ><a name="4490"
+      > </a
+      ><a name="4491" class="Symbol"
+      >:</a
+      ><a name="4492"
+      > </a
+      ><a name="4493" href="lib.types.Cover.html#4442" class="Bound"
+      >a&#8321;</a
+      ><a name="4495"
+      > </a
+      ><a name="4496" href="lib.types.PathSet.html#226" class="Function Operator"
+      >=&#8320;</a
+      ><a name="4498"
+      > </a
+      ><a name="4499" href="lib.types.Cover.html#4442" class="Bound"
+      >a&#8321;</a
+      ><a name="4501" class="Symbol"
+      >)</a
+      ><a name="4502"
+      >
+      </a
+      ><a name="4509" class="Symbol"
+      >&#8594;</a
+      ><a name="4510"
+      > </a
+      ><a name="4511" class="Symbol"
+      >(</a
+      ><a name="4512" href="lib.types.Cover.html#4512" class="Bound"
+      >p</a
+      ><a name="4513"
+      > </a
+      ><a name="4514" class="Symbol"
+      >:</a
+      ><a name="4515"
+      > </a
+      ><a name="4516" href="lib.types.Cover.html#4442" class="Bound"
+      >a&#8321;</a
+      ><a name="4518"
+      > </a
+      ><a name="4519" href="lib.types.PathSet.html#226" class="Function Operator"
+      >=&#8320;</a
+      ><a name="4521"
+      > </a
+      ><a name="4522" href="lib.types.Cover.html#4445" class="Bound"
+      >a&#8322;</a
+      ><a name="4524" class="Symbol"
+      >)</a
+      ><a name="4525"
+      >
+      </a
+      ><a name="4532" class="Symbol"
+      >&#8594;</a
+      ><a name="4533"
+      > </a
+      ><a name="4534" href="lib.types.Cover.html#4061" class="Function"
+      >cover-trace</a
+      ><a name="4545"
+      > </a
+      ><a name="4546" href="lib.types.Cover.html#4424" class="Bound"
+      >cov</a
+      ><a name="4549"
+      > </a
+      ><a name="4550" class="Symbol"
+      >(</a
+      ><a name="4551" href="lib.types.Cover.html#4061" class="Function"
+      >cover-trace</a
+      ><a name="4562"
+      > </a
+      ><a name="4563" href="lib.types.Cover.html#4424" class="Bound"
+      >cov</a
+      ><a name="4566"
+      > </a
+      ><a name="4567" href="lib.types.Cover.html#4458" class="Bound"
+      >a&#8593;</a
+      ><a name="4569"
+      > </a
+      ><a name="4570" href="lib.types.Cover.html#4486" class="Bound"
+      >loop</a
+      ><a name="4574" class="Symbol"
+      >)</a
+      ><a name="4575"
+      > </a
+      ><a name="4576" href="lib.types.Cover.html#4512" class="Bound"
+      >p</a
+      ><a name="4577"
+      >
+      </a
+      ><a name="4584" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="4586"
+      > </a
+      ><a name="4587" href="lib.types.Cover.html#4061" class="Function"
+      >cover-trace</a
+      ><a name="4598"
+      > </a
+      ><a name="4599" href="lib.types.Cover.html#4424" class="Bound"
+      >cov</a
+      ><a name="4602"
+      > </a
+      ><a name="4603" href="lib.types.Cover.html#4458" class="Bound"
+      >a&#8593;</a
+      ><a name="4605"
+      > </a
+      ><a name="4606" class="Symbol"
+      >(</a
+      ><a name="4607" href="lib.types.Cover.html#4486" class="Bound"
+      >loop</a
+      ><a name="4611"
+      > </a
+      ><a name="4612" href="lib.types.PathSet.html#383" class="Function Operator"
+      >&#8729;&#8320;</a
+      ><a name="4614"
+      > </a
+      ><a name="4615" href="lib.types.Cover.html#4512" class="Bound"
+      >p</a
+      ><a name="4616" class="Symbol"
+      >)</a
+      ><a name="4617"
+      >
+    </a
+      ><a name="4622" href="lib.types.Cover.html#4403" class="Function"
+      >cover-paste</a
+      ><a name="4633"
+      > </a
+      ><a name="4634" href="lib.types.Cover.html#4634" class="Bound"
+      >cov</a
+      ><a name="4637"
+      > </a
+      ><a name="4638" href="lib.types.Cover.html#4638" class="Bound"
+      >a&#8593;</a
+      ><a name="4640"
+      > </a
+      ><a name="4641" href="lib.types.Cover.html#4641" class="Bound"
+      >loop</a
+      ><a name="4645"
+      > </a
+      ><a name="4646" href="lib.types.Cover.html#4646" class="Bound"
+      >p</a
+      ><a name="4647"
+      > </a
+      ><a name="4648" class="Symbol"
+      >=</a
+      ><a name="4649"
+      > </a
+      ><a name="4650" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="4651"
+      > </a
+      ><a name="4652" href="lib.Base.html#7935" class="Function Operator"
+      >$</a
+      ><a name="4653"
+      > </a
+      ><a name="4654" href="lib.types.PathSet.html#3229" class="Function"
+      >trans&#8320;-&#8729;&#8320;</a
+      ><a name="4663"
+      > </a
+      ><a name="4664" class="Symbol"
+      >(&#955;</a
+      ><a name="4666"
+      > </a
+      ><a name="4667" class="Symbol"
+      >{</a
+      ><a name="4668" href="lib.types.Cover.html#4668" class="Bound"
+      >a</a
+      ><a name="4669" class="Symbol"
+      >}</a
+      ><a name="4670"
+      > </a
+      ><a name="4671" class="Symbol"
+      >&#8594;</a
+      ><a name="4672"
+      > </a
+      ><a name="4673" href="lib.types.Cover.html#542" class="Function"
+      >Fiber-is-set</a
+      ><a name="4685"
+      > </a
+      ><a name="4686" href="lib.types.Cover.html#4634" class="Bound"
+      >cov</a
+      ><a name="4689"
+      > </a
+      ><a name="4690" href="lib.types.Cover.html#4668" class="Bound"
+      >a</a
+      ><a name="4691" class="Symbol"
+      >)</a
+      ><a name="4692"
+      > </a
+      ><a name="4693" href="lib.types.Cover.html#4641" class="Bound"
+      >loop</a
+      ><a name="4697"
+      > </a
+      ><a name="4698" href="lib.types.Cover.html#4646" class="Bound"
+      >p</a
+      ><a name="4699"
+      > </a
+      ><a name="4700" href="lib.types.Cover.html#4638" class="Bound"
+      >a&#8593;</a
+      ><a name="4702"
+      >
+
+</a
+      ><a name="4704" class="Comment"
+      >-- Path sets form a covering space</a
+      ><a name="4738"
+      >
+</a
+      ><a name="4739" class="Keyword"
+      >module</a
+      ><a name="4745"
+      > </a
+      ><a name="4746" href="lib.types.Cover.html#4746" class="Module"
+      >_</a
+      ><a name="4747"
+      > </a
+      ><a name="4748" class="Symbol"
+      >{</a
+      ><a name="4749" href="lib.types.Cover.html#4749" class="Bound"
+      >i</a
+      ><a name="4750" class="Symbol"
+      >}</a
+      ><a name="4751"
+      > </a
+      ><a name="4752" class="Symbol"
+      >(</a
+      ><a name="4753" href="lib.types.Cover.html#4753" class="Bound"
+      >A&#8729;</a
+      ><a name="4755"
+      > </a
+      ><a name="4756" class="Symbol"
+      >:</a
+      ><a name="4757"
+      > </a
+      ><a name="4758" href="lib.types.Pointed.html#232" class="Function"
+      >Ptd</a
+      ><a name="4761"
+      > </a
+      ><a name="4762" href="lib.types.Cover.html#4749" class="Bound"
+      >i</a
+      ><a name="4763" class="Symbol"
+      >)</a
+      ><a name="4764"
+      > </a
+      ><a name="4765" class="Keyword"
+      >where</a
+      ><a name="4770"
+      >
+  </a
+      ><a name="4773" href="lib.types.Cover.html#4773" class="Function"
+      >path-set-cover</a
+      ><a name="4787"
+      > </a
+      ><a name="4788" class="Symbol"
+      >:</a
+      ><a name="4789"
+      > </a
+      ><a name="4790" href="lib.types.Cover.html#391" class="Record"
+      >Cover</a
+      ><a name="4795"
+      > </a
+      ><a name="4796" class="Symbol"
+      >(</a
+      ><a name="4797" href="lib.Base.html#5080" class="Field"
+      >fst</a
+      ><a name="4800"
+      > </a
+      ><a name="4801" href="lib.types.Cover.html#4753" class="Bound"
+      >A&#8729;</a
+      ><a name="4803" class="Symbol"
+      >)</a
+      ><a name="4804"
+      > </a
+      ><a name="4805" href="lib.types.Cover.html#4749" class="Bound"
+      >i</a
+      ><a name="4806"
+      >
+  </a
+      ><a name="4809" href="lib.types.Cover.html#4773" class="Function"
+      >path-set-cover</a
+      ><a name="4823"
+      > </a
+      ><a name="4824" class="Symbol"
+      >=</a
+      ><a name="4825"
+      > </a
+      ><a name="4826" class="Keyword"
+      >record</a
+      ><a name="4832"
+      >
+    </a
+      ><a name="4837" class="Symbol"
+      >{</a
+      ><a name="4838"
+      > </a
+      ><a name="4839" class="Field"
+      >Fiber</a
+      ><a name="4844"
+      > </a
+      ><a name="4845" class="Symbol"
+      >=</a
+      ><a name="4846"
+      > </a
+      ><a name="4847" class="Symbol"
+      >&#955;</a
+      ><a name="4848"
+      > </a
+      ><a name="4849" href="lib.types.Cover.html#4849" class="Bound"
+      >a</a
+      ><a name="4850"
+      > </a
+      ><a name="4851" class="Symbol"
+      >&#8594;</a
+      ><a name="4852"
+      > </a
+      ><a name="4853" href="lib.Base.html#5092" class="Field"
+      >snd</a
+      ><a name="4856"
+      > </a
+      ><a name="4857" href="lib.types.Cover.html#4753" class="Bound"
+      >A&#8729;</a
+      ><a name="4859"
+      > </a
+      ><a name="4860" href="lib.types.PathSet.html#226" class="Function Operator"
+      >=&#8320;</a
+      ><a name="4862"
+      > </a
+      ><a name="4863" href="lib.types.Cover.html#4849" class="Bound"
+      >a</a
+      ><a name="4864"
+      >
+    </a
+      ><a name="4869" class="Symbol"
+      >;</a
+      ><a name="4870"
+      > </a
+      ><a name="4871" class="Field"
+      >Fiber-level</a
+      ><a name="4882"
+      > </a
+      ><a name="4883" class="Symbol"
+      >=</a
+      ><a name="4884"
+      > </a
+      ><a name="4885" class="Symbol"
+      >&#955;</a
+      ><a name="4886"
+      > </a
+      ><a name="4887" href="lib.types.Cover.html#4887" class="Bound"
+      >a</a
+      ><a name="4888"
+      > </a
+      ><a name="4889" class="Symbol"
+      >&#8594;</a
+      ><a name="4890"
+      > </a
+      ><a name="4891" href="lib.types.Truncation.html#579" class="Postulate"
+      >Trunc-level</a
+      ><a name="4902"
+      >
+    </a
+      ><a name="4907" class="Symbol"
+      >}</a
+      ><a name="4908"
+      >
+
+</a
+      ><a name="4910" class="Comment"
+      >-- Cover morphisms</a
+      ><a name="4928"
+      >
+</a
+      ><a name="4929" href="lib.types.Cover.html#4929" class="Function"
+      >CoverHom</a
+      ><a name="4937"
+      > </a
+      ><a name="4938" class="Symbol"
+      >:</a
+      ><a name="4939"
+      > </a
+      ><a name="4940" class="Symbol"
+      >&#8704;</a
+      ><a name="4941"
+      > </a
+      ><a name="4942" class="Symbol"
+      >{</a
+      ><a name="4943" href="lib.types.Cover.html#4943" class="Bound"
+      >i</a
+      ><a name="4944" class="Symbol"
+      >}</a
+      ><a name="4945"
+      > </a
+      ><a name="4946" class="Symbol"
+      >{</a
+      ><a name="4947" href="lib.types.Cover.html#4947" class="Bound"
+      >A</a
+      ><a name="4948"
+      > </a
+      ><a name="4949" class="Symbol"
+      >:</a
+      ><a name="4950"
+      > </a
+      ><a name="4951" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="4955"
+      > </a
+      ><a name="4956" href="lib.types.Cover.html#4943" class="Bound"
+      >i</a
+      ><a name="4957" class="Symbol"
+      >}</a
+      ><a name="4958"
+      > </a
+      ><a name="4959" class="Symbol"
+      >{</a
+      ><a name="4960" href="lib.types.Cover.html#4960" class="Bound"
+      >j&#8321;</a
+      ><a name="4962"
+      > </a
+      ><a name="4963" href="lib.types.Cover.html#4963" class="Bound"
+      >j&#8322;</a
+      ><a name="4965" class="Symbol"
+      >}</a
+      ><a name="4966"
+      >
+  </a
+      ><a name="4969" class="Symbol"
+      >&#8594;</a
+      ><a name="4970"
+      > </a
+      ><a name="4971" class="Symbol"
+      >(</a
+      ><a name="4972" href="lib.types.Cover.html#4972" class="Bound"
+      >cov1</a
+      ><a name="4976"
+      > </a
+      ><a name="4977" class="Symbol"
+      >:</a
+      ><a name="4978"
+      > </a
+      ><a name="4979" href="lib.types.Cover.html#391" class="Record"
+      >Cover</a
+      ><a name="4984"
+      > </a
+      ><a name="4985" href="lib.types.Cover.html#4947" class="Bound"
+      >A</a
+      ><a name="4986"
+      > </a
+      ><a name="4987" href="lib.types.Cover.html#4960" class="Bound"
+      >j&#8321;</a
+      ><a name="4989" class="Symbol"
+      >)</a
+      ><a name="4990"
+      >
+  </a
+      ><a name="4993" class="Symbol"
+      >&#8594;</a
+      ><a name="4994"
+      > </a
+      ><a name="4995" class="Symbol"
+      >(</a
+      ><a name="4996" href="lib.types.Cover.html#4996" class="Bound"
+      >cov2</a
+      ><a name="5000"
+      > </a
+      ><a name="5001" class="Symbol"
+      >:</a
+      ><a name="5002"
+      > </a
+      ><a name="5003" href="lib.types.Cover.html#391" class="Record"
+      >Cover</a
+      ><a name="5008"
+      > </a
+      ><a name="5009" href="lib.types.Cover.html#4947" class="Bound"
+      >A</a
+      ><a name="5010"
+      > </a
+      ><a name="5011" href="lib.types.Cover.html#4963" class="Bound"
+      >j&#8322;</a
+      ><a name="5013" class="Symbol"
+      >)</a
+      ><a name="5014"
+      >
+  </a
+      ><a name="5017" class="Symbol"
+      >&#8594;</a
+      ><a name="5018"
+      > </a
+      ><a name="5019" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="5023"
+      > </a
+      ><a name="5024" class="Symbol"
+      >(</a
+      ><a name="5025" href="Agda.Primitive.html#626" class="Primitive"
+      >lmax</a
+      ><a name="5029"
+      > </a
+      ><a name="5030" href="lib.types.Cover.html#4943" class="Bound"
+      >i</a
+      ><a name="5031"
+      > </a
+      ><a name="5032" class="Symbol"
+      >(</a
+      ><a name="5033" href="Agda.Primitive.html#626" class="Primitive"
+      >lmax</a
+      ><a name="5037"
+      > </a
+      ><a name="5038" href="lib.types.Cover.html#4960" class="Bound"
+      >j&#8321;</a
+      ><a name="5040"
+      > </a
+      ><a name="5041" href="lib.types.Cover.html#4963" class="Bound"
+      >j&#8322;</a
+      ><a name="5043" class="Symbol"
+      >))</a
+      ><a name="5045"
+      >
+</a
+      ><a name="5046" href="lib.types.Cover.html#4929" class="Function"
+      >CoverHom</a
+      ><a name="5054"
+      > </a
+      ><a name="5055" class="Symbol"
+      >(</a
+      ><a name="5056" href="lib.types.Cover.html#462" class="InductiveConstructor"
+      >cover</a
+      ><a name="5061"
+      > </a
+      ><a name="5062" href="lib.types.Cover.html#5062" class="Bound"
+      >F&#8321;</a
+      ><a name="5064"
+      > </a
+      ><a name="5065" class="Symbol"
+      >_)</a
+      ><a name="5067"
+      > </a
+      ><a name="5068" class="Symbol"
+      >(</a
+      ><a name="5069" href="lib.types.Cover.html#462" class="InductiveConstructor"
+      >cover</a
+      ><a name="5074"
+      > </a
+      ><a name="5075" href="lib.types.Cover.html#5075" class="Bound"
+      >F&#8322;</a
+      ><a name="5077"
+      > </a
+      ><a name="5078" class="Symbol"
+      >_)</a
+      ><a name="5080"
+      > </a
+      ><a name="5081" class="Symbol"
+      >=</a
+      ><a name="5082"
+      > </a
+      ><a name="5083" class="Symbol"
+      >&#8704;</a
+      ><a name="5084"
+      > </a
+      ><a name="5085" href="lib.types.Cover.html#5085" class="Bound"
+      >a</a
+      ><a name="5086"
+      > </a
+      ><a name="5087" class="Symbol"
+      >&#8594;</a
+      ><a name="5088"
+      > </a
+      ><a name="5089" href="lib.types.Cover.html#5062" class="Bound"
+      >F&#8321;</a
+      ><a name="5091"
+      > </a
+      ><a name="5092" href="lib.types.Cover.html#5085" class="Bound"
+      >a</a
+      ><a name="5093"
+      > </a
+      ><a name="5094" class="Symbol"
+      >&#8594;</a
+      ><a name="5095"
+      > </a
+      ><a name="5096" href="lib.types.Cover.html#5075" class="Bound"
+      >F&#8322;</a
+      ><a name="5098"
+      > </a
+      ><a name="5099" href="lib.types.Cover.html#5085" class="Bound"
+      >a</a
+      ><a name="5100"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

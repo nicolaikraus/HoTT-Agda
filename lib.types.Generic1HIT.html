@@ -1,0 +1,2562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >lib.types.Generic1HIT</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --without-K </a
+      ><a name="25" class="Symbol"
+      >#-}</a
+      ><a name="28"
+      >
+
+</a
+      ><a name="30" class="Keyword"
+      >open</a
+      ><a name="34"
+      > </a
+      ><a name="35" class="Keyword"
+      >import</a
+      ><a name="41"
+      > </a
+      ><a name="42" href="lib.Basics.html#1" class="Module"
+      >lib.Basics</a
+      ><a name="52"
+      >
+
+</a
+      ><a name="54" class="Comment"
+      >{-
+The generic nonrecursive higher inductive type with one point constructor and
+one paths constructor.
+-}</a
+      ><a name="160"
+      >
+
+</a
+      ><a name="162" class="Keyword"
+      >module</a
+      ><a name="168"
+      > </a
+      ><a name="169" href="lib.types.Generic1HIT.html#1" class="Module"
+      >lib.types.Generic1HIT</a
+      ><a name="190"
+      > </a
+      ><a name="191" class="Symbol"
+      >{</a
+      ><a name="192" href="lib.types.Generic1HIT.html#192" class="Bound"
+      >i</a
+      ><a name="193"
+      > </a
+      ><a name="194" href="lib.types.Generic1HIT.html#194" class="Bound"
+      >j</a
+      ><a name="195" class="Symbol"
+      >}</a
+      ><a name="196"
+      > </a
+      ><a name="197" class="Symbol"
+      >(</a
+      ><a name="198" href="lib.types.Generic1HIT.html#198" class="Bound"
+      >A</a
+      ><a name="199"
+      > </a
+      ><a name="200" class="Symbol"
+      >:</a
+      ><a name="201"
+      > </a
+      ><a name="202" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="206"
+      > </a
+      ><a name="207" href="lib.types.Generic1HIT.html#192" class="Bound"
+      >i</a
+      ><a name="208" class="Symbol"
+      >)</a
+      ><a name="209"
+      > </a
+      ><a name="210" class="Symbol"
+      >(</a
+      ><a name="211" href="lib.types.Generic1HIT.html#211" class="Bound"
+      >B</a
+      ><a name="212"
+      > </a
+      ><a name="213" class="Symbol"
+      >:</a
+      ><a name="214"
+      > </a
+      ><a name="215" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="219"
+      > </a
+      ><a name="220" href="lib.types.Generic1HIT.html#194" class="Bound"
+      >j</a
+      ><a name="221" class="Symbol"
+      >)</a
+      ><a name="222"
+      >
+  </a
+      ><a name="225" class="Symbol"
+      >(</a
+      ><a name="226" href="lib.types.Generic1HIT.html#226" class="Bound"
+      >g</a
+      ><a name="227"
+      > </a
+      ><a name="228" href="lib.types.Generic1HIT.html#228" class="Bound"
+      >h</a
+      ><a name="229"
+      > </a
+      ><a name="230" class="Symbol"
+      >:</a
+      ><a name="231"
+      > </a
+      ><a name="232" href="lib.types.Generic1HIT.html#211" class="Bound"
+      >B</a
+      ><a name="233"
+      > </a
+      ><a name="234" class="Symbol"
+      >&#8594;</a
+      ><a name="235"
+      > </a
+      ><a name="236" href="lib.types.Generic1HIT.html#198" class="Bound"
+      >A</a
+      ><a name="237" class="Symbol"
+      >)</a
+      ><a name="238"
+      > </a
+      ><a name="239" class="Keyword"
+      >where</a
+      ><a name="244"
+      >
+
+
+</a
+      ><a name="247" class="Comment"
+      >{-
+data T : Type where
+  cc : A &#8594; T
+  pp : (b : B) &#8594; cc (f' b) &#8801; cc (g b)
+-}</a
+      ><a name="323"
+      >
+</a
+      ><a name="324" class="Keyword"
+      >module</a
+      ><a name="330"
+      > </a
+      ><a name="331" href="lib.types.Generic1HIT.html#331" class="Module"
+      >_</a
+      ><a name="332"
+      > </a
+      ><a name="333" class="Keyword"
+      >where</a
+      ><a name="338"
+      >
+  </a
+      ><a name="341" class="Keyword"
+      >private</a
+      ><a name="348"
+      >
+    </a
+      ><a name="353" class="Keyword"
+      >data</a
+      ><a name="357"
+      > </a
+      ><a name="358" href="lib.types.Generic1HIT.html#358" class="Datatype"
+      >#T-aux</a
+      ><a name="364"
+      > </a
+      ><a name="365" class="Symbol"
+      >:</a
+      ><a name="366"
+      > </a
+      ><a name="367" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="371"
+      > </a
+      ><a name="372" class="Symbol"
+      >(</a
+      ><a name="373" href="Agda.Primitive.html#626" class="Primitive"
+      >lmax</a
+      ><a name="377"
+      > </a
+      ><a name="378" href="lib.types.Generic1HIT.html#192" class="Bound"
+      >i</a
+      ><a name="379"
+      > </a
+      ><a name="380" href="lib.types.Generic1HIT.html#194" class="Bound"
+      >j</a
+      ><a name="381" class="Symbol"
+      >)</a
+      ><a name="382"
+      > </a
+      ><a name="383" class="Keyword"
+      >where</a
+      ><a name="388"
+      >
+      </a
+      ><a name="395" href="lib.types.Generic1HIT.html#395" class="InductiveConstructor"
+      >#cc</a
+      ><a name="398"
+      > </a
+      ><a name="399" class="Symbol"
+      >:</a
+      ><a name="400"
+      > </a
+      ><a name="401" href="lib.types.Generic1HIT.html#198" class="Bound"
+      >A</a
+      ><a name="402"
+      > </a
+      ><a name="403" class="Symbol"
+      >&#8594;</a
+      ><a name="404"
+      > </a
+      ><a name="405" href="lib.types.Generic1HIT.html#358" class="Datatype"
+      >#T-aux</a
+      ><a name="411"
+      >
+
+    </a
+      ><a name="417" class="Keyword"
+      >data</a
+      ><a name="421"
+      > </a
+      ><a name="422" href="lib.types.Generic1HIT.html#422" class="Datatype"
+      >#T</a
+      ><a name="424"
+      > </a
+      ><a name="425" class="Symbol"
+      >:</a
+      ><a name="426"
+      > </a
+      ><a name="427" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="431"
+      > </a
+      ><a name="432" class="Symbol"
+      >(</a
+      ><a name="433" href="Agda.Primitive.html#626" class="Primitive"
+      >lmax</a
+      ><a name="437"
+      > </a
+      ><a name="438" href="lib.types.Generic1HIT.html#192" class="Bound"
+      >i</a
+      ><a name="439"
+      > </a
+      ><a name="440" href="lib.types.Generic1HIT.html#194" class="Bound"
+      >j</a
+      ><a name="441" class="Symbol"
+      >)</a
+      ><a name="442"
+      > </a
+      ><a name="443" class="Keyword"
+      >where</a
+      ><a name="448"
+      >
+      </a
+      ><a name="455" href="lib.types.Generic1HIT.html#455" class="InductiveConstructor"
+      >#t</a
+      ><a name="457"
+      > </a
+      ><a name="458" class="Symbol"
+      >:</a
+      ><a name="459"
+      > </a
+      ><a name="460" href="lib.types.Generic1HIT.html#358" class="Datatype"
+      >#T-aux</a
+      ><a name="466"
+      > </a
+      ><a name="467" class="Symbol"
+      >&#8594;</a
+      ><a name="468"
+      > </a
+      ><a name="469" class="Symbol"
+      >(</a
+      ><a name="470" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="474"
+      > </a
+      ><a name="475" class="Symbol"
+      >&#8594;</a
+      ><a name="476"
+      > </a
+      ><a name="477" href="lib.Base.html#2652" class="Record"
+      >Unit</a
+      ><a name="481" class="Symbol"
+      >)</a
+      ><a name="482"
+      > </a
+      ><a name="483" class="Symbol"
+      >&#8594;</a
+      ><a name="484"
+      > </a
+      ><a name="485" href="lib.types.Generic1HIT.html#422" class="Datatype"
+      >#T</a
+      ><a name="487"
+      >
+
+  </a
+      ><a name="491" href="lib.types.Generic1HIT.html#491" class="Function"
+      >T</a
+      ><a name="492"
+      > </a
+      ><a name="493" class="Symbol"
+      >:</a
+      ><a name="494"
+      > </a
+      ><a name="495" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="499"
+      > </a
+      ><a name="500" class="Symbol"
+      >_</a
+      ><a name="501"
+      >
+  </a
+      ><a name="504" href="lib.types.Generic1HIT.html#491" class="Function"
+      >T</a
+      ><a name="505"
+      > </a
+      ><a name="506" class="Symbol"
+      >=</a
+      ><a name="507"
+      > </a
+      ><a name="508" href="lib.types.Generic1HIT.html#422" class="Datatype"
+      >#T</a
+      ><a name="510"
+      >
+
+  </a
+      ><a name="514" href="lib.types.Generic1HIT.html#514" class="Function"
+      >cc</a
+      ><a name="516"
+      > </a
+      ><a name="517" class="Symbol"
+      >:</a
+      ><a name="518"
+      > </a
+      ><a name="519" href="lib.types.Generic1HIT.html#198" class="Bound"
+      >A</a
+      ><a name="520"
+      > </a
+      ><a name="521" class="Symbol"
+      >&#8594;</a
+      ><a name="522"
+      > </a
+      ><a name="523" href="lib.types.Generic1HIT.html#491" class="Function"
+      >T</a
+      ><a name="524"
+      >
+  </a
+      ><a name="527" href="lib.types.Generic1HIT.html#514" class="Function"
+      >cc</a
+      ><a name="529"
+      > </a
+      ><a name="530" href="lib.types.Generic1HIT.html#530" class="Bound"
+      >a</a
+      ><a name="531"
+      > </a
+      ><a name="532" class="Symbol"
+      >=</a
+      ><a name="533"
+      > </a
+      ><a name="534" href="lib.types.Generic1HIT.html#455" class="InductiveConstructor"
+      >#t</a
+      ><a name="536"
+      > </a
+      ><a name="537" class="Symbol"
+      >(</a
+      ><a name="538" href="lib.types.Generic1HIT.html#395" class="InductiveConstructor"
+      >#cc</a
+      ><a name="541"
+      > </a
+      ><a name="542" href="lib.types.Generic1HIT.html#530" class="Bound"
+      >a</a
+      ><a name="543" class="Symbol"
+      >)</a
+      ><a name="544"
+      > </a
+      ><a name="545" class="Symbol"
+      >_</a
+      ><a name="546"
+      >
+
+  </a
+      ><a name="550" class="Keyword"
+      >postulate</a
+      ><a name="559"
+      >  </a
+      ><a name="561" class="Comment"
+      >-- HIT</a
+      ><a name="567"
+      >
+    </a
+      ><a name="572" href="lib.types.Generic1HIT.html#572" class="Postulate"
+      >pp</a
+      ><a name="574"
+      > </a
+      ><a name="575" class="Symbol"
+      >:</a
+      ><a name="576"
+      > </a
+      ><a name="577" class="Symbol"
+      >(</a
+      ><a name="578" href="lib.types.Generic1HIT.html#578" class="Bound"
+      >b</a
+      ><a name="579"
+      > </a
+      ><a name="580" class="Symbol"
+      >:</a
+      ><a name="581"
+      > </a
+      ><a name="582" href="lib.types.Generic1HIT.html#211" class="Bound"
+      >B</a
+      ><a name="583" class="Symbol"
+      >)</a
+      ><a name="584"
+      > </a
+      ><a name="585" class="Symbol"
+      >&#8594;</a
+      ><a name="586"
+      > </a
+      ><a name="587" href="lib.types.Generic1HIT.html#514" class="Function"
+      >cc</a
+      ><a name="589"
+      > </a
+      ><a name="590" class="Symbol"
+      >(</a
+      ><a name="591" href="lib.types.Generic1HIT.html#226" class="Bound"
+      >g</a
+      ><a name="592"
+      > </a
+      ><a name="593" href="lib.types.Generic1HIT.html#578" class="Bound"
+      >b</a
+      ><a name="594" class="Symbol"
+      >)</a
+      ><a name="595"
+      > </a
+      ><a name="596" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="598"
+      > </a
+      ><a name="599" href="lib.types.Generic1HIT.html#514" class="Function"
+      >cc</a
+      ><a name="601"
+      > </a
+      ><a name="602" class="Symbol"
+      >(</a
+      ><a name="603" href="lib.types.Generic1HIT.html#228" class="Bound"
+      >h</a
+      ><a name="604"
+      > </a
+      ><a name="605" href="lib.types.Generic1HIT.html#578" class="Bound"
+      >b</a
+      ><a name="606" class="Symbol"
+      >)</a
+      ><a name="607"
+      >
+
+  </a
+      ><a name="611" class="Keyword"
+      >module</a
+      ><a name="617"
+      > </a
+      ><a name="618" href="lib.types.Generic1HIT.html#618" class="Module"
+      >Elim</a
+      ><a name="622"
+      > </a
+      ><a name="623" class="Symbol"
+      >{</a
+      ><a name="624" href="lib.types.Generic1HIT.html#624" class="Bound"
+      >k</a
+      ><a name="625" class="Symbol"
+      >}</a
+      ><a name="626"
+      > </a
+      ><a name="627" class="Symbol"
+      >{</a
+      ><a name="628" href="lib.types.Generic1HIT.html#628" class="Bound"
+      >P</a
+      ><a name="629"
+      > </a
+      ><a name="630" class="Symbol"
+      >:</a
+      ><a name="631"
+      > </a
+      ><a name="632" href="lib.types.Generic1HIT.html#491" class="Function"
+      >T</a
+      ><a name="633"
+      > </a
+      ><a name="634" class="Symbol"
+      >&#8594;</a
+      ><a name="635"
+      > </a
+      ><a name="636" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="640"
+      > </a
+      ><a name="641" href="lib.types.Generic1HIT.html#624" class="Bound"
+      >k</a
+      ><a name="642" class="Symbol"
+      >}</a
+      ><a name="643"
+      > </a
+      ><a name="644" class="Symbol"
+      >(</a
+      ><a name="645" href="lib.types.Generic1HIT.html#645" class="Bound"
+      >cc*</a
+      ><a name="648"
+      > </a
+      ><a name="649" class="Symbol"
+      >:</a
+      ><a name="650"
+      > </a
+      ><a name="651" class="Symbol"
+      >(</a
+      ><a name="652" href="lib.types.Generic1HIT.html#652" class="Bound"
+      >a</a
+      ><a name="653"
+      > </a
+      ><a name="654" class="Symbol"
+      >:</a
+      ><a name="655"
+      > </a
+      ><a name="656" href="lib.types.Generic1HIT.html#198" class="Bound"
+      >A</a
+      ><a name="657" class="Symbol"
+      >)</a
+      ><a name="658"
+      > </a
+      ><a name="659" class="Symbol"
+      >&#8594;</a
+      ><a name="660"
+      > </a
+      ><a name="661" href="lib.types.Generic1HIT.html#628" class="Bound"
+      >P</a
+      ><a name="662"
+      > </a
+      ><a name="663" class="Symbol"
+      >(</a
+      ><a name="664" href="lib.types.Generic1HIT.html#514" class="Function"
+      >cc</a
+      ><a name="666"
+      > </a
+      ><a name="667" href="lib.types.Generic1HIT.html#652" class="Bound"
+      >a</a
+      ><a name="668" class="Symbol"
+      >))</a
+      ><a name="670"
+      >
+    </a
+      ><a name="675" class="Symbol"
+      >(</a
+      ><a name="676" href="lib.types.Generic1HIT.html#676" class="Bound"
+      >pp*</a
+      ><a name="679"
+      > </a
+      ><a name="680" class="Symbol"
+      >:</a
+      ><a name="681"
+      > </a
+      ><a name="682" class="Symbol"
+      >(</a
+      ><a name="683" href="lib.types.Generic1HIT.html#683" class="Bound"
+      >b</a
+      ><a name="684"
+      > </a
+      ><a name="685" class="Symbol"
+      >:</a
+      ><a name="686"
+      > </a
+      ><a name="687" href="lib.types.Generic1HIT.html#211" class="Bound"
+      >B</a
+      ><a name="688" class="Symbol"
+      >)</a
+      ><a name="689"
+      > </a
+      ><a name="690" class="Symbol"
+      >&#8594;</a
+      ><a name="691"
+      > </a
+      ><a name="692" href="lib.types.Generic1HIT.html#645" class="Bound"
+      >cc*</a
+      ><a name="695"
+      > </a
+      ><a name="696" class="Symbol"
+      >(</a
+      ><a name="697" href="lib.types.Generic1HIT.html#226" class="Bound"
+      >g</a
+      ><a name="698"
+      > </a
+      ><a name="699" href="lib.types.Generic1HIT.html#683" class="Bound"
+      >b</a
+      ><a name="700" class="Symbol"
+      >)</a
+      ><a name="701"
+      > </a
+      ><a name="702" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="704"
+      > </a
+      ><a name="705" href="lib.types.Generic1HIT.html#645" class="Bound"
+      >cc*</a
+      ><a name="708"
+      > </a
+      ><a name="709" class="Symbol"
+      >(</a
+      ><a name="710" href="lib.types.Generic1HIT.html#228" class="Bound"
+      >h</a
+      ><a name="711"
+      > </a
+      ><a name="712" href="lib.types.Generic1HIT.html#683" class="Bound"
+      >b</a
+      ><a name="713" class="Symbol"
+      >)</a
+      ><a name="714"
+      > </a
+      ><a name="715" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="716"
+      > </a
+      ><a name="717" href="lib.types.Generic1HIT.html#628" class="Bound"
+      >P</a
+      ><a name="718"
+      > </a
+      ><a name="719" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="720"
+      > </a
+      ><a name="721" href="lib.types.Generic1HIT.html#572" class="Postulate"
+      >pp</a
+      ><a name="723"
+      > </a
+      ><a name="724" href="lib.types.Generic1HIT.html#683" class="Bound"
+      >b</a
+      ><a name="725"
+      > </a
+      ><a name="726" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="727" class="Symbol"
+      >)</a
+      ><a name="728"
+      > </a
+      ><a name="729" class="Keyword"
+      >where</a
+      ><a name="734"
+      >
+
+    </a
+      ><a name="740" href="lib.types.Generic1HIT.html#740" class="Function"
+      >f</a
+      ><a name="741"
+      > </a
+      ><a name="742" class="Symbol"
+      >:</a
+      ><a name="743"
+      > </a
+      ><a name="744" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="745"
+      > </a
+      ><a name="746" href="lib.types.Generic1HIT.html#491" class="Function"
+      >T</a
+      ><a name="747"
+      > </a
+      ><a name="748" href="lib.types.Generic1HIT.html#628" class="Bound"
+      >P</a
+      ><a name="749"
+      >
+    </a
+      ><a name="754" href="lib.types.Generic1HIT.html#740" class="Function"
+      >f</a
+      ><a name="755"
+      > </a
+      ><a name="756" class="Symbol"
+      >=</a
+      ><a name="757"
+      > </a
+      ><a name="758" href="lib.types.Generic1HIT.html#786" class="Function"
+      >f-aux</a
+      ><a name="763"
+      > </a
+      ><a name="764" href="lib.Base.html#9474" class="InductiveConstructor"
+      >phantom</a
+      ><a name="771"
+      >  </a
+      ><a name="773" class="Keyword"
+      >where</a
+      ><a name="778"
+      >
+
+      </a
+      ><a name="786" href="lib.types.Generic1HIT.html#786" class="Function"
+      >f-aux</a
+      ><a name="791"
+      > </a
+      ><a name="792" class="Symbol"
+      >:</a
+      ><a name="793"
+      > </a
+      ><a name="794" href="lib.Base.html#9425" class="Datatype"
+      >Phantom</a
+      ><a name="801"
+      > </a
+      ><a name="802" href="lib.types.Generic1HIT.html#676" class="Bound"
+      >pp*</a
+      ><a name="805"
+      > </a
+      ><a name="806" class="Symbol"
+      >&#8594;</a
+      ><a name="807"
+      > </a
+      ><a name="808" href="lib.Base.html#4803" class="Function"
+      >&#928;</a
+      ><a name="809"
+      > </a
+      ><a name="810" href="lib.types.Generic1HIT.html#491" class="Function"
+      >T</a
+      ><a name="811"
+      > </a
+      ><a name="812" href="lib.types.Generic1HIT.html#628" class="Bound"
+      >P</a
+      ><a name="813"
+      >
+      </a
+      ><a name="820" href="lib.types.Generic1HIT.html#786" class="Function"
+      >f-aux</a
+      ><a name="825"
+      > </a
+      ><a name="826" href="lib.Base.html#9474" class="InductiveConstructor"
+      >phantom</a
+      ><a name="833"
+      > </a
+      ><a name="834" class="Symbol"
+      >(</a
+      ><a name="835" href="lib.types.Generic1HIT.html#455" class="InductiveConstructor"
+      >#t</a
+      ><a name="837"
+      > </a
+      ><a name="838" class="Symbol"
+      >(</a
+      ><a name="839" href="lib.types.Generic1HIT.html#395" class="InductiveConstructor"
+      >#cc</a
+      ><a name="842"
+      > </a
+      ><a name="843" href="lib.types.Generic1HIT.html#843" class="Bound"
+      >a</a
+      ><a name="844" class="Symbol"
+      >)</a
+      ><a name="845"
+      > </a
+      ><a name="846" class="Symbol"
+      >_)</a
+      ><a name="848"
+      > </a
+      ><a name="849" class="Symbol"
+      >=</a
+      ><a name="850"
+      > </a
+      ><a name="851" href="lib.types.Generic1HIT.html#645" class="Bound"
+      >cc*</a
+      ><a name="854"
+      > </a
+      ><a name="855" href="lib.types.Generic1HIT.html#843" class="Bound"
+      >a</a
+      ><a name="856"
+      >
+
+    </a
+      ><a name="862" class="Keyword"
+      >postulate</a
+      ><a name="871"
+      >  </a
+      ><a name="873" class="Comment"
+      >-- HIT</a
+      ><a name="879"
+      >
+      </a
+      ><a name="886" href="lib.types.Generic1HIT.html#886" class="Postulate"
+      >pp-&#946;</a
+      ><a name="890"
+      > </a
+      ><a name="891" class="Symbol"
+      >:</a
+      ><a name="892"
+      > </a
+      ><a name="893" class="Symbol"
+      >(</a
+      ><a name="894" href="lib.types.Generic1HIT.html#894" class="Bound"
+      >b</a
+      ><a name="895"
+      > </a
+      ><a name="896" class="Symbol"
+      >:</a
+      ><a name="897"
+      > </a
+      ><a name="898" href="lib.types.Generic1HIT.html#211" class="Bound"
+      >B</a
+      ><a name="899" class="Symbol"
+      >)</a
+      ><a name="900"
+      > </a
+      ><a name="901" class="Symbol"
+      >&#8594;</a
+      ><a name="902"
+      > </a
+      ><a name="903" href="lib.Base.html#4053" class="Function"
+      >apd</a
+      ><a name="906"
+      > </a
+      ><a name="907" href="lib.types.Generic1HIT.html#740" class="Function"
+      >f</a
+      ><a name="908"
+      > </a
+      ><a name="909" class="Symbol"
+      >(</a
+      ><a name="910" href="lib.types.Generic1HIT.html#572" class="Postulate"
+      >pp</a
+      ><a name="912"
+      > </a
+      ><a name="913" href="lib.types.Generic1HIT.html#894" class="Bound"
+      >b</a
+      ><a name="914" class="Symbol"
+      >)</a
+      ><a name="915"
+      > </a
+      ><a name="916" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="918"
+      > </a
+      ><a name="919" href="lib.types.Generic1HIT.html#676" class="Bound"
+      >pp*</a
+      ><a name="922"
+      > </a
+      ><a name="923" href="lib.types.Generic1HIT.html#894" class="Bound"
+      >b</a
+      ><a name="924"
+      >
+
+</a
+      ><a name="926" class="Keyword"
+      >open</a
+      ><a name="930"
+      > </a
+      ><a name="931" href="lib.types.Generic1HIT.html#618" class="Module"
+      >Elim</a
+      ><a name="935"
+      > </a
+      ><a name="936" class="Keyword"
+      >public</a
+      ><a name="942"
+      > </a
+      ><a name="943" class="Keyword"
+      >using</a
+      ><a name="948"
+      > </a
+      ><a name="949" class="Symbol"
+      >()</a
+      ><a name="951"
+      > </a
+      ><a name="952" class="Keyword"
+      >renaming</a
+      ><a name="960"
+      > </a
+      ><a name="961" class="Symbol"
+      >(</a
+      ><a name="962"
+      >f </a
+      ><a name="964" class="Symbol"
+      >to</a
+      ><a name="966"
+      > elim</a
+      ><a name="971" class="Symbol"
+      >)</a
+      ><a name="972"
+      >
+
+</a
+      ><a name="974" class="Keyword"
+      >module</a
+      ><a name="980"
+      > </a
+      ><a name="981" href="lib.types.Generic1HIT.html#981" class="Module"
+      >Rec</a
+      ><a name="984"
+      > </a
+      ><a name="985" class="Symbol"
+      >{</a
+      ><a name="986" href="lib.types.Generic1HIT.html#986" class="Bound"
+      >k</a
+      ><a name="987" class="Symbol"
+      >}</a
+      ><a name="988"
+      > </a
+      ><a name="989" class="Symbol"
+      >{</a
+      ><a name="990" href="lib.types.Generic1HIT.html#990" class="Bound"
+      >C</a
+      ><a name="991"
+      > </a
+      ><a name="992" class="Symbol"
+      >:</a
+      ><a name="993"
+      > </a
+      ><a name="994" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="998"
+      > </a
+      ><a name="999" href="lib.types.Generic1HIT.html#986" class="Bound"
+      >k</a
+      ><a name="1000" class="Symbol"
+      >}</a
+      ><a name="1001"
+      > </a
+      ><a name="1002" class="Symbol"
+      >(</a
+      ><a name="1003" href="lib.types.Generic1HIT.html#1003" class="Bound"
+      >cc*</a
+      ><a name="1006"
+      > </a
+      ><a name="1007" class="Symbol"
+      >:</a
+      ><a name="1008"
+      > </a
+      ><a name="1009" href="lib.types.Generic1HIT.html#198" class="Bound"
+      >A</a
+      ><a name="1010"
+      > </a
+      ><a name="1011" class="Symbol"
+      >&#8594;</a
+      ><a name="1012"
+      > </a
+      ><a name="1013" href="lib.types.Generic1HIT.html#990" class="Bound"
+      >C</a
+      ><a name="1014" class="Symbol"
+      >)</a
+      ><a name="1015"
+      >
+  </a
+      ><a name="1018" class="Symbol"
+      >(</a
+      ><a name="1019" href="lib.types.Generic1HIT.html#1019" class="Bound"
+      >pp*</a
+      ><a name="1022"
+      > </a
+      ><a name="1023" class="Symbol"
+      >:</a
+      ><a name="1024"
+      > </a
+      ><a name="1025" class="Symbol"
+      >(</a
+      ><a name="1026" href="lib.types.Generic1HIT.html#1026" class="Bound"
+      >b</a
+      ><a name="1027"
+      > </a
+      ><a name="1028" class="Symbol"
+      >:</a
+      ><a name="1029"
+      > </a
+      ><a name="1030" href="lib.types.Generic1HIT.html#211" class="Bound"
+      >B</a
+      ><a name="1031" class="Symbol"
+      >)</a
+      ><a name="1032"
+      > </a
+      ><a name="1033" class="Symbol"
+      >&#8594;</a
+      ><a name="1034"
+      > </a
+      ><a name="1035" href="lib.types.Generic1HIT.html#1003" class="Bound"
+      >cc*</a
+      ><a name="1038"
+      > </a
+      ><a name="1039" class="Symbol"
+      >(</a
+      ><a name="1040" href="lib.types.Generic1HIT.html#226" class="Bound"
+      >g</a
+      ><a name="1041"
+      > </a
+      ><a name="1042" href="lib.types.Generic1HIT.html#1026" class="Bound"
+      >b</a
+      ><a name="1043" class="Symbol"
+      >)</a
+      ><a name="1044"
+      > </a
+      ><a name="1045" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1047"
+      > </a
+      ><a name="1048" href="lib.types.Generic1HIT.html#1003" class="Bound"
+      >cc*</a
+      ><a name="1051"
+      > </a
+      ><a name="1052" class="Symbol"
+      >(</a
+      ><a name="1053" href="lib.types.Generic1HIT.html#228" class="Bound"
+      >h</a
+      ><a name="1054"
+      > </a
+      ><a name="1055" href="lib.types.Generic1HIT.html#1026" class="Bound"
+      >b</a
+      ><a name="1056" class="Symbol"
+      >))</a
+      ><a name="1058"
+      > </a
+      ><a name="1059" class="Keyword"
+      >where</a
+      ><a name="1064"
+      >
+
+  </a
+      ><a name="1068" class="Keyword"
+      >private</a
+      ><a name="1075"
+      > </a
+      ><a name="1076" class="Keyword"
+      >module</a
+      ><a name="1082"
+      > </a
+      ><a name="1083" href="lib.types.Generic1HIT.html#1083" class="Module"
+      >M</a
+      ><a name="1084"
+      > </a
+      ><a name="1085" class="Symbol"
+      >=</a
+      ><a name="1086"
+      > </a
+      ><a name="1087" href="lib.types.Generic1HIT.html#618" class="Module"
+      >Elim</a
+      ><a name="1091"
+      > </a
+      ><a name="1092" href="lib.types.Generic1HIT.html#1003" class="Bound"
+      >cc*</a
+      ><a name="1095"
+      > </a
+      ><a name="1096" class="Symbol"
+      >(&#955;</a
+      ><a name="1098"
+      > </a
+      ><a name="1099" href="lib.types.Generic1HIT.html#1099" class="Bound"
+      >b</a
+      ><a name="1100"
+      > </a
+      ><a name="1101" class="Symbol"
+      >&#8594;</a
+      ><a name="1102"
+      > </a
+      ><a name="1103" href="lib.PathOver.html#1262" class="Function"
+      >&#8595;-cst-in</a
+      ><a name="1111"
+      > </a
+      ><a name="1112" class="Symbol"
+      >(</a
+      ><a name="1113" href="lib.types.Generic1HIT.html#1019" class="Bound"
+      >pp*</a
+      ><a name="1116"
+      > </a
+      ><a name="1117" href="lib.types.Generic1HIT.html#1099" class="Bound"
+      >b</a
+      ><a name="1118" class="Symbol"
+      >))</a
+      ><a name="1120"
+      >
+
+  </a
+      ><a name="1124" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >f</a
+      ><a name="1125"
+      > </a
+      ><a name="1126" class="Symbol"
+      >:</a
+      ><a name="1127"
+      > </a
+      ><a name="1128" href="lib.types.Generic1HIT.html#491" class="Function"
+      >T</a
+      ><a name="1129"
+      > </a
+      ><a name="1130" class="Symbol"
+      >&#8594;</a
+      ><a name="1131"
+      > </a
+      ><a name="1132" href="lib.types.Generic1HIT.html#990" class="Bound"
+      >C</a
+      ><a name="1133"
+      >
+  </a
+      ><a name="1136" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >f</a
+      ><a name="1137"
+      > </a
+      ><a name="1138" class="Symbol"
+      >=</a
+      ><a name="1139"
+      > </a
+      ><a name="1140" href="lib.types.Generic1HIT.html#740" class="Function"
+      >M.f</a
+      ><a name="1143"
+      >
+
+  </a
+      ><a name="1147" href="lib.types.Generic1HIT.html#1147" class="Function"
+      >pp-&#946;</a
+      ><a name="1151"
+      > </a
+      ><a name="1152" class="Symbol"
+      >:</a
+      ><a name="1153"
+      > </a
+      ><a name="1154" class="Symbol"
+      >(</a
+      ><a name="1155" href="lib.types.Generic1HIT.html#1155" class="Bound"
+      >b</a
+      ><a name="1156"
+      > </a
+      ><a name="1157" class="Symbol"
+      >:</a
+      ><a name="1158"
+      > </a
+      ><a name="1159" href="lib.types.Generic1HIT.html#211" class="Bound"
+      >B</a
+      ><a name="1160" class="Symbol"
+      >)</a
+      ><a name="1161"
+      > </a
+      ><a name="1162" class="Symbol"
+      >&#8594;</a
+      ><a name="1163"
+      > </a
+      ><a name="1164" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="1166"
+      > </a
+      ><a name="1167" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >f</a
+      ><a name="1168"
+      > </a
+      ><a name="1169" class="Symbol"
+      >(</a
+      ><a name="1170" href="lib.types.Generic1HIT.html#572" class="Postulate"
+      >pp</a
+      ><a name="1172"
+      > </a
+      ><a name="1173" href="lib.types.Generic1HIT.html#1155" class="Bound"
+      >b</a
+      ><a name="1174" class="Symbol"
+      >)</a
+      ><a name="1175"
+      > </a
+      ><a name="1176" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1178"
+      > </a
+      ><a name="1179" href="lib.types.Generic1HIT.html#1019" class="Bound"
+      >pp*</a
+      ><a name="1182"
+      > </a
+      ><a name="1183" href="lib.types.Generic1HIT.html#1155" class="Bound"
+      >b</a
+      ><a name="1184"
+      >
+  </a
+      ><a name="1187" href="lib.types.Generic1HIT.html#1147" class="Function"
+      >pp-&#946;</a
+      ><a name="1191"
+      > </a
+      ><a name="1192" href="lib.types.Generic1HIT.html#1192" class="Bound"
+      >b</a
+      ><a name="1193"
+      > </a
+      ><a name="1194" class="Symbol"
+      >=</a
+      ><a name="1195"
+      > </a
+      ><a name="1196" href="lib.PathOver.html#7029" class="Function"
+      >apd=cst-in</a
+      ><a name="1206"
+      > </a
+      ><a name="1207" class="Symbol"
+      >{f</a
+      ><a name="1209"
+      > </a
+      ><a name="1210" class="Symbol"
+      >=</a
+      ><a name="1211"
+      > </a
+      ><a name="1212" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >f</a
+      ><a name="1213" class="Symbol"
+      >}</a
+      ><a name="1214"
+      > </a
+      ><a name="1215" class="Symbol"
+      >(</a
+      ><a name="1216" href="lib.types.Generic1HIT.html#886" class="Function"
+      >M.pp-&#946;</a
+      ><a name="1222"
+      > </a
+      ><a name="1223" href="lib.types.Generic1HIT.html#1192" class="Bound"
+      >b</a
+      ><a name="1224" class="Symbol"
+      >)</a
+      ><a name="1225"
+      >
+
+</a
+      ><a name="1227" class="Keyword"
+      >module</a
+      ><a name="1233"
+      > </a
+      ><a name="1234" href="lib.types.Generic1HIT.html#1234" class="Module"
+      >RecType</a
+      ><a name="1241"
+      > </a
+      ><a name="1242" class="Symbol"
+      >{</a
+      ><a name="1243" href="lib.types.Generic1HIT.html#1243" class="Bound"
+      >k</a
+      ><a name="1244" class="Symbol"
+      >}</a
+      ><a name="1245"
+      > </a
+      ><a name="1246" class="Symbol"
+      >(</a
+      ><a name="1247" href="lib.types.Generic1HIT.html#1247" class="Bound"
+      >C</a
+      ><a name="1248"
+      > </a
+      ><a name="1249" class="Symbol"
+      >:</a
+      ><a name="1250"
+      > </a
+      ><a name="1251" href="lib.types.Generic1HIT.html#198" class="Bound"
+      >A</a
+      ><a name="1252"
+      > </a
+      ><a name="1253" class="Symbol"
+      >&#8594;</a
+      ><a name="1254"
+      > </a
+      ><a name="1255" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="1259"
+      > </a
+      ><a name="1260" href="lib.types.Generic1HIT.html#1243" class="Bound"
+      >k</a
+      ><a name="1261" class="Symbol"
+      >)</a
+      ><a name="1262"
+      > </a
+      ><a name="1263" class="Symbol"
+      >(</a
+      ><a name="1264" href="lib.types.Generic1HIT.html#1264" class="Bound"
+      >D</a
+      ><a name="1265"
+      > </a
+      ><a name="1266" class="Symbol"
+      >:</a
+      ><a name="1267"
+      > </a
+      ><a name="1268" class="Symbol"
+      >(</a
+      ><a name="1269" href="lib.types.Generic1HIT.html#1269" class="Bound"
+      >b</a
+      ><a name="1270"
+      > </a
+      ><a name="1271" class="Symbol"
+      >:</a
+      ><a name="1272"
+      > </a
+      ><a name="1273" href="lib.types.Generic1HIT.html#211" class="Bound"
+      >B</a
+      ><a name="1274" class="Symbol"
+      >)</a
+      ><a name="1275"
+      > </a
+      ><a name="1276" class="Symbol"
+      >&#8594;</a
+      ><a name="1277"
+      > </a
+      ><a name="1278" href="lib.types.Generic1HIT.html#1247" class="Bound"
+      >C</a
+      ><a name="1279"
+      > </a
+      ><a name="1280" class="Symbol"
+      >(</a
+      ><a name="1281" href="lib.types.Generic1HIT.html#226" class="Bound"
+      >g</a
+      ><a name="1282"
+      > </a
+      ><a name="1283" href="lib.types.Generic1HIT.html#1269" class="Bound"
+      >b</a
+      ><a name="1284" class="Symbol"
+      >)</a
+      ><a name="1285"
+      > </a
+      ><a name="1286" href="lib.Equivalences.html#2994" class="Function Operator"
+      >&#8771;</a
+      ><a name="1287"
+      > </a
+      ><a name="1288" href="lib.types.Generic1HIT.html#1247" class="Bound"
+      >C</a
+      ><a name="1289"
+      > </a
+      ><a name="1290" class="Symbol"
+      >(</a
+      ><a name="1291" href="lib.types.Generic1HIT.html#228" class="Bound"
+      >h</a
+      ><a name="1292"
+      > </a
+      ><a name="1293" href="lib.types.Generic1HIT.html#1269" class="Bound"
+      >b</a
+      ><a name="1294" class="Symbol"
+      >))</a
+      ><a name="1296"
+      > </a
+      ><a name="1297" class="Keyword"
+      >where</a
+      ><a name="1302"
+      >
+
+  </a
+      ><a name="1306" class="Keyword"
+      >open</a
+      ><a name="1310"
+      > </a
+      ><a name="1311" href="lib.types.Generic1HIT.html#981" class="Module"
+      >Rec</a
+      ><a name="1314"
+      > </a
+      ><a name="1315" href="lib.types.Generic1HIT.html#1247" class="Bound"
+      >C</a
+      ><a name="1316"
+      > </a
+      ><a name="1317" class="Symbol"
+      >(</a
+      ><a name="1318" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="1320"
+      > </a
+      ><a name="1321" href="lib.Base.html#7735" class="Function Operator"
+      >&#8728;</a
+      ><a name="1322"
+      > </a
+      ><a name="1323" href="lib.types.Generic1HIT.html#1264" class="Bound"
+      >D</a
+      ><a name="1324" class="Symbol"
+      >)</a
+      ><a name="1325"
+      > </a
+      ><a name="1326" class="Keyword"
+      >public</a
+      ><a name="1332"
+      >
+
+  </a
+      ><a name="1336" href="lib.types.Generic1HIT.html#1336" class="Function"
+      >coe-pp-&#946;</a
+      ><a name="1344"
+      > </a
+      ><a name="1345" class="Symbol"
+      >:</a
+      ><a name="1346"
+      > </a
+      ><a name="1347" class="Symbol"
+      >(</a
+      ><a name="1348" href="lib.types.Generic1HIT.html#1348" class="Bound"
+      >b</a
+      ><a name="1349"
+      > </a
+      ><a name="1350" class="Symbol"
+      >:</a
+      ><a name="1351"
+      > </a
+      ><a name="1352" href="lib.types.Generic1HIT.html#211" class="Bound"
+      >B</a
+      ><a name="1353" class="Symbol"
+      >)</a
+      ><a name="1354"
+      > </a
+      ><a name="1355" class="Symbol"
+      >(</a
+      ><a name="1356" href="lib.types.Generic1HIT.html#1356" class="Bound"
+      >d</a
+      ><a name="1357"
+      > </a
+      ><a name="1358" class="Symbol"
+      >:</a
+      ><a name="1359"
+      > </a
+      ><a name="1360" href="lib.types.Generic1HIT.html#1247" class="Bound"
+      >C</a
+      ><a name="1361"
+      > </a
+      ><a name="1362" class="Symbol"
+      >(</a
+      ><a name="1363" href="lib.types.Generic1HIT.html#226" class="Bound"
+      >g</a
+      ><a name="1364"
+      > </a
+      ><a name="1365" href="lib.types.Generic1HIT.html#1348" class="Bound"
+      >b</a
+      ><a name="1366" class="Symbol"
+      >))</a
+      ><a name="1368"
+      > </a
+      ><a name="1369" class="Symbol"
+      >&#8594;</a
+      ><a name="1370"
+      > </a
+      ><a name="1371" href="lib.Base.html#4247" class="Function"
+      >coe</a
+      ><a name="1374"
+      > </a
+      ><a name="1375" class="Symbol"
+      >(</a
+      ><a name="1376" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="1378"
+      > </a
+      ><a name="1379" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >f</a
+      ><a name="1380"
+      > </a
+      ><a name="1381" class="Symbol"
+      >(</a
+      ><a name="1382" href="lib.types.Generic1HIT.html#572" class="Postulate"
+      >pp</a
+      ><a name="1384"
+      > </a
+      ><a name="1385" href="lib.types.Generic1HIT.html#1348" class="Bound"
+      >b</a
+      ><a name="1386" class="Symbol"
+      >))</a
+      ><a name="1388"
+      > </a
+      ><a name="1389" href="lib.types.Generic1HIT.html#1356" class="Bound"
+      >d</a
+      ><a name="1390"
+      > </a
+      ><a name="1391" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1393"
+      > </a
+      ><a name="1394" href="lib.Equivalences.html#3306" class="Function"
+      >&#8211;&gt;</a
+      ><a name="1396"
+      > </a
+      ><a name="1397" class="Symbol"
+      >(</a
+      ><a name="1398" href="lib.types.Generic1HIT.html#1264" class="Bound"
+      >D</a
+      ><a name="1399"
+      > </a
+      ><a name="1400" href="lib.types.Generic1HIT.html#1348" class="Bound"
+      >b</a
+      ><a name="1401" class="Symbol"
+      >)</a
+      ><a name="1402"
+      > </a
+      ><a name="1403" href="lib.types.Generic1HIT.html#1356" class="Bound"
+      >d</a
+      ><a name="1404"
+      >
+  </a
+      ><a name="1407" href="lib.types.Generic1HIT.html#1336" class="Function"
+      >coe-pp-&#946;</a
+      ><a name="1415"
+      > </a
+      ><a name="1416" href="lib.types.Generic1HIT.html#1416" class="Bound"
+      >b</a
+      ><a name="1417"
+      > </a
+      ><a name="1418" href="lib.types.Generic1HIT.html#1418" class="Bound"
+      >d</a
+      ><a name="1419"
+      > </a
+      ><a name="1420" class="Symbol"
+      >=</a
+      ><a name="1421"
+      >
+    </a
+      ><a name="1426" href="lib.Base.html#4247" class="Function"
+      >coe</a
+      ><a name="1429"
+      > </a
+      ><a name="1430" class="Symbol"
+      >(</a
+      ><a name="1431" href="lib.Base.html#3622" class="Function"
+      >ap</a
+      ><a name="1433"
+      > </a
+      ><a name="1434" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >f</a
+      ><a name="1435"
+      > </a
+      ><a name="1436" class="Symbol"
+      >(</a
+      ><a name="1437" href="lib.types.Generic1HIT.html#572" class="Postulate"
+      >pp</a
+      ><a name="1439"
+      > </a
+      ><a name="1440" href="lib.types.Generic1HIT.html#1416" class="Bound"
+      >b</a
+      ><a name="1441" class="Symbol"
+      >))</a
+      ><a name="1443"
+      > </a
+      ><a name="1444" href="lib.types.Generic1HIT.html#1418" class="Bound"
+      >d</a
+      ><a name="1445"
+      >   </a
+      ><a name="1448" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="1450"
+      > </a
+      ><a name="1451" href="lib.types.Generic1HIT.html#1147" class="Function"
+      >pp-&#946;</a
+      ><a name="1455"
+      > </a
+      ><a name="1456" class="Symbol"
+      >_</a
+      ><a name="1457"
+      > </a
+      ><a name="1458" href="lib.Base.html#3622" class="Function"
+      >|in-ctx</a
+      ><a name="1465"
+      > </a
+      ><a name="1466" class="Symbol"
+      >(&#955;</a
+      ><a name="1468"
+      > </a
+      ><a name="1469" href="lib.types.Generic1HIT.html#1469" class="Bound"
+      >u</a
+      ><a name="1470"
+      > </a
+      ><a name="1471" class="Symbol"
+      >&#8594;</a
+      ><a name="1472"
+      > </a
+      ><a name="1473" href="lib.Base.html#4247" class="Function"
+      >coe</a
+      ><a name="1476"
+      > </a
+      ><a name="1477" href="lib.types.Generic1HIT.html#1469" class="Bound"
+      >u</a
+      ><a name="1478"
+      > </a
+      ><a name="1479" href="lib.types.Generic1HIT.html#1418" class="Bound"
+      >d</a
+      ><a name="1480" class="Symbol"
+      >)</a
+      ><a name="1481"
+      > </a
+      ><a name="1482" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="1483"
+      >
+    </a
+      ><a name="1488" href="lib.Base.html#4247" class="Function"
+      >coe</a
+      ><a name="1491"
+      > </a
+      ><a name="1492" class="Symbol"
+      >(</a
+      ><a name="1493" href="lib.Univalence.html#696" class="Postulate"
+      >ua</a
+      ><a name="1495"
+      > </a
+      ><a name="1496" class="Symbol"
+      >(</a
+      ><a name="1497" href="lib.types.Generic1HIT.html#1264" class="Bound"
+      >D</a
+      ><a name="1498"
+      > </a
+      ><a name="1499" href="lib.types.Generic1HIT.html#1416" class="Bound"
+      >b</a
+      ><a name="1500" class="Symbol"
+      >))</a
+      ><a name="1502"
+      > </a
+      ><a name="1503" href="lib.types.Generic1HIT.html#1418" class="Bound"
+      >d</a
+      ><a name="1504"
+      >      </a
+      ><a name="1510" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="1512"
+      > </a
+      ><a name="1513" href="lib.Univalence.html#1066" class="Function"
+      >coe-&#946;</a
+      ><a name="1518"
+      > </a
+      ><a name="1519" class="Symbol"
+      >(</a
+      ><a name="1520" href="lib.types.Generic1HIT.html#1264" class="Bound"
+      >D</a
+      ><a name="1521"
+      > </a
+      ><a name="1522" href="lib.types.Generic1HIT.html#1416" class="Bound"
+      >b</a
+      ><a name="1523" class="Symbol"
+      >)</a
+      ><a name="1524"
+      > </a
+      ><a name="1525" href="lib.types.Generic1HIT.html#1418" class="Bound"
+      >d</a
+      ><a name="1526"
+      > </a
+      ><a name="1527" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="1528"
+      >
+    </a
+      ><a name="1533" href="lib.Equivalences.html#3306" class="Function"
+      >&#8211;&gt;</a
+      ><a name="1535"
+      > </a
+      ><a name="1536" class="Symbol"
+      >(</a
+      ><a name="1537" href="lib.types.Generic1HIT.html#1264" class="Bound"
+      >D</a
+      ><a name="1538"
+      > </a
+      ><a name="1539" href="lib.types.Generic1HIT.html#1416" class="Bound"
+      >b</a
+      ><a name="1540" class="Symbol"
+      >)</a
+      ><a name="1541"
+      > </a
+      ><a name="1542" href="lib.types.Generic1HIT.html#1418" class="Bound"
+      >d</a
+      ><a name="1543"
+      > </a
+      ><a name="1544" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="1545"
+      >
+
+  </a
+      ><a name="1549" class="Comment"
+      >-- Dependent path in [P] over [pp b]</a
+      ><a name="1585"
+      >
+  </a
+      ><a name="1588" class="Keyword"
+      >module</a
+      ><a name="1594"
+      > </a
+      ><a name="1595" href="lib.types.Generic1HIT.html#1595" class="Module"
+      >_</a
+      ><a name="1596"
+      > </a
+      ><a name="1597" class="Symbol"
+      >{</a
+      ><a name="1598" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="1599"
+      > </a
+      ><a name="1600" class="Symbol"
+      >:</a
+      ><a name="1601"
+      > </a
+      ><a name="1602" href="lib.types.Generic1HIT.html#211" class="Bound"
+      >B</a
+      ><a name="1603" class="Symbol"
+      >}</a
+      ><a name="1604"
+      > </a
+      ><a name="1605" class="Symbol"
+      >{</a
+      ><a name="1606" href="lib.types.Generic1HIT.html#1606" class="Bound"
+      >d</a
+      ><a name="1607"
+      > </a
+      ><a name="1608" class="Symbol"
+      >:</a
+      ><a name="1609"
+      > </a
+      ><a name="1610" href="lib.types.Generic1HIT.html#1247" class="Bound"
+      >C</a
+      ><a name="1611"
+      > </a
+      ><a name="1612" class="Symbol"
+      >(</a
+      ><a name="1613" href="lib.types.Generic1HIT.html#226" class="Bound"
+      >g</a
+      ><a name="1614"
+      > </a
+      ><a name="1615" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="1616" class="Symbol"
+      >)}</a
+      ><a name="1618"
+      > </a
+      ><a name="1619" class="Symbol"
+      >{</a
+      ><a name="1620" href="lib.types.Generic1HIT.html#1620" class="Bound"
+      >d'</a
+      ><a name="1622"
+      > </a
+      ><a name="1623" class="Symbol"
+      >:</a
+      ><a name="1624"
+      > </a
+      ><a name="1625" href="lib.types.Generic1HIT.html#1247" class="Bound"
+      >C</a
+      ><a name="1626"
+      > </a
+      ><a name="1627" class="Symbol"
+      >(</a
+      ><a name="1628" href="lib.types.Generic1HIT.html#228" class="Bound"
+      >h</a
+      ><a name="1629"
+      > </a
+      ><a name="1630" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="1631" class="Symbol"
+      >)}</a
+      ><a name="1633"
+      > </a
+      ><a name="1634" class="Keyword"
+      >where</a
+      ><a name="1639"
+      >
+    </a
+      ><a name="1644" href="lib.types.Generic1HIT.html#1644" class="Function"
+      >&#8595;-pp-in</a
+      ><a name="1651"
+      > </a
+      ><a name="1652" class="Symbol"
+      >:</a
+      ><a name="1653"
+      > </a
+      ><a name="1654" href="lib.Equivalences.html#3306" class="Function"
+      >&#8211;&gt;</a
+      ><a name="1656"
+      > </a
+      ><a name="1657" class="Symbol"
+      >(</a
+      ><a name="1658" href="lib.types.Generic1HIT.html#1264" class="Bound"
+      >D</a
+      ><a name="1659"
+      > </a
+      ><a name="1660" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="1661" class="Symbol"
+      >)</a
+      ><a name="1662"
+      > </a
+      ><a name="1663" href="lib.types.Generic1HIT.html#1606" class="Bound"
+      >d</a
+      ><a name="1664"
+      > </a
+      ><a name="1665" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1667"
+      > </a
+      ><a name="1668" href="lib.types.Generic1HIT.html#1620" class="Bound"
+      >d'</a
+      ><a name="1670"
+      > </a
+      ><a name="1671" class="Symbol"
+      >&#8594;</a
+      ><a name="1672"
+      > </a
+      ><a name="1673" href="lib.types.Generic1HIT.html#1606" class="Bound"
+      >d</a
+      ><a name="1674"
+      > </a
+      ><a name="1675" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="1677"
+      > </a
+      ><a name="1678" href="lib.types.Generic1HIT.html#1620" class="Bound"
+      >d'</a
+      ><a name="1680"
+      > </a
+      ><a name="1681" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="1682"
+      > </a
+      ><a name="1683" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >f</a
+      ><a name="1684"
+      > </a
+      ><a name="1685" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="1686"
+      > </a
+      ><a name="1687" href="lib.types.Generic1HIT.html#572" class="Postulate"
+      >pp</a
+      ><a name="1689"
+      > </a
+      ><a name="1690" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="1691"
+      > </a
+      ><a name="1692" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="1693"
+      >
+    </a
+      ><a name="1698" href="lib.types.Generic1HIT.html#1644" class="Function"
+      >&#8595;-pp-in</a
+      ><a name="1705"
+      > </a
+      ><a name="1706" href="lib.types.Generic1HIT.html#1706" class="Bound"
+      >p</a
+      ><a name="1707"
+      > </a
+      ><a name="1708" class="Symbol"
+      >=</a
+      ><a name="1709"
+      > </a
+      ><a name="1710" href="lib.PathOver.html#5029" class="Function"
+      >from-transp</a
+      ><a name="1721"
+      > </a
+      ><a name="1722" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >f</a
+      ><a name="1723"
+      > </a
+      ><a name="1724" class="Symbol"
+      >(</a
+      ><a name="1725" href="lib.types.Generic1HIT.html#572" class="Postulate"
+      >pp</a
+      ><a name="1727"
+      > </a
+      ><a name="1728" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="1729" class="Symbol"
+      >)</a
+      ><a name="1730"
+      > </a
+      ><a name="1731" class="Symbol"
+      >(</a
+      ><a name="1732" href="lib.types.Generic1HIT.html#1336" class="Function"
+      >coe-pp-&#946;</a
+      ><a name="1740"
+      > </a
+      ><a name="1741" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="1742"
+      > </a
+      ><a name="1743" href="lib.types.Generic1HIT.html#1606" class="Bound"
+      >d</a
+      ><a name="1744"
+      > </a
+      ><a name="1745" href="lib.PathGroupoid.html#474" class="Function Operator"
+      >&#8729;'</a
+      ><a name="1747"
+      > </a
+      ><a name="1748" href="lib.types.Generic1HIT.html#1706" class="Bound"
+      >p</a
+      ><a name="1749" class="Symbol"
+      >)</a
+      ><a name="1750"
+      >
+
+    </a
+      ><a name="1756" href="lib.types.Generic1HIT.html#1756" class="Function"
+      >&#8595;-pp-out</a
+      ><a name="1764"
+      > </a
+      ><a name="1765" class="Symbol"
+      >:</a
+      ><a name="1766"
+      > </a
+      ><a name="1767" href="lib.types.Generic1HIT.html#1606" class="Bound"
+      >d</a
+      ><a name="1768"
+      > </a
+      ><a name="1769" href="lib.Base.html#3072" class="Function"
+      >==</a
+      ><a name="1771"
+      > </a
+      ><a name="1772" href="lib.types.Generic1HIT.html#1620" class="Bound"
+      >d'</a
+      ><a name="1774"
+      > </a
+      ><a name="1775" href="lib.Base.html#3072" class="Function"
+      >[</a
+      ><a name="1776"
+      > </a
+      ><a name="1777" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >f</a
+      ><a name="1778"
+      > </a
+      ><a name="1779" href="lib.Base.html#3072" class="Function"
+      >&#8595;</a
+      ><a name="1780"
+      > </a
+      ><a name="1781" href="lib.types.Generic1HIT.html#572" class="Postulate"
+      >pp</a
+      ><a name="1783"
+      > </a
+      ><a name="1784" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="1785"
+      > </a
+      ><a name="1786" href="lib.Base.html#3072" class="Function"
+      >]</a
+      ><a name="1787"
+      > </a
+      ><a name="1788" class="Symbol"
+      >&#8594;</a
+      ><a name="1789"
+      > </a
+      ><a name="1790" href="lib.Equivalences.html#3306" class="Function"
+      >&#8211;&gt;</a
+      ><a name="1792"
+      > </a
+      ><a name="1793" class="Symbol"
+      >(</a
+      ><a name="1794" href="lib.types.Generic1HIT.html#1264" class="Bound"
+      >D</a
+      ><a name="1795"
+      > </a
+      ><a name="1796" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="1797" class="Symbol"
+      >)</a
+      ><a name="1798"
+      > </a
+      ><a name="1799" href="lib.types.Generic1HIT.html#1606" class="Bound"
+      >d</a
+      ><a name="1800"
+      > </a
+      ><a name="1801" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1803"
+      > </a
+      ><a name="1804" href="lib.types.Generic1HIT.html#1620" class="Bound"
+      >d'</a
+      ><a name="1806"
+      >
+    </a
+      ><a name="1811" href="lib.types.Generic1HIT.html#1756" class="Function"
+      >&#8595;-pp-out</a
+      ><a name="1819"
+      > </a
+      ><a name="1820" href="lib.types.Generic1HIT.html#1820" class="Bound"
+      >p</a
+      ><a name="1821"
+      > </a
+      ><a name="1822" class="Symbol"
+      >=</a
+      ><a name="1823"
+      > </a
+      ><a name="1824" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="1825"
+      > </a
+      ><a name="1826" class="Symbol"
+      >(</a
+      ><a name="1827" href="lib.types.Generic1HIT.html#1336" class="Function"
+      >coe-pp-&#946;</a
+      ><a name="1835"
+      > </a
+      ><a name="1836" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="1837"
+      > </a
+      ><a name="1838" href="lib.types.Generic1HIT.html#1606" class="Bound"
+      >d</a
+      ><a name="1839" class="Symbol"
+      >)</a
+      ><a name="1840"
+      > </a
+      ><a name="1841" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="1842"
+      > </a
+      ><a name="1843" href="lib.PathOver.html#5197" class="Function"
+      >to-transp</a
+      ><a name="1852"
+      > </a
+      ><a name="1853" href="lib.types.Generic1HIT.html#1820" class="Bound"
+      >p</a
+      ><a name="1854"
+      >
+
+    </a
+      ><a name="1860" href="lib.types.Generic1HIT.html#1860" class="Function"
+      >&#8595;-pp-&#946;</a
+      ><a name="1866"
+      > </a
+      ><a name="1867" class="Symbol"
+      >:</a
+      ><a name="1868"
+      > </a
+      ><a name="1869" class="Symbol"
+      >(</a
+      ><a name="1870" href="lib.types.Generic1HIT.html#1870" class="Bound"
+      >q</a
+      ><a name="1871"
+      > </a
+      ><a name="1872" class="Symbol"
+      >:</a
+      ><a name="1873"
+      > </a
+      ><a name="1874" href="lib.Equivalences.html#3306" class="Function"
+      >&#8211;&gt;</a
+      ><a name="1876"
+      > </a
+      ><a name="1877" class="Symbol"
+      >(</a
+      ><a name="1878" href="lib.types.Generic1HIT.html#1264" class="Bound"
+      >D</a
+      ><a name="1879"
+      > </a
+      ><a name="1880" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="1881" class="Symbol"
+      >)</a
+      ><a name="1882"
+      > </a
+      ><a name="1883" href="lib.types.Generic1HIT.html#1606" class="Bound"
+      >d</a
+      ><a name="1884"
+      > </a
+      ><a name="1885" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1887"
+      > </a
+      ><a name="1888" href="lib.types.Generic1HIT.html#1620" class="Bound"
+      >d'</a
+      ><a name="1890" class="Symbol"
+      >)</a
+      ><a name="1891"
+      > </a
+      ><a name="1892" class="Symbol"
+      >&#8594;</a
+      ><a name="1893"
+      > </a
+      ><a name="1894" href="lib.types.Generic1HIT.html#1756" class="Function"
+      >&#8595;-pp-out</a
+      ><a name="1902"
+      > </a
+      ><a name="1903" class="Symbol"
+      >(</a
+      ><a name="1904" href="lib.types.Generic1HIT.html#1644" class="Function"
+      >&#8595;-pp-in</a
+      ><a name="1911"
+      > </a
+      ><a name="1912" href="lib.types.Generic1HIT.html#1870" class="Bound"
+      >q</a
+      ><a name="1913" class="Symbol"
+      >)</a
+      ><a name="1914"
+      > </a
+      ><a name="1915" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="1917"
+      > </a
+      ><a name="1918" href="lib.types.Generic1HIT.html#1870" class="Bound"
+      >q</a
+      ><a name="1919"
+      >
+    </a
+      ><a name="1924" href="lib.types.Generic1HIT.html#1860" class="Function"
+      >&#8595;-pp-&#946;</a
+      ><a name="1930"
+      > </a
+      ><a name="1931" href="lib.types.Generic1HIT.html#1931" class="Bound"
+      >q</a
+      ><a name="1932"
+      > </a
+      ><a name="1933" class="Symbol"
+      >=</a
+      ><a name="1934"
+      >
+      </a
+      ><a name="1941" href="lib.types.Generic1HIT.html#1756" class="Function"
+      >&#8595;-pp-out</a
+      ><a name="1949"
+      > </a
+      ><a name="1950" class="Symbol"
+      >(</a
+      ><a name="1951" href="lib.types.Generic1HIT.html#1644" class="Function"
+      >&#8595;-pp-in</a
+      ><a name="1958"
+      > </a
+      ><a name="1959" href="lib.types.Generic1HIT.html#1931" class="Bound"
+      >q</a
+      ><a name="1960" class="Symbol"
+      >)</a
+      ><a name="1961"
+      >
+                        </a
+      ><a name="1986" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="1988"
+      > </a
+      ><a name="1989" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="1992"
+      > </a
+      ><a name="1993" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="1994"
+      >
+      </a
+      ><a name="2001" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="2002"
+      > </a
+      ><a name="2003" class="Symbol"
+      >(</a
+      ><a name="2004" href="lib.types.Generic1HIT.html#1336" class="Function"
+      >coe-pp-&#946;</a
+      ><a name="2012"
+      > </a
+      ><a name="2013" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="2014"
+      > </a
+      ><a name="2015" href="lib.types.Generic1HIT.html#1606" class="Bound"
+      >d</a
+      ><a name="2016" class="Symbol"
+      >)</a
+      ><a name="2017"
+      > </a
+      ><a name="2018" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="2019"
+      > </a
+      ><a name="2020" href="lib.PathOver.html#5197" class="Function"
+      >to-transp</a
+      ><a name="2029"
+      > </a
+      ><a name="2030" class="Symbol"
+      >(</a
+      ><a name="2031" href="lib.PathOver.html#5029" class="Function"
+      >from-transp</a
+      ><a name="2042"
+      > </a
+      ><a name="2043" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >f</a
+      ><a name="2044"
+      > </a
+      ><a name="2045" class="Symbol"
+      >(</a
+      ><a name="2046" href="lib.types.Generic1HIT.html#572" class="Postulate"
+      >pp</a
+      ><a name="2048"
+      > </a
+      ><a name="2049" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="2050" class="Symbol"
+      >)</a
+      ><a name="2051"
+      > </a
+      ><a name="2052" class="Symbol"
+      >(</a
+      ><a name="2053" href="lib.types.Generic1HIT.html#1336" class="Function"
+      >coe-pp-&#946;</a
+      ><a name="2061"
+      > </a
+      ><a name="2062" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="2063"
+      > </a
+      ><a name="2064" href="lib.types.Generic1HIT.html#1606" class="Bound"
+      >d</a
+      ><a name="2065"
+      > </a
+      ><a name="2066" href="lib.PathGroupoid.html#474" class="Function Operator"
+      >&#8729;'</a
+      ><a name="2068"
+      > </a
+      ><a name="2069" href="lib.types.Generic1HIT.html#1931" class="Bound"
+      >q</a
+      ><a name="2070" class="Symbol"
+      >))</a
+      ><a name="2072"
+      >
+                 </a
+      ><a name="2090" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="2092"
+      > </a
+      ><a name="2093" href="lib.PathOver.html#5365" class="Function"
+      >to-transp-&#946;</a
+      ><a name="2104"
+      > </a
+      ><a name="2105" href="lib.types.Generic1HIT.html#1124" class="Function"
+      >f</a
+      ><a name="2106"
+      > </a
+      ><a name="2107" class="Symbol"
+      >(</a
+      ><a name="2108" href="lib.types.Generic1HIT.html#572" class="Postulate"
+      >pp</a
+      ><a name="2110"
+      > </a
+      ><a name="2111" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="2112" class="Symbol"
+      >)</a
+      ><a name="2113"
+      > </a
+      ><a name="2114" class="Symbol"
+      >(</a
+      ><a name="2115" href="lib.types.Generic1HIT.html#1336" class="Function"
+      >coe-pp-&#946;</a
+      ><a name="2123"
+      > </a
+      ><a name="2124" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="2125"
+      > </a
+      ><a name="2126" href="lib.types.Generic1HIT.html#1606" class="Bound"
+      >d</a
+      ><a name="2127"
+      > </a
+      ><a name="2128" href="lib.PathGroupoid.html#474" class="Function Operator"
+      >&#8729;'</a
+      ><a name="2130"
+      > </a
+      ><a name="2131" href="lib.types.Generic1HIT.html#1931" class="Bound"
+      >q</a
+      ><a name="2132" class="Symbol"
+      >)</a
+      ><a name="2133"
+      > </a
+      ><a name="2134" href="lib.Base.html#3622" class="Function"
+      >|in-ctx</a
+      ><a name="2141"
+      > </a
+      ><a name="2142" class="Symbol"
+      >(&#955;</a
+      ><a name="2144"
+      > </a
+      ><a name="2145" href="lib.types.Generic1HIT.html#2145" class="Bound"
+      >u</a
+      ><a name="2146"
+      > </a
+      ><a name="2147" class="Symbol"
+      >&#8594;</a
+      ><a name="2148"
+      > </a
+      ><a name="2149" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="2150"
+      > </a
+      ><a name="2151" class="Symbol"
+      >(</a
+      ><a name="2152" href="lib.types.Generic1HIT.html#1336" class="Function"
+      >coe-pp-&#946;</a
+      ><a name="2160"
+      > </a
+      ><a name="2161" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="2162"
+      > </a
+      ><a name="2163" href="lib.types.Generic1HIT.html#1606" class="Bound"
+      >d</a
+      ><a name="2164" class="Symbol"
+      >)</a
+      ><a name="2165"
+      > </a
+      ><a name="2166" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="2167"
+      > </a
+      ><a name="2168" href="lib.types.Generic1HIT.html#2145" class="Bound"
+      >u</a
+      ><a name="2169" class="Symbol"
+      >)</a
+      ><a name="2170"
+      > </a
+      ><a name="2171" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="2172"
+      >
+      </a
+      ><a name="2179" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="2180"
+      > </a
+      ><a name="2181" class="Symbol"
+      >(</a
+      ><a name="2182" href="lib.types.Generic1HIT.html#1336" class="Function"
+      >coe-pp-&#946;</a
+      ><a name="2190"
+      > </a
+      ><a name="2191" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="2192"
+      > </a
+      ><a name="2193" href="lib.types.Generic1HIT.html#1606" class="Bound"
+      >d</a
+      ><a name="2194" class="Symbol"
+      >)</a
+      ><a name="2195"
+      > </a
+      ><a name="2196" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="2197"
+      > </a
+      ><a name="2198" class="Symbol"
+      >(</a
+      ><a name="2199" href="lib.types.Generic1HIT.html#1336" class="Function"
+      >coe-pp-&#946;</a
+      ><a name="2207"
+      > </a
+      ><a name="2208" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="2209"
+      > </a
+      ><a name="2210" href="lib.types.Generic1HIT.html#1606" class="Bound"
+      >d</a
+      ><a name="2211"
+      > </a
+      ><a name="2212" href="lib.PathGroupoid.html#474" class="Function Operator"
+      >&#8729;'</a
+      ><a name="2214"
+      > </a
+      ><a name="2215" href="lib.types.Generic1HIT.html#1931" class="Bound"
+      >q</a
+      ><a name="2216" class="Symbol"
+      >)</a
+      ><a name="2217"
+      >
+                 </a
+      ><a name="2235" href="lib.Base.html#7193" class="Function Operator"
+      >=&#10216;</a
+      ><a name="2237"
+      > </a
+      ><a name="2238" href="lib.types.Generic1HIT.html#2287" class="Function"
+      >lem</a
+      ><a name="2241"
+      > </a
+      ><a name="2242" class="Symbol"
+      >(</a
+      ><a name="2243" href="lib.types.Generic1HIT.html#1336" class="Function"
+      >coe-pp-&#946;</a
+      ><a name="2251"
+      > </a
+      ><a name="2252" href="lib.types.Generic1HIT.html#1598" class="Bound"
+      >b</a
+      ><a name="2253"
+      > </a
+      ><a name="2254" href="lib.types.Generic1HIT.html#1606" class="Bound"
+      >d</a
+      ><a name="2255" class="Symbol"
+      >)</a
+      ><a name="2256"
+      > </a
+      ><a name="2257" href="lib.types.Generic1HIT.html#1931" class="Bound"
+      >q</a
+      ><a name="2258"
+      > </a
+      ><a name="2259" href="lib.Base.html#7193" class="Function Operator"
+      >&#10217;</a
+      ><a name="2260"
+      >
+      </a
+      ><a name="2267" href="lib.types.Generic1HIT.html#1931" class="Bound"
+      >q</a
+      ><a name="2268"
+      > </a
+      ><a name="2269" href="lib.Base.html#7288" class="Function Operator"
+      >&#8718;</a
+      ><a name="2270"
+      >  </a
+      ><a name="2272" class="Keyword"
+      >where</a
+      ><a name="2277"
+      >
+
+        </a
+      ><a name="2287" href="lib.types.Generic1HIT.html#2287" class="Function"
+      >lem</a
+      ><a name="2290"
+      > </a
+      ><a name="2291" class="Symbol"
+      >:</a
+      ><a name="2292"
+      > </a
+      ><a name="2293" class="Symbol"
+      >&#8704;</a
+      ><a name="2294"
+      > </a
+      ><a name="2295" class="Symbol"
+      >{</a
+      ><a name="2296" href="lib.types.Generic1HIT.html#2296" class="Bound"
+      >i</a
+      ><a name="2297" class="Symbol"
+      >}</a
+      ><a name="2298"
+      > </a
+      ><a name="2299" class="Symbol"
+      >{</a
+      ><a name="2300" href="lib.types.Generic1HIT.html#2300" class="Bound"
+      >A</a
+      ><a name="2301"
+      > </a
+      ><a name="2302" class="Symbol"
+      >:</a
+      ><a name="2303"
+      > </a
+      ><a name="2304" href="lib.Base.html#1132" class="Function"
+      >Type</a
+      ><a name="2308"
+      > </a
+      ><a name="2309" href="lib.types.Generic1HIT.html#2296" class="Bound"
+      >i</a
+      ><a name="2310" class="Symbol"
+      >}</a
+      ><a name="2311"
+      > </a
+      ><a name="2312" class="Symbol"
+      >{</a
+      ><a name="2313" href="lib.types.Generic1HIT.html#2313" class="Bound"
+      >x</a
+      ><a name="2314"
+      > </a
+      ><a name="2315" href="lib.types.Generic1HIT.html#2315" class="Bound"
+      >y</a
+      ><a name="2316"
+      > </a
+      ><a name="2317" href="lib.types.Generic1HIT.html#2317" class="Bound"
+      >z</a
+      ><a name="2318"
+      > </a
+      ><a name="2319" class="Symbol"
+      >:</a
+      ><a name="2320"
+      > </a
+      ><a name="2321" href="lib.types.Generic1HIT.html#2300" class="Bound"
+      >A</a
+      ><a name="2322" class="Symbol"
+      >}</a
+      ><a name="2323"
+      > </a
+      ><a name="2324" class="Symbol"
+      >(</a
+      ><a name="2325" href="lib.types.Generic1HIT.html#2325" class="Bound"
+      >p</a
+      ><a name="2326"
+      > </a
+      ><a name="2327" class="Symbol"
+      >:</a
+      ><a name="2328"
+      > </a
+      ><a name="2329" href="lib.types.Generic1HIT.html#2313" class="Bound"
+      >x</a
+      ><a name="2330"
+      > </a
+      ><a name="2331" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2333"
+      > </a
+      ><a name="2334" href="lib.types.Generic1HIT.html#2315" class="Bound"
+      >y</a
+      ><a name="2335" class="Symbol"
+      >)</a
+      ><a name="2336"
+      > </a
+      ><a name="2337" class="Symbol"
+      >(</a
+      ><a name="2338" href="lib.types.Generic1HIT.html#2338" class="Bound"
+      >q</a
+      ><a name="2339"
+      > </a
+      ><a name="2340" class="Symbol"
+      >:</a
+      ><a name="2341"
+      > </a
+      ><a name="2342" href="lib.types.Generic1HIT.html#2315" class="Bound"
+      >y</a
+      ><a name="2343"
+      > </a
+      ><a name="2344" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2346"
+      > </a
+      ><a name="2347" href="lib.types.Generic1HIT.html#2317" class="Bound"
+      >z</a
+      ><a name="2348" class="Symbol"
+      >)</a
+      ><a name="2349"
+      >
+          </a
+      ><a name="2360" class="Symbol"
+      >&#8594;</a
+      ><a name="2361"
+      > </a
+      ><a name="2362" href="lib.PathGroupoid.html#1079" class="Function"
+      >!</a
+      ><a name="2363"
+      > </a
+      ><a name="2364" href="lib.types.Generic1HIT.html#2325" class="Bound"
+      >p</a
+      ><a name="2365"
+      > </a
+      ><a name="2366" href="lib.PathGroupoid.html#406" class="Function Operator"
+      >&#8729;</a
+      ><a name="2367"
+      > </a
+      ><a name="2368" class="Symbol"
+      >(</a
+      ><a name="2369" href="lib.types.Generic1HIT.html#2325" class="Bound"
+      >p</a
+      ><a name="2370"
+      > </a
+      ><a name="2371" href="lib.PathGroupoid.html#474" class="Function Operator"
+      >&#8729;'</a
+      ><a name="2373"
+      > </a
+      ><a name="2374" href="lib.types.Generic1HIT.html#2338" class="Bound"
+      >q</a
+      ><a name="2375" class="Symbol"
+      >)</a
+      ><a name="2376"
+      > </a
+      ><a name="2377" href="lib.Base.html#1867" class="Datatype Operator"
+      >==</a
+      ><a name="2379"
+      > </a
+      ><a name="2380" href="lib.types.Generic1HIT.html#2338" class="Bound"
+      >q</a
+      ><a name="2381"
+      >
+        </a
+      ><a name="2390" href="lib.types.Generic1HIT.html#2287" class="Function"
+      >lem</a
+      ><a name="2393"
+      > </a
+      ><a name="2394" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2397"
+      > </a
+      ><a name="2398" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2401"
+      > </a
+      ><a name="2402" class="Symbol"
+      >=</a
+      ><a name="2403"
+      > </a
+      ><a name="2404" href="lib.Base.html#1918" class="InductiveConstructor"
+      >idp</a
+      ><a name="2407"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>
