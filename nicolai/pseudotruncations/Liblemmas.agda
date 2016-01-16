@@ -27,13 +27,13 @@ trans-ap f g idp q = ! (∙-unit-r q)
 
 -- TODO this special case should be used a couple of times instead of the general version!
 
--- special interaction of transport and ap, where the second map is the identity
+-- special interaction of transport and ap, where the second map is constant at a point
 trans-ap₁ : ∀ {i j} {A : Type i} {B : Type j} (f : A → B) {a₁ a₂ : A} (b : B)
             (p : a₁ == a₂) (q : f a₁ == b)
             → transport (λ a → f a == b) p q == ! (ap f p) ∙ q
 trans-ap₁ f b idp q = idp
 
--- first map is the identity
+-- first map is constant at a point
 trans-ap₂ : ∀ {i j} {A : Type i} {B : Type j} (g : A → B) {a₁ a₂ : A} (b : B)
             (p : a₁ == a₂) (q : b == g a₁)
             → transport (λ a → b == g a) p q == q ∙ ap g p
