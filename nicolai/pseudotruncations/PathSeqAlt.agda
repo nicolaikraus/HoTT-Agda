@@ -71,6 +71,12 @@ module _ {i} {A : Type i} where
       ∎ 
 
 
+
+
+
+
+
+
   private
     point-from-start : (n : ℕ) {a a' : A} (s : PathSeq a a') → A
     point-from-start O {a} s = a

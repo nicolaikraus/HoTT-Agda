@@ -9,28 +9,23 @@ module lib.types.PathSeq where
 {-
 This is a library on reified equational reasoning.
 When you write the following (with the usual equational reasoning combinators):
-
   t : a == e
   t = a =⟨ p ⟩
       b =⟨ q ⟩
       c =⟨ r ⟩
       d =⟨ s ⟩
       e ∎
-
 it just creates the concatenation of [p], [q], [r] and [s] and there is no way
 to say “remove the last step to get the path from [a] to [d]”.
 With the present library you would write:
-
   t : PathSeq a e
   t = a =⟪ p ⟫
       b =⟪ q ⟫
       c =⟪ r ⟫
       d =⟪ s ⟫
       e ∎∎
-
 Then the actual path from [a] to [e] is [↯ t], and you can strip any number
 of steps from the beginning or the end:
-
   ↯ t !2
 -}
 
@@ -54,41 +49,8 @@ module _ {i} {A : Type i} where
 
   ↯_ : {a a' : A} (s : PathSeq a a') → a == a'
   ↯ a ∎∎ = idp
--- I take this out for now, because it's not well-behaved?
   ↯ a =⟪ p ⟫ a' ∎∎ = p
   ↯ a =⟪ p ⟫ s = p ∙ (↯ s)
-
-  -- Concatenation of sequences
-  _⋯_ : {a a' a'' : A} (s : a =-= a') (s' : a' =-= a'') → a =-= a''
-  (a ∎∎) ⋯ s' = s'
-  (a =⟪ p ⟫ s) ⋯ s' = a =⟪ p ⟫ (s ⋯ s')
-
-  -- this is stupid!
-  trivial-test : {a a' a'' : A} (p : a == a') (s : PathSeq a' a'')
-                 → (↯ a =⟪ p ⟫ s) == p ∙ (↯ s)
-  trivial-test p (a₁ ∎∎) =  ! (∙-unit-r _)
-  trivial-test p (a₁ =⟪ p₁ ⟫ a'' ∎∎) = idp
-  trivial-test p (a₁ =⟪ p₁ ⟫ a₂ =⟪ p₂ ⟫ s) = idp
-
-  -- Concatenation of sequences commutes with concatenation of paths
-  ∙-⋯-comm : {a a' a'' : A} (s : a =-= a') (s' : a' =-= a'')
-             → (↯ (s ⋯ s')) == (↯ s) ∙ (↯ s')
-  ∙-⋯-comm (a ∎∎) s' = idp
-  ∙-⋯-comm (a =⟪ p ⟫ a' ∎∎) s' = {!!}
-  ∙-⋯-comm (a =⟪ p ⟫ a₁ =⟪ p₁ ⟫ s) s' = {!!}
-{-    (↯ (a =⟪ p ⟫ s ⋯ s'))
-      =⟨ idp ⟩
-    (↯ (a =⟪ p ⟫ (s ⋯ s')))
-      =⟨ {!idp!} ⟩
-    (p ∙ (↯ (s ⋯ s')))
-      =⟨ idp ⟩
-    p ∙ (↯ (s ⋯ s'))
-      =⟨ ap (λ q → p ∙ q) (∙-⋯-comm s s') ⟩
-    p ∙ (↯ s) ∙ (↯ s')
-      =⟨ {!idp!} ⟩ 
-    (↯ a =⟪ p ⟫ s) ∙ (↯ s')
-      ∎ 
--}
 
   private
     point-from-start : (n : ℕ) {a a' : A} (s : PathSeq a a') → A
