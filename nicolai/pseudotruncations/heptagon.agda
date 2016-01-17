@@ -23,7 +23,8 @@ module nicolai.pseudotruncations.heptagon {i} {C : Sequence {i}} (wc : wconst-ch
 
   open wconst-init {i} {C} wc a₀
   
-{-
+{- Recall that î is defined like this:
+
   î : (n : ℕ) → (a : A n) → (ins {C = C} n a) =-= (ins O a₀)
   î n a = 
     ins n a
@@ -140,7 +141,14 @@ module nicolai.pseudotruncations.heptagon {i} {C : Sequence {i}} (wc : wconst-ch
                     ∙ q )
               (∙-unit-r (! (ap (ins (S n)) (wc n a (lift-point C a₀ n))))) ⟩
       (↯ remove-g)
-        =⟨ {!↯ (remove-g ⋯ (toSeq idp))!} ⟩
+        =⟨ ap (λ q → (glue (S n) (f n a))
+                    ∙ ap (ins (S (S n))) (wc (S n) (f n a) (snd C n (lift-point C a₀ n)))
+                    ∙ ! ((lift-point-= C a₀ n ∙ glue n (lift-point C a₀ n))
+                    ∙ glue (S n) (snd C n (lift-point C a₀ n)))
+                    ∙ q
+                    ∙ ! (ap (ins (S n)) (wc n a (lift-point C a₀ n)))
+               )
+               (!-! (lift-point-= C a₀ n ∙ glue n (lift-point C a₀ n))) ⟩
       (↯ simplify-‼) 
         =⟨ {!↯ (remove-g ⋯ (toSeq idp))!} ⟩
       (↯ simplify-many-g) 
