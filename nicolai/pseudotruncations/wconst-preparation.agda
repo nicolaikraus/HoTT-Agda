@@ -18,10 +18,6 @@ open import nicolai.pseudotruncations.SeqColim
 
 module nicolai.pseudotruncations.wconst-preparation where
 
-{- weak constancy is defined in the 'Liblemmas' file. 
-   We just define weak constancy for sequences here. -} 
-wconst-chain : ∀ {i} → Sequence {i} → Type i
-wconst-chain (A , f) = (n : ℕ) → wconst (f n)
 
 {- first, we show that a weakly constant sequence for 
    which we have an a₀ : A₀ is contractible.

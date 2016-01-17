@@ -26,3 +26,5 @@ open import nicolai.pseudotruncations.wconst-preparation
 open import nicolai.pseudotruncations.heptagon
 
 open import nicolai.pseudotruncations.wconstSequence
+
+-- TODO: applications of WCONSTSEQUENCE

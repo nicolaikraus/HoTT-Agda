@@ -44,8 +44,8 @@ _=⟪idp⟫_ : ∀ {i} {A : Type i} (a : A) {a' : A} (s : PathSeq a a') → Path
 a =⟪idp⟫ s = s
 
 -- type of circular sequences
-loop : ∀ {i} {A : Type i} (a : A) → Type i
-loop a = a =-= a
+seq-loop : ∀ {i} {A : Type i} (a : A) → Type i
+seq-loop a = a =-= a
 
 -- "Embedding": get a sequence out of a path
 toSeq : ∀ {i} {A : Type i} {a₁ a₂ : A} → a₁ == a₂ → a₁ =-= a₂

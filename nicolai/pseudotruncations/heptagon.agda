@@ -29,10 +29,10 @@ module nicolai.pseudotruncations.heptagon
     {- Let us formulate different simplification steps of the 
        heptagon. -}
 
-    full-hepta : loop (ins (S n) (f n a)) 
+    full-hepta : seq-loop (ins (S n) (f n a)) 
     full-hepta = (î-def (S n) (f n a)) ⋯ (‼ (î-def n a) ⋯ toSeq (glue n a))
 
-    remove-g : loop (ins (S n) (f n a)) 
+    remove-g : seq-loop (ins (S n) (f n a)) 
     remove-g = (î-def (S n) (f n a))
                ⋯ ‼ (ins (S n) (f n a)
                       =⟪ ap (ins (S n)) (wc n _ _) ⟫
@@ -41,7 +41,7 @@ module nicolai.pseudotruncations.heptagon
                     ins O a₀
                       ∎∎)
 
-    simplify-‼ : loop (ins (S n) (f n a)) 
+    simplify-‼ : seq-loop (ins (S n) (f n a)) 
     simplify-‼ = (î-def (S n) (f n a))
                ⋯ (ins O a₀
                     =⟪ lift-point-= C a₀ (S n) ⟫
@@ -50,7 +50,7 @@ module nicolai.pseudotruncations.heptagon
                   ins (S n) (f n a)
                     ∎∎)
 
-    simplify-one-g : loop (ins {C = C} (S n) (f n a))
+    simplify-one-g : seq-loop (ins {C = C} (S n) (f n a))
     simplify-one-g =
                   ins (S n) (f n a)
                     =⟪ glue (S n) (f n a) ⟫
@@ -67,7 +67,7 @@ module nicolai.pseudotruncations.heptagon
                   ins (S n) (f n a)
                     ∎∎
 
-    simplify-many-g : loop (ins {C = C} (S n) (f n a))
+    simplify-many-g : seq-loop (ins {C = C} (S n) (f n a))
     simplify-many-g =
                   ins (S n) (f n a)
                     =⟪ glue (S n) (f n a) ⟫
@@ -80,7 +80,7 @@ module nicolai.pseudotruncations.heptagon
                   ins (S n) (f n a)
                     ∎∎
 
-    replace-ap-SSn : loop (ins {C = C} (S n) (f n a))
+    replace-ap-SSn : seq-loop (ins {C = C} (S n) (f n a))
     replace-ap-SSn =
                   ins (S n) (f n a)
                     =⟪ glue (S n) (f n a) ⟫

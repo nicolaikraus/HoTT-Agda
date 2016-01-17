@@ -157,7 +157,6 @@ wconst-prop C wc = inhab-to-contr-is-prop (SeqCo-rec wc-prp-ins automatic) where
   automatic : (n : ℕ) (a : fst C n) → wc-prp-ins n a == wc-prp-ins (S n) (snd C n a)
   automatic n a = prop-has-all-paths (has-level-is-prop {n = ⟨-2⟩} {A = SeqCo C}) _ _
 
--- TODO sample applications??
 
 
 

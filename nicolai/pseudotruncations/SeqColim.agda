@@ -251,3 +251,9 @@ module _ {i} (C : Sequence {i}) (a₀ : fst C O) where
   lift-point-= : (n : ℕ) → ins {C = C} O a₀ == ins n (lift-point n)  
   lift-point-= O = idp
   lift-point-= (S n) = (lift-point-= n) ∙ glue n _
+
+
+{- Finally, an important definition: We say that a sequence is weakly constant
+   if each map is weakly constant. -}
+wconst-chain : ∀ {i} → Sequence {i} → Type i
+wconst-chain (A , f) = (n : ℕ) → wconst (f n)
