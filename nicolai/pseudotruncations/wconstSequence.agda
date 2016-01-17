@@ -9,151 +9,110 @@ open import lib.types.TLevel
 open import lib.types.Pointed
 open import lib.types.Sigma
 open import lib.NType2
--- open import lib.PathGroupoid
-
--- open import nicolai.pseudotruncations.PathSeqAlt
 open import lib.types.PathSeq
 
 open import nicolai.pseudotruncations.Liblemmas
 open import nicolai.pseudotruncations.SeqColim
 
 
+
+{- The main work is done in two separate files. 
+
+   The first defines some general lemmas
+   and constructs what is overline(i) in the paper. 
+
+   The second is the 'heptagon-argument', a very 
+   tedious calculation with paths, which constructs
+   what is overline(g) in the paper -- the coherence
+   laws for overline (i). -}
+open import nicolai.pseudotruncations.wconst-preparation
+open import nicolai.pseudotruncations.heptagon
+
+
 module nicolai.pseudotruncations.wconstSequence where
 
-{- weak constancy is defined in the 'Liblemmas' file. 
-   We just define weak constancy for sequences here. -} 
-wconst-chain : ∀ {i} → Sequence {i} → Type i
-wconst-chain (A , f) = (n : ℕ) → wconst (f n)
 
-{- first, we show that a weakly constant sequence for 
-   which we have an a₀ : A₀ is contractible.
-   We proceed step-wise. -}
-module wconst-init {i} {C : Sequence {i}} (wc : wconst-chain C) (a₀ : fst C O) where
+  {- As a first step, assume we are given a weakly constant
+     sequence with an inhabitant of the first type. -}
+  module _ {i} {C : Sequence {i}} (wc : wconst-chain C) (a₀ : fst C O) where
 
-  A = fst C
-  f = snd C
-  SC = SeqCo C
+    {- We want to show that the colimit of this sequence is 
+       contractible.
+       The heart of the argument are the definitions of the data
+       that is needed in order to apply the induction principle
+       of the sequential colimit.
+       We call these î and ĝ. They are not constructed here, but
+       in two separate files; the construction of ĝ is very tedious.
+       Here, we just load them from the files where they are defined.
+    -}
 
-  -- first, we show that [ins] is weakly constant
-  ins-wconst : (n : ℕ) → wconst (ins {C = C} n)
-  ins-wconst n a₁ a₂ = 
-    ins n a₁           =⟨ glue n a₁ ⟩
-    ins (S n) (f n a₁) =⟨ ap (ins (S n)) (wc n a₁ a₂) ⟩
-    ins (S n) (f n a₂) =⟨ ! (glue n a₂) ⟩
-    ins n a₂           ∎
+    {- First, some preliminary lemmas and the definition of î,
+       defined in the following module: -}
+    open wconst-init {i} {C} wc a₀ 
 
-  
-  {- Now, we want to define what is overline(i) is the paper
-     (here, we call it î); that is:
-     any a : A n is, if moved to A ω , equal to a₀.
+    î : (n : ℕ) → (a : A n) → (ins {C = C} n a) =-= (ins O a₀)
+    î = î-def
 
-     It is easy to define this, but the tricky part is that
-     afterwards, we need to be able to reason about it.
-     The 'equational reasoning' combinators are not suitable 
-     at all for this.
-
-     What we use are the 'reified equational reasoning combinators',
-     which allow this sort of thing. These are in the HoTT library,
-     implemented by Guillaume Brunerie, but I have decided to
-     define my own variant. The reason is that I need a certain 
-     behaviour and I do not see how to do it with the library ones,
-     although it's likely that I just don't see it -- for further 
-     explanations, see my implementation in 
-     nicolai.pseudotruncations.PathSeqAlt.
-     
-     For an introduction to the concept, see the original file
-
-                   lib.types.PathSeq.
-
-     TODO: I WENT BACK TO GUILLAUME'S CODE. Because I did not need my extension anymore. (brute-force-strategy)
-     -}
-
-  î : (n : ℕ) → (a : A n) → (ins {C = C} n a) =-= (ins O a₀)
-  î n a = 
-    ins n a
-      =⟪ glue n a ⟫
-    ins (S n) (f n a)
-      =⟪ ap (ins (S n)) (wc n _ _) ⟫
-    ins (S n) (lift-point C a₀ (S n))
-      =⟪ ! (lift-point-= C a₀ (S n)) ⟫
-    ins O a₀
-      ∎∎ 
-  
-  ins-n-O : (n : ℕ) → (a : A n) → ins {C = C} n a == ins O a₀
-  ins-n-O n a = ↯ (î n a)
+    {- from î, we get the 'real' overline(i) just by applying ↯,
+       i.e. by getting the path out of the sequence î -}
+    ins-n-O : (n : ℕ) → (a : A n) → ins {C = C} n a == ins O a₀
+    ins-n-O n a = ↯ (î-def n a)
 
 
-  {- The difficult part is ĝ, in the paper called 'overline(g)' -}
-
-  postulate
+    {- The difficult part is ĝ, in the paper called 'overline(g)'. 
+       It is defined in heptagon.agda and just loaded here. -}
+    
     ĝ : (n : ℕ) → (a : A n)
         → (↯ ((î (S n) (f n a)) ⋯ (‼ (î n a) ⋯ toSeq (glue n a)))) == idp
-{-  ĝ n a = 
-    (↯ ((î (S n) (f n a)) ⋯ (‼ (î n a) ⋯ toSeq (glue n a))))
-      =⟨ {!↯ ((î (S n) (f n a)) ⋯ (‼ (î n a) ⋯ toSeq (glue n a)))!} ⟩
-    {!!}
-      =⟨ {!!} ⟩
-    idp
-      =⟨ {!!} ⟩
-    idp
-      ∎ 
--}
-  -- reminder: p ∙ q ∙ r ≡ p ∙ (q ∙ r)
+    ĝ n a = ĝ-def wc a₀ n a
 
 
-{-
-  test : ∀ {a b c d : A O} (p : a == b) (q : b == c) (r : c == d)
-        → (↯ ((toSeq p) ⋯ (toSeq q) ⋯ (toSeq r))) == (p ∙ q ∙ r)
-     -- → (↯ (‼ (toSeq p ⋯ toSeq q))) == (! q) ∙ (! p)
-  test p q r = {!!}
--}
-
---  stupid-hack : ∀ {i} {X : Type i} {
+    -- from ĝ, we should be able to get this postulate:
+    postulate
+      ins-glue-coh : (n : ℕ) (a : A n)
+                     → ins-n-O (S n) (f n a) ∙ ! (ins-n-O n a) ∙ glue n a == idp
+    -- ins-glue-coh n a = {!ins-n-O n a !} --  {!ĝ n a!}
 
 
 
-  -- from ĝ, we should be able to get this postulate:
-  postulate
-    ins-glue-coh : (n : ℕ) (a : A n)
-                   → ins-n-O (S n) (f n a) ∙ ! (ins-n-O n a) ∙ glue n a == idp
-  -- ins-glue-coh n a = {!ins-n-O n a !} --  {!ĝ n a!}
-
-
-
-  {- Now, we define overline(g) from the text;
-     not much happens here!
-     All we are doing is showing that commutativity of the 'triangle'
-     is really enough. The hard part is the commutativity of the 
-     'triangle' which, is shown via commutativity of the 'heptagon',
-     which we have already done! -}
-  glue-n-O : (n : ℕ) (a : A n)
-             → (ins-n-O n a)
-                ==
-               (ins-n-O (S n) (f n a)) [ (λ w → w == ins O a₀) ↓ glue n a ]
+    {- Now, we define the 'real' overline(g) from the text;
+       this is just the 'unwrapped' version of ĝ, and not much happens
+       here!
+       All we are doing is showing that commutativity of the 'triangle'
+       is really enough. The hard part is the commutativity of the 
+       'triangle' which, is shown via commutativity of the 'heptagon',
+       which we have already done! -}
+    glue-n-O : (n : ℕ) (a : A n)
+               → (ins-n-O n a)
+                  ==
+                 (ins-n-O (S n) (f n a)) [ (λ w → w == ins O a₀) ↓ glue n a ]
                
-  glue-n-O n a = from-transp _ (glue n a)
-    -- now, let use calculate...
-    (transport (λ w → w == ins O a₀) (glue n a) (ins-n-O n a)
-      -- we use the version of trans-ap where the second function is constant
-      =⟨ trans-ap₁ (idf _) (ins O a₀) (glue n a) (ins-n-O n a) ⟩
-    ! (ap (idf _) (glue n a)) ∙ (ins-n-O n a)  
-      =⟨ ap (λ p → (! p) ∙ (ins-n-O n a)) (ap-idf (glue n a)) ⟩ 
-    ! (glue n a) ∙ (ins-n-O n a)
-      -- we use the adhoc lemma to 're-order' paths
-      =⟨ ! (adhoc-lemma (ins-n-O (S n) (f n a)) (ins-n-O n a) (glue n a) (ins-glue-coh n a)) ⟩ 
-    ins-n-O (S n) (f n a)
-      ∎)
+    glue-n-O n a = from-transp _ (glue n a)
+      -- now, let use calculate...
+      (transport (λ w → w == ins O a₀) (glue n a) (ins-n-O n a)
+        -- we use the version of trans-ap where the second function is constant
+        =⟨ trans-ap₁ (idf _) (ins O a₀) (glue n a) (ins-n-O n a) ⟩
+      ! (ap (idf _) (glue n a)) ∙ (ins-n-O n a)  
+        =⟨ ap (λ p → (! p) ∙ (ins-n-O n a)) (ap-idf (glue n a)) ⟩ 
+      ! (glue n a) ∙ (ins-n-O n a)
+        -- we use the adhoc lemma to 're-order' paths
+        =⟨ ! (adhoc-lemma (ins-n-O (S n) (f n a)) (ins-n-O n a) (glue n a) (ins-glue-coh n a)) ⟩ 
+      ins-n-O (S n) (f n a)
+        ∎)
 
-  -- We combine 'overline(i)' and 'overline(g)' to conclude:
-  equal-n-O : (w : SC) → w == ins O a₀
-  equal-n-O = SeqCo-ind ins-n-O glue-n-O
+    -- We combine 'overline(i)' and 'overline(g)' to conclude:
+    equal-n-O : (w : SC) → w == ins O a₀
+    equal-n-O = SeqCo-ind ins-n-O glue-n-O
 
-  -- Thus, the sequential colimit is contractible:
-  SC-contr : is-contr SC
-  SC-contr = ins O a₀ , (λ w → ! (equal-n-O w))
+    -- Thus, the sequential colimit is contractible:
+    SC-contr : is-contr SC
+    SC-contr = ins O a₀ , (λ w → ! (equal-n-O w))
 
+{- This completes the proof that the sequential colimit of a weakly constant 
+   sequence with *inhabited first type* is contractible.
+   Let us now work with general weakly constant sequences again.
 
-{- Let us now show that removing the first map from a weakly constant sequence 
+   First, let us now show that removing the first map from a weakly constant sequence 
    gives a weakly constant sequence. 
    Then, we show that we can remove any finite initial sequence.
    Of course, this is trivial; the conclusion of the statement asks for weak 
@@ -169,7 +128,10 @@ removeInit-preserves-wconst C (S n) wc =
     (removeFst-preserves-wconst C wc)
 
 
-{- The first main result: the colimit of a weakly constant sequence is propositional. -}
+
+{- THE FIRST MAIN RESULT: 
+   the colimit of a weakly constant sequence is propositional. -}
+
 wconst-prop : ∀ {i} → (C : Sequence {i}) → wconst-chain C → is-prop (SeqCo C)
 wconst-prop C wc = inhab-to-contr-is-prop (SeqCo-rec wc-prp-ins automatic) where
 
@@ -190,9 +152,13 @@ wconst-prop C wc = inhab-to-contr-is-prop (SeqCo-rec wc-prp-ins automatic) where
     wc' = removeInit-preserves-wconst C n wc
 
     C'-contr : is-contr (SeqCo C')
-    C'-contr = wconst-init.SC-contr wc' a₀'
+    C'-contr = SC-contr wc' a₀'
 
   automatic : (n : ℕ) (a : fst C n) → wc-prp-ins n a == wc-prp-ins (S n) (snd C n a)
   automatic n a = prop-has-all-paths (has-level-is-prop {n = ⟨-2⟩} {A = SeqCo C}) _ _
 
 -- TODO sample applications??
+
+
+
+

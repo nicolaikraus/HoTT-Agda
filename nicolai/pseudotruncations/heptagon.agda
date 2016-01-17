@@ -9,44 +9,31 @@ open import lib.types.TLevel
 open import lib.types.Pointed
 open import lib.types.Sigma
 open import lib.NType2
--- open import lib.PathGroupoid
 
--- open import nicolai.pseudotruncations.PathSeqAlt
 open import lib.types.PathSeq
 
 open import nicolai.pseudotruncations.Liblemmas
 open import nicolai.pseudotruncations.SeqColim
 
-open import nicolai.pseudotruncations.wconstSequence
 
-module nicolai.pseudotruncations.heptagon {i} {C : Sequence {i}} (wc : wconst-chain C) (a₀ : fst C O) where
+open import nicolai.pseudotruncations.wconst-preparation
 
+module nicolai.pseudotruncations.heptagon
+  {i} {C : Sequence {i}} (wc : wconst-chain C) (a₀ : fst C O) where
+
+  {- î-def is defined in this module: -}
   open wconst-init {i} {C} wc a₀
   
-{- Recall that î is defined like this:
-
-  î : (n : ℕ) → (a : A n) → (ins {C = C} n a) =-= (ins O a₀)
-  î n a = 
-    ins n a
-      =⟪ glue n a ⟫
-    ins (S n) (f n a)
-      =⟪ ap (ins (S n)) (wc n _ _) ⟫
-    ins (S n) (lift-point C a₀ (S n))
-      =⟪ ! (lift-point-= C a₀ (S n)) ⟫
-    ins O a₀
-      ∎∎ 
--}
-
   module _ (n : ℕ) (a : A n) where
 
     {- Let us formulate different simplification steps of the 
        heptagon. -}
 
     full-hepta : loop (ins (S n) (f n a)) 
-    full-hepta = (î (S n) (f n a)) ⋯ (‼ (î n a) ⋯ toSeq (glue n a))
+    full-hepta = (î-def (S n) (f n a)) ⋯ (‼ (î-def n a) ⋯ toSeq (glue n a))
 
     remove-g : loop (ins (S n) (f n a)) 
-    remove-g = (î (S n) (f n a))
+    remove-g = (î-def (S n) (f n a))
                ⋯ ‼ (ins (S n) (f n a)
                       =⟪ ap (ins (S n)) (wc n _ _) ⟫
                     ins (S n) (lift-point C a₀ (S n)) 
@@ -55,7 +42,7 @@ module nicolai.pseudotruncations.heptagon {i} {C : Sequence {i}} (wc : wconst-ch
                       ∎∎)
 
     simplify-‼ : loop (ins (S n) (f n a)) 
-    simplify-‼ = (î (S n) (f n a))
+    simplify-‼ = (î-def (S n) (f n a))
                ⋯ (ins O a₀
                     =⟪ lift-point-= C a₀ (S n) ⟫
                   ins (S n) (lift-point C a₀ (S n)) 
@@ -166,8 +153,8 @@ module nicolai.pseudotruncations.heptagon {i} {C : Sequence {i}} (wc : wconst-ch
 
 
     {- Now, we are ready to show that the heptagon is trivial! -}
-    ĝ-aux :  (↯ full-hepta) == idp
-    ĝ-aux = 
+    ĝ-def :  (↯ full-hepta) == idp
+    ĝ-def = 
 
       (↯ full-hepta)
 
