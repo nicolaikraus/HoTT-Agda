@@ -9,6 +9,7 @@ open import lib.types.TLevel
 open import lib.types.Pointed
 open import lib.types.Sigma
 open import lib.NType2
+-- open import lib.PathGroupoid
 
 open import nicolai.pseudotruncations.Liblemmas
 open import nicolai.pseudotruncations.SeqColim
@@ -38,7 +39,7 @@ module wconst-init {i} {C : Sequence {i}} (wc : wconst-chain C) (a₀ : fst C O)
     ins (S n) (f n a₂) =⟨ ! (glue n a₂) ⟩
     ins n a₂           ∎
 
-
+  -- THIS NEEDS TO BE REIFIED!!
   
   {- This is overline(i) from the text:
      any a : A n is, in A ω , equal to a₀.
@@ -55,21 +56,16 @@ module wconst-init {i} {C : Sequence {i}} (wc : wconst-chain C) (a₀ : fst C O)
       ∎
 
 
+  -- p ∙ q ∙ r means p ∙ (q ∙ r)
+
   -- TODO TODO TODO
-  postulate  
-    glue-calculate : (n : ℕ) (a : A n) →
-                     ! (glue n a) ∙ ins-n-O n a
-                      ==
-                     ins-n-O (S n) (f n a)
-{-  glue-calculate n a = {!!} where
-    calc-first =
-      ins-n-O n a
-        =⟨ {!idp!} ⟩
-      glue n a ∙ (ap (ins (S n)) (wc n _ _)) ∙ (g-iter (S n)) ∙ idp
-        =⟨ {!∙-unit-r !} ⟩
-      glue n a ∙ ((ap (ins (S n)) (wc n _ _)) ∙ (g-iter (S n)))
-        ∎ 
--}
+  -- AH, I REMEMBER!! There is this other thing with lightnings...
+  postulate
+    ins-glue-coh : (n : ℕ) (a : A n)
+--               → ! (glue n a) ∙ ins-n-O n a ∙ ! (ins-n-O (S n) (f n a)) == idp
+                 → ins-n-O (S n) (f n a) ∙ ! (ins-n-O n a) ∙ glue n a == idp
+
+
 
 
   {- Now, we define overline(g) from the text;
@@ -91,7 +87,8 @@ module wconst-init {i} {C : Sequence {i}} (wc : wconst-chain C) (a₀ : fst C O)
     ! (ap (idf _) (glue n a)) ∙ (ins-n-O n a)  
       =⟨ ap (λ p → (! p) ∙ (ins-n-O n a)) (ap-idf (glue n a)) ⟩ 
     ! (glue n a) ∙ (ins-n-O n a)
-      =⟨ glue-calculate n a ⟩ -- maybe should be done here, NOT as an extra lemma!
+      -- we use the adhoc lemma to 're-order' paths
+      =⟨ ! (adhoc-lemma (ins-n-O (S n) (f n a)) (ins-n-O n a) (glue n a) (ins-glue-coh n a)) ⟩ 
     ins-n-O (S n) (f n a)
       ∎)
 

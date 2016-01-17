@@ -61,3 +61,12 @@ ap-const-at-point : ∀ {i j} {A : Type i} {B : Type j} {a₁ a₂ : A}
 ap-const-at-point b idp = idp
 
 
+{- this lemma is ad-hoc; it could be proved as a concatenation of
+   many library lemmas, but it would be much more tedious to do -}
+adhoc-lemma : ∀ {i} {A : Type i} {x y z : A}
+                (p : x == y)
+                (q : z == y)
+                (r : z == x)
+                → p ∙ ! q ∙ r == idp
+                → p == ! r ∙ q
+adhoc-lemma p idp idp e = ! (∙-unit-r p) ∙ e
