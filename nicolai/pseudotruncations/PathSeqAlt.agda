@@ -32,6 +32,7 @@ infix  15 _∎∎
 infixr 10 _=⟪_⟫_
 infixr 10 _=⟪idp⟫_
 
+
 data PathSeq {i} {A : Type i} : A → A → Type i where
   _∎∎ : (a : A) → PathSeq a a
   _=⟪_⟫_ : (a : A) {a' a'' : A} (p : a == a') (s : PathSeq a' a'') → PathSeq a a''
@@ -50,6 +51,8 @@ toSeq p = _ =⟪ p ⟫ _ ∎∎
 module _ {i} {A : Type i} where
 
   infix 0 ↯_
+  infixr 5 _⋯_ 
+
 
   ↯_ : {a a' : A} (s : PathSeq a a') → a == a'
   ↯ a ∎∎ = idp

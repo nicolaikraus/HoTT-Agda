@@ -11,8 +11,8 @@ open import lib.types.Sigma
 open import lib.NType2
 -- open import lib.PathGroupoid
 
-open import nicolai.pseudotruncations.PathSeqAlt
-
+-- open import nicolai.pseudotruncations.PathSeqAlt
+open import lib.types.PathSeq
 
 open import nicolai.pseudotruncations.Liblemmas
 open import nicolai.pseudotruncations.SeqColim
@@ -64,6 +64,8 @@ module wconst-init {i} {C : Sequence {i}} (wc : wconst-chain C) (a₀ : fst C O)
      For an introduction to the concept, see the original file
 
                    lib.types.PathSeq.
+
+     TODO: I WENT BACK TO GUILLAUME'S CODE. Because I did not need my extension anymore. (brute-force-strategy)
      -}
 
   î : (n : ℕ) → (a : A n) → (ins {C = C} n a) =-= (ins O a₀)
@@ -83,17 +85,38 @@ module wconst-init {i} {C : Sequence {i}} (wc : wconst-chain C) (a₀ : fst C O)
 
   {- The difficult part is ĝ, in the paper called 'overline(g)' -}
 
-  ĝ : (n : ℕ) → (a : A n)
-      → (↯ ((î (S n) (f n a)) ⋯ (‼ (î n a) ⋯ toSeq (glue n a)))) == idp
-  ĝ n a = {!!}
+  postulate
+    ĝ : (n : ℕ) → (a : A n)
+        → (↯ ((î (S n) (f n a)) ⋯ (‼ (î n a) ⋯ toSeq (glue n a)))) == idp
+{-  ĝ n a = 
+    (↯ ((î (S n) (f n a)) ⋯ (‼ (î n a) ⋯ toSeq (glue n a))))
+      =⟨ {!↯ ((î (S n) (f n a)) ⋯ (‼ (î n a) ⋯ toSeq (glue n a)))!} ⟩
+    {!!}
+      =⟨ {!!} ⟩
+    idp
+      =⟨ {!!} ⟩
+    idp
+      ∎ 
+-}
+  -- reminder: p ∙ q ∙ r ≡ p ∙ (q ∙ r)
+
+
+{-
+  test : ∀ {a b c d : A O} (p : a == b) (q : b == c) (r : c == d)
+        → (↯ ((toSeq p) ⋯ (toSeq q) ⋯ (toSeq r))) == (p ∙ q ∙ r)
+     -- → (↯ (‼ (toSeq p ⋯ toSeq q))) == (! q) ∙ (! p)
+  test p q r = {!!}
+-}
+
+--  stupid-hack : ∀ {i} {X : Type i} {
 
 
 
   -- from ĝ, we should be able to get this postulate:
   postulate
     ins-glue-coh : (n : ℕ) (a : A n)
-                 → ins-n-O (S n) (f n a) ∙ ! (ins-n-O n a) ∙ glue n a == idp
-
+                   → ins-n-O (S n) (f n a) ∙ ! (ins-n-O n a) ∙ glue n a == idp
+  -- ins-glue-coh n a = {!ins-n-O n a !} --  {!ĝ n a!}
 
 
 

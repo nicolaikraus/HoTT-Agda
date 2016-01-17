@@ -43,9 +43,33 @@ _=-=_ = PathSeq
 _=⟪idp⟫_ : ∀ {i} {A : Type i} (a : A) {a' : A} (s : PathSeq a a') → PathSeq a a'
 a =⟪idp⟫ s = s
 
+-- type of circular sequences
+loop : ∀ {i} {A : Type i} (a : A) → Type i
+loop a = a =-= a
+
+-- "Embedding": get a sequence out of a path
+toSeq : ∀ {i} {A : Type i} {a₁ a₂ : A} → a₁ == a₂ → a₁ =-= a₂
+toSeq p = _ =⟪ p ⟫ _ ∎∎ 
+
+
+
 module _ {i} {A : Type i} where
 
   infix 0 ↯_
+  infixr 5 _⋯_ 
+
+
+  -- Concatenation of sequences
+  _⋯_ : {a a' a'' : A} (s : a =-= a') (s' : a' =-= a'') → a =-= a''
+  (a ∎∎) ⋯ s' = s'
+  (a =⟪ p ⟫ s) ⋯ s' = a =⟪ p ⟫ (s ⋯ s')
+
+
+  -- Reversing sequences
+  ‼ : {a a' : A} → a =-= a' → a' =-= a
+  ‼ (a ∎∎) = a ∎∎
+  ‼ (a =⟪ p ⟫ s) = (‼ s) ⋯ (_ =⟪ ! p ⟫ _ ∎∎ )
+
 
   ↯_ : {a a' : A} (s : PathSeq a a') → a == a'
   ↯ a ∎∎ = idp
