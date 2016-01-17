@@ -11,7 +11,7 @@ open import lib.types.Sigma
 open import lib.NType2
 -- open import lib.PathGroupoid
 
-open import lib.types.PathSeq
+open import nicolai.pseudotruncations.PathSeqAlt
 
 
 open import nicolai.pseudotruncations.Liblemmas
@@ -53,12 +53,18 @@ module wconst-init {i} {C : Sequence {i}} (wc : wconst-chain C) (a₀ : fst C O)
      at all for this.
 
      What we use are the 'reified equational reasoning combinators',
-     which allow this sort of thing. These are from the HoTT library,
-     implemented by Guillaume Brunerie [I have expanded them a bit
-     to make them more useable for my case; see the file
-                   lib.types.PathSeq
-     ].
-     Note that this intentially replicates ins-const. -}
+     which allow this sort of thing. These are in the HoTT library,
+     implemented by Guillaume Brunerie, but I have decided to
+     define my own variant. The reason is that I need a certain 
+     behaviour and I do not see how to do it with the library ones,
+     although it's likely that I just don't see it -- for further 
+     explanations, see my implementation in 
+     nicolai.pseudotruncations.PathSeqAlt.
+     
+     For an introduction to the concept, see the original file
+
+                   lib.types.PathSeq.
+     -}
 
   î : (n : ℕ) → (a : A n) → (ins {C = C} n a) =-= (ins O a₀)
   î n a = 
@@ -73,20 +79,17 @@ module wconst-init {i} {C : Sequence {i}} (wc : wconst-chain C) (a₀ : fst C O)
   
   ins-n-O : (n : ℕ) → (a : A n) → ins {C = C} n a == ins O a₀
   ins-n-O n a = ↯ (î n a)
-{-    ins n a
-      =⟨ glue n a ⟩
-    ins (S n) (f n a)
-      =⟨ ap (ins (S n)) (wc n _ _) ⟩
-    ins (S n) (lift-point C a₀ (S n))
-      =⟨ ! (lift-point-= C a₀ (S n)) ⟩
-    ins O a₀
-      ∎
--}
 
-  -- p ∙ q ∙ r means p ∙ (q ∙ r)
 
-  -- TODO TODO TODO
-  -- AH, I REMEMBER!! There is this other thing with lightnings...
+  {- The difficult part is ĝ, in the paper called 'overline(g)' -}
+
+  ĝ : (n : ℕ) → (a : A n)
+      → (↯ ((î (S n) (f n a)) ⋯ (‼ (î n a) ⋯ toSeq (glue n a)))) == idp
+  ĝ n a = {!!}
+
+
+
+  -- from ĝ, we should be able to get this postulate:
   postulate
     ins-glue-coh : (n : ℕ) (a : A n)
                  → ins-n-O (S n) (f n a) ∙ ! (ins-n-O n a) ∙ glue n a == idp

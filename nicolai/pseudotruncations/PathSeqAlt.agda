@@ -42,6 +42,11 @@ _=-=_ = PathSeq
 _=⟪idp⟫_ : ∀ {i} {A : Type i} (a : A) {a' : A} (s : PathSeq a a') → PathSeq a a'
 a =⟪idp⟫ s = s
 
+
+-- "Embedding": get a sequence out of a path
+toSeq : ∀ {i} {A : Type i} {a₁ a₂ : A} → a₁ == a₂ → a₁ =-= a₂
+toSeq p = _ =⟪ p ⟫ _ ∎∎ 
+
 module _ {i} {A : Type i} where
 
   infix 0 ↯_
@@ -57,18 +62,46 @@ module _ {i} {A : Type i} where
 
 
 -- Concatenation of sequences commutes with concatenation of paths
-  ∙-⋯-comm : {a a' a'' : A} (s : a =-= a') (s' : a' =-= a'')
+  ∙-⋯-↯ : {a a' a'' : A} (s : a =-= a') (s' : a' =-= a'')
              → (↯ (s ⋯ s')) == (↯ s) ∙ (↯ s')
-  ∙-⋯-comm (a ∎∎) s' = idp
-  ∙-⋯-comm (a =⟪ p ⟫ s) s' =
+  ∙-⋯-↯ (a ∎∎) s' = idp
+  ∙-⋯-↯ (a =⟪ p ⟫ s) s' =
     (↯ a =⟪ p ⟫ s ⋯ s')
-      =⟨ ap (λ q → p ∙ q) (∙-⋯-comm s s') ⟩
+      =⟨ ap (λ q → p ∙ q) (∙-⋯-↯ s s') ⟩
     p ∙ (↯ s) ∙ (↯ s')
       =⟨ ! (∙-assoc p _ _) ⟩ 
     (p ∙ (↯ s)) ∙ (↯ s')
       =⟨ idp ⟩ 
     (↯ a =⟪ p ⟫ s) ∙ (↯ s')
       ∎ 
+
+  ‼ : {a a' : A} → a =-= a' → a' =-= a
+  ‼ (a ∎∎) = a ∎∎
+  ‼ (a =⟪ p ⟫ s) = (‼ s) ⋯ (_ =⟪ ! p ⟫ _ ∎∎ )
+
+{-
+  ‼-⋯-↯ : {a a' a'' : A} (s : a =-= a') (s' : a' =-= a'')
+        → ↯ (‼ (s ⋯ s')) == 
+-}
+
+  !-‼-↯ : {a a' : A} (s : a =-= a') → (↯ (‼ s)) == ! (↯ s)
+  !-‼-↯ (a ∎∎) = idp
+  !-‼-↯ (a =⟪ p ⟫ s) = 
+    (↯ (‼ (a =⟪ p ⟫ s)))
+      =⟨ idp ⟩ 
+    (↯ ‼ s ⋯ (_ =⟪ ! p ⟫ _ ∎∎))
+      =⟨ ∙-⋯-↯ (‼ s) _ ⟩
+    (↯ ‼ s) ∙ (↯ (toSeq (! p)))
+      =⟨ ap (λ q → (↯ ‼ s) ∙ q) (∙-unit-r _) ⟩
+    (↯ ‼ s) ∙ (! p)
+      =⟨ ap (λ q → q ∙ (! p)) (!-‼-↯ s) ⟩
+    ! (↯ s) ∙ (! p)
+      =⟨ ! (!-∙ p (↯ s)) ⟩ 
+    ! (p ∙ (↯ s))
+      ∎ 
+
+
+
 
 
 
