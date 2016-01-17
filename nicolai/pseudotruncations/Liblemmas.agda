@@ -70,3 +70,12 @@ adhoc-lemma : ∀ {i} {A : Type i} {x y z : A}
                 → p ∙ ! q ∙ r == idp
                 → p == ! r ∙ q
 adhoc-lemma p idp idp e = ! (∙-unit-r p) ∙ e
+
+
+{- If f is weakly constant, then so is ap f. This is a lemma from our 
+   old Hedberg article. -}
+ap-wconst : ∀ {i j} {A : Type i} {B : Type j} (f : A → B) (w : wconst f)
+            → {a₁ a₂ : A} → wconst (ap f {a₁} {a₂})
+ap-wconst f w p q = lemma p ∙ ! (lemma q) where
+  lemma : ∀ {x y} (p : x == y) → ap f {x} {y} p == ! (w x x) ∙ (w x y) 
+  lemma {x} idp = ! (!-inv-l (w x x))
