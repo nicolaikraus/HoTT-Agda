@@ -11,6 +11,9 @@ open import lib.types.Sigma
 open import lib.NType2
 -- open import lib.PathGroupoid
 
+open import lib.types.PathSeq
+
+
 open import nicolai.pseudotruncations.Liblemmas
 open import nicolai.pseudotruncations.SeqColim
 
@@ -39,14 +42,36 @@ module wconst-init {i} {C : Sequence {i}} (wc : wconst-chain C) (a₀ : fst C O)
     ins (S n) (f n a₂) =⟨ ! (glue n a₂) ⟩
     ins n a₂           ∎
 
-  -- THIS NEEDS TO BE REIFIED!!
   
-  {- This is overline(i) from the text:
-     any a : A n is, in A ω , equal to a₀.
-     note that this intentially replicates ins-const. -}
-  ins-n-O : (n : ℕ) → (a : A n) → ins {C = C} n a == ins O a₀
-  ins-n-O n a = 
+  {- Now, we want to define what is overline(i) is the paper
+     (here, we call it î); that is:
+     any a : A n is, if moved to A ω , equal to a₀.
+
+     It is easy to define this, but the tricky part is that
+     afterwards, we need to be able to reason about it.
+     The 'equational reasoning' combinators are not suitable 
+     at all for this.
+
+     What we use are the 'reified equational reasoning combinators',
+     which allow this sort of thing. These are from the HoTT library,
+     implemented by Guillaume Brunerie.
+
+     Note that this intentially replicates ins-const. -}
+
+  î : (n : ℕ) → (a : A n) → PathSeq (ins {C = C} n a) (ins O a₀)
+  î n a = 
     ins n a
+      =⟪ glue n a ⟫
+    ins (S n) (f n a)
+      =⟪ ap (ins (S n)) (wc n _ _) ⟫
+    ins (S n) (lift-point C a₀ (S n))
+      =⟪ ! (lift-point-= C a₀ (S n)) ⟫
+    ins O a₀
+      ∎∎ 
+  
+  ins-n-O : (n : ℕ) → (a : A n) → ins {C = C} n a == ins O a₀
+  ins-n-O n a = ↯ (î n a)
+{-    ins n a
       =⟨ glue n a ⟩
     ins (S n) (f n a)
       =⟨ ap (ins (S n)) (wc n _ _) ⟩
@@ -54,7 +79,7 @@ module wconst-init {i} {C : Sequence {i}} (wc : wconst-chain C) (a₀ : fst C O)
       =⟨ ! (lift-point-= C a₀ (S n)) ⟩
     ins O a₀
       ∎
-
+-}
 
   -- p ∙ q ∙ r means p ∙ (q ∙ r)
 
@@ -62,7 +87,6 @@ module wconst-init {i} {C : Sequence {i}} (wc : wconst-chain C) (a₀ : fst C O)
   -- AH, I REMEMBER!! There is this other thing with lightnings...
   postulate
     ins-glue-coh : (n : ℕ) (a : A n)
---               → ! (glue n a) ∙ ins-n-O n a ∙ ! (ins-n-O (S n) (f n a)) == idp
                  → ins-n-O (S n) (f n a) ∙ ! (ins-n-O n a) ∙ glue n a == idp
 
 
