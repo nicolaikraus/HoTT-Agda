@@ -54,11 +54,13 @@ module wconst-init {i} {C : Sequence {i}} (wc : wconst-chain C) (a₀ : fst C O)
 
      What we use are the 'reified equational reasoning combinators',
      which allow this sort of thing. These are from the HoTT library,
-     implemented by Guillaume Brunerie.
-
+     implemented by Guillaume Brunerie [I have expanded them a bit
+     to make them more useable for my case; see the file
+                   lib.types.PathSeq
+     ].
      Note that this intentially replicates ins-const. -}
 
-  î : (n : ℕ) → (a : A n) → PathSeq (ins {C = C} n a) (ins O a₀)
+  î : (n : ℕ) → (a : A n) → (ins {C = C} n a) =-= (ins O a₀)
   î n a = 
     ins n a
       =⟪ glue n a ⟫
