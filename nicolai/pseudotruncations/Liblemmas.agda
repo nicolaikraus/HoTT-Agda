@@ -80,3 +80,7 @@ ap-wconst f w p q = lemma p ∙ ! (lemma q) where
   lemma : ∀ {x y} (p : x == y) → ap f {x} {y} p == ! (w x x) ∙ (w x y) 
   lemma {x} idp = ! (!-inv-l (w x x))
 
+
+{- If two maps are equivalences, then so is their composition;
+   surely, this is in the library? 
+   It should be a special case of 2-out-of-3 -}

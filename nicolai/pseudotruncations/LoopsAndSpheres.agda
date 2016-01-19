@@ -32,6 +32,16 @@ _→̇_ : ∀ {i j} (Â : Ptd i) (B̂ : Ptd j) → Type _
 Â →̇ B̂ = fst (Â ⊙→ B̂)
 
 
+{- It is useful to have a lemma which allows to construct equalities
+   between pointed types. Of course, we know that such an equality
+   is a pair of equalities; however, transporting a function can 
+   make things more tedious than necessary! -}
+make-=-∙ : ∀ {i j} {Â : Ptd i} {B̂ : Ptd j} (f̂ ĝ : Â →̇ B̂)
+           (p : fst f̂ == fst ĝ)
+           → ! (app= p (snd Â)) ∙ snd f̂ == snd ĝ
+           → f̂ == ĝ
+make-=-∙ (f , p) (.f , q) idp t = pair= idp t
+
 
 isNull : ∀ {i j} {A : Type i} {B : Type j} (b : B) (f : A → B) → Type _
 isNull {A = A} b f = (a : A) → f a == b
@@ -123,16 +133,15 @@ module hom-adjoint {i} (Â : Ptd i) (B̂ : Ptd i) where
 
   -- real Lemma 4.2
   Φ-is-pointed-map : Φ ((λ _ → b₀) , idp) == ((λ _ → idp) , idp)
-  Φ-is-pointed-map =
-    pair=
-      (λ= (λ a → fst (Φ ((λ _ → b₀) , idp)) a
-       --            =⟨ idp ⟩
-       --          (ap (λ _ → b₀) _)
-                   =⟨ ap-cst b₀ _ ⟩
-                 idp {a = b₀}
-                   ∎))
-      {!!} -- (from-transp {!λ _ → B!} {!!} {!!})
-
+  Φ-is-pointed-map = -- {!make-=-∙ !}
+    pair= X Y where
+      
+        X = (λ= (λ a → fst (Φ ((λ _ → b₀) , idp)) a
+                     =⟨ ap-cst b₀ _ ⟩
+                   idp {a = b₀}
+                     ∎))
+        Y : {!!}
+        Y = {!app= X a₀!} 
 
 
 
@@ -215,7 +224,8 @@ module _ {i} where
 
   Φ-iter-equiv : (Â B̂ : Ptd i) (n : Nat) → is-equiv (Φ-iter Â B̂ n)
   Φ-iter-equiv Â B̂ O = snd (ide _)
-  Φ-iter-equiv Â B̂ (S n) = {! !}
+  Φ-iter-equiv Â B̂ (S n) =
+    snd ((Φeq Â (⊙Ω^ n B̂)) ∘e ((Φ-iter (⊙Susp Â) B̂ n) , Φ-iter-equiv (⊙Susp Â) B̂ n) )
 
 
 {-
