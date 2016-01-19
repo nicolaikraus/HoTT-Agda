@@ -2,8 +2,13 @@
 
 -- INDEX
 
--- Currently under construction!
--- Only finished results imported here.
+{- Currently under construction!
+   Please check again in a few days!
+   Thanks :-)
+
+   Only the completed results are imported here.
+-}
+
 
 {- Some preliminary lemmas, nothing interesting -}
 open import nicolai.pseudotruncations.Liblemmas
