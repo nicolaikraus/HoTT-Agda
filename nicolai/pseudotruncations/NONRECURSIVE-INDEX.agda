@@ -2,6 +2,9 @@
 
 -- INDEX
 
+-- Currently under construction!
+-- Only finished results imported here.
+
 {- Some preliminary lemmas, nothing interesting -}
 open import nicolai.pseudotruncations.Liblemmas
 
@@ -13,6 +16,6 @@ open import nicolai.pseudotruncations.wconst-preparation
 
 open import nicolai.pseudotruncations.heptagon
 
+-- first main result:
 open import nicolai.pseudotruncations.wconstSequence
 
--- TODO: applications of WCONSTSEQUENCE

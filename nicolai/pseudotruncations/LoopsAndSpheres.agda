@@ -1,35 +1,26 @@
 {-# OPTIONS --without-K #-}
 
-open import lib.Basics -- hiding (_=⟨_⟩_ ; _∎)
-open import lib.types.Paths
-open import lib.types.Pi
-open import lib.types.Unit
-open import lib.types.Nat
-open import lib.types.TLevel
-open import lib.types.Pointed
-open import lib.types.Sigma
+open import lib.Basics
 open import lib.NType2
 open import lib.PathGroupoid
-open import lib.types.Pointed
 
-open import lib.types.Pi
-
-open import lib.types.Suspension
-open import lib.types.LoopSpace
-
-open import lib.types.Nat
-open import lib.types.IteratedSuspension
-
-
-open import lib.types.Lift
 open import lib.types.Bool
+open import lib.types.IteratedSuspension
+open import lib.types.Lift
+open import lib.types.LoopSpace
+open import lib.types.Nat
+open import lib.types.Paths
+open import lib.types.Pi
+open import lib.types.Pointed
+open import lib.types.Sigma
+open import lib.types.Suspension
+open import lib.types.TLevel
+open import lib.types.Unit
 
 open SuspensionRec public using () renaming (f to Susp-rec)
-
 open import nicolai.pseudotruncations.Liblemmas
 
 module nicolai.pseudotruncations.LoopsAndSpheres where
-
 
 {- We greatly benefit from Evan Cavallo's code - thank you! -}
 open import homotopy.PtdAdjoint
@@ -140,7 +131,7 @@ module hom-adjoint {i} (Â : Ptd i) (B̂ : Ptd i) where
                    =⟨ ap-cst b₀ _ ⟩
                  idp {a = b₀}
                    ∎))
-      (from-transp {!λ _ → B!} {!!} {!!})
+      {!!} -- (from-transp {!λ _ → B!} {!!} {!!})
 
 
 
@@ -312,12 +303,12 @@ module _ {i} where
                     q = snd ĝ 
                   in
                     isNull∙ (ĝ ⊙∘ f̂)
-                      ≃⟨ {!!} ⟩
+                      ≃⟨ {!equivalence between isNull∙ and isNull∙'!} ⟩
                     (Σ ((x : bool) → g (f x) == c₀)
                       λ k → (k tt₀) == (ap g p ∙ q))
                       ≃⟨ {!!} ⟩
                     g (f ff₀) == c₀ 
-                      ≃⟨ {!!} ⟩
+                      ≃⟨ ide _ ⟩
                     (fst (ĝ ⊙∘ f̂) ff₀) == c₀
                       ≃∎
 
