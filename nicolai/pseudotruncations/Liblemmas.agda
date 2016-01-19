@@ -79,3 +79,4 @@ ap-wconst : ∀ {i j} {A : Type i} {B : Type j} (f : A → B) (w : wconst f)
 ap-wconst f w p q = lemma p ∙ ! (lemma q) where
   lemma : ∀ {x y} (p : x == y) → ap f {x} {y} p == ! (w x x) ∙ (w x y) 
   lemma {x} idp = ! (!-inv-l (w x x))
+
