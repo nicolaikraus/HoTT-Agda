@@ -3,6 +3,7 @@
 open import lib.Basics
 open import lib.NType2
 open import lib.PathFunctor
+open import lib.PathGroupoid
 
 open import lib.types.Bool
 open import lib.types.IteratedSuspension
@@ -116,6 +117,10 @@ module PtruncsSeq {i} (X : Type i) where
   C : Sequence {i}
   C = (A , f)
 
+{-
+test : (p q r : _) → (p ∙ q ∙ r) == (p ∙ (q ∙ r))
+test p q r = idp
+-}
 
 {- A main result: If we have an inhabitant of X, then the sequence is weakly constant. 
    This is Lemma 6.2 ! -}
@@ -143,14 +148,17 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
   fₙ-x₀ O y = f₀-x₀ y
   fₙ-x₀ (S n) = Pseudotrunc-ind n Point Hub Spoke where
 
+    northₙ : Sphere {i} n
+    northₙ = point-of-sphere n
+
     Point : (w : _) → _
     Point w = ap (point (S n) -1) (fₙ-x₀ n w)
 
     Hub : (r : _) → _
-    Hub r = ap (point (S n) -1) (! (spoke n -1 r x) ∙ fₙ-x₀ n (r x)) where
-      x : Sphere n
-      x = point-of-sphere n
+    Hub r = ap (point (S n) -1) (! (spoke n -1 r northₙ) ∙ fₙ-x₀ n (r northₙ))
 
+    {- The definition of [Spoke] is the hard part. 
+       First, we do the easy things that we have to do... -}
     Spoke : (r : _) → (x : Sphere n) → _
     Spoke r = λ x → from-transp (P (S n))
                                 (spoke n -1 r x)
@@ -160,7 +168,7 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
       ! (ap (point (S n) -1) (spoke n -1 r x)) ∙ Point (r x)
         =⟨ !-ap (point (S n) -1) (spoke n -1 r x) ∙ᵣ Point (r x) ⟩
       ap (point (S n) -1) (! (spoke n -1 r x)) ∙ Point (r x)
-        =⟨ {!!} ⟩
+        =⟨ {!this is the hard part!} ⟩
       Hub r
         ∎ 
       )
@@ -168,10 +176,56 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
         where
 
           -- careful: orientation change?
+
+          {- Now, the actual work follows! -}
+          
+          -- kₓ (in the paper), here [k x], is the loop that we examine
           k : (x : Sphere {i} n)
               → Ω (Pseudo S n -1-trunc (A (S n)) ,
                    point S n -1 (f n (fs n)))
           k x = ! (Point (r x)) ∙ ap (point (S n) -1) (spoke n -1 r x) ∙ (Hub r)
+
+          -- We want to show that k factors as [ap pₙ ∘ h].
+          -- First, we define h.
+          h : (x : Sphere {i} n)
+              → Ω (Pseudo n -1-trunc (A n) ,
+                   f n (fs n))
+          h x =   ! (fₙ-x₀ n (r x))
+                ∙ (spoke n -1 r x)
+                ∙ (! (spoke n -1 r northₙ) ∙ fₙ-x₀ n (r northₙ))
+
+          -- The statement that k == ap pₙ ∘ h:
+          k-p-h : k == ap (point S n -1) ∘ h
+          k-p-h = λ= (λ (x : Sphere {i} n)
+                     → k x
+                         =⟨ idp ⟩
+                       ! (Point (r x)) ∙ (ap (point (S n) -1) (spoke n -1 r x) ∙ (Hub r))
+                         =⟨ !-ap (point S n -1) (fₙ-x₀ n (r x))
+                                ∙ᵣ (ap (point S n -1) (spoke n -1 r x)
+                                     ∙ Hub r) ⟩
+                       ap (point (S n) -1) (! (fₙ-x₀ n (r x)))
+                         ∙ ap (point (S n) -1) (spoke n -1 r x)
+                         ∙ (Hub r)
+                         =⟨ ! (ap (point (S n) -1) (! (fₙ-x₀ n (r x)))
+                                ∙ₗ ap-∙ point S n -1
+                                         (spoke n -1 r x)
+                                         _ ) ⟩
+                       ap (point (S n) -1) (! (fₙ-x₀ n (r x)))
+                         ∙ ap (point (S n) -1)
+                              (spoke n -1 r x
+                               ∙ (! (spoke n -1 r northₙ)
+                               ∙ fₙ-x₀ n (r northₙ)))
+                         =⟨ ! (ap-∙ point S n -1 (! (fₙ-x₀ n (r x))) _) ⟩  
+                       ap (point S n -1) (h x)
+                         ∎)
+
+          -- h is a pointed map:
+{-          h∙ : (⊙Sphere {i} n)
+                 {! →̇ !} ⊙Ω (Pseudo n -1-trunc (A n) ,
+                      f n (fs n))
+          h∙ = h , ?
+unfortunately, this needs that we complete the technical interlude first.
+-}                   
 
 
   wconst-f : wconst-chain C
