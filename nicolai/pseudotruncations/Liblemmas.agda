@@ -81,6 +81,9 @@ ap-wconst f w p q = lemma p ∙ ! (lemma q) where
   lemma {x} idp = ! (!-inv-l (w x x))
 
 
-{- If two maps are equivalences, then so is their composition;
-   surely, this is in the library? 
-   It should be a special case of 2-out-of-3 -}
+
+-- Silly little lemma (is it in the library?)
+ap-fst : ∀ {i j} {A : Type i} {B : Type j} {a₁ a₂ : A} {b₁ b₂ : B}
+           (p : a₁ == a₂) (q : b₁ == b₂)
+           → ap fst (pair×= p q) == p
+ap-fst idp idp = idp

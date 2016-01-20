@@ -140,7 +140,7 @@ module hom-adjoint {i} (Â : Ptd i) (B̂ : Ptd i) where
                      =⟨ ap-cst b₀ _ ⟩
                    idp {a = b₀}
                      ∎))
-        Y : {!!}
+        Y : {!Π-equiv-l!}
         Y = {!app= X a₀!} 
 
 
@@ -228,18 +228,6 @@ module _ {i} where
     snd ((Φeq Â (⊙Ω^ n B̂)) ∘e ((Φ-iter (⊙Susp Â) B̂ n) , Φ-iter-equiv (⊙Susp Â) B̂ n) )
 
 
-{-
-module _ {i} where
-  open hom-adjoint
-  
- DO NOT NEED ANY MORE
-  Φ^ : {Â : Ptd i} {B̂ : Ptd i}
-         (n : Nat)
-         (f : ⊙Susp^ n Â →̇ B̂)
-         → Â →̇ ⊙Ω^ n B̂
-  Φ^ O f = f
-  Φ^ {Â} {B̂} (S n) f = {!!}  -- THE PROBLEM: Both Susp and Ω are defined as Ω^ (S n) X = Ω (Ω^ n X); ONE OF THEM NEEDS TO BE DEFINED THE OTHER WAY ROUND!
--}
 
 module _ {i} where
 
@@ -258,8 +246,6 @@ module _ {i} where
                     isNull∙ (g ⊙∘ f)
                       ≃⟨ isNull-Φ-many m (⊙Susp Â) B̂ Ĉ f g   ⟩
                     isNull∙ ((ap^ m g) ⊙∘ Φ-iter (⊙Susp Â) B̂ m f)
-                      ≃⟨ ide _ ⟩ -- delete
-                    isNull∙ ((ap^ m g) ⊙∘ Φ-iter (⊙Susp Â) B̂ m f)
                       ≃⟨ combine-isnull-nat (Φ-iter (⊙Susp Â) B̂ m f) (ap^ m g) ⟩
                     (isNull∙
                       (⊙ap (ap^ m g) ⊙∘
@@ -276,73 +262,140 @@ module _ {i} where
                       isNull∙ ((ap^ m g) ⊙∘ Φ-iter (⊙Sphere* {i} O) B̂ m f)
     isNull-Φ-Sphere = isNull-Φ-many m _ _ _ f g
 
+  module triv-O-sphere {j} {D̂ : Ptd j} where
 
-  bool = fst (⊙Sphere {i} O)
-  tt₀ = snd (⊙Sphere {i} O)
-  ff₀ : bool
-  ff₀ = lift false
+    D = fst D̂
+    d₀ = snd D̂ 
 
-  -- Given a b : B̂, we can form a function Sphere O →̇ B̂ which is an equivalence
-  expand : {B̂ : Ptd i} → (b : fst B̂) → ((⊙Sphere {i} O) →̇ B̂)
-  expand {B̂} b = (λ { (lift true) → snd B̂ ; (lift false) → b }) , idp
+    bool = fst (⊙Sphere {i} O)
+    tt₀ : bool
+    tt₀ = snd (⊙Sphere {i} O)
+    ff₀ : bool
+    ff₀ = lift false
 
-  reduce : {B̂ : Ptd i} → ((⊙Sphere {i} O) →̇ B̂) → (fst B̂)
-  reduce {B , b₀} (f , _) = f ff₀
+    -- standard lemma
+    from-bool : ∀ {j} (X : Type j) → X × X ≃ (bool → X) 
+    from-bool X =
+      equiv (λ x2 → λ { (lift true) → fst x2 ; (lift false) → snd x2 })
+            (λ f → f tt₀ , f ff₀)
+            (λ f → λ= (λ { (lift true) → idp ; (lift false) → idp }))
+            (λ x2 → idp)
 
-  reduce-equiv : {B̂ : Ptd i} → is-equiv (reduce {B̂})
-  reduce-equiv {B̂} = is-eq reduce
+    -- a bit more interesting: pointed maps from bool
+    from-bool∙ : (Σ (D × D) λ d2 → fst d2 == d₀) ≃ (⊙Sphere {i} O →̇ D̂)
+    from-bool∙ = equiv-Σ-fst
+                   {A = D × D}
+                   {B = bool → D}
+                   (λ f → f tt₀ == d₀)
+                   {h = fst (from-bool D)}
+                   (snd (from-bool D))
+
+
+    -- but we also have (would maybe be much easier to prove with a library lemma?):
+    Σ-sngltn : (Σ (D × D) λ d2 → fst d2 == d₀) ≃ D
+    Σ-sngltn = equiv (λ dx → snd (fst dx))
+                     (λ d → (d₀ , d) , idp)
+                     (λ d → idp)
+                     (λ {((d₁ , d) , p)
+                         → pair= (pair×= (! p) idp)
+                                 (from-transp (λ d2 → fst d2 == d₀)
+                                 (pair×= (! p) idp)
+                                 ((transport (λ d2 → fst d2 == d₀) (pair×= (! p) idp) idp)
+                                    =⟨ trans-ap₁ fst d₀ (pair×= (! p) idp) idp ⟩
+                                  ! (ap (λ r → fst r) (pair×= (! p) idp)) ∙ idp
+                                    =⟨ ap (λ q → ! q ∙ idp) (ap-fst (! p) idp) ⟩
+                                  ! (! p) ∙ idp
+                                    =⟨ ∙-unit-r _ ⟩
+                                  ! (! p)
+                                    =⟨ !-! p ⟩
+                                  p
+                                    ∎))})
+
+    -- finally: pointed maps from bool are actually just one element in the codomain.
+    from-bool∙-single : (⊙Sphere {i} O →̇ D̂) ≃ D
+    from-bool∙-single = (⊙Sphere {i} O →̇ D̂)
+                           ≃⟨ from-bool∙ ⁻¹ ⟩
+                         (Σ (D × D) λ d2 → fst d2 == d₀)
+                           ≃⟨ Σ-sngltn ⟩
+                         D
+                           ≃∎ 
+                   
+    -- very good - it computes as it should!
+    reduce : ((⊙Sphere {i} O) →̇ D̂) → D
+    reduce (f , _) = f ff₀
+
+    test : reduce == fst from-bool∙-single
+    test = idp
+
+
+{-    -- Given a b : B̂, we can form a function Sphere O →̇ B̂ which is an equivalence
+    expand : {B̂ : Ptd i} → (b : fst B̂) → ((⊙Sphere {i} O) →̇ B̂)
+    expand {B̂} b = (λ { (lift true) → snd B̂ ; (lift false) → b }) , idp
+
+    reduce : {B̂ : Ptd i} → ((⊙Sphere {i} O) →̇ B̂) → (fst B̂)
+    reduce {B , b₀} (f , _) = f ff₀
+
+    test : 
+
+    bool∙-trivial₁ : {X̂ : Ptd i} → (⊙Sphere {i} O →̇ X̂) ≃ fst X̂ × (Σ (fst X̂) λ x → x == snd X̂)
+    bool∙-trivial₁ {X , x₀} = {!!}
+  
+
+    reduce-equiv : {B̂ : Ptd i} → is-equiv (reduce {B̂})
+    reduce-equiv {B̂} = is-eq reduce
                            expand
                            (λ _ → idp)
-                           (λ {(f , p)
-                             → pair= (λ= (λ { (lift true) → ! p ; (lift false) → idp }))
-                                     {!!} })
+                           (λ {(f , p) → {! p!}})
+    --                         → pair= (λ= (λ { (lift true) → ! p ; (lift false) → idp }))
+    --                                 {!!} })
+
 
 
   {- Two useful small helper lemma:
      If the first map has the O-sphere (i.e. Bool) as its domain,
      we can simplify. -}
-  reduce-O-Sphere : {B̂ Ĉ : Ptd i}
-                    (f̂ : ⊙Sphere {i} O →̇ B̂)
-                    (ĝ : B̂ →̇ Ĉ)
-                    → (isNull∙ (ĝ ⊙∘ f̂)) ≃ ((fst (ĝ ⊙∘ f̂) ff₀) == snd Ĉ) -- WRONG!!!
-  reduce-O-Sphere {B , b₀} {C , c₀} f̂ ĝ =
-                  let
-                    f = fst f̂
-                    p = snd f̂
-                    g = fst ĝ
-                    q = snd ĝ 
-                  in
-                    isNull∙ (ĝ ⊙∘ f̂)
-                      ≃⟨ {!equivalence between isNull∙ and isNull∙'!} ⟩
-                    (Σ ((x : bool) → g (f x) == c₀)
-                      λ k → (k tt₀) == (ap g p ∙ q))
-                      ≃⟨ {!!} ⟩
-                    g (f ff₀) == c₀ 
-                      ≃⟨ ide _ ⟩
-                    (fst (ĝ ⊙∘ f̂) ff₀) == c₀
-                      ≃∎
+    reduce-O-Sphere : {B̂ Ĉ : Ptd i}
+                      (f̂ : ⊙Sphere {i} O →̇ B̂)
+                      (ĝ : B̂ →̇ Ĉ)
+                      → (isNull∙ (ĝ ⊙∘ f̂)) ≃ ((fst (ĝ ⊙∘ f̂) ff₀) == snd Ĉ) -- WRONG!!!
+    reduce-O-Sphere {B , b₀} {C , c₀} f̂ ĝ =
+                    let
+                      f = fst f̂
+                      p = snd f̂
+                      g = fst ĝ
+                      q = snd ĝ 
+                    in
+                      isNull∙ (ĝ ⊙∘ f̂)
+                        ≃⟨ {!equivalence between isNull∙ and isNull∙'!} ⟩
+                      (Σ ((x : bool) → g (f x) == c₀)
+                        λ k → (k tt₀) == (ap g p ∙ q))
+                        ≃⟨ {!!} ⟩
+                      g (f ff₀) == c₀ 
+                        ≃⟨ ide _ ⟩
+                      (fst (ĝ ⊙∘ f̂) ff₀) == c₀
+                        ≃∎
 
-  {- This means that, if we quantify over f on both sides: -}
-  red-O-Sph-quant : {B̂ Ĉ : Ptd i}
-                    (ĝ : B̂ →̇ Ĉ)
-                    → ((f̂ : ⊙Sphere {i} O →̇ B̂) → isNull∙ (ĝ ⊙∘ f̂))
-                       ≃
-                      (isNulld ĝ)
-  red-O-Sph-quant {B̂} {Ĉ} ĝ =
-                  let
-                    g = fst ĝ
-                    q = snd ĝ 
-                  in
-                    ((f̂ : ⊙Sphere {i} O →̇ B̂) → isNull∙ (ĝ ⊙∘ f̂))
-                      ≃⟨ {!!} ⟩
-                    {!(x : bool) → ((fst (ĝ ⊙∘ f̂) x) == snd Ĉ)!}
-                      ≃⟨ {!!} ⟩
-                    {!(x : ⊙Sphere {i})!}
-                      ≃⟨ {!!} ⟩
-                    {!(x : ⊙Sphere {i})!}
-                      ≃∎ 
+    {- This means that, if we quantify over f on both sides: -}
+    red-O-Sph-quant : {B̂ Ĉ : Ptd i}
+                      (ĝ : B̂ →̇ Ĉ)
+                      → ((f̂ : ⊙Sphere {i} O →̇ B̂) → isNull∙ (ĝ ⊙∘ f̂))
+                         ≃
+                        (isNulld ĝ)
+    red-O-Sph-quant {B̂} {Ĉ} ĝ =
+                    let
+                      g = fst ĝ
+                      q = snd ĝ 
+                    in
+                      ((f̂ : ⊙Sphere {i} O →̇ B̂) → isNull∙ (ĝ ⊙∘ f̂))
+                        ≃⟨ {!!} ⟩
+                     {!(x : bool) → ((fst (ĝ ⊙∘ f̂) x) == snd Ĉ)!}
+                        ≃⟨ {!!} ⟩
+                      {!(x : ⊙Sphere {i})!}
+                        ≃⟨ {!!} ⟩
+                      {!(x : ⊙Sphere {i})!}
+                        ≃∎ 
 
-
+-}
 
   -- reminder: equiv-Π-l is very useful
 
