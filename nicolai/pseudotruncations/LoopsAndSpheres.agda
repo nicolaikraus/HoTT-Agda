@@ -262,6 +262,7 @@ module _ {i} where
                       isNull∙ ((ap^ m g) ⊙∘ Φ-iter (⊙Sphere* {i} O) B̂ m f)
     isNull-Φ-Sphere = isNull-Φ-many m _ _ _ f g
 
+{-
   module triv-O-sphere {j} {D̂ : Ptd j} where
 
     D = fst D̂
@@ -326,30 +327,9 @@ module _ {i} where
 
     test : reduce == fst from-bool∙-single
     test = idp
+-}
 
-
-{-    -- Given a b : B̂, we can form a function Sphere O →̇ B̂ which is an equivalence
-    expand : {B̂ : Ptd i} → (b : fst B̂) → ((⊙Sphere {i} O) →̇ B̂)
-    expand {B̂} b = (λ { (lift true) → snd B̂ ; (lift false) → b }) , idp
-
-    reduce : {B̂ : Ptd i} → ((⊙Sphere {i} O) →̇ B̂) → (fst B̂)
-    reduce {B , b₀} (f , _) = f ff₀
-
-    test : 
-
-    bool∙-trivial₁ : {X̂ : Ptd i} → (⊙Sphere {i} O →̇ X̂) ≃ fst X̂ × (Σ (fst X̂) λ x → x == snd X̂)
-    bool∙-trivial₁ {X , x₀} = {!!}
-  
-
-    reduce-equiv : {B̂ : Ptd i} → is-equiv (reduce {B̂})
-    reduce-equiv {B̂} = is-eq reduce
-                           expand
-                           (λ _ → idp)
-                           (λ {(f , p) → {! p!}})
-    --                         → pair= (λ= (λ { (lift true) → ! p ; (lift false) → idp }))
-    --                                 {!!} })
-
-
+{- 
 
   {- Two useful small helper lemma:
      If the first map has the O-sphere (i.e. Bool) as its domain,
@@ -427,19 +407,7 @@ module _ {i} where
 
       ((f' : (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)) → isNull∙ ((ap^ m g) ⊙∘ f'))
 
-        ≃⟨ {!!} ⟩
-
-      {!!}
-
-        ≃⟨ {!!} ⟩
-
-      {!!}
-
-        ≃⟨ {!!} ⟩
-
-      {!!}
-
-        ≃⟨ {!!} ⟩
+        ≃⟨ {!!} ⟩ 
 
       {!!}
         ≃∎
