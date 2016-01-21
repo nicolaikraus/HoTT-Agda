@@ -56,15 +56,27 @@ module null {i} {j} {Â : Ptd i} {B̂ : Ptd j} (ĝ : Â →̇ B̂) where
   -- the 'real' pointed isNull
   isNull∙ = ĝ == ((λ _ → b₀) , idp)
 
-{- THIS NEEDS TO BE DONE LATER
-  isNull-eq : isNull∙ ≃ isNull∙'
-  isNull-eq = ĝ == ((λ _ → b₀) , idp)
-                 ≃⟨ {!=Σ-eqv!}⁻¹ ⟩
+  {- The two versions are equivalent -}
+  isNull-equiv : isNull∙ ≃ isNull∙'
+  isNull-equiv =
+               ĝ == ((λ _ → b₀) , idp)
+                 ≃⟨ (=Σ-eqv _ _) ⁻¹ ⟩
                =Σ ĝ ((λ _ → b₀) , idp)
-                 ≃⟨ coe-equiv (Σ= {!λ=!} {!!}) ⟩
+                 ≃⟨ equiv-Σ' {A₀ = g == λ _ → b₀}
+                             app=-equiv
+                             (λ h → (p == idp [ (λ f → f a₀ == b₀) ↓ h ])
+                                      ≃⟨ to-transp-equiv _ _ ⟩
+                                    (transport (λ f → f a₀ == b₀) h p) == idp
+                                      ≃⟨ coe-equiv
+                                           (ap (λ x → x == idp)
+                                               (trans-ap₁ (λ f → f a₀)
+                                                          b₀ h p)) ⟩
+                                    (! (app= h a₀) ∙ p) == idp
+                                      ≃⟨ adhoc-=-eqv (app= h a₀) p ⟩
+                                    (app= h a₀ == p)
+                                      ≃∎) ⟩ 
                (Σ ((a : A) → g a == b₀) λ pr → pr a₀ == p)
                  ≃∎ 
--}
 
 -- Lemma 4.4: pointed and non-pointed 'nullness' are logically equivalent;
 -- we only do one direction (the other one is trivial)
@@ -308,7 +320,7 @@ module _ {i} where
 
       ((f' : (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)) → isNull∙ ((ap^ m g) ⊙∘ f'))
 
-        ≃⟨ {!equiv-Π-r {A = ⊙Sphere* {i} O →̇ (⊙Ω^ m B̂)}!} ⟩  -- this needs the equivalence between isNull∙ and isNull∙'
+        ≃⟨ equiv-Π-r {A = ⊙Sphere* {i} O →̇ (⊙Ω^ m B̂)} (λ _ → isNull-equiv _) ⟩
 
       ((f' : (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)) → isNull∙' ((ap^ m g) ⊙∘ f'))
       

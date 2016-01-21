@@ -14,7 +14,7 @@
    are thus not imported here.
 
    Type-checks with Agda 2.4.2.5 and similar versions
-   (like the library).
+   (I assume with 2.4.2.x in general; same as the library).
 -}
 
 
@@ -38,3 +38,11 @@ open import nicolai.pseudotruncations.heptagon
    functions, then the colimit is propositional -}
 open import nicolai.pseudotruncations.wconstSequence
 
+{- The correspondance between loops and maps from spheres:
+   a lot of tedious technical content. This was hard work for me!
+   The results are in two files; first, essentially the fact that
+   the 'pointed' 0-sphere [i.e. (bool, true)] is "as good as"
+   the unit type if we consider pointed maps out of it.
+   Second, the main lemmas. -}
+open import nicolai.pseudotruncations.pointed-O-Sphere
+open import nicolai.pseudotruncations.LoopsAndSpheres

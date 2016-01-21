@@ -83,3 +83,10 @@ ap-fst : ∀ {i j} {A : Type i} {B : Type j} {a₁ a₂ : A} {b₁ b₂ : B}
            (p : a₁ == a₂) (q : b₁ == b₂)
            → ap fst (pair×= p q) == p
 ap-fst idp idp = idp
+
+{- An ad-hoc lemma. Whenever this appears, one could (should, to be honest)
+   use library lemmas, but it's just so much more convenient to formulate it
+   and pattern match... -}
+adhoc-=-eqv : ∀ {i} {A : Type i} {x y : A} (p : y == x) (q : y == x)
+                → (! p ∙ q == idp) ≃ (p == q)
+adhoc-=-eqv idp  q = !-equiv
