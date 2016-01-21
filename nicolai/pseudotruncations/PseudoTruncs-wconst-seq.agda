@@ -65,23 +65,25 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
     r (lift true) = x₀
     r (lift false) = y
   
-  -- Now, the general case
+  -- Now, the general case (todo: this should probably be done in separate steps, not everything in the same function).
+  
   fₙ-x₀ : (n : ℕ) → (y : A n) → P n y
   fₙ-x₀ O y = f₀-x₀ y
   fₙ-x₀ (S n) = Pseudotrunc-ind n Point Hub Spoke where
 
-    northₙ' : Sphere {i} n
-    northₙ' = northₙ n
+    -- just for convenience - saves brackets
+    norₙ' : Sphere' {i} n
+    norₙ' = nor' n
 
     Point : (w : _) → _
     Point w = ap (point (S n) -1) (fₙ-x₀ n w)
 
     Hub : (r : _) → _
-    Hub r = ap (point (S n) -1) (! (spoke n -1 r northₙ') ∙ fₙ-x₀ n (r northₙ'))
+    Hub r = ap (point (S n) -1) (! (spoke n -1 r norₙ') ∙ fₙ-x₀ n (r norₙ'))
 
     {- The definition of [Spoke] is the hard part. 
        First, we do the easy things that we have to do... -}
-    Spoke : (r : _) → (x : Sphere n) → _
+    Spoke : (r : _) → (x : Sphere' n) → _
     Spoke r = λ x → from-transp (P (S n))
                                 (spoke n -1 r x)
                                 (
@@ -102,23 +104,23 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
           {- Now, the actual work follows! -}
           
           -- kₓ (in the paper), here [k x], is the loop that we examine
-          k : (x : Sphere {i} n)
+          k : (x : Sphere' {i} n)
               → Ω (Pseudo S n -1-trunc (A (S n)) ,
                    point S n -1 (f n (fs n)))
           k x = ! (Point (r x)) ∙ ap (point (S n) -1) (spoke n -1 r x) ∙ (Hub r)
 
           -- We want to show that k factors as [ap pₙ ∘ h].
           -- First, we define h.
-          h : (x : Sphere {i} n)
+          h : (x : Sphere' {i} n)
               → Ω (Pseudo n -1-trunc (A n) ,
                    f n (fs n))
           h x =   ! (fₙ-x₀ n (r x))
                 ∙ (spoke n -1 r x)
-                ∙ (! (spoke n -1 r northₙ') ∙ fₙ-x₀ n (r northₙ'))
+                ∙ (! (spoke n -1 r norₙ') ∙ fₙ-x₀ n (r norₙ'))
 
           -- The statement that k == ap pₙ ∘ h:
           k-p-h : k == ap (point S n -1) ∘ h
-          k-p-h = λ= (λ (x : Sphere {i} n)
+          k-p-h = λ= (λ (x : Sphere' {i} n)
                      → k x
                          =⟨ idp ⟩
                        ! (Point (r x)) ∙ (ap (point (S n) -1) (spoke n -1 r x) ∙ (Hub r))
@@ -135,27 +137,48 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
                        ap (point (S n) -1) (! (fₙ-x₀ n (r x)))
                          ∙ ap (point (S n) -1)
                               (spoke n -1 r x
-                               ∙ (! (spoke n -1 r northₙ')
-                               ∙ fₙ-x₀ n (r northₙ')))
+                               ∙ (! (spoke n -1 r norₙ')
+                               ∙ fₙ-x₀ n (r norₙ')))
                          =⟨ ! (ap-∙ point S n -1 (! (fₙ-x₀ n (r x))) _) ⟩  
                        ap (point S n -1) (h x)
                          ∎)
 
           -- h is a pointed map:
-          h∙ : (⊙Sphere {i} n)
+          h∙ : (⊙Sphere' {i} n)
                  →̇ ⊙Ω (Pseudo n -1-trunc (A n) ,
                       f n (fs n))
           h∙ = h , -- {!h (snd (⊙Sphere n))!}
-               (! (fₙ-x₀ n (r _)) -- THE PROBLEM: we have two different spheres; we need to translate between them.
--- Maybe better: only use "my" sphere!
+               (! (fₙ-x₀ n (r _)) 
                 ∙ (spoke n -1 r _)
-                ∙ (! (spoke n -1 r northₙ') ∙ fₙ-x₀ n (r northₙ'))
+                ∙ ! (spoke n -1 r norₙ')
+                ∙ fₙ-x₀ n (r norₙ')
 
-                  =⟨ {!!} ⟩
+                  =⟨ (! (fₙ-x₀ n (r _)))
+                      ∙ₗ (! (∙-assoc (spoke n -1 r _)
+                                     (! (spoke n -1 r norₙ'))
+                                     (fₙ-x₀ n (r norₙ')))) ⟩
+                  
+                ! (fₙ-x₀ n (r _))
+                ∙ ((spoke n -1 r _) ∙ (! (spoke n -1 r norₙ')))
+                ∙ fₙ-x₀ n (r norₙ')
+                
+                  =⟨ ! (fₙ-x₀ n (r _))
+                     ∙ₗ !-inv-r (spoke n -1 r _)
+                     ∙ᵣ fₙ-x₀ n (r norₙ') ⟩
+
+                ! (fₙ-x₀ n (r _))
+                ∙ idp
+                ∙ fₙ-x₀ n (r norₙ')
+
+                
+                  =⟨ !-inv-l (fₙ-x₀ n (r _)) ⟩
                   
                 idp
                 
                   ∎ )
+
+           -- now, we can show that ap (points ...) ∘ h is null,
+           -- using the other constructors. Then, we can fill the gap.
 
 
   wconst-f : wconst-chain C
@@ -180,9 +203,9 @@ module PtruncSeqResult' {i} (X : Type i) where
     Ins (S n) = Pseudotrunc-rec {P = P} n Point-1 Hub-1 Spoke-1 where
       Point-1 : _ → P
       Point-1 x = Ins n x
-      Hub-1 : (Sphere n → A n) → P
-      Hub-1 r = Ins n (r (northₙ n))
-      Spoke-1 : (r : Sphere n → A n) (x : Sphere n) → Point-1 (r x) == Hub-1 r
+      Hub-1 : (Sphere' n → A n) → P
+      Hub-1 r = Ins n (r (nor' n))
+      Spoke-1 : (r : Sphere' n → A n) (x : Sphere' n) → Point-1 (r x) == Hub-1 r
       Spoke-1 r x = prop-has-all-paths {A = P} ip _ _
 
     Glue : (n : ℕ) (a : A n) → Ins n a == Ins (S n) (f n a) 

@@ -266,11 +266,11 @@ module _ {i} where
 
   -- Lemma 4.7 (special with k = 0)
   module _ {B̂ Ĉ : Ptd i} (m : Nat)
-           (f : ⊙Sphere* {i} m →̇ B̂) (g : B̂ →̇ Ĉ) where
+           (f : ⊙Sphere' {i} m →̇ B̂) (g : B̂ →̇ Ĉ) where
 
     isNull-Φ-Sphere : isNull∙ (g ⊙∘ f)
                       ≃
-                      isNull∙ ((ap^ m g) ⊙∘ Φ-iter (⊙Sphere* {i} O) B̂ m f)
+                      isNull∙ ((ap^ m g) ⊙∘ Φ-iter (⊙Sphere' {i} O) B̂ m f)
     isNull-Φ-Sphere = isNull-Φ-many m _ _ _ f g
 
 
@@ -284,46 +284,46 @@ module _ {i} where
 
     {- Lemma 4.8 -}
     null-on-pspaces :
-      ((f : (⊙Sphere* {i} m) →̇ B̂) → isNull∙ (g ⊙∘ f))
+      ((f : (⊙Sphere' {i} m) →̇ B̂) → isNull∙ (g ⊙∘ f))
       ≃
       isNulld (ap^ m g)
       
     null-on-pspaces = -- {!equiv-Π-l!}
 
-      ((f : (⊙Sphere* {i} m) →̇ B̂) → isNull∙ (g ⊙∘ f))
+      ((f : (⊙Sphere' {i} m) →̇ B̂) → isNull∙ (g ⊙∘ f))
 
         ≃⟨ equiv-Π-r (λ f → isNull-Φ-Sphere m f g) ⟩
 
-      ((f : (⊙Sphere* {i} m) →̇ B̂) → isNull∙ ((ap^ m g) ⊙∘ Φ-iter (⊙Sphere* {i} O) B̂ m f))
+      ((f : (⊙Sphere' {i} m) →̇ B̂) → isNull∙ ((ap^ m g) ⊙∘ Φ-iter (⊙Sphere' {i} O) B̂ m f))
 
         ≃⟨ equiv-Π-l
-             {A = (⊙Sphere* {i} m) →̇ B̂}
-             {B = (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)}
+             {A = (⊙Sphere' {i} m) →̇ B̂}
+             {B = (⊙Sphere' {i} O) →̇ (⊙Ω^ m B̂)}
              (λ f' → isNull∙ ((ap^ m g) ⊙∘ f'))
-             {h = Φ-iter (⊙Sphere* {i} O) B̂ m}
+             {h = Φ-iter (⊙Sphere' {i} O) B̂ m}
              (Φ-iter-equiv _ _ m)
               ⟩
 
-      ((f' : (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)) → isNull∙ ((ap^ m g) ⊙∘ f'))
+      ((f' : (⊙Sphere' {i} O) →̇ (⊙Ω^ m B̂)) → isNull∙ ((ap^ m g) ⊙∘ f'))
 
-        ≃⟨ equiv-Π-r {A = ⊙Sphere* {i} O →̇ (⊙Ω^ m B̂)} (λ _ → isNull-equiv _) ⟩
+        ≃⟨ equiv-Π-r {A = ⊙Sphere' {i} O →̇ (⊙Ω^ m B̂)} (λ _ → isNull-equiv _) ⟩
 
-      ((f' : (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)) → isNull∙' ((ap^ m g) ⊙∘ f'))
+      ((f' : (⊙Sphere' {i} O) →̇ (⊙Ω^ m B̂)) → isNull∙' ((ap^ m g) ⊙∘ f'))
       
         ≃⟨ ide _ ⟩ 
 
-      ((f' : (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)) → Σ ((x : bool) → fst ((ap^ m g) ⊙∘ f') x == _) λ h → h tt₀ == _)
+      ((f' : (⊙Sphere' {i} O) →̇ (⊙Ω^ m B̂)) → Σ ((x : bool) → fst ((ap^ m g) ⊙∘ f') x == _) λ h → h tt₀ == _)
       
-        ≃⟨ equiv-Π-r {A = ⊙Sphere* {i} O →̇ (⊙Ω^ m B̂)}
+        ≃⟨ equiv-Π-r {A = ⊙Sphere' {i} O →̇ (⊙Ω^ m B̂)}
                      (λ fp → reduction (λ b → fst (ap^ m g ⊙∘ fp) b == null.b₀ (ap^ m g ⊙∘ fp)) _) ⟩ 
 
-      ((f' : (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)) → fst ((ap^ m g) ⊙∘ f') ff₀ == _)
+      ((f' : (⊙Sphere' {i} O) →̇ (⊙Ω^ m B̂)) → fst ((ap^ m g) ⊙∘ f') ff₀ == _)
 
         ≃⟨ ide _ ⟩ 
 
-      ((f' : (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)) → fst (ap^ m g) (fst f' ff₀) == _)
+      ((f' : (⊙Sphere' {i} O) →̇ (⊙Ω^ m B̂)) → fst (ap^ m g) (fst f' ff₀) == _)
 
-        ≃⟨ equiv-Π-l {A = (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)}
+        ≃⟨ equiv-Π-l {A = (⊙Sphere' {i} O) →̇ (⊙Ω^ m B̂)}
                      {B = fst (⊙Ω^ m B̂)}
                      _
                      (snd (reduction (λ _ → fst (⊙Ω^ m B̂)) _)) ⟩ 
