@@ -18,7 +18,9 @@
 -}
 
 
-{- Some preliminary lemmas, nothing interesting -}
+
+{- Some preliminary definitions/lemmas, nothing interesting -}
+open import nicolai.pseudotruncations.Preliminary-definitions
 open import nicolai.pseudotruncations.Liblemmas
 
 {- The Sequential colimit. I am aware that there is some

@@ -17,6 +17,7 @@ open import lib.types.Suspension
 open import lib.types.TLevel
 open import lib.types.Unit
 
+open import nicolai.pseudotruncations.Preliminary-definitions
 open import nicolai.pseudotruncations.Liblemmas
 open import nicolai.pseudotruncations.SeqColim
 open import nicolai.pseudotruncations.wconstSequence
@@ -135,7 +136,7 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
   P : (n : ℕ) → (x : A n) → Type i
   P n x = f n x == fs (S n)
 
-  -- This is 'Case j ≡ -2'
+  -- This is the easy 'Case j ≡ -2'
   f₀-x₀ : (y : X) → P O y  
   f₀-x₀ y = (spoke O -1 r (lift false)) ∙ ! (spoke O -1 r (lift true))  where
 

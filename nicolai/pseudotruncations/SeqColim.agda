@@ -10,7 +10,8 @@ open import lib.types.Pointed
 open import lib.types.Sigma
 open import lib.NType2
 open import lib.PathGroupoid
--- some lemmas which should presumably be in the library (?)
+
+open import nicolai.pseudotruncations.Preliminary-definitions
 open import nicolai.pseudotruncations.Liblemmas
 
 

@@ -18,7 +18,10 @@ open import lib.types.TLevel
 open import lib.types.Unit
 
 open SuspensionRec public using () renaming (f to Susp-rec)
+
+-- Preliminary-definitions ?
 open import nicolai.pseudotruncations.Liblemmas
+open import nicolai.pseudotruncations.pointed-O-Sphere
 
 module nicolai.pseudotruncations.LoopsAndSpheres where
 
@@ -36,12 +39,15 @@ Â →̇ B̂ = fst (Â ⊙→ B̂)
    between pointed types. Of course, we know that such an equality
    is a pair of equalities; however, transporting a function can 
    make things more tedious than necessary! -}
+{-
 make-=-∙ : ∀ {i j} {Â : Ptd i} {B̂ : Ptd j} (f̂ ĝ : Â →̇ B̂)
            (p : fst f̂ == fst ĝ)
            → ! (app= p (snd Â)) ∙ snd f̂ == snd ĝ
            → f̂ == ĝ
 make-=-∙ (f , p) (.f , q) idp t = pair= idp t
 
+this is in pointed-O-Sphere
+-}
 
 isNull : ∀ {i j} {A : Type i} {B : Type j} (b : B) (f : A → B) → Type _
 isNull {A = A} b f = (a : A) → f a == b
@@ -379,11 +385,15 @@ module _ {i} where
 
   -- reminder: equiv-Π-l is very useful
 
+  open bool-neutral
+  
   module _ {B̂ Ĉ : Ptd i} (m : Nat)
            (g : B̂ →̇ Ĉ) where
 
     c₀ = snd (⊙Ω^ m Ĉ)
 
+
+    {- Lemma 4.8 -}
     null-on-pspaces :
       ((f : (⊙Sphere* {i} m) →̇ B̂) → isNull∙ (g ⊙∘ f))
       ≃
@@ -407,9 +417,33 @@ module _ {i} where
 
       ((f' : (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)) → isNull∙ ((ap^ m g) ⊙∘ f'))
 
-        ≃⟨ {!!} ⟩ 
+        ≃⟨ {!equiv-Π-r {A = ⊙Sphere* {i} O →̇ (⊙Ω^ m B̂)}!} ⟩  -- this needs the equivalence between isNull∙ and isNull∙'
 
-      {!!}
+      ((f' : (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)) → isNull∙' ((ap^ m g) ⊙∘ f'))
+      
+        ≃⟨ ide _ ⟩ 
+
+      ((f' : (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)) → Σ ((x : bool) → fst ((ap^ m g) ⊙∘ f') x == _) λ h → h tt₀ == _)
+      
+        ≃⟨ equiv-Π-r {A = ⊙Sphere* {i} O →̇ (⊙Ω^ m B̂)}
+                     (λ fp → reduction (λ b → fst (ap^ m g ⊙∘ fp) b == null.b₀ (ap^ m g ⊙∘ fp)) _) ⟩ 
+
+      ((f' : (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)) → fst ((ap^ m g) ⊙∘ f') ff₀ == _)
+
+        ≃⟨ ide _ ⟩ 
+
+      ((f' : (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)) → fst (ap^ m g) (fst f' ff₀) == _)
+
+        ≃⟨ equiv-Π-l {A = (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)}
+                     {B = fst (⊙Ω^ m B̂)}
+                     _
+                     (snd (reduction (λ _ → fst (⊙Ω^ m B̂)) _)) ⟩ 
+
+      ((x : fst (⊙Ω^ m B̂)) → fst (ap^ m g) x == c₀)
+
+        ≃⟨ ide _ ⟩ 
+
+      isNulld (ap^ m g)
         ≃∎
 
 

@@ -11,6 +11,8 @@ open import lib.types.Sigma
 open import lib.NType2
 open import lib.PathGroupoid
 
+open import nicolai.pseudotruncations.Preliminary-definitions
+
 module nicolai.pseudotruncations.Liblemmas where
 
 -- transport along constant family
@@ -24,9 +26,6 @@ trans-ap : ∀ {i j} {A : Type i} {B : Type j} {a₁ a₂ : A}
            → transport (λ x → f x == g x) p q == ! (ap f p) ∙ q ∙ (ap g p)
 trans-ap f g idp q = ! (∙-unit-r q)
 
-
--- TODO this special case should be used a couple of times instead of the general version!
-
 -- special interaction of transport and ap, where the second map is constant at a point
 trans-ap₁ : ∀ {i j} {A : Type i} {B : Type j} (f : A → B) {a₁ a₂ : A} (b : B)
             (p : a₁ == a₂) (q : f a₁ == b)
@@ -39,9 +38,6 @@ trans-ap₂ : ∀ {i j} {A : Type i} {B : Type j} (g : A → B) {a₁ a₂ : A} 
             → transport (λ a → b == g a) p q == q ∙ ap g p
 trans-ap₂ g b idp q = !( ∙-unit-r _) 
 
--- definition of weak constancy
-wconst : ∀ {i j} {A : Type i} {B : Type j} → (A → B) → Type (lmax i j)
-wconst {A = A} f = (a₁ a₂ : A) → f a₁ == f a₂ 
 
 -- if f is weakly constant, then so is ap f
 ap-const : ∀ {i j} {A : Type i} {B : Type j} (f : A → B)

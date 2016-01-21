@@ -12,6 +12,7 @@ open import lib.NType2
 
 open import lib.types.PathSeq
 
+open import nicolai.pseudotruncations.Preliminary-definitions
 open import nicolai.pseudotruncations.Liblemmas
 open import nicolai.pseudotruncations.SeqColim
 
