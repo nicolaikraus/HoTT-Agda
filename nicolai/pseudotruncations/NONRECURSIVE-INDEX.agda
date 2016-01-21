@@ -4,9 +4,10 @@
 -- and related results.
 
 {- Currently under construction! 
-   Please check again in a few days to find a more 
-   complete formalization.
-   Thanks :-)
+
+   PLEASE CHECK AGAIN IN A FEW DAYS 
+   to find a more complete formalization (with better 
+   documentation!). Thanks :-)
 
    Only the completed results are imported here.
    Some further results in files of this repository 
