@@ -26,18 +26,13 @@ open import nicolai.pseudotruncations.wconstSequence
 module nicolai.pseudotruncations.PseudoTruncs where
 
 
-northₙ : ∀ {i} (n : ℕ) → Sphere {i} n
-northₙ O = lift true
-northₙ (S n) = north _
-
-
 {- Definition of the Pseudo-truncation -}
 module _ {i} where
 
   private
     data #Pseudotrunc-aux (n : ℕ) (A : Type i) : Type i where
       #point : A → #Pseudotrunc-aux n A
-      #hub : (r : Sphere n → A) → #Pseudotrunc-aux n A
+      #hub : (r : Sphere' n → A) → #Pseudotrunc-aux n A
 
     data #Pseudotrunc (n : ℕ) (A : Type i) : Type i where
       #trick-aux : #Pseudotrunc-aux n A → (Unit → Unit) → #Pseudotrunc n A
@@ -48,12 +43,12 @@ module _ {i} where
   point_-1 : {A : Type i} → (n : ℕ) → A → Pseudo n -1-trunc A
   point_-1 {A} n a = #trick-aux (#point a) _
 
-  hub_-1 : {A : Type i} (n : ℕ) (r : Sphere n → A) → Pseudo n -1-trunc A
+  hub_-1 : {A : Type i} (n : ℕ) (r : Sphere' n → A) → Pseudo n -1-trunc A
   hub_-1 {A} n r = #trick-aux (#hub r) _
 
 
   postulate
-    spoke_-1 : {A : Type i} (n : ℕ) (r : Sphere n → A) (x : Sphere n)
+    spoke_-1 : {A : Type i} (n : ℕ) (r : Sphere' n → A) (x : Sphere' n)
                → point n -1 (r x) == hub n -1 r
 
   {- The induction principle -}
@@ -61,8 +56,8 @@ module _ {i} where
     {A : Type i} (n : ℕ) {j}
     {P : Pseudo n -1-trunc A → Type j}
     (Point-1 : (a : A) → P (point n -1 a))
-    (Hub-1 : (r : Sphere n → A) → P (hub n -1 r))
-    (Spoke-1 : (r : Sphere n → A) → (x : Sphere n)
+    (Hub-1 : (r : Sphere' n → A) → P (hub n -1 r))
+    (Spoke-1 : (r : Sphere' n → A) → (x : Sphere' n)
                → Point-1 (r x) == Hub-1 r [ P ↓ spoke n -1 r x ])
     where
 
@@ -73,8 +68,8 @@ module _ {i} where
       f-aux phantom (#trick-aux (#hub r) _) = Hub-1 r
 
     postulate
-      pathβ : (r : Sphere {i} n → A)
-              → (x : Sphere {i} n)
+      pathβ : (r : Sphere' {i} n → A)
+              → (x : Sphere' {i} n)
               → apd f (spoke n -1 r x) == Spoke-1 r x
 
 
@@ -87,8 +82,8 @@ module PseudotruncRecursion
   {i j} {A : Type i} 
   {P : Type j} (n : ℕ)
   (Point-1 : A → P)
-  (Hub-1 : (r : Sphere {i} n → A) → P)
-  (Spoke-1 : (r : Sphere n → A) (x : Sphere n) → Point-1 (r x) == Hub-1 r)
+  (Hub-1 : (r : Sphere' {i} n → A) → P)
+  (Spoke-1 : (r : Sphere' n → A) (x : Sphere' n) → Point-1 (r x) == Hub-1 r)
   where
 
   rec : Pseudo n -1-trunc A → P

@@ -222,23 +222,9 @@ module _ {i} where
       ≃∎ 
 
 
--- this is in the library, but very inconvenient unfortunately (todo: explain why)
 module _ {i} where
 
   open hom-adjoint
-  
-  ⊙Susp-iter : (n : Nat) (Â : Ptd i) → Ptd i
-  ⊙Susp-iter O Â = Â
-  ⊙Susp-iter (S n) Â = ⊙Susp-iter n (⊙Susp Â)
-
-{-
-  ⊙Ω-iter : (n : Nat) (Â : Ptd i) → Ptd i
-  ⊙Ω-iter O Â = Â
-  ⊙Ω-iter (S n) Â = ⊙Ω (⊙Ω-iter n Â)
--}
-
-  ⊙Sphere* : (n : Nat) → Ptd i
-  ⊙Sphere* n = ⊙Susp-iter n (⊙Lift ⊙Bool) 
 
   -- This was tricky (todo: could explain why)
   Φ-iter : (Â B̂ : Ptd i) (n : Nat)
