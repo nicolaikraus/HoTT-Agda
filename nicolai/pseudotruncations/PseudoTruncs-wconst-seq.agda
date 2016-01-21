@@ -145,14 +145,18 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
           h∙ : (⊙Sphere {i} n)
                  →̇ ⊙Ω (Pseudo n -1-trunc (A n) ,
                       f n (fs n))
-          h∙ = h , {!h (snd (⊙Sphere n))!}
-{-               {!! (fₙ-x₀ n (r northₙ))
-                ∙ (spoke n -1 r northₙ)
-                ∙ (! (spoke n -1 r northₙ) ∙ fₙ-x₀ n (r northₙ))
-                  =⟨ ? ⟩
-                ?
-                  ∎ !}
--}
+          h∙ = h , -- {!h (snd (⊙Sphere n))!}
+               (! (fₙ-x₀ n (r _)) -- THE PROBLEM: we have two different spheres; we need to translate between them.
+-- Maybe better: only use "my" sphere!
+                ∙ (spoke n -1 r _)
+                ∙ (! (spoke n -1 r northₙ') ∙ fₙ-x₀ n (r northₙ'))
+
+                  =⟨ {!!} ⟩
+                  
+                idp
+                
+                  ∎ )
+
 
   wconst-f : wconst-chain C
   wconst-f n w₁ w₂ = fₙ-x₀ n w₁ ∙ ! (fₙ-x₀ n w₂)
