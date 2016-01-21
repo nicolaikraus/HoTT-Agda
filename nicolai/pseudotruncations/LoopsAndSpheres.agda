@@ -132,44 +132,28 @@ module hom-adjoint {i} (Â : Ptd i) (B̂ : Ptd i) where
     simpl-⊙ap : (⊙ap {X = obj SuspFunctor Â} ((λ _ → b₀) , idp))
                  ==
                 ((λ _ → idp) , idp)
-    simpl-⊙ap = {!!}
+    simpl-⊙ap =  →̇-maps-to
+                   ⊙ap ((λ _ → b₀) , idp)
+                   ((λ _ → idp) , idp)
+                   (λ= (λ _ → ap-cst b₀ _))
+
+                   ((app= (λ= (λ _ → ap-cst b₀ _)) _) ∙ idp
+                     =⟨ ∙-unit-r _ ⟩
+                   app= (λ= (λ _ → ap-cst b₀ _)) _
+                     =⟨ app=-β _ _ ⟩
+                   ap-cst b₀ (idp {a = snd B̂}) 
+                     =⟨ idp ⟩ --  !
+                   idp
+                     =⟨ idp ⟩ --  ! 
+                   snd (⊙ap {X = obj SuspFunctor Â} ((λ _ → b₀) , idp))
+                     ∎ )
 
     simpl-comp : ((λ (_ : Ω (⊙Susp Â)) → idp {a = b₀}) , idp)
                    ⊙∘ (⊙η Â)
                   ==
                  (λ _ → idp) , idp
-    simpl-comp = {!!}
+    simpl-comp = pair= idp ((ap-cst idp (snd (⊙η Â))) ∙ᵣ idp)
 
-
-    
-
-
-{-
-  -- maybe the →̇-maps-to lemma is misleading...
-  -- real Lemma 4.2
-  Φ-is-pointed-map : Φ ((λ _ → b₀) , idp) == ((λ _ → idp) , idp)
-  Φ-is-pointed-map = →̇-maps-to Φ
-                               ((λ _ → b₀) , idp)
-                               ((λ _ → idp) , idp)
-                               (λ= (λ _ → ap-cst b₀ _))
-                               (app= (λ= (λ _ → ap-cst b₀ _)) (snd Â) ∙ idp
-                                  =⟨ ∙-unit-r _ ⟩
-                                app= (λ= (λ _ → ap-cst b₀ _)) (snd Â)
-                                  =⟨ {!!} ⟩
-                                {!idp!}
-                                  =⟨ {!!} ⟩
-                                snd (   (⊙ap {X = obj SuspFunctor Â} ((λ _ → b₀) , idp))
-                                     ⊙∘ (⊙η Â))
-                                  =⟨ idp ⟩
-                                snd (    ⊙ap ((λ _ → b₀) , idp)
-                                     ⊙∘ (⊙η Â))
-                                  =⟨ idp ⟩
-                                snd (arr LoopFunctor ((λ _ → b₀) , idp)
-                                     ⊙∘ (CounitUnitAdjoint.η adj Â))
-                                  =⟨ idp ⟩
-                                snd (Φ ((λ _ → b₀) , idp))
-                                 ∎)
--}
 
   open simplify
 
@@ -186,62 +170,6 @@ module hom-adjoint {i} (Â : Ptd i) (B̂ : Ptd i) where
                        =⟨ simpl-comp ⟩ 
                      (λ _ → idp) , idp
                        ∎ 
-
-{- =⟨ ? ⟩
-                     (    (⊙ap {X = obj SuspFunctor Â} ((λ _ → b₀) , idp)
-                      ⊙∘ (⊙η Â)))
-                        =⟨ idp ⟩
-                     (    (⊙ap ((λ _ → b₀) , idp)
-                      ⊙∘ (⊙η Â)))
-                        =⟨ idp ⟩
-                     (     arr LoopFunctor ((λ _ → b₀) , idp)
-                      ⊙∘ (CounitUnitAdjoint.η adj Â))
-                        =⟨ idp ⟩
-                      (Φ ((λ _ → b₀) , idp))
-                        ∎
-                 
--}
-
-
---               (q : (app= p (snd Ĉ)) ∙ (snd ĝ) == snd (F̂ f̂)) 
-
-
-{-Φ ((λ _ → b₀) , idp)
-      =⟨ idp ⟩
-    (PtdFunctor.arr Σ⊣Ω.LoopFunctor ((λ _ → b₀) , idp))
-      ⊙∘ CounitUnitAdjoint.η Σ⊣Ω.adj Â
-      =⟨ {!!} ⟩
---    {!Σ⊣Ω.η!}
---      =⟨ {!!} ⟩
---    {!.arr r ⊙∘ η X!}
---      =⟨ {!!} ⟩
-    {!!}
-      ∎
--}
-      
-{-    pair= X Y where
-      
-        X = (λ= (λ a → fst (Φ ((λ _ → b₀) , idp)) a
-              =⟨ ap-cst b₀ _ ⟩
-            idp {a = b₀}
-              ∎)) 
-        Y : {!!}
-        Y = {!!} -- from-transp {!!} {!!} {!!} 
--}
-
-
-
-
-{-
-  -- real Lemma 4.2
-  Φ-is-pointed-map : Φ ((λ _ → b₀) , idp) == ((λ _ → idp) , idp)
-  Φ-is-pointed-map = pair= (λ= (Φ-pres-isNull idp)) {!!} --  {!(λ= (Φ-pres-isNull idp)) , ? !}
--}
-
--- TODO is this true more generally? I.e. for any adjoint pair?
---  Φ-pres-isNull-equiv : (f : ⊙Susp Â →̇ B̂)
-
-
 
 -- fix i
 module _ {i} where
