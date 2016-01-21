@@ -46,3 +46,7 @@ open import nicolai.pseudotruncations.wconstSequence
    Second, the main lemmas. -}
 open import nicolai.pseudotruncations.pointed-O-Sphere
 open import nicolai.pseudotruncations.LoopsAndSpheres
+
+
+{- Definition of pseudo-truncations -}
+open import nicolai.pseudotruncations.PseudoTruncs
