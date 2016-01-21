@@ -20,8 +20,10 @@ open import lib.types.Unit
 open SuspensionRec public using () renaming (f to Susp-rec)
 
 -- Preliminary-definitions ?
+open import nicolai.pseudotruncations.Preliminary-definitions
 open import nicolai.pseudotruncations.Liblemmas
 open import nicolai.pseudotruncations.pointed-O-Sphere
+
 
 module nicolai.pseudotruncations.LoopsAndSpheres where
 
@@ -30,24 +32,7 @@ open import homotopy.PtdAdjoint
 open import homotopy.SuspAdjointLoop
 
 
-{- Pointed maps (without the 'point') -}
-_→̇_ : ∀ {i j} (Â : Ptd i) (B̂ : Ptd j) → Type _
-Â →̇ B̂ = fst (Â ⊙→ B̂)
 
-
-{- It is useful to have a lemma which allows to construct equalities
-   between pointed types. Of course, we know that such an equality
-   is a pair of equalities; however, transporting a function can 
-   make things more tedious than necessary! -}
-{-
-make-=-∙ : ∀ {i j} {Â : Ptd i} {B̂ : Ptd j} (f̂ ĝ : Â →̇ B̂)
-           (p : fst f̂ == fst ĝ)
-           → ! (app= p (snd Â)) ∙ snd f̂ == snd ĝ
-           → f̂ == ĝ
-make-=-∙ (f , p) (.f , q) idp t = pair= idp t
-
-this is in pointed-O-Sphere
--}
 
 isNull : ∀ {i j} {A : Type i} {B : Type j} (b : B) (f : A → B) → Type _
 isNull {A = A} b f = (a : A) → f a == b
@@ -121,7 +106,7 @@ module hom-adjoint {i} (Â : Ptd i) (B̂ : Ptd i) where
 
 
 
-  -- Lemma 4.2; this is actually too general, we only need the case that p is refl!
+  -- Lemma 4.2; this is actually too general, we only need the case that p is refl! Also, the point-part is missing.
   Φ-pres-isNull : (p : b₀ == b₀) (a : A)
                   → (fst (Φ ((λ _ → b₀) , p)) a) == idp
   Φ-pres-isNull p a = 
@@ -137,18 +122,112 @@ module hom-adjoint {i} (Â : Ptd i) (B̂ : Ptd i) where
       ∎
 
 
+  open PtdFunctor
+  open Σ⊣Ω
+  open CounitUnitAdjoint
+
+
+  module simplify where
+
+    simpl-⊙ap : (⊙ap {X = obj SuspFunctor Â} ((λ _ → b₀) , idp))
+                 ==
+                ((λ _ → idp) , idp)
+    simpl-⊙ap = {!!}
+
+    simpl-comp : ((λ (_ : Ω (⊙Susp Â)) → idp {a = b₀}) , idp)
+                   ⊙∘ (⊙η Â)
+                  ==
+                 (λ _ → idp) , idp
+    simpl-comp = {!!}
+
+
+    
+
+
+{-
+  -- maybe the →̇-maps-to lemma is misleading...
   -- real Lemma 4.2
   Φ-is-pointed-map : Φ ((λ _ → b₀) , idp) == ((λ _ → idp) , idp)
-  Φ-is-pointed-map = -- {!make-=-∙ !}
-    pair= X Y where
+  Φ-is-pointed-map = →̇-maps-to Φ
+                               ((λ _ → b₀) , idp)
+                               ((λ _ → idp) , idp)
+                               (λ= (λ _ → ap-cst b₀ _))
+                               (app= (λ= (λ _ → ap-cst b₀ _)) (snd Â) ∙ idp
+                                  =⟨ ∙-unit-r _ ⟩
+                                app= (λ= (λ _ → ap-cst b₀ _)) (snd Â)
+                                  =⟨ {!!} ⟩
+                                {!idp!}
+                                  =⟨ {!!} ⟩
+                                snd (   (⊙ap {X = obj SuspFunctor Â} ((λ _ → b₀) , idp))
+                                     ⊙∘ (⊙η Â))
+                                  =⟨ idp ⟩
+                                snd (    ⊙ap ((λ _ → b₀) , idp)
+                                     ⊙∘ (⊙η Â))
+                                  =⟨ idp ⟩
+                                snd (arr LoopFunctor ((λ _ → b₀) , idp)
+                                     ⊙∘ (CounitUnitAdjoint.η adj Â))
+                                  =⟨ idp ⟩
+                                snd (Φ ((λ _ → b₀) , idp))
+                                 ∎)
+-}
+
+  open simplify
+
+  Φ-is-pointed-map : Φ ((λ _ → b₀) , idp) == ((λ _ → idp) , idp)
+  Φ-is-pointed-map = Φ ((λ _ → b₀) , idp)
+                       =⟨ idp ⟩
+                     (    arr LoopFunctor ((λ _ → b₀) , idp)
+                      ⊙∘ (CounitUnitAdjoint.η adj Â))
+                       =⟨ idp ⟩ 
+                     (    (⊙ap {X = obj SuspFunctor Â} ((λ _ → b₀) , idp)
+                      ⊙∘ (⊙η Â)))
+                       =⟨ ap (λ f → f ⊙∘ (⊙η Â)) simpl-⊙ap ⟩
+                     ((λ _ → idp) , idp) ⊙∘ (⊙η Â)
+                       =⟨ simpl-comp ⟩ 
+                     (λ _ → idp) , idp
+                       ∎ 
+
+{- =⟨ ? ⟩
+                     (    (⊙ap {X = obj SuspFunctor Â} ((λ _ → b₀) , idp)
+                      ⊙∘ (⊙η Â)))
+                        =⟨ idp ⟩
+                     (    (⊙ap ((λ _ → b₀) , idp)
+                      ⊙∘ (⊙η Â)))
+                        =⟨ idp ⟩
+                     (     arr LoopFunctor ((λ _ → b₀) , idp)
+                      ⊙∘ (CounitUnitAdjoint.η adj Â))
+                        =⟨ idp ⟩
+                      (Φ ((λ _ → b₀) , idp))
+                        ∎
+                 
+-}
+
+
+--               (q : (app= p (snd Ĉ)) ∙ (snd ĝ) == snd (F̂ f̂)) 
+
+
+{-Φ ((λ _ → b₀) , idp)
+      =⟨ idp ⟩
+    (PtdFunctor.arr Σ⊣Ω.LoopFunctor ((λ _ → b₀) , idp))
+      ⊙∘ CounitUnitAdjoint.η Σ⊣Ω.adj Â
+      =⟨ {!!} ⟩
+--    {!Σ⊣Ω.η!}
+--      =⟨ {!!} ⟩
+--    {!.arr r ⊙∘ η X!}
+--      =⟨ {!!} ⟩
+    {!!}
+      ∎
+-}
+      
+{-    pair= X Y where
       
         X = (λ= (λ a → fst (Φ ((λ _ → b₀) , idp)) a
-                     =⟨ ap-cst b₀ _ ⟩
-                   idp {a = b₀}
-                     ∎))
-        Y : {!Π-equiv-l!}
-        Y = {!app= X a₀!} 
-
+              =⟨ ap-cst b₀ _ ⟩
+            idp {a = b₀}
+              ∎)) 
+        Y : {!!}
+        Y = {!!} -- from-transp {!!} {!!} {!!} 
+-}
 
 
 
@@ -186,7 +265,7 @@ module _ {i} where
       ≃⟨ coe-equiv
            {A = (Φ Â B̂ g) == Φ Â B̂ ((λ _ → snd B̂) , idp)}
            {B = (Φ Â B̂ g) == (λ _ → idp) , idp}
-           (ap (λ q → (Φ Â B̂ g == q)) (Φ-is-pointed-map _ _)) ⟩
+           (ap (λ q → (Φ Â B̂ g == q)) (Φ-is-pointed-map _ _ )) ⟩
     (Φ Â B̂ g) == (λ _ → idp) , idp
       ≃∎ 
 
@@ -268,122 +347,6 @@ module _ {i} where
                       isNull∙ ((ap^ m g) ⊙∘ Φ-iter (⊙Sphere* {i} O) B̂ m f)
     isNull-Φ-Sphere = isNull-Φ-many m _ _ _ f g
 
-{-
-  module triv-O-sphere {j} {D̂ : Ptd j} where
-
-    D = fst D̂
-    d₀ = snd D̂ 
-
-    bool = fst (⊙Sphere {i} O)
-    tt₀ : bool
-    tt₀ = snd (⊙Sphere {i} O)
-    ff₀ : bool
-    ff₀ = lift false
-
-    -- standard lemma
-    from-bool : ∀ {j} (X : Type j) → X × X ≃ (bool → X) 
-    from-bool X =
-      equiv (λ x2 → λ { (lift true) → fst x2 ; (lift false) → snd x2 })
-            (λ f → f tt₀ , f ff₀)
-            (λ f → λ= (λ { (lift true) → idp ; (lift false) → idp }))
-            (λ x2 → idp)
-
-    -- a bit more interesting: pointed maps from bool
-    from-bool∙ : (Σ (D × D) λ d2 → fst d2 == d₀) ≃ (⊙Sphere {i} O →̇ D̂)
-    from-bool∙ = equiv-Σ-fst
-                   {A = D × D}
-                   {B = bool → D}
-                   (λ f → f tt₀ == d₀)
-                   {h = fst (from-bool D)}
-                   (snd (from-bool D))
-
-
-    -- but we also have (would maybe be much easier to prove with a library lemma?):
-    Σ-sngltn : (Σ (D × D) λ d2 → fst d2 == d₀) ≃ D
-    Σ-sngltn = equiv (λ dx → snd (fst dx))
-                     (λ d → (d₀ , d) , idp)
-                     (λ d → idp)
-                     (λ {((d₁ , d) , p)
-                         → pair= (pair×= (! p) idp)
-                                 (from-transp (λ d2 → fst d2 == d₀)
-                                 (pair×= (! p) idp)
-                                 ((transport (λ d2 → fst d2 == d₀) (pair×= (! p) idp) idp)
-                                    =⟨ trans-ap₁ fst d₀ (pair×= (! p) idp) idp ⟩
-                                  ! (ap (λ r → fst r) (pair×= (! p) idp)) ∙ idp
-                                    =⟨ ap (λ q → ! q ∙ idp) (ap-fst (! p) idp) ⟩
-                                  ! (! p) ∙ idp
-                                    =⟨ ∙-unit-r _ ⟩
-                                  ! (! p)
-                                    =⟨ !-! p ⟩
-                                  p
-                                    ∎))})
-
-    -- finally: pointed maps from bool are actually just one element in the codomain.
-    from-bool∙-single : (⊙Sphere {i} O →̇ D̂) ≃ D
-    from-bool∙-single = (⊙Sphere {i} O →̇ D̂)
-                           ≃⟨ from-bool∙ ⁻¹ ⟩
-                         (Σ (D × D) λ d2 → fst d2 == d₀)
-                           ≃⟨ Σ-sngltn ⟩
-                         D
-                           ≃∎ 
-                   
-    -- very good - it computes as it should!
-    reduce : ((⊙Sphere {i} O) →̇ D̂) → D
-    reduce (f , _) = f ff₀
-
-    test : reduce == fst from-bool∙-single
-    test = idp
--}
-
-{- 
-
-  {- Two useful small helper lemma:
-     If the first map has the O-sphere (i.e. Bool) as its domain,
-     we can simplify. -}
-    reduce-O-Sphere : {B̂ Ĉ : Ptd i}
-                      (f̂ : ⊙Sphere {i} O →̇ B̂)
-                      (ĝ : B̂ →̇ Ĉ)
-                      → (isNull∙ (ĝ ⊙∘ f̂)) ≃ ((fst (ĝ ⊙∘ f̂) ff₀) == snd Ĉ) -- WRONG!!!
-    reduce-O-Sphere {B , b₀} {C , c₀} f̂ ĝ =
-                    let
-                      f = fst f̂
-                      p = snd f̂
-                      g = fst ĝ
-                      q = snd ĝ 
-                    in
-                      isNull∙ (ĝ ⊙∘ f̂)
-                        ≃⟨ {!equivalence between isNull∙ and isNull∙'!} ⟩
-                      (Σ ((x : bool) → g (f x) == c₀)
-                        λ k → (k tt₀) == (ap g p ∙ q))
-                        ≃⟨ {!!} ⟩
-                      g (f ff₀) == c₀ 
-                        ≃⟨ ide _ ⟩
-                      (fst (ĝ ⊙∘ f̂) ff₀) == c₀
-                        ≃∎
-
-    {- This means that, if we quantify over f on both sides: -}
-    red-O-Sph-quant : {B̂ Ĉ : Ptd i}
-                      (ĝ : B̂ →̇ Ĉ)
-                      → ((f̂ : ⊙Sphere {i} O →̇ B̂) → isNull∙ (ĝ ⊙∘ f̂))
-                         ≃
-                        (isNulld ĝ)
-    red-O-Sph-quant {B̂} {Ĉ} ĝ =
-                    let
-                      g = fst ĝ
-                      q = snd ĝ 
-                    in
-                      ((f̂ : ⊙Sphere {i} O →̇ B̂) → isNull∙ (ĝ ⊙∘ f̂))
-                        ≃⟨ {!!} ⟩
-                     {!(x : bool) → ((fst (ĝ ⊙∘ f̂) x) == snd Ĉ)!}
-                        ≃⟨ {!!} ⟩
-                      {!(x : ⊙Sphere {i})!}
-                        ≃⟨ {!!} ⟩
-                      {!(x : ⊙Sphere {i})!}
-                        ≃∎ 
-
--}
-
-  -- reminder: equiv-Π-l is very useful
 
   open bool-neutral
   
@@ -447,43 +410,3 @@ module _ {i} where
         ≃∎
 
 
-
-
-
-
-
-
-
-
-
-
-
-{-
-((f : (⊙Sphere* {i} m) →̇ B̂) → isNull∙' ((ap^ m g) ⊙∘ Φ-iter (⊙Sphere* {i} O) B̂ m f))
-        ≃⟨ ide _ ⟩ 
-      ((f : (⊙Sphere* {i} m) →̇ B̂) →
-          Σ ((x : fst (⊙Sphere* {i} O))
-              → fst ((ap^ m g) ⊙∘ Φ-iter (⊙Sphere* {i} O) B̂ m f) x == c₀)
-            (λ h → h tt₀ == {!!}))
-
-        -- now, we get rid of the complicated type of f.
-        ≃⟨ equiv-Π-l
-             {A = (⊙Sphere* {i} m) →̇ B̂}
-             {B = (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)}
-             (λ f' → Σ ((x : fst (⊙Sphere* {i} O))
-                         → fst ((ap^ m g) ⊙∘ f') x == c₀)
-                       (λ h → h _ == _))
-             {h = Φ-iter (⊙Sphere* O) B̂ m}
-             {!!}
-              ⟩
-             
-      ((f' : (⊙Sphere* {i} O) →̇ (⊙Ω^ m B̂)) →
-          Σ (((x : fst (⊙Sphere* {i} O))
-              → fst ((ap^ m g) ⊙∘ f') x == c₀)) (λ h → h _ == _))
-
-        ≃⟨ {!!} ⟩ 
---      {!!}
---        ≃⟨ {!!} ⟩ 
-      isNulld (ap^ m g)
-        ≃∎ 
--}
