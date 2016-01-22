@@ -57,7 +57,7 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
   P : (n : ℕ) → (x : A n) → Type i
   P n x = f n x == fs (S n)
 
-  -- This is the easy 'Case j ≡ -2'
+  {- This is the easy 'Case j ≡ -2' -}
   f₀-x₀ : (y : X) → P O y  
   f₀-x₀ y = (spoke O -1 r (lift false)) ∙ ! (spoke O -1 r (lift true))  where
 
@@ -65,7 +65,10 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
     r (lift true) = x₀
     r (lift false) = y
   
-  -- Now, the general case (todo: this should probably be done in separate steps, not everything in the same function).
+  {- Now, the general case is done by induction on n 
+     (note that this variable is called 'j' in the paper).
+     Unfortunately, we have to do everything in one "big"
+     step with many "where" clauses due to the mutual dependencies. -}
   
   fₙ-x₀ : (n : ℕ) → (y : A n) → P n y
   fₙ-x₀ O y = f₀-x₀ y
@@ -102,15 +105,17 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
           -- careful: orientation change?
 
           {- Now, the actual work follows! -}
-          
-          -- kₓ (in the paper), here [k x], is the loop that we examine
+      
+          {- First, we define the interesting loop. 
+             In the paper, it is called [kₓ]. 
+             Here, it is just [k x].  -}
           k : (x : Sphere' {i} n)
               → Ω (Pseudo S n -1-trunc (A (S n)) ,
                    point S n -1 (f n (fs n)))
           k x = ! (Point (r x)) ∙ ap (point (S n) -1) (spoke n -1 r x) ∙ (Hub r)
 
-          -- We want to show that k factors as [ap pₙ ∘ h].
-          -- First, we define h.
+          {- We want to show that [k] factors as [ap pₙ ∘ h].
+             First, we define h. -}
           h : (x : Sphere' {i} n)
               → Ω (Pseudo n -1-trunc (A n) ,
                    f n (fs n))
@@ -118,37 +123,38 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
                 ∙ (spoke n -1 r x)
                 ∙ (! (spoke n -1 r norₙ') ∙ fₙ-x₀ n (r norₙ'))
 
-          -- The statement that k == ap pₙ ∘ h:
+          {- The statement that k == ap pₙ ∘ h: -}
           k-p-h : k == ap (point S n -1) ∘ h
           k-p-h = λ= (λ (x : Sphere' {i} n)
                      → k x
                          =⟨ idp ⟩
-                       ! (Point (r x)) ∙ (ap (point (S n) -1) (spoke n -1 r x) ∙ (Hub r))
+                         ! (Point (r x))
+                       ∙ (ap (point (S n) -1) (spoke n -1 r x) ∙ (Hub r))
                          =⟨ !-ap (point S n -1) (fₙ-x₀ n (r x))
-                                ∙ᵣ (ap (point S n -1) (spoke n -1 r x)
-                                     ∙ Hub r) ⟩
-                       ap (point (S n) -1) (! (fₙ-x₀ n (r x)))
-                         ∙ ap (point (S n) -1) (spoke n -1 r x)
-                         ∙ (Hub r)
+                                ∙ᵣ (  ap (point S n -1) (spoke n -1 r x)
+                                    ∙ Hub r) ⟩
+                         ap (point (S n) -1) (! (fₙ-x₀ n (r x)))
+                       ∙ ap (point (S n) -1) (spoke n -1 r x)
+                       ∙ (Hub r)
                          =⟨ ! (ap (point (S n) -1) (! (fₙ-x₀ n (r x)))
                                 ∙ₗ ap-∙ point S n -1
-                                         (spoke n -1 r x)
-                                         _ ) ⟩
-                       ap (point (S n) -1) (! (fₙ-x₀ n (r x)))
-                         ∙ ap (point (S n) -1)
-                              (spoke n -1 r x
-                               ∙ (! (spoke n -1 r norₙ')
-                               ∙ fₙ-x₀ n (r norₙ')))
+                                        (spoke n -1 r x)
+                                        _ ) ⟩
+                         ap (point (S n) -1) (! (fₙ-x₀ n (r x)))
+                       ∙ ap (point (S n) -1)
+                            (  spoke n -1 r x
+                             ∙ (! (spoke n -1 r norₙ')
+                             ∙ fₙ-x₀ n (r norₙ')))
                          =⟨ ! (ap-∙ point S n -1 (! (fₙ-x₀ n (r x))) _) ⟩  
                        ap (point S n -1) (h x)
                          ∎)
 
-          -- h is a pointed map:
-          h∙ : (⊙Sphere' {i} n)
+          {- [h] can be made into a a pointed map, written [ĥ] -}
+          ĥ : (⊙Sphere' {i} n)
                  →̇ ⊙Ω (Pseudo n -1-trunc (A n) ,
                       f n (fs n))
-          h∙ = h , -- {!h (snd (⊙Sphere n))!}
-               (! (fₙ-x₀ n (r _)) 
+          ĥ = h , 
+                  (! (fₙ-x₀ n (r _)) 
                 ∙ (spoke n -1 r _)
                 ∙ ! (spoke n -1 r norₙ')
                 ∙ fₙ-x₀ n (r norₙ')
