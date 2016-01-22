@@ -82,10 +82,10 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
 
     fⁿx₀ = fs n
 
-    Point : (w : A n) → _
+    Point : (w : A n) → P (S n) (point n -1 w)
     Point w = ap (point (S n) -1) (fₙ-x₀ n w)
 
-    Hub : (r : _) → _
+    Hub : (r : Sphere' n → A n) → point S n -1 _ == _
     Hub r = ap (point (S n) -1) (! (spoke n -1 r norₙ') ∙ fₙ-x₀ n (r norₙ'))
 
     {- The definition of [Spoke] is the hard part. 
@@ -115,12 +115,12 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
              Here, it is just [k x].  -}
           k : (x : Sphere' {i} n)
               → Ω (Pseudo S n -1-trunc (A (S n)) ,
-                   point S n -1 (f n fⁿx₀))
+                   f (S n) (f n fⁿx₀))
           k x = ! (Point (r x)) ∙ ap (point (S n) -1) (spoke n -1 r x) ∙ (Hub r)
 
           {- We want to show that [k] factors as [ap pₙ ∘ h].
              First, we define h. -}
-          h : (x : Sphere' {i} n)
+          h : Sphere' {i} n
               → Ω (Pseudo n -1-trunc (A n) ,
                    f n fⁿx₀)
           h x =   ! (fₙ-x₀ n (r x))
@@ -155,7 +155,7 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
 
           {- [h] can be made into a a pointed map, written [ĥ] -}
           ĥ : (⊙Sphere' {i} n)
-                 →̇ ⊙Ω (Pseudo n -1-trunc (A n) ,
+                 →̇ ⊙Ω (A (S n) ,
                       f n fⁿx₀)
           ĥ = h , 
                   (! (fₙ-x₀ n (r _)) 
@@ -188,14 +188,17 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
                   ∎ )
 
           {- A pointed version of the first constructor. -}
-          pointsₙ : (A n , fⁿx₀) →̇ Pseudo S n -1-trunc (A n) , point S n -1 fⁿx₀ -- Pseudo S n -1-trunc (A n)  
+          pointsₙ : (A (S n) , f n fⁿx₀) →̇ A (S (S n)) , f (S n) (f n fⁿx₀) 
           pointsₙ = point S n -1 , idp 
 
           open null
           open hom-adjoint
           
-          points-Φ⁻¹-null : isNull∙ (pointsₙ ⊙∘ Φ⁻¹ {!!} {!!} {!ĥ!}) --  {!!}
-          points-Φ⁻¹-null = {!!}
+          points-Φ⁻¹-null : isNull∙ (pointsₙ ⊙∘ Φ⁻¹ _ _ ĥ) 
+          points-Φ⁻¹-null = <– (isNull-equiv (pointsₙ ⊙∘ Φ⁻¹ _ _ ĥ)) -- translate from isNull∙'
+                                 (null-lequiv (pointsₙ ⊙∘ Φ⁻¹ _ _ ĥ) -- translate from isNulld
+                                    (λ (x : fst (⊙Susp (⊙Sphere' n)))  -- unfortunately, Σ (Sⁿ) is not judgmentally Sⁿ⁺¹
+                                        → {!!})) 
 
           ap-points-ĥ-null : isNull idp (ap (point S n -1) ∘ h)
           ap-points-ĥ-null = {!!}
