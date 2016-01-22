@@ -78,6 +78,8 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
     norₙ' : Sphere' {i} n
     norₙ' = nor' n
 
+    fⁿx₀ = fs n
+
     Point : (w : _) → _
     Point w = ap (point (S n) -1) (fₙ-x₀ n w)
 
@@ -111,14 +113,14 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
              Here, it is just [k x].  -}
           k : (x : Sphere' {i} n)
               → Ω (Pseudo S n -1-trunc (A (S n)) ,
-                   point S n -1 (f n (fs n)))
+                   point S n -1 (f n fⁿx₀))
           k x = ! (Point (r x)) ∙ ap (point (S n) -1) (spoke n -1 r x) ∙ (Hub r)
 
           {- We want to show that [k] factors as [ap pₙ ∘ h].
              First, we define h. -}
           h : (x : Sphere' {i} n)
               → Ω (Pseudo n -1-trunc (A n) ,
-                   f n (fs n))
+                   f n fⁿx₀)
           h x =   ! (fₙ-x₀ n (r x))
                 ∙ (spoke n -1 r x)
                 ∙ (! (spoke n -1 r norₙ') ∙ fₙ-x₀ n (r norₙ'))
@@ -152,7 +154,7 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
           {- [h] can be made into a a pointed map, written [ĥ] -}
           ĥ : (⊙Sphere' {i} n)
                  →̇ ⊙Ω (Pseudo n -1-trunc (A n) ,
-                      f n (fs n))
+                      f n fⁿx₀)
           ĥ = h , 
                   (! (fₙ-x₀ n (r _)) 
                 ∙ (spoke n -1 r _)
@@ -183,6 +185,17 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
                 
                   ∎ )
 
+          {- A pointed version of the first constructor. -}
+          pointsₙ : (A n , fⁿx₀) →̇ Pseudo S n -1-trunc (A n) , point S n -1 fⁿx₀ -- Pseudo S n -1-trunc (A n)  
+          pointsₙ = point S n -1 , idp 
+
+          open null
+          
+          points-Φ⁻¹-null : isNull∙ {!pointsₙ ⊙∘ ?!} --  {!!}
+          points-Φ⁻¹-null = {!!}
+
+          ap-points-ĥ-null : isNull idp (ap (point S n -1) ∘ h)
+          ap-points-ĥ-null = {!!}
            -- now, we can show that ap (points ...) ∘ h is null,
            -- using the other constructors. Then, we can fill the gap.
 

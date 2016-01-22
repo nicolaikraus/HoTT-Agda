@@ -116,23 +116,9 @@ module hom-adjoint {i} (Â : Ptd i) (B̂ : Ptd i) where
   Φ : (⊙Susp Â →̇ B̂) → (Â →̇ ⊙Ω B̂)
   Φ = –> Φeq  
 
-
-
-  -- Lemma 4.2; this is actually too general, we only need the case that p is refl! Also, the point-part is missing.
-  Φ-pres-isNull : (p : b₀ == b₀) (a : A)
-                  → (fst (Φ ((λ _ → b₀) , p)) a) == idp
-  Φ-pres-isNull p a = 
-    (fst (Φ ((λ _ → b₀) , p)) a)
-      =⟨ idp ⟩
-    ! p ∙ (ap (λ _ → b₀) _) ∙' p
-      =⟨ ap (λ x → ! p ∙ x ∙' p) (ap-cst b₀ _) ⟩
-    ! p ∙ idp ∙' p
-      =⟨ ap (λ x → ! p ∙ x) (∙'-unit-l p) ⟩ 
-    ! p ∙ p
-      =⟨ !-inv-l p ⟩ 
-    idp {a = b₀}
-      ∎
-
+  Φ⁻¹ : (Â →̇ ⊙Ω B̂) → (⊙Susp Â →̇ B̂)
+  Φ⁻¹ = <– Φeq
+  
 
   open PtdFunctor
   open Σ⊣Ω
@@ -219,7 +205,19 @@ module _ {i} where
     isNull∙ (Φ Â Ĉ (g ⊙∘ f))
       ≃⟨ coe-equiv (ap (λ q → isNull∙ q) (Φ-snd-nat f g)) ⟩
     isNull∙ (⊙ap g ⊙∘ Φ Â B̂ f)
+      ≃∎
+
+  combine-isnull-nat' : {Â B̂ Ĉ : Ptd i} (f : Â →̇ ⊙Ω B̂) (g : B̂ →̇ Ĉ)
+               → (isNull∙ (g ⊙∘ (Φ⁻¹ Â B̂ f))) ≃ (isNull∙ (⊙ap g ⊙∘ f))
+  combine-isnull-nat' {Â} {B̂} {Ĉ} f g = 
+   isNull∙ (g ⊙∘ (Φ⁻¹ Â B̂ f))
+      ≃⟨ combine-isnull-nat (Φ⁻¹ Â B̂ f) g ⟩
+    isNull∙ (⊙ap g ⊙∘ (Φ Â B̂ (Φ⁻¹ Â B̂ f)))
+      ≃⟨ coe-equiv (ap (λ h → isNull∙ (⊙ap g ⊙∘ h)) (<–-inv-r (Φeq Â B̂) f)) ⟩
+    isNull∙ (⊙ap g ⊙∘ f)
       ≃∎ 
+    
+  
 
 
 module _ {i} where
