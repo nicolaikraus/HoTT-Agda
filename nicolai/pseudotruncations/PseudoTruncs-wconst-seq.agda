@@ -67,6 +67,8 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
   
   {- Now, the general case is done by induction on n 
      (note that this variable is called 'j' in the paper).
+     Hence, what is 'j' in the paper is now 'S n'.
+
      Unfortunately, we have to do everything in one "big"
      step with many "where" clauses due to the mutual dependencies. -}
   
@@ -80,7 +82,7 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
 
     fⁿx₀ = fs n
 
-    Point : (w : _) → _
+    Point : (w : A n) → _
     Point w = ap (point (S n) -1) (fₙ-x₀ n w)
 
     Hub : (r : _) → _
@@ -190,8 +192,9 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
           pointsₙ = point S n -1 , idp 
 
           open null
+          open hom-adjoint
           
-          points-Φ⁻¹-null : isNull∙ {!pointsₙ ⊙∘ ?!} --  {!!}
+          points-Φ⁻¹-null : isNull∙ (pointsₙ ⊙∘ Φ⁻¹ {!!} {!!} {!ĥ!}) --  {!!}
           points-Φ⁻¹-null = {!!}
 
           ap-points-ĥ-null : isNull idp (ap (point S n -1) ∘ h)
