@@ -100,3 +100,24 @@ module PseudotruncRecursion
 
 open PseudotruncRecursion public renaming (rec to Pseudotrunc-rec)
 
+
+
+{- A lemma that will be important later: any map from
+   the sphere, composed with the points constructor,
+   is null. -}
+   
+open import nicolai.pseudotruncations.pointed-O-Sphere
+open import nicolai.pseudotruncations.LoopsAndSpheres
+open null
+
+module _ {i} {A : Type i} (n : ℕ) where
+
+  from-sphere-null : (g : Sphere' {i} n → A)
+                   → isNull (point n -1 (g (nor' n))) ((point n -1) ∘ g)
+  from-sphere-null g x = point n -1 (g x)
+                           =⟨ spoke n -1 g x ⟩
+                         hub n -1 g
+                           =⟨ ! (spoke n -1 g (nor' n)) ⟩
+                         point n -1 (g (nor' n))
+                           ∎
+

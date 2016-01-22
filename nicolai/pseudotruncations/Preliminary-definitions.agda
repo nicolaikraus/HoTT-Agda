@@ -1,18 +1,27 @@
 {-# OPTIONS --without-K #-}
 
-open import lib.Basics -- hiding (_=⟨_⟩_ ; _∎)
+
+
+
+
+open import lib.Basics
+-- open import lib.NType2
+-- open import lib.PathGroupoid
+
 open import lib.types.Bool
+open import lib.types.IteratedSuspension
+open import lib.types.Lift
+open import lib.types.LoopSpace
+open import lib.types.Nat
 open import lib.types.Paths
 open import lib.types.Pi
-open import lib.types.Unit
-open import lib.types.Nat
-open import lib.types.Lift
-open import lib.types.TLevel
 open import lib.types.Pointed
 open import lib.types.Sigma
-open import lib.NType2
-open import lib.PathGroupoid
 open import lib.types.Suspension
+open import lib.types.TLevel
+open import lib.types.Unit
+
+
 
 module nicolai.pseudotruncations.Preliminary-definitions where
 
@@ -60,23 +69,44 @@ module _ {i} where
    can then be handled much more directly.
    In summary: It's best to redefine spheres. -}
   
-  ⊙Susp-iter : (n : Nat) (Â : Ptd i) → Ptd i
-  ⊙Susp-iter O Â = Â
-  ⊙Susp-iter (S n) Â = ⊙Susp-iter n (⊙Susp Â)
+  ⊙Susp-iter' : (n : ℕ) (Â : Ptd i) → Ptd i
+  ⊙Susp-iter' O Â = Â
+  ⊙Susp-iter' (S n) Â = ⊙Susp-iter' n (⊙Susp Â)
 
 {- compare: definition of iterated Ω
-  ⊙Ω-iter : (n : Nat) (Â : Ptd i) → Ptd i
+  ⊙Ω-iter : (n : ℕ) (Â : Ptd i) → Ptd i
   ⊙Ω-iter O Â = Â
   ⊙Ω-iter (S n) Â = ⊙Ω (⊙Ω-iter n Â)
 -}
 
-  ⊙Sphere' : (n : Nat) → Ptd i
-  ⊙Sphere' n = ⊙Susp-iter n (⊙Lift ⊙Bool) 
+  ⊙Sphere' : (n : ℕ) → Ptd i
+  ⊙Sphere' n = ⊙Susp-iter' n (⊙Lift ⊙Bool) 
 
-  Sphere' : (n : Nat) → Type i
+  Sphere' : (n : ℕ) → Type i
   Sphere' = fst ∘ ⊙Sphere' 
 
-  nor' : (n : Nat) → Sphere' n
+  nor' : (n : ℕ) → Sphere' n
   nor' = snd ∘ ⊙Sphere'
+
+{- Unfortunately, we will sometimes still need the "other" behaviour of the sphere.
+   Thus, we show at least the following: -}
+
+  ⊙Susp-iter : (n : ℕ) (Â : Ptd i) → Ptd i
+  ⊙Susp-iter O Â = Â
+  ⊙Susp-iter (S n) Â = ⊙Susp (⊙Susp-iter n Â)
+
+  {- Of course, this proof could be done for all endofunctions. -}
+  susp-iter= : (n : ℕ) (Â : Ptd i) → ⊙Susp-iter' n Â == ⊙Susp-iter n Â
+  susp-iter= O Â = idp 
+  susp-iter= (S O) Â = idp 
+  susp-iter= (S (S n)) Â = 
+    ⊙Susp-iter' (S (S n)) Â
+      =⟨ susp-iter= (S n) (⊙Susp Â) ⟩
+    ⊙Susp (⊙Susp-iter n (⊙Susp Â))
+      =⟨ ap ⊙Susp (! (susp-iter= n (⊙Susp Â))) ⟩
+    ⊙Susp (⊙Susp-iter' (S n) Â)
+      =⟨ ap ⊙Susp (susp-iter= (S n) Â) ⟩
+    ⊙Susp-iter (S (S n)) Â
+      ∎
 
 

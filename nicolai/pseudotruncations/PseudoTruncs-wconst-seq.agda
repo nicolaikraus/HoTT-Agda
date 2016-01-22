@@ -33,15 +33,18 @@ open import nicolai.pseudotruncations.PseudoTruncs
 {- The special sequence that we consider -}
 module PtruncsSeq {i} (X : Type i) where
 
-  A : ℕ → Type i
-  A O = X
-  A (S n) = Pseudo n -1-trunc (A n)
+A : ℕ → Type i
+A O = X
+A (S n) = Pseudo n -1-trunc (A n)
 
-  f : (n : ℕ) → A n → A (S n)
-  f n x = point n -1 x
+f : (n : ℕ) → A n → A (S n)
+f n x = point n -1 x
   
-  C : Sequence {i}
-  C = (A , f)
+C : Sequence {i}
+C = (A , f)
+
+
+
 
 
 {- A main result: If we have an inhabitant of X, then the sequence is weakly constant. 
@@ -195,13 +198,16 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
           open hom-adjoint
           
           points-Φ⁻¹-null : isNull∙ (pointsₙ ⊙∘ Φ⁻¹ _ _ ĥ) 
-          points-Φ⁻¹-null = <– (isNull-equiv (pointsₙ ⊙∘ Φ⁻¹ _ _ ĥ)) -- translate from isNull∙'
-                                 (null-lequiv (pointsₙ ⊙∘ Φ⁻¹ _ _ ĥ) -- translate from isNulld
-                                    (λ (x : fst (⊙Susp (⊙Sphere' n)))  -- unfortunately, Σ (Sⁿ) is not judgmentally Sⁿ⁺¹
+          points-Φ⁻¹-null = <– (isNull-equiv (pointsₙ ⊙∘ Φ⁻¹ _ _ ĥ))
+                            -- translate from isNull∙'
+                                 (null-lequiv (pointsₙ ⊙∘ Φ⁻¹ _ _ ĥ)
+                                 -- translate from isNulld
+                                    (λ (x : fst (⊙Susp (⊙Sphere' n)))
+                    -- unfortunately, Σ (Sⁿ) is not judgmentally Sⁿ⁺¹
                                         → {!!})) 
 
           ap-points-ĥ-null : isNull idp (ap (point S n -1) ∘ h)
-          ap-points-ĥ-null = {!!}
+          ap-points-ĥ-null = {!⊙ap!}
            -- now, we can show that ap (points ...) ∘ h is null,
            -- using the other constructors. Then, we can fill the gap.
 
