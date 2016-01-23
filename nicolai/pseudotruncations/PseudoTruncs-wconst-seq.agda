@@ -100,16 +100,21 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
       transport (P (S n)) (spoke n -1 r x) (Point (r x))
         =⟨ trans-ap₁ (f (S n)) (fs (S (S n))) (spoke n -1 r x) (Point (r x)) ⟩
       ! (ap (point (S n) -1) (spoke n -1 r x)) ∙ Point (r x)
-        =⟨ !-ap (point (S n) -1) (spoke n -1 r x) ∙ᵣ Point (r x) ⟩
-      ap (point (S n) -1) (! (spoke n -1 r x)) ∙ Point (r x)
-        =⟨ {!this is the hard part!} ⟩
+        =⟨ ! (ap (point (S n) -1) (spoke n -1 r x)) ∙ₗ ! (∙-unit-r (Point (r x))) ⟩
+      ! (ap (point (S n) -1) (spoke n -1 r x)) ∙ Point (r x) ∙ idp
+        {- Now comes the hard step which requires A LOT of work in the where clause
+           below: we can compose with something which, for a complicated reason, is idp! -}
+        =⟨ ! (ap (point (S n) -1) (spoke n -1 r x)) ∙ₗ (Point (r x) ∙ₗ ! (k-const x)) ⟩
+      ! (ap (point (S n) -1) (spoke n -1 r x)) ∙ Point (r x) ∙ k x
+        {- From here, it's easy; we just have to re-associate paths and cancel inverses. 
+           This could be done with standard library lemmas, but it's easier to just use
+           an 'ad-hoc' lemma. -}
+        =⟨ multi-cancelling (ap (point S n -1) (spoke n -1 r x)) (Point (r x)) (Hub r) ⟩
       Hub r
         ∎ 
       )
 
         where
-
-          -- careful: orientation change?
 
           {- Now, the actual work follows! -}
       
@@ -201,17 +206,26 @@ module PtruncSeqWC {i} (X : Type i) (x₀ : X) where
           points-Φ⁻¹-null = <– (isNull-equiv (pointsₙ ⊙∘ Φ⁻¹ _ _ ĥ))
                             -- translate from isNull∙'
                                  (null-lequiv (pointsₙ ⊙∘ Φ⁻¹ _ _ ĥ)
-                                 -- translate from isNulld
-                                    (λ (x : fst (⊙Susp (⊙Sphere' n)))
-                    -- unfortunately, Σ (Sⁿ) is not judgmentally Sⁿ⁺¹
-                                        → {!!})) 
+                                 -- translate from isNulld; this,
+                                 -- we have done already!
+                                    (cmp-nll'.from-sphere-null'∙ n (Φ⁻¹ _ _ ĥ)))
 
-          ap-points-ĥ-null : isNull idp (ap (point S n -1) ∘ h)
-          ap-points-ĥ-null = {!⊙ap!}
-           -- now, we can show that ap (points ...) ∘ h is null,
-           -- using the other constructors. Then, we can fill the gap.
+          ap-points-ĥ-null : isNull∙ (⊙ap (point S n -1 , idp) ⊙∘ ĥ)
+          ap-points-ĥ-null = –> (combine-isnull-nat' ĥ (point S n -1 , idp)) points-Φ⁻¹-null
+
+          {- ... consequently, h is always refl [in the library "idp"]: -}
+          points-h-const : (x : Sphere' n) → ap (point S n -1) (h x) == idp
+          points-h-const x = null-lequiv-easy _ ap-points-ĥ-null x 
+
+          {- ... and so is k: -}
+          k-const : (x : Sphere' n) → k x == idp
+          k-const x = app= k-p-h x  ∙ points-h-const x 
 
 
+
+
+
+  {- Main result: each function in the sequence is propositional! -}
   wconst-f : wconst-chain C
   wconst-f n w₁ w₂ = fₙ-x₀ n w₁ ∙ ! (fₙ-x₀ n w₂)
 
@@ -243,11 +257,15 @@ module PtruncSeqResult' {i} (X : Type i) where
     Glue n a = prop-has-all-paths ip _ _
 
 
--- A main result: this colimit is propositional!
+{- Corollary of the main result: The colimit of the considered sequence is propositional! -}
 module PtruncSeqResult {i} (X : Type i) where
 
   open PtruncsSeq {i} X -- this defines the chain C of pseudo-truncations
 
   colim-is-prp : is-prop (SeqCo C)
-  colim-is-prp = inhab-to-contr-is-prop (PtruncSeqResult'.reduction-lemma X (is-contr (SeqCo C)) has-level-is-prop (λ x₀ → ins O x₀ , prop-has-all-paths (wconst-prop C (PtruncSeqWC.wconst-f X x₀)) (ins O x₀)))
+  colim-is-prp =
+    inhab-to-contr-is-prop
+      (PtruncSeqResult'.reduction-lemma X (is-contr (SeqCo C)) has-level-is-prop
+        (λ x₀ → ins O x₀ , prop-has-all-paths (wconst-prop C (PtruncSeqWC.wconst-f X x₀))
+          (ins O x₀)))
 

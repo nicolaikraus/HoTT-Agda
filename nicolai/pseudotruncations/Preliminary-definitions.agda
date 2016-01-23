@@ -58,6 +58,9 @@ make-=-∙ (f , p) (.f , q) idp t = pair= idp t
               → F̂ f̂ == ĝ
 →̇-maps-to F̂ f̂ (.(fst (F̂ f̂)) , .(snd (F̂ f̂))) idp idp = idp
 
+{- Also trivial: make pointed equivalences from an ordinary equality -}
+coe-equiv∙ : ∀ {i} {Â B̂ : Ptd i} → (Â == B̂) → Â ⊙≃ B̂
+coe-equiv∙ idp = (idf _ , idp) , idf-is-equiv _
 
 module _ {i} where
 

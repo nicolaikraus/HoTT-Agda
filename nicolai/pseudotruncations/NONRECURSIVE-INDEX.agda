@@ -51,6 +51,10 @@ open import nicolai.pseudotruncations.wconstSequence
 open import nicolai.pseudotruncations.pointed-O-Sphere
 open import nicolai.pseudotruncations.LoopsAndSpheres
 
-
 {- Definition of pseudo-truncations -}
 open import nicolai.pseudotruncations.PseudoTruncs
+
+{- The sequence of approximations with increasing "connectedness-
+   level", and the proof that every map is weakly constant,
+   and the corollary that its colimit is propositional. -}
+open import nicolai.pseudotruncations.PseudoTruncs-wconst-seq 

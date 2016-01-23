@@ -79,7 +79,7 @@ module null {i} {j} {Â : Ptd i} {B̂ : Ptd j} (ĝ : Â →̇ B̂) where
                  ≃∎ 
 
 -- Lemma 4.4: pointed and non-pointed 'nullness' are logically equivalent;
--- we only do one direction (the other one is trivial)
+-- First, one direction:
   null-lequiv : isNulld → isNull∙'
   null-lequiv isnull = (λ a → isnull a ∙ ! (isnull a₀) ∙ p) , (
                  isnull a₀ ∙ ! (isnull a₀) ∙ p
@@ -88,6 +88,10 @@ module null {i} {j} {Â : Ptd i} {B̂ : Ptd j} (ĝ : Â →̇ B̂) where
                    =⟨ ap (λ t → t ∙ p) (!-inv-r (isnull a₀)) ⟩
                  p
                    ∎)
+
+-- The other direction is very easy; we do it using the non-prime variant:
+  null-lequiv-easy : isNull∙ → isNulld
+  null-lequiv-easy isn = app= (ap fst isn)
 
 
 

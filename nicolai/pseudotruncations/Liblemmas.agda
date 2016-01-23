@@ -90,3 +90,9 @@ ap-fst idp idp = idp
 adhoc-=-eqv : ∀ {i} {A : Type i} {x y : A} (p : y == x) (q : y == x)
                 → (! p ∙ q == idp) ≃ (p == q)
 adhoc-=-eqv idp  q = !-equiv
+
+{- Another ad-hoc equality; it could be proved easily with many nested
+   library lemmas -}
+multi-cancelling : ∀ {i} {A : Type i} {x y z w : A} (p : y == x) (q : y == z) (r : x == w)
+                   → (! p) ∙ q ∙ (! q) ∙ p ∙ r == r
+multi-cancelling idp idp r = idp

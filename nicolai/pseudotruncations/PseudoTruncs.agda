@@ -121,9 +121,49 @@ module _ {i} {A : Type i} (n : ℕ) where
                          point n -1 (g (nor' n))
                            ∎
 
-  {- Unforunately, we will need this lemma not for maps
+module cmp-nll {i} {Â : Ptd i} (n : ℕ) (g : ⊙Sphere' {i} n →̇ Â) where
+
+  {- Pointed version of first constructor -}
+  -- points∙ : Â →̇ (Pseudo n -1-trunc (fst Â) , point n -1 (snd Â))
+  -- points∙ = point n -1 , idp
+
+  from-sphere-null∙ : isNulld ((point n -1 , idp) ⊙∘ g)
+  from-sphere-null∙ = λ x → 
+                         point n -1 ((fst g) x)
+                           =⟨ spoke n -1 (fst g) x ⟩
+                         hub n -1 (fst g)
+                           =⟨ ! (spoke n -1 (fst g) (nor' n)) ⟩
+                         point n -1 ((fst g) (nor' n))
+                           =⟨ ap (point n -1) (snd g) ⟩
+                         point n -1 (snd Â)
+                           ∎
+
+  {- Unfortunately, we will need this lemma not for maps
         g : Sphere' (S n) → A,
      but we will need it for maps
         g : Susp (Sphere' n) → A,
      and Sphere' (S n) is NOT judgmentally equal to Susp (Sphere' n).
      We have to give a second proof. -}
+
+module cmp-nll' {i} {Â : Ptd i} (n : ℕ) (g : ⊙Susp (⊙Sphere' {i} n) →̇ Â) where
+
+  {- "translate" equivalence -}
+  tr≃⊙ : ⊙Sphere' {i} (S n) ⊙≃ ⊙Susp (⊙Sphere' {i} n) 
+  tr≃⊙ = coe-equiv∙ (susp'-switch n)
+
+  tr≃ : Sphere' {i} (S n) ≃ fst (⊙Susp (⊙Sphere' {i} n)) 
+  tr≃ = fst (fst tr≃⊙) , snd tr≃⊙
+
+  tr–̇> : (⊙Sphere' {i} (S n)) →̇ ⊙Susp (⊙Sphere' {i} n) 
+  tr–̇> = fst tr≃⊙ -- –> (fst (fst tr-eq) , snd tr-eq) , {!!}
+
+  from-sphere-null'∙ : isNulld ((point S n -1 , idp) ⊙∘ g)
+  from-sphere-null'∙ = λ x → 
+
+    fst ((point S n -1 , idp) ⊙∘ g) x
+      =⟨ ap (fst ((point S n -1 , idp) ⊙∘ g)) (! (<–-inv-r tr≃ x)) ⟩
+    fst ((point S n -1 , idp) ⊙∘ g) (–> tr≃ (<– tr≃ x))
+      =⟨ cmp-nll.from-sphere-null∙ {i} {Â} (S n) (g ⊙∘ tr–̇>) (<– tr≃ x) ⟩ 
+    point S n -1 (snd Â)
+      ∎ 
+
