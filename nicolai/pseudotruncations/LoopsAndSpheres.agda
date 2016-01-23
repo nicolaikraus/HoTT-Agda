@@ -19,7 +19,6 @@ open import lib.types.Unit
 
 open SuspensionRec public using () renaming (f to Susp-rec)
 
--- Preliminary-definitions ?
 open import nicolai.pseudotruncations.Preliminary-definitions
 open import nicolai.pseudotruncations.Liblemmas
 open import nicolai.pseudotruncations.pointed-O-Sphere
@@ -104,9 +103,6 @@ module null {i} {j} {Â : Ptd i} {B̂ : Ptd j} (ĝ : Â →̇ B̂) where
 Σ⊣Ω-homset : ∀ {i} → HomAdjoint {i} {i} Σ⊣Ω.SuspFunctor Σ⊣Ω.LoopFunctor
 Σ⊣Ω-homset = counit-unit-to-hom Σ⊣Ω-unitCounit
 
-
-
-
 module hom-adjoint {i} (Â : Ptd i) (B̂ : Ptd i) where
 
   A = fst Â
@@ -117,6 +113,7 @@ module hom-adjoint {i} (Â : Ptd i) (B̂ : Ptd i) where
   Φeq : (⊙Susp Â →̇ B̂) ≃ (Â →̇ ⊙Ω B̂)
   Φeq = HomAdjoint.eq Σ⊣Ω-homset Â B̂  
 
+  {- This is Lemma 4.1 -}
   Φ : (⊙Susp Â →̇ B̂) → (Â →̇ ⊙Ω B̂)
   Φ = –> Φeq  
 
@@ -128,7 +125,9 @@ module hom-adjoint {i} (Â : Ptd i) (B̂ : Ptd i) where
   open Σ⊣Ω
   open CounitUnitAdjoint
 
-
+  {- Some lemmas which are easy on paper and thus not explicitly 
+     mentioned in the paper. It still takes some effort to
+     formalize them. -}
   module simplify where
 
     simpl-⊙ap : (⊙ap {X = obj SuspFunctor Â} ((λ _ → b₀) , idp))
@@ -159,6 +158,7 @@ module hom-adjoint {i} (Â : Ptd i) (B̂ : Ptd i) where
 
   open simplify
 
+  {- Lemma 4.2 -}
   Φ-is-pointed-map : Φ ((λ _ → b₀) , idp) == ((λ _ → idp) , idp)
   Φ-is-pointed-map = Φ ((λ _ → b₀) , idp)
                        =⟨ idp ⟩
@@ -185,6 +185,8 @@ module _ {i} where
   Φ-snd-nat : {Â B̂ Ĉ : Ptd i} (f : ⊙Susp Â →̇ B̂) (g : B̂ →̇ Ĉ)
               → Φ Â Ĉ (g ⊙∘ f) == ⊙ap g ⊙∘ Φ Â B̂ f
   Φ-snd-nat {Â} {B̂} {Ĉ} f g = ! (nat-cod Σ⊣Ω-homset Â {B̂} {Ĉ} g f)
+
+  -- Lemma 4.4 is above (before 4.2).
 
   -- Lemma 4.5
   isnull-Φ : {Â B̂ : Ptd i} (g : ⊙Susp Â →̇ B̂) → (isNull∙ g) ≃ isNull∙ (Φ Â B̂ g)

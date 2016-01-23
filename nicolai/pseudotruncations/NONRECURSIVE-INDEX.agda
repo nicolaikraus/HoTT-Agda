@@ -13,11 +13,17 @@
    but many lemmas are (at least for me) even on paper far 
    from trivial. 
 
+   Formalized are Section 2, Section 3 (without the example
+   applications), especially the first main result; all of 
+   Section 4 except Lemma 4.9, the definitions and principles 
+   of Section 5, all of Section 6 expect the last corollaries.
+
    The parts of the paper that are not formalized are
    (A) the examples in Section 3
    (B) the statements of remarks
-   (C) Lemma 5.5 and 5.6 
+   (C) Lemma 4.9, 5.4, 5.5, and 5.6 
    (D) Theorem 5.7, Corollary 5.8, Theorem 6.2
+   (E) the discussions and results of Section 7
 
    All of these are relatively easy compared with the results
    that are formalized. The items in (C) could be implemented
@@ -30,7 +36,7 @@
        "Functions out of Higher Truncations".
    This result is formalized, but unfortunately in another
    library; thus, we omit Theorem 5.7 (for now) in the current 
-   formalization.
+   formalization. (E) would require (D) first.
    
    This development type-checks with Agda 2.4.2.5 and similar 
    versions (I assume with 2.4.2.x in general; same as the 
