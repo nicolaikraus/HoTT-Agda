@@ -1,21 +1,40 @@
 {-# OPTIONS --without-K #-}
 
--- INDEX: Some constructions with non-recursive HITs,
--- and related results.
+{- INDEX: Some constructions with non-recursive HITs,
+   and related results.
 
-{- Currently under construction! 
+   This formalization covers the hardest results of my
+   paper titled "Constructions with non-recursive HITs".
+   To be precise: I have formalized the result that all 
+   functions in the sequence of approximations (see Section 6)
+   are weakly constant, and that the colimit is thus 
+   propositional. This requires a lot of lemmas. Some of 
+   these lemmas are trivial on paper and only tedious in Agda,
+   but many lemmas are (at least for me) even on paper far 
+   from trivial. 
 
-   PLEASE CHECK AGAIN IN A FEW DAYS 
-   to find a more complete formalization (with better 
-   documentation!). Thanks :-)
+   The parts of the paper that are not formalized are
+   (A) the examples in Section 3
+   (B) the statements of remarks
+   (C) Lemma 5.5 and 5.6 
+   (D) Theorem 5.7, Corollary 5.8, Theorem 6.2
 
-   Only the completed results are imported here.
-   Some further results in files of this repository 
-   are 'mostly' formalized but have some gaps and 
-   are thus not imported here.
-
-   Type-checks with Agda 2.4.2.5 and similar versions
-   (I assume with 2.4.2.x in general; same as the library).
+   All of these are relatively easy compared with the results
+   that are formalized. The items in (C) could be implemented
+   easily, but are not very interesting on their own.
+   The same is true for the second and third item in (D),
+   which however depend on Theorem 5.7.
+   Theorem 5.7 itself could be interesting to formalize. 
+   However, it relies on the main result of 
+       Capriotti, Kraus, Vezzosi,
+       "Functions out of Higher Truncations".
+   This result is formalized, but unfortunately in another
+   library; thus, we omit Theorem 5.7 (for now) in the current 
+   formalization.
+   
+   This development type-checks with Agda 2.4.2.5 and similar 
+   versions (I assume with 2.4.2.x in general; same as the 
+   HoTT library).
 -}
 
 
@@ -27,22 +46,25 @@
 open import nicolai.pseudotruncations.Preliminary-definitions
 open import nicolai.pseudotruncations.Liblemmas
 
-{- The Sequential colimit. I am aware that there is some
+{- SECTION 2
+   The Sequential colimit. I am aware that there is some
    overlap with lib/types/NatColim.agda -}
 open import nicolai.pseudotruncations.SeqColim
 
-{- Here is some 'prepartion' -}
+{- Here is some prepartion for Section 3 -}
 open import nicolai.pseudotruncations.wconst-preparation
 
 {- The rather lengthy argument that some heptagon commutes;
-   very tedious -}
+   very tedious; this is still preparation for Section 3 -}
 open import nicolai.pseudotruncations.heptagon
 
-{- Main result: If we have a sequence of weakly constant 
-   functions, then the colimit is propositional -}
+{- SECTION 3 (without the sample applications)
+   One result of the paper: If we have a sequence of weakly 
+   constant functions, then the colimit is propositional -}
 open import nicolai.pseudotruncations.wconstSequence
 
-{- The correspondance between loops and maps from spheres:
+{- SECTION 4
+   The correspondance between loops and maps from spheres:
    a lot of tedious technical content. This was hard work for me!
    The results are in two files; first, essentially the fact that
    the 'pointed' 0-sphere [i.e. (bool, true)] is "as good as"
@@ -51,10 +73,12 @@ open import nicolai.pseudotruncations.wconstSequence
 open import nicolai.pseudotruncations.pointed-O-Sphere
 open import nicolai.pseudotruncations.LoopsAndSpheres
 
-{- Definition of pseudo-truncations -}
+{- SECTION 5 (mainly the definition and some auxiliary lemmas)
+   Definition of pseudo-truncations -}
 open import nicolai.pseudotruncations.PseudoTruncs
 
-{- The sequence of approximations with increasing "connectedness-
+{- SECTION 6
+   The sequence of approximations with increasing "connectedness-
    level", and the proof that every map is weakly constant,
    and the corollary that its colimit is propositional. -}
 open import nicolai.pseudotruncations.PseudoTruncs-wconst-seq 
