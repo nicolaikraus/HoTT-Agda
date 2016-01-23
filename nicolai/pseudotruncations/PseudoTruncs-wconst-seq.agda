@@ -33,15 +33,15 @@ open import nicolai.pseudotruncations.PseudoTruncs
 {- The special sequence that we consider -}
 module PtruncsSeq {i} (X : Type i) where
 
-A : ℕ → Type i
-A O = X
-A (S n) = Pseudo n -1-trunc (A n)
+  A : ℕ → Type i
+  A O = X
+  A (S n) = Pseudo n -1-trunc (A n)
 
-f : (n : ℕ) → A n → A (S n)
-f n x = point n -1 x
+  f : (n : ℕ) → A n → A (S n)
+  f n x = point n -1 x
   
-C : Sequence {i}
-C = (A , f)
+  C : Sequence {i}
+  C = (A , f)
 
 
 

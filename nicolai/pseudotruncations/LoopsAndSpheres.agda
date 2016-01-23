@@ -226,7 +226,7 @@ module _ {i} where
 
   -- This was tricky (todo: could explain why)
   Φ-iter : (Â B̂ : Ptd i) (n : Nat)
-           → ((⊙Susp-iter n Â) →̇ B̂)
+           → ((⊙Susp-iter' n Â) →̇ B̂)
            → (Â →̇ (⊙Ω^ n B̂))
   Φ-iter Â B̂ O f = f
   Φ-iter Â B̂ (S n) f = Φ Â (⊙Ω^ n B̂) (Φ-iter (⊙Susp Â) B̂ n f)
@@ -246,7 +246,7 @@ module _ {i} where
   -- Lemma 4.7 -- generalized, because we need to do it for Susp first before it works for Sphere!
   isNull-Φ-many : (m : Nat)
                   → (Â B̂ Ĉ : Ptd i)
-                  → (f : ⊙Susp-iter m Â →̇ B̂) (g : B̂ →̇ Ĉ)
+                  → (f : ⊙Susp-iter' m Â →̇ B̂) (g : B̂ →̇ Ĉ)
                   → isNull∙ (g ⊙∘ f)
                     ≃
                     isNull∙ ((ap^ m g) ⊙∘ Φ-iter Â B̂ m f)

@@ -20,7 +20,10 @@
 
 
 
-{- Some preliminary definitions/lemmas, nothing interesting -}
+{- Some preliminary definitions/lemmas, and an explanation
+   why we need to work with the spheres defined by suspension-
+   iteration of the form
+   Σ¹⁺ⁿ :≡ Σⁿ ∘ Σ -}
 open import nicolai.pseudotruncations.Preliminary-definitions
 open import nicolai.pseudotruncations.Liblemmas
 

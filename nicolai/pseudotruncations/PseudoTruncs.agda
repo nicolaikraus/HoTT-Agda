@@ -121,3 +121,9 @@ module _ {i} {A : Type i} (n : ℕ) where
                          point n -1 (g (nor' n))
                            ∎
 
+  {- Unforunately, we will need this lemma not for maps
+        g : Sphere' (S n) → A,
+     but we will need it for maps
+        g : Susp (Sphere' n) → A,
+     and Sphere' (S n) is NOT judgmentally equal to Susp (Sphere' n).
+     We have to give a second proof. -}

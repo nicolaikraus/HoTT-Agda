@@ -61,23 +61,23 @@ make-=-∙ (f , p) (.f , q) idp t = pair= idp t
 
 module _ {i} where
 
-{- Of course, spheres are defined in the library.
-   Unfortunately, they do not play well together with iterated suspension.
-   If f is an endofunction, one can define [f^Sn] either as [f^n ∘ f] or as
-   [f ∘ f^n]. It turns out that it is much more convenient if one chooses
-   different possibilites for Ω and for Σ (suspension), as the adjunction 
-   can then be handled much more directly.
-   In summary: It's best to redefine spheres. -}
+  {- Of course, spheres are defined in the library.
+     Unfortunately, they do not play well together with iterated suspension.
+     If f is an endofunction, one can define [f^Sn] either as [f^n ∘ f] or as
+     [f ∘ f^n]. It turns out that it is much more convenient if one chooses
+     different possibilites for Ω and for Σ (suspension), as the adjunction 
+     can then be handled much more directly.
+     In summary: It's best to redefine spheres. -}
   
   ⊙Susp-iter' : (n : ℕ) (Â : Ptd i) → Ptd i
   ⊙Susp-iter' O Â = Â
   ⊙Susp-iter' (S n) Â = ⊙Susp-iter' n (⊙Susp Â)
 
-{- compare: definition of iterated Ω
-  ⊙Ω-iter : (n : ℕ) (Â : Ptd i) → Ptd i
-  ⊙Ω-iter O Â = Â
-  ⊙Ω-iter (S n) Â = ⊙Ω (⊙Ω-iter n Â)
--}
+  {- compare: definition of iterated Ω
+    ⊙Ω-iter : (n : ℕ) (Â : Ptd i) → Ptd i
+    ⊙Ω-iter O Â = Â
+    ⊙Ω-iter (S n) Â = ⊙Ω (⊙Ω-iter n Â)
+  -}
 
   ⊙Sphere' : (n : ℕ) → Ptd i
   ⊙Sphere' n = ⊙Susp-iter' n (⊙Lift ⊙Bool) 
@@ -88,12 +88,18 @@ module _ {i} where
   nor' : (n : ℕ) → Sphere' n
   nor' = snd ∘ ⊙Sphere'
 
-{- Unfortunately, we will sometimes still need the "other" behaviour of the sphere.
-   Thus, we show at least the following: -}
+  {- Unfortunately, we will sometimes still need the "other" behaviour of the sphere.
+     Thus, we show at least the following: -}
 
   ⊙Susp-iter : (n : ℕ) (Â : Ptd i) → Ptd i
   ⊙Susp-iter O Â = Â
   ⊙Susp-iter (S n) Â = ⊙Susp (⊙Susp-iter n Â)
+
+  ⊙Sphere* : (n : ℕ) → Ptd i
+  ⊙Sphere* n = ⊙Susp-iter n (⊙Lift ⊙Bool)
+
+  Sphere* : (n : ℕ) → Type i
+  Sphere* = fst ∘ ⊙Sphere*
 
   {- Of course, this proof could be done for all endofunctions. -}
   susp-iter= : (n : ℕ) (Â : Ptd i) → ⊙Susp-iter' n Â == ⊙Susp-iter n Â
@@ -109,4 +115,13 @@ module _ {i} where
     ⊙Susp-iter (S (S n)) Â
       ∎
 
+  {- Thus, we have for the spheres: -}
+  ⊙Spheres= : (n : ℕ) → ⊙Sphere' n == ⊙Sphere* n
+  ⊙Spheres= n = susp-iter= n (⊙Lift ⊙Bool)
 
+  Spheres= : (n : ℕ) → Sphere' n == Sphere* n
+  Spheres= n = ap fst (⊙Spheres= n)
+
+  {- Also, we have this: -}
+  susp'-switch : (n : ℕ) → ⊙Sphere' (S n) == ⊙Susp (⊙Sphere' n)
+  susp'-switch n = (⊙Spheres= (S n)) ∙ (ap ⊙Susp (! (⊙Spheres= n))) 
