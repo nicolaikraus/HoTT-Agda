@@ -23,7 +23,7 @@
    (B) the statements of remarks
    (C) Lemma 4.9, 5.4, 5.5, and 5.6 
    (D) Theorem 5.7, Corollary 5.8, Theorem 6.2
-   (E) the discussions and results of Section 7
+   (E) the discussions and results in the concluding Section 7
 
    All of these are relatively easy compared with the results
    that are formalized. The items in (C) could be implemented
