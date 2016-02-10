@@ -269,3 +269,15 @@ module PtruncSeqResult {i} (X : Type i) where
         (λ x₀ → ins O x₀ , prop-has-all-paths (wconst-prop C (PtruncSeqWC.wconst-f X x₀))
           (ins O x₀)))
 
+
+  open PtruncSeqResult' X
+
+  {- If we have the propositional truncation in the theory: -}
+  open import lib.types.Truncation
+  
+  colim-is-trunc : (Trunc ⟨-1⟩ X) ≃ SeqCo C
+  colim-is-trunc = equiv (Trunc-rec (colim-is-prp) (ins 0))
+                         (reduction-lemma (Trunc ⟨-1⟩ X) Trunc-level [_])
+                         (λ _ → prop-has-all-paths colim-is-prp _ _)
+                         (λ _ → prop-has-all-paths Trunc-level _ _)
+
