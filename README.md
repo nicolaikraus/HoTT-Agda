@@ -11,7 +11,8 @@ other people.
 
 My projects can be found in the folder 'nicolai'; the rest 
 of the fork will be synchronized with the HoTT library.
-
+For a description of the projects in 'nicolai', see the 
+readme file there.
 
 Acknowledgments (in addition to those inherited from the 
 library): 
