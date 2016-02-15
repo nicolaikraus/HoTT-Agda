@@ -1,6 +1,9 @@
 This is a description of the contents of this folder.
 For a general readme, the the parent folder.
 
+Each project (apart from anonymousExistence) required HoTTAgda
+to be an "included directory" (i.e. needs to be in the loadpath).
+
 pseudotruncations: Agda code for
   "Constructions with Non-Recursive Higher Inductive Types"
 
