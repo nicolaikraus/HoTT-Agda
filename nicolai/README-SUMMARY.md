@@ -15,3 +15,5 @@ anonymousExistence: Agda code for
   This project comes with its own library (which however is
   an old version of the "real" library - to be resolved in future)
 
+thesis: my PhD thesis Agda code (some parts may not be adapted to the
+  newer version of the library yet)
