@@ -1,9 +1,6 @@
 This is a description of the contents of this folder.
 For a general readme, the the parent folder.
 
-Each project (apart from anonymousExistence) required HoTTAgda
-to be an "included directory" (i.e. needs to be in the loadpath).
-
 pseudotruncations: Agda code for
   "Constructions with Non-Recursive Higher Inductive Types"
 
@@ -20,3 +17,10 @@ anonymousExistence: Agda code for
 
 thesis: my PhD thesis Agda code (some parts may not be adapted to the
   newer version of the library yet)
+
+
+The projects "SemiSimpl" and "thesis" require HoTTAgda
+to be an "included directory" (i.e. needs to be in the loadpath).
+[to be fixed]
+
+
