@@ -15,8 +15,12 @@ anonymousExistence: Agda code for
   This project comes with its own library (which however is
   an old version of the "real" library - to be resolved in future)
 
-thesis: my PhD thesis Agda code (some parts may not be adapted to the
-  newer version of the library yet)
+thesis: my PhD thesis Agda code. Unfortunately, I currently do not
+have the required hardware to see whether it type-checks. I have
+type-checked an older version (nearly identical to this one); a html
+version is here:
+ 
+http://www.cs.nott.ac.uk/~psznk/docs/thesisagda_nicolai/INDEX.html
 
 
 The projects "SemiSimpl" and "thesis" require HoTTAgda

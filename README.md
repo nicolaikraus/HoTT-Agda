@@ -14,6 +14,8 @@ of the fork will be synchronized with the HoTT library.
 For a description of the projects in 'nicolai', see the 
 readme file there.
 
+This code uses Agda 2.4.2.5.
+
 Acknowledgments (in addition to those inherited from the 
 library): 
 I am supported by the Engineering and Physical Sciences 
